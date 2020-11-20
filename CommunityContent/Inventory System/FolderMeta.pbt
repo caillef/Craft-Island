@@ -1,0 +1,75 @@
+﻿MetaVersion: 1
+MarketplaceDetails {
+  Id: "d2d433bc404949a1ac1ee1017c10008d"
+  OwnerAccountId: "aabffd57e2814ff1bc7f80f5fd32b5a4"
+  OwnerName: "Chipnertkj"
+  Version: "1.3.0"
+}
+AssetIdsOriginalToNew {
+  key: 307406115803496087
+  value: 10712414282141051841
+}
+AssetIdsOriginalToNew {
+  key: 1147310193965934729
+  value: 16121658722708770768
+}
+AssetIdsOriginalToNew {
+  key: 1683114021203363022
+  value: 1476304336445167608
+}
+AssetIdsOriginalToNew {
+  key: 3280147579140677368
+  value: 9233444761546083812
+}
+AssetIdsOriginalToNew {
+  key: 5010791538343631413
+  value: 15434033224288606522
+}
+AssetIdsOriginalToNew {
+  key: 5984436316363486496
+  value: 2024033664354340919
+}
+AssetIdsOriginalToNew {
+  key: 6354094461610560070
+  value: 1249607379260815417
+}
+AssetIdsOriginalToNew {
+  key: 7058262669964030703
+  value: 1417357961177295355
+}
+AssetIdsOriginalToNew {
+  key: 8113725433182133795
+  value: 8565574200368624129
+}
+AssetIdsOriginalToNew {
+  key: 8193532799721697526
+  value: 2321660302699877352
+}
+AssetIdsOriginalToNew {
+  key: 9023864673320310867
+  value: 7096092129490277154
+}
+AssetIdsOriginalToNew {
+  key: 9622277755222879954
+  value: 7902479682611587842
+}
+AssetIdsOriginalToNew {
+  key: 12107734285812188601
+  value: 15175281227640134097
+}
+AssetIdsOriginalToNew {
+  key: 13236845595933290347
+  value: 17211884588749737397
+}
+AssetIdsOriginalToNew {
+  key: 13253325870475057691
+  value: 15211890167544257555
+}
+AssetIdsOriginalToNew {
+  key: 15663972979748629464
+  value: 15134843263310294540
+}
+AssetIdsOriginalToNew {
+  key: 18403044146386498216
+  value: 3455382056109627922
+}

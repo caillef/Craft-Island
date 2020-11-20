@@ -1,0 +1,12 @@
+﻿GameId: "21847e8270334928af0feba4fc97b28c"
+ClientVersion: "1.0.166-prod-s"
+Name: "Islands (early early alpha)"
+Description: "Grow and design your own island !"
+MaxPlayers: 8
+Tags: "FirstPerson"
+Tags: "Simulation"
+Tags: "OpenWorld"
+Tags: "Farming"
+ScreenshotPaths: "C:/Users/hiind/Documents/My Games/CORE/Saved/Maps/Islands/Screenshots/Screenshot0001.png"
+ReleaseNotes: "Fixed saplings"
+OwnerId: "be87c969b2e5444dac5c09d330a142ab"

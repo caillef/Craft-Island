@@ -1,5 +1,5 @@
-﻿GameId: "706605664CCE45CC28B50BB9BF3706EE"
-DisplayName: "Islands"
+﻿GameId: "08A842F140FC39E3955BFCA86A0EED6A"
+DisplayName: "Craft Island"
 GameSerializationVersion: 68
 Framework: "Empty Project"
 StorageVersion: 1

@@ -68,7 +68,7 @@ local autoCloseTime = 0.0
 -- float GetDoorRotation()
 -- Gives you the current rotation of the door
 function GetDoorRotation()
-	return ROTATION_ROOT:GetRotation().z / 90.0
+	return math.floor(ROTATION_ROOT:GetRotation().z / 90.0 + 1)
 end
 
 -- nil SetCurrentRotation(float)
@@ -82,7 +82,7 @@ end
 -- Sets the rotation that the door should move to (at SPEED)
 function SetTargetRotation(rotation)
 	targetDoorRotation = rotation
-	ROTATION_ROOT:RotateTo(Rotation.New(0.0, 0.0, 90.0 * rotation), 90.0 * math.abs(targetDoorRotation - GetDoorRotation()) / SPEED, true)
+	ROTATION_ROOT:RotateTo(Rotation.New(0.0, 0.0, 180 + 90.0 * rotation), 90.0 * math.abs(targetDoorRotation - GetDoorRotation()) / SPEED, true)
 end
 
 -- nil ResetDoor()
@@ -135,11 +135,14 @@ function OnInteracted(trigger, player)
 
 	playerLastUseTimes[player] = time()
 
+	print(GetDoorRotation())
 	if GetDoorRotation() == 0.0 then								-- Door is closed
+		print("plop")
 		OpenDoor(player)
 
 		TRIGGER.interactionLabel = CLOSE_LABEL
 	else															-- Door is open or moving, clsoe it
+		print("plap")
 		CloseDoor()
 	end
 end

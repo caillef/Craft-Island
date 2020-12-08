@@ -8,12 +8,48 @@
   }
 }
 Assets {
+  Id: 17068925420297817526
+  Name: "Fantasy Bread 005"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Food_Bread_005"
+  }
+}
+Assets {
   Id: 16784863239120847236
   Name: "Gear Movement Shuffle Light Medium 01 SFX"
   PlatformAssetType: 7
   PrimaryAsset {
     AssetType: "AudioAssetRef"
     AssetId: "sfx_gear_movement_shuffle_light_medium_01a_Cue_ref"
+  }
+}
+Assets {
+  Id: 16247792708902319748
+  Name: "Fantasy Book 012"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Book_012"
+  }
+}
+Assets {
+  Id: 15716142014048276687
+  Name: "Fantasy Fruit 008"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Food_Fruit_008"
+  }
+}
+Assets {
+  Id: 15142787355029724893
+  Name: "Fantasy Pack 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Pack_004"
   }
 }
 Assets {

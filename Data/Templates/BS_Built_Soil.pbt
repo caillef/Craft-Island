@@ -64,12 +64,6 @@
             }
           }
           Overrides {
-            Name: "cs:ItemUI"
-            AssetReference {
-              Id: 6970002291322776181
-            }
-          }
-          Overrides {
             Name: "cs:HP"
             Int: 1
           }

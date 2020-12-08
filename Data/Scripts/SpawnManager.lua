@@ -3,7 +3,7 @@ local TELEPORT_MANAGER = script:GetCustomProperty("TeleportManager"):WaitForObje
 local propPlayerIsland = script:GetCustomProperty("PlayerIsland")
 local propIslands = script:GetCustomProperty("Islands"):WaitForObject()
 
-local NB_MAX_PLAYERS = 10
+local NB_MAX_PLAYERS = 8
 local SPACE_BETWEEN_ISLAND = 100000
 
 local playerSlots = {}
@@ -21,7 +21,7 @@ local function initPlayerSpots()
             player = nil,
             island = nil
         } 
-    end    
+    end
 end
 initPlayerSpots()
 
@@ -36,22 +36,31 @@ end
 
 local function AssignNextSlot(player)
     for _,s in pairs(playerSlots) do
-        if s.player == nil then
+        if s.player == nil and s.island == nil then
             return PrepareSlot(player, s)
         end
     end
     return nil
 end
 
-local function OnPlayerJoined(player)
+function OnPlayerJoined(player)
     local slot = AssignNextSlot(player)
+    local buildingZone = slot.island:FindChildByName("BuildingZone")
+    buildingZone.beginOverlapEvent:Connect(function(trigger, other)
+        if not other:IsA("Player") then return end
+        Events.BroadcastToPlayer(player, "OnBuildPermission", true)
+    end)
+    buildingZone.endOverlapEvent:Connect(function(trigger, other)
+        if not other:IsA("Player") then return end 
+        Events.BroadcastToPlayer(player, "OnBuildPermission", false)
+    end)
     BUILDING_SYSTEM.LoadIsland(slot)
     TELEPORT_MANAGER.TeleportPlayerTo(player, "own_island")
 end
 
-local function OnPlayerLeft(player)
+function OnPlayerLeft(player)
     local slot = GetSpawnSlotForPlayer(player)
-    BUILDING_SYSTEM.UnloadIsland(slot)
+    BUILDING_SYSTEM.UnloadIsland(slot)    
     slot.player = nil
     slot.island = nil
 end
@@ -61,7 +70,7 @@ function GetSpawnSlotForPlayer(player)
         return nil
     end
     for _,s in pairs(playerSlots) do
-        if s.player:IsValid() and s.player.id == player.id then
+        if s.player and s.player:IsValid() and s.player.id == player.id then
             return s
         end
     end

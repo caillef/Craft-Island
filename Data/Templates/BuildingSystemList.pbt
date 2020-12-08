@@ -15,7 +15,7 @@
             Z: 1
           }
         }
-        ParentId: 15493299283785528625
+        ParentId: 11584135646992845074
         ChildIds: 1134286657884688069
         ChildIds: 6058260682329465000
         ChildIds: 7581626262696953081
@@ -25,6 +25,8 @@
         ChildIds: 10756338481889455214
         ChildIds: 1163230430116476713
         ChildIds: 7489816295131407519
+        ChildIds: 13883474270000646830
+        ChildIds: 8627758616706175384
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -985,6 +987,207 @@
         CoreMesh {
           MeshAsset {
             Id: 966563861414155672
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 13883474270000646830
+        Name: "BS_Preview_Tree"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14648870783588546942
+        ChildIds: 7448201523334931170
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 3214907868370729841
+            }
+          }
+          Overrides {
+            Name: "cs:CanBeInInventory"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 7448201523334931170
+        Name: "Preview"
+        Transform {
+          Location {
+            X: 100
+            Y: -100
+            Z: 10
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.7
+            Y: 0.7
+            Z: 0.1
+          }
+        }
+        ParentId: 13883474270000646830
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_Ceiling:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_Floor:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_Floor:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Building_Ceiling:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Nature_Grass:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 966563861414155672
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 8627758616706175384
+        Name: "BS_Previsu_Door"
+        Transform {
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14648870783588546942
+        ChildIds: 10542799394393330204
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 6339192451924178086
+            }
+          }
+          Overrides {
+            Name: "cs:InventoryIconMuid"
+            AssetReference {
+              Id: 3122896575571490114
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 10542799394393330204
+        Name: "Preview"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.625
+            Y: 0.625
+            Z: 0.5
+          }
+        }
+        ParentId: 8627758616706175384
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_WallInner:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 1608526019857160819
           }
           Teams {
             IsTeamCollisionEnabled: true

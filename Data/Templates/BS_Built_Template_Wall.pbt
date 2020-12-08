@@ -69,6 +69,10 @@
             Name: "ma:Building_WallInner2:utile"
             Float: 0.613038778
           }
+          Overrides {
+            Name: "ma:Building_WallInner:utile"
+            Float: 0.613
+          }
         }
         WantsNetworking: true
         Collidable_v2 {

@@ -73,6 +73,9 @@ end
 function MeleeAttack(player, abilityInfo)
 
     local ability = abilityInfo.ability
+    if not ability:IsValid() then
+        return
+    end
 
     -- Ignore if the hitbox is overlapping with the owner
     if player == ability.owner then return end
@@ -149,11 +152,11 @@ end
 function ActionOnCloserProp()
     -- Move it to the ground
     for _,prop in ipairs(weaponHitbox:GetOverlappingObjects()) do
-        if prop and prop.parent and prop.name ~= "PlayerIsland" and prop.name ~= "Portal" and EQUIPMENT.sourceTemplateId == "F27A87BB28DA0B17" then
-            Events.BroadcastToServer("H", { id = prop.parent.id, p=Game.GetLocalPlayer().id })
+        if prop and prop:IsValid() and prop.parent and prop.parent.parent and prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "F27A87BB28DA0B17" then
+            Events.BroadcastToServer("H"..mysplit(prop.parent.id, ":")[1], { p=Game.GetLocalPlayer().id })
             return
         end
-    end
+    end        
 end
 
 -- nil OnExecute(Ability)
@@ -193,6 +196,10 @@ end
 
 -- Find all abilities with melee related custom properties
 local abilityDescendants = EQUIPMENT:FindDescendantsByType("Ability")
+while #abilityDescendants == 0 do
+    Task.Wait(0.05)
+    abilityDescendants = EQUIPMENT:FindDescendantsByType("Ability")
+end
 for _, ability in ipairs(abilityDescendants) do
     local hitBox = ability:GetCustomProperty("Hitbox")
 

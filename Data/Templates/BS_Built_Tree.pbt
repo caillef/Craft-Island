@@ -142,6 +142,13 @@
               SubObjectId: 6433574503561080262
             }
           }
+          Overrides {
+            Name: "cs:ItemUIQty"
+            Vector2 {
+              X: 2
+              Y: 3
+            }
+          }
         }
         WantsNetworking: true
         Collidable_v2 {

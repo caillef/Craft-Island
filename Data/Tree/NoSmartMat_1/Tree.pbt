@@ -11,7 +11,7 @@ Objects {
     }
     Rotation {
       Yaw: 4.82967198e-06
-      Roll: -89.9998245
+      Roll: -89.9998169
     }
     Scale {
       X: 3.80204725
@@ -79,7 +79,7 @@ Objects {
     }
     Rotation {
       Yaw: 4.82967198e-06
-      Roll: -89.9998245
+      Roll: -89.9998169
     }
     Scale {
       X: 3.80204725

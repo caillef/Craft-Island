@@ -55,20 +55,32 @@ function GetTypeFromMuid(muid, rawObjectsList)
     return nil
 end
 
+function getAlignedAngle(a)
+    a = math.floor(a)
+    if a == 0 and a == 180 and a == 90 and a == 270 then return angle end
+    while a < 0 do a = a + 360 end
+    while a > 360 do a = a - 360 end
+    if a > 80 and a < 100 then return 90 end
+    if a > 170 and a < 190 then return 180 end
+    if a > 260 and a < 280 then return 270 end
+    return 0
+end
+
 function Block_SerializeStructures(structures, slotPos, rawObjectsList)
     local pBlocks = {}
     for _,structure in pairs(structures) do
         local pos = structure:GetWorldPosition() - slotPos
-        local angle = math.ceil(structure:GetRotation().z)
+        local angle = getAlignedAngle(structure:GetRotation().z)
         local type = tostring(GetTypeFromMuid(structure.sourceTemplateId, rawObjectsList))
-        local serialized = Block_Serialize(pos, angle, type, slotPos)
         pBlocks[type] = pBlocks[type] or {}
         pBlocks[type][angle] = pBlocks[type][angle] or {}
-        table.insert(pBlocks[type][angle], Block_SerializePosition(pos - slotPos))
+        table.insert(pBlocks[type][angle], Block_SerializePosition(pos))
     end
-    local stringBlocks = ""
+    local stringBlocks = "v1*"
+    local firstType = true
     for t,angles in pairs(pBlocks) do
-        stringBlocks = stringBlocks..(#stringBlocks > 0 and "_" or "")..t.."|" 
+        stringBlocks = stringBlocks..(firstType and "" or "_")..t.."|" 
+        firstType = false
         local firstAngle = true
         for a,positions in pairs(angles) do
             stringBlocks = stringBlocks..(firstAngle and "" or "|")..a.."="
@@ -80,27 +92,31 @@ function Block_SerializeStructures(structures, slotPos, rawObjectsList)
             firstAngle = false
         end
     end
+    print(stringBlocks)
     return stringBlocks
 end
 
 
 function Block_DeserializeStructures(structures, slotPos)
     local pBlocks = {}
-    local types = mysplit(structures, "_")
-    for _,blocks in pairs(types) do
-        local angles = mysplit(blocks, "|")
-        local type = tonumber(angles[1])
-        table.remove(angles, 1)
-        for _,angle in pairs(angles) do
-            local values = mysplit(angle, "=")
-            local angle = tonumber(values[1])
-            local positions = mysplit(values[2], ";")
-            for _,pos in pairs(positions) do
-                table.insert(pBlocks, {
-                    type = type,
-                    angle = angle,
-                    pos = Block_DeserializePosition(pos) + slotPos
-                })
+    local version = mysplit(structures, "*")[1]
+    if version == "v1" then
+        local types = mysplit(mysplit(structures, "*")[2], "_")
+        for _,blocks in pairs(types) do
+            local angles = mysplit(blocks, "|")
+            local type = tonumber(angles[1])
+            table.remove(angles, 1)
+            for _,angle in pairs(angles) do
+                local values = mysplit(angle, "=")
+                local angle = tonumber(values[1])
+                local positions = mysplit(values[2], ";")
+                for _,pos in pairs(positions) do
+                    table.insert(pBlocks, {
+                        type = type,
+                        angle = angle,
+                        pos = Block_DeserializePosition(pos) + slotPos
+                    })
+                end
             end
         end
     end

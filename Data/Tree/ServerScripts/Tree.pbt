@@ -1,8 +1,8 @@
 ﻿Name: "ServerScripts"
 RootId: 11584135646992845074
 Objects {
-  Id: 7271539280238961795
-  Name: "InventoryManager"
+  Id: 4878395841234236053
+  Name: "StoryManager"
   Transform {
     Location {
     }
@@ -23,7 +23,48 @@ Objects {
   }
   Script {
     ScriptAsset {
-      Id: 5377384609381946468
+      Id: 14196624896830847953
+    }
+  }
+}
+Objects {
+  Id: 16979679800511636798
+  Name: "ServerResetPlayer"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11584135646992845074
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:SpawnManager"
+      ObjectReference {
+        SelfId: 9614478160158227700
+      }
+    }
+    Overrides {
+      Name: "cs:StoryManager"
+      ObjectReference {
+        SelfId: 4878395841234236053
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 8011119035382229952
     }
   }
 }
@@ -42,8 +83,6 @@ Objects {
     }
   }
   ParentId: 11584135646992845074
-  ChildIds: 8203611356546313821
-  ChildIds: 3255422708714188938
   UnregisteredParameters {
     Overrides {
       Name: "cs:BlockSerializer"
@@ -89,7 +128,13 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 16375166676192963401
+  ParentId: 11584135646992845074
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 14648870783588546942
@@ -99,11 +144,13 @@ Objects {
           String: "BuildingSystemList"
         }
         Overrides {
-          Name: "Scale"
+          Name: "Position"
           Vector {
-            X: 1
-            Y: 1
-            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
           }
         }
       }
@@ -114,8 +161,8 @@ Objects {
   }
 }
 Objects {
-  Id: 8203611356546313821
-  Name: "BlockSerializer"
+  Id: 7271539280238961795
+  Name: "InventoryManager"
   Transform {
     Location {
     }
@@ -127,7 +174,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 16375166676192963401
+  ParentId: 11584135646992845074
+  ChildIds: 3429400843915983097
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -136,8 +184,34 @@ Objects {
   }
   Script {
     ScriptAsset {
-      Id: 7339519165257358670
+      Id: 5377384609381946468
     }
+  }
+}
+Objects {
+  Id: 3429400843915983097
+  Name: "ItemUIList"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7271539280238961795
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "ItemUIList"
   }
 }
 Objects {
@@ -240,6 +314,33 @@ Objects {
   Script {
     ScriptAsset {
       Id: 4316728097649207683
+    }
+  }
+}
+Objects {
+  Id: 8203611356546313821
+  Name: "BlockSerializer"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11584135646992845074
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 7339519165257358670
     }
   }
 }

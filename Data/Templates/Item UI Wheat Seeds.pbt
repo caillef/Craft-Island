@@ -95,7 +95,7 @@
           }
           Image {
             Brush {
-              Id: 10397779360672475880
+              Id: 8791845092502679793
             }
             Color {
               R: 1
@@ -122,12 +122,12 @@
       }
     }
     Assets {
-      Id: 10397779360672475880
-      Name: "Fantasy Beans 002"
+      Id: 8791845092502679793
+      Name: "Fantasy Sack 013"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Food_Beans_002"
+        AssetId: "UI_Fantasy_Equip_Sack_013"
       }
     }
     PrimaryAssetId {

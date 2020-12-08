@@ -79,6 +79,135 @@ Objects {
   }
 }
 Objects {
+  Id: 4950896240189226806
+  Name: "Shift to Sprint"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6236082347439009122
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 9282214366166580901
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Shift to Sprint"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 1222384962725173322
+    }
+  }
+}
+Objects {
+  Id: 6844298216390059011
+  Name: "Outlined Nameplates"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6236082347439009122
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7985682287532708471
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Outlined Nameplates"
+        }
+        Overrides {
+          Name: "cs:ShowHealthbars"
+          Bool: false
+        }
+        Overrides {
+          Name: "cs:ShowOnTeammates"
+          Bool: true
+        }
+        Overrides {
+          Name: "cs:ShowOnSelf"
+          Bool: false
+        }
+        Overrides {
+          Name: "cs:ShowOnEnemies"
+          Bool: true
+        }
+        Overrides {
+          Name: "cs:MaxDistanceOnEnemies"
+          Float: 0
+        }
+        Overrides {
+          Name: "cs:ShowOnDeadPlayers"
+          Bool: true
+        }
+        Overrides {
+          Name: "cs:ShowNumbers"
+          Bool: false
+        }
+        Overrides {
+          Name: "cs:AnimateChanges"
+          Bool: false
+        }
+        Overrides {
+          Name: "cs:FriendlyNameColor"
+          Color {
+            R: 1
+            G: 1
+            B: 1
+            A: 1
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5233805097785708431
+    }
+  }
+}
+Objects {
   Id: 8892211675045939136
   Name: "Sky Paradise Planet"
   Transform {
@@ -113,6 +242,19 @@ Objects {
             X: 1
             Y: 1
             Z: 1
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14209278985477281716
+      value {
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: -59.7884
+            Yaw: -54.4148865
+            Roll: 14.4112749
           }
         }
       }

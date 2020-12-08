@@ -1,4 +1,5 @@
 ﻿local BUILD_MANAGER = script:GetCustomProperty("BuildingScript"):WaitForObject().context
+local INVENTORY_MANAGER = script:GetCustomProperty("InventoryManager"):WaitForObject().context
 
 local open = false
 local p = Game.GetLocalPlayer()
@@ -48,8 +49,6 @@ local m = nil
 local drag = nil
 local screen = nil
 
-local initialized = false
-
 do
 	frame.visibility = Visibility.FORCE_OFF
 	scroll.visibility = Visibility.FORCE_ON
@@ -75,7 +74,7 @@ end
 
 function GetItem(from)
 	local ch = from:GetChildren()
-	if #ch == 2 then
+	if #ch >= 2 then
 		if string.match(ch[1].name, "Item") then
 			ch = ch[1]
 		else
@@ -85,19 +84,33 @@ function GetItem(from)
 	return ch or nil
 end
 
+local lastSave = time()
 function Save()
 	if not playerStorage then return end
-	while Events.BroadcastToServer("requestInventorySaveEvent", p) ~= BroadcastEventResultCode.SUCCESS do
-		Task.Wait(0.1)
+
+	if lastSave + 1 < time() then
+		while Events.BroadcastToServer("requestInventorySaveEvent", p) ~= BroadcastEventResultCode.SUCCESS do
+			Task.Wait(0.1)
+		end
+		lastSave = time()
 	end
 end
 
-function OnLoad(item, i, isLast)
-	OnAdd(item, i)
-	if isLast then
-		initialized = true
-		Select(1)
+function OnLoad(str)
+	local items = INVENTORY_MANAGER.DeserializeInventory(str)
+	for i=1,27 do
+		for k,c in pairs(buttons[i]:GetChildren()) do
+			if k ~= 1 then -- Keep background
+				c:Destroy()
+			end
+		end
 	end
+	for key,item in pairs(items) do
+		local prop = World.SpawnAsset(item.muid, {parent = buttons[key]})
+		local qtyText = World.SpawnAsset("173D841514156696", {parent = prop})
+		qtyText.text = item.qty > 1 and tostring(item.qty) or ""
+	end
+	Select(1)
 end
 
 function Tick(_)
@@ -143,25 +156,21 @@ function Tick(_)
 		ih = n * 26 + 50
 	end
 
-	-- approach
-	-- frame.x = Approach(frame.x, open and 25 or -300, math.abs(frame.x - (open and 25 or -300))/5)
 	frame.visibility = open and Visibility.FORCE_ON or Visibility.FORCE_OFF
-	scroll.y = open and 55 or 720
+	scroll.y = open and 55 or 710
 	local c = slotText[1]:GetColor()
 	c.a = Approach(c.a, open and 1 or 0, 0.1)
 	slotText[1]:SetColor(c)
 	slotText[2]:SetColor(c)
 	local oo = open
-	-- if frame.x < -299.9 then
-	-- 	oo = false
-	-- else
-	-- 	oo = true
-	-- end
-	-- delete.x = Approach(delete.x, oo and 310 or 190, math.abs(delete.x - (oo and 310 or 190))/3)
 	c = bg:GetColor()
 	c.a = Approach(c.a, open and 0.5 or 0, 0.1)
 	bg:SetColor(c)
 	info.height = math.ceil(Approach(info.height, ih, math.abs(info.height - ih)/3))-2
+
+	if info.height == 0 then
+		info.height = math.ceil(Approach(info.height, ih, math.abs(info.height - ih)/3))-2
+	end
 end
 
 function OnHover(button)
@@ -183,54 +192,47 @@ end
 
 function OnClick(button)
 	local it = GetItem(button)
-	if it then
-		if drag == nil then
-			drag = it
-			iDrag = iList[drag.parent]
-			drag.parent = script.parent
-			button.isInteractable = false
-			if button.name == "Type1" or button.name == "Type2" then
-				drag.x = button.parent.parent.x + button.parent.parent.parent.parent.x + button.x - screen.x/2
-				drag.y = button.parent.parent.y + button.parent.parent.parent.parent.y + button.y - screen.y/2
-			else
-				drag.x = button.parent.x + button.parent.parent.parent.x + button.x - screen.x/2
-				drag.y = button.parent.y + button.parent.parent.parent.y + button.y - screen.y/2
-			end
-		end
-	elseif drag ~= nil and iList[button] ~= iDrag then
-		local pass = nil
-		if iList[button] >= 1 and iList[button] <= 9 then
-			pass = 2
-			Events.BroadcastToServer("inventoryEquipEvent", p, iList[button]-27, drag:GetCustomProperty("Equipment"))
+	if it and drag == nil then
+		drag = it
+		iDrag = iList[drag.parent]
+		drag.parent = script.parent
+		button.isInteractable = true
+		if button.name == "Type1" or button.name == "Type2" then
+			drag.x = button.parent.parent.x + button.parent.parent.parent.parent.x + button.x - screen.x/2
+			drag.y = button.parent.parent.y + button.parent.parent.parent.parent.y + button.y - screen.y/2
 		else
-			pass = 1
-			if iDrag >= 1 and iDrag <= 9 then
-				Events.BroadcastToServer("inventoryEquipEvent", p, iDrag-27, 0)
-			end
+			drag.x = button.parent.x + button.parent.parent.parent.x + button.x - screen.x/2
+			drag.y = button.parent.y + button.parent.parent.parent.y + button.y - screen.y/2
 		end
-
-		if pass == 1 or pass == 2 then
-			drag.parent = button
-			drag.x = 0
-			drag.y = 0
-
-			buttons[iDrag].isInteractable = true
-			OnMove(iDrag, iList[button])
-
-			drag = nil
-			iDrag = nil
-
-			OnHover(button)
-
-			if pass == 2 then
-				Save()
-			end
-		end
+		return
 	end
+
+	if it then
+		it.parent = buttons[iDrag]
+	end
+
+	drag.parent = button
+	drag.x = 0
+	drag.y = 0
+
+	buttons[iDrag].isInteractable = true
+	OnMove(iDrag, iList[button])
+
+	drag = nil
+	iDrag = nil
+
+	OnHover(button)
+	if iList[button] <= 9 then
+		Select(iList[button])
+	end
+	Save()
 end
 
 function OnDelete(button)
 	if drag then
+		if drag.sourceTemplateId == "1214EEEF9701EE9A" or drag.sourceTemplateId == "E2428B216BD2D34B" then
+			return
+		end
 		drag:Destroy()
 		buttons[iDrag].isInteractable = true
 		drag = nil
@@ -253,9 +255,6 @@ function OnAdd(data, ii)		-- ii - the button
 		qtyText = GetItem(buttons[ii]):FindChildByType("UIText")
 	end
 	qtyText.text = data.qty > 1 and tostring(data.qty) or ""
-	if initialized then
-		Save()
-	end
 end
 
 function OnRemove(data, ii)		-- ii - the button
@@ -301,7 +300,12 @@ function OnMove(id, dest)
 	Events.BroadcastToServer("inventoryMoveEvent", p, id, dest)
 end
 
+local debugConsole = script:GetCustomProperty("DebugConsoleClient"):WaitForObject().context
 function OnPress(_, key)
+	if debugConsole.IsCommandLineOpen() then
+		return
+	end
+
 	for i=1, 9 do
 		if key == hotbar_ability_prefix..tostring(i) then
 			Select(i)
@@ -330,7 +334,6 @@ end
 
 p.bindingPressedEvent:Connect(OnPress)
 Events.Connect("inventoryLoadEvent", OnLoad)
-Events.BroadcastToServer("inventoryReady")
 Events.Connect("inventoryFullEvent", OnFull)
 Events.Connect("requestInventoryAddEvent", OnAdd)
 Events.Connect("requestInventoryRemoveEvent", OnRemove)
@@ -341,4 +344,20 @@ for i = 1, #buttons do
 	buttons[i].clickedEvent:Connect(OnClick)
 end
 
+function OnEnteringIsland()
+	local tmp = lastSelection
+	lastSelection = nil
+	Select(tmp)
+end
+Events.Connect("EnteringIsland", OnEnteringIsland)
+
+local propCraftSlot = script:GetCustomProperty("CraftSlot"):WaitForObject()
+local propCraftSlot_0 = script:GetCustomProperty("CraftSlot_0"):WaitForObject()
+propCraftSlot.hoveredEvent:Connect(OnHover)
+propCraftSlot.unhoveredEvent:Connect(OnUnhover)
+propCraftSlot_0.hoveredEvent:Connect(OnHover)
+propCraftSlot_0.unhoveredEvent:Connect(OnUnhover)
+
 del.clickedEvent:Connect(OnDelete)
+
+Events.BroadcastToServer("inventoryReady")

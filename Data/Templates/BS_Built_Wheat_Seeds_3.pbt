@@ -20,6 +20,12 @@
         ChildIds: 13826850507210487071
         ChildIds: 8641356739255187357
         ChildIds: 14632901935882891441
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:CanGrow"
+            Bool: true
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -50,19 +56,6 @@
         }
         ParentId: 10316135122354552981
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:NextStep"
-            AssetReference {
-              Id: 932320387240414629
-            }
-          }
-          Overrides {
-            Name: "cs:GrowthRangeTime"
-            Vector2 {
-              X: 2
-              Y: 2
-            }
-          }
         }
         WantsNetworking: true
         Collidable_v2 {

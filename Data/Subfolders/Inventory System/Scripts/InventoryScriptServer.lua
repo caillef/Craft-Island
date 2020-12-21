@@ -1,6 +1,18 @@
 ﻿local data = {}
 local INVENTORY_MANAGER = script.parent:GetCustomProperty("InventoryManager"):WaitForObject().context
 
+local logs = {}
+function GetLogs()
+    return logs
+end
+
+local function AddLogEntry(entry)
+    table.insert(logs, entry)
+    while #logs > 100 do
+        table.remove(logs, 1)
+    end
+end
+
 function Update(player)
 	print(tostring(player) .. ":")
 	for i = 1, 27 do
@@ -43,9 +55,19 @@ function OnInventoryReady(player)
 	local d = Storage.GetPlayerData(player)
 	local inventory = d.inventory or ""
 	data[player] = INVENTORY_MANAGER.DeserializeInventory(inventory)
-	while Events.BroadcastToPlayer(player, "inventoryLoadEvent", INVENTORY_MANAGER.SerializeInventory(data[player])) ~= BroadcastEventResultCode.SUCCESS do
-		Task.Wait(0.25)
+	local finalInventory = INVENTORY_MANAGER.SerializeInventory(data[player])
+	local k = 1
+	AddLogEntry("final Inventory:\n"..finalInventory)
+	AddLogEntry("Start sending inventory:")
+	for i=1,#finalInventory,64 do
+		AddLogEntry(string.sub(finalInventory, i, (i + 63 < #finalInventory) and i + 63 or #finalInventory), k, (i + 63 >= #finalInventory))
+		while Events.BroadcastToPlayer(player, "inventoryPLoadEvent", string.sub(finalInventory, i, (i + 63 < #finalInventory) and i + 63 or #finalInventory), k, (i + 63 >= #finalInventory)) ~= BroadcastEventResultCode.SUCCESS do
+			Task.Wait(0.25)
+		end
+		k = k + 1
+		Task.Wait(0.2)
 	end
+	AddLogEntry("Finished sending inventory")
 	GiveMandatoryItems(player)
 	Events.Broadcast("SInventoryReady", player)
 end
@@ -54,21 +76,16 @@ function GiveMandatoryItems(player)
 	local foundAxe = false
 	local hoeFound = false
 	for _,item in pairs(data[player]) do
-		local id = item.muid
-		if id == "1214EEEF9701EE9A" then
-			foundAxe = true
-		end
-		if id == "E2428B216BD2D34B" then
-			hoeFound = true
-		end
+		if item.muid == "1214EEEF9701EE9A" then axeFound = true end
+		if item.muid == "E2428B216BD2D34B" then hoeFound = true end
 	end
 	if not foundAxe then
 		Events.Broadcast("inventoryAddEvent", player, { muid="1214EEEF9701EE9A", qty = 1 })
-		Task.Wait(0.25)
+		Task.Wait(0.2)
 	end
 	if not hoeFound then
 		Events.Broadcast("inventoryAddEvent", player, { muid="E2428B216BD2D34B", qty = 1 })
-		Task.Wait(0.25)
+		Task.Wait(0.2)
 	end
 end
 
@@ -81,6 +98,7 @@ function Delete(player, i)
 	if i >= 1 or i <= 9 then
 		EquipItem(player, i, 0)
 	end
+	Save(player)
 end
 
 function Move(player, iDrag, dest)
@@ -165,8 +183,12 @@ function FreeSlots(player, d)
 	Events.Broadcast("returnInventoryFullEvent", d.string, (ii == nil))
 end
 
+local propInventories = script:GetCustomProperty("Inventories")
+
 function OnPlayerLeft(player)
+	AddLogEntry("Player left with inventory :\n"..INVENTORY_MANAGER.SerializeInventory(data[player]))
 	playersLatestSlot[player] = nil
+	data[player] = nil
 end
 
 function GetCurrentItem(player)
@@ -194,7 +216,7 @@ function Craft(player, craftMuid)
 		end
 		PlayerRemoveItems(player, "905D3C58A6D70B6A", 1) 
 		PlayerRemoveItems(player, "7D3C73A40F261843", 2)
-		Add(player, { muid="905D3C58A6D70B6A", qty = 1 })
+		Add(player, { muid="849D4C1B02464AC5", qty = 1 })
 	end
 end
 
@@ -208,4 +230,4 @@ Events.Connect("inventoryEquipEvent", EquipItem)
 Events.Connect("requestInventoryFullEvent", FreeSlots)
 Events.Connect("inventoryCraftEvent", Craft)
 
-Events.ConnectForPlayer("inventoryReady", OnInventoryReady)
+Events.Connect("inventoryReady", OnInventoryReady)

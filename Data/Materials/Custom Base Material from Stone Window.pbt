@@ -2,7 +2,7 @@
   Id: 3114173396228208510
   Name: "Custom Base Material from Stone Window"
   PlatformAssetType: 13
-  SerializationVersion: 68
+  SerializationVersion: 70
   CustomMaterialAsset {
     BaseMaterialId: 7689949703930986740
     ParameterOverrides {

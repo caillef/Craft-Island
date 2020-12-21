@@ -1,6 +1,5 @@
 ﻿local TRIGGER = script.parent
 local INVENTORY = TRIGGER:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
-local GOLD = TRIGGER:GetCustomProperty("GoldScriptServer"):WaitForObject().context
 
 local function mysplit(inputstr, sep)
     if sep == nil then
@@ -31,7 +30,7 @@ end
 
 function OnInteract(trigger, player)
     if buy then
-        if price <= GOLD.GetGoldAmount(player) then
+        if price <= player:GetResource("Gold") then
             INVENTORY.Add(player, { muid=UIItemMuid, qty = qty })
             Events.Broadcast("SGoldAddForPlayer", player, -price)
         else

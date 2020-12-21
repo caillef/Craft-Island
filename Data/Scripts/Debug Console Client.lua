@@ -54,15 +54,20 @@ end
 
 local leftctrl = false
 local leftshift = false
+local defaultRotationmode = Game.GetLocalPlayer():GetActiveCamera().rotationMode
 function OnBindingPressed(player, binding)
     if binding == propOpenConsoleBinding then -- open console
         CMD_OPEN = not CMD_OPEN
         script:GetChildren()[1].visibility = CMD_OPEN and Visibility.FORCE_ON or Visibility.FORCE_OFF
         if CMD_OPEN then
             UI.SetCursorVisible(true)
-            -- UI.SetCanCursorInteractWithUI(true)	
+            Events.BroadcastToServer("CMDOpen")
+            defaultRotationmode = Game.GetLocalPlayer():GetActiveCamera().rotationMode
+            Game.GetLocalPlayer():GetActiveCamera().rotationMode = RotationMode.NONE
         else
             UI.SetCursorVisible(false)
+            Events.BroadcastToServer("CMDClose")
+            Game.GetLocalPlayer():GetActiveCamera().rotationMode = defaultRotationmode
         end
     end
 
@@ -88,7 +93,7 @@ function OnBindingPressed(player, binding)
             return
         end
         if b == binding then
-            if leftshift and k <= 27 then -- handle uppercase
+            if leftshift and k > 1 and k <= 27 then -- handle uppercase
                 k = k + 26
             end
             commandText.text = commandText.text..order[k] 

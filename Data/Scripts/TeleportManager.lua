@@ -28,11 +28,11 @@ destinations = {
             TeleportPlayerTo(player, "main_island")
             return nil
         end
-        return Vector3.New(slot.pos.x - 2000, slot.pos.y, slot.pos.z + 150) -- portal position
+        return Vector3.New(slot.pos.x - 1850, slot.pos.y, slot.pos.z + 150) -- portal position
     end,
     ["main_island"] = function (player)
         local pos = propMainPortal:GetWorldPosition()
-        pos.x = pos.x - 250
+        pos.x = pos.x - 300
         pos.z = pos.z + 150
         return pos
     end,

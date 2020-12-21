@@ -70,7 +70,7 @@ Objects {
     }
     Overrides {
       Name: "cs:AdminAllowlist"
-      String: "caillef"
+      String: "caillef, Bot1"
     }
     Overrides {
       Name: "cs:AZERTY"
@@ -520,7 +520,7 @@ Objects {
     Overrides {
       Name: "cs:ItemUIList"
       ObjectReference {
-        SelfId: 3429400843915983097
+        SelfId: 841534158063459245
       }
     }
   }

@@ -94,8 +94,8 @@ Objects {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
   Control {
-    Width: 120
-    Height: 120
+    Width: 80
+    Height: 80
     UIX: 18.9726295
     UIY: -15.1838989
     RenderTransformPivot {
@@ -154,8 +154,8 @@ Objects {
   Control {
     Width: 200
     Height: 60
-    UIX: 154.726288
-    UIY: -53.510376
+    UIX: 115
+    UIY: -30
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -169,7 +169,7 @@ Objects {
         B: 0.120000005
         A: 1
       }
-      Size: 40
+      Size: 30
       Justification {
         Value: "mc:etextjustify:left"
       }

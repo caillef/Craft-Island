@@ -26,7 +26,9 @@
         ChildIds: 1163230430116476713
         ChildIds: 7489816295131407519
         ChildIds: 13883474270000646830
-        ChildIds: 8627758616706175384
+        ChildIds: 14283212942037027005
+        ChildIds: 11673029233610731053
+        ChildIds: 12080428294520951774
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -1115,9 +1117,13 @@
         }
       }
       Objects {
-        Id: 8627758616706175384
-        Name: "BS_Previsu_Door"
+        Id: 14283212942037027005
+        Name: "BS_Preview_Berry_Sprout"
         Transform {
+          Location {
+          }
+          Rotation {
+          }
           Scale {
             X: 1
             Y: 1
@@ -1125,18 +1131,18 @@
           }
         }
         ParentId: 14648870783588546942
-        ChildIds: 10542799394393330204
+        ChildIds: 14211611600184276523
         UnregisteredParameters {
           Overrides {
             Name: "cs:Built"
             AssetReference {
-              Id: 6339192451924178086
+              Id: 3938934639273397405
             }
           }
           Overrides {
             Name: "cs:InventoryIconMuid"
             AssetReference {
-              Id: 3122896575571490114
+              Id: 2296331897865277471
             }
           }
         }
@@ -1151,31 +1157,70 @@
         }
       }
       Objects {
-        Id: 10542799394393330204
+        Id: 14211611600184276523
         Name: "Preview"
         Transform {
           Location {
+            X: 100
+            Y: -100
+            Z: 10
           }
           Rotation {
           }
           Scale {
-            X: 0.625
-            Y: 0.625
-            Z: 0.5
+            X: 0.2
+            Y: 0.2
+            Z: 0.2
           }
         }
-        ParentId: 8627758616706175384
+        ParentId: 14283212942037027005
         UnregisteredParameters {
           Overrides {
-            Name: "ma:Building_WallInner:id"
+            Name: "ma:Building_Ceiling:id"
             AssetReference {
               Id: 231800746144079014
             }
           }
           Overrides {
-            Name: "ma:Building_WallInner2:id"
+            Name: "ma:Building_Floor:id"
             AssetReference {
               Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_Floor:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Building_Ceiling:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Nature_Grass:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Nature_Leaves:id"
+            AssetReference {
+              Id: 11298517848542431636
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 11298517848542431636
             }
           }
         }
@@ -1187,7 +1232,261 @@
         }
         CoreMesh {
           MeshAsset {
-            Id: 1608526019857160819
+            Id: 11402866400111903615
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 11673029233610731053
+        Name: "BS_Preview_Berry_Bush_Empty"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14648870783588546942
+        ChildIds: 7008344953130480395
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 16793350129954852689
+            }
+          }
+          Overrides {
+            Name: "cs:CanBeInInventory"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 7008344953130480395
+        Name: "Preview"
+        Transform {
+          Location {
+            X: 100
+            Y: -100
+            Z: 10
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.6
+            Y: 0.6
+            Z: 0.6
+          }
+        }
+        ParentId: 11673029233610731053
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_Ceiling:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_Floor:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_Floor:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Building_Ceiling:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Nature_Grass:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Nature_Leaves:id"
+            AssetReference {
+              Id: 11298517848542431636
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 11298517848542431636
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 11402866400111903615
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 12080428294520951774
+        Name: "BS_Preview_Berry_Bush_Full"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14648870783588546942
+        ChildIds: 16728174327836557077
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 3985798457427706340
+            }
+          }
+          Overrides {
+            Name: "cs:CanBeInInventory"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 16728174327836557077
+        Name: "Preview"
+        Transform {
+          Location {
+            X: 100
+            Y: -100
+            Z: 10
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.6
+            Y: 0.6
+            Z: 0.6
+          }
+        }
+        ParentId: 12080428294520951774
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_Ceiling:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_Floor:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_Floor:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Building_Ceiling:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Nature_Grass:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Nature_Leaves:id"
+            AssetReference {
+              Id: 11298517848542431636
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 11298517848542431636
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 11402866400111903615
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1230,7 +1529,7 @@
     }
     Assets {
       Id: 3484535885344630159
-      Name: "Stairs 01 1.5m Mainstreet"
+      Name: "Main Street Stairs 01 - 1.5m"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -1255,10 +1554,19 @@
         AssetId: "sm_grass_generic_001"
       }
     }
+    Assets {
+      Id: 11402866400111903615
+      Name: "Bush 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_bush_generic_001"
+      }
+    }
     PrimaryAssetId {
       AssetType: "None"
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 70
 }

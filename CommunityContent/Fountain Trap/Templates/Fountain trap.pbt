@@ -2360,7 +2360,7 @@
     }
     Assets {
       Id: 10381661360019204038
-      Name: "Hills 01"
+      Name: "Hill 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -2423,7 +2423,7 @@
     }
     Assets {
       Id: 5489775416547967874
-      Name: "Hemisphere"
+      Name: "Sphere - Half"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -2510,6 +2510,6 @@
   Marketplace {
     Description: "a fountain filled with gold that traps and kills anyones that dares try to take the gold "
   }
-  SerializationVersion: 68
+  SerializationVersion: 70
   DirectlyPublished: true
 }

@@ -33,6 +33,9 @@ local types = {script.parent.parent.parent:GetCustomProperty("Type1"), script.pa
 buttons[28] = slots[1]
 buttons[29] = slots[2]
 
+local lastSelection
+local equippedTool
+
 do
 	fullTime = 400
 	local c = full:GetColor()
@@ -255,6 +258,10 @@ function OnAdd(data, ii)		-- ii - the button
 		qtyText = GetItem(buttons[ii]):FindChildByType("UIText")
 	end
 	qtyText.text = data.qty > 1 and tostring(data.qty) or ""
+	if ii == lastSelection then
+		lastSelection = -1
+		Select(ii)
+	end
 end
 
 function OnRemove(data, ii)		-- ii - the button
@@ -271,8 +278,6 @@ function OnRemove(data, ii)		-- ii - the button
 	Save()
 end
 
-local lastSelection
-local equippedTool
 function Select(pickedIndex)
 	if lastSelection == pickedIndex then
 		return
@@ -332,8 +337,23 @@ function OnFull()
 	full.text = fullMessage
 end
 
+local fullInventory = {}
+function OnPrepareLoad(data, i, isEnd)
+	fullInventory[i] = data
+	if isEnd then
+		local str = ""
+		for i=1,1000 do
+			if fullInventory[i] == nil then
+				OnLoad(str)
+				return
+			end
+			str = str..fullInventory[i]
+		end
+	end
+end
+
 p.bindingPressedEvent:Connect(OnPress)
-Events.Connect("inventoryLoadEvent", OnLoad)
+Events.Connect("inventoryPLoadEvent", OnPrepareLoad)
 Events.Connect("inventoryFullEvent", OnFull)
 Events.Connect("requestInventoryAddEvent", OnAdd)
 Events.Connect("requestInventoryRemoveEvent", OnRemove)
@@ -360,4 +380,4 @@ propCraftSlot_0.unhoveredEvent:Connect(OnUnhover)
 
 del.clickedEvent:Connect(OnDelete)
 
-Events.BroadcastToServer("inventoryReady")
+Events.BroadcastToServer("inventoryReady", Game.GetLocalPlayer())

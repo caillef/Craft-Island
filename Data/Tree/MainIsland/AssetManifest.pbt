@@ -26,6 +26,15 @@ Assets {
   }
 }
 Assets {
+  Id: 8556281639390552608
+  Name: "Large Round Wood Beam 8m"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_large_beam_round_6m"
+  }
+}
+Assets {
   Id: 7959943984560897135
   Name: "Rock Block 02"
   PlatformAssetType: 1
@@ -45,7 +54,7 @@ Assets {
 }
 Assets {
   Id: 6897042636459259472
-  Name: "Scifi Panel 1x3m Angled Right"
+  Name: "Sci-fi Panel 1x3m Angled Right"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"

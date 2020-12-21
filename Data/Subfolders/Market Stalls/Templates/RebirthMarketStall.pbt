@@ -1578,7 +1578,7 @@
     }
     Assets {
       Id: 6897042636459259472
-      Name: "Scifi Panel 1x3m Angled Right"
+      Name: "Sci-fi Panel 1x3m Angled Right"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -1710,6 +1710,6 @@
   Marketplace {
     Description: "Three market stalls for selling things at the market!"
   }
-  SerializationVersion: 68
+  SerializationVersion: 70
   DirectlyPublished: true
 }

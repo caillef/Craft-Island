@@ -63,7 +63,7 @@
     }
     Assets {
       Id: 3484535885344630159
-      Name: "Stairs 01 1.5m Mainstreet"
+      Name: "Main Street Stairs 01 - 1.5m"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -93,5 +93,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 70
 }

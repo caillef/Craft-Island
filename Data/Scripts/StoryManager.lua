@@ -24,7 +24,7 @@ end
 
 function OnStepCompleted(player, step)
     local storage = Storage.GetPlayerData(player) or {}
-    local story = storage.story or {}
+    local story = storage.story or { step = 1 }
     story.step = story.step + 1
     storage.story = story
     Storage.SetPlayerData(player, storage)

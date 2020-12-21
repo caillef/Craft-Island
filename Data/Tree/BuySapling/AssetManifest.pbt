@@ -45,7 +45,7 @@ Assets {
 }
 Assets {
   Id: 10381661360019204038
-  Name: "Hills 01"
+  Name: "Hill 01"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"

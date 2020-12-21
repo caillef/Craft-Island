@@ -213,7 +213,9 @@ Objects {
   ChildIds: 16240130158429218647
   ChildIds: 13392707250728637150
   ChildIds: 17522159150630198821
+  ChildIds: 13579967103648911087
   ChildIds: 5271566846307770488
+  ChildIds: 194322440282189979
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -225,15 +227,53 @@ Objects {
   }
 }
 Objects {
+  Id: 194322440282189979
+  Name: "SellBerryPie"
+  Transform {
+    Location {
+      X: -453.925781
+      Y: -435.819092
+      Z: 2284.02466
+    }
+    Rotation {
+      Yaw: -35
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4973484096715360362
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "SellBerryPie"
+  }
+  InstanceHistory {
+    SelfId: 16240130158429218647
+    SubobjectId: 8113092316498761747
+    InstanceId: 15966456142674523695
+    TemplateId: 7689519216032096316
+    WasRoot: true
+  }
+}
+Objects {
   Id: 5271566846307770488
   Name: "SellBread"
   Transform {
     Location {
-      X: -5.96585083
-      Y: -556.512939
+      X: -508.925781
+      Y: -400.819092
       Z: 2284.02466
     }
     Rotation {
+      Yaw: -35
     }
     Scale {
       X: 1
@@ -250,7 +290,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "SellBread"
+    FilePartitionName: "SellBread_1"
   }
   InstanceHistory {
     SelfId: 16240130158429218647
@@ -258,6 +298,256 @@ Objects {
     InstanceId: 15966456142674523695
     TemplateId: 7689519216032096316
     WasRoot: true
+  }
+}
+Objects {
+  Id: 13579967103648911087
+  Name: "BuySell_Wood"
+  Transform {
+    Location {
+      X: -403.925781
+      Y: -475.819092
+      Z: 2295
+    }
+    Rotation {
+      Yaw: -35
+    }
+    Scale {
+      X: 0.5
+      Y: 0.6
+      Z: 0.6
+    }
+  }
+  ParentId: 4973484096715360362
+  ChildIds: 17044052592504130232
+  ChildIds: 6700608513344214770
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:InventoryScriptServer"
+      ObjectReference {
+        SelfId: 8227678740540710611
+      }
+    }
+    Overrides {
+      Name: "cs:GoldScriptServer"
+      ObjectReference {
+        SelfId: 7046807597298804878
+      }
+    }
+    Overrides {
+      Name: "cs:ItemUI"
+      AssetReference {
+        Id: 4707371283039740838
+      }
+    }
+    Overrides {
+      Name: "cs:Price"
+      Int: 5
+    }
+    Overrides {
+      Name: "cs:Buy"
+      Bool: false
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Trigger {
+    Interactable: true
+    InteractionLabel: "Sell Wood (5g)"
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+  InstanceHistory {
+    SelfId: 13579967103648911087
+    SubobjectId: 16011687614160410098
+    InstanceId: 13472055517086043436
+    TemplateId: 7675034160880028355
+    WasRoot: true
+  }
+}
+Objects {
+  Id: 6700608513344214770
+  Name: "Group"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13579967103648911087
+  ChildIds: 9145669533399247540
+  ChildIds: 17150355236440318542
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 17150355236440318542
+  Name: "Large Round Wood Beam 8m"
+  Transform {
+    Location {
+      X: 37.677597
+      Y: 42.331356
+      Z: -16.666666
+    }
+    Rotation {
+      Yaw: -100.000031
+    }
+    Scale {
+      X: 0.16
+      Y: 0.833333313
+      Z: 0.833333313
+    }
+  }
+  ParentId: 6700608513344214770
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 12049206672583490916
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 8556281639390552608
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 17150355236440318542
+    SubobjectId: 7640432072859289763
+    InstanceId: 14307561003301865797
+    TemplateId: 5679982547435929442
+  }
+}
+Objects {
+  Id: 9145669533399247540
+  Name: "Large Round Wood Beam 8m"
+  Transform {
+    Location {
+      X: -48.3418694
+      Y: 43.0040665
+      Z: -16.666666
+    }
+    Rotation {
+      Pitch: 24.8982792
+      Yaw: -49.4860229
+      Roll: 2.32729053
+    }
+    Scale {
+      X: 0.16
+      Y: 0.833333313
+      Z: 0.833333313
+    }
+  }
+  ParentId: 6700608513344214770
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 12049206672583490916
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 8556281639390552608
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 17150355236440318542
+    SubobjectId: 7640432072859289763
+    InstanceId: 14307561003301865797
+    TemplateId: 5679982547435929442
+  }
+}
+Objects {
+  Id: 17044052592504130232
+  Name: "BuySellScript"
+  Transform {
+    Location {
+      X: -242.123932
+      Y: -1334.96
+      Z: -1242.10522
+    }
+    Rotation {
+      Yaw: 24.999979
+    }
+    Scale {
+      X: 0.476190448
+      Y: 1
+      Z: 0.526315749
+    }
+  }
+  ParentId: 13579967103648911087
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 25654430572870202
+    }
+  }
+  InstanceHistory {
+    SelfId: 17044052592504130232
+    SubobjectId: 10289017242712445349
+    InstanceId: 13472055517086043436
+    TemplateId: 7675034160880028355
   }
 }
 Objects {
@@ -282,7 +572,7 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: -193.823822
+            X: -158.925781
             Y: -552.090454
             Z: 2284.02466
           }
@@ -301,6 +591,13 @@ Objects {
           Name: "InteractionLabel"
           String: "Buy Wheat Seed (20g)"
         }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 1.10900879
+            Z: 12.7775879
+          }
+        }
       }
     }
     TemplateAsset {
@@ -313,8 +610,8 @@ Objects {
   Name: "BuySapling"
   Transform {
     Location {
-      X: -135.555847
-      Y: -557.096802
+      X: -68.9257813
+      Y: -550.819092
       Z: 2284.02466
     }
     Rotation {
@@ -350,11 +647,12 @@ Objects {
   Name: "SellWheat"
   Transform {
     Location {
-      X: -62.2100525
-      Y: -556.512939
+      X: -563.925781
+      Y: -360.819092
       Z: 2284.02466
     }
     Rotation {
+      Yaw: -35
     }
     Scale {
       X: 1
@@ -379,60 +677,6 @@ Objects {
     InstanceId: 15966456142674523695
     TemplateId: 7689519216032096316
     WasRoot: true
-  }
-}
-Objects {
-  Id: 13472055517086043436
-  Name: "BuySellTrigger"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 14592900131835349158
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 16011687614160410098
-      value {
-        Overrides {
-          Name: "Name"
-          String: "BuySell_Wood"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 700
-            Y: 298.333313
-            Z: 2360
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: -30
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 3.61050797
-            Y: 1.35096061
-            Z: 1.9000001
-          }
-        }
-        Overrides {
-          Name: "cs:GoldScriptServer"
-          ObjectReference {
-            SelfId: 7046807597298804878
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 7675034160880028355
-    }
   }
 }
 Objects {
@@ -613,7 +857,6 @@ Objects {
   ChildIds: 7344004251403687249
   ChildIds: 10823702294326650174
   ChildIds: 994771205818350820
-  ChildIds: 10012721390852037283
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -628,109 +871,6 @@ Objects {
     SubobjectId: 8112575672182076310
     InstanceId: 4228625512046108575
     TemplateId: 9907846851988540438
-  }
-}
-Objects {
-  Id: 10012721390852037283
-  Name: "Rock Block 02"
-  Transform {
-    Location {
-      X: 12.5449142
-      Y: -33.0297241
-      Z: 46.0256348
-    }
-    Rotation {
-      Yaw: -0.24395752
-    }
-    Scale {
-      X: 0.43454358
-      Y: 0.0448170677
-      Z: 0.234311834
-    }
-  }
-  ParentId: 15660071300034666301
-  ChildIds: 9592615243992313646
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 128608786371127728
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 7959943984560897135
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    EnableCameraCollision: true
-    StaticMesh {
-      Physics {
-      }
-    }
-  }
-  InstanceHistory {
-    SelfId: 13382096856896001143
-    SubobjectId: 297059109239737352
-    InstanceId: 4228625512046108575
-    TemplateId: 9907846851988540438
-  }
-}
-Objects {
-  Id: 9592615243992313646
-  Name: "World Text"
-  Transform {
-    Location {
-      X: -156.058838
-      Y: 172.4104
-      Z: 8.02612209
-    }
-    Rotation {
-      Yaw: 90
-    }
-    Scale {
-      X: 3
-      Y: 8
-      Z: 2
-    }
-  }
-  ParentId: 10012721390852037283
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  Text {
-    Text: "More coming, come back in few days"
-    Color {
-      R: 1
-      G: 1
-      B: 1
-      A: 1
-    }
-    HorizontalSize: 1
-    VerticalSize: 1
-    HorizontalAlignment {
-      Value: "mc:ecoretexthorizontalalign:left"
-    }
-    VerticalAlignment {
-      Value: "mc:ecoretextverticalalign:center"
-    }
-    IsLit: true
   }
 }
 Objects {

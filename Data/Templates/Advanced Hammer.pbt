@@ -1002,5 +1002,5 @@
       AssetId: "Advanced_Hammer"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 70
 }

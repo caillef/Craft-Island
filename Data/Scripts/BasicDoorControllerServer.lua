@@ -135,14 +135,11 @@ function OnInteracted(trigger, player)
 
 	playerLastUseTimes[player] = time()
 
-	print(GetDoorRotation())
 	if GetDoorRotation() == 0.0 then								-- Door is closed
-		print("plop")
 		OpenDoor(player)
 
 		TRIGGER.interactionLabel = CLOSE_LABEL
 	else															-- Door is open or moving, clsoe it
-		print("plap")
 		CloseDoor()
 	end
 end

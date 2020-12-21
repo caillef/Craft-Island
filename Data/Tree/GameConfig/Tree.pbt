@@ -75,50 +75,10 @@ Objects {
           Value: "mc:ecorehorizontalalign:center"
         }
       }
-    }
-  }
-}
-Objects {
-  Id: 4950896240189226806
-  Name: "Shift to Sprint"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 6236082347439009122
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 9282214366166580901
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Shift to Sprint"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
+      PhysicsSettings {
+        MinContactOffset: 2
+        MaxContactOffset: 8
       }
-    }
-    TemplateAsset {
-      Id: 1222384962725173322
     }
   }
 }

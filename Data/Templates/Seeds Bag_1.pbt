@@ -39,5 +39,5 @@
     OwnerName: "caillef"
     Description: "A seed bag for your market !"
   }
-  SerializationVersion: 68
+  SerializationVersion: 70
 }

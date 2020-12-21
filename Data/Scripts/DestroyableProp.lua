@@ -31,12 +31,12 @@ function OnHit(data)
                     player = p
                 end
             end
-            if not player then
-                print("Player not found")
+            if not player or not player:IsValid() then
+                print("Error: player not found")
                 return
             end
             Events.Broadcast("requestInventoryFullEvent", player, { muid=icon, string=listenID })
-            if icon2 then
+            if icon2 and (not data.harvest or icon2 == "A19DF3F7881592F3:Item UI Wheat Seeds") then
                 Events.Broadcast("requestInventoryFullEvent", player, { muid=icon2, string=listenID2 })
             end
         end
@@ -60,17 +60,22 @@ function OnHit(data)
                 end)
             end
         end)
-        BUILD_SYSTEM.RemoveStructure(prop)
+        BUILD_SYSTEM.RemoveStructure(prop, player)
+
+        -- Check if not an harvest trigger
         if not data.harvest then
             return
         end
 
-        local SOIL_TYPE = 4
         for _,p in pairs(Game.GetPlayers()) do
             if p.id == data.p then
-                BUILD_SYSTEM.PlaceObject(p, data.pos, data.angle, SOIL_TYPE)
+                if icon2 == "1FDE35B1D2A8901F:Item UI Berry Sprout" then
+                    BUILD_SYSTEM.PlaceObject(player, data.pos, data.angle, 12) -- Place Bush
+                else
+                    BUILD_SYSTEM.PlaceObject(player, data.pos, data.angle, 4)
+                end
             end
-        end   
+        end
     end
 end
 

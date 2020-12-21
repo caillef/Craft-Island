@@ -288,7 +288,7 @@ Assets {
 }
 Assets {
   Id: 10381661360019204038
-  Name: "Hills 01"
+  Name: "Hill 01"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
@@ -500,15 +500,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_cylinder_002"
-  }
-}
-Assets {
-  Id: 1104198953447072835
-  Name: "Object Domestic Doors & Creaks Set 01 SFX"
-  PlatformAssetType: 10
-  PrimaryAsset {
-    AssetType: "AudioBlueprintAssetRef"
-    AssetId: "sfxabp_object_domestic_door_ref"
   }
 }
 Assets {

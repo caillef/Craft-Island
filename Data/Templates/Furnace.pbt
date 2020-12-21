@@ -1410,7 +1410,7 @@
     }
     Assets {
       Id: 7182657614414770454
-      Name: "Decal Burnt Streak 01"
+      Name: "Decal Burnt Streaks 01"
       PlatformAssetType: 14
       PrimaryAsset {
         AssetType: "DecalBlueprintAssetRef"
@@ -1440,5 +1440,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 70
 }

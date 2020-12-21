@@ -3,6 +3,7 @@
 ]]
 
 local player = Game.GetLocalPlayer();
+local debugConsole = script:GetCustomProperty("DebugConsoleClient"):WaitForObject().context
 
 local SHIFT_ABILITY = "ability_feet"
 local CROUCH_ABILITY = "ability_extra_41";
@@ -33,6 +34,9 @@ local function InputEnded(playerObject, event)
 end
 
 function Tick()
+	if debugConsole.IsCommandLineOpen() then
+		return
+	end
 	isCrouching = player.isCrouching
 	local didChange = false
 	local newStates = {

@@ -1,36 +1,6 @@
 ﻿Name: "Cabane \303\240 bois"
 RootId: 12867865519974131295
 Objects {
-  Id: 12721016846082646492
-  Name: "Sell wood"
-  Transform {
-    Location {
-      X: 178.415894
-      Y: 563.707275
-      Z: 160.810547
-    }
-    Rotation {
-      Yaw: -155.000015
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 12867865519974131295
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Sell wood"
-  }
-}
-Objects {
   Id: 5503792277618219021
   Name: "Clou"
   Transform {
@@ -64,54 +34,6 @@ Objects {
   InstanceHistory {
     SelfId: 10772545472914607366
     SubobjectId: 11583227260288902489
-    InstanceId: 11958579143685187290
-    TemplateId: 5679982547435929442
-  }
-}
-Objects {
-  Id: 17939077439689744077
-  Name: "Wood 2x4 4m"
-  Transform {
-    Location {
-      X: 86.8563232
-      Y: 559.089417
-      Z: 165
-    }
-    Rotation {
-      Pitch: -5.92330933
-      Yaw: 1.55063188
-      Roll: 89.3959656
-    }
-    Scale {
-      X: 0.7
-      Y: 1.99999976
-      Z: 0.5
-    }
-  }
-  ParentId: 12867865519974131295
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 6431914814887282358
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    EnableCameraCollision: true
-    StaticMesh {
-      Physics {
-      }
-    }
-  }
-  InstanceHistory {
-    SelfId: 18443366496359282244
-    SubobjectId: 14570313329921793563
     InstanceId: 11958579143685187290
     TemplateId: 5679982547435929442
   }

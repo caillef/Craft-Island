@@ -92,7 +92,6 @@ function Block_SerializeStructures(structures, slotPos, rawObjectsList)
             firstAngle = false
         end
     end
-    print(stringBlocks)
     return stringBlocks
 end
 
@@ -100,7 +99,7 @@ end
 function Block_DeserializeStructures(structures, slotPos)
     local pBlocks = {}
     local version = mysplit(structures, "*")[1]
-    if version == "v1" then
+    if version == "v1" and mysplit(structures, "*")[2] then
         local types = mysplit(mysplit(structures, "*")[2], "_")
         for _,blocks in pairs(types) do
             local angles = mysplit(blocks, "|")

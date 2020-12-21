@@ -135,7 +135,7 @@ function Grow(objReplaced, muid, player)
                 local player = obj.player
                 local parent = objReplaced.parent
                 local rotation = objReplaced:GetRotation()
-                RemoveStructure(objReplaced)
+                RemoveStructure(objReplaced, player)
                 local newType = GetTypeFromMuid(mysplit(muid, ":")[1])
                 local obj = World.SpawnAsset(muid, { parent=parent , position = pos, rotation = rotation })
                 AssignPlayerToObject(obj, player)
@@ -189,7 +189,7 @@ function PlaceObject(player, position, angle, type)
             print("Error: need block at that position to place this structure")
             return
         end
-        RemoveStructure(block.obj)        
+        RemoveStructure(block.obj, player)        
     end
 
     AddLogEntry("PLACE "..tostring(position))
@@ -236,7 +236,7 @@ function LoadPreviousBlocks(player)
     playersSpawns[player].isLoading = false
 end
 
-function RemoveStructure(obj)
+function RemoveStructure(obj, player)
     if not obj or not obj:IsValid() then
         print("Warning: Tried to removed nil object")
         return
@@ -250,7 +250,7 @@ function RemoveStructure(obj)
         return false
     end
     local pos = obj:GetPosition()
-    local placedTypedObjects = placedObjects[type]
+    local placedTypedObjects = placedObjects[player] and placedObjects[player][type] or nil
     local angle = getAlignedAngle(obj:GetRotation().z)
     if placedTypedObjects and placedTypedObjects[pos.z] and placedTypedObjects[pos.z][pos.y] and placedTypedObjects[pos.z][pos.y][pos.x] then
         placedTypedObjects[pos.z][pos.y][pos.x][angle] = nil

@@ -1,14 +1,19 @@
 ﻿local TextGoldAmount = script:GetCustomProperty("TextGoldAmount"):WaitForObject()
 local SFXCoin = script:GetCustomProperty("SFXCoin"):WaitForObject()
 
+local player = Game.GetLocalPlayer()
 local oldAmount = -1
 
-function OnGoldAdd(totalAmount)
+function OnResourceChanged(player, resourceId, totalAmount, nosound)
+    if resourceId ~= "Gold" then
+        return
+    end
     TextGoldAmount.text = tostring(totalAmount).." gold"..(totalAmount > 0 and "s" or "")
-    if oldAmount ~= -1 then
+    if oldAmount ~= -1 and nosound == nil then
         SFXCoin:Play()
     end
     oldAmount = totalAmount
 end
 
-Events.Connect("CGoldAmount", OnGoldAdd)
+OnResourceChanged(player, "Gold", player:GetResource("Gold"), true)
+player.resourceChangedEvent:Connect(OnResourceChanged)

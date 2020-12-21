@@ -391,7 +391,7 @@
     }
     Assets {
       Id: 3484535885344630159
-      Name: "Stairs 01 1.5m Mainstreet"
+      Name: "Main Street Stairs 01 - 1.5m"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -424,6 +424,6 @@
   Marketplace {
     Description: "Here is a simple building system you can add to your game.\r\n\r\nPlace the BuildingSystemServer at the root and the BuildingSystem in the Client Context of the Third person Camera Settings\r\n\r\nIf the Event Log shows this, then it should work ! :)\r\nBuilding Mode Activated for the server (need the same message for players)\r\nBuilding Mode Activated for players (need the same message for the server)\r\n\r\nToggle Building Mode : V\r\nRemove latest structure : X\r\nPlace structure : Left Click\r\nChange structure : Right Click"
   }
-  SerializationVersion: 68
+  SerializationVersion: 70
   DirectlyPublished: true
 }

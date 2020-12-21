@@ -1,0 +1,67 @@
+﻿MetaVersion: 1
+MarketplaceDetails {
+  Id: "12d053c4025f401e9762fc4e8e51b8c8"
+  OwnerAccountId: "385b45d7abdb499f8664c6cb01df521b"
+  OwnerName: "estlogic"
+  Version: "1.2.0"
+}
+AssetIdsOriginalToNew {
+  key: 515687543445012419
+  value: 2187887254043281636
+}
+AssetIdsOriginalToNew {
+  key: 2054086204383672472
+  value: 7214949473226686312
+}
+AssetIdsOriginalToNew {
+  key: 3199607135665972834
+  value: 3157754863548068219
+}
+AssetIdsOriginalToNew {
+  key: 4579719421959127402
+  value: 17627398256281539539
+}
+AssetIdsOriginalToNew {
+  key: 5998215477263219124
+  value: 14518979090232989555
+}
+AssetIdsOriginalToNew {
+  key: 8824982841985463434
+  value: 7640115286132650613
+}
+AssetIdsOriginalToNew {
+  key: 9041589628443109428
+  value: 10517860121438018494
+}
+AssetIdsOriginalToNew {
+  key: 11982849956959882482
+  value: 17567933550999503251
+}
+AssetIdsOriginalToNew {
+  key: 12334356982725789238
+  value: 14962061343859337142
+}
+AssetIdsOriginalToNew {
+  key: 12810934182304570975
+  value: 3268483955145622234
+}
+AssetIdsOriginalToNew {
+  key: 14161612878423237238
+  value: 2694333720852372307
+}
+AssetIdsOriginalToNew {
+  key: 14302769499764656452
+  value: 6121557703042100776
+}
+AssetIdsOriginalToNew {
+  key: 15500261471753196040
+  value: 1539284813471879684
+}
+AssetIdsOriginalToNew {
+  key: 16875936486476548128
+  value: 11197482665553418955
+}
+AssetIdsOriginalToNew {
+  key: 18057033048862026403
+  value: 6946644601646526206
+}

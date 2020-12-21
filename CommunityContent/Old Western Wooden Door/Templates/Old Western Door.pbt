@@ -4195,7 +4195,7 @@
     }
     Assets {
       Id: 17609149353171719671
-      Name: "Cube - bottom aligned"
+      Name: "Cube - Bottom-Aligned"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -4222,7 +4222,7 @@
     }
     Assets {
       Id: 9826710443425479508
-      Name: "Modern Weapon - Bullet 01"
+      Name: "Modern Weapon Ammo - Bullet 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -4282,6 +4282,6 @@
   Marketplace {
     Description: "An old western style door with open action and sound. \r\n\r\nThis is being built as part of a larger western themed set."
   }
-  SerializationVersion: 68
+  SerializationVersion: 70
   DirectlyPublished: true
 }

@@ -5,7 +5,6 @@ end
 
 local owner
 function SetOwner(player)
-    print("Assigned")
     owner = player
 end
 
@@ -22,7 +21,6 @@ function GetCurrentTime()
 end
 
 function SpawnNextStep()
-    print(owner)
     World.GetRootObject():FindChildByName("ServerScripts"):FindChildByName("BuildingSystemServer").context.Grow(script.parent, growthConfig[3], owner)
 end
 

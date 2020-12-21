@@ -18,7 +18,6 @@
         ParentId: 4781671109827199097
         ChildIds: 4813073363581552885
         ChildIds: 5896133364563410225
-        ChildIds: 2932737541297555556
         ChildIds: 6998728798523184009
         ChildIds: 7110382710950486777
         ChildIds: 140246433562139481
@@ -160,72 +159,6 @@
           StaticMesh {
             Physics {
             }
-          }
-        }
-      }
-      Objects {
-        Id: 2932737541297555556
-        Name: "Trigger"
-        Transform {
-          Location {
-            Z: 2.95288086
-          }
-          Rotation {
-            Yaw: 16.4680767
-          }
-          Scale {
-            X: 0.538888812
-            Y: 0.173321798
-            Z: 0.0761426166
-          }
-        }
-        ParentId: 9666247988426381062
-        ChildIds: 8813381182480125344
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Trigger {
-          Interactable: true
-          InteractionLabel: "Berry Pie"
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
-          }
-        }
-      }
-      Objects {
-        Id: 8813381182480125344
-        Name: "PickupScript"
-        Transform {
-          Location {
-            Z: -38.7809219
-          }
-          Rotation {
-          }
-          Scale {
-            X: 2.79298711
-            Y: 5.76962328
-            Z: 13.1332493
-          }
-        }
-        ParentId: 2932737541297555556
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 2508697093164236903
           }
         }
       }
@@ -746,7 +679,7 @@
     }
     Assets {
       Id: 5489775416547967874
-      Name: "Hemisphere"
+      Name: "Sphere - Half"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -776,5 +709,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 70
 }

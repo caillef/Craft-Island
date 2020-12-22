@@ -954,7 +954,6 @@ Objects {
   ParentId: 11080239722782239409
   ChildIds: 5557391771083392975
   ChildIds: 4246684525227911393
-  ChildIds: 6549757375627751382
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -962,10 +961,9 @@ Objects {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
   Control {
-    Width: 1161
-    Height: 118
-    UIX: -30
-    UIY: 30
+    Width: 800
+    Height: 40
+    UIY: 410
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -973,67 +971,6 @@ Objects {
     }
     AddSizeToParentIfUsingParentSize: true
     Panel {
-    }
-    AnchorLayout {
-      SelfAnchor {
-        Anchor {
-          Value: "mc:euianchor:topright"
-        }
-      }
-      TargetAnchor {
-        Anchor {
-          Value: "mc:euianchor:topright"
-        }
-      }
-    }
-  }
-}
-Objects {
-  Id: 6549757375627751382
-  Name: "Discord"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4358136732987562278
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  Control {
-    Width: 831
-    Height: 60
-    UIX: -10
-    UIY: 57.4388885
-    RenderTransformPivot {
-      Anchor {
-        Value: "mc:euianchor:middlecenter"
-      }
-    }
-    UseParentWidth: true
-    UseParentHeight: true
-    Text {
-      Label: "Join the Discord (gifts, updates, feedback): bit.ly/core-craft-island"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-      Size: 24
-      Justification {
-        Value: "mc:etextjustify:right"
-      }
-      AutoWrapText: true
     }
     AnchorLayout {
       SelfAnchor {
@@ -1071,9 +1008,9 @@ Objects {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
   Control {
-    Width: 831
+    Width: 1240
     Height: 110
-    UIX: -10
+    UIX: 10
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -1089,9 +1026,9 @@ Objects {
         B: 1
         A: 1
       }
-      Size: 30
+      Size: 20
       Justification {
-        Value: "mc:etextjustify:right"
+        Value: "mc:etextjustify:center"
       }
       AutoWrapText: true
     }

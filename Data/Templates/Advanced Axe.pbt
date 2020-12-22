@@ -504,6 +504,12 @@
         }
         ParentId: 14062581388527037373
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:BuildingManager"
+            ObjectReference {
+              SelfId: 15493299283785528625
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"

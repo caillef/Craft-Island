@@ -68,24 +68,38 @@ function OnInventoryReady(player)
 		Task.Wait(0.2)
 	end
 	AddLogEntry("Finished sending inventory")
-	GiveMandatoryItems(player)
 	Events.Broadcast("SInventoryReady", player)
+	GiveMandatoryItems(player)
 end
 
 function GiveMandatoryItems(player)
-	local foundAxe = false
+	local axeFound = false
 	local hoeFound = false
+	Task.Wait(1)
 	for _,item in pairs(data[player]) do
 		if item.muid == "1214EEEF9701EE9A" then axeFound = true end
 		if item.muid == "E2428B216BD2D34B" then hoeFound = true end
 	end
-	if not foundAxe then
+	if not axeFound then
+		print("bah")
 		Events.Broadcast("inventoryAddEvent", player, { muid="1214EEEF9701EE9A", qty = 1 })
 		Task.Wait(0.2)
+	else
+		for _,item in pairs(data[player]) do
+			if item.muid == "1214EEEF9701EE9A" and item.qty > 1 then
+				PlayerRemoveItems(player, item.muid, item.qty - 1)
+			end
+		end			
 	end
 	if not hoeFound then
 		Events.Broadcast("inventoryAddEvent", player, { muid="E2428B216BD2D34B", qty = 1 })
 		Task.Wait(0.2)
+	else
+		for _,item in pairs(data[player]) do
+			if item.muid == "E2428B216BD2D34B" and item.qty > 1 then
+				PlayerRemoveItems(player, item.muid, item.qty - 1)
+			end
+		end			
 	end
 end
 

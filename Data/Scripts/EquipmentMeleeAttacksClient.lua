@@ -150,13 +150,12 @@ local function mysplit(inputstr, sep)
 end
 
 function ActionOnCloserProp()
-    -- Move it to the ground
     for _,prop in ipairs(weaponHitbox:GetOverlappingObjects()) do
         if prop and prop:IsValid() and prop.parent and prop.parent.parent and prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "F27A87BB28DA0B17" then
             Events.BroadcastToServer("H"..mysplit(prop.parent.id, ":")[1], { p=Game.GetLocalPlayer().id })
             return
         end
-    end        
+    end
 end
 
 -- nil OnExecute(Ability)
@@ -166,8 +165,11 @@ function OnExecute(ability)
         if abilityInfo.ability == ability then
             abilityInfo.canAttack = true
             abilityInfo.ignoreList = {}
-            ActionOnCloserProp()
+            if Game.GetLocalPlayer() == ability.owner then
+                ActionOnCloserProp()
+            end
             SpawnSwingEffect(abilityInfo)
+            return
         end
     end
 end

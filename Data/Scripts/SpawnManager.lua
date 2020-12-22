@@ -43,15 +43,24 @@ local function AssignNextSlot(player)
     return nil
 end
 
+permissions = {}
+
 function OnPlayerJoined(player)
     local slot = AssignNextSlot(player)
     local buildingZone = slot.island:FindChildByName("BuildingZone")
     buildingZone.beginOverlapEvent:Connect(function(trigger, other)
         if not other:IsA("Player") then return end
-        Events.BroadcastToPlayer(player, "OnBuildPermission", true)
+        if player == other then
+            permissions[other.id] = true
+            Events.BroadcastToPlayer(player, "OnBuildPermission", true)
+        else
+            permissions[other.id] = false
+            Events.BroadcastToPlayer(player, "OnBuildPermission", false)
+        end
     end)
     buildingZone.endOverlapEvent:Connect(function(trigger, other)
-        if not other:IsA("Player") then return end 
+        if not other:IsA("Player") then return end
+        permissions[other.id] = false
         Events.BroadcastToPlayer(player, "OnBuildPermission", false)
     end)
     BUILDING_SYSTEM.LoadIsland(slot)
@@ -66,14 +75,12 @@ function OnPlayerLeft(player)
 end
 
 function GetSpawnSlotForPlayer(player)
-    if not player:IsValid() then
-        return nil
-    end
     for _,s in pairs(playerSlots) do
-        if s.player and s.player:IsValid() and s.player.id == player.id then
+        if s.player and s.player:IsValid() and (s.player.name == player or (player.IsA and player:IsValid() and s.player.id == player.id)) then
             return s
         end
     end
+    print("No slot")
     return nil
 end
 

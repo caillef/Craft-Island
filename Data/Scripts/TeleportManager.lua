@@ -39,3 +39,38 @@ destinations = {
 }
 
 Events.ConnectForPlayer("TP", TeleportPlayerTo)
+
+local teleportAllowLists = {}
+Events.ConnectForPlayer("AuthTP", function(player, other)
+    if other == player.name then return end
+    teleportAllowLists[player.name] = teleportAllowLists[player.name] or {}
+    table.insert(teleportAllowLists[player.name], other)
+end)
+
+Events.ConnectForPlayer("ReqTP", function(player, other)
+    if other == nil or teleportAllowLists[other] == nil then return end
+    for _,p in pairs(teleportAllowLists[other]) do
+        if p == player.name then
+            local slot = SPAWN_MANAGER.GetSpawnSlotForPlayer(other)
+            if slot then
+                Teleport(player, Vector3.New(slot.pos.x - 1850, slot.pos.y, slot.pos.z + 150))
+                return nil
+            end
+        end
+    end
+    print("Not allowed")
+    -- Not allowed
+    return
+end)
+
+Game.playerLeftEvent:Connect(function(player)
+    for n,list in pairs(teleportAllowLists) do
+        for k,p in pairs(list) do
+            if p.name == player then
+                print("Removed player from allow list")
+                table.remove(teleportAllowLists[n], k)
+            end
+        end
+    end
+    teleportAllowLists[player] = nil
+end)

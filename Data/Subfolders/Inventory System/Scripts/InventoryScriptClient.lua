@@ -272,7 +272,7 @@ function OnRemove(data, ii)		-- ii - the button
 			GetItem(buttons[ii]):Destroy()
 			BUILD_MANAGER.SelectStructure(nil)
 		else
-			qtyText.text = tostring(data.qty)
+			qtyText.text = (data.qty == 1 and "" or tostring(data.qty))
 		end
 	end
 	Save()

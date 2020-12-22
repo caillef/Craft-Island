@@ -1,4 +1,22 @@
 ﻿Assets {
+  Id: 18370698694560200060
+  Name: "Icon Profile"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_Profile"
+  }
+}
+Assets {
+  Id: 18297785512486858349
+  Name: "Frame Highlighted 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameHighlighted_020"
+  }
+}
+Assets {
   Id: 17998453660103204987
   Name: "UI Glassy Plucks Error Denied Lock 01 SFX"
   PlatformAssetType: 7
@@ -44,12 +62,48 @@ Assets {
   }
 }
 Assets {
+  Id: 11714938519782535889
+  Name: "BG Gradient 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundFlat_019"
+  }
+}
+Assets {
+  Id: 5774908345152965978
+  Name: "Frame Outlined Thick 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameFlat_020"
+  }
+}
+Assets {
   Id: 4763468874179608279
   Name: "Frame Outlined 002"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameSolid4px_019"
+  }
+}
+Assets {
+  Id: 2203390054718287944
+  Name: "BG Gradient 006"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundFlat_015"
+  }
+}
+Assets {
+  Id: 2031285520022528877
+  Name: "BG Highlighted 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundHighlighted_020"
   }
 }
 Assets {

@@ -116,6 +116,42 @@ commands["bring"] = {
     end
 }
 
+commands["tp"] = {
+    desc="Teleport to a player (tp PLAYER_NAME)",
+    func= function(admin, args)
+        for _,p in pairs(Game.GetPlayers()) do
+            if p.name == args[1] then
+                admin:SetWorldPosition(p:GetWorldPosition())
+                return "Player "..args[1].." teleported."
+            end
+        end
+        return "Error: player "..args[1].." not found."
+    end
+}
+
+commands["gold"] = {
+    desc="Give gold to a player (gold add/remove AMOUNT [PLAYER_NAME])",
+    func= function(admin, args)
+        if #args == 2 then
+            admin:AddResource("Gold", (args[1] == "add" and 1 or -1) * tonumber(args[2]))
+            if admin:GetResource("Gold") < 0 then
+                admin:SetResource("Gold", 0)
+            end
+            return (args[1] == "add" and "Added " or "Removed ")..args[2].. " golds to player "..admin.name
+        end
+        for _,p in pairs(Game.GetPlayers()) do
+            if p.name == args[3] then
+                p:AddResource("Gold", (args[1] == "add" and 1 or -1) * tonumber(args[2]))
+                if p:GetResource("Gold") < 0 then
+                    p:SetResource("Gold", 0)
+                end
+                return (args[1] == "add" and "Added " or "Removed ")..args[2].. " golds to player "..p.name
+            end
+        end
+        return "Error: player "..args[3].." not found."
+    end
+}
+
 commands["kill"] = {
     desc="Kill player (kill PLAYER_NAME)",
     func= function(admin, args)

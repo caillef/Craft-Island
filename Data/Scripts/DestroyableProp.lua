@@ -7,6 +7,7 @@ local propItemUIQty = script:GetCustomProperty("ItemUIQty") or Vector2.New(1, 1)
 local propItemUI2Qty = script:GetCustomProperty("ItemUI2Qty") or Vector2.New(1, 1)
 
 local BUILD_SYSTEM = World.GetRootObject():FindChildByName("ServerScripts"):FindDescendantByName("BuildingSystemServer").context
+local SPAWN_MANAGER = World.GetRootObject():FindChildByName("ServerScripts"):FindDescendantByName("SpawnManager").context
 
 local prop = script.parent
 local eventListenerOnHit
@@ -18,7 +19,13 @@ local listenID2 = "pickup" .. math.random()*30
 local player = nil
 
 function OnHit(data)
-    if not script:IsValid() then
+    if not script:IsValid() then return end
+    for _,p in pairs(Game.GetPlayers()) do
+        if p.id == data.p then
+            player = p
+        end
+    end
+    if not player or not SPAWN_MANAGER.permissions[player.id] then
         return
     end
     HP = HP - 1
@@ -26,11 +33,6 @@ function OnHit(data)
     if HP <= 0 then
         if icon and not picked then
             picked = true
-            for _,p in pairs(Game.GetPlayers()) do
-                if p.id == data.p then
-                    player = p
-                end
-            end
             if not player or not player:IsValid() then
                 print("Error: player not found")
                 return

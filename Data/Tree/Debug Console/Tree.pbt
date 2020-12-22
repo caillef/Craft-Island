@@ -70,7 +70,7 @@ Objects {
     }
     Overrides {
       Name: "cs:AdminAllowlist"
-      String: "caillef, Bot1"
+      String: "caillef,Bot1"
     }
     Overrides {
       Name: "cs:AZERTY"

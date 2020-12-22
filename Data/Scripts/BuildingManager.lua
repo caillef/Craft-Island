@@ -5,7 +5,7 @@ local ACTION_PLACE = "ability_primary" -- left click
 
 local player = Game.GetLocalPlayer()
 local BUILDMODE_ACTIVATED = false
-local canBuild = false
+canBuild = false
 
 local ISLAND_RADIUS = 10000
 

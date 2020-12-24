@@ -1,13 +1,13 @@
 ﻿Assets {
-  Id: 17600278440057254884
-  Name: "BS_Built_Template_Floor"
+  Id: 15889321362244336609
+  Name: "BS_Built_Window_Small"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 6572963010803079035
+      RootId: 2391212272018020454
       Objects {
-        Id: 6572963010803079035
-        Name: "BS_Built_Template_Floor"
+        Id: 2391212272018020454
+        Name: "BS_Built_Window_Small"
         Transform {
           Scale {
             X: 1
@@ -16,8 +16,8 @@
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 12148022589111738362
-        ChildIds: 9246722599384368779
+        ChildIds: 11124005740040406042
+        ChildIds: 11535027093222630394
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -30,50 +30,58 @@
         }
       }
       Objects {
-        Id: 12148022589111738362
-        Name: "BuiltFloor"
+        Id: 11124005740040406042
+        Name: "BuiltWall"
         Transform {
           Location {
+            X: 200
           }
           Rotation {
+            Yaw: 180
           }
           Scale {
-            X: 0.5
-            Y: 0.5
+            X: 0.25
+            Y: 0.25
             Z: 0.5
           }
         }
-        ParentId: 6572963010803079035
+        ParentId: 2391212272018020454
         UnregisteredParameters {
           Overrides {
-            Name: "ma:Building_Ceiling:id"
+            Name: "ma:Building_WallInner:id"
             AssetReference {
               Id: 7426454697044131321
             }
           }
           Overrides {
-            Name: "ma:Building_Floor:id"
+            Name: "ma:Building_WallInner2:id"
             AssetReference {
               Id: 7426454697044131321
             }
           }
           Overrides {
-            Name: "ma:Building_Floor:smart"
-            Bool: true
+            Name: "ma:Building_WallInner2:smart"
+            Bool: false
           }
           Overrides {
-            Name: "ma:Building_Ceiling:smart"
-            Bool: true
+            Name: "ma:Building_WallInner:smart"
+            Bool: false
           }
           Overrides {
-            Name: "ma:Shared_Trim:id"
-            AssetReference {
-              Id: 7426454697044131321
+            Name: "ma:Building_WallInner2:utile"
+            Float: 0.613038778
+          }
+          Overrides {
+            Name: "ma:Building_WallInner:utile"
+            Float: 0.613
+          }
+          Overrides {
+            Name: "ma:Building_WallOuter:color"
+            Color {
+              R: 0.179999948
+              G: 0.0822516
+              A: 1
             }
-          }
-          Overrides {
-            Name: "ma:Shared_Trim:smart"
-            Bool: true
           }
         }
         WantsNetworking: true
@@ -85,7 +93,7 @@
         }
         CoreMesh {
           MeshAsset {
-            Id: 10888788159873929006
+            Id: 8125012155363092865
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -99,12 +107,12 @@
         }
       }
       Objects {
-        Id: 9246722599384368779
+        Id: 11535027093222630394
         Name: "DestroyableProp"
         Transform {
           Location {
-            X: 90.4710693
-            Y: -89.6642151
+            X: 107.543755
+            Z: 134.782623
           }
           Rotation {
             Yaw: 87.2511749
@@ -115,12 +123,12 @@
             Z: 0.5
           }
         }
-        ParentId: 6572963010803079035
+        ParentId: 2391212272018020454
         UnregisteredParameters {
           Overrides {
             Name: "cs:ItemUI"
             AssetReference {
-              Id: 6970002291322776181
+              Id: 2255328222457084666
             }
           }
           Overrides {
@@ -143,12 +151,12 @@
       }
     }
     Assets {
-      Id: 10888788159873929006
-      Name: "Craftsman Floor 01 4m x 4m"
+      Id: 8125012155363092865
+      Name: "Craftsman Wall 02 Window"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_urb_sub_craftsman_floor_001_4x4"
+        AssetId: "sm_urb_sub_craftsman_wall_002_window"
       }
     }
     Assets {

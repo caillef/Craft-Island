@@ -26,6 +26,15 @@ Assets {
   }
 }
 Assets {
+  Id: 17793240341163043371
+  Name: "Fantasy Wood 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Wood_001"
+  }
+}
+Assets {
   Id: 17068925420297817526
   Name: "Fantasy Bread 005"
   PlatformAssetType: 9

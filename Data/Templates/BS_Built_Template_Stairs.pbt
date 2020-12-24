@@ -98,21 +98,7 @@
           }
         }
         ParentId: 13915550309939900241
-        ChildIds: 7420115286842650631
-        ChildIds: 16724047097202791016
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:HitSFX"
-            ObjectReference {
-              SubObjectId: 7420115286842650631
-            }
-          }
-          Overrides {
-            Name: "cs:BreakSFX"
-            ObjectReference {
-              SubObjectId: 16724047097202791016
-            }
-          }
           Overrides {
             Name: "cs:ItemUI"
             AssetReference {
@@ -137,74 +123,6 @@
           }
         }
       }
-      Objects {
-        Id: 7420115286842650631
-        Name: "Axe Tree Wood Chop Hit Impact 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 17248280778615194737
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 12536818827096695884
-          }
-          Volume: 2.11607981
-          Falloff: -1
-          Radius: -1
-          EnableOcclusion: true
-          IsSpatializationEnabled: true
-          IsAttenuationEnabled: true
-        }
-      }
-      Objects {
-        Id: 16724047097202791016
-        Name: "Small Wooden Structure Break Destroy Impact 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 17248280778615194737
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 14602187725238456091
-          }
-          Volume: 1
-          Falloff: -1
-          Radius: -1
-          EnableOcclusion: true
-          IsSpatializationEnabled: true
-          IsAttenuationEnabled: true
-        }
-      }
     }
     Assets {
       Id: 3484535885344630159
@@ -222,24 +140,6 @@
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "mi_wood_planks_001_uv"
-      }
-    }
-    Assets {
-      Id: 12536818827096695884
-      Name: "Axe Tree Wood Chop Hit Impact 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_axe_tree_wood_chop_hit_impact_01a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 14602187725238456091
-      Name: "Small Wooden Structure Break Destroy Impact 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_small_wooden_structure_break_impact_01a_Cue_ref"
       }
     }
     PrimaryAssetId {

@@ -1,5 +1,5 @@
-﻿local HitSFX = script:GetCustomProperty("HitSFX"):WaitForObject()
-local BreakSFX = script:GetCustomProperty("BreakSFX"):WaitForObject()
+﻿local HitSFX = script:GetCustomProperty("HitSFX") and script:GetCustomProperty("HitSFX"):WaitForObject() or nil
+local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
 local FallSFX = script:GetCustomProperty("FallSFX") and script:GetCustomProperty("FallSFX"):WaitForObject() or nil
 local icon = script:GetCustomProperty("ItemUI")
 local icon2 = script:GetCustomProperty("ItemUI2")
@@ -29,7 +29,9 @@ function OnHit(data)
         return
     end
     HP = HP - 1
-    HitSFX:Play()
+    if HitSFX then
+        HitSFX:Play()
+    end
     if HP <= 0 then
         if icon and not picked then
             picked = true
@@ -42,7 +44,9 @@ function OnHit(data)
                 Events.Broadcast("requestInventoryFullEvent", player, { muid=icon2, string=listenID2 })
             end
         end
-        BreakSFX:Play()
+        if BreakSFX then
+            BreakSFX:Play()
+        end
         eventListenerOnHit:Disconnect()
         Task.Spawn(function()
             if FallSFX then
@@ -101,14 +105,20 @@ function PickUp(id, bool)
             Events.BroadcastToPlayer(player, "inventoryFullEvent")
             return
         end
-        Events.Broadcast("inventoryAddEvent", player, { muid=mysplit(icon, ":")[1], qty = math.floor(math.random(propItemUIQty.x , propItemUIQty.y)) })
+        Events.Broadcast("inventoryAddEvent", player, { muid=mysplit(icon, ":")[1], qty = math.floor(math.random(propItemUIQty.x, propItemUIQty.y)) })
 	end
     if icon2 and id == listenID2 then
 		if bool then
 			picked = false
             Events.BroadcastToPlayer(player, "inventoryFullEvent")
             return
-		end
+        end
+        if icon2 == "A19DF3F7881592F3:Item UI Wheat Seeds" then
+            if math.random() < 0.1 then
+                Events.Broadcast("inventoryAddEvent", player, { muid=mysplit(icon2, ":")[1], qty = 1 })
+                -- Play sound extra seed
+            end
+        end
         Events.Broadcast("inventoryAddEvent", player, { muid=mysplit(icon2, ":")[1], qty = math.floor(math.random(propItemUI2Qty.x , propItemUI2Qty.y)) })
 	end
 end

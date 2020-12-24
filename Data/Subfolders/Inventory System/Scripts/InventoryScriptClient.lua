@@ -17,8 +17,6 @@ local name = info:FindChildByName("Name")
 local delete = frame:FindDescendantByName("Delete")
 local del = delete:FindDescendantByName("Slot")
 local iDrag = nil
-local levelString = script.parent.parent.parent:GetCustomProperty("LevelResource")
-local levelRequirement = script.parent.parent.parent:GetCustomProperty("LevelRequirement")
 local playerStorage = script.parent.parent.parent:GetCustomProperty("PlayerStorage")
 
 local startupMessage = script.parent.parent.parent:GetCustomProperty("StartupMessage")
@@ -372,11 +370,13 @@ end
 Events.Connect("EnteringIsland", OnEnteringIsland)
 
 local propCraftSlot = script:GetCustomProperty("CraftSlot"):WaitForObject()
-local propCraftSlot_0 = script:GetCustomProperty("CraftSlot_0"):WaitForObject()
 propCraftSlot.hoveredEvent:Connect(OnHover)
 propCraftSlot.unhoveredEvent:Connect(OnUnhover)
-propCraftSlot_0.hoveredEvent:Connect(OnHover)
-propCraftSlot_0.unhoveredEvent:Connect(OnUnhover)
+for i=0,6 do
+	local slot = script:GetCustomProperty("CraftSlot_"..tostring(i)):WaitForObject()
+	slot.hoveredEvent:Connect(OnHover)
+	slot.unhoveredEvent:Connect(OnUnhover)	
+end
 
 del.clickedEvent:Connect(OnDelete)
 

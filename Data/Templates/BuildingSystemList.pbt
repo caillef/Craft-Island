@@ -29,6 +29,11 @@
         ChildIds: 14283212942037027005
         ChildIds: 11673029233610731053
         ChildIds: 12080428294520951774
+        ChildIds: 5194807196799563176
+        ChildIds: 9327263822375502874
+        ChildIds: 5050226681359420700
+        ChildIds: 3652459269723669800
+        ChildIds: 2926544689555030212
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -1499,6 +1504,484 @@
           }
         }
       }
+      Objects {
+        Id: 5194807196799563176
+        Name: "BS_Previsu_Small_Window_Wall_Wood"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14648870783588546942
+        ChildIds: 13246553904829142428
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 15889321362244336609
+            }
+          }
+          Overrides {
+            Name: "cs:InventoryIconMuid"
+            AssetReference {
+              Id: 2255328222457084666
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 13246553904829142428
+        Name: "Preview"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.25
+            Y: 0.25
+            Z: 0.5
+          }
+        }
+        ParentId: 5194807196799563176
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_WallInner:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 1608526019857160819
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 9327263822375502874
+        Name: "BS_Previsu_Big_Window_Wall_Wood"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14648870783588546942
+        ChildIds: 8127575859159487828
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 12807717473814041882
+            }
+          }
+          Overrides {
+            Name: "cs:InventoryIconMuid"
+            AssetReference {
+              Id: 10111999312995841294
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 8127575859159487828
+        Name: "Preview"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.25
+            Y: 0.25
+            Z: 0.5
+          }
+        }
+        ParentId: 9327263822375502874
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_WallInner:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 1608526019857160819
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 5050226681359420700
+        Name: "BS_Previsu_Door_Wood"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14648870783588546942
+        ChildIds: 1294426735902623518
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 888442936584531077
+            }
+          }
+          Overrides {
+            Name: "cs:InventoryIconMuid"
+            AssetReference {
+              Id: 3122896575571490114
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 1294426735902623518
+        Name: "Preview"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.25
+            Y: 0.25
+            Z: 0.5
+          }
+        }
+        ParentId: 5050226681359420700
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_WallInner:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 1608526019857160819
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 3652459269723669800
+        Name: "BS_Previsu_Table"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14648870783588546942
+        ChildIds: 129547431193399894
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 8559615563355897299
+            }
+          }
+          Overrides {
+            Name: "cs:InventoryIconMuid"
+            AssetReference {
+              Id: 13568290851240768317
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 129547431193399894
+        Name: "Preview"
+        Transform {
+          Location {
+            X: 100
+            Y: -100
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3652459269723669800
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_WallInner:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Detail1:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 4306583899868346755
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 2926544689555030212
+        Name: "BS_Previsu_Chair"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14648870783588546942
+        ChildIds: 17837229372612990580
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 13147306627443383789
+            }
+          }
+          Overrides {
+            Name: "cs:InventoryIconMuid"
+            AssetReference {
+              Id: 15128924105355753610
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 17837229372612990580
+        Name: "Preview"
+        Transform {
+          Location {
+            X: 100
+            Y: -100
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 2926544689555030212
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_WallInner:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Detail1:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 11345399511090385631
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
     }
     Assets {
       Id: 1608526019857160819
@@ -1561,6 +2044,24 @@
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_bush_generic_001"
+      }
+    }
+    Assets {
+      Id: 4306583899868346755
+      Name: "Craftsman Dining Table"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_urb_table_dining_001"
+      }
+    }
+    Assets {
+      Id: 11345399511090385631
+      Name: "Craftsman Dining Chair"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_urb_chair_dining_001"
       }
     }
     PrimaryAssetId {

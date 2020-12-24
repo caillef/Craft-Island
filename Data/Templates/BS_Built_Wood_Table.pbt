@@ -1,13 +1,13 @@
 ﻿Assets {
-  Id: 1971048685715293379
-  Name: "BS_Built_Soil"
+  Id: 8559615563355897299
+  Name: "BS_Built_Wood_Table"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 14757139173859955053
+      RootId: 10368336334757695574
       Objects {
-        Id: 14757139173859955053
-        Name: "BS_Built_Soil"
+        Id: 10368336334757695574
+        Name: "BS_Built_Wood_Table"
         Transform {
           Scale {
             X: 1
@@ -16,8 +16,8 @@
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 12707322221592985545
-        ChildIds: 9078462774628426977
+        ChildIds: 9042597484505671129
+        ChildIds: 8023954099409840142
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -30,13 +30,12 @@
         }
       }
       Objects {
-        Id: 12707322221592985545
+        Id: 9042597484505671129
         Name: "DestroyableProp"
         Transform {
           Location {
-            X: 91.2196503
-            Y: -97.1334229
-            Z: -1.52587891e-05
+            X: 90.4710693
+            Y: -89.6642151
           }
           Rotation {
             Yaw: 87.2511749
@@ -47,8 +46,14 @@
             Z: 0.5
           }
         }
-        ParentId: 14757139173859955053
+        ParentId: 10368336334757695574
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:ItemUI"
+            AssetReference {
+              Id: 13568290851240768317
+            }
+          }
           Overrides {
             Name: "cs:HP"
             Int: 1
@@ -68,52 +73,23 @@
         }
       }
       Objects {
-        Id: 9078462774628426977
-        Name: "BuiltFloor"
+        Id: 8023954099409840142
+        Name: "Craftsman Dining Table"
         Transform {
           Location {
+            X: 95
+            Y: -90
+            Z: 2
           }
           Rotation {
           }
           Scale {
-            X: 0.5
-            Y: 0.5
-            Z: 0.5
+            X: 0.9
+            Y: 0.9
+            Z: 0.9
           }
         }
-        ParentId: 14757139173859955053
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Building_Ceiling:id"
-            AssetReference {
-              Id: 18265638366922665013
-            }
-          }
-          Overrides {
-            Name: "ma:Building_Floor:id"
-            AssetReference {
-              Id: 18265638366922665013
-            }
-          }
-          Overrides {
-            Name: "ma:Building_Floor:smart"
-            Bool: true
-          }
-          Overrides {
-            Name: "ma:Building_Ceiling:smart"
-            Bool: true
-          }
-          Overrides {
-            Name: "ma:Shared_Trim:id"
-            AssetReference {
-              Id: 18265638366922665013
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_Trim:smart"
-            Bool: true
-          }
-        }
+        ParentId: 10368336334757695574
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -123,7 +99,7 @@
         }
         CoreMesh {
           MeshAsset {
-            Id: 10888788159873929006
+            Id: 4306583899868346755
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -132,27 +108,20 @@
           EnableCameraCollision: true
           StaticMesh {
             Physics {
+              Mass: 100
+              LinearDamping: 0.01
             }
           }
         }
       }
     }
     Assets {
-      Id: 10888788159873929006
-      Name: "Craftsman Floor 01 4m x 4m"
+      Id: 4306583899868346755
+      Name: "Craftsman Dining Table"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_urb_sub_craftsman_floor_001_4x4"
-      }
-    }
-    Assets {
-      Id: 18265638366922665013
-      Name: "Dirt 01"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "dirt_001"
+        AssetId: "sm_urb_table_dining_001"
       }
     }
     PrimaryAssetId {

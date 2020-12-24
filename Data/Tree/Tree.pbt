@@ -442,6 +442,7 @@ Objects {
   ChildIds: 4759296115683148010
   ChildIds: 4760951881322247071
   ChildIds: 34691555601294715
+  ChildIds: 9698869173041920336
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -450,7 +451,7 @@ Objects {
   }
   Control {
     Width: 800
-    Height: 195
+    Height: 245
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -467,6 +468,66 @@ Objects {
       TargetAnchor {
         Anchor {
           Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 9698869173041920336
+  Name: "UI Text Box"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11494909174330258342
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Control {
+    Width: 200
+    Height: 60
+    UIY: 170
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    UseParentWidth: true
+    UseParentHeight: true
+    Text {
+      Label: "If you are stuck at a specific step, press N to restart from scratch."
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 23
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      AutoWrapText: true
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
         }
       }
     }
@@ -565,7 +626,7 @@ Objects {
     UseParentWidth: true
     UseParentHeight: true
     Text {
-      Label: "Look at the instruction at the top right hand corner of your screen"
+      Label: "Look at the instruction at the bottom of your screen"
       Color {
         R: 1
         G: 1
@@ -674,7 +735,7 @@ Objects {
   }
   Control {
     Width: 200
-    Height: 200
+    Height: 395
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"

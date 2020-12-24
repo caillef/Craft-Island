@@ -268,8 +268,8 @@ Objects {
   Name: "SellBread"
   Transform {
     Location {
-      X: -508.925781
-      Y: -400.819092
+      X: -488.925781
+      Y: -415.819092
       Z: 2284.02466
     }
     Rotation {

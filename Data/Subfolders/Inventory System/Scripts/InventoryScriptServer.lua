@@ -210,12 +210,12 @@ function GetCurrentItem(player)
 end
 
 function Craft(player, craftMuid)
-	if craftMuid == "905D3C58A6D70B6A" then
+	if craftMuid == "905D3C58A6D70B6A" then -- Dough
 		if not PlayerHasItems(player, "828D307143518252", 2) then
 			return
 		end
 		PlayerRemoveItems(player, "828D307143518252", 2)
-		Add(player, { muid="905D3C58A6D70B6A", qty = 1 })
+		Add(player, { muid=craftMuid, qty = 1 })
 		local storage = Storage.GetPlayerData(player) or {}
 		local story = storage.story or {}
 		if story.step == 4 then
@@ -223,14 +223,27 @@ function Craft(player, craftMuid)
 		end
 	end
 
-	if craftMuid == "849D4C1B02464AC5" then
+	if craftMuid == "849D4C1B02464AC5" then -- Berry Dough
 		if not (PlayerHasItems(player, "905D3C58A6D70B6A", 1) and 
 				PlayerHasItems(player, "7D3C73A40F261843", 2)) then
 			return
 		end
 		PlayerRemoveItems(player, "905D3C58A6D70B6A", 1) 
 		PlayerRemoveItems(player, "7D3C73A40F261843", 2)
-		Add(player, { muid="849D4C1B02464AC5", qty = 1 })
+		Add(player, { muid=craftMuid, qty = 1 })
+	end
+
+	if craftMuid == "1F4C8911AF77BAFA" or
+		craftMuid == "D4469C4FF621DC7D" or
+		craftMuid == "8C5509CCAC1C750E" or
+		craftMuid == "2B56C1E3C138F542" or
+		craftMuid == "178FF62EF3246BE7" or
+		craftMuid == "60BA6C27C1F3EA75" then -- Wood Structure
+		if not PlayerHasItems(player, "4153F13DBF7563A6", 2) then
+			return
+		end
+		PlayerRemoveItems(player, "4153F13DBF7563A6", 2)
+		Add(player, { muid=craftMuid, qty = 5 })
 	end
 end
 

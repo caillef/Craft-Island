@@ -197,21 +197,7 @@
           }
         }
         ParentId: 7396068900677735949
-        ChildIds: 10303344286178868414
-        ChildIds: 6012552820475335714
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:HitSFX"
-            ObjectReference {
-              SubObjectId: 10303344286178868414
-            }
-          }
-          Overrides {
-            Name: "cs:BreakSFX"
-            ObjectReference {
-              SubObjectId: 6012552820475335714
-            }
-          }
           Overrides {
             Name: "cs:HP"
             Int: 1
@@ -240,74 +226,6 @@
           ScriptAsset {
             Id: 15497607201579666542
           }
-        }
-      }
-      Objects {
-        Id: 10303344286178868414
-        Name: "Axe Tree Wood Chop Hit Impact 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 14984705176169820457
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 12536818827096695884
-          }
-          Volume: 2.11607981
-          Falloff: -1
-          Radius: -1
-          EnableOcclusion: true
-          IsSpatializationEnabled: true
-          IsAttenuationEnabled: true
-        }
-      }
-      Objects {
-        Id: 6012552820475335714
-        Name: "Object Wood Creak 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 14984705176169820457
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 12182257297979148996
-          }
-          Volume: 2.27027559
-          Falloff: -1
-          Radius: -1
-          EnableOcclusion: true
-          IsSpatializationEnabled: true
-          IsAttenuationEnabled: true
         }
       }
       Objects {
@@ -919,24 +837,6 @@
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "mi_wood_raw_001_uv"
-      }
-    }
-    Assets {
-      Id: 12536818827096695884
-      Name: "Axe Tree Wood Chop Hit Impact 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_axe_tree_wood_chop_hit_impact_01a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 12182257297979148996
-      Name: "Object Wood Creak 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_object_wood_creak_01a_Cue_ref"
       }
     }
     Assets {

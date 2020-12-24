@@ -33,21 +33,26 @@ commands["NameOfTheCommandWithoutSpacesInsideTheName"] = {
 ]]--
 
 local allUIItem = {
-    { "1214EEEF9701EE9A", "Item UI Basic Axe" },
-    { "E2428B216BD2D34B", "Item UI Basic Hoe" },
-    { "7D3C73A40F261843", "Item UI Berry" },
-    { "6B0CB993E5EAEFF6", "Item UI Berry Pie" },
-    { "849D4C1B02464AC5", "Item UI Berry Pie Dough" },
-    { "58CF2E553C1958F0", "Item UI Bread" },
-    { "905D3C58A6D70B6A", "Item UI Dough" },
-    { "60BA6C27C1F3EA75", "Item UI Floor Wood" },
-    { "D48610A224F25A9E", "Item UI Sapling" },
-    { "D4469C4FF621DC7D", "Item UI Stairs Wood" },
-    { "178FF62EF3246BE7", "Item UI Wall Wood" },
-    { "828D307143518252", "Item UI Wheat" },
-    { "A19DF3F7881592F3", "Item UI Wheat Seeds" },
-    { "4153F13DBF7563A6", "Item UI Wood" },
-    { "1FDE35B1D2A8901F", "Item UI Berry Sprout" }
+    { "1214EEEF9701EE9A", "Basic Axe" },
+    { "E2428B216BD2D34B", "Basic Hoe" },
+    { "7D3C73A40F261843", "Berry" },
+    { "6B0CB993E5EAEFF6", "Berry Pie" },
+    { "849D4C1B02464AC5", "Berry Pie Dough" },
+    { "58CF2E553C1958F0", "Bread" },
+    { "905D3C58A6D70B6A", "Dough" },
+    { "60BA6C27C1F3EA75", "Floor Wood" },
+    { "D48610A224F25A9E", "Sapling" },
+    { "D4469C4FF621DC7D", "Stairs Wood" },
+    { "178FF62EF3246BE7", "Wall Wood" },
+    { "828D307143518252", "Wheat" },
+    { "A19DF3F7881592F3", "Wheat Seeds" },
+    { "4153F13DBF7563A6", "Wood" },
+    { "1FDE35B1D2A8901F", "Berry Sprout" },
+    { "8C5509CCAC1C750E", "Big Window Wall Wood" },
+    { "1F4C8911AF77BAFA", "Small Window Wall Wood" },
+    { "D1F4BC513D92F88A", "Item UI Chair" },
+    { "2B56C1E3C138F542", "Item UI Door Wood" },
+    { "BC4C40A42D63733D", "Item UI Table" }
 }
 
 local function mysplit(inputstr, sep)
@@ -242,14 +247,13 @@ commands["i"] = {
 commands["lo"] = {
     desc="List objects (lo <NAME>)",
     func= function(admin, args)
-        local list = World.GetRootObject():FindDescendantByName("ItemUIList"):GetChildren()
         local resp = ""
-        for i,item in ipairs(list) do
-            if args[1] and string.strfind(item.name, args[1]) then
-                resp = resp..(i < 10 and " " or "")..tostring(i).." "..item.name.."\n"
+        for i,item in ipairs(allUIItem) do
+            if args[1] and string.strfind(item[2], args[1]) then
+                resp = resp..(i < 10 and " " or "")..tostring(i).." "..item[2].."\n"
             end
             if not args[1] then
-                resp = resp..(i < 10 and " " or "")..tostring(i).." "..item.name.."\n"
+                resp = resp..(i < 10 and " " or "")..tostring(i).." "..item[2].."\n"
             end
         end
         return resp

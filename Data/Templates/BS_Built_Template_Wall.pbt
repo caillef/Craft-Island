@@ -34,8 +34,10 @@
         Name: "BuiltWall"
         Transform {
           Location {
+            X: 200
           }
           Rotation {
+            Yaw: 180
           }
           Scale {
             X: 0.25
@@ -73,6 +75,14 @@
             Name: "ma:Building_WallInner:utile"
             Float: 0.613
           }
+          Overrides {
+            Name: "ma:Building_WallOuter:color"
+            Color {
+              R: 0.179999948
+              G: 0.0822516
+              A: 1
+            }
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -83,7 +93,7 @@
         }
         CoreMesh {
           MeshAsset {
-            Id: 1608526019857160819
+            Id: 453487308539368474
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -114,21 +124,7 @@
           }
         }
         ParentId: 14730714539227928723
-        ChildIds: 2680666649687913348
-        ChildIds: 371590855209403793
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:HitSFX"
-            ObjectReference {
-              SubObjectId: 2680666649687913348
-            }
-          }
-          Overrides {
-            Name: "cs:BreakSFX"
-            ObjectReference {
-              SubObjectId: 371590855209403793
-            }
-          }
           Overrides {
             Name: "cs:ItemUI"
             AssetReference {
@@ -153,82 +149,14 @@
           }
         }
       }
-      Objects {
-        Id: 2680666649687913348
-        Name: "Axe Tree Wood Chop Hit Impact 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 10667219681633226133
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 12536818827096695884
-          }
-          Volume: 2.11607981
-          Falloff: -1
-          Radius: -1
-          EnableOcclusion: true
-          IsSpatializationEnabled: true
-          IsAttenuationEnabled: true
-        }
-      }
-      Objects {
-        Id: 371590855209403793
-        Name: "Small Wooden Structure Break Destroy Impact 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 10667219681633226133
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 14602187725238456091
-          }
-          Volume: 1
-          Falloff: -1
-          Radius: -1
-          EnableOcclusion: true
-          IsSpatializationEnabled: true
-          IsAttenuationEnabled: true
-        }
-      }
     }
     Assets {
-      Id: 1608526019857160819
-      Name: "Craftsman Part - Wall 01"
+      Id: 453487308539368474
+      Name: "Craftsman Wall 02"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_urb_sub_craftsman_part_wall_001"
+        AssetId: "sm_urb_sub_craftsman_wall_002"
       }
     }
     Assets {
@@ -238,24 +166,6 @@
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "mi_wood_planks_001_uv"
-      }
-    }
-    Assets {
-      Id: 12536818827096695884
-      Name: "Axe Tree Wood Chop Hit Impact 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_axe_tree_wood_chop_hit_impact_01a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 14602187725238456091
-      Name: "Small Wooden Structure Break Destroy Impact 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_small_wooden_structure_break_impact_01a_Cue_ref"
       }
     }
     PrimaryAssetId {

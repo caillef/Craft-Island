@@ -28,7 +28,7 @@
           Overrides {
             Name: "cs:PrevisuDoor"
             AssetReference {
-              Id: 2549814219481064674
+              Id: 841534158063459245
             }
           }
           Overrides {

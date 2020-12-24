@@ -2,11 +2,13 @@
 local BLOCK_SERIALIZER = script:GetCustomProperty("BlockSerializer"):WaitForObject().context
 
 local ACTION_PLACE = "ability_primary" -- left click
+local ACTION_ROTATE = "ability_secondary" -- right click
 
 local player = Game.GetLocalPlayer()
 local BUILDMODE_ACTIVATED = false
 canBuild = false
 
+local rotateAngle = 0
 local ISLAND_RADIUS = 10000
 
 local ANGLE_SHOW_CURRENT_POS = 50
@@ -45,6 +47,62 @@ function PlayerCanBuild()
     return canBuild
 end
 
+function rotateObjectWithClick(pos, o)
+    if o == 0 then
+        if rotateAngle == 1 then
+            pos.y = pos.y - WALL_SIZE
+        end
+        if rotateAngle == 2 then
+            pos.x = pos.x + WALL_SIZE
+            pos.y = pos.y - WALL_SIZE
+        end
+        if rotateAngle == 3 then
+            pos.x = pos.x + WALL_SIZE
+        end
+    end
+
+    if o == 1 then
+        if rotateAngle == 1 then
+            pos.x = pos.x + WALL_SIZE
+        end
+        if rotateAngle == 2 then
+            pos.x = pos.x + WALL_SIZE
+            pos.y = pos.y + WALL_SIZE
+        end
+        if rotateAngle == 3 then
+            pos.y = pos.y + WALL_SIZE
+        end
+    end
+
+    if o == 2 then
+        if rotateAngle == 1 then
+            pos.y = pos.y + WALL_SIZE
+        end
+        if rotateAngle == 2 then
+            pos.x = pos.x - WALL_SIZE
+            pos.y = pos.y + WALL_SIZE
+        end
+        if rotateAngle == 3 then
+            pos.x = pos.x - WALL_SIZE
+        end
+    end
+
+    if o == 3 then
+        if rotateAngle == 1 then
+            pos.x = pos.x - WALL_SIZE
+        end
+        if rotateAngle == 2 then
+            pos.x = pos.x - WALL_SIZE
+            pos.y = pos.y - WALL_SIZE
+        end
+        if rotateAngle == 3 then
+            pos.y = pos.y - WALL_SIZE
+        end
+    end
+    return pos
+end
+
+local lastPos
 function Tick()
     if not objectIndex or not PlayerCanBuild() then
         return BuildSystem_Close()
@@ -62,9 +120,13 @@ function Tick()
         math.floor(playerPos.y / WALL_SIZE) * WALL_SIZE, -- Get grid aligned Y
         math.floor(playerPos.z / WALL_HEIGHT) * WALL_HEIGHT -- Get grid aligned Z    
     )
+    if lastPos ~= objPos then rotateAngle = 0 end
+    lastPos = objPos
     -- Look up
     objPos.z = objPos.z + (vertAngle > ANGLE_SHOW_ABOVE and 1 or (vertAngle < ANGLE_SHOW_UNDER and 0 or 0)) * WALL_HEIGHT
     objPos = objPos + TRANSFORM_TABLE[o + 1 + ((vertAngle > -ANGLE_SHOW_CURRENT_POS and vertAngle < ANGLE_SHOW_CURRENT_POS) and 0 or (o == 0  and 3 or -1))]
+
+    objPos = rotateObjectWithClick(objPos, o)
 
     local obj = objectsList[objectIndex]
 
@@ -73,7 +135,7 @@ function Tick()
     end
 
     obj:SetPosition(objPos)
-    obj:SetRotation(Rotation.New(0, 0, o * 90))
+    obj:SetRotation(Rotation.New(0, 0, o * 90 + rotateAngle * 90))
 end
 
 function OnBindingReleased(player, actionName)
@@ -85,6 +147,13 @@ function OnBindingReleased(player, actionName)
             end        
             local data = BLOCK_SERIALIZER.Block_Serialize(obj:GetWorldPosition(), math.ceil(obj:GetRotation().z), objectIndex, islandPos)
             Events.BroadcastToServer("BSPS", data) -- BuildingSystemPlaceStructure (BuildingSystemServer.lua)
+        end
+    end
+
+    if BUILDMODE_ACTIVATED and actionName == ACTION_ROTATE then
+        rotateAngle = (rotateAngle or 0) + 1
+        if rotateAngle >= 4 then
+            rotateAngle = 0
         end
     end
 end

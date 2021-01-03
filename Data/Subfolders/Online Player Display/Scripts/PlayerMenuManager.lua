@@ -100,11 +100,11 @@ local function Expand()
 	--Leaving the commented out part here as an example of how to stop it from messing with the cursor if you have other gameplay features that do that
 	local updateCursor = true --not _G.inCombat
 	
-	--If we want to update the cursor, then do that
-	if updateCursor then
-		UI.SetCursorVisible(true)
-		UI.SetCanCursorInteractWithUI(true)
-	end
+	-- --If we want to update the cursor, then do that
+	-- if updateCursor then
+	-- 	UI.SetCursorVisible(true)
+	-- 	UI.SetCanCursorInteractWithUI(true)
+	-- end
 	
 	--If we are already moving, just switch the targetDestination and update the time remaining
 	if isMoving and timeRemaining > 0 then
@@ -160,11 +160,11 @@ local function Collapse()
 	--Leaving the commented out part here as an example of how to stop it from messing with the cursor if you have other gameplay features that do that
 	local updateCursor = true --not _G.inCombat
 	
-	--If we want to update the cursor, then do that
-	if updateCursor then
-		UI.SetCursorVisible(false)
-		UI.SetCanCursorInteractWithUI(false)
-	end
+	-- --If we want to update the cursor, then do that
+	-- if updateCursor then
+	-- 	UI.SetCursorVisible(false)
+	-- 	UI.SetCanCursorInteractWithUI(false)
+	-- end
 	
 	--If we are already moving, just switch the destination target and update the time remaining
 	if isMoving and timeRemaining > 0 then

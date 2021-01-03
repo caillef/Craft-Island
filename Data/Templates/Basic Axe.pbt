@@ -1,13 +1,13 @@
 ﻿Assets {
   Id: 17472426942251272983
-  Name: "Advanced Axe"
+  Name: "Basic Axe"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 18349659105178778687
       Objects {
         Id: 18349659105178778687
-        Name: "Advanced Axe"
+        Name: "Basic Axe"
         Transform {
           Scale {
             X: 1

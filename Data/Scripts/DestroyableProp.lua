@@ -1,6 +1,6 @@
-﻿local HitSFX = script:GetCustomProperty("HitSFX") and script:GetCustomProperty("HitSFX"):WaitForObject() or nil
-local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
+﻿local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
 local FallSFX = script:GetCustomProperty("FallSFX") and script:GetCustomProperty("FallSFX"):WaitForObject() or nil
+local type = script:GetCustomProperty("Material") or 1
 local icon = script:GetCustomProperty("ItemUI")
 local icon2 = script:GetCustomProperty("ItemUI2")
 local propItemUIQty = script:GetCustomProperty("ItemUIQty") or Vector2.New(1, 1)
@@ -12,26 +12,39 @@ local SPAWN_MANAGER = World.GetRootObject():FindChildByName("ServerScripts"):Fin
 local prop = script.parent
 local eventListenerOnHit
 local HP = script:GetCustomProperty("HP")
+local MAX_HP = HP
+local nextHeal
 
 local picked = false
 local listenID = "pickup" .. math.random()*30
 local listenID2 = "pickup" .. math.random()*30
 local player = nil
 
-function OnHit(data)
+function OnHit(data)  
     if not script:IsValid() then return end
     for _,p in pairs(Game.GetPlayers()) do
         if p.id == data.p then
             player = p
         end
     end
-    if not player or not SPAWN_MANAGER.permissions[player.id] then
+    if not player or not SPAWN_MANAGER.permissionsBreak[player.id] and not SPAWN_MANAGER.permissionsAll[player.id] then
         return
     end
-    HP = HP - 1
-    if HitSFX then
-        HitSFX:Play()
+    HP = HP - 1 * ((data.t==2 or type == data.t) and 1 or 0.5)
+    Task.Spawn(function()
+        Task.Wait(10)
+        if prop:IsValid() then
+            HP = MAX_HP
+        end
+    end)
+    if prop.name == "BS_Built_Rock" or prop.name == "BS_Built_Rock_Coal" then
+        prop:GetChildren()[1]:SetScale(prop:GetChildren()[1]:GetScale() * 0.9)
     end
+
+    if data.t ~= 2 then
+        Events.BroadcastToPlayer(player, "PlaySFX", type == 0 and "StoneImpact" or "WoodImpact")
+    end
+
     if HP <= 0 then
         if icon and not picked then
             picked = true
@@ -114,9 +127,9 @@ function PickUp(id, bool)
             return
         end
         if icon2 == "A19DF3F7881592F3:Item UI Wheat Seeds" then
-            if math.random() < 0.1 then
+            if math.random() < 0.15 then
                 Events.Broadcast("inventoryAddEvent", player, { muid=mysplit(icon2, ":")[1], qty = 1 })
-                -- Play sound extra seed
+                Events.BroadcastToPlayer(player, "PlaySFX", "BonusItem")
             end
         end
         Events.Broadcast("inventoryAddEvent", player, { muid=mysplit(icon2, ":")[1], qty = math.floor(math.random(propItemUI2Qty.x , propItemUI2Qty.y)) })

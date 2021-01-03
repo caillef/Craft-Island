@@ -26,6 +26,60 @@ Assets {
   }
 }
 Assets {
+  Id: 15556869846635109627
+  Name: "Decal Ivy Big"
+  PlatformAssetType: 14
+  PrimaryAsset {
+    AssetType: "DecalBlueprintAssetRef"
+    AssetId: "bp_decal_ivy_001"
+  }
+}
+Assets {
+  Id: 14964967653464214432
+  Name: "Decal Dirt Patch"
+  PlatformAssetType: 14
+  PrimaryAsset {
+    AssetType: "DecalBlueprintAssetRef"
+    AssetId: "bp_decal_dirt_patch_001"
+  }
+}
+Assets {
+  Id: 14456918266950896187
+  Name: "Ivy 04"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ivy_generic_004"
+  }
+}
+Assets {
+  Id: 10795596082366365410
+  Name: "Decal Stains Round 01"
+  PlatformAssetType: 14
+  PrimaryAsset {
+    AssetType: "DecalBlueprintAssetRef"
+    AssetId: "bp_decal_stain_round_001"
+  }
+}
+Assets {
+  Id: 10457545783047106170
+  Name: "Prism - 8-Sided Polished"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prism_octagon_hq_001"
+  }
+}
+Assets {
+  Id: 10279419131238093919
+  Name: "Decal Ivy Small (variations)"
+  PlatformAssetType: 14
+  PrimaryAsset {
+    AssetType: "DecalBlueprintAssetRef"
+    AssetId: "bp_decal_ivy_002"
+  }
+}
+Assets {
   Id: 8556281639390552608
   Name: "Large Round Wood Beam 8m"
   PlatformAssetType: 1
@@ -71,12 +125,66 @@ Assets {
   }
 }
 Assets {
+  Id: 6536381687833057398
+  Name: "Decal Bullet Damage Wood"
+  PlatformAssetType: 14
+  PrimaryAsset {
+    AssetType: "DecalBlueprintAssetRef"
+    AssetId: "bp_decal_bullet_wood_001"
+  }
+}
+Assets {
+  Id: 6120199285221091708
+  Name: "Decal Moss Patch"
+  PlatformAssetType: 14
+  PrimaryAsset {
+    AssetType: "DecalBlueprintAssetRef"
+    AssetId: "bp_decal_moss_patch_001"
+  }
+}
+Assets {
+  Id: 5059558495047150203
+  Name: "Ivy 05"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ivy_generic_005"
+  }
+}
+Assets {
   Id: 4232662368414213271
   Name: "Text 05: O"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "F6_Text_014"
+  }
+}
+Assets {
+  Id: 4137343365013533672
+  Name: "Decal Stone Cracks Variants 01"
+  PlatformAssetType: 14
+  PrimaryAsset {
+    AssetType: "DecalBlueprintAssetRef"
+    AssetId: "bp_decal_stone_cracks_001"
+  }
+}
+Assets {
+  Id: 3902767697519824467
+  Name: "Cube - Polished"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_hq_test_001"
+  }
+}
+Assets {
+  Id: 3558895387750759534
+  Name: "Chain Tile 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_chain_001"
   }
 }
 Assets {
@@ -107,12 +215,30 @@ Assets {
   }
 }
 Assets {
+  Id: 1770156510782188641
+  Name: "Ivy 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ivy_generic_002"
+  }
+}
+Assets {
   Id: 1217607205458813639
   Name: "Text 05: H"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "F6_Text_007"
+  }
+}
+Assets {
+  Id: 722115353060441594
+  Name: "Chain Ceiling Anchor"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_chain_top_001"
   }
 }
 Assets {

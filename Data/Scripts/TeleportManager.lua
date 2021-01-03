@@ -66,7 +66,7 @@ end)
 Game.playerLeftEvent:Connect(function(player)
     for n,list in pairs(teleportAllowLists) do
         for k,p in pairs(list) do
-            if p.name == player then
+            if p:IsValid() and p.name == player then
                 print("Removed player from allow list")
                 table.remove(teleportAllowLists[n], k)
             end

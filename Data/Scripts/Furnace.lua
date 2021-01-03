@@ -29,11 +29,6 @@ function OnPlace(trigger, player)
             Task.Wait(5)
             temporary:Destroy()
             World.SpawnAsset("9DDC09A1376B35EB", { parent = parent }) -- Bread
-            local storage = Storage.GetPlayerData(player) or {}
-            local story = storage.story or {}
-            if story.step == 5 then
-                Events.Broadcast("STEP_COMPLETED", player)
-            end
             cooking = cooking - 1
             if cooking == 0 then
                 propFireandFlameBurningLoopSet01SFX:Stop()

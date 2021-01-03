@@ -18,7 +18,11 @@
     "1F4C8911AF77BAFA",
     "D1F4BC513D92F88A",
     "2B56C1E3C138F542",
-    "BC4C40A42D63733D"
+    "BC4C40A42D63733D",
+    "AECB1226211DC37C",
+    "0B66793FF08195AC", -- furnace
+    "51D4970917797698", -- stone
+    "D1EC52C0B5D654EA", -- coal
 }
 
 local function mysplit(inputstr, sep)
@@ -90,7 +94,11 @@ end
 
 function getItemMuid(itemType)
     if not allUIItem[itemType] then
-        print("Error: can't find item of type "..itemType)
+        if itemType then
+            print("Error: can't find item of type "..itemType)
+        else
+            print("Error: can't find item of type nil")
+        end
         return nil
     end
     return allUIItem[itemType]

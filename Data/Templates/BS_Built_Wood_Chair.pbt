@@ -159,7 +159,7 @@
         Transform {
           Location {
             X: 95
-            Y: -100
+            Y: -130
             Z: 2
           }
           Rotation {

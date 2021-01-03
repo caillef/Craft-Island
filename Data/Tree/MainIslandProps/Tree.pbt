@@ -214,141 +214,6 @@ Objects {
   }
 }
 Objects {
-  Id: 11455372826487308577
-  Name: "Fantasy Human Gal 1"
-  Transform {
-    Location {
-      X: -205
-      Y: 855
-      Z: 2300
-    }
-    Rotation {
-      Yaw: -95
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 8853590466296554917
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 17943148905634693775
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    EnableCameraCollision: true
-    AnimatedMesh {
-      AnimationStance: "unarmed_idle_relaxed"
-      AnimationStancePlaybackRate: 1
-      AnimationStanceShouldLoop: true
-      AnimationPlaybackRateMultiplier: 1
-      PlayOnStartAnimation {
-        PlaybackRate: 1
-      }
-    }
-  }
-}
-Objects {
-  Id: 1507051850777039836
-  Name: "Fantasy Human Guy 2"
-  Transform {
-    Location {
-      X: -115
-      Y: 840
-      Z: 2300
-    }
-    Rotation {
-      Yaw: -149.999985
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 8853590466296554917
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 3274916804071789564
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    EnableCameraCollision: true
-    AnimatedMesh {
-      AnimationStance: "unarmed_idle_relaxed"
-      AnimationStancePlaybackRate: 1
-      AnimationStanceShouldLoop: true
-      AnimationPlaybackRateMultiplier: 1
-      PlayOnStartAnimation {
-        PlaybackRate: 1
-      }
-    }
-  }
-}
-Objects {
-  Id: 16502198841424204819
-  Name: "Fantasy Human Guy 1"
-  Transform {
-    Location {
-      X: -260
-      Y: 730
-      Z: 2300
-    }
-    Rotation {
-      Yaw: 30.0000057
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 8853590466296554917
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12433018242197398828
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    EnableCameraCollision: true
-    AnimatedMesh {
-      AnimationStance: "unarmed_idle_relaxed"
-      AnimationStancePlaybackRate: 1
-      AnimationStanceShouldLoop: true
-      AnimationPlaybackRateMultiplier: 1
-      PlayOnStartAnimation {
-        PlaybackRate: 1
-      }
-    }
-  }
-}
-Objects {
   Id: 12706264552703724259
   Name: "Fantasy Human Guy 2"
   Transform {
@@ -42774,15 +42639,15 @@ Objects {
   ChildIds: 4926190570332974791
   ChildIds: 6760524572889029482
   ChildIds: 1887203811535920456
-  ChildIds: 16835504722036495482
-  ChildIds: 1197980143877577718
-  ChildIds: 7665597897643335313
-  ChildIds: 11547715981393736080
-  ChildIds: 665071206527891573
-  ChildIds: 5185527036259570636
-  ChildIds: 11282763695852678969
-  ChildIds: 1774931912894611767
-  ChildIds: 8193155094916861118
+  ChildIds: 7097004127930464697
+  ChildIds: 14648912389809801844
+  ChildIds: 12719046417129091663
+  ChildIds: 11426492425935201379
+  ChildIds: 2877597540733440094
+  ChildIds: 13398116596257927102
+  ChildIds: 5726556702662914862
+  ChildIds: 9806235200343985608
+  ChildIds: 9129838218751865285
   ChildIds: 7958251854784344184
   ChildIds: 6150614709822086197
   ChildIds: 5272271466777600636
@@ -43887,9 +43752,16 @@ Objects {
   }
 }
 Objects {
-  Id: 8193155094916861118
+  Id: 9129838218751865285
   Name: "Tree"
   Transform {
+    Location {
+      X: 352.386292
+      Y: 1518.85413
+      Z: 2194.93408
+    }
+    Rotation {
+    }
     Scale {
       X: 1
       Y: 1
@@ -43897,47 +43769,65 @@ Objects {
     }
   }
   ParentId: 12770056801352948475
-  WantsNetworking: true
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 3494863415926496995
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Tree"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 112.277527
-            Y: 1961.60144
-            Z: 2194.93408
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Nature_Trunk:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Nature_Trunk:color"
+      Color {
+        R: 0.669999957
+        G: 0.332781464
+        A: 1
       }
     }
-    TemplateAsset {
-      Id: 1025420993210746566
+    Overrides {
+      Name: "ma:Nature_Trunk:id"
+      AssetReference {
+        Id: 14307244558911102288
+      }
     }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 9086663986850406737
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 9129838218751865285
+    SubobjectId: 3494863415926496995
+    InstanceId: 8193155094916861118
+    TemplateId: 1025420993210746566
+    WasRoot: true
   }
 }
 Objects {
-  Id: 1774931912894611767
+  Id: 9806235200343985608
   Name: "Tree"
   Transform {
+    Location {
+      X: -1055.13452
+      Y: 2391.12915
+      Z: 2194.93384
+    }
+    Rotation {
+    }
     Scale {
       X: 1
       Y: 1
@@ -43945,47 +43835,65 @@ Objects {
     }
   }
   ParentId: 12770056801352948475
-  WantsNetworking: true
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 3494863415926496995
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Tree"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -1055.13452
-            Y: 2391.12915
-            Z: 2194.93384
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Nature_Trunk:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Nature_Trunk:color"
+      Color {
+        R: 0.669999957
+        G: 0.332781464
+        A: 1
       }
     }
-    TemplateAsset {
-      Id: 1025420993210746566
+    Overrides {
+      Name: "ma:Nature_Trunk:id"
+      AssetReference {
+        Id: 14307244558911102288
+      }
     }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 9086663986850406737
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 9806235200343985608
+    SubobjectId: 3494863415926496995
+    InstanceId: 1774931912894611767
+    TemplateId: 1025420993210746566
+    WasRoot: true
   }
 }
 Objects {
-  Id: 11282763695852678969
+  Id: 5726556702662914862
   Name: "Tree"
   Transform {
+    Location {
+      X: -2207.78296
+      Y: 1469.09583
+      Z: 2194.93384
+    }
+    Rotation {
+    }
     Scale {
       X: 1
       Y: 1
@@ -43993,47 +43901,67 @@ Objects {
     }
   }
   ParentId: 12770056801352948475
-  WantsNetworking: true
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 3494863415926496995
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Tree"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -2207.78296
-            Y: 1469.09583
-            Z: 2194.93384
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Nature_Trunk:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Nature_Trunk:color"
+      Color {
+        R: 0.669999957
+        G: 0.332781464
+        A: 1
       }
     }
-    TemplateAsset {
-      Id: 1025420993210746566
+    Overrides {
+      Name: "ma:Nature_Trunk:id"
+      AssetReference {
+        Id: 14307244558911102288
+      }
     }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 9086663986850406737
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 5726556702662914862
+    SubobjectId: 3494863415926496995
+    InstanceId: 11282763695852678969
+    TemplateId: 1025420993210746566
+    WasRoot: true
   }
 }
 Objects {
-  Id: 5185527036259570636
+  Id: 13398116596257927102
   Name: "Tree"
   Transform {
+    Location {
+      X: -2493.93652
+      Y: 139.93396
+      Z: 2146.86401
+    }
+    Rotation {
+      Pitch: 6.92110538
+      Yaw: 2.46393776
+    }
     Scale {
       X: 1
       Y: 1
@@ -44041,49 +43969,67 @@ Objects {
     }
   }
   ParentId: 12770056801352948475
-  WantsNetworking: true
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 3494863415926496995
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Tree"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -2493.93652
-            Y: 139.93396
-            Z: 2146.86401
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 6.92110538
-            Yaw: 2.46393776
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Nature_Trunk:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Nature_Trunk:color"
+      Color {
+        R: 0.669999957
+        G: 0.332781464
+        A: 1
       }
     }
-    TemplateAsset {
-      Id: 1025420993210746566
+    Overrides {
+      Name: "ma:Nature_Trunk:id"
+      AssetReference {
+        Id: 14307244558911102288
+      }
     }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 9086663986850406737
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 13398116596257927102
+    SubobjectId: 3494863415926496995
+    InstanceId: 5185527036259570636
+    TemplateId: 1025420993210746566
+    WasRoot: true
   }
 }
 Objects {
-  Id: 665071206527891573
+  Id: 2877597540733440094
   Name: "Tree"
   Transform {
+    Location {
+      X: -3176.5686
+      Y: -1025.19983
+      Z: 2119.5061
+    }
+    Rotation {
+      Pitch: 0.576700151
+      Yaw: 18.7920227
+    }
     Scale {
       X: 1
       Y: 1
@@ -44091,49 +44037,67 @@ Objects {
     }
   }
   ParentId: 12770056801352948475
-  WantsNetworking: true
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 3494863415926496995
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Tree"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -3176.5686
-            Y: -1025.19983
-            Z: 2119.5061
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 0.576700151
-            Yaw: 18.7920227
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Nature_Trunk:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Nature_Trunk:color"
+      Color {
+        R: 0.669999957
+        G: 0.332781464
+        A: 1
       }
     }
-    TemplateAsset {
-      Id: 1025420993210746566
+    Overrides {
+      Name: "ma:Nature_Trunk:id"
+      AssetReference {
+        Id: 14307244558911102288
+      }
     }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 9086663986850406737
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 2877597540733440094
+    SubobjectId: 3494863415926496995
+    InstanceId: 665071206527891573
+    TemplateId: 1025420993210746566
+    WasRoot: true
   }
 }
 Objects {
-  Id: 11547715981393736080
+  Id: 11426492425935201379
   Name: "Tree"
   Transform {
+    Location {
+      X: -1756.36011
+      Y: -1879.57251
+      Z: 2161.40381
+    }
+    Rotation {
+      Pitch: 2.59536242
+      Yaw: 16.5057755
+    }
     Scale {
       X: 1
       Y: 1
@@ -44141,49 +44105,67 @@ Objects {
     }
   }
   ParentId: 12770056801352948475
-  WantsNetworking: true
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 3494863415926496995
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Tree"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -1756.36011
-            Y: -1879.57251
-            Z: 2161.40381
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 2.59536242
-            Yaw: 16.5057755
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Nature_Trunk:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Nature_Trunk:color"
+      Color {
+        R: 0.669999957
+        G: 0.332781464
+        A: 1
       }
     }
-    TemplateAsset {
-      Id: 1025420993210746566
+    Overrides {
+      Name: "ma:Nature_Trunk:id"
+      AssetReference {
+        Id: 14307244558911102288
+      }
     }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 9086663986850406737
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 11426492425935201379
+    SubobjectId: 3494863415926496995
+    InstanceId: 11547715981393736080
+    TemplateId: 1025420993210746566
+    WasRoot: true
   }
 }
 Objects {
-  Id: 7665597897643335313
+  Id: 12719046417129091663
   Name: "Tree"
   Transform {
+    Location {
+      X: -1369.54712
+      Y: -2565.35278
+      Z: 2165.73145
+    }
+    Rotation {
+      Pitch: 0.0719355494
+      Yaw: 1.56697083
+    }
     Scale {
       X: 1
       Y: 1
@@ -44191,49 +44173,67 @@ Objects {
     }
   }
   ParentId: 12770056801352948475
-  WantsNetworking: true
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 3494863415926496995
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Tree"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -1369.54712
-            Y: -2565.35278
-            Z: 2165.73145
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 0.0719355494
-            Yaw: 1.56697083
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Nature_Trunk:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Nature_Trunk:color"
+      Color {
+        R: 0.669999957
+        G: 0.332781464
+        A: 1
       }
     }
-    TemplateAsset {
-      Id: 1025420993210746566
+    Overrides {
+      Name: "ma:Nature_Trunk:id"
+      AssetReference {
+        Id: 14307244558911102288
+      }
     }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 9086663986850406737
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 12719046417129091663
+    SubobjectId: 3494863415926496995
+    InstanceId: 7665597897643335313
+    TemplateId: 1025420993210746566
+    WasRoot: true
   }
 }
 Objects {
-  Id: 1197980143877577718
+  Id: 14648912389809801844
   Name: "Tree"
   Transform {
+    Location {
+      X: 655.806335
+      Y: -1044.84534
+      Z: 2189.77197
+    }
+    Rotation {
+      Pitch: 0.959921539
+      Yaw: 52.3578758
+    }
     Scale {
       X: 1
       Y: 1
@@ -44241,48 +44241,57 @@ Objects {
     }
   }
   ParentId: 12770056801352948475
-  WantsNetworking: true
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 3494863415926496995
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Tree"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 655.806335
-            Y: -1044.84534
-            Z: 2189.77197
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 0.959921539
-            Yaw: 52.3578758
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Nature_Trunk:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Nature_Trunk:color"
+      Color {
+        R: 0.669999957
+        G: 0.332781464
+        A: 1
       }
     }
-    TemplateAsset {
-      Id: 1025420993210746566
+    Overrides {
+      Name: "ma:Nature_Trunk:id"
+      AssetReference {
+        Id: 14307244558911102288
+      }
     }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 9086663986850406737
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 14648912389809801844
+    SubobjectId: 3494863415926496995
+    InstanceId: 1197980143877577718
+    TemplateId: 1025420993210746566
+    WasRoot: true
   }
 }
 Objects {
-  Id: 16835504722036495482
-  Name: "Tree"
+  Id: 7097004127930464697
+  Name: "TreeMainIsland"
   Transform {
     Scale {
       X: 1
@@ -44291,14 +44300,13 @@ Objects {
     }
   }
   ParentId: 12770056801352948475
-  WantsNetworking: true
   TemplateInstance {
     ParameterOverrideMap {
-      key: 3494863415926496995
+      key: 17515838252281314637
       value {
         Overrides {
           Name: "Name"
-          String: "Tree"
+          String: "TreeMainIsland"
         }
         Overrides {
           Name: "Position"
@@ -44308,23 +44316,10 @@ Objects {
             Z: 2245
           }
         }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
       }
     }
     TemplateAsset {
-      Id: 1025420993210746566
+      Id: 7180364477361213005
     }
   }
 }
@@ -44669,8 +44664,8 @@ Objects {
   Name: "Bush 01"
   Transform {
     Location {
-      X: -657.613708
-      Y: 1923.85413
+      X: -997.613708
+      Y: 1893.85413
       Z: 2190
     }
     Rotation {
@@ -44861,8 +44856,8 @@ Objects {
   Name: "Rock Pile 001"
   Transform {
     Location {
-      X: -152.613708
-      Y: 1693.85413
+      X: 72.3862915
+      Y: 1328.85413
       Z: 2223.59863
     }
     Rotation {

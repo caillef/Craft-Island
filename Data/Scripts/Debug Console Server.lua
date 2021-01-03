@@ -50,9 +50,13 @@ local allUIItem = {
     { "1FDE35B1D2A8901F", "Berry Sprout" },
     { "8C5509CCAC1C750E", "Big Window Wall Wood" },
     { "1F4C8911AF77BAFA", "Small Window Wall Wood" },
-    { "D1F4BC513D92F88A", "Item UI Chair" },
-    { "2B56C1E3C138F542", "Item UI Door Wood" },
-    { "BC4C40A42D63733D", "Item UI Table" }
+    { "D1F4BC513D92F88A", "Chair" },
+    { "2B56C1E3C138F542", "Door Wood" },
+    { "BC4C40A42D63733D", "Table" },
+    { "AECB1226211DC37C", "Basic Pickaxe" },
+    { "0B66793FF08195AC", "Furnace" },
+    { "51D4970917797698", "Stone" },
+    { "D1EC52C0B5D654EA", "Coal" }
 }
 
 local function mysplit(inputstr, sep)

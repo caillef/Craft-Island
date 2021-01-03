@@ -126,7 +126,8 @@ function Tick()
     objPos.z = objPos.z + (vertAngle > ANGLE_SHOW_ABOVE and 1 or (vertAngle < ANGLE_SHOW_UNDER and 0 or 0)) * WALL_HEIGHT
     objPos = objPos + TRANSFORM_TABLE[o + 1 + ((vertAngle > -ANGLE_SHOW_CURRENT_POS and vertAngle < ANGLE_SHOW_CURRENT_POS) and 0 or (o == 0  and 3 or -1))]
 
-    objPos = rotateObjectWithClick(objPos, o)
+    -- TODO: Fix issue when placing crops, sometimes not right cell
+    -- objPos = rotateObjectWithClick(objPos, o)
 
     local obj = objectsList[objectIndex]
 

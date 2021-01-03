@@ -139,8 +139,6 @@
             Id: 10888788159873929006
           }
           Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
           }
           EnableCameraCollision: true
           StaticMesh {
@@ -225,8 +223,6 @@
             Id: 966563861414155672
           }
           Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
           }
           EnableCameraCollision: true
           StaticMesh {

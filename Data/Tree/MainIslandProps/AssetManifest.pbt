@@ -26,15 +26,6 @@ Assets {
   }
 }
 Assets {
-  Id: 17943148905634693775
-  Name: "Fantasy Human Gal 1"
-  PlatformAssetType: 17
-  PrimaryAsset {
-    AssetType: "AnimatedMeshAssetRef"
-    AssetId: "npc_human_gal_fantasy_003_ref"
-  }
-}
-Assets {
   Id: 17590313578261283549
   Name: "Bricks Concrete Cinder Block 01"
   PlatformAssetType: 2
@@ -134,6 +125,15 @@ Assets {
   }
 }
 Assets {
+  Id: 14307244558911102288
+  Name: "Wood Raw"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_wood_raw_001_uv"
+  }
+}
+Assets {
   Id: 14231809728886464860
   Name: "Wood Raw White"
   PlatformAssetType: 2
@@ -194,15 +194,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_cylinder_chamfer"
-  }
-}
-Assets {
-  Id: 12433018242197398828
-  Name: "Fantasy Human Guy 1"
-  PlatformAssetType: 17
-  PrimaryAsset {
-    AssetType: "AnimatedMeshAssetRef"
-    AssetId: "npc_human_guy_fantasy_001_ref"
   }
 }
 Assets {
@@ -320,6 +311,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "fxsm_candleflame"
+  }
+}
+Assets {
+  Id: 9086663986850406737
+  Name: "Tree Birch 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_birch_001"
   }
 }
 Assets {

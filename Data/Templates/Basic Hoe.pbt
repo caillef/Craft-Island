@@ -1,13 +1,13 @@
 ﻿Assets {
   Id: 9145540542044751288
-  Name: "Hoe"
+  Name: "Basic Hoe"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 18349659105178778687
       Objects {
         Id: 18349659105178778687
-        Name: "Hoe"
+        Name: "Basic Hoe"
         Transform {
           Scale {
             X: 1
@@ -535,6 +535,7 @@
         ParentId: 14062581388527037373
         ChildIds: 8688939606747574628
         ChildIds: 729781889713431375
+        ChildIds: 5363710699154714584
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -552,16 +553,19 @@
         Name: "Hatchet - Blade"
         Transform {
           Location {
-            X: 1.63818359
-            Z: 46.7093048
+            X: 8.06339
+            Y: 6.81506395
+            Z: 47.3876724
           }
           Rotation {
-            Pitch: -19.8819275
+            Pitch: -13.8774719
+            Yaw: -8
+            Roll: -85.0093079
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 2.37076783
+            Y: 0.99999994
+            Z: 0.296631545
           }
         }
         ParentId: 1595937608306147425
@@ -575,7 +579,7 @@
         }
         CoreMesh {
           MeshAsset {
-            Id: 4281380979366999084
+            Id: 8961643113406757531
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -626,14 +630,58 @@
           }
         }
       }
+      Objects {
+        Id: 5363710699154714584
+        Name: "Hatchet - Blade"
+        Transform {
+          Location {
+            X: 8.49725056
+            Y: -7.82708549
+            Z: 47.0347977
+          }
+          Rotation {
+            Pitch: -13
+            Yaw: 7.91365242
+            Roll: 82.8817368
+          }
+          Scale {
+            X: 2.37076783
+            Y: 0.99999994
+            Z: 0.296631545
+          }
+        }
+        ParentId: 1595937608306147425
+        UnregisteredParameters {
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 8961643113406757531
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
     }
     Assets {
-      Id: 4281380979366999084
-      Name: "Hatchet - Blade"
+      Id: 8961643113406757531
+      Name: "Knife - Blade"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_weap_modern_axe_001"
+        AssetId: "sm_weap_modern_knife_001"
       }
     }
     Assets {

@@ -62,6 +62,15 @@ Assets {
   }
 }
 Assets {
+  Id: 14711293301163987952
+  Name: "Fantasy Craft Stone 012"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Crafting_Stone_012"
+  }
+}
+Assets {
   Id: 12117351831364607381
   Name: "BG Flat 002"
   PlatformAssetType: 9
@@ -116,12 +125,30 @@ Assets {
   }
 }
 Assets {
+  Id: 1972727219701440172
+  Name: "Fire"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Icon_Fire"
+  }
+}
+Assets {
   Id: 1802497849043859994
   Name: "Frame Outline Thin 002"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameOutline_019"
+  }
+}
+Assets {
+  Id: 1540442400249975158
+  Name: "Survival Craft Charcoal 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Survival_Crafting_Charcoal_001"
   }
 }
 Assets {

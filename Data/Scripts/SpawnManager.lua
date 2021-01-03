@@ -43,7 +43,20 @@ local function AssignNextSlot(player)
     return nil
 end
 
-permissions = {}
+permissionsAll = {}
+permissionsBreak = {}
+
+local miningZone = World.GetRootObject():FindDescendantByName("MiningZone")
+miningZone.beginOverlapEvent:Connect(function(trigger, other)
+    if not other:IsA("Player") then return end
+    print("canBreak")
+    permissionsBreak[other.id] = true
+end)
+miningZone.endOverlapEvent:Connect(function(trigger, other)
+    if not other:IsA("Player") then return end
+    print("cantBreak")
+    permissionsBreak[other.id] = false
+end)
 
 function OnPlayerJoined(player)
     local slot = AssignNextSlot(player)
@@ -51,16 +64,16 @@ function OnPlayerJoined(player)
     buildingZone.beginOverlapEvent:Connect(function(trigger, other)
         if not other:IsA("Player") then return end
         if player == other then
-            permissions[other.id] = true
+            permissionsAll[other.id] = true
             Events.BroadcastToPlayer(player, "OnBuildPermission", true)
         else
-            permissions[other.id] = false
+            permissionsAll[other.id] = false
             Events.BroadcastToPlayer(player, "OnBuildPermission", false)
         end
     end)
     buildingZone.endOverlapEvent:Connect(function(trigger, other)
         if not other:IsA("Player") then return end
-        permissions[other.id] = false
+        permissionsAll[other.id] = false
         Events.BroadcastToPlayer(player, "OnBuildPermission", false)
     end)
     BUILDING_SYSTEM.LoadIsland(slot)

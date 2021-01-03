@@ -13,7 +13,7 @@ end
 
 function OnHarvest(trigger, other)
     --TODO sound
-    Events.Broadcast("H"..mysplit(trigger.parent.id, ":")[1], { p=other.id, harvest=true, pos = trigger.parent:GetWorldPosition(), angle = trigger.parent:GetRotation().z })
+    Events.Broadcast("H"..mysplit(trigger.parent.id, ":")[1], { p=other.id, harvest=true, pos = trigger.parent:GetWorldPosition(), angle = trigger.parent:GetRotation().z, t=2 })
 end
 
 propTrigger.interactedEvent:Connect(OnHarvest)

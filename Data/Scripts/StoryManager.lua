@@ -18,8 +18,7 @@ function OnPlayerJoined(player)
     end
     storage.story = story
     Storage.SetPlayerData(player, storage)
-    Task.Wait(1)
-    Events.BroadcastToPlayer(player, "STEP", story.step)
+    Events.BroadcastToPlayer(player, "STEP", story.step, true)
 end
 
 function OnStepCompleted(player, step)
@@ -28,8 +27,8 @@ function OnStepCompleted(player, step)
     story.step = story.step + 1
     storage.story = story
     Storage.SetPlayerData(player, storage)
-    Events.BroadcastToPlayer(player, "STEP", story.step)
+    Events.BroadcastToPlayer(player, "STEP", story.step, false)
 end
 
 Events.Connect("STEP_COMPLETED", OnStepCompleted)
-Game.playerJoinedEvent:Connect(OnPlayerJoined)
+Events.ConnectForPlayer("ReadyStep", OnPlayerJoined)

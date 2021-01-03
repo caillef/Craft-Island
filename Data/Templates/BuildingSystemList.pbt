@@ -15,7 +15,7 @@
             Z: 1
           }
         }
-        ParentId: 11584135646992845074
+        ParentId: 12243267191862395269
         ChildIds: 1134286657884688069
         ChildIds: 6058260682329465000
         ChildIds: 7581626262696953081
@@ -34,6 +34,9 @@
         ChildIds: 5050226681359420700
         ChildIds: 3652459269723669800
         ChildIds: 2926544689555030212
+        ChildIds: 17224585679357291282
+        ChildIds: 8932807832414175185
+        ChildIds: 16608993853510971941
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -42,6 +45,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BuildingSystemList"
         }
       }
       Objects {
@@ -82,6 +86,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Previsu_Wall_Wood"
         }
       }
       Objects {
@@ -172,6 +177,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Preview_Floor_Wood"
         }
       }
       Objects {
@@ -280,6 +286,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Previsu_Stairs_Wood"
         }
       }
       Objects {
@@ -355,6 +362,10 @@
               Id: 1971048685715293379
             }
           }
+          Overrides {
+            Name: "cs:CanBeInInventory"
+            Bool: false
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -364,6 +375,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Preview_Soil"
         }
       }
       Objects {
@@ -472,6 +484,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Previsu_Sapling"
         }
       }
       Objects {
@@ -582,6 +595,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Preview_WheatSeeds_1"
         }
       }
       Objects {
@@ -697,6 +711,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Preview_WheatSeeds_2"
         }
       }
       Objects {
@@ -812,6 +827,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Preview_WheatSeeds_3"
         }
       }
       Objects {
@@ -927,6 +943,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Preview_Wheat"
         }
       }
       Objects {
@@ -1042,6 +1059,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Preview_Tree"
         }
       }
       Objects {
@@ -1159,6 +1177,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Preview_Berry_Sprout"
         }
       }
       Objects {
@@ -1286,6 +1305,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Preview_Berry_Bush_Empty"
         }
       }
       Objects {
@@ -1413,6 +1433,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Preview_Berry_Bush_Full"
         }
       }
       Objects {
@@ -1542,6 +1563,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Previsu_Small_Window_Wall_Wood"
         }
       }
       Objects {
@@ -1572,6 +1594,24 @@
               Id: 231800746144079014
             }
           }
+          Overrides {
+            Name: "ma:Building_Accent:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallOuter:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1581,7 +1621,7 @@
         }
         CoreMesh {
           MeshAsset {
-            Id: 1608526019857160819
+            Id: 8125012155363092865
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1632,6 +1672,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Previsu_Big_Window_Wall_Wood"
         }
       }
       Objects {
@@ -1662,6 +1703,24 @@
               Id: 231800746144079014
             }
           }
+          Overrides {
+            Name: "ma:Building_Accent:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallOuter:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1671,7 +1730,7 @@
         }
         CoreMesh {
           MeshAsset {
-            Id: 1608526019857160819
+            Id: 5192154625567753900
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1722,6 +1781,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Previsu_Door_Wood"
         }
       }
       Objects {
@@ -1812,6 +1872,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Previsu_Table"
         }
       }
       Objects {
@@ -1825,9 +1886,9 @@
           Rotation {
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.9
+            Y: 0.9
+            Z: 0.9
           }
         }
         ParentId: 3652459269723669800
@@ -1916,6 +1977,7 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Previsu_Chair"
         }
       }
       Objects {
@@ -1970,6 +2032,605 @@
         CoreMesh {
           MeshAsset {
             Id: 11345399511090385631
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 17224585679357291282
+        Name: "BS_Previsu_Rock"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14648870783588546942
+        ChildIds: 15979656418305072928
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 12608001148984257959
+            }
+          }
+          Overrides {
+            Name: "cs:CanBeInInventory"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "BS_Previsu_Rock"
+        }
+      }
+      Objects {
+        Id: 15979656418305072928
+        Name: "Preview"
+        Transform {
+          Location {
+            X: 100
+            Y: -100
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17224585679357291282
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_WallInner:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Detail1:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15624145861512632379
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 8932807832414175185
+        Name: "BS_Previsu_Furnace"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14648870783588546942
+        ChildIds: 1105156866189428950
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 6397594675155841851
+            }
+          }
+          Overrides {
+            Name: "cs:InventoryIconMuid"
+            AssetReference {
+              Id: 821477297566619052
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 1105156866189428950
+        Name: "BS_Built_Furnace"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8932807832414175185
+        ChildIds: 10560021945991923306
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 10560021945991923306
+        Name: "Geo"
+        Transform {
+          Location {
+            X: 110
+            Y: -80
+            Z: 15
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1105156866189428950
+        ChildIds: 3209531022610148437
+        ChildIds: 3784013779718921083
+        ChildIds: 12309268944832610716
+        ChildIds: 10419327128550331526
+        ChildIds: 867827576894878056
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 3209531022610148437
+        Name: "Stone Window"
+        Transform {
+          Location {
+            X: -7.76829529
+            Y: -66.3837738
+            Z: -7.22306061
+          }
+          Rotation {
+            Pitch: -2.84131765
+            Yaw: 178.950912
+            Roll: 1.8748157
+          }
+          Scale {
+            X: 2.05472469
+            Y: 0.0421735719
+            Z: 0.343372464
+          }
+        }
+        ParentId: 10560021945991923306
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.170000017
+              G: 0.637218535
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6534982425371244976
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 3784013779718921083
+        Name: "Stone Window"
+        Transform {
+          Location {
+            X: -5.62245941
+            Y: -6.93595123
+            Z: -5.21696568
+          }
+          Rotation {
+            Pitch: -6.83018879e-06
+            Yaw: -89.9999542
+            Roll: -6.48987261e-05
+          }
+          Scale {
+            X: 2.05472589
+            Y: 0.617576063
+            Z: 0.42420131
+          }
+        }
+        ParentId: 10560021945991923306
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.170000017
+              G: 0.637218535
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6534982425371244976
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 12309268944832610716
+        Name: "Rock Pile 002"
+        Transform {
+          Location {
+            X: 9.03822327
+            Y: -1.98605347
+            Z: 2.16570473
+          }
+          Rotation {
+            Pitch: -0.603925288
+            Yaw: -67.840126
+            Roll: -3.34979415
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 10560021945991923306
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.170000017
+              G: 0.637218535
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 9693473639395179127
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 10419327128550331526
+        Name: "Rock Pile 002"
+        Transform {
+          Location {
+            X: -10.9767456
+            Y: -9.9029007
+            Z: 0.906242371
+          }
+          Rotation {
+            Pitch: -2.27497888
+            Yaw: 164.275192
+            Roll: 2.5325532
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 10560021945991923306
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.170000017
+              G: 0.637218535
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 9693473639395179127
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 867827576894878056
+        Name: "Rock Pile 002"
+        Transform {
+          Location {
+            X: 4.76326
+            Y: -4.2937851
+            Z: -0.0239601135
+          }
+          Rotation {
+            Pitch: -3.22091889
+            Yaw: -166.520737
+            Roll: 1.10133708
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 10560021945991923306
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.170000017
+              G: 0.637218535
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 9693473639395179127
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 16608993853510971941
+        Name: "BS_Previsu_Rock_Coal"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14648870783588546942
+        ChildIds: 15789712092370482063
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 7549492464676050365
+            }
+          }
+          Overrides {
+            Name: "cs:CanBeInInventory"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 15789712092370482063
+        Name: "Preview"
+        Transform {
+          Location {
+            X: 100
+            Y: -100
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16608993853510971941
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_WallInner:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Detail1:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15624145861512632379
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2047,6 +2708,24 @@
       }
     }
     Assets {
+      Id: 8125012155363092865
+      Name: "Craftsman Wall 02 Window"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_urb_sub_craftsman_wall_002_window"
+      }
+    }
+    Assets {
+      Id: 5192154625567753900
+      Name: "Craftsman Wall 02 Window 3x"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_urb_sub_craftsman_wall_002_window3x"
+      }
+    }
+    Assets {
       Id: 4306583899868346755
       Name: "Craftsman Dining Table"
       PlatformAssetType: 1
@@ -2062,6 +2741,33 @@
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_urb_chair_dining_001"
+      }
+    }
+    Assets {
+      Id: 15624145861512632379
+      Name: "Rock 03"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_rock_generic_003"
+      }
+    }
+    Assets {
+      Id: 6534982425371244976
+      Name: "Stone Window"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_stone_window_001"
+      }
+    }
+    Assets {
+      Id: 9693473639395179127
+      Name: "Rock Pile 002"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_rocks_small_002"
       }
     }
     PrimaryAssetId {

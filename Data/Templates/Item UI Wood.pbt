@@ -20,11 +20,11 @@
         UnregisteredParameters {
           Overrides {
             Name: "cs:Name"
-            String: "Wall Wood"
+            String: "Wood Log"
           }
           Overrides {
             Name: "cs:Type"
-            String: "Structure"
+            String: "Resource"
           }
           Overrides {
             Name: "cs:Level"

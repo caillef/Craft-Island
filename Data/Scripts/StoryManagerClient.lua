@@ -10,22 +10,29 @@
 
 local stepTexts = {
     "Step 1: Talk to the Architect on the main island by going through the portal",
-    "Step 2: Plant a tree on your island (use the number 3 to pick the sapling)",
-    "Step 3: Talk about this first tree with the Architect",
-    "Step 4: Plant seeds, harvest wheats, craft a dough from your inventory",
-    "Step 5: Bake one bread by placing the dough in the furnace",
-    "Step 6: Sell your first bread on the main island",
+    "Step 2: Plant a tree on your island (use the number 4 to pick the sapling)",
+    "Step 3: Explain what you feel about planting a tree to the Architect",
+    "Step 4: Plant the seeds on your island, then come back and mine at least 30 stones and 5 coals",
+    "Step 5: Harvest wheats and craft a dough and a furnace from your inventory (left click)",
+    "Step 6: Bake one bread by placing the dough and the coal in the furnace (right click), then sell it on the main island",
     "Step 7: Offer 5 breads and 3 wood logs to the Architect to receive a present",
     "Step 8: Place your first wall on your island",
-    "Step 9: Thanks for trying this early alpha! More features coming soon"
+    "Hint: buy more wheats seeds, craft more furnaces and build your own house with structures available on your inventory"
 }
 
 local propStep = script:GetCustomProperty("Step"):WaitForObject()
 local propSFXNextStep = script:GetCustomProperty("SFXNextStep"):WaitForObject()
 
-function OnStep(step)
-    propSFXNextStep:Play()
+function OnStep(step, start)
+    if not start then
+        propSFXNextStep:Play()
+    end
+    if step >= 9 and start then
+        propStep.parent.visibility = Visibility.FORCE_OFF
+    end
     propStep.text = stepTexts[step]
 end
 
 Events.Connect("STEP", OnStep)
+
+Events.BroadcastToServer("ReadyStep")

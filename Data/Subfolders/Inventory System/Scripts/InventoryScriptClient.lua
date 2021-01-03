@@ -1,7 +1,9 @@
 ﻿local BUILD_MANAGER = script:GetCustomProperty("BuildingScript"):WaitForObject().context
 local INVENTORY_MANAGER = script:GetCustomProperty("InventoryManager"):WaitForObject().context
+local propAddItemPanel = script:GetCustomProperty("AddItemPanel"):WaitForObject()
+local propAddItemNotif = script:GetCustomProperty("AddItemNotif")
 
-local open = false
+open = false
 local p = Game.GetLocalPlayer()
 local frame = script.parent:FindChildByName("Frame")
 local bg = script.parent:FindChildByName("BG")
@@ -33,6 +35,10 @@ buttons[29] = slots[2]
 
 local lastSelection
 local equippedTool
+local hoveredSlotIndex
+
+local notifications = {}
+local nextNotification = time()
 
 do
 	fullTime = 400
@@ -42,6 +48,42 @@ do
 	full.width = 0
 	full.text = startupMessage
 end
+
+local function GetNameFromMuid(muid)
+	local objects = {
+		{ "1214EEEF9701EE9A", "Basic Axe" },
+		{ "E2428B216BD2D34B", "Basic Hoe" },
+		{ "7D3C73A40F261843", "Berry" },
+		{ "6B0CB993E5EAEFF6", "Berry Pie" },
+		{ "849D4C1B02464AC5", "Berry Pie Dough" },
+		{ "58CF2E553C1958F0", "Bread" },
+		{ "905D3C58A6D70B6A", "Dough" },
+		{ "60BA6C27C1F3EA75", "Floor Wood" },
+		{ "D48610A224F25A9E", "Sapling" },
+		{ "D4469C4FF621DC7D", "Stairs Wood" },
+		{ "178FF62EF3246BE7", "Wall Wood" },
+		{ "828D307143518252", "Wheat" },
+		{ "A19DF3F7881592F3", "Wheat Seeds" },
+		{ "4153F13DBF7563A6", "Wood" },
+		{ "1FDE35B1D2A8901F", "Berry Sprout" },
+		{ "8C5509CCAC1C750E", "Big Window Wall Wood" },
+		{ "1F4C8911AF77BAFA", "Small Window Wall Wood" },
+		{ "D1F4BC513D92F88A", "Chair" },
+		{ "2B56C1E3C138F542", "Door Wood" },
+		{ "BC4C40A42D63733D", "Table" },
+		{ "AECB1226211DC37C", "Basic Pickaxe" },
+		{ "0B66793FF08195AC", "Furnace" },
+		{ "51D4970917797698", "Stone" },
+		{ "D1EC52C0B5D654EA", "Coal" }
+	}
+	for _,v in pairs(objects) do
+		if v[1] == muid then return v[2] end
+	end
+	return ""
+end
+
+_G["caillef.craftisland.objects"] = _G["caillef.craftisland.objects"] or {}
+_G["caillef.craftisland.objects"].GetNameFromMuid = GetNameFromMuid
 
 local iList = {}
 
@@ -115,6 +157,17 @@ function OnLoad(str)
 end
 
 function Tick(_)
+	if UI.GetCursorPosition().x > UI.GetScreenSize().x/2 + 400 then
+		hoveredSlotIndex = nil
+	end
+
+	if #notifications > 0 and nextNotification <= time() then
+		local notif = World.SpawnAsset(propAddItemNotif, { parent = propAddItemPanel })
+		notif.text = "+"..tostring(notifications[1].qty).." "..notifications[1].name
+		table.remove(notifications, 1)
+		nextNotification = time() + 1
+	end
+
 	-- full
 	if fullTime > 0 then
 		fullTime = fullTime - 1
@@ -148,7 +201,7 @@ function Tick(_)
 
 	-- setup
 	local ih = 0
-	if hover then
+	if hover and hover:IsValid() then
 		local prop = hover:GetCustomProperties()
 		local n = 0
 		for key, value in pairs(prop) do
@@ -175,8 +228,17 @@ function Tick(_)
 end
 
 function OnHover(button)
+	if button.parent.name == "Slots" then
+		for i=1,30 do
+			if buttons[i] == button then
+				hoveredSlotIndex = i
+			end
+		end
+	else
+		hoveredSlotIndex = nil
+	end
 	local it = GetItem(button)
-	if it then
+	if it and UI.GetCursorPosition().x < UI.GetScreenSize().x/2 + 400 then
 		hover = it
 		name.text = hover:GetCustomProperty("Name")
 		local prop = hover:GetCustomProperties()
@@ -231,9 +293,6 @@ end
 
 function OnDelete(button)
 	if drag then
-		if drag.sourceTemplateId == "1214EEEF9701EE9A" or drag.sourceTemplateId == "E2428B216BD2D34B" then
-			return
-		end
 		drag:Destroy()
 		buttons[iDrag].isInteractable = true
 		drag = nil
@@ -249,16 +308,30 @@ end
 function OnAdd(data, ii)		-- ii - the button
 	pickupSFX:Play()
 	local qtyText
+	local oldQuantity
 	if #buttons[ii]:GetChildren() == 1 then
 		local prop = World.SpawnAsset(data.muid, {parent = buttons[ii]})
 		qtyText = World.SpawnAsset("173D841514156696:InventoryQuantity", {parent = prop})
+		oldQuantity = 0
 	else
 		qtyText = GetItem(buttons[ii]):FindChildByType("UIText")
+		oldQuantity = qtyText.text == "" and 1 or tonumber(qtyText.text)
 	end
 	qtyText.text = data.qty > 1 and tostring(data.qty) or ""
 	if ii == lastSelection then
 		lastSelection = -1
 		Select(ii)
+	end
+
+	local isNew = true
+	for k,v in pairs(notifications) do
+		if v.name == _G["caillef.craftisland.objects"].GetNameFromMuid(data.muid) then
+			v.qty = v.qty + data.qty - oldQuantity
+			isNew = false
+		end
+	end
+	if isNew then
+		table.insert(notifications, { qty = data.qty - oldQuantity, name = _G["caillef.craftisland.objects"].GetNameFromMuid(data.muid) })
 	end
 end
 
@@ -305,7 +378,9 @@ end
 
 local debugConsole = script:GetCustomProperty("DebugConsoleClient"):WaitForObject().context
 function OnPress(_, key)
-	if debugConsole.IsCommandLineOpen() then
+	if open and debugConsole.IsCommandLineOpen() then
+		open = false
+		Events.Broadcast("CloseUIFurnace")
 		return
 	end
 
@@ -315,11 +390,19 @@ function OnPress(_, key)
 			return
 		end
 	end
+
+	if open and key == "ability_secondary" and hoveredSlotIndex then
+		Events.Broadcast("InventoryFastMove", hoveredSlotIndex, GetItem(buttons[hoveredSlotIndex]))
+	end
+
 	if key == ability then
 		if full.text == startupMessage then
 			fullTime = 60
 		end
 		open = not open
+		if not open then
+			Events.Broadcast("CloseUIFurnace")
+		end
 		UI.SetCursorVisible(open)
 		UI.SetCanCursorInteractWithUI(open)
 	end
@@ -351,6 +434,10 @@ function OnPrepareLoad(data, i, isEnd)
 end
 
 p.bindingPressedEvent:Connect(OnPress)
+Events.Connect("openInventory", function()
+	if open then return end
+	OnPress(nil, ability)
+end)
 Events.Connect("inventoryPLoadEvent", OnPrepareLoad)
 Events.Connect("inventoryFullEvent", OnFull)
 Events.Connect("requestInventoryAddEvent", OnAdd)
@@ -372,10 +459,14 @@ Events.Connect("EnteringIsland", OnEnteringIsland)
 local propCraftSlot = script:GetCustomProperty("CraftSlot"):WaitForObject()
 propCraftSlot.hoveredEvent:Connect(OnHover)
 propCraftSlot.unhoveredEvent:Connect(OnUnhover)
-for i=0,6 do
-	local slot = script:GetCustomProperty("CraftSlot_"..tostring(i)):WaitForObject()
+for i=0,100 do
+	local slot = script:GetCustomProperty("CraftSlot_"..tostring(i))
+	if slot == nil then
+		break
+	end
+	slot = slot:WaitForObject()
 	slot.hoveredEvent:Connect(OnHover)
-	slot.unhoveredEvent:Connect(OnUnhover)	
+	slot.unhoveredEvent:Connect(OnUnhover)
 end
 
 del.clickedEvent:Connect(OnDelete)

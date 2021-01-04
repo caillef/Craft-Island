@@ -82,7 +82,6 @@ function SerializeItem(pos, type, qty)
     return pos..";"..type..";"..qty
 end
 
-
 function getItemType(itemMuid)
     for key,i in pairs(allUIItem) do
         if i == itemMuid then
@@ -133,12 +132,10 @@ function SerializeInventory(list)
         end
     end
     AddLogEntry("Result: "..str)
-    -- print("SerializeInventory", str)
     return str
 end
 
 function DeserializeInventory(str)
-    -- print("DeserializeInventory", str)
     local inventory = {}
     if type(str) == "table" then
         str = "v1*"
@@ -149,7 +146,11 @@ function DeserializeInventory(str)
             local items = mysplit(mysplit(str, "*")[2], "|")
             for _,item in pairs(items) do
                 local data = mysplit(item, ";")
-                inventory[tonumber(data[1])] = { muid=getItemMuid(tonumber(data[2])), qty=tonumber(data[3]) }
+                local muid = getItemMuid(tonumber(data[2]))
+                local qty = tonumber(data[3])
+                if muid and qty > 0 then
+                    inventory[tonumber(data[1])] = { muid=muid, qty=qty }
+                end
             end
         end
         return inventory

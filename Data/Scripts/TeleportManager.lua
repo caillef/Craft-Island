@@ -14,7 +14,7 @@ function TeleportPlayerTo(player, destination)
     local pos = destinations[destination](player)
     if not pos then return end
     Teleport(player, pos)
-    while Events.BroadcastToPlayer(player, "EnteringIsland") ~= BroadcastEventResultCode.SUCCESS do
+    while player:IsValid() and Events.BroadcastToPlayer(player, "EnteringIsland") ~= BroadcastEventResultCode.SUCCESS do
         Task.Wait(0.25)
     end
     World.SpawnAsset(PortalSFX, { position = pos })

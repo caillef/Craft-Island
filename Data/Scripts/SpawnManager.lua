@@ -28,7 +28,7 @@ initPlayerSpots()
 local function PrepareSlot(player, slot)
     slot.player = player
     slot.island = World.SpawnAsset(propPlayerIsland, { position = slot.pos, parent = propIslands })
-    while Events.BroadcastToPlayer(player, "BSP", slot.pos) ~= BroadcastEventResultCode.SUCCESS do
+    while player:IsValid() and Events.BroadcastToPlayer(player, "BSP", slot.pos) ~= BroadcastEventResultCode.SUCCESS do
 		Task.Wait(0.25)
 	end
     return slot
@@ -64,12 +64,16 @@ function OnPlayerJoined(player)
     buildingZone.beginOverlapEvent:Connect(function(trigger, other)
         if not other:IsA("Player") then return end
         permissionsAll[other.id] = player == other
-        Events.BroadcastToPlayer(other, "OnBuildPermission", player == other)
+        while other:IsValid() and Events.BroadcastToPlayer(other, "OnBuildPermission", player == other) ~= BroadcastEventResultCode.SUCCESS do
+            Task.Wait(0.25)
+        end
     end)
     buildingZone.endOverlapEvent:Connect(function(trigger, other)
         if not other:IsA("Player") then return end
         permissionsAll[other.id] = false
-        Events.BroadcastToPlayer(other, "OnBuildPermission", false)
+        while other:IsValid() and Events.BroadcastToPlayer(other, "OnBuildPermission", false) ~= BroadcastEventResultCode.SUCCESS do
+            Task.Wait(0.25)
+        end
     end)
     BUILDING_SYSTEM.LoadIsland(slot)
     TELEPORT_MANAGER.TeleportPlayerTo(player, "own_island")

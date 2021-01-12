@@ -26,7 +26,7 @@ function CountItem(player, muid)
 	for _,item in pairs(data[player]) do
 		if item.muid == muid then return item.qty end
 	end
-	return item.qty
+	return 0
 end
 
 function Add(player, d)
@@ -42,7 +42,7 @@ function Add(player, d)
 	end
 	if ii == nil then
 		for i = 1, 27 do
-			if player:IsValid() and data[player] and (data[player][i] == nil or (data[player][i].qty and data[player][i].qty == 0)) then
+			if data[player] and (data[player][i] == nil or (data[player][i].qty and data[player][i].qty == 0)) then
 				ii = i
 				break
 			end
@@ -56,7 +56,7 @@ function Add(player, d)
 	qty = qty + (data[player][ii] and data[player][ii].qty or 0)
 	if qty > 0 then
 		data[player][ii] = { muid=muid, qty=qty }
-		while Events.BroadcastToPlayer(player, "requestInventoryAddEvent", data[player][ii], ii) ~= BroadcastEventResultCode.SUCCESS do
+		while player:IsValid() and Events.BroadcastToPlayer(player, "requestInventoryAddEvent", data[player][ii], ii) ~= BroadcastEventResultCode.SUCCESS do
 			Task.Wait(0.25)
 		end
 		Save(player)
@@ -65,7 +65,6 @@ function Add(player, d)
 	local storage = Storage.GetPlayerData(player) or {}
 	local story = storage.story or {}
 	if story.step == 4 and CountItem(player, "51D4970917797698") >= 20 and CountItem(player, "D1EC52C0B5D654EA") >= 5 then
-		Task.Wait(1)
 		Events.Broadcast("STEP_COMPLETED", player)
 	end
 	if story.step == 5 and muid and muid == "0B66793FF08195AC" then
@@ -84,7 +83,7 @@ function OnInventoryReady(player)
 	Task.Wait(0.2)
 	for i=1,#finalInventory,64 do
 		AddLogEntry(string.sub(finalInventory, i, (i + 63 < #finalInventory) and i + 63 or #finalInventory), k, (i + 63 >= #finalInventory))
-		while Events.BroadcastToPlayer(player, "inventoryPLoadEvent", string.sub(finalInventory, i, (i + 63 < #finalInventory) and i + 63 or #finalInventory), k, (i + 63 >= #finalInventory)) ~= BroadcastEventResultCode.SUCCESS do
+		while player:IsValid() and Events.BroadcastToPlayer(player, "inventoryPLoadEvent", string.sub(finalInventory, i, (i + 63 < #finalInventory) and i + 63 or #finalInventory), k, (i + 63 >= #finalInventory)) ~= BroadcastEventResultCode.SUCCESS do
 			Task.Wait(0.25)
 		end
 		k = k + 1
@@ -170,7 +169,7 @@ function PlayerRemoveItems(player, muid, qty)
 		if data[player][i] and data[player][i].muid == muid then
 			if data[player][i].qty < qty then return false end
 			data[player][i].qty = data[player][i].qty - qty
-			while Events.BroadcastToPlayer(player, "requestInventoryRemoveEvent", data[player][i], i) ~= BroadcastEventResultCode.SUCCESS do
+			while player:IsValid() and Events.BroadcastToPlayer(player, "requestInventoryRemoveEvent", data[player][i], i) ~= BroadcastEventResultCode.SUCCESS do
 				Task.Wait(0.25)
 			end
 			if qty == 0 then data[player][i] = nil end

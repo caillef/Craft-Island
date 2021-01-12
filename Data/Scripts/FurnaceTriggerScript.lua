@@ -9,7 +9,7 @@ function OnInteract(trigger, player)
 		end
 		return
 	end
-	while Events.BroadcastToPlayer(player, "OpenUIFurnace", trigger.id) ~= BroadcastEventResultCode.SUCCESS do
+	while player:IsValid() and Events.BroadcastToPlayer(player, "OpenUIFurnace", trigger.id) ~= BroadcastEventResultCode.SUCCESS do
 		Task.Wait(0.25)
 	end
 	trigger.isInteractable = false

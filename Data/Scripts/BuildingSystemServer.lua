@@ -290,7 +290,7 @@ function OnInventoryReady(player)
         Task.Wait(0.1)
     end
     Task.Wait(0.1)
-    while Events.BroadcastToPlayer(player, "OnPlayerInitialized", {islandPos = playersSpawns[player].pos}) ~= BroadcastEventResultCode.SUCCESS do
+    while player:IsValid() and Events.BroadcastToPlayer(player, "OnPlayerInitialized", {islandPos = playersSpawns[player].pos}) ~= BroadcastEventResultCode.SUCCESS do
         Task.Wait(0.25)
     end
 end

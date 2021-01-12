@@ -66,6 +66,15 @@ Assets {
   }
 }
 Assets {
+  Id: 5624707215380943068
+  Name: "\"Cute Town\" Music Construction Kit (Sections) 01"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "abp_cute_town_sections_kit_ref"
+  }
+}
+Assets {
   Id: 966563861414155672
   Name: "Grass Tall"
   PlatformAssetType: 1

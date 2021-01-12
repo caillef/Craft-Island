@@ -78,7 +78,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   Control {
     RenderTransformPivot {
@@ -269,6 +269,7 @@ Objects {
   ChildIds: 15493299283785528625
   ChildIds: 111337362494316789
   ChildIds: 3312375054754221003
+  ChildIds: 5196531745169347142
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -276,6 +277,43 @@ Objects {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
   NetworkContext {
+  }
+}
+Objects {
+  Id: 5196531745169347142
+  Name: "\"Cute Town\" Music Construction Kit (Sections) 01"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12243267191862395269
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 5624707215380943068
+    }
+    TeamSettings {
+    }
+    AudioBP {
+      AutoPlay: true
+      Repeat: true
+      Volume: 0.442287982
+      Falloff: 3600
+      Radius: 400
+      IsSpatializationEnabled: true
+    }
   }
 }
 Objects {

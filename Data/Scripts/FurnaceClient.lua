@@ -47,7 +47,9 @@ Events.Connect("CloseUIFurnace", function()
 	if not currentFurnace then return end
 	propUI.visibility = Visibility.FORCE_OFF
 	currentFurnace = nil
-	Events.BroadcastToServer("EnableTrigger", triggerId)
+	while Events.BroadcastToServer("EnableTrigger", triggerId) ~= BroadcastEventResultCode.SUCCESS do
+		Task.Wait(0.25)
+	end
 end)
 
 function TransformItem(furnace, muid, index, updateUI)
@@ -135,12 +137,16 @@ Events.Connect("InventoryFastMove", function(buttonIndex, item)
 		end
 		furnaces[currentFurnace].nbCoals = furnaces[currentFurnace].nbCoals + 1
 		qtyText.text = furnaces[currentFurnace].nbCoals > 1 and tostring(furnaces[currentFurnace].nbCoals) or ""
-		Events.BroadcastToServer("removeItemFromMuid", item.sourceTemplateId, 1)
+		while Events.BroadcastToServer("removeItemFromMuid", item.sourceTemplateId, 1) ~= BroadcastEventResultCode.SUCCESS do
+			Task.Wait(0.25)
+		end
 		return
 	end
 	if item.sourceTemplateId == DOUGH_MUID then
 		if SetItemEmptySlot(DOUGH_MUID) then
-			Events.BroadcastToServer("removeItemFromMuid", DOUGH_MUID, 1)
+			while Events.BroadcastToServer("removeItemFromMuid", DOUGH_MUID, 1) ~= BroadcastEventResultCode.SUCCESS do
+				Task.Wait(0.25)
+			end
 		end
 		return
 	end
@@ -176,14 +182,18 @@ function OnPress(_, key)
 	if propUI.visibility == Visibility.FORCE_ON and key == "ability_secondary" and hoveredSlotIndex and (hoveredSlotIndex == COAL_INDEX or #propSlots[hoveredSlotIndex]:GetChildren() > 1) then
 		if hoveredSlotIndex == COAL_INDEX then -- coal
 			if f.nbCoals <= 0 then return end
-			Events.BroadcastToServer("inventoryAddEvent", player, { muid="D1EC52C0B5D654EA", qty = 1 })
+			while Events.BroadcastToServer("inventoryAddEvent", player, { muid="D1EC52C0B5D654EA", qty = 1 }) ~= BroadcastEventResultCode.SUCCESS do
+				Task.Wait(0.25)
+			end
 			RemoveOneCoal(f, true)
 			return
 		end
 		if not #propSlots[hoveredSlotIndex]:GetChildren() == 2 then
 			return
 		end
-		Events.BroadcastToServer("inventoryAddEvent", player, { muid=f.slotsMuid[hoveredSlotIndex], qty = 1 })
+		while Events.BroadcastToServer("inventoryAddEvent", player, { muid=f.slotsMuid[hoveredSlotIndex], qty = 1 }) ~= BroadcastEventResultCode.SUCCESS do
+			Task.Wait(0.25)
+		end
 		f.slotsTimer[hoveredSlotIndex] = nil
 		f.slotsMuid[hoveredSlotIndex] = nil
 		propSlots[hoveredSlotIndex]:GetChildren()[2]:Destroy()

@@ -147,7 +147,9 @@ function OnBindingReleased(player, actionName)
                 return -- Soil must be placed on ground
             end        
             local data = BLOCK_SERIALIZER.Block_Serialize(obj:GetWorldPosition(), math.ceil(obj:GetRotation().z), objectIndex, islandPos)
-            Events.BroadcastToServer("BSPS", data) -- BuildingSystemPlaceStructure (BuildingSystemServer.lua)
+            while Events.BroadcastToServer("BSPS", data) ~= BroadcastEventResultCode.SUCCESS do -- BuildingSystemPlaceStructure (BuildingSystemServer.lua)
+                Task.Wait(0.25)
+            end
         end
     end
 

@@ -2,7 +2,7 @@
   Id: 7214949473226686312
   Name: "ReverseGlow"
   PlatformAssetType: 13
-  SerializationVersion: 70
+  SerializationVersion: 72
   CustomMaterialAsset {
     BaseMaterialId: 4722912119346492871
     ParameterOverrides {

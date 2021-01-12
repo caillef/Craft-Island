@@ -40,5 +40,5 @@
     Version: "1.0.0"
     Description: "Wood hut"
   }
-  SerializationVersion: 70
+  SerializationVersion: 72
 }

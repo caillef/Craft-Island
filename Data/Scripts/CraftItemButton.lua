@@ -20,9 +20,11 @@ local function mysplit(inputstr, sep)
 end
 
 function OnCraftItem(button)
-    Events.BroadcastToServer("inventoryCraftEvent", player, mysplit(craftMuid, ":")[1])
+    while Events.BroadcastToServer("inventoryCraftEvent", player, mysplit(craftMuid, ":")[1]) ~= BroadcastEventResultCode.SUCCESS do
+        Task.Wait(0.25)
+    end
     button.isInteractable = false
-    Task.Wait(0.5)
+    Task.Wait(0.3)
     button.isInteractable = true
 end
 

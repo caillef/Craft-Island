@@ -12,7 +12,7 @@ local stepTexts = {
     "Step 1: Talk to the Architect on the main island by going through the portal",
     "Step 2: Plant a tree on your island (use the number 4 to pick the sapling)",
     "Step 3: Explain what you feel about planting a tree to the Architect",
-    "Step 4: Plant the seeds on your island, then come back and mine at least 30 stones and 5 coals",
+    "Step 4: Plant the seeds on your island, then come back and mine at least 20 stones and 5 coals",
     "Step 5: Harvest wheats and craft a dough and a furnace from your inventory (left click)",
     "Step 6: Bake one bread by placing the dough and the coal in the furnace (right click), then sell it on the main island",
     "Step 7: Offer 5 breads and 3 wood logs to the Architect to receive a present",
@@ -35,4 +35,6 @@ end
 
 Events.Connect("STEP", OnStep)
 
-Events.BroadcastToServer("ReadyStep")
+while Events.BroadcastToServer("ReadyStep") ~= BroadcastEventResultCode.SUCCESS do
+    Task.Wait(0.25)
+end

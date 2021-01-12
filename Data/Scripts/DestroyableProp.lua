@@ -20,6 +20,11 @@ local listenID = "pickup" .. math.random()*30
 local listenID2 = "pickup" .. math.random()*30
 local player = nil
 
+local SOUNDS
+while SOUNDS == nil do
+    SOUNDS = _G["caillef.craftisland.sounds"]
+end
+
 function OnHit(data)  
     if not script:IsValid() then return end
     for _,p in pairs(Game.GetPlayers()) do
@@ -42,7 +47,12 @@ function OnHit(data)
     end
 
     if data.t ~= 2 then
-        Events.BroadcastToPlayer(player, "PlaySFX", type == 0 and "StoneImpact" or "WoodImpact")
+        local sound = World.SpawnAsset(type == 0 and SOUNDS.StoneImpactSFX or SOUNDS.WoodImpactSFX, { position = script:GetWorldPosition() })
+        sound:Play()
+        Task.Spawn(function()
+            Task.Wait(2)        
+            sound:Destroy()
+        end)
     end
 
     if HP <= 0 then
@@ -129,7 +139,13 @@ function PickUp(id, bool)
         if icon2 == "A19DF3F7881592F3:Item UI Wheat Seeds" then
             if math.random() < 0.15 then
                 Events.Broadcast("inventoryAddEvent", player, { muid=mysplit(icon2, ":")[1], qty = 1 })
-                Events.BroadcastToPlayer(player, "PlaySFX", "BonusItem")
+                local sound = World.SpawnAsset(SOUNDS.BonusItemSFX, { position = script:GetWorldPosition() })
+                sound:Play()
+                Task.Spawn(function()
+                    Task.Wait(2)        
+                    sound:Destroy()
+                end)
+        
             end
         end
         Events.Broadcast("inventoryAddEvent", player, { muid=mysplit(icon2, ":")[1], qty = math.floor(math.random(propItemUI2Qty.x , propItemUI2Qty.y)) })

@@ -107,6 +107,7 @@
             CanMoveUp: true
             CanMoveDown: true
             IsMountEnabled: true
+            MaxHitpoints: 100
           }
         }
       }
@@ -277,6 +278,6 @@
   Marketplace {
     Description: "First Person to Third Person camera changer\r\n\r\n== IMPORTANT ==\r\nHOW TO USE\r\n\r\nDelete your camera object that you\'re using, and drag and drop this template... thats it\r\n\r\n---------------\r\n\r\n-- Press V to change the camera\r\n-- Keybind can be changed by look at the custom properties of the main folder"
   }
-  SerializationVersion: 70
+  SerializationVersion: 72
   DirectlyPublished: true
 }

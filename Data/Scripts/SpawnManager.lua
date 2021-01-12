@@ -63,18 +63,13 @@ function OnPlayerJoined(player)
     local buildingZone = slot.island:FindChildByName("BuildingZone")
     buildingZone.beginOverlapEvent:Connect(function(trigger, other)
         if not other:IsA("Player") then return end
-        if player == other then
-            permissionsAll[other.id] = true
-            Events.BroadcastToPlayer(player, "OnBuildPermission", true)
-        else
-            permissionsAll[other.id] = false
-            Events.BroadcastToPlayer(player, "OnBuildPermission", false)
-        end
+        permissionsAll[other.id] = player == other
+        Events.BroadcastToPlayer(other, "OnBuildPermission", player == other)
     end)
     buildingZone.endOverlapEvent:Connect(function(trigger, other)
         if not other:IsA("Player") then return end
         permissionsAll[other.id] = false
-        Events.BroadcastToPlayer(player, "OnBuildPermission", false)
+        Events.BroadcastToPlayer(other, "OnBuildPermission", false)
     end)
     BUILDING_SYSTEM.LoadIsland(slot)
     TELEPORT_MANAGER.TeleportPlayerTo(player, "own_island")

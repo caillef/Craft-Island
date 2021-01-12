@@ -13506,6 +13506,6 @@
   Marketplace {
     Description: "Wood hut"
   }
-  SerializationVersion: 70
+  SerializationVersion: 72
   DirectlyPublished: true
 }

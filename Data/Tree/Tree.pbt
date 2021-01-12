@@ -15,11 +15,13 @@ Objects {
     }
   }
   ChildIds: 12292613699356748057
+  ChildIds: 3477392683278034334
   ChildIds: 2933062870931889915
   ChildIds: 12243267191862395269
   ChildIds: 11584135646992845074
   ChildIds: 9416028156443735960
   ChildIds: 11678237838342285850
+  ChildIds: 15498874708719638745
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -29,6 +31,134 @@ Objects {
     Value: "mc:evisibilitysetting:forceon"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 15498874708719638745
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  ChildIds: 85033232267587940
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 85033232267587940
+  Name: "UI Container"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15498874708719638745
+  ChildIds: 7100799157873924816
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Control {
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Canvas {
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 7100799157873924816
+  Name: "UI Text Box"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 85033232267587940
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Control {
+    Width: 945
+    Height: 60
+    UIX: 5
+    UIY: -325
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "WARNING: You progress (inventory and island) might not be saved when you disconnect. I am trying to find a way to fix this bug, but while this message is here, don\'t expect to keep everything. I\'m really sorry about this and will send a message on the Discord when you will be able to play. https://bit.ly/core-craft-island"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 20
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      AutoWrapText: true
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
   }
 }
 Objects {
@@ -2111,6 +2241,53 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "MainIsland"
+  }
+}
+Objects {
+  Id: 3477392683278034334
+  Name: "SOUNDS"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:RockImpact"
+      AssetReference {
+        Id: 18325919003320362106
+      }
+    }
+    Overrides {
+      Name: "cs:WoodImpact"
+      AssetReference {
+        Id: 12536818827096695884
+      }
+    }
+    Overrides {
+      Name: "cs:BonusItem"
+      AssetReference {
+        Id: 363925792665794649
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 7087234599356691858
+    }
   }
 }
 Objects {

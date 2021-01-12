@@ -316,5 +316,5 @@
       AssetId: "Game_Portal"
     }
   }
-  SerializationVersion: 70
+  SerializationVersion: 72
 }

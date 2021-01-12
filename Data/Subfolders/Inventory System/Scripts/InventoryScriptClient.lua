@@ -373,7 +373,9 @@ function Select(pickedIndex)
 end
 
 function OnMove(id, dest)
-	Events.BroadcastToServer("inventoryMoveEvent", p, id, dest)
+	while Events.BroadcastToServer("inventoryMoveEvent", p, id, dest) ~= BroadcastEventResultCode.SUCCESS do
+        Task.Wait(0.25)
+    end
 end
 
 local debugConsole = script:GetCustomProperty("DebugConsoleClient"):WaitForObject().context
@@ -471,4 +473,6 @@ end
 
 del.clickedEvent:Connect(OnDelete)
 
-Events.BroadcastToServer("inventoryReady", Game.GetLocalPlayer())
+while Events.BroadcastToServer("inventoryReady", Game.GetLocalPlayer()) ~= BroadcastEventResultCode.SUCCESS do
+	Task.Wait(0.25)
+end

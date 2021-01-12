@@ -56,9 +56,9 @@ function Tick()
         end
 
         if abilityInfo.canAttack then
-            if Object.IsValid(abilityInfo.hitBox) then
+            if abilityInfo.hitBox and Object.IsValid(abilityInfo.hitBox) then
                 for _, other in ipairs(abilityInfo.hitBox:GetOverlappingObjects()) do
-                    if other:IsA("Player") then
+                    if other:IsValid() and other:IsA("Player") then
                         MeleeAttack(other, abilityInfo)
                     end
                 end

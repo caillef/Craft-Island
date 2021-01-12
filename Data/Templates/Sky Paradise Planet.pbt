@@ -825,5 +825,5 @@
       AssetId: "Sky_Paradise_Planet"
     }
   }
-  SerializationVersion: 70
+  SerializationVersion: 72
 }

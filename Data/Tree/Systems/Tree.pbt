@@ -3536,7 +3536,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Name"
-      String: "Furnace = 30 stones"
+      String: "Furnace = 20 stones"
     }
     Overrides {
       Name: "cs:Type"

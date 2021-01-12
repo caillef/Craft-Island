@@ -337,6 +337,6 @@
   Marketplace {
     Description: "Nameplates, but with outlined text! Set the outline to any color you\'d like by modifying the NameOutlineColor field - use this when you can\'t seem to find a nameplate color that\'s visible over your game\'s backgrounds!"
   }
-  SerializationVersion: 70
+  SerializationVersion: 72
   DirectlyPublished: true
 }

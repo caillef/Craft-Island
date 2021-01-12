@@ -31,6 +31,7 @@ end
 
 function Add(player, d)
 	local muid = d.muid
+	if not muid then return end
 	local qty = d.qty or 1
 	local ii
 	for i = 1, 27 do
@@ -41,25 +42,33 @@ function Add(player, d)
 	end
 	if ii == nil then
 		for i = 1, 27 do
-			if player:IsValid() and data[player] and (data[player][i] == nil or data[player][i].qty == 0) then
+			if player:IsValid() and data[player] and (data[player][i] == nil or (data[player][i].qty and data[player][i].qty == 0)) then
 				ii = i
 				break
 			end
 		end
 	end
-	if ii ~= nil then
-		data[player][ii] = { muid=muid, qty=qty + (data[player][ii] and data[player][ii].qty or 0) }
+	if ii == nil then
+		warn("No free slots!")
+		return
+	end
+
+	qty = qty + (data[player][ii] and data[player][ii].qty or 0)
+	if qty > 0 then
+		data[player][ii] = { muid=muid, qty=qty }
 		while Events.BroadcastToPlayer(player, "requestInventoryAddEvent", data[player][ii], ii) ~= BroadcastEventResultCode.SUCCESS do
 			Task.Wait(0.25)
 		end
 		Save(player)
-	else
-		warn("No free slots!")
 	end
 
 	local storage = Storage.GetPlayerData(player) or {}
 	local story = storage.story or {}
-	if story.step == 4 and CountItem(player, "51D4970917797698") >= 30 and CountItem(player, "D1EC52C0B5D654EA") >= 5 then
+	if story.step == 4 and CountItem(player, "51D4970917797698") >= 20 and CountItem(player, "D1EC52C0B5D654EA") >= 5 then
+		Task.Wait(1)
+		Events.Broadcast("STEP_COMPLETED", player)
+	end
+	if story.step == 5 and muid and muid == "0B66793FF08195AC" then
 		Events.Broadcast("STEP_COMPLETED", player)
 	end
 end
@@ -72,13 +81,14 @@ function OnInventoryReady(player)
 	local k = 1
 	AddLogEntry("final Inventory:\n"..finalInventory)
 	AddLogEntry("Start sending inventory:")
+	Task.Wait(0.2)
 	for i=1,#finalInventory,64 do
 		AddLogEntry(string.sub(finalInventory, i, (i + 63 < #finalInventory) and i + 63 or #finalInventory), k, (i + 63 >= #finalInventory))
 		while Events.BroadcastToPlayer(player, "inventoryPLoadEvent", string.sub(finalInventory, i, (i + 63 < #finalInventory) and i + 63 or #finalInventory), k, (i + 63 >= #finalInventory)) ~= BroadcastEventResultCode.SUCCESS do
 			Task.Wait(0.25)
 		end
 		k = k + 1
-		Task.Wait(0.2)
+		Task.Wait(0.3)
 	end
 	AddLogEntry("Finished sending inventory")
 	Events.Broadcast("SInventoryReady", player)
@@ -86,49 +96,22 @@ function OnInventoryReady(player)
 end
 
 function GiveMandatoryItems(player)
-	local axeFound = false
-	local hoeFound = false
-	local pickaxeFound = false
-	Task.Wait(1)
+	local list = {"1214EEEF9701EE9A", "E2428B216BD2D34B", "AECB1226211DC37C"}
 	for _,item in pairs(data[player]) do
-		if item.muid == "1214EEEF9701EE9A" then axeFound = true end
-		if item.muid == "E2428B216BD2D34B" then hoeFound = true end
-		if item.muid == "AECB1226211DC37C" then pickaxeFound = true end
-	end
-	if not axeFound then
-		Events.Broadcast("inventoryAddEvent", player, { muid="1214EEEF9701EE9A", qty = 1 })
-		Task.Wait(0.2)
-	else
-		for _,item in pairs(data[player]) do
-			if item.muid == "1214EEEF9701EE9A" and item.qty > 1 then
-				PlayerRemoveItems(player, item.muid, item.qty - 1)
+		for k,v in pairs(list) do
+			if item.muid == v then
+				if item.qty > 1 then
+					PlayerRemoveItems(player, item.muid, item.qty - 1)
+				end
+				table.remove(list, k)
 			end
-		end			
+		end
 	end
-	if not hoeFound then
-		Events.Broadcast("inventoryAddEvent", player, { muid="E2428B216BD2D34B", qty = 1 })
+
+	for _,v in pairs(list) do
+		Add(player, { muid=v, qty=1 })
 		Task.Wait(0.2)
-	else
-		for _,item in pairs(data[player]) do
-			if item.muid == "E2428B216BD2D34B" and item.qty > 1 then
-				PlayerRemoveItems(player, item.muid, item.qty - 1)
-			end
-		end			
 	end
-	if not pickaxeFound then
-		Events.Broadcast("inventoryAddEvent", player, { muid="AECB1226211DC37C", qty = 1 })
-		Task.Wait(0.2)
-	else
-		for _,item in pairs(data[player]) do
-			if item.muid == "AECB1226211DC37C" and item.qty > 1 then
-				PlayerRemoveItems(player, item.muid, item.qty - 1)
-			end
-		end			
-	end
-	Task.Spawn(function()
-		Task.Wait(1)
-		Save(player)		
-	end)
 end
 
 function Save(player)
@@ -144,9 +127,8 @@ function Delete(player, i)
 end
 
 function Move(player, iDrag, dest)
-	local a = data[player][iDrag]
 	local b = data[player][dest] or nil
-	data[player][dest] = a
+	data[player][dest] = data[player][iDrag]
 	data[player][iDrag] = b
 end
 
@@ -156,20 +138,11 @@ function EquipItem(player, slot, toolMuid)
 	playersLatestSlot[player] = slot
 	if toolMuid == nil then toolMuid = 0 end
 
-	if toolMuid == 0 then
-		local list = player:GetEquipment()
-		for _,obj in pairs(list) do
-			if obj:IsValid() then
-				obj:Destroy()
-			end
-		end
-	elseif toolMuid then
-		local list = player:GetEquipment()
-		for _,obj in pairs(list) do
-			if obj:IsValid() then
-				obj:Destroy()
-			end
-		end
+	local list = player:GetEquipment()
+	for _,obj in pairs(list) do
+		if obj:IsValid() then obj:Destroy() end
+	end
+	if toolMuid ~= 0 then
 		local tool = World.SpawnAsset(toolMuid, { parent=World.GetRootObject() })
 		tool:Equip(player)
 	end
@@ -178,9 +151,8 @@ end
 local SOIL_MUID = "1B5A92562B0F84C3"
 
 function PlayerHasItems(player, muid, qty)
-	if muid == SOIL_MUID then
-		return true
-	end
+	if not player or not player:IsValid() or not muid then return false end
+	if muid == SOIL_MUID then return true end
 	qty = qty or 1
 	for i = 1, 27 do
 		if data[player][i] and data[player][i].muid == muid then
@@ -191,22 +163,17 @@ function PlayerHasItems(player, muid, qty)
 end
 
 function PlayerRemoveItems(player, muid, qty)
-	if muid == SOIL_MUID then
-		return true
-	end
+	if not player or not player:IsValid() or not muid then return false end
+	if muid == SOIL_MUID then return true end
 	qty = qty or 1
 	for i = 1, 27 do
 		if data[player][i] and data[player][i].muid == muid then
-			if data[player][i].qty < qty then
-				return false
-			end
+			if data[player][i].qty < qty then return false end
 			data[player][i].qty = data[player][i].qty - qty
 			while Events.BroadcastToPlayer(player, "requestInventoryRemoveEvent", data[player][i], i) ~= BroadcastEventResultCode.SUCCESS do
 				Task.Wait(0.25)
 			end
-			if qty == 0 then
-				data[player][i] = nil
-			end
+			if qty == 0 then data[player][i] = nil end
 			return true
 		end
 	end
@@ -221,11 +188,8 @@ function FreeSlots(player, d)
 			break
 		end
 	end
-
 	Events.Broadcast("returnInventoryFullEvent", d.string, (ii == nil))
 end
-
-local propInventories = script:GetCustomProperty("Inventories")
 
 function OnPlayerLeft(player)
 	playersLatestSlot[player] = nil
@@ -233,52 +197,46 @@ function OnPlayerLeft(player)
 end
 
 function GetCurrentItem(player)
-	return (playersLatestSlot[player] ~= nil and data[player][playersLatestSlot[player]]) and data[player][playersLatestSlot[player]].muid or nil
+	if not playersLatestSlot[player] then return nil end
+	local item = data[player][playersLatestSlot[player]]
+	return (item and item.muid or nil)
 end
 
+local crafts = {
+	{
+		{ "828D307143518252", 2 }, -- Wheat
+		{ "905D3C58A6D70B6A", 1 } -- Dough
+	},
+	{
+		{ "905D3C58A6D70B6A", 1, "7D3C73A40F261843", 2 }, -- Dough and berry
+		{ "849D4C1B02464AC5", 1 } -- Berry Dough
+	},
+	{
+		{ "51D4970917797698", 20 }, -- Stone
+		{ "0B66793FF08195AC", 1 } -- Furnace
+	},
+	{
+		{ "4153F13DBF7563A6", 2 }, -- Wood Log
+		{ "1F4C8911AF77BAFA", 3, "D4469C4FF621DC7D", 3, "8C5509CCAC1C750E", 3, "2B56C1E3C138F542", 3, "178FF62EF3246BE7", 3, "60BA6C27C1F3EA75", 3 } -- Wood Structure
+	}
+}
+
 function Craft(player, craftMuid)
-	if craftMuid == "905D3C58A6D70B6A" then -- Dough
-		if not PlayerHasItems(player, "828D307143518252", 2) then
-			return
+	for _,craft in pairs(crafts) do
+		local recipe = craft[2]
+		for i=1,#recipe,2 do
+			if recipe[i] == craftMuid then
+				local ingredients = craft[1]
+				for j=1,#ingredients,2 do
+					if not PlayerHasItems(player, ingredients[j], ingredients[j + 1]) then return end
+				end
+				for j=1,#ingredients,2 do
+					PlayerRemoveItems(player, ingredients[j], ingredients[j + 1])
+				end
+				Add(player, { muid=craftMuid, qty = recipe[i + 1] })
+				return
+			end
 		end
-		PlayerRemoveItems(player, "828D307143518252", 2)
-		Add(player, { muid=craftMuid, qty = 1 })
-	end
-
-	if craftMuid == "849D4C1B02464AC5" then -- Berry Dough
-		if not (PlayerHasItems(player, "905D3C58A6D70B6A", 1) and 
-				PlayerHasItems(player, "7D3C73A40F261843", 2)) then
-			return
-		end
-		PlayerRemoveItems(player, "905D3C58A6D70B6A", 1) 
-		PlayerRemoveItems(player, "7D3C73A40F261843", 2)
-		Add(player, { muid=craftMuid, qty = 1 })
-	end
-
-	if craftMuid == "0B66793FF08195AC" then -- Furnace
-		if not PlayerHasItems(player, "51D4970917797698", 30) then
-			return
-		end
-		PlayerRemoveItems(player, "51D4970917797698", 30)
-		Add(player, { muid=craftMuid, qty = 1 })
-		local storage = Storage.GetPlayerData(player) or {}
-		local story = storage.story or {}
-		if story.step == 5 then
-			Events.Broadcast("STEP_COMPLETED", player)
-		end
-	end
-
-	if craftMuid == "1F4C8911AF77BAFA" or
-		craftMuid == "D4469C4FF621DC7D" or
-		craftMuid == "8C5509CCAC1C750E" or
-		craftMuid == "2B56C1E3C138F542" or
-		craftMuid == "178FF62EF3246BE7" or
-		craftMuid == "60BA6C27C1F3EA75" then -- Wood Structure
-		if not PlayerHasItems(player, "4153F13DBF7563A6", 2) then
-			return
-		end
-		PlayerRemoveItems(player, "4153F13DBF7563A6", 2)
-		Add(player, { muid=craftMuid, qty = 3 })
 	end
 end
 

@@ -39,5 +39,5 @@
     OwnerName: "caillef"
     Description: "A small console to send commands to the server. You can also add your own commands."
   }
-  SerializationVersion: 70
+  SerializationVersion: 72
 }

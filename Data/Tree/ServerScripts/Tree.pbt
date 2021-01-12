@@ -214,7 +214,7 @@ Objects {
     Overrides {
       Name: "cs:PortalSFX"
       AssetReference {
-        Id: 14880471275149177429
+        Id: 3054833864129765767
       }
     }
     Overrides {

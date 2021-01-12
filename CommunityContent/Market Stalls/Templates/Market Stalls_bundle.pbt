@@ -52,5 +52,5 @@
     Version: "1.0.0"
     Description: "Three market stalls for selling things at the market!"
   }
-  SerializationVersion: 70
+  SerializationVersion: 72
 }

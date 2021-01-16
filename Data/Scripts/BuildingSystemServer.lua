@@ -153,10 +153,32 @@ function Grow(objReplaced, muid, player)
     print(placedTypedObjects, placedTypedObjects[pos.z], placedTypedObjects[pos.z][pos.y], placedTypedObjects[pos.z][pos.y][pos.x])
 end
 
+function CountNbStructures(placedObjects)
+    local sum = 0
+    for _,type in pairs(placedObjects) do
+        for _,z in pairs(type) do
+            for _,y in pairs(z) do
+                for _,x in pairs(y) do
+                    for _,angle in pairs(x) do
+                        sum = sum + 1
+                    end
+                end
+            end    
+        end
+    end
+    return sum
+end
+
 local SAPLING_INDEX = 5
 function PlaceObject(player, position, angle, type)
     angle = getAlignedAngle(angle)
     placedObjects[player] = placedObjects[player] or {}
+
+    if CountNbStructures(placedObjects[player]) >= 150 then
+        Events.BroadcastToPlayer(player, "BSLimit")
+        return
+    end
+
     local placedTypedObjects = placedObjects[player][type] or {}
     position = position - playersSpawns[player].island:FindChildByName("Structures"):GetWorldPosition()
     if placedTypedObjects[position.z] ~= nil and

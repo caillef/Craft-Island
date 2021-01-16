@@ -22,6 +22,7 @@ Objects {
   ChildIds: 9416028156443735960
   ChildIds: 11678237838342285850
   ChildIds: 15498874708719638745
+  ChildIds: 17981941868417053787
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -31,6 +32,43 @@ Objects {
     Value: "mc:evisibilitysetting:forceon"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 17981941868417053787
+  Name: "LimitBuildingNotif"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 6690828246848967605
+      value {
+        Overrides {
+          Name: "Name"
+          String: "LimitBuildingNotif"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 9003925426603625064
+    }
   }
 }
 Objects {
@@ -74,6 +112,7 @@ Objects {
   }
   ParentId: 15498874708719638745
   ChildIds: 7100799157873924816
+  ChildIds: 8839980271334706156
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -97,6 +136,65 @@ Objects {
       TargetAnchor {
         Anchor {
           Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 8839980271334706156
+  Name: "UI Text Box"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 85033232267587940
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Control {
+    Width: 945
+    Height: 60
+    UIX: 3
+    UIY: -327
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "WARNING: You progress (inventory and island) might not be saved when you disconnect. I am trying to find a way to fix this bug, but while this message is here, don\'t expect to keep everything. I\'m really sorry about this and will send a message on the Discord when you will be able to play. https://bit.ly/core-craft-island"
+      Color {
+        R: 1
+        G: 0.0600004792
+        B: 0.0600000024
+        A: 1
+      }
+      Size: 20
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      AutoWrapText: true
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
         }
       }
     }
@@ -136,9 +234,6 @@ Objects {
     Text {
       Label: "WARNING: You progress (inventory and island) might not be saved when you disconnect. I am trying to find a way to fix this bug, but while this message is here, don\'t expect to keep everything. I\'m really sorry about this and will send a message on the Discord when you will be able to play. https://bit.ly/core-craft-island"
       Color {
-        R: 1
-        G: 1
-        B: 1
         A: 1
       }
       Size: 20
@@ -1535,6 +1630,7 @@ Objects {
     }
   }
   ParentId: 12243267191862395269
+  ChildIds: 1400440669061504928
   UnregisteredParameters {
     Overrides {
       Name: "cs:BlockSerializer"
@@ -1551,6 +1647,12 @@ Objects {
         TemplateId: 7069407994925304852
       }
     }
+    Overrides {
+      Name: "cs:UIPanel"
+      ObjectReference {
+        SelfId: 14440130256340139604
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1561,6 +1663,127 @@ Objects {
   Script {
     ScriptAsset {
       Id: 18383686534434694165
+    }
+  }
+}
+Objects {
+  Id: 1400440669061504928
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15493299283785528625
+  ChildIds: 5476895240377289896
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 5476895240377289896
+  Name: "UI Container"
+  Transform {
+    Location {
+      X: 175
+      Y: -120
+      Z: 80
+    }
+    Rotation {
+      Yaw: 95
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1400440669061504928
+  ChildIds: 14440130256340139604
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Control {
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Canvas {
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 14440130256340139604
+  Name: "UI Panel"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5476895240377289896
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Control {
+    Width: 45
+    Height: 100
+    UIX: -5
+    UIY: 285
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    UseParentWidth: true
+    Panel {
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
     }
   }
 }

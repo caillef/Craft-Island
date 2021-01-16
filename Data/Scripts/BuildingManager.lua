@@ -1,5 +1,10 @@
 ﻿local propPrevisu = script:GetCustomProperty("BuildingSystemList"):WaitForObject()
 local BLOCK_SERIALIZER = script:GetCustomProperty("BlockSerializer"):WaitForObject().context
+local propUIPanel = script:GetCustomProperty("UIPanel"):WaitForObject()
+
+Events.Connect("BSLimit", function()
+	World.SpawnAsset("7CF45E787CD10A68:LimitBuildingNotif", { parent= propUIPanel })
+end)
 
 local ACTION_PLACE = "ability_primary" -- left click
 local ACTION_ROTATE = "ability_secondary" -- right click

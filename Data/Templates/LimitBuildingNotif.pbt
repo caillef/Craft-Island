@@ -1,13 +1,13 @@
 ﻿Assets {
-  Id: 2619586151063933237
-  Name: "AddItemNotif"
+  Id: 9003925426603625064
+  Name: "LimitBuildingNotif"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 6690828246848967605
       Objects {
         Id: 6690828246848967605
-        Name: "AddItemNotif"
+        Name: "LimitBuildingNotif"
         Transform {
           Scale {
             X: 1
@@ -35,7 +35,7 @@
           UseParentWidth: true
           UseParentHeight: true
           Text {
-            Label: "+1 wood"
+            Label: "You have reached the building limit (150)"
             Color {
               R: 1
               G: 1
@@ -44,19 +44,18 @@
             }
             Size: 20
             Justification {
-              Value: "mc:etextjustify:right"
+              Value: "mc:etextjustify:center"
             }
-            AutoWrapText: true
           }
           AnchorLayout {
             SelfAnchor {
               Anchor {
-                Value: "mc:euianchor:topleft"
+                Value: "mc:euianchor:middlecenter"
               }
             }
             TargetAnchor {
               Anchor {
-                Value: "mc:euianchor:topleft"
+                Value: "mc:euianchor:middlecenter"
               }
             }
           }

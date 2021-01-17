@@ -1,13 +1,13 @@
 ﻿Assets {
-  Id: 5343201294972579752
-  Name: "BS_Preview_Template_Floor"
+  Id: 3275793462407327190
+  Name: "BS_Preview_WheatSeeds_1"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 14205524207768055921
+      RootId: 17909178841194391127
       Objects {
-        Id: 14205524207768055921
-        Name: "BS_Preview_Template_Floor"
+        Id: 17909178841194391127
+        Name: "BS_Preview_WheatSeeds_1"
         Transform {
           Scale {
             X: 1
@@ -15,13 +15,25 @@
             Z: 1
           }
         }
-        ParentId: 14419583533663607855
-        ChildIds: 15108614182358756752
+        ParentId: 13835058745715878551
+        ChildIds: 16521670999879272407
         UnregisteredParameters {
           Overrides {
             Name: "cs:Built"
             AssetReference {
-              Id: 17600278440057254884
+              Id: 4789914794636579535
+            }
+          }
+          Overrides {
+            Name: "cs:InventoryIconMuid"
+            AssetReference {
+              Id: 11645732455915557619
+            }
+          }
+          Overrides {
+            Name: "cs:MustBeBuiltOn"
+            AssetReference {
+              Id: 1971048685715293379
             }
           }
         }
@@ -33,23 +45,27 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Preview_WheatSeeds_1"
         }
       }
       Objects {
-        Id: 15108614182358756752
+        Id: 16521670999879272407
         Name: "Preview"
         Transform {
           Location {
+            X: 100
+            Y: -100
+            Z: 10
           }
           Rotation {
           }
           Scale {
-            X: 1.25
-            Y: 1.25
-            Z: 0.5
+            X: 0.7
+            Y: 0.7
+            Z: 0.1
           }
         }
-        ParentId: 14205524207768055921
+        ParentId: 17909178841194391127
         UnregisteredParameters {
           Overrides {
             Name: "ma:Building_Ceiling:id"
@@ -81,6 +97,12 @@
             Name: "ma:Shared_Trim:smart"
             Bool: true
           }
+          Overrides {
+            Name: "ma:Nature_Grass:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -90,7 +112,7 @@
         }
         CoreMesh {
           MeshAsset {
-            Id: 10888788159873929006
+            Id: 966563861414155672
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -105,12 +127,12 @@
       }
     }
     Assets {
-      Id: 10888788159873929006
-      Name: "Craftsman Floor 01 4m x 4m"
+      Id: 966563861414155672
+      Name: "Grass Tall"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_urb_sub_craftsman_floor_001_4x4"
+        AssetId: "sm_grass_generic_001"
       }
     }
     Assets {

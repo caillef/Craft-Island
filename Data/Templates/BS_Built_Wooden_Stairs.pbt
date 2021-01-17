@@ -1,13 +1,13 @@
 ﻿Assets {
-  Id: 14836191695451775469
-  Name: "BS_Built_Template_Wall"
+  Id: 15033179693905802780
+  Name: "BS_Built_Wooden_Stairs"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 14730714539227928723
+      RootId: 13915550309939900241
       Objects {
-        Id: 14730714539227928723
-        Name: "BS_Built_Template_Wall"
+        Id: 13915550309939900241
+        Name: "BS_Built_Wooden_Stairs"
         Transform {
           Scale {
             X: 1
@@ -16,8 +16,8 @@
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 3155986259828645211
-        ChildIds: 10667219681633226133
+        ChildIds: 12657505239204960898
+        ChildIds: 17248280778615194737
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -30,57 +30,31 @@
         }
       }
       Objects {
-        Id: 3155986259828645211
-        Name: "BuiltWall"
+        Id: 12657505239204960898
+        Name: "BuiltStairs"
         Transform {
           Location {
-            X: 200
           }
           Rotation {
-            Yaw: 180
           }
           Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
+            X: 0.5
+            Y: 1
+            Z: 1
           }
         }
-        ParentId: 14730714539227928723
+        ParentId: 13915550309939900241
         UnregisteredParameters {
           Overrides {
-            Name: "ma:Building_WallInner:id"
+            Name: "ma:Building_Foundation:id"
             AssetReference {
               Id: 7426454697044131321
             }
           }
           Overrides {
-            Name: "ma:Building_WallInner2:id"
+            Name: "ma:Shared_Trim:id"
             AssetReference {
               Id: 7426454697044131321
-            }
-          }
-          Overrides {
-            Name: "ma:Building_WallInner2:smart"
-            Bool: false
-          }
-          Overrides {
-            Name: "ma:Building_WallInner:smart"
-            Bool: false
-          }
-          Overrides {
-            Name: "ma:Building_WallInner2:utile"
-            Float: 0.613038778
-          }
-          Overrides {
-            Name: "ma:Building_WallInner:utile"
-            Float: 0.613
-          }
-          Overrides {
-            Name: "ma:Building_WallOuter:color"
-            Color {
-              R: 0.179999948
-              G: 0.0822516
-              A: 1
             }
           }
         }
@@ -93,7 +67,7 @@
         }
         CoreMesh {
           MeshAsset {
-            Id: 453487308539368474
+            Id: 3484535885344630159
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -107,12 +81,12 @@
         }
       }
       Objects {
-        Id: 10667219681633226133
+        Id: 17248280778615194737
         Name: "DestroyableProp"
         Transform {
           Location {
             X: 107.543755
-            Z: 134.782623
+            Z: 67.3913116
           }
           Rotation {
             Yaw: 87.2511749
@@ -120,20 +94,18 @@
           Scale {
             X: 0.25
             Y: 0.25
-            Z: 0.5
+            Z: 0.25
           }
         }
-        ParentId: 14730714539227928723
+        ParentId: 13915550309939900241
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:ItemUI"
-            AssetReference {
-              Id: 1697846266050145255
-            }
-          }
           Overrides {
             Name: "cs:HP"
             Int: 1
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "WOODEN_STAIRS"
           }
         }
         WantsNetworking: true
@@ -151,12 +123,12 @@
       }
     }
     Assets {
-      Id: 453487308539368474
-      Name: "Craftsman Wall 02"
+      Id: 3484535885344630159
+      Name: "Main Street Stairs 01 - 1.5m"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_urb_sub_craftsman_wall_002"
+        AssetId: "sm_ts_urb_dtn_mst_stairs_001_150cm_ref"
       }
     }
     Assets {

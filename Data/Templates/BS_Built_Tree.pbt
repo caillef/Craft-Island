@@ -121,20 +121,8 @@
             }
           }
           Overrides {
-            Name: "cs:ItemUI"
-            AssetReference {
-              Id: 4707371283039740838
-            }
-          }
-          Overrides {
             Name: "cs:HP"
             Int: 3
-          }
-          Overrides {
-            Name: "cs:ItemUI2"
-            AssetReference {
-              Id: 15313945871510559390
-            }
           }
           Overrides {
             Name: "cs:FallSFX"
@@ -148,6 +136,14 @@
               X: 2
               Y: 3
             }
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "WOOD_LOG"
+          }
+          Overrides {
+            Name: "cs:ItemId2"
+            String: "SAPLING"
           }
         }
         WantsNetworking: true

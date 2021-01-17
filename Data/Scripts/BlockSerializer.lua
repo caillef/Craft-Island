@@ -1,4 +1,14 @@
-﻿local WALL_SIZE = 200
+﻿local _objectsList
+function GetObjectsList()
+    _objectsList = _G["caillef.craftisland.objects"]
+    while _objectsList == nil do
+        Task.Wait(0.1)
+        _objectsList = _G["caillef.craftisland.objects"]
+    end
+    return _objectsList    
+end
+
+local WALL_SIZE = 200
 local WALL_HEIGHT = 150
 
 local function mysplit(inputstr, sep)
@@ -42,14 +52,10 @@ function Block_Deserialize(v, islandPos)
     }
 end
 
-function GetTypeFromMuid(muid, rawObjectsList)
-    for key,obj in pairs(rawObjectsList) do
-        if obj then
-            local objid = obj:GetCustomProperty("Built")
-            local objmuid = mysplit(objid, ":")[1]
-            if objmuid == muid then
-                return key
-            end
+function GetTypeFromMuid(muid)
+    for key,obj in pairs(GetObjectsList()) do
+        if obj.templateMuid == muid then
+            return key
         end
     end
     return nil
@@ -66,30 +72,33 @@ function getAlignedAngle(a)
     return 0
 end
 
-function Block_SerializeStructures(structures, slotPos, rawObjectsList)
+function Block_SerializeStructures(structures, slotPos)
     local pBlocks = {}
     for _,structure in pairs(structures) do
         local pos = structure:GetWorldPosition() - slotPos
         local angle = getAlignedAngle(structure:GetRotation().z)
-        local type = tostring(GetTypeFromMuid(structure.sourceTemplateId, rawObjectsList))
+        local type = GetTypeFromMuid(structure.sourceTemplateId)
         pBlocks[type] = pBlocks[type] or {}
         pBlocks[type][angle] = pBlocks[type][angle] or {}
         table.insert(pBlocks[type][angle], Block_SerializePosition(pos))
     end
-    local stringBlocks = "v1*"
+    local stringBlocks = "v2*"
     local firstType = true
     for t,angles in pairs(pBlocks) do
-        stringBlocks = stringBlocks..(firstType and "" or "_")..t.."|" 
+        stringBlocks = stringBlocks..(firstType and "" or "_")..tostring(t).."|" 
         firstType = false
         local firstAngle = true
         for a,positions in pairs(angles) do
-            stringBlocks = stringBlocks..(firstAngle and "" or "|")..a.."="
+            stringBlocks = stringBlocks..(firstAngle and "" or "|")..tostring(a).."="
+            firstAngle = false
             local first = true
             for _,pos in pairs(positions) do
                 stringBlocks = stringBlocks..(first and "" or ";")..pos
+                if Storage.SizeOfData({pBlocks=stringBlocks}) > 12000 then
+                    return stringBlocks
+                end
                 first = false
             end
-            firstAngle = false
         end
     end
     return stringBlocks
@@ -99,7 +108,7 @@ end
 function Block_DeserializeStructures(structures, slotPos)
     local pBlocks = {}
     local version = mysplit(structures, "*")[1]
-    if version == "v1" and mysplit(structures, "*")[2] then
+    if version == "v2" and mysplit(structures, "*")[2] then
         local types = mysplit(mysplit(structures, "*")[2], "_")
         for _,blocks in pairs(types) do
             local angles = mysplit(blocks, "|")
@@ -121,3 +130,10 @@ function Block_DeserializeStructures(structures, slotPos)
     end
     return pBlocks
 end
+
+_G["caillef.craftisland.buildSerializer"] = {
+    Serialize = Block_Serialize,
+    Deserialize = Block_Deserialize,
+    SerializeList = Block_SerializeStructures,
+    DeserializeList = Block_DeserializeStructures
+}

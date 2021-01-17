@@ -1,13 +1,13 @@
 ﻿Assets {
-  Id: 17513909115496730133
-  Name: "BS_Previsu_Template_Wall"
+  Id: 9414891653175157061
+  Name: "BS_Preview_Chair"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 8456781659918628961
+      RootId: 8367639494184782803
       Objects {
-        Id: 8456781659918628961
-        Name: "BS_Previsu_Template_Wall"
+        Id: 8367639494184782803
+        Name: "BS_Previsu_Chair"
         Transform {
           Scale {
             X: 1
@@ -15,13 +15,19 @@
             Z: 1
           }
         }
-        ParentId: 14419583533663607855
-        ChildIds: 10423861635502193637
+        ParentId: 13835058745715878551
+        ChildIds: 12486053632138380453
         UnregisteredParameters {
           Overrides {
             Name: "cs:Built"
             AssetReference {
-              Id: 14836191695451775469
+              Id: 13147306627443383789
+            }
+          }
+          Overrides {
+            Name: "cs:InventoryIconMuid"
+            AssetReference {
+              Id: 15128924105355753610
             }
           }
         }
@@ -33,23 +39,26 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Previsu_Chair"
         }
       }
       Objects {
-        Id: 10423861635502193637
+        Id: 12486053632138380453
         Name: "Preview"
         Transform {
           Location {
+            X: 100
+            Y: -100
           }
           Rotation {
           }
           Scale {
-            X: 0.625
-            Y: 0.625
-            Z: 0.5
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
-        ParentId: 8456781659918628961
+        ParentId: 8367639494184782803
         UnregisteredParameters {
           Overrides {
             Name: "ma:Building_WallInner:id"
@@ -63,6 +72,18 @@
               Id: 231800746144079014
             }
           }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Detail1:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -72,7 +93,7 @@
         }
         CoreMesh {
           MeshAsset {
-            Id: 1608526019857160819
+            Id: 11345399511090385631
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -87,12 +108,12 @@
       }
     }
     Assets {
-      Id: 1608526019857160819
-      Name: "Craftsman Part - Wall 01"
+      Id: 11345399511090385631
+      Name: "Craftsman Dining Chair"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_urb_sub_craftsman_part_wall_001"
+        AssetId: "sm_urb_chair_dining_001"
       }
     }
     Assets {

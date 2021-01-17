@@ -1,31 +1,4 @@
-﻿local allUIItem = {
-    "1214EEEF9701EE9A",
-    "E2428B216BD2D34B",
-    "7D3C73A40F261843",
-    "6B0CB993E5EAEFF6",
-    "849D4C1B02464AC5",
-    "58CF2E553C1958F0",
-    "905D3C58A6D70B6A",
-    "60BA6C27C1F3EA75",
-    "D48610A224F25A9E",
-    "D4469C4FF621DC7D",
-    "178FF62EF3246BE7",
-    "828D307143518252",
-    "A19DF3F7881592F3",
-    "4153F13DBF7563A6",
-    "1FDE35B1D2A8901F",
-    "8C5509CCAC1C750E",
-    "1F4C8911AF77BAFA",
-    "D1F4BC513D92F88A",
-    "2B56C1E3C138F542",
-    "BC4C40A42D63733D",
-    "AECB1226211DC37C",
-    "0B66793FF08195AC", -- furnace
-    "51D4970917797698", -- stone
-    "D1EC52C0B5D654EA", -- coal
-}
-
-local function mysplit(inputstr, sep)
+﻿local function mysplit(inputstr, sep)
     if sep == nil then
             sep = "%s"
     end
@@ -82,27 +55,6 @@ function SerializeItem(pos, type, qty)
     return pos..";"..type..";"..qty
 end
 
-function getItemType(itemMuid)
-    for key,i in pairs(allUIItem) do
-        if i == itemMuid then
-            return key
-        end
-    end
-    return nil
-end
-
-function getItemMuid(itemType)
-    if not allUIItem[itemType] then
-        if itemType then
-            print("Error: can't find item of type "..itemType)
-        else
-            print("Error: can't find item of type nil")
-        end
-        return nil
-    end
-    return allUIItem[itemType]
-end
-
 local logs = {}
 function GetLogs()
     return logs
@@ -120,18 +72,13 @@ function ClearLogs()
 end
 
 function SerializeInventory(list)
-    local str = "v1*"
-    AddLogEntry("Start Serializing")
+    local str = "v2*"
     for key,item in pairs(list) do
-        if item ~= nil and item.muid ~= nil then
-            local type = getItemType(item.muid)
-            if type ~= nil and item.qty > 0 then
-                AddLogEntry(SerializeItem(key, type, item.qty))
-                str = str..SerializeItem(key, type, item.qty)..'|'
-            end
+        if item ~= nil and item.id ~= nil and item.qty > 0 then
+            AddLogEntry(SerializeItem(key, item.id, item.qty))
+            str = str..SerializeItem(key, item.id, item.qty)..'|'
         end
     end
-    AddLogEntry("Result: "..str)
     return str
 end
 
@@ -142,29 +89,33 @@ function DeserializeInventory(str)
     end
     local version = mysplit(str, "*")[1]
     if version == "v1" then
+        --TODO: show popup explaining rework
+        return inventory
+    end
+    if version == "v2" then
         if mysplit(str, "*")[2] then
             local items = mysplit(mysplit(str, "*")[2], "|")
             for _,item in pairs(items) do
                 local data = mysplit(item, ";")
-                local muid = getItemMuid(tonumber(data[2]))
+                local itemId = tonumber(data[2])
                 local qty = tonumber(data[3])
-                if muid and qty > 0 then
-                    inventory[tonumber(data[1])] = { muid=muid, qty=qty }
+                if itemId and qty > 0 then
+                    inventory[tonumber(data[1])] = { qty=qty, id=itemId }
                 end
             end
         end
         return inventory
     end
-    -- if version == "v2" then
+    -- if version == "v3" then
     --     local inv = mysplit(str, "*")[2]
     --     for i=1,#inv,4 do
     --         local item = DeserializeItem(inv:sub(i, i + 3))
-    --         inventory[item.pos] = { muid=getItemMuid(item.type), qty=item.qty }
+    --         inventory[item.pos] = { muid=chopermuid, qty=item.qty }
     --     end
     --     return inventory
     -- end
     print("Error: DeserializeInventory, using default value")
-    return DeserializeInventory("v1*")
+    return inventory
 end
 
 function OnSaveInventory(player, d)
@@ -172,5 +123,10 @@ function OnSaveInventory(player, d)
     data.inventory = SerializeInventory(d)
     Storage.SetPlayerData(player, data)
 end
+
+_G["caillef.craftisland.inventorySerializer"] = {
+    Serialize = SerializeInventory,
+    Deserialize = DeserializeInventory
+}
 
 Events.Connect("inventorySaveEvent", OnSaveInventory)

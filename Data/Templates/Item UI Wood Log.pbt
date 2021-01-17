@@ -1,6 +1,6 @@
 ﻿Assets {
   Id: 4707371283039740838
-  Name: "Item UI Wood"
+  Name: "Item UI Wood Log"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {

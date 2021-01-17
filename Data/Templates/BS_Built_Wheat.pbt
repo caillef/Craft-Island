@@ -51,20 +51,16 @@
         ParentId: 10060408153061459703
         UnregisteredParameters {
           Overrides {
-            Name: "cs:ItemUI"
-            AssetReference {
-              Id: 9407228459665687122
-            }
-          }
-          Overrides {
             Name: "cs:HP"
             Int: 1
           }
           Overrides {
-            Name: "cs:ItemUI2"
-            AssetReference {
-              Id: 11645732455915557619
-            }
+            Name: "cs:ItemId"
+            String: "WHEAT"
+          }
+          Overrides {
+            Name: "cs:ItemId2"
+            String: "WHEAT_SEEDS"
           }
         }
         WantsNetworking: true

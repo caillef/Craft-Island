@@ -3418,9 +3418,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:CraftUIItem"
-      AssetReference {
-        Id: 821477297566619052
-      }
+      String: "FURNACE"
     }
   }
   Collidable_v2 {
@@ -3796,9 +3794,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:CraftUIItem"
-      AssetReference {
-        Id: 3122896575571490114
-      }
+      String: "WOODEN_DOOR"
     }
   }
   Collidable_v2 {
@@ -4305,9 +4301,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:CraftUIItem"
-      AssetReference {
-        Id: 10111999312995841294
-      }
+      String: "BIG_WOODEN_WINDOW"
     }
   }
   Collidable_v2 {
@@ -4819,9 +4813,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:CraftUIItem"
-      AssetReference {
-        Id: 2255328222457084666
-      }
+      String: "SMALL_WOODEN_WINDOW"
     }
   }
   Collidable_v2 {
@@ -5467,9 +5459,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:CraftUIItem"
-      AssetReference {
-        Id: 15296085051656232061
-      }
+      String: "WOODEN_STAIRS"
     }
   }
   Collidable_v2 {
@@ -6046,9 +6036,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:CraftUIItem"
-      AssetReference {
-        Id: 6970002291322776181
-      }
+      String: "WOODEN_FLOOR"
     }
   }
   Collidable_v2 {
@@ -6556,9 +6544,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:CraftUIItem"
-      AssetReference {
-        Id: 1697846266050145255
-      }
+      String: "WOODEN_WALL"
     }
   }
   Collidable_v2 {
@@ -7313,9 +7299,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:CraftUIItem"
-      AssetReference {
-        Id: 9555877663236049605
-      }
+      String: "BERRY_DOUGH"
     }
   }
   Collidable_v2 {
@@ -7826,9 +7810,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:CraftUIItem"
-      AssetReference {
-        Id: 10402537065749613418
-      }
+      String: "DOUGH"
     }
   }
   Collidable_v2 {

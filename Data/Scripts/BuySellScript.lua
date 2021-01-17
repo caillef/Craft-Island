@@ -12,7 +12,7 @@ local function mysplit(inputstr, sep)
     return t
 end
 
-local UIItemMuid = mysplit(TRIGGER:GetCustomProperty("ItemUI"), ":")[1]
+local itemIdName = TRIGGER:GetCustomProperty("ItemId")
 local price = TRIGGER:GetCustomProperty("Price")
 local buy = TRIGGER:GetCustomProperty("Buy")
 local qty = TRIGGER:GetCustomProperty("Quantity") or 1
@@ -31,18 +31,18 @@ end
 function OnInteract(trigger, player)
     if buy then
         if price <= player:GetResource("Gold") then
-            INVENTORY.Add(player, { muid=UIItemMuid, qty = qty })
+            INVENTORY.Add(player, { idName=itemIdName, qty = qty })
             Events.Broadcast("SGoldAddForPlayer", player, -price)
         else
             --TODO: feedback not enough gold
         end
         return
     else
-        if INVENTORY.PlayerRemoveItems(player, UIItemMuid) then
+        if INVENTORY.PlayerRemoveItems(player, { idName=itemIdName }) then
             Events.Broadcast("SGoldAddForPlayer", player, price)
             local storage = Storage.GetPlayerData(player) or {}
             local story = storage.story or {}
-            if story.step == 6 and "58CF2E553C1958F0" == UIItemMuid then --Bread
+            if story.step == 6 and "BREAD" == itemIdName then --Bread
                 Events.Broadcast("STEP_COMPLETED", player)
             end
             return

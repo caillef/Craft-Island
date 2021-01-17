@@ -145,14 +145,12 @@
         ParentId: 13840434932360054847
         UnregisteredParameters {
           Overrides {
-            Name: "cs:ItemUI"
-            AssetReference {
-              Id: 2296331897865277471
-            }
-          }
-          Overrides {
             Name: "cs:HP"
             Int: 1
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "BERRY_SPROUT"
           }
         }
         WantsNetworking: true

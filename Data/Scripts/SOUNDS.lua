@@ -7,4 +7,11 @@ SOUNDS.WoodImpactSFX = propWoodImpact
 SOUNDS.StoneImpactSFX = propRockImpact
 SOUNDS.BonusItemSFX = propBonusItem
 
-_G["caillef.craftisland.sounds"] = SOUNDS
+function PlaySound(soundName, pos)
+  if not SOUNDS[soundName] then print("Warning: tried to played unknown sound "..soundName..".") return end
+	World.SpawnAsset(SOUNDS[soundName], { position = pos }):Play()	
+end
+
+_G["caillef.craftisland.sounds"] = {
+	PlaySound=PlaySound
+}

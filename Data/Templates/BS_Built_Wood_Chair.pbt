@@ -130,14 +130,12 @@
         ParentId: 16059720704279749843
         UnregisteredParameters {
           Overrides {
-            Name: "cs:ItemUI"
-            AssetReference {
-              Id: 15128924105355753610
-            }
-          }
-          Overrides {
             Name: "cs:HP"
             Int: 1
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "CHAIR"
           }
         }
         WantsNetworking: true

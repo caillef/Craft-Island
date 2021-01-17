@@ -10,17 +10,17 @@ end
 -- Min time, max time, next object muid
 
 -- Berry Sprout
-growthConfig["36A9E82F5F5F4C9D"] = { 30, 45, "37506694514741E4" }
+growthConfig["36A9E82F5F5F4C9D"] = { 30, 45, "BERRY_BUSH_EMPTY" }
 -- Berry Bush
-growthConfig["E90DF6F7DCB80F51"] = { 45, 60, "37506694514741E4" }
+growthConfig["E90DF6F7DCB80F51"] = { 45, 60, "BERRY_BUSH_FULL" }
 
 -- Sapling
-growthConfig["27313876BD39650C"] = { 30, 45, "2C9DA5AC47D87B71" }
+growthConfig["27313876BD39650C"] = { 30, 45, "TREE" }
 
 -- Wheat
-growthConfig["42793220AEB392CF"] = { 10, 15, "7BA2BA8C590D39DF" }
-growthConfig["7BA2BA8C590D39DF"] = { 10, 15, "F20A02737F888FF0" }
-growthConfig["F20A02737F888FF0"] = { 10, 15, "0CF04473DA51CDA5" }
+growthConfig["42793220AEB392CF"] = { 10, 15, "WHEAT_SEEDS_2" }
+growthConfig["7BA2BA8C590D39DF"] = { 10, 15, "WHEAT_SEEDS_3" }
+growthConfig["F20A02737F888FF0"] = { 10, 15, "WHEAT" }
 
 for key,value in pairs(growthConfig) do 
     devgrowthConfig[key] = { 1, 1, value[3] }

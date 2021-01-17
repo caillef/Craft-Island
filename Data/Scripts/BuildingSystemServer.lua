@@ -1,11 +1,37 @@
-﻿local placedObjects = {}
-
-local propBuildingSystemList = script:GetCustomProperty("BuildingSystemList"):WaitForObject()
-local BLOCK_SERIALIZER = script:GetCustomProperty("BlockSerializer"):WaitForObject().context
+﻿
 local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
 
-local rawObjectsList = propBuildingSystemList:GetChildren()
+local _objectsList
+function GetObjectsList()
+    _objectsList = _G["caillef.craftisland.objects"]
+    while _objectsList == nil do
+        Task.Wait(0.1)
+        _objectsList = _G["caillef.craftisland.objects"]
+    end
+    return _objectsList    
+end
 
+local _blockSerializer
+function GetBlockSerializer()
+    _blockSerializer = _G["caillef.craftisland.buildSerializer"]
+    while _blockSerializer == nil do
+        Task.Wait(0.1)
+        _blockSerializer = _G["caillef.craftisland.buildSerializer"]
+    end
+    return _blockSerializer    
+end
+
+local _queryObjectFunction
+function QueryObject(id)
+    _queryObjectFunction = _G["caillef.craftisland.queryobject"]
+    while _queryObjectFunction == nil do
+        Task.Wait(0.1)
+        _queryObjectFunction = _G["caillef.craftisland.queryobject"]
+    end
+    return _queryObjectFunction(id)
+end
+
+local placedObjects = {}
 local playersSpawns = {}
 
 local WALL_SIZE = 200
@@ -27,17 +53,6 @@ function ClearLogs()
     logs = {}
 end
 
-local function mysplit(inputstr, sep)
-    if sep == nil then
-            sep = "%s"
-    end
-    local t={}
-    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-            table.insert(t, str)
-    end
-    return t
-end
-
 function getAlignedAngle(a)
     a = math.floor(a)
     if a == 0 and a == 180 and a == 90 and a == 270 then return angle end
@@ -49,15 +64,9 @@ function getAlignedAngle(a)
     return 0
 end
 
-function GetInventoryMuidFromType(type)
-    return mysplit(rawObjectsList[type]:GetCustomProperty(rawObjectsList[type] and rawObjectsList[type]:GetCustomProperty("InventoryIconMuid") and "InventoryIconMuid" or "Built"), ":")[1]
-end
-
 function GetTypeFromMuid(muid)
-    for key,obj in pairs(rawObjectsList) do
-        local objid = obj:GetCustomProperty("Built")
-        local objmuid = mysplit(objid, ":")[1]
-        if objmuid == muid then
+    for key,obj in pairs(GetObjectsList()) do
+        if obj.templateMuid == muid then
             return key
         end
     end
@@ -66,20 +75,17 @@ end
 
 function AssignPlayerToObject(obj, player)
     local growingScript = obj:FindDescendantByName("GrowingAsset")
-    if not growingScript then
-        return
-    end
+    if not growingScript then return end
     growingScript.context.SetOwner(player)
 end
 
 function BuildingSystem_OnPlaceStructure(player, serializedBlock)
-    local data = BLOCK_SERIALIZER.Block_Deserialize(serializedBlock, playersSpawns[player].pos)
-    local muid = GetInventoryMuidFromType(data.type)
-    if not INVENTORY.PlayerHasItems(player, muid) or
+    local data = GetBlockSerializer().Deserialize(serializedBlock, playersSpawns[player].pos)
+    if not INVENTORY.PlayerHasItems(player, { id=data.type }) or
        not PlaceObject(player, data.pos, data.angle, data.type) then
         return
     end
-    INVENTORY.PlayerRemoveItems(player, muid) 
+    INVENTORY.PlayerRemoveItems(player, { id=data.type } ) 
 end
 
 function GetStructureOnCellFromList(list, pos, player)
@@ -116,7 +122,7 @@ function GetStructureOnCellFromList(list, pos, player)
     return nil
 end
 
-function Grow(objReplaced, muid, player)
+function Grow(objReplaced, newIdName, player)
     if not objReplaced or not objReplaced:IsValid() then
         print("Error: objReplaced has already been destroyed")
         return
@@ -136,15 +142,15 @@ function Grow(objReplaced, muid, player)
                 local parent = objReplaced.parent
                 local rotation = objReplaced:GetRotation()
                 RemoveStructure(objReplaced, player)
-                local newType = GetTypeFromMuid(mysplit(muid, ":")[1])
-                local obj = World.SpawnAsset(muid, { parent=parent , position = pos, rotation = rotation })
+                local newObj = QueryObject(newIdName)
+                local obj = World.SpawnAsset(newObj.templateMuid, { parent=parent , position = pos, rotation = rotation })
                 AssignPlayerToObject(obj, player)
-                local newPlacedTypedObjects = placedObjects[player][newType] or {}
+                local newPlacedTypedObjects = placedObjects[player][newObj.id] or {}
                 newPlacedTypedObjects[pos.z] = newPlacedTypedObjects[pos.z] or {}
                 newPlacedTypedObjects[pos.z][pos.y] = newPlacedTypedObjects[pos.z][pos.y] or {}
                 newPlacedTypedObjects[pos.z][pos.y][pos.x] = newPlacedTypedObjects[pos.z][pos.y][pos.x] or {}
                 newPlacedTypedObjects[pos.z][pos.y][pos.x][angle] = { obj=obj, player=player }
-                placedObjects[player][newType] = newPlacedTypedObjects
+                placedObjects[player][newObj.id] = newPlacedTypedObjects
                 return
             end
         end
@@ -169,7 +175,6 @@ function CountNbStructures(placedObjects)
     return sum
 end
 
-local SAPLING_INDEX = 5
 function PlaceObject(player, position, angle, type)
     angle = getAlignedAngle(angle)
     placedObjects[player] = placedObjects[player] or {}
@@ -188,23 +193,9 @@ function PlaceObject(player, position, angle, type)
         return false
     end
 
-    while rawObjectsList == nil do
-        rawObjectsList = propBuildingSystemList:GetChildren()
-        Task.Wait(0.2)
-    end
-    local mandatorySurface = rawObjectsList[type]:GetCustomProperty("MustBeBuiltOn")
+    local mandatorySurface = GetObjectsList()[type].buildConditions and GetObjectsList()[type].buildConditions.mustBeBuiltOn or nil
     if not playersSpawns[player].isLoading and mandatorySurface then
-        local surfaceType
-        for k,obj in pairs(rawObjectsList) do
-            if obj and obj:GetCustomProperty("Built") == mandatorySurface then
-                surfaceType = k
-            end
-        end
-        if not surfaceType then
-            print("Error: can't find that surface in blocks")
-            return
-        end
-        local surfaceObjects = placedObjects[player][surfaceType]
+        local surfaceObjects = placedObjects[player][mandatorySurface] or {}
         local block = GetStructureOnCellFromList(surfaceObjects, position, player)
         if not block or block.player ~= player then
             --TODO: send player message saying that he can't build on this type of block
@@ -214,9 +205,7 @@ function PlaceObject(player, position, angle, type)
         RemoveStructure(block.obj, player)        
     end
 
-    AddLogEntry("PLACE "..tostring(position))
-
-    local obj = World.SpawnAsset(rawObjectsList[type]:GetCustomProperty("Built"), { position = position, rotation = Rotation.New(0, 0, angle), parent = playersSpawns[player].island:FindChildByName("Structures") })
+    local obj = World.SpawnAsset(GetObjectsList()[type].templateMuid, { position = position, rotation = Rotation.New(0, 0, angle), parent = playersSpawns[player].island:FindChildByName("Structures") })
     AssignPlayerToObject(obj, player)
     placedTypedObjects[position.z] = placedTypedObjects[position.z] or {}
     placedTypedObjects[position.z][position.y] = placedTypedObjects[position.z][position.y] or {}
@@ -224,14 +213,14 @@ function PlaceObject(player, position, angle, type)
     placedTypedObjects[position.z][position.y][position.x][angle] = { obj=obj, player=player }
     placedObjects[player][type] = placedTypedObjects
 
-    if type == SAPLING_INDEX then
+    if type == 9 then
         local storage = Storage.GetPlayerData(player) or {}
         local story = storage.story or {}
         if story.step == 2 then
             Events.Broadcast("STEP_COMPLETED", player)
         end    
     end    
-    if type == 1 then -- WALL
+    if type == 11 then
         local storage = Storage.GetPlayerData(player) or {}
         local story = storage.story or {}
         if story.step == 8 then
@@ -247,14 +236,12 @@ function LoadPreviousBlocks(player)
     playersSpawns[player].isLoading = true
     local storage = Storage.GetPlayerData(player) or {}
     storage.pBlocks = storage.pBlocks or ""
-    AddLogEntry(storage.pBlocks)
-    local blocks = BLOCK_SERIALIZER.Block_DeserializeStructures(storage.pBlocks, playersSpawns[player].pos)
+    local blocks = GetBlockSerializer().DeserializeList(storage.pBlocks, playersSpawns[player].pos)
     local i = 0
     for _,data in pairs(blocks) do
         PlaceObject(player, data.pos, data.angle, data.type)
         i = i + 1
     end
-    AddLogEntry(tostring(i).." blocks placed")
     playersSpawns[player].isLoading = false
 end
 
@@ -282,26 +269,20 @@ function RemoveStructure(obj, player)
 end
 
 function LoadIsland(slot)
-    if slot == nil then
-        AddLogEntry("Tried loading slot but got nil")
-        return
-    end
-    AddLogEntry("Loading "..slot.player.name.." island...")
+    if slot == nil then AddLogEntry("Tried loading slot but got nil") return end
     local player = slot.player
     playersSpawns[player] = slot
-    AddLogEntry("Loading Previous Blocks...")
     LoadPreviousBlocks(player)
-    AddLogEntry("Previous Blocks loaded.")
 end
 
 function UnloadIsland(slot)
-    if slot == nil then
-        return
-    end
+    if slot == nil then AddLogEntry("Tried unloading slot but got nil") return end
     local player = slot.player
     local storage = Storage.GetPlayerData(player)
-    storage.pBlocks = BLOCK_SERIALIZER.Block_SerializeStructures(slot.island:FindChildByName("Structures"):GetChildren(), slot.pos, rawObjectsList)
-    Storage.SetPlayerData(player, storage)
+    storage.pBlocks = GetBlockSerializer().SerializeList(slot.island:FindChildByName("Structures"):GetChildren(), slot.pos)
+    if Storage.SizeOfData(storage) < 15000 then
+        Storage.SetPlayerData(player, storage)
+    end
     slot.island:Destroy()
     placedObjects[player] = nil 
     playersSpawns[player] = nil
@@ -311,7 +292,6 @@ function OnInventoryReady(player)
     while playersSpawns[player] == nil do
         Task.Wait(0.1)
     end
-    Task.Wait(0.1)
     while player:IsValid() and Events.BroadcastToPlayer(player, "OnPlayerInitialized", {islandPos = playersSpawns[player].pos}) ~= BroadcastEventResultCode.SUCCESS do
         Task.Wait(0.25)
     end

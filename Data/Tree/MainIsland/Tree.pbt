@@ -4089,7 +4089,7 @@ Objects {
     Location {
       X: 3561.73535
       Y: 3525.30469
-      Z: 3650
+      Z: 3725
     }
     Rotation {
     }
@@ -4828,7 +4828,7 @@ Objects {
   ParentId: 14592900131835349158
   ChildIds: 16240130158429218647
   ChildIds: 13392707250728637150
-  ChildIds: 17522159150630198821
+  ChildIds: 5745221345826254586
   ChildIds: 13579967103648911087
   ChildIds: 5271566846307770488
   ChildIds: 194322440282189979
@@ -4951,18 +4951,16 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:ItemUI"
-      AssetReference {
-        Id: 4707371283039740838
-      }
-    }
-    Overrides {
       Name: "cs:Price"
       Int: 5
     }
     Overrides {
       Name: "cs:Buy"
       Bool: false
+    }
+    Overrides {
+      Name: "cs:ItemId"
+      String: "WOOD_LOG"
     }
   }
   Collidable_v2 {
@@ -5167,9 +5165,16 @@ Objects {
   }
 }
 Objects {
-  Id: 17522159150630198821
-  Name: "BuyableItem"
+  Id: 5745221345826254586
+  Name: "BuyWheatSeed"
   Transform {
+    Location {
+      X: -158.925781
+      Y: -552.090454
+      Z: 2284.02466
+    }
+    Rotation {
+    }
     Scale {
       X: 1
       Y: 1
@@ -5177,48 +5182,22 @@ Objects {
     }
   }
   ParentId: 4973484096715360362
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 8113092316498761747
-      value {
-        Overrides {
-          Name: "Name"
-          String: "BuyWheatSeed"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -158.925781
-            Y: -552.090454
-            Z: 2284.02466
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 17271664510564218067
-      value {
-        Overrides {
-          Name: "InteractionLabel"
-          String: "Buy Wheat Seed (20g)"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 1.10900879
-            Z: 12.7775879
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 7689519216032096316
-    }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "BuyWheatSeed"
+  }
+  InstanceHistory {
+    SelfId: 5745221345826254586
+    SubobjectId: 8113092316498761747
+    InstanceId: 17522159150630198821
+    TemplateId: 7689519216032096316
+    WasRoot: true
   }
 }
 Objects {

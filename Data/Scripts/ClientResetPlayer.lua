@@ -3,7 +3,6 @@ local propUIPanel = script:GetCustomProperty("UIPanel"):WaitForObject()
 
 local needConfirmation
 
-propUIPanel.visibility = Visibility.FORCE_OFF
 function OnPress(_, key)
 	if debugConsole.IsCommandLineOpen() then
 		return

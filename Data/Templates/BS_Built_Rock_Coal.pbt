@@ -644,25 +644,23 @@
         ParentId: 16107154141159862915
         UnregisteredParameters {
           Overrides {
-            Name: "cs:ItemUI"
-            AssetReference {
-              Id: 15126556236068574442
-            }
-          }
-          Overrides {
             Name: "cs:HP"
             Int: 4
           }
           Overrides {
             Name: "cs:ItemUIQty"
             Vector2 {
-              X: 1
-              Y: 2
+              X: 2
+              Y: 3
             }
           }
           Overrides {
             Name: "cs:Material"
             Int: 0
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "COAL"
           }
         }
         WantsNetworking: true

@@ -9,7 +9,26 @@ local hoveredSlotIndex
 
 local COAL_INDEX = -1
 local COAL_DURATION = 20
-local DOUGH_MUID = "905D3C58A6D70B6A"
+
+local _queryObjectFunction
+function QueryObject(id)
+    _queryObjectFunction = _G["caillef.craftisland.queryobject"]
+    while _queryObjectFunction == nil do
+        Task.Wait(0.1)
+        _queryObjectFunction = _G["caillef.craftisland.queryobject"]
+    end
+    return _queryObjectFunction(id)
+end
+
+local objectsList
+function GetObjectsList()
+    objectsList = _G["caillef.craftisland.objects"]
+    while objectsList == nil do
+        Task.Wait(0.1)
+        objectsList = _G["caillef.craftisland.objects"]
+    end
+    return objectsList    
+end
 
 propFlame.visibility = Visibility.FORCE_OFF
 propUI.visibility =  Visibility.FORCE_OFF
@@ -38,7 +57,7 @@ Events.Connect("OpenUIFurnace", function(id)
 	f.nbCoals = f.nbCoals or 0
 	f.slotsTimer = f.slotsTimer or { nil, nil, nil }
 	f.burningTimeLeft = f.burningTimeLeft or 0
-	f.slotsMuid = f.slotsMuid or {}
+	f.slots = f.slots or {}
 	furnaces[currentFurnace] = f
 	propFlame.visibility = f.burningTimeLeft > 0 and Visibility.FORCE_ON or Visibility.FORCE_OFF
 	SetupUI(f)
@@ -52,24 +71,24 @@ Events.Connect("CloseUIFurnace", function()
 	end
 end)
 
-function TransformItem(furnace, muid, index, updateUI)
-	if furnace.slotsMuid[index] then
+function TransformItem(furnace, item, index, updateUI)
+	if furnace.slots[index] then
 		if updateUI then
 			propSlots[index]:GetChildren()[2]:Destroy()
-			World.SpawnAsset(muid, { parent = propSlots[index] })
+			World.SpawnAsset(item.itemMuid, { parent = propSlots[index] })
 		end
-		furnace.slotsMuid[index] = mysplit(muid, ":")[1]
+		furnace.slots[index] = item
 		return true
 	end
 	return false
 end
 
-function SetItemEmptySlot(muid)
+function SetItemEmptySlot(item)
 	local f = furnaces[currentFurnace]
 	for i=1,3 do
-		if not f.slotsMuid[i] then
-			World.SpawnAsset(muid, { parent = propSlots[i] })
-			f.slotsMuid[i] = mysplit(muid, ":")[1]
+		if not f.slots[i] then
+			World.SpawnAsset(item.itemMuid, { parent = propSlots[i] })
+			f.slots[i] = item
 			f.slotsTimer[i] = 7
 			furnaces[currentFurnace] = f
 			return true
@@ -79,8 +98,7 @@ function SetItemEmptySlot(muid)
 end
 
 function HasRawItemInside(f)
-	return (f.slotsMuid[1] == DOUGH_MUID) or (f.slotsMuid[2] == DOUGH_MUID) or (f.slotsMuid[3] == DOUGH_MUID)
-end
+	return (f.slots[1] and f.slots[1].idName == "DOUGH") or (f.slots[2] and f.slots[2].idName == "DOUGH") or (f.slots[3] and f.slots[3].idName == "DOUGH")end
 
 function Tick()
 	if UI.GetCursorPosition().x < UI.GetScreenSize().x/2 + 400  then hoveredSlotIndex = nil end
@@ -101,10 +119,10 @@ function Tick()
 			if f.burningTimeLeft > 0 then
 				f.burningTimeLeft = f.burningTimeLeft - 1
 				for i = 1,3 do
-					if f.slotsMuid[i] then
+					if f.slots[i] then
 						if f.slotsTimer[i] == nil then f.slotsTimer[i] = 7 end
 						if f.slotsTimer[i] <= 0 then
-							TransformItem(f, "58CF2E553C1958F0:Item UI Bread", i, updateUI)
+							TransformItem(f, QueryObject("BREAD"), i, updateUI)
 							f.slotsTimer[i] = nil
 						else
 							f.slotsTimer[i] = f.slotsTimer[i] - 1
@@ -123,30 +141,38 @@ function Tick()
 end
 
 local nextFastMove
-Events.Connect("InventoryFastMove", function(buttonIndex, item)
+Events.Connect("InventoryFastMove", function(buttonIndex, icon)
+	if propUI.visibility == Visibility.FORCE_OFF then return end
 	if nextFastMove and nextFastMove >= time() then return end
+
+	local item
+	for key,obj in pairs(GetObjectsList()) do
+		if obj.itemMuid == icon.sourceTemplateId then
+			item = obj
+		end
+	end
+	if not item then return end
+
 	nextFastMove = time() + 0.5
-	if not item or not item:IsValid() or propUI.visibility == Visibility.FORCE_OFF then return end
-	if item.sourceTemplateId == "D1EC52C0B5D654EA" then
+	if item.idName == "COAL" then
 		local qtyText
 		if #propCoalSlot:GetChildren() == 1 then
-			local prop = World.SpawnAsset(item.sourceTemplateId, { parent = propCoalSlot })
+			local prop = World.SpawnAsset(item.itemMuid, { parent = propCoalSlot })
 			qtyText = World.SpawnAsset("173D841514156696:InventoryQuantity", { parent = prop })
 		else
 			qtyText = propCoalSlot:GetChildren()[2]:FindChildByType("UIText")
 		end
 		furnaces[currentFurnace].nbCoals = furnaces[currentFurnace].nbCoals + 1
 		qtyText.text = furnaces[currentFurnace].nbCoals > 1 and tostring(furnaces[currentFurnace].nbCoals) or ""
-		while Events.BroadcastToServer("removeItemFromMuid", item.sourceTemplateId, 1) ~= BroadcastEventResultCode.SUCCESS do
+		while Events.BroadcastToServer("removeItem", { idName=item.idName }, 1) ~= BroadcastEventResultCode.SUCCESS do
 			Task.Wait(0.25)
 		end
 		return
 	end
-	if item.sourceTemplateId == DOUGH_MUID then
-		if SetItemEmptySlot(DOUGH_MUID) then
-			while Events.BroadcastToServer("removeItemFromMuid", DOUGH_MUID, 1) ~= BroadcastEventResultCode.SUCCESS do
-				Task.Wait(0.25)
-			end
+	if item.idName == "DOUGH" and
+	   SetItemEmptySlot(QueryObject("DOUGH")) then
+		while Events.BroadcastToServer("removeItem", { idName=item.idName }, 1) ~= BroadcastEventResultCode.SUCCESS do
+			Task.Wait(0.25)
 		end
 		return
 	end
@@ -182,7 +208,7 @@ function OnPress(_, key)
 	if propUI.visibility == Visibility.FORCE_ON and key == "ability_secondary" and hoveredSlotIndex and (hoveredSlotIndex == COAL_INDEX or #propSlots[hoveredSlotIndex]:GetChildren() > 1) then
 		if hoveredSlotIndex == COAL_INDEX then -- coal
 			if f.nbCoals <= 0 then return end
-			while Events.BroadcastToServer("inventoryAddEvent", player, { muid="D1EC52C0B5D654EA", qty = 1 }) ~= BroadcastEventResultCode.SUCCESS do
+			while Events.BroadcastToServer("inventoryAddEvent", player, { idName="COAL", qty = 1 }) ~= BroadcastEventResultCode.SUCCESS do
 				Task.Wait(0.25)
 			end
 			RemoveOneCoal(f, true)
@@ -191,11 +217,11 @@ function OnPress(_, key)
 		if not #propSlots[hoveredSlotIndex]:GetChildren() == 2 then
 			return
 		end
-		while Events.BroadcastToServer("inventoryAddEvent", player, { muid=f.slotsMuid[hoveredSlotIndex], qty = 1 }) ~= BroadcastEventResultCode.SUCCESS do
+		while Events.BroadcastToServer("inventoryAddEvent", player, { id=f.slots[hoveredSlotIndex].id, qty = 1 }) ~= BroadcastEventResultCode.SUCCESS do
 			Task.Wait(0.25)
 		end
 		f.slotsTimer[hoveredSlotIndex] = nil
-		f.slotsMuid[hoveredSlotIndex] = nil
+		f.slots[hoveredSlotIndex] = nil
 		propSlots[hoveredSlotIndex]:GetChildren()[2]:Destroy()
 	end
 end
@@ -214,8 +240,8 @@ function SetupUI(f)
 		if #propSlots[i]:GetChildren() > 1 then
 			propSlots[i]:GetChildren()[2]:Destroy()
 		end
-		if f.slotsMuid[i] then
-			World.SpawnAsset(f.slotsMuid[i], { parent = propSlots[i] })
+		if f.slots[i] then
+			World.SpawnAsset(f.slots[i].itemMuid, { parent = propSlots[i] })
 		end
 	end
 end

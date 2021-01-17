@@ -32,33 +32,6 @@ commands["NameOfTheCommandWithoutSpacesInsideTheName"] = {
         If you found anything, just text me on Discord @Corentin caillef C.#4956
 ]]--
 
-local allUIItem = {
-    { "1214EEEF9701EE9A", "Basic Axe" },
-    { "E2428B216BD2D34B", "Basic Hoe" },
-    { "7D3C73A40F261843", "Berry" },
-    { "6B0CB993E5EAEFF6", "Berry Pie" },
-    { "849D4C1B02464AC5", "Berry Pie Dough" },
-    { "58CF2E553C1958F0", "Bread" },
-    { "905D3C58A6D70B6A", "Dough" },
-    { "60BA6C27C1F3EA75", "Floor Wood" },
-    { "D48610A224F25A9E", "Sapling" },
-    { "D4469C4FF621DC7D", "Stairs Wood" },
-    { "178FF62EF3246BE7", "Wall Wood" },
-    { "828D307143518252", "Wheat" },
-    { "A19DF3F7881592F3", "Wheat Seeds" },
-    { "4153F13DBF7563A6", "Wood" },
-    { "1FDE35B1D2A8901F", "Berry Sprout" },
-    { "8C5509CCAC1C750E", "Big Window Wall Wood" },
-    { "1F4C8911AF77BAFA", "Small Window Wall Wood" },
-    { "D1F4BC513D92F88A", "Chair" },
-    { "2B56C1E3C138F542", "Door Wood" },
-    { "BC4C40A42D63733D", "Table" },
-    { "AECB1226211DC37C", "Basic Pickaxe" },
-    { "0B66793FF08195AC", "Furnace" },
-    { "51D4970917797698", "Stone" },
-    { "D1EC52C0B5D654EA", "Coal" }
-}
-
 local function mysplit(inputstr, sep)
     if sep == nil then sep = "%s" end
     local t={}
@@ -236,11 +209,18 @@ commands["i"] = {
         end
         for _,p in pairs(Game.GetPlayers()) do
             if p.name == args[1] then
-                local id = tonumber(args[2])
+                local id = _G["caillef.craftisland.objectsid"][args[2]] or tonumber(args[2])
+                if not id then
+                    return "Error: can't find item "..args[2].."."
+                end
+                local item = _G["caillef.craftisland.objects"][id]
+                if not item then
+                    return "Error: can't find item "..tostring(id).."."
+                end
                 local qty = args[3] and tonumber(args[3]) or 1
-                local muid = allUIItem[id][1]
-                local name = allUIItem[id][2]
-                Events.Broadcast("inventoryAddEvent", admin, { muid=muid, qty = qty })
+                local muid = item.itemMuid
+                local name = item.name
+                Events.Broadcast("inventoryAddEvent", admin, { qty = qty, id=item.id })
                 return (qty == 1 and "One" or tostring(qty)).." "..name.." given to "..p.name.."."
             end
         end
@@ -252,12 +232,11 @@ commands["lo"] = {
     desc="List objects (lo <NAME>)",
     func= function(admin, args)
         local resp = ""
-        for i,item in ipairs(allUIItem) do
-            if args[1] and string.strfind(item[2], args[1]) then
-                resp = resp..(i < 10 and " " or "")..tostring(i).." "..item[2].."\n"
-            end
+        for i,item in ipairs(_G["caillef.craftisland.objects"]) do
             if not args[1] then
-                resp = resp..(i < 10 and " " or "")..tostring(i).." "..item[2].."\n"
+                resp = resp..item.tostring(item).."\n"
+            elseif string.strfind(string.lower(item.name), string.lower(args[1])) then
+                resp = resp..item.tostring(item).."\n"
             end
         end
         return resp

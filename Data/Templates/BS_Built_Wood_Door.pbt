@@ -356,14 +356,12 @@
         ParentId: 1233247481309189512
         UnregisteredParameters {
           Overrides {
-            Name: "cs:ItemUI"
-            AssetReference {
-              Id: 3122896575571490114
-            }
-          }
-          Overrides {
             Name: "cs:HP"
             Int: 1
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "WOODEN_DOOR"
           }
         }
         WantsNetworking: true

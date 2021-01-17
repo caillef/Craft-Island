@@ -153,12 +153,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:ItemUI"
-      AssetReference {
-        Id: 6399384539132156144
-      }
-    }
-    Overrides {
       Name: "cs:Price"
       Int: 10
     }
@@ -171,6 +165,10 @@ Objects {
       ObjectReference {
         SelfId: 7046807597298804878
       }
+    }
+    Overrides {
+      Name: "cs:ItemId"
+      String: "BREAD"
     }
   }
   Collidable_v2 {

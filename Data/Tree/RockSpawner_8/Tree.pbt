@@ -5,9 +5,6 @@ Objects {
   Name: "StructureSpawner"
   Transform {
     Location {
-      X: -172.202759
-      Y: -7036.46387
-      Z: -3438.48901
     }
     Rotation {
     }

@@ -145,14 +145,12 @@
         ParentId: 13840434932360054847
         UnregisteredParameters {
           Overrides {
-            Name: "cs:ItemUI"
-            AssetReference {
-              Id: 15313945871510559390
-            }
-          }
-          Overrides {
             Name: "cs:HP"
             Int: 1
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "SAPLING"
           }
         }
         WantsNetworking: true

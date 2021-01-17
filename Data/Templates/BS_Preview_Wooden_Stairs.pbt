@@ -1,13 +1,13 @@
 ﻿Assets {
-  Id: 15033179693905802780
-  Name: "BS_Built_Template_Stairs"
+  Id: 17836659793627490598
+  Name: "BS_Preview_Wooden_Stairs"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 13915550309939900241
+      RootId: 870035615926986996
       Objects {
-        Id: 13915550309939900241
-        Name: "BS_Built_Template_Stairs"
+        Id: 870035615926986996
+        Name: "BS_Previsu_Wooden_Stairs"
         Transform {
           Scale {
             X: 1
@@ -15,10 +15,22 @@
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
-        ChildIds: 12657505239204960898
-        ChildIds: 17248280778615194737
-        WantsNetworking: true
+        ParentId: 13835058745715878551
+        ChildIds: 14889626847032878937
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 15033179693905802780
+            }
+          }
+          Overrides {
+            Name: "cs:InventoryIconMuid"
+            AssetReference {
+              Id: 15296085051656232061
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -30,8 +42,8 @@
         }
       }
       Objects {
-        Id: 12657505239204960898
-        Name: "BuiltStairs"
+        Id: 14889626847032878937
+        Name: "Preview"
         Transform {
           Location {
           }
@@ -43,22 +55,21 @@
             Z: 1
           }
         }
-        ParentId: 13915550309939900241
+        ParentId: 870035615926986996
         UnregisteredParameters {
           Overrides {
             Name: "ma:Building_Foundation:id"
             AssetReference {
-              Id: 7426454697044131321
+              Id: 231800746144079014
             }
           }
           Overrides {
             Name: "ma:Shared_Trim:id"
             AssetReference {
-              Id: 7426454697044131321
+              Id: 231800746144079014
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -80,49 +91,6 @@
           }
         }
       }
-      Objects {
-        Id: 17248280778615194737
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 107.543755
-            Z: 67.3913116
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.25
-          }
-        }
-        ParentId: 13915550309939900241
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:ItemUI"
-            AssetReference {
-              Id: 15296085051656232061
-            }
-          }
-          Overrides {
-            Name: "cs:HP"
-            Int: 1
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
-        }
-      }
     }
     Assets {
       Id: 3484535885344630159
@@ -134,12 +102,12 @@
       }
     }
     Assets {
-      Id: 7426454697044131321
-      Name: "Wood Planks"
+      Id: 231800746144079014
+      Name: "Basic Hologram"
       PlatformAssetType: 2
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
-        AssetId: "mi_wood_planks_001_uv"
+        AssetId: "fxmi_basic_hologram"
       }
     }
     PrimaryAssetId {

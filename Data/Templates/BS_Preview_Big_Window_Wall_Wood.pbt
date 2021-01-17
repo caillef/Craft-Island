@@ -1,13 +1,13 @@
 ﻿Assets {
-  Id: 16210374113896557264
-  Name: "BS_Previsu_Template_Stairs"
+  Id: 6275509208397023913
+  Name: "BS_Preview_Big_Window_Wall_Wood"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 18422955429713741810
+      RootId: 11827591345804475796
       Objects {
-        Id: 18422955429713741810
-        Name: "BS_Previsu_Template_Stairs"
+        Id: 11827591345804475796
+        Name: "BS_Previsu_Big_Window_Wall_Wood"
         Transform {
           Scale {
             X: 1
@@ -15,13 +15,19 @@
             Z: 1
           }
         }
-        ParentId: 14419583533663607855
-        ChildIds: 15084423555630534386
+        ParentId: 13835058745715878551
+        ChildIds: 354821306111018628
         UnregisteredParameters {
           Overrides {
             Name: "cs:Built"
             AssetReference {
-              Id: 15033179693905802780
+              Id: 12807717473814041882
+            }
+          }
+          Overrides {
+            Name: "cs:InventoryIconMuid"
+            AssetReference {
+              Id: 10111999312995841294
             }
           }
         }
@@ -33,10 +39,11 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Previsu_Big_Window_Wall_Wood"
         }
       }
       Objects {
-        Id: 15084423555630534386
+        Id: 354821306111018628
         Name: "Preview"
         Transform {
           Location {
@@ -44,15 +51,33 @@
           Rotation {
           }
           Scale {
-            X: 1.25
-            Y: 2.5
-            Z: 2
+            X: 0.25
+            Y: 0.25
+            Z: 0.5
           }
         }
-        ParentId: 18422955429713741810
+        ParentId: 11827591345804475796
         UnregisteredParameters {
           Overrides {
-            Name: "ma:Building_Foundation:id"
+            Name: "ma:Building_WallInner:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_Accent:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallOuter:id"
             AssetReference {
               Id: 231800746144079014
             }
@@ -72,7 +97,7 @@
         }
         CoreMesh {
           MeshAsset {
-            Id: 3484535885344630159
+            Id: 5192154625567753900
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -87,12 +112,12 @@
       }
     }
     Assets {
-      Id: 3484535885344630159
-      Name: "Main Street Stairs 01 - 1.5m"
+      Id: 5192154625567753900
+      Name: "Craftsman Wall 02 Window 3x"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_ts_urb_dtn_mst_stairs_001_150cm_ref"
+        AssetId: "sm_urb_sub_craftsman_wall_002_window3x"
       }
     }
     Assets {

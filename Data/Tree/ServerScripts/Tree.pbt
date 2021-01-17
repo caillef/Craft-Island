@@ -85,21 +85,6 @@ Objects {
   ParentId: 11584135646992845074
   UnregisteredParameters {
     Overrides {
-      Name: "cs:BlockSerializer"
-      ObjectReference {
-        SelfId: 8203611356546313821
-      }
-    }
-    Overrides {
-      Name: "cs:BuildingSystemList"
-      ObjectReference {
-        SelfId: 7632773262011346122
-        SubObjectId: 14648870783588546942
-        InstanceId: 3255422708714188938
-        TemplateId: 7069407994925304852
-      }
-    }
-    Overrides {
       Name: "cs:InventoryScriptServer"
       ObjectReference {
         SelfId: 8227678740540710611
@@ -115,48 +100,6 @@ Objects {
   Script {
     ScriptAsset {
       Id: 18313405971573075606
-    }
-  }
-}
-Objects {
-  Id: 3255422708714188938
-  Name: "BuildingSystemList"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 11584135646992845074
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 14648870783588546942
-      value {
-        Overrides {
-          Name: "Name"
-          String: "BuildingSystemList"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 7069407994925304852
     }
   }
 }
@@ -289,33 +232,6 @@ Objects {
   Script {
     ScriptAsset {
       Id: 4316728097649207683
-    }
-  }
-}
-Objects {
-  Id: 8203611356546313821
-  Name: "BlockSerializer"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 11584135646992845074
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 7339519165257358670
     }
   }
 }

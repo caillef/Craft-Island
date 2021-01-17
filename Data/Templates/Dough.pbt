@@ -1,6 +1,6 @@
 ﻿Assets {
   Id: 15722647679849623975
-  Name: "UncookedBread"
+  Name: "Dough"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {

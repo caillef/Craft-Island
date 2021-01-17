@@ -1,21 +1,62 @@
 ﻿Assets {
-  Id: 9449239676345578704
-  Name: "PrevisuFloor"
+  Id: 13790185320606487676
+  Name: "BS_Preview_Wooden_Floor"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 13326823355432188587
+      RootId: 4541522230386944566
       Objects {
-        Id: 13326823355432188587
-        Name: "PrevisuFloor"
+        Id: 4541522230386944566
+        Name: "BS_Preview_Floor_Wood"
         Transform {
           Scale {
-            X: 1.25
-            Y: 1.25
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13835058745715878551
+        ChildIds: 9480188343678535401
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 17600278440057254884
+            }
+          }
+          Overrides {
+            Name: "cs:InventoryIconMuid"
+            AssetReference {
+              Id: 6970002291322776181
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "BS_Preview_Floor_Wood"
+        }
+      }
+      Objects {
+        Id: 9480188343678535401
+        Name: "Preview"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
             Z: 0.5
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 4541522230386944566
         UnregisteredParameters {
           Overrides {
             Name: "ma:Building_Ceiling:id"
@@ -30,13 +71,24 @@
             }
           }
           Overrides {
+            Name: "ma:Building_Floor:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Building_Ceiling:smart"
+            Bool: true
+          }
+          Overrides {
             Name: "ma:Shared_Trim:id"
             AssetReference {
               Id: 231800746144079014
             }
           }
+          Overrides {
+            Name: "ma:Shared_Trim:smart"
+            Bool: true
+          }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }

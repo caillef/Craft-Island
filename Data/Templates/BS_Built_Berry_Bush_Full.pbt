@@ -203,16 +203,8 @@
             Int: 1
           }
           Overrides {
-            Name: "cs:ItemUI"
-            AssetReference {
-              Id: 9024214901809616963
-            }
-          }
-          Overrides {
-            Name: "cs:ItemUI2"
-            AssetReference {
-              Id: 2296331897865277471
-            }
+            Name: "cs:ItemId"
+            String: "BERRY"
           }
         }
         WantsNetworking: true

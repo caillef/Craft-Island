@@ -126,14 +126,12 @@
         ParentId: 2391212272018020454
         UnregisteredParameters {
           Overrides {
-            Name: "cs:ItemUI"
-            AssetReference {
-              Id: 2255328222457084666
-            }
-          }
-          Overrides {
             Name: "cs:HP"
             Int: 1
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "SMALL_WOODEN_WINDOW"
           }
         }
         WantsNetworking: true

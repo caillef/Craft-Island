@@ -154,32 +154,35 @@ function ActionOnCloserProp()
         if prop and prop:IsValid() and prop.parent and prop.parent.name == "Geo" then
             prop = prop.parent
         end
-        -- Is on mining island
-        if prop and prop:IsValid() and prop.parent and prop.parent.parent and prop.parent.parent.name == "Rocks" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
-            Events.BroadcastToServer("H"..mysplit(prop.parent.id, ":")[1], { p=Game.GetLocalPlayer().id, t=0 })
-            return
-        end
 
-        -- Is on player island with pickaxe
-        if prop and prop:IsValid() and prop.parent and prop.parent.parent and prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
-            Events.BroadcastToServer("H"..mysplit(prop.parent.id, ":")[1], { p=Game.GetLocalPlayer().id, t=0 })
-            return
-        end
+        if prop.parent then
+            local eventObjectId = "H"..mysplit(prop.parent.id, ":")[1]
 
-        -- Is on player island with axe
-        if prop and prop:IsValid() and prop.parent and prop.parent.parent and prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "F27A87BB28DA0B17" then
-            Events.BroadcastToServer("H"..mysplit(prop.parent.id, ":")[1], { p=Game.GetLocalPlayer().id, t=1 })
-            return
+            -- Is on mining island
+            if prop and prop:IsValid() and prop.parent and prop.parent.parent and prop.parent.parent.name == "Rocks" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
+                Events.BroadcastToServer(eventObjectId, { p=Game.GetLocalPlayer().id, t=0 })
+                return
+            end
+
+            -- Is on player island with pickaxe
+            if prop and prop:IsValid() and prop.parent and prop.parent.parent and prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
+                Events.BroadcastToServer(eventObjectId, { p=Game.GetLocalPlayer().id, t=0 })
+                return
+            end
+
+            -- Is on player island with axe
+            if prop and prop:IsValid() and prop.parent and prop.parent.parent and prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "F27A87BB28DA0B17" then
+                Events.BroadcastToServer(eventObjectId, { p=Game.GetLocalPlayer().id, t=1 })
+                return
+            end
         end
     end
 end
 
-local INVENTORY_MANAGER = World.GetRootObject():FindDescendantByName("InventoryScriptClient").context
-
 -- nil OnExecute(Ability)
 -- Spawns a swing effect template on ability execute
 function OnExecute(ability)
-    if INVENTORY_MANAGER.open then return end
+    if _G["caillef.craftisland.inventoryopen"] then return end
     for _, abilityInfo in ipairs(abilityList) do
         if abilityInfo.ability == ability then
             abilityInfo.canAttack = true

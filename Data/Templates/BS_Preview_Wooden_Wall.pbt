@@ -1,21 +1,62 @@
 ﻿Assets {
-  Id: 12991955381341331233
-  Name: "PrevisuWall"
+  Id: 15530035845948676018
+  Name: "BS_Preview_Wooden_Wall"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 3746688200497603801
+      RootId: 10072055652865656459
       Objects {
-        Id: 3746688200497603801
-        Name: "PrevisuWall"
+        Id: 10072055652865656459
+        Name: "BS_Previsu_Wall_Wood"
         Transform {
           Scale {
-            X: 0.625
-            Y: 0.625
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13835058745715878551
+        ChildIds: 5081569610553487359
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 14836191695451775469
+            }
+          }
+          Overrides {
+            Name: "cs:InventoryIconMuid"
+            AssetReference {
+              Id: 1697846266050145255
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "BS_Previsu_Wall_Wood"
+        }
+      }
+      Objects {
+        Id: 5081569610553487359
+        Name: "Preview"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.25
+            Y: 0.25
             Z: 0.5
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 10072055652865656459
         UnregisteredParameters {
           Overrides {
             Name: "ma:Building_WallInner:id"
@@ -41,7 +82,10 @@
             Id: 1608526019857160819
           }
           Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
           }
+          EnableCameraCollision: true
           StaticMesh {
             Physics {
             }

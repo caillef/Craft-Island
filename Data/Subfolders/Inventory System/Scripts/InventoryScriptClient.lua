@@ -1,5 +1,6 @@
-﻿local BUILD_MANAGER = script:GetCustomProperty("BuildingScript"):WaitForObject().context
-local INVENTORY_MANAGER = script:GetCustomProperty("InventoryManager"):WaitForObject().context
+﻿local loading = true
+
+local BUILD_MANAGER = script:GetCustomProperty("BuildingScript"):WaitForObject().context
 local propAddItemPanel = script:GetCustomProperty("AddItemPanel"):WaitForObject()
 local propAddItemNotif = script:GetCustomProperty("AddItemNotif")
 
@@ -40,6 +41,32 @@ local hoveredSlotIndex
 local notifications = {}
 local nextNotification = time()
 
+local _inventorySerializer
+function GetInventorySerializer()
+	_inventorySerializer = _G["caillef.craftisland.inventorySerializer"]
+	while _inventorySerializer == nil do
+		Task.Wait(0.1)
+		_inventorySerializer = _G["caillef.craftisland.inventorySerializer"]
+	end	
+	return _inventorySerializer
+end
+
+local _objectsList
+function GetObjectsList()
+    _objectsList = _G["caillef.craftisland.objects"]
+    while _objectsList == nil do
+        Task.Wait(0.1)
+        _objectsList = _G["caillef.craftisland.objects"]
+    end
+    return _objectsList    
+end
+
+scroll.visibility = Visibility.FORCE_OFF
+Events.Connect("LoadingEnded", function()
+	scroll.visibility = Visibility.FORCE_ON
+	loading = false
+end)
+
 do
 	fullTime = 400
 	local c = full:GetColor()
@@ -48,42 +75,6 @@ do
 	full.width = 0
 	full.text = startupMessage
 end
-
-local function GetNameFromMuid(muid)
-	local objects = {
-		{ "1214EEEF9701EE9A", "Basic Axe" },
-		{ "E2428B216BD2D34B", "Basic Hoe" },
-		{ "7D3C73A40F261843", "Berry" },
-		{ "6B0CB993E5EAEFF6", "Berry Pie" },
-		{ "849D4C1B02464AC5", "Berry Pie Dough" },
-		{ "58CF2E553C1958F0", "Bread" },
-		{ "905D3C58A6D70B6A", "Dough" },
-		{ "60BA6C27C1F3EA75", "Floor Wood" },
-		{ "D48610A224F25A9E", "Sapling" },
-		{ "D4469C4FF621DC7D", "Stairs Wood" },
-		{ "178FF62EF3246BE7", "Wall Wood" },
-		{ "828D307143518252", "Wheat" },
-		{ "A19DF3F7881592F3", "Wheat Seeds" },
-		{ "4153F13DBF7563A6", "Wood" },
-		{ "1FDE35B1D2A8901F", "Berry Sprout" },
-		{ "8C5509CCAC1C750E", "Big Window Wall Wood" },
-		{ "1F4C8911AF77BAFA", "Small Window Wall Wood" },
-		{ "D1F4BC513D92F88A", "Chair" },
-		{ "2B56C1E3C138F542", "Door Wood" },
-		{ "BC4C40A42D63733D", "Table" },
-		{ "AECB1226211DC37C", "Basic Pickaxe" },
-		{ "0B66793FF08195AC", "Furnace" },
-		{ "51D4970917797698", "Stone" },
-		{ "D1EC52C0B5D654EA", "Coal" }
-	}
-	for _,v in pairs(objects) do
-		if v[1] == muid then return v[2] end
-	end
-	return ""
-end
-
-_G["caillef.craftisland.objects"] = _G["caillef.craftisland.objects"] or {}
-_G["caillef.craftisland.objects"].GetNameFromMuid = GetNameFromMuid
 
 local iList = {}
 
@@ -94,7 +85,7 @@ local screen = nil
 
 do
 	frame.visibility = Visibility.FORCE_OFF
-	scroll.visibility = Visibility.FORCE_ON
+	scroll.visibility = Visibility.FORCE_OFF
 
 	bg:SetColor(Color.New(0, 0, 0, 0))
 	local c = slotText[1]:GetColor()
@@ -118,13 +109,11 @@ end
 function GetItem(from)
 	local ch = from:GetChildren()
 	if #ch >= 2 then
-		if string.match(ch[1].name, "Item") then
-			ch = ch[1]
-		else
-			ch = ch[2]
-		end
-	else ch = nil end
-	return ch or nil
+		ch = ch[2]
+	else
+		ch = nil
+	end
+	return ch
 end
 
 local lastSave = time()
@@ -140,7 +129,7 @@ function Save()
 end
 
 function OnLoad(str)
-	local items = INVENTORY_MANAGER.DeserializeInventory(str)
+	local items = GetInventorySerializer().Deserialize(str)
 	for i=1,27 do
 		for k,c in pairs(buttons[i]:GetChildren()) do
 			if k ~= 1 then -- Keep background
@@ -148,15 +137,18 @@ function OnLoad(str)
 			end
 		end
 	end
+
 	for key,item in pairs(items) do
-		local prop = World.SpawnAsset(item.muid, {parent = buttons[key]})
+		local prop = World.SpawnAsset(GetObjectsList()[item.id].itemMuid, {parent = buttons[key]})
 		local qtyText = World.SpawnAsset("173D841514156696", {parent = prop})
 		qtyText.text = item.qty > 1 and tostring(item.qty) or ""
 	end
 	Select(1)
 end
 
+
 function Tick(_)
+	if loading then return end	
 	if UI.GetCursorPosition().x > UI.GetScreenSize().x/2 + 400 then
 		hoveredSlotIndex = nil
 	end
@@ -309,8 +301,10 @@ function OnAdd(data, ii)		-- ii - the button
 	pickupSFX:Play()
 	local qtyText
 	local oldQuantity
+
+	local item = GetObjectsList()[data.id]
 	if #buttons[ii]:GetChildren() == 1 then
-		local prop = World.SpawnAsset(data.muid, {parent = buttons[ii]})
+		local prop = World.SpawnAsset(item.itemMuid, {parent = buttons[ii]})
 		qtyText = World.SpawnAsset("173D841514156696:InventoryQuantity", {parent = prop})
 		oldQuantity = 0
 	else
@@ -325,13 +319,13 @@ function OnAdd(data, ii)		-- ii - the button
 
 	local isNew = true
 	for k,v in pairs(notifications) do
-		if v.name == _G["caillef.craftisland.objects"].GetNameFromMuid(data.muid) then
+		if v.name == item.name then
 			v.qty = v.qty + data.qty - oldQuantity
 			isNew = false
 		end
 	end
 	if isNew then
-		table.insert(notifications, { qty = data.qty - oldQuantity, name = _G["caillef.craftisland.objects"].GetNameFromMuid(data.muid) })
+		table.insert(notifications, { qty=data.qty - oldQuantity, name=item.name })
 	end
 end
 
@@ -364,11 +358,12 @@ function Select(pickedIndex)
 	local it = GetItem(buttons[pickedIndex])
 	while Events.BroadcastToServer("inventoryEquipEvent", p, pickedIndex, it and it:GetCustomProperty("Equipment") or nil) ~= BroadcastEventResultCode.SUCCESS do
 		Task.Wait(0.2)
-	end	
-	if it and it.sourceTemplateId == "E2428B216BD2D34B" then -- HOE
-		BUILD_MANAGER.SelectStructure("1B5A92562B0F84C3") -- SOIL
-	else
-		BUILD_MANAGER.SelectStructure(it and it.sourceTemplateId or nil)
+	end
+	if it then
+		while _G["caillef.craftisland.findstructure"] == nil do
+			Task.Wait(0.1)
+		end
+		BUILD_MANAGER.SelectStructure(_G["caillef.craftisland.findstructure"](it.sourceTemplateId))
 	end
 end
 
@@ -382,6 +377,7 @@ local debugConsole = script:GetCustomProperty("DebugConsoleClient"):WaitForObjec
 function OnPress(_, key)
 	if open and debugConsole.IsCommandLineOpen() then
 		open = false
+		_G["caillef.craftisland.inventoryopen"] = open
 		Events.Broadcast("CloseUIFurnace")
 		return
 	end
@@ -393,7 +389,7 @@ function OnPress(_, key)
 		end
 	end
 
-	if open and key == "ability_secondary" and hoveredSlotIndex then
+	if open and key == "ability_secondary" and hoveredSlotIndex and GetItem(buttons[hoveredSlotIndex]) then
 		Events.Broadcast("InventoryFastMove", hoveredSlotIndex, GetItem(buttons[hoveredSlotIndex]))
 	end
 
@@ -402,6 +398,7 @@ function OnPress(_, key)
 			fullTime = 60
 		end
 		open = not open
+		_G["caillef.craftisland.inventoryopen"] = open
 		if not open then
 			Events.Broadcast("CloseUIFurnace")
 		end
@@ -451,12 +448,11 @@ for i = 1, #buttons do
 	buttons[i].clickedEvent:Connect(OnClick)
 end
 
-function OnEnteringIsland()
+Events.Connect("EnteringIsland", function()
 	local tmp = lastSelection
 	lastSelection = nil
 	Select(tmp)
-end
-Events.Connect("EnteringIsland", OnEnteringIsland)
+end)
 
 local propCraftSlot = script:GetCustomProperty("CraftSlot"):WaitForObject()
 propCraftSlot.hoveredEvent:Connect(OnHover)
@@ -473,6 +469,7 @@ end
 
 del.clickedEvent:Connect(OnDelete)
 
+Task.Wait(3)
 while Events.BroadcastToServer("inventoryReady", Game.GetLocalPlayer()) ~= BroadcastEventResultCode.SUCCESS do
 	Task.Wait(0.25)
 end

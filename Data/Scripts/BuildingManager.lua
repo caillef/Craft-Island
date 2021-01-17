@@ -1,10 +1,4 @@
-﻿local propPrevisu = script:GetCustomProperty("BuildingSystemList"):WaitForObject()
-local BLOCK_SERIALIZER = script:GetCustomProperty("BlockSerializer"):WaitForObject().context
-local propUIPanel = script:GetCustomProperty("UIPanel"):WaitForObject()
-
-Events.Connect("BSLimit", function()
-	World.SpawnAsset("7CF45E787CD10A68:LimitBuildingNotif", { parent= propUIPanel })
-end)
+﻿local propUIPanel = script:GetCustomProperty("UIPanel"):WaitForObject()
 
 local ACTION_PLACE = "ability_primary" -- left click
 local ACTION_ROTATE = "ability_secondary" -- right click
@@ -29,8 +23,28 @@ local TRANSFORM_TABLE = {
     Vector3.New(0, WALL_SIZE, 0)
 }
 
-local objectsList = propPrevisu:GetChildren()
-local objectIndex = 1
+local _objectsList
+function GetObjectsList()
+    _objectsList = _G["caillef.craftisland.objects"]
+    while _objectsList == nil do
+        Task.Wait(0.1)
+        _objectsList = _G["caillef.craftisland.objects"]
+    end
+    return _objectsList    
+end
+
+local _blockSerializer
+function GetBlockSerializer()
+    _blockSerializer = _G["caillef.craftisland.buildSerializer"]
+    while _blockSerializer == nil do
+        Task.Wait(0.1)
+        _blockSerializer = _G["caillef.craftisland.buildSerializer"]
+    end
+    return _blockSerializer    
+end
+
+local currentPrevisu
+local objectIndex
 local minPos
 local maxPos
 local islandPos
@@ -38,13 +52,15 @@ local islandPos
 function BuildSystem_Open()
     if BUILDMODE_ACTIVATED then return end
     BUILDMODE_ACTIVATED = true
-    propPrevisu.visibility = Visibility.FORCE_ON
 end
 
 function BuildSystem_Close()
     if not BUILDMODE_ACTIVATED then return end
     BUILDMODE_ACTIVATED = false
-    propPrevisu.visibility = Visibility.FORCE_OFF
+    if currentPrevisu then
+        if currentPrevisu:IsValid() then currentPrevisu:Destroy() end
+        currentPrevisu = nil
+    end
 end
 
 function PlayerCanBuild()
@@ -112,7 +128,7 @@ function Tick()
     if not objectIndex or not PlayerCanBuild() then
         return BuildSystem_Close()
     end
-    if objectIndex then
+    if currentPrevisu then
         BuildSystem_Open()
     end
     local playerPos, viewRotation = player:GetWorldPosition(), player:GetViewWorldRotation()
@@ -134,24 +150,24 @@ function Tick()
     -- TODO: Fix issue when placing crops, sometimes not right cell
     -- objPos = rotateObjectWithClick(objPos, o)
 
-    local obj = objectsList[objectIndex]
-
-    if objectIndex == 4 or objectIndex == 5 or objectIndex == 6 then -- Soil, sapling and wheat seeds only on ground
-        obj.visibility = objPos.z ~= islandPos.z and Visibility.FORCE_OFF or Visibility.FORCE_ON 
+    local obj = GetObjectsList()[objectIndex]
+    if obj.idName == "SOIL" or obj.idName == "SAPLING" or obj.idName == "WHEAT_SEEDS" then -- only on ground
+        currentPrevisu.visibility = objPos.z ~= islandPos.z and Visibility.FORCE_OFF or Visibility.FORCE_ON 
     end
 
-    obj:SetPosition(objPos)
-    obj:SetRotation(Rotation.New(0, 0, o * 90 + rotateAngle * 90))
+    currentPrevisu:SetPosition(objPos)
+    currentPrevisu:SetRotation(Rotation.New(0, 0, o * 90 + rotateAngle * 90))
 end
 
 function OnBindingReleased(player, actionName)
     if BUILDMODE_ACTIVATED and actionName == ACTION_PLACE then
-        local obj = objectsList[objectIndex]
-        if obj:GetWorldPosition().z >= 0 then
-            if objectIndex == 4 and objPos.z ~= islandPos.z then
-                return -- Soil must be placed on ground
-            end        
-            local data = BLOCK_SERIALIZER.Block_Serialize(obj:GetWorldPosition(), math.ceil(obj:GetRotation().z), objectIndex, islandPos)
+        local zPos = currentPrevisu:GetWorldPosition().z
+        if zPos >= 0 then
+            local obj = GetObjectsList()[objectIndex]
+            if (obj.idName == "SOIL" or obj.idName == "SAPLING" or obj.idName == "WHEAT_SEEDS") and zPos ~= islandPos.z then -- only on ground
+                return -- must be placed on ground
+            end
+            local data = GetBlockSerializer().Serialize(currentPrevisu:GetWorldPosition(), math.ceil(currentPrevisu:GetRotation().z), obj.id, islandPos)
             while Events.BroadcastToServer("BSPS", data) ~= BroadcastEventResultCode.SUCCESS do -- BuildingSystemPlaceStructure (BuildingSystemServer.lua)
                 Task.Wait(0.25)
             end
@@ -159,53 +175,27 @@ function OnBindingReleased(player, actionName)
     end
 
     if BUILDMODE_ACTIVATED and actionName == ACTION_ROTATE then
-        rotateAngle = (rotateAngle or 0) + 1
-        if rotateAngle >= 4 then
-            rotateAngle = 0
+        -- rotateAngle = (rotateAngle or 0) + 1
+        -- if rotateAngle >= 4 then
+        --     rotateAngle = 0
+        -- end
+    end
+end
+
+function SelectStructure(id)
+    if currentPrevisu then
+        if currentPrevisu:IsValid() then
+            currentPrevisu:Destroy()
         end
+        currentPrevisu = nil
     end
-end
-
-local function mysplit(inputstr, sep)
-    if sep == nil then
-            sep = "%s"
-    end
-    local t={}
-    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-            table.insert(t, str)
-    end
-    return t
-end
-
-local propsListFromUIMuid = {}
-for k,obj in pairs(objectsList) do
-    local iconMuid = obj:GetCustomProperty("InventoryIconMuid")
-    if not iconMuid then
-        local id = mysplit(obj:GetCustomProperty("Built"), ":")[1]
-        propsListFromUIMuid[id] = k
-        if obj:GetCustomProperty("CanBeInInventory") ~= false then
-            print("Missing InventoryIconMuid for "..obj.name)
-        end
-    else
-        local id = mysplit(iconMuid, ":")[1]
-        propsListFromUIMuid[id] = k
-    end
-end
-
-function SelectStructure(muid)
-    if objectIndex then
-        objectsList[objectIndex].visibility = Visibility.FORCE_OFF -- Hide last previsu
-    end
-    if muid == nil or not PlayerCanBuild() then
+    if id == nil or not PlayerCanBuild() or GetObjectsList()[id].previewMuid == nil then
         objectIndex = nil
         return BuildSystem_Close()
     end
-    objectIndex = propsListFromUIMuid[muid]
-    if not objectIndex then
-        return BuildSystem_Close()
-    end
+    objectIndex = id
+    currentPrevisu = World.SpawnAsset(GetObjectsList()[id].previewMuid)
     BuildSystem_Open()
-    objectsList[objectIndex].visibility = Visibility.INHERIT -- Show current previsu
 end
 
 function OnPlayerInitialized(data)
@@ -222,5 +212,9 @@ end
 player.bindingReleasedEvent:Connect(OnBindingReleased)
 Events.Connect("OnPlayerInitialized", OnPlayerInitialized)
 Events.Connect("OnBuildPermission", OnBuildPermission)
+
+Events.Connect("BSLimit", function()
+	World.SpawnAsset("7CF45E787CD10A68:LimitBuildingNotif", { parent= propUIPanel })
+end)
 
 print("Building Mode Activated for players (need the same message for the server)")

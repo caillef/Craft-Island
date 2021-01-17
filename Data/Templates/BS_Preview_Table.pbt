@@ -1,13 +1,13 @@
 ﻿Assets {
-  Id: 8559615563355897299
-  Name: "BS_Built_Wood_Table"
+  Id: 389085212409933492
+  Name: "BS_Preview_Table"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 10368336334757695574
+      RootId: 4693894508928750058
       Objects {
-        Id: 10368336334757695574
-        Name: "BS_Built_Wood_Table"
+        Id: 4693894508928750058
+        Name: "BS_Previsu_Table"
         Transform {
           Scale {
             X: 1
@@ -15,10 +15,22 @@
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
-        ChildIds: 9042597484505671129
-        ChildIds: 8023954099409840142
-        WantsNetworking: true
+        ParentId: 13835058745715878551
+        ChildIds: 15824008161518518178
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Built"
+            AssetReference {
+              Id: 8559615563355897299
+            }
+          }
+          Overrides {
+            Name: "cs:InventoryIconMuid"
+            AssetReference {
+              Id: 13568290851240768317
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -27,57 +39,16 @@
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Previsu_Table"
         }
       }
       Objects {
-        Id: 9042597484505671129
-        Name: "DestroyableProp"
+        Id: 15824008161518518178
+        Name: "Preview"
         Transform {
           Location {
-            X: 90.4710693
-            Y: -89.6642151
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
-          }
-        }
-        ParentId: 10368336334757695574
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "TABLE"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
-        }
-      }
-      Objects {
-        Id: 8023954099409840142
-        Name: "Craftsman Dining Table"
-        Transform {
-          Location {
-            X: 95
-            Y: -90
-            Z: 2
+            X: 100
+            Y: -100
           }
           Rotation {
           }
@@ -87,8 +58,33 @@
             Z: 0.9
           }
         }
-        ParentId: 10368336334757695574
-        WantsNetworking: true
+        ParentId: 4693894508928750058
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_WallInner:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Detail1:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -106,8 +102,6 @@
           EnableCameraCollision: true
           StaticMesh {
             Physics {
-              Mass: 100
-              LinearDamping: 0.01
             }
           }
         }
@@ -120,6 +114,15 @@
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_urb_table_dining_001"
+      }
+    }
+    Assets {
+      Id: 231800746144079014
+      Name: "Basic Hologram"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "fxmi_basic_hologram"
       }
     }
     PrimaryAssetId {

@@ -1,8 +1,8 @@
 ﻿local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
 local FallSFX = script:GetCustomProperty("FallSFX") and script:GetCustomProperty("FallSFX"):WaitForObject() or nil
 local type = script:GetCustomProperty("Material") or 1
-local icon = script:GetCustomProperty("ItemUI")
-local icon2 = script:GetCustomProperty("ItemUI2")
+local propItemId = script:GetCustomProperty("ItemId")
+local propItemId2 = script:GetCustomProperty("ItemId2")
 local propItemUIQty = script:GetCustomProperty("ItemUIQty") or Vector2.New(1, 1)
 local propItemUI2Qty = script:GetCustomProperty("ItemUI2Qty") or Vector2.New(1, 1)
 
@@ -20,12 +20,17 @@ local listenID = "pickup" .. math.random()*30
 local listenID2 = "pickup" .. math.random()*30
 local player = nil
 
-local SOUNDS
-while SOUNDS == nil do
-    SOUNDS = _G["caillef.craftisland.sounds"]
+local _SOUNDS
+function GetSoundManager()
+    _SOUNDS = _G["caillef.craftisland.sounds"]
+    while _SOUNDS == nil do
+        Task.Wait(0.1)
+        _SOUNDS = _G["caillef.craftisland.sounds"]
+    end
+    return _SOUNDS
 end
 
-function OnHit(data)  
+function OnHit(data) 
     if not script:IsValid() then return end
     for _,p in pairs(Game.GetPlayers()) do
         if p.id == data.p then
@@ -47,24 +52,19 @@ function OnHit(data)
     end
 
     if data.t ~= 2 then
-        local sound = World.SpawnAsset(type == 0 and SOUNDS.StoneImpactSFX or SOUNDS.WoodImpactSFX, { position = script:GetWorldPosition() })
-        sound:Play()
-        Task.Spawn(function()
-            Task.Wait(2)        
-            sound:Destroy()
-        end)
+        GetSoundManager().PlaySound(type == 0 and "StoneImpactSFX" or "WoodImpactSFX", script:GetWorldPosition())
     end
 
     if HP <= 0 then
-        if icon and not picked then
+        if propItemId and not picked then
             picked = true
             if not player or not player:IsValid() then
                 print("Error: player not found")
                 return
             end
-            Events.Broadcast("requestInventoryFullEvent", player, { muid=icon, string=listenID })
-            if icon2 and (not data.harvest or icon2 == "A19DF3F7881592F3:Item UI Wheat Seeds") then
-                Events.Broadcast("requestInventoryFullEvent", player, { muid=icon2, string=listenID2 })
+            Events.Broadcast("requestInventoryFullEvent", player, { id=propItemId, string=listenID })
+            if propItemId2 and (not data.harvest or propItemId2 == "WHEAT_SEEDS") then
+                Events.Broadcast("requestInventoryFullEvent", player, { id=propItemId2, string=listenID2 })
             end
         end
         if BreakSFX then
@@ -98,10 +98,10 @@ function OnHit(data)
 
         for _,p in pairs(Game.GetPlayers()) do
             if p.id == data.p then
-                if icon2 == "1FDE35B1D2A8901F:Item UI Berry Sprout" then
-                    BUILD_SYSTEM.PlaceObject(player, data.pos, data.angle, 12) -- Place Bush
+                if propItemId == "BERRY" then
+                    BUILD_SYSTEM.PlaceObject(player, data.pos, data.angle, 15) -- Place Bush
                 else
-                    BUILD_SYSTEM.PlaceObject(player, data.pos, data.angle, 4)
+                    BUILD_SYSTEM.PlaceObject(player, data.pos, data.angle, 30)
                 end
             end
         end
@@ -122,33 +122,27 @@ end
 eventListenerOnHit = Events.Connect("H"..mysplit(prop.id, ":")[1], OnHit)
 
 function PickUp(id, bool)
-    if icon and id == listenID then
+    if propItemId and id == listenID then
 		if bool then
 			picked = false
             Events.BroadcastToPlayer(player, "inventoryFullEvent")
             return
         end
-        Events.Broadcast("inventoryAddEvent", player, { muid=mysplit(icon, ":")[1], qty = math.floor(math.random(propItemUIQty.x, propItemUIQty.y)) })
+        Events.Broadcast("inventoryAddEvent", player, { idName=propItemId, qty = math.floor(math.random(propItemUIQty.x, propItemUIQty.y)) })
 	end
-    if icon2 and id == listenID2 then
+    if propItemId2 and id == listenID2 then
 		if bool then
 			picked = false
             Events.BroadcastToPlayer(player, "inventoryFullEvent")
             return
         end
-        if icon2 == "A19DF3F7881592F3:Item UI Wheat Seeds" then
+        if propItemId2 == "WHEAT_SEEDS" then
             if math.random() < 0.15 then
-                Events.Broadcast("inventoryAddEvent", player, { muid=mysplit(icon2, ":")[1], qty = 1 })
-                local sound = World.SpawnAsset(SOUNDS.BonusItemSFX, { position = script:GetWorldPosition() })
-                sound:Play()
-                Task.Spawn(function()
-                    Task.Wait(2)        
-                    sound:Destroy()
-                end)
-        
+                Events.Broadcast("inventoryAddEvent", player, { idName=propItemId2, qty = 1 })
+                GetSoundManager().PlaySound("BonusItemSFX", script:GetWorldPosition())
             end
         end
-        Events.Broadcast("inventoryAddEvent", player, { muid=mysplit(icon2, ":")[1], qty = math.floor(math.random(propItemUI2Qty.x , propItemUI2Qty.y)) })
+        Events.Broadcast("inventoryAddEvent", player, { idName=propItemId2, qty = math.floor(math.random(propItemUI2Qty.x , propItemUI2Qty.y)) })
 	end
 end
 

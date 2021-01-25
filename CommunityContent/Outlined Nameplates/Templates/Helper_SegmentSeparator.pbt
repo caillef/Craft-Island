@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9302814347698874975
   Name: "Helper_SegmentSeparator"
   PlatformAssetType: 5
@@ -78,5 +78,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

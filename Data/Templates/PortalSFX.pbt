@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3054833864129765767
   Name: "PortalSFX"
   PlatformAssetType: 5
@@ -52,5 +52,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

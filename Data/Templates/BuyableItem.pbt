@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7689519216032096316
   Name: "BuyableItem"
   PlatformAssetType: 5
@@ -1485,5 +1485,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

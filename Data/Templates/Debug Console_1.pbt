@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 615957593085652203
   Name: "Debug Console"
   PlatformAssetType: 5
@@ -39,5 +39,5 @@
     OwnerName: "caillef"
     Description: "A small console to send commands to the server. You can also add your own commands."
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

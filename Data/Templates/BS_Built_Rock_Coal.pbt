@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7549492464676050365
   Name: "BS_Built_Rock_Coal"
   PlatformAssetType: 5
@@ -700,5 +700,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

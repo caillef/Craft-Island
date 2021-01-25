@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3938934639273397405
   Name: "BS_Built_Berry_Sprout"
   PlatformAssetType: 5
@@ -190,5 +190,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

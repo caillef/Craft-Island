@@ -19,7 +19,7 @@ function OnPlayerJoined(player)
     storage.story = story
     Storage.SetPlayerData(player, storage)
     while player:IsValid() and Events.BroadcastToPlayer(player, "STEP", story.step, true) ~= BroadcastEventResultCode.SUCCESS do
-        Task.Wait(0.25)
+		Task.Wait(1)
     end
 end
 
@@ -30,9 +30,9 @@ function OnStepCompleted(player, step)
     storage.story = story
     Storage.SetPlayerData(player, storage)
     while player:IsValid() and Events.BroadcastToPlayer(player, "STEP", story.step, false) ~= BroadcastEventResultCode.SUCCESS do
-        Task.Wait(0.25)
+		Task.Wait(1)
     end
 end
 
 Events.Connect("STEP_COMPLETED", OnStepCompleted)
-Events.ConnectForPlayer("ReadyStep", OnPlayerJoined)
+-- Events.ConnectForPlayer("ReadyStep", OnPlayerJoined)

@@ -1,4 +1,4 @@
-﻿Name: "ShiftToSprint"
+Name: "ShiftToSprint"
 RootId: 14166833486397694787
 Objects {
   Id: 14135543317702667149

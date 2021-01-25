@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 1738932191236990456
   Name: "Sky Paradise Planet"
   PlatformAssetType: 5
@@ -825,5 +825,5 @@
       AssetId: "Sky_Paradise_Planet"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15065479156678929308
   Name: "Decal Leaves 02"
   PlatformAssetType: 14

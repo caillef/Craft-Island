@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15313945871510559390
   Name: "Item UI Sapling"
   PlatformAssetType: 5
@@ -206,5 +206,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

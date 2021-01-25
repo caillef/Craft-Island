@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15933902048433201351
   Name: "Item UI Couch"
   PlatformAssetType: 5
@@ -204,5 +204,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

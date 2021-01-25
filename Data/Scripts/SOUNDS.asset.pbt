@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7087234599356691858
   Name: "SOUNDS"
   PlatformAssetType: 3
@@ -24,5 +24,5 @@
       }
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

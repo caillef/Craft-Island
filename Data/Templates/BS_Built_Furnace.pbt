@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 6397594675155841851
   Name: "BS_Built_Furnace"
   PlatformAssetType: 5
@@ -525,6 +525,12 @@
           }
         }
         ParentId: 13613409068178849242
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:UIName"
+            String: "Furnace"
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -589,5 +595,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

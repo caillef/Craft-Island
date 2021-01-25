@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3214907868370729841
   Name: "BS_Built_Tree"
   PlatformAssetType: 5
@@ -315,5 +315,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

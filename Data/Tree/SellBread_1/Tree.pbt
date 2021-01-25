@@ -1,4 +1,4 @@
-﻿Name: "SellBread_1"
+Name: "SellBread_1"
 RootId: 5271566846307770488
 Objects {
   Id: 12392014303140174635

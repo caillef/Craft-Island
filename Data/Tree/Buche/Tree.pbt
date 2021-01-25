@@ -1,4 +1,4 @@
-﻿Name: "Buche"
+Name: "Buche"
 RootId: 14112740996830528039
 Objects {
   Id: 15747919857008892751

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9407228459665687122
   Name: "Item UI Wheat"
   PlatformAssetType: 5
@@ -135,5 +135,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

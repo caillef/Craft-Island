@@ -1,4 +1,4 @@
-﻿Name: "Berry Pie_1"
+Name: "Berry Pie_1"
 RootId: 10353423363495445987
 Objects {
   Id: 11206050658687468743

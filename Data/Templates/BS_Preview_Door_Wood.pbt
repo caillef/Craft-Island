@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7928038726411540464
   Name: "BS_Preview_Door_Wood"
   PlatformAssetType: 5
@@ -116,5 +116,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 17742901500861858841
   Name: "BankMarketStall"
   PlatformAssetType: 5
@@ -2200,6 +2200,6 @@
   Marketplace {
     Description: "Three market stalls for selling things at the market!"
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
   DirectlyPublished: true
 }

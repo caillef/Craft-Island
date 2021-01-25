@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15032137803994907882
   Name: "Ivy 05"
   PlatformAssetType: 1

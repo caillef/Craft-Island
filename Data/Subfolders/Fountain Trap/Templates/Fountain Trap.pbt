@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7940157928447513356
   Name: "Fountain Trap"
   PlatformAssetType: 5
@@ -40,5 +40,5 @@
     Version: "1.0.0"
     Description: "a fountain filled with gold that traps and kills anyones that dares try to take the gold "
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

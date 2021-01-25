@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 5896503877439157912
   Name: "Item UI Stone"
   PlatformAssetType: 5
@@ -135,5 +135,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

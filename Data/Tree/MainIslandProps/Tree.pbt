@@ -1,4 +1,4 @@
-﻿Name: "MainIslandProps"
+Name: "MainIslandProps"
 RootId: 8853590466296554917
 Objects {
   Id: 1475835215035696048
@@ -41,6 +41,14 @@ Objects {
       AnimationPlaybackRateMultiplier: 1
       PlayOnStartAnimation {
         PlaybackRate: 1
+      }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
       }
     }
   }
@@ -86,6 +94,14 @@ Objects {
       AnimationPlaybackRateMultiplier: 1
       PlayOnStartAnimation {
         PlaybackRate: 1
+      }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
       }
     }
   }
@@ -210,6 +226,14 @@ Objects {
       PlayOnStartAnimation {
         PlaybackRate: 1
       }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
+      }
     }
   }
 }
@@ -256,6 +280,14 @@ Objects {
       AnimationPlaybackRateMultiplier: 1
       PlayOnStartAnimation {
         PlaybackRate: 1
+      }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
       }
     }
   }

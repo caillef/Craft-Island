@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 6970002291322776181
   Name: "Item UI Floor Wood"
   PlatformAssetType: 5
@@ -317,5 +317,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

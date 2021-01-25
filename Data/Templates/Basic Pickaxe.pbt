@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 11173040199579593630
   Name: "Basic Pickaxe"
   PlatformAssetType: 5
@@ -700,5 +700,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

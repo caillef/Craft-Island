@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 17472426942251272983
   Name: "Basic Axe"
   PlatformAssetType: 5
@@ -656,5 +656,5 @@
       AssetId: "Advanced_Axe"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

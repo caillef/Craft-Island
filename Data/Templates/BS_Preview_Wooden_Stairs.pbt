@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 17836659793627490598
   Name: "BS_Preview_Wooden_Stairs"
   PlatformAssetType: 5
@@ -115,5 +115,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

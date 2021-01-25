@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13729575380783752394
   Name: "Gem - Round Polished"
   PlatformAssetType: 1

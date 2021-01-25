@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7069407994925304852
   Name: "BuildingSystemList"
   PlatformAssetType: 5
@@ -2775,5 +2775,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

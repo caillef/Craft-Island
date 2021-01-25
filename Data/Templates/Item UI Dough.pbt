@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 10402537065749613418
   Name: "Item UI Dough"
   PlatformAssetType: 5
@@ -135,5 +135,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

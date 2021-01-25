@@ -1,4 +1,4 @@
-﻿Name: "RockSpawner_8"
+Name: "RockSpawner_8"
 RootId: 11900290928924034792
 Objects {
   Id: 6131258870226057584

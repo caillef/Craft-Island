@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8559615563355897299
   Name: "BS_Built_Wood_Table"
   PlatformAssetType: 5
@@ -127,5 +127,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

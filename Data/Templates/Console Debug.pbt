@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 11400331072192085439
   Name: "Console Debug"
   PlatformAssetType: 5
@@ -478,6 +478,6 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
   DirectlyPublished: true
 }

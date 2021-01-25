@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 12323704023193685185
   Name: "StoneImpactSFX"
   PlatformAssetType: 5
@@ -52,5 +52,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

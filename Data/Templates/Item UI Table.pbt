@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13568290851240768317
   Name: "Item UI Table"
   PlatformAssetType: 5
@@ -193,5 +193,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

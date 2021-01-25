@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7180364477361213005
   Name: "TreeMainIsland"
   PlatformAssetType: 5
@@ -81,5 +81,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

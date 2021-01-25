@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 614827960551338588
   Name: "BS_Preview_Sapling"
   PlatformAssetType: 5
@@ -130,5 +130,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

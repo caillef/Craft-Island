@@ -1,10 +1,28 @@
-﻿Assets {
+Assets {
+  Id: 18379526620011583556
+  Name: "Crate"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Military_Icon_010"
+  }
+}
+Assets {
   Id: 18370698694560200060
   Name: "Icon Profile"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "Icon_Profile"
+  }
+}
+Assets {
+  Id: 18363486368186524226
+  Name: "BG Flat 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundNoOutline_020"
   }
 }
 Assets {
@@ -26,48 +44,12 @@ Assets {
   }
 }
 Assets {
-  Id: 17793240341163043371
-  Name: "Fantasy Wood 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Equip_Wood_001"
-  }
-}
-Assets {
-  Id: 17068925420297817526
-  Name: "Fantasy Bread 005"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Food_Bread_005"
-  }
-}
-Assets {
   Id: 16784863239120847236
   Name: "Gear Movement Shuffle Light Medium 01 SFX"
   PlatformAssetType: 7
   PrimaryAsset {
     AssetType: "AudioAssetRef"
     AssetId: "sfx_gear_movement_shuffle_light_medium_01a_Cue_ref"
-  }
-}
-Assets {
-  Id: 15716142014048276687
-  Name: "Fantasy Fruit 008"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Food_Fruit_008"
-  }
-}
-Assets {
-  Id: 14711293301163987952
-  Name: "Fantasy Craft Stone 012"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Crafting_Stone_012"
   }
 }
 Assets {
@@ -89,12 +71,30 @@ Assets {
   }
 }
 Assets {
+  Id: 6638248139959178187
+  Name: "Fantasy Dessert 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Food_Dessert_002"
+  }
+}
+Assets {
   Id: 5774908345152965978
   Name: "Frame Outlined Thick 001"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameFlat_020"
+  }
+}
+Assets {
+  Id: 5196377603841433560
+  Name: "BG Gradient 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundFlat_020"
   }
 }
 Assets {
@@ -140,15 +140,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameOutline_019"
-  }
-}
-Assets {
-  Id: 1540442400249975158
-  Name: "Survival Craft Charcoal 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Survival_Crafting_Charcoal_001"
   }
 }
 Assets {

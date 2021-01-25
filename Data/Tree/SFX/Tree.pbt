@@ -1,4 +1,4 @@
-﻿Name: "SFX"
+Name: "SFX"
 RootId: 4922389704203364407
 Objects {
   Id: 13419512467143301455

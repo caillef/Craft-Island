@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13849757034189899134
   Name: "OldFurnace"
   PlatformAssetType: 5
@@ -1240,5 +1240,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

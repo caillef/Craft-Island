@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 767939252051923794
   Name: "Ability Display"
   PlatformAssetType: 5
@@ -851,5 +851,5 @@
       AssetId: "Ability_Display"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -3,6 +3,9 @@
     player:SetResource("Gold", 0)    
   end
   player:AddResource("Gold", amount)
+  local storage = Storage.GetPlayerData(player) or {}
+  storage.gold = player:GetResource("Gold")
+  Storage.SetPlayerData(player, storage)
 end
 
 local function OnPlayerReady(player)
@@ -10,12 +13,5 @@ local function OnPlayerReady(player)
   player:SetResource("Gold", storage.gold or 0)
 end
 
-local function OnPlayerLeft(player)
-  local storage = Storage.GetPlayerData(player) or {}
-  storage.gold = player:GetResource("Gold")
-  Storage.SetPlayerData(player, storage)
-end
-
 Events.Connect("SGoldAddForPlayer", AddGold)
 Events.ConnectForPlayer("inventoryReady", OnPlayerReady)
-Game.playerLeftEvent:Connect(OnPlayerLeft)

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13035020306739828117
   Name: "Burlap Bags"
   PlatformAssetType: 5
@@ -40,5 +40,5 @@
     Version: "1.0.0"
     Description: "Burlap Bags for grain/rice/treasure"
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

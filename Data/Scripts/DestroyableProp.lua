@@ -99,7 +99,7 @@ function OnHit(data)
         for _,p in pairs(Game.GetPlayers()) do
             if p.id == data.p then
                 if propItemId == "BERRY" then
-                    BUILD_SYSTEM.PlaceObject(player, data.pos, data.angle, 15) -- Place Bush
+                    BUILD_SYSTEM.PlaceObject(player, data.pos, data.angle, 26) -- Place Bush
                 else
                     BUILD_SYSTEM.PlaceObject(player, data.pos, data.angle, 30)
                 end
@@ -128,7 +128,13 @@ function PickUp(id, bool)
             Events.BroadcastToPlayer(player, "inventoryFullEvent")
             return
         end
-        Events.Broadcast("inventoryAddEvent", player, { idName=propItemId, qty = math.floor(math.random(propItemUIQty.x, propItemUIQty.y)) })
+        if propItemId == "BERRY" then
+            if math.random() < 0.05 then
+                Events.Broadcast("inventoryAddEvent", player, { idName="BERRY_SPROUT", qty = 1 })
+                GetSoundManager().PlaySound("BonusItemSFX", script:GetWorldPosition())
+            end
+        end
+        print(Events.Broadcast("inventoryAddEvent", player, { idName=propItemId, qty = math.floor(math.random(propItemUIQty.x, propItemUIQty.y)) }))
 	end
     if propItemId2 and id == listenID2 then
 		if bool then

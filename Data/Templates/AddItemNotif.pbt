@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2619586151063933237
   Name: "AddItemNotif"
   PlatformAssetType: 5
@@ -96,5 +96,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3275793462407327190
   Name: "BS_Preview_WheatSeeds_1"
   PlatformAssetType: 5
@@ -149,5 +149,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

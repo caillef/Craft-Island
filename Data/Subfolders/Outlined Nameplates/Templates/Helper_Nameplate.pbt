@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 18186867225817324040
   Name: "Helper_Nameplate"
   PlatformAssetType: 5
@@ -693,5 +693,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

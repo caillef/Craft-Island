@@ -1,4 +1,4 @@
-﻿Name: "Cabane \303\240 bois"
+Name: "Cabane \303\240 bois"
 RootId: 12867865519974131295
 Objects {
   Id: 5503792277618219021

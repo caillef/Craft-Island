@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 17440755202029817840
   Name: "BS_Built_Wheat_Seeds_3"
   PlatformAssetType: 5
@@ -296,5 +296,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

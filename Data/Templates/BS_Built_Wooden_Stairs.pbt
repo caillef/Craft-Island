@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15033179693905802780
   Name: "BS_Built_Wooden_Stairs"
   PlatformAssetType: 5
@@ -145,5 +145,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -89,7 +89,6 @@ function DeserializeInventory(str)
     end
     local version = mysplit(str, "*")[1]
     if version == "v1" then
-        --TODO: show popup explaining rework
         return inventory
     end
     if version == "v2" then
@@ -119,6 +118,7 @@ function DeserializeInventory(str)
 end
 
 function OnSaveInventory(player, d)
+    if not player or not player:IsValid() then return end
     local data = Storage.GetPlayerData(player)
     data.inventory = SerializeInventory(d)
     Storage.SetPlayerData(player, data)

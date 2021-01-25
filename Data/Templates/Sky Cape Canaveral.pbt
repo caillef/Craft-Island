@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3887447712935663397
   Name: "Sky Cape Canaveral"
   PlatformAssetType: 5
@@ -314,5 +314,5 @@
       AssetId: "Sky_Cape_Canaveral"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

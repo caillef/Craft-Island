@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 11374977346855187947
   Name: "Bread"
   PlatformAssetType: 5
@@ -386,5 +386,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

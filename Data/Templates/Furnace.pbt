@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13041492140229318254
   Name: "Furnace"
   PlatformAssetType: 5
@@ -1440,5 +1440,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

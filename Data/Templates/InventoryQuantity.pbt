@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 1674639862517819030
   Name: "InventoryQuantity"
   PlatformAssetType: 5
@@ -66,5 +66,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7675034160880028355
   Name: "BuySellTrigger"
   PlatformAssetType: 5
@@ -102,5 +102,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

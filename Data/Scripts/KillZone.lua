@@ -3,7 +3,7 @@
 function Tick()
     if player:GetWorldPosition().z < -400 then
         while Events.BroadcastToServer("TP", "own_island") ~= BroadcastEventResultCode.SUCCESS do
-            Task.Wait(0.1)
+            Task.Wait(1)
         end
         Task.Wait(3)
     end

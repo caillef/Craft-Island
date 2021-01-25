@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 257842666015042341
   Name: "Pickup Object Wood"
   PlatformAssetType: 5
@@ -251,5 +251,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

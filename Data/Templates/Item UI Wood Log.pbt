@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 4707371283039740838
   Name: "Item UI Wood Log"
   PlatformAssetType: 5
@@ -136,5 +136,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

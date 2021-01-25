@@ -1,8 +1,8 @@
-﻿Assets {
+Assets {
   Id: 17468426568876695929
   Name: "Custom Leaves from Lily Pads 002"
   PlatformAssetType: 13
-  SerializationVersion: 72
+  SerializationVersion: 73
   CustomMaterialAsset {
     BaseMaterialId: 16272812858846823757
     ParameterOverrides {

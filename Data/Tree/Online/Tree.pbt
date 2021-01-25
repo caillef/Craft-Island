@@ -1,4 +1,4 @@
-﻿Name: "Online"
+Name: "Online"
 RootId: 2879199785804506218
 Objects {
   Id: 11019797421814771778

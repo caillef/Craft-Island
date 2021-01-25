@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8624436777308933357
   Name: "Western Store"
   PlatformAssetType: 5
@@ -40,5 +40,5 @@
     Version: "1.1.0"
     Description: "created for my Tombstone Game\r\n\r\nv1.1\r\n\r\ncleaned up the heirarchy and organized everything by group\r\n\r\nOriginal western style store front and wagon wheel created by Gambit\r\nbut modified it to suit my tastes."
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

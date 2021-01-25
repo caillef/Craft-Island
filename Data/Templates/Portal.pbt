@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8323218518488701719
   Name: "Portal"
   PlatformAssetType: 5
@@ -333,5 +333,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

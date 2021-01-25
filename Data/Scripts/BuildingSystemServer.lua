@@ -1,5 +1,6 @@
 ﻿
 local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
+local propSharedKeyIslands = script:GetCustomProperty("SharedKeyIslands")
 
 local _objectsList
 function GetObjectsList()
@@ -79,13 +80,25 @@ function AssignPlayerToObject(obj, player)
     growingScript.context.SetOwner(player)
 end
 
+function SaveIsland(player)
+    if not player:IsValid() then print("Error: tried to save island of not valid player") return end
+    local slot = playersSpawns[player]
+    local storage = Storage.GetSharedPlayerData(propSharedKeyIslands, player)
+    storage.pBlocks = GetBlockSerializer().SerializeList(slot.island:FindChildByName("Structures"):GetChildren(), slot.pos)
+    if Storage.SizeOfData(storage) < 15000 then
+        Storage.SetSharedPlayerData(propSharedKeyIslands, player, storage)
+    else
+        print("Warning: reached limit")
+    end
+end
+
 function BuildingSystem_OnPlaceStructure(player, serializedBlock)
     local data = GetBlockSerializer().Deserialize(serializedBlock, playersSpawns[player].pos)
     if not INVENTORY.PlayerHasItems(player, { id=data.type }) or
        not PlaceObject(player, data.pos, data.angle, data.type) then
         return
     end
-    INVENTORY.PlayerRemoveItems(player, { id=data.type } ) 
+    INVENTORY.PlayerRemoveItems(player, { id=data.type } )
 end
 
 function GetStructureOnCellFromList(list, pos, player)
@@ -151,6 +164,7 @@ function Grow(objReplaced, newIdName, player)
                 newPlacedTypedObjects[pos.z][pos.y][pos.x] = newPlacedTypedObjects[pos.z][pos.y][pos.x] or {}
                 newPlacedTypedObjects[pos.z][pos.y][pos.x][angle] = { obj=obj, player=player }
                 placedObjects[player][newObj.id] = newPlacedTypedObjects
+                SaveIsland(player)
                 return
             end
         end
@@ -175,12 +189,14 @@ function CountNbStructures(placedObjects)
     return sum
 end
 
-function PlaceObject(player, position, angle, type)
+function PlaceObject(player, position, angle, type, isLoadingIsland)
     angle = getAlignedAngle(angle)
     placedObjects[player] = placedObjects[player] or {}
 
-    if CountNbStructures(placedObjects[player]) >= 150 then
-        Events.BroadcastToPlayer(player, "BSLimit")
+    if CountNbStructures(placedObjects[player]) >= 300 then
+        while player:IsValid() and Events.BroadcastToPlayer(player, "BSLimit") ~= BroadcastEventResultCode.SUCCESS do
+            Task.Wait(1)
+        end
         return
     end
 
@@ -213,33 +229,36 @@ function PlaceObject(player, position, angle, type)
     placedTypedObjects[position.z][position.y][position.x][angle] = { obj=obj, player=player }
     placedObjects[player][type] = placedTypedObjects
 
-    if type == 9 then
-        local storage = Storage.GetPlayerData(player) or {}
-        local story = storage.story or {}
-        if story.step == 2 then
-            Events.Broadcast("STEP_COMPLETED", player)
-        end    
-    end    
-    if type == 11 then
-        local storage = Storage.GetPlayerData(player) or {}
-        local story = storage.story or {}
-        if story.step == 8 then
-            Events.Broadcast("STEP_COMPLETED", player)
-        end    
-    end
+    -- if type == 9 then
+    --     local storage = Storage.GetPlayerData(player) or {}
+    --     local story = storage.story or {}
+    --     if story.step == 2 then
+    --         Events.Broadcast("STEP_COMPLETED", player)
+    --     end    
+    -- end    
+    -- if type == 11 then
+    --     local storage = Storage.GetPlayerData(player) or {}
+    --     local story = storage.story or {}
+    --     if story.step == 8 then
+    --         Events.Broadcast("STEP_COMPLETED", player)
+    --     end    
+    -- end
 
+    if not isLoadingIsland then
+        SaveIsland(player)
+    end
     return true
 end
 
 
 function LoadPreviousBlocks(player)
     playersSpawns[player].isLoading = true
-    local storage = Storage.GetPlayerData(player) or {}
-    storage.pBlocks = storage.pBlocks or ""
+    local storage = Storage.GetSharedPlayerData(propSharedKeyIslands, player) or {}
+    storage.pBlocks = storage.pBlocks or "v2*25|0=-5,-3,0|270=-7,6,0|90=0,2,0_12|0=-2,-1,0;-2,0,0;-2,-2,0"
     local blocks = GetBlockSerializer().DeserializeList(storage.pBlocks, playersSpawns[player].pos)
     local i = 0
     for _,data in pairs(blocks) do
-        PlaceObject(player, data.pos, data.angle, data.type)
+        PlaceObject(player, data.pos, data.angle, data.type, true)
         i = i + 1
     end
     playersSpawns[player].isLoading = false
@@ -278,11 +297,6 @@ end
 function UnloadIsland(slot)
     if slot == nil then AddLogEntry("Tried unloading slot but got nil") return end
     local player = slot.player
-    local storage = Storage.GetPlayerData(player)
-    storage.pBlocks = GetBlockSerializer().SerializeList(slot.island:FindChildByName("Structures"):GetChildren(), slot.pos)
-    if Storage.SizeOfData(storage) < 15000 then
-        Storage.SetPlayerData(player, storage)
-    end
     slot.island:Destroy()
     placedObjects[player] = nil 
     playersSpawns[player] = nil
@@ -293,7 +307,7 @@ function OnInventoryReady(player)
         Task.Wait(0.1)
     end
     while player:IsValid() and Events.BroadcastToPlayer(player, "OnPlayerInitialized", {islandPos = playersSpawns[player].pos}) ~= BroadcastEventResultCode.SUCCESS do
-        Task.Wait(0.25)
+        Task.Wait(1)
     end
 end
 

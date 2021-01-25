@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 16353917461806733124
   Name: "Ring - Thin"
   PlatformAssetType: 1

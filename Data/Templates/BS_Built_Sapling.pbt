@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2824100523969963276
   Name: "BS_Built_Sapling"
   PlatformAssetType: 5
@@ -190,5 +190,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

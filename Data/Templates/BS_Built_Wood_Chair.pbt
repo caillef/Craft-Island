@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13147306627443383789
   Name: "BS_Built_Wood_Chair"
   PlatformAssetType: 5
@@ -208,5 +208,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

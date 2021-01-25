@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15296085051656232061
   Name: "Item UI Stairs Wood"
   PlatformAssetType: 5
@@ -381,5 +381,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

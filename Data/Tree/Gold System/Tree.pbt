@@ -1,4 +1,4 @@
-﻿Name: "Gold System"
+Name: "Gold System"
 RootId: 10457520934331886866
 Objects {
   Id: 10490744491141828505

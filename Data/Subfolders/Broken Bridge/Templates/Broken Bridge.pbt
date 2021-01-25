@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2045741329885952081
   Name: "Broken Bridge"
   PlatformAssetType: 5
@@ -40,5 +40,5 @@
     Version: "1.0.0"
     Description: "Broken Bridge"
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

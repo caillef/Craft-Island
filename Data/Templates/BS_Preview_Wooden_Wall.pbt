@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15530035845948676018
   Name: "BS_Preview_Wooden_Wall"
   PlatformAssetType: 5
@@ -116,5 +116,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

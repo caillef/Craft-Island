@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 16793350129954852689
   Name: "BS_Built_Berry_Bush_Empty"
   PlatformAssetType: 5
@@ -190,5 +190,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

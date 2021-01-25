@@ -169,7 +169,7 @@ function OnBindingReleased(player, actionName)
             end
             local data = GetBlockSerializer().Serialize(currentPrevisu:GetWorldPosition(), math.ceil(currentPrevisu:GetRotation().z), obj.id, islandPos)
             while Events.BroadcastToServer("BSPS", data) ~= BroadcastEventResultCode.SUCCESS do -- BuildingSystemPlaceStructure (BuildingSystemServer.lua)
-                Task.Wait(0.25)
+                Task.Wait(1)
             end
         end
     end
@@ -195,6 +195,7 @@ function SelectStructure(id)
     end
     objectIndex = id
     currentPrevisu = World.SpawnAsset(GetObjectsList()[id].previewMuid)
+    currentPrevisu.collision = Collision.FORCE_OFF
     BuildSystem_Open()
 end
 

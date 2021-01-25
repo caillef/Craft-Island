@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 16956733454952297098
   Name: "Small Open Crate"
   PlatformAssetType: 1

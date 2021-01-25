@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 6369832200152854169
   Name: "UI Pop Double 03 SFX"
   PlatformAssetType: 7

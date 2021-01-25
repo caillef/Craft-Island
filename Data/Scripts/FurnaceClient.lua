@@ -36,17 +36,6 @@ propUI.visibility =  Visibility.FORCE_OFF
 local furnaces = {}
 local currentFurnace
 
-local function mysplit(inputstr, sep)
-    if sep == nil then
-            sep = "%s"
-    end
-    local t={}
-    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-            table.insert(t, str)
-    end
-    return t
-end
-
 Events.Connect("OpenUIFurnace", function(id)
 	if not id then return end
 	Events.Broadcast("openInventory")
@@ -67,7 +56,7 @@ Events.Connect("CloseUIFurnace", function()
 	propUI.visibility = Visibility.FORCE_OFF
 	currentFurnace = nil
 	while Events.BroadcastToServer("EnableTrigger", triggerId) ~= BroadcastEventResultCode.SUCCESS do
-		Task.Wait(0.25)
+		Task.Wait(1)
 	end
 end)
 
@@ -98,7 +87,8 @@ function SetItemEmptySlot(item)
 end
 
 function HasRawItemInside(f)
-	return (f.slots[1] and f.slots[1].idName == "DOUGH") or (f.slots[2] and f.slots[2].idName == "DOUGH") or (f.slots[3] and f.slots[3].idName == "DOUGH")end
+	return (f.slots[1] and (f.slots[1].idName == "DOUGH" or f.slots[1].idName == "BERRY_PIE_DOUGH")) or (f.slots[2] and (f.slots[2].idName == "DOUGH" or f.slots[2].idName == "BERRY_PIE_DOUGH")) or (f.slots[3] and (f.slots[3].idName == "DOUGH" or f.slots[3].idName == "BERRY_PIE_DOUGH"))
+end
 
 function Tick()
 	if UI.GetCursorPosition().x < UI.GetScreenSize().x/2 + 400  then hoveredSlotIndex = nil end
@@ -122,7 +112,11 @@ function Tick()
 					if f.slots[i] then
 						if f.slotsTimer[i] == nil then f.slotsTimer[i] = 7 end
 						if f.slotsTimer[i] <= 0 then
-							TransformItem(f, QueryObject("BREAD"), i, updateUI)
+							if f.slots[i].idName == "BERRY_PIE_DOUGH" then
+								TransformItem(f, QueryObject("BERRY_PIE"), i, updateUI)
+							elseif f.slots[i].idName == "DOUGH" then
+								TransformItem(f, QueryObject("BREAD"), i, updateUI)
+							end
 							f.slotsTimer[i] = nil
 						else
 							f.slotsTimer[i] = f.slotsTimer[i] - 1
@@ -165,14 +159,14 @@ Events.Connect("InventoryFastMove", function(buttonIndex, icon)
 		furnaces[currentFurnace].nbCoals = furnaces[currentFurnace].nbCoals + 1
 		qtyText.text = furnaces[currentFurnace].nbCoals > 1 and tostring(furnaces[currentFurnace].nbCoals) or ""
 		while Events.BroadcastToServer("removeItem", { idName=item.idName }, 1) ~= BroadcastEventResultCode.SUCCESS do
-			Task.Wait(0.25)
+			Task.Wait(1)
 		end
 		return
 	end
-	if item.idName == "DOUGH" and
-	   SetItemEmptySlot(QueryObject("DOUGH")) then
+	if (item.idName == "DOUGH" and SetItemEmptySlot(QueryObject("DOUGH"))) or
+	   (item.idName == "BERRY_PIE_DOUGH" and SetItemEmptySlot(QueryObject("BERRY_PIE_DOUGH"))) then
 		while Events.BroadcastToServer("removeItem", { idName=item.idName }, 1) ~= BroadcastEventResultCode.SUCCESS do
-			Task.Wait(0.25)
+			Task.Wait(1)
 		end
 		return
 	end
@@ -191,6 +185,7 @@ end
 
 function RemoveOneCoal(f, updateUI)
 	f.nbCoals = f.nbCoals - 1
+	Events.BroadcastToServer("PlaySFX", "BurningFurnace")
 	if not updateUI then return end
 	if f.nbCoals <= 0 then
 		propCoalSlot:GetChildren()[2]:Destroy()
@@ -209,7 +204,7 @@ function OnPress(_, key)
 		if hoveredSlotIndex == COAL_INDEX then -- coal
 			if f.nbCoals <= 0 then return end
 			while Events.BroadcastToServer("inventoryAddEvent", player, { idName="COAL", qty = 1 }) ~= BroadcastEventResultCode.SUCCESS do
-				Task.Wait(0.25)
+                Task.Wait(1)
 			end
 			RemoveOneCoal(f, true)
 			return
@@ -218,7 +213,7 @@ function OnPress(_, key)
 			return
 		end
 		while Events.BroadcastToServer("inventoryAddEvent", player, { id=f.slots[hoveredSlotIndex].id, qty = 1 }) ~= BroadcastEventResultCode.SUCCESS do
-			Task.Wait(0.25)
+			Task.Wait(1)
 		end
 		f.slotsTimer[hoveredSlotIndex] = nil
 		f.slots[hoveredSlotIndex] = nil

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8556281639390552608
   Name: "Large Round Wood Beam 8m"
   PlatformAssetType: 1

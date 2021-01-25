@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15722647679849623975
   Name: "Dough"
   PlatformAssetType: 5
@@ -320,5 +320,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

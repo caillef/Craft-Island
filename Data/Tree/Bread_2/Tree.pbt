@@ -1,4 +1,4 @@
-﻿Name: "Bread_2"
+Name: "Bread_2"
 RootId: 14745550804876027768
 Objects {
   Id: 9098742181248362678

@@ -1,8 +1,8 @@
-﻿Assets {
+Assets {
   Id: 14191729499148880165
   Name: "mirror"
   PlatformAssetType: 13
-  SerializationVersion: 72
+  SerializationVersion: 73
   CustomMaterialAsset {
     BaseMaterialId: 11026031781226393362
     ParameterOverrides {

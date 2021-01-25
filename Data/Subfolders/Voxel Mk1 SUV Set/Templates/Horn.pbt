@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3268483955145622234
   Name: "Horn"
   PlatformAssetType: 5
@@ -77,5 +77,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

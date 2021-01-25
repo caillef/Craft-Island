@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 16570077172985975750
   Name: "BS_Preview_Furnace"
   PlatformAssetType: 5
@@ -430,5 +430,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7713744306647527414
   Name: "Item UI Berry Pie"
   PlatformAssetType: 5
@@ -135,5 +135,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

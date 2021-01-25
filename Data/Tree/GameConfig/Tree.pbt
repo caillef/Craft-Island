@@ -1,4 +1,4 @@
-﻿Name: "GameConfig"
+Name: "GameConfig"
 RootId: 6236082347439009122
 Objects {
   Id: 16813558807825262224

@@ -1,4 +1,4 @@
-﻿Name: "ServerScripts"
+Name: "ServerScripts"
 RootId: 11584135646992845074
 Objects {
   Id: 4878395841234236053
@@ -55,6 +55,15 @@ Objects {
         SelfId: 4878395841234236053
       }
     }
+    Overrides {
+      Name: "cs:SharedKeyIslands"
+      NetReference {
+        Key: "94aa09be828c4cb295ada6a9d891c2f8"
+        Type {
+          Value: "mc:enetreferencetype:sharedpersistence"
+        }
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -88,6 +97,15 @@ Objects {
       Name: "cs:InventoryScriptServer"
       ObjectReference {
         SelfId: 8227678740540710611
+      }
+    }
+    Overrides {
+      Name: "cs:SharedKeyIslands"
+      NetReference {
+        Key: "94aa09be828c4cb295ada6a9d891c2f8"
+        Type {
+          Value: "mc:enetreferencetype:sharedpersistence"
+        }
       }
     }
   }
@@ -232,6 +250,140 @@ Objects {
   Script {
     ScriptAsset {
       Id: 4316728097649207683
+    }
+  }
+}
+Objects {
+  Id: 1699577541822663217
+  Name: "BlockSerializer"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11584135646992845074
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 7339519165257358670
+    }
+  }
+}
+Objects {
+  Id: 15359744225092119989
+  Name: "OBJECTS"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11584135646992845074
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 11526358357864682441
+    }
+  }
+}
+Objects {
+  Id: 3477392683278034334
+  Name: "SOUNDS"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11584135646992845074
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:RockImpact"
+      AssetReference {
+        Id: 12323704023193685185
+      }
+    }
+    Overrides {
+      Name: "cs:WoodImpact"
+      AssetReference {
+        Id: 8919834695524188661
+      }
+    }
+    Overrides {
+      Name: "cs:BonusItem"
+      AssetReference {
+        Id: 12403158611811931962
+      }
+    }
+    Overrides {
+      Name: "cs:PickAxeChiselMineRockHit01SFX"
+      ObjectReference {
+      }
+    }
+    Overrides {
+      Name: "cs:AxeTreeWoodChopHitImpact01SFX"
+      ObjectReference {
+      }
+    }
+    Overrides {
+      Name: "cs:UIBrightNotification01SFX"
+      ObjectReference {
+      }
+    }
+    Overrides {
+      Name: "cs:BurningFurnace"
+      AssetReference {
+        Id: 15558228533079543248
+      }
+    }
+    Overrides {
+      Name: "cs:GiftCodeSuccessSFX"
+      AssetReference {
+        Id: 14398622975927397500
+      }
+    }
+    Overrides {
+      Name: "cs:GiftCodeErrorSFX"
+      AssetReference {
+        Id: 10821605564121231263
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 7087234599356691858
     }
   }
 }

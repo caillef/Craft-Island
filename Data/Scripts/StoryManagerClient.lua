@@ -23,18 +23,20 @@ local stepTexts = {
 local propStep = script:GetCustomProperty("Step"):WaitForObject()
 local propSFXNextStep = script:GetCustomProperty("SFXNextStep"):WaitForObject()
 
+propStep.parent.visibility = Visibility.FORCE_OFF
+
 function OnStep(step, start)
     if not start then
         propSFXNextStep:Play()
     end
-    if step >= 9 and start then
-        propStep.parent.visibility = Visibility.FORCE_OFF
-    end
+    -- if step >= 9 and start then
+    --     propStep.parent.visibility = Visibility.FORCE_OFF
+    -- end
     propStep.text = stepTexts[step]
 end
 
 Events.Connect("STEP", OnStep)
 
 while Events.BroadcastToServer("ReadyStep") ~= BroadcastEventResultCode.SUCCESS do
-    Task.Wait(0.25)
+    Task.Wait(1)
 end

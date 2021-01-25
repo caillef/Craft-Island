@@ -1,4 +1,4 @@
-﻿local growthConfig = {}
+local growthConfig = {}
 local devgrowthConfig = {}
 
 local DEV_MODE_ACTIVATED = script:GetCustomProperty("GROW_FAST") or false
@@ -10,9 +10,9 @@ end
 -- Min time, max time, next object muid
 
 -- Berry Sprout
-growthConfig["36A9E82F5F5F4C9D"] = { 30, 45, "BERRY_BUSH_EMPTY" }
+growthConfig["36A9E82F5F5F4C9D"] = { 60, 120, "BERRY_BUSH_EMPTY" }
 -- Berry Bush
-growthConfig["E90DF6F7DCB80F51"] = { 45, 60, "BERRY_BUSH_FULL" }
+growthConfig["E90DF6F7DCB80F51"] = { 200, 240, "BERRY_BUSH_FULL" }
 
 -- Sapling
 growthConfig["27313876BD39650C"] = { 30, 45, "TREE" }

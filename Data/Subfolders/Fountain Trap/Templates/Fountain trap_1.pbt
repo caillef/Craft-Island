@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 11023526859225839640
   Name: "Fountain trap"
   PlatformAssetType: 5
@@ -2510,6 +2510,6 @@
   Marketplace {
     Description: "a fountain filled with gold that traps and kills anyones that dares try to take the gold "
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
   DirectlyPublished: true
 }

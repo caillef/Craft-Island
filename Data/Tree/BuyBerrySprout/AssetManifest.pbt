@@ -1,0 +1,27 @@
+Assets {
+  Id: 15458865289033983629
+  Name: "Fantasy Sack Open"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_fantasy_sack_001_ref"
+  }
+}
+Assets {
+  Id: 14307244558911102288
+  Name: "Wood Raw"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_wood_raw_001_uv"
+  }
+}
+Assets {
+  Id: 11402866400111903615
+  Name: "Bush 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bush_generic_001"
+  }
+}

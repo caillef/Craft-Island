@@ -1,4 +1,4 @@
-﻿Name: "SellBerryPie"
+Name: "SellBerryPie"
 RootId: 194322440282189979
 Objects {
   Id: 1972486403270729882
@@ -148,7 +148,7 @@ Objects {
     }
     Overrides {
       Name: "cs:Price"
-      Int: 50
+      Int: 100
     }
     Overrides {
       Name: "cs:Buy"
@@ -172,7 +172,8 @@ Objects {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
   Trigger {
-    InteractionLabel: "Sell Berry Pie (50g)"
+    Interactable: true
+    InteractionLabel: "Sell Berry Pie (100g)"
     TeamSettings {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9414891653175157061
   Name: "BS_Preview_Chair"
   PlatformAssetType: 5
@@ -130,5 +130,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

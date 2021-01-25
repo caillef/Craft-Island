@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8374588235445058052
   Name: "Third Person Camera Settings"
   PlatformAssetType: 5
@@ -185,5 +185,5 @@
       AssetId: "Third_Person_Camera_Settings"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

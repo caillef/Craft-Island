@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 17406509061829868032
   Name: "Admin Console"
   PlatformAssetType: 5
@@ -33,5 +33,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -59,6 +59,8 @@ createObject(29, "COAL_ROCK", "Coal Rock", "68C52F65CF8115BD")
 createObject(30, "SOIL", "Soil", "1B5A92562B0F84C3", nil, "EFFBAD6AD3F97DC0")
 createObject(31, "WHEAT_SEEDS_2", "Wheat Seeds (step 2)", "7BA2BA8C590D39DF")
 createObject(32, "WHEAT_SEEDS_3", "Wheat Seeds (step 3)", "F20A02737F888FF0")
+createObject(33, "CRAFTING_TABLE", "Crafting Table", "F95AF4EFEEE7ED28", "50690DEBF9920EEA", "6ACAB5014996DD4B")
+createObject(34, "COOKING_TABLE", "Cooking Table", "59B79BAC58346826", "A9F30D0C73F26FC3", "4047C25B893EB776")
 
 for _,item in pairs(objects) do
     for _,item2 in pairs(objects) do
@@ -95,3 +97,36 @@ _G["caillef.craftisland.findstructure"] = function(itemMuid)
     end
     return nil
 end
+
+_G["caillef.craftisland.crafts"] = {
+	{
+		{ "WHEAT", 2 },
+        { "DOUGH", 1 },
+        1
+	},
+	{
+		{ "DOUGH", 1, "BERRY", 2 },
+        { "BERRY_PIE_DOUGH", 1 },
+        1
+	},
+	{
+		{ "STONE", 20 },
+        { "FURNACE", 1 },
+        0
+	},
+	{
+		{ "WOOD_LOG", 5 },
+        { "CRAFTING_TABLE", 1 },
+        0
+	},
+	{
+		{ "WOOD_LOG", 5 },
+        { "COOKING_TABLE", 1 },
+        0
+	},
+	{
+		{ "WOOD_LOG", 2 },
+        { "WOODEN_WALL", 3, "WOODEN_STAIRS", 3, "WOODEN_FLOOR", 3, "WOODEN_DOOR", 3, "SMALL_WOODEN_WINDOW", 3, "BIG_WOODEN_WINDOW", 3 },
+        0
+	}
+}

@@ -56,6 +56,7 @@ miningZone.endOverlapEvent:Connect(function(trigger, other)
 end)
 
 function OnPlayerJoined(player)
+    TELEPORT_MANAGER.TeleportPlayerTo(player, "main_island")
     local slot = AssignNextSlot(player)
     if slot == nil then return end
     local buildingZone = slot.island:FindChildByName("BuildingZone")
@@ -63,17 +64,16 @@ function OnPlayerJoined(player)
         if not other:IsA("Player") then return end
         permissionsAll[other.id] = player == other
         while other:IsValid() and Events.BroadcastToPlayer(other, "OnBuildPermission", player == other) ~= BroadcastEventResultCode.SUCCESS do
-            Task.Wait(0.25)
+            Task.Wait(1)
         end
     end)
     buildingZone.endOverlapEvent:Connect(function(trigger, other)
         if not other:IsA("Player") then return end
         permissionsAll[other.id] = false
         while other:IsValid() and Events.BroadcastToPlayer(other, "OnBuildPermission", false) ~= BroadcastEventResultCode.SUCCESS do
-            Task.Wait(0.25)
+            Task.Wait(1)
         end
     end)
-
     Task.Wait(1)
     BUILDING_SYSTEM.LoadIsland(slot)
     TELEPORT_MANAGER.TeleportPlayerTo(player, "own_island")
@@ -81,7 +81,7 @@ end
 
 function OnPlayerLeft(player)
     local slot = GetSpawnSlotForPlayer(player)
-    BUILDING_SYSTEM.UnloadIsland(slot)    
+    BUILDING_SYSTEM.UnloadIsland(slot)
     slot.player = nil
     slot.island = nil
 end

@@ -1,4 +1,4 @@
-﻿Name: "SellWheat"
+Name: "SellWheat"
 RootId: 16240130158429218647
 Objects {
   Id: 9615740226136691553

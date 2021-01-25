@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 17788011970778134380
   Name: "Carpet Tile 02"
   PlatformAssetType: 1

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 12403158611811931962
   Name: "BonusItemSFX"
   PlatformAssetType: 5
@@ -52,5 +52,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3526051123066352755
   Name: "PlayerIsland"
   PlatformAssetType: 5
@@ -465,16 +465,16 @@
         Name: "BuildingZone"
         Transform {
           Location {
-            X: -974.871826
+            X: -1055
             Y: 107.062012
             Z: 3.17333984
           }
           Rotation {
           }
           Scale {
-            X: 58.2821045
-            Y: 66.6936722
-            Z: 34.614727
+            X: 41.1000023
+            Y: 40.2
+            Z: 34.6000023
           }
         }
         ParentId: 10521384055258147901
@@ -546,5 +546,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

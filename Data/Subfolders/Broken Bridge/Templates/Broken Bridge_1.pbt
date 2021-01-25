@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 12130138341541464595
   Name: "Broken Bridge"
   PlatformAssetType: 5
@@ -3930,6 +3930,6 @@
   Marketplace {
     Description: "Broken Bridge"
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
   DirectlyPublished: true
 }

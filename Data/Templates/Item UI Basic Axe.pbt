@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 1302928905014996634
   Name: "Item UI Basic Axe"
   PlatformAssetType: 5
@@ -141,5 +141,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

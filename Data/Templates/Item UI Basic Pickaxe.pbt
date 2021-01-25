@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 12595180737845379964
   Name: "Item UI Basic Pickaxe"
   PlatformAssetType: 5
@@ -141,5 +141,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

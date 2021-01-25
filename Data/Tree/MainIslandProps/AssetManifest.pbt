@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 18438392666897458162
   Name: "Forest Floor 02"
   PlatformAssetType: 2

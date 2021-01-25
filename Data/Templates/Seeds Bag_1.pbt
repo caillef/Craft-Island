@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 6657281231958713187
   Name: "Seeds Bag"
   PlatformAssetType: 5
@@ -39,5 +39,5 @@
     OwnerName: "caillef"
     Description: "A seed bag for your market !"
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7739407992240651074
   Name: "Physics Sphere"
   PlatformAssetType: 5
@@ -119,5 +119,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

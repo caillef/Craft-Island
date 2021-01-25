@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15889321362244336609
   Name: "BS_Built_Window_Small"
   PlatformAssetType: 5
@@ -171,5 +171,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

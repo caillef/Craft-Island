@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13790185320606487676
   Name: "BS_Preview_Wooden_Floor"
   PlatformAssetType: 5
@@ -134,5 +134,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

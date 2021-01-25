@@ -1,8 +1,8 @@
-﻿Assets {
+Assets {
   Id: 3114173396228208510
   Name: "Custom Base Material from Stone Window"
   PlatformAssetType: 13
-  SerializationVersion: 72
+  SerializationVersion: 73
   CustomMaterialAsset {
     BaseMaterialId: 7689949703930986740
     ParameterOverrides {

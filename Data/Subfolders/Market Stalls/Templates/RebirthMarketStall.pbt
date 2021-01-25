@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9907846851988540438
   Name: "RebirthMarketStall"
   PlatformAssetType: 5
@@ -1710,6 +1710,6 @@
   Marketplace {
     Description: "Three market stalls for selling things at the market!"
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
   DirectlyPublished: true
 }

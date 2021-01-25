@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15125006426866660353
   Name: "Glass 01"
   PlatformAssetType: 2

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 16303746576693777227
   Name: "Item UI Basic Hoe"
   PlatformAssetType: 5
@@ -141,5 +141,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

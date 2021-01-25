@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 231619771047336945
   Name: "BS_Preview_Small_Window_Wall_Wood"
   PlatformAssetType: 5
@@ -134,5 +134,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -72,19 +72,6 @@ commands["respawn"] = {
     end
 }
 
-commands["reset"] = {
-    desc="Reset player local storage (reset PLAYER_NAME)",
-    func= function(admin, args)
-        for _,p in pairs(Game.GetPlayers()) do
-            if p.name == args[1] then
-                Storage.SetPlayerData(p, {});
-                return "Player "..args[1].." has now empty storage."
-            end
-        end
-        return "Error: player "..args[1].." not found."
-    end
-}
-
 commands["bring"] = {
     desc="Teleport player at your position (bring PLAYER_NAME)",
     func= function(admin, args)
@@ -165,7 +152,6 @@ commands["s"] = {
             if p.name == args[1] then
                 local storage = Storage.GetPlayerData(p)
                 local resp = "Inventory: "..storage.inventory.."\n"
-                resp = resp.."Island: "..storage.pBlocks.."\n"
                 return resp
             end
         end

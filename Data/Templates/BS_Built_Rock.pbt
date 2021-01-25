@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 12608001148984257959
   Name: "BS_Built_Rock"
   PlatformAssetType: 5
@@ -139,5 +139,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

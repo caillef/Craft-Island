@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3985798457427706340
   Name: "BS_Built_Berry_Bush_Full"
   PlatformAssetType: 5
@@ -205,6 +205,10 @@
           Overrides {
             Name: "cs:ItemId"
             String: "BERRY"
+          }
+          Overrides {
+            Name: "cs:ItemId2"
+            String: "BERRY_SPROUT"
           }
         }
         WantsNetworking: true
@@ -854,5 +858,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

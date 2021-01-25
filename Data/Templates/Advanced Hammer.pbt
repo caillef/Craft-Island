@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 17113202988049705668
   Name: "Advanced Hammer"
   PlatformAssetType: 5
@@ -1002,5 +1002,5 @@
       AssetId: "Advanced_Hammer"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

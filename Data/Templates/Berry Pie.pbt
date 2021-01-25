@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2351731877209191770
   Name: "Berry Pie"
   PlatformAssetType: 5
@@ -898,5 +898,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Name: "MainIsland"
+Name: "MainIsland"
 RootId: 14592900131835349158
 Objects {
   Id: 15775420194678160801
@@ -4034,6 +4034,10 @@ Objects {
   ChildIds: 11662508113210616421
   ChildIds: 899222680797267061
   ChildIds: 11900290928924034792
+  ChildIds: 4560786535749932595
+  ChildIds: 11326784880562780340
+  ChildIds: 4144007005040499251
+  ChildIds: 14706937720793266945
   UnregisteredParameters {
     Overrides {
       Name: "cs:ParentProp"
@@ -4080,6 +4084,160 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+}
+Objects {
+  Id: 14706937720793266945
+  Name: "RockSpawner"
+  Transform {
+    Location {
+      X: 2556.73535
+      Y: 4830.30469
+      Z: 3865
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10753996777154350082
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "RockSpawner_1"
+  }
+  InstanceHistory {
+    SelfId: 10988677416128734945
+    SubobjectId: 13326456227818208202
+    InstanceId: 10831329912381409974
+    TemplateId: 12608001148984257959
+    WasRoot: true
+  }
+}
+Objects {
+  Id: 4144007005040499251
+  Name: "RockSpawner"
+  Transform {
+    Location {
+      X: 4596.73535
+      Y: 2725.30469
+      Z: 4200
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10753996777154350082
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "RockSpawner"
+  }
+  InstanceHistory {
+    SelfId: 10988677416128734945
+    SubobjectId: 13326456227818208202
+    InstanceId: 10831329912381409974
+    TemplateId: 12608001148984257959
+    WasRoot: true
+  }
+}
+Objects {
+  Id: 11326784880562780340
+  Name: "RockSpawner"
+  Transform {
+    Location {
+      X: -1438.26477
+      Y: 1915.30469
+      Z: 3090
+    }
+    Rotation {
+      Pitch: 33.6080132
+      Yaw: 90.3193817
+      Roll: 0.0605257712
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10753996777154350082
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "RockSpawner_4"
+  }
+  InstanceHistory {
+    SelfId: 10143366605465057466
+    SubobjectId: 13326456227818208202
+    InstanceId: 13017799240849911674
+    TemplateId: 12608001148984257959
+    WasRoot: true
+  }
+}
+Objects {
+  Id: 4560786535749932595
+  Name: "RockSpawner"
+  Transform {
+    Location {
+      X: 1711.73523
+      Y: 3085.30469
+      Z: 3655
+    }
+    Rotation {
+      Pitch: 33.6080208
+      Yaw: 90.3193741
+      Roll: 0.0605237223
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10753996777154350082
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "RockSpawner_2"
+  }
+  InstanceHistory {
+    SelfId: 10143366605465057466
+    SubobjectId: 13326456227818208202
+    InstanceId: 13017799240849911674
+    TemplateId: 12608001148984257959
+    WasRoot: true
   }
 }
 Objects {
@@ -4146,7 +4304,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner"
+    FilePartitionName: "RockSpawner_3"
   }
   InstanceHistory {
     SelfId: 10988677416128734945
@@ -4183,7 +4341,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_1"
+    FilePartitionName: "RockSpawner_5"
   }
   InstanceHistory {
     SelfId: 10988677416128734945
@@ -4223,7 +4381,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_2"
+    FilePartitionName: "RockSpawner_6"
   }
   InstanceHistory {
     SelfId: 15066965380313906341
@@ -4263,7 +4421,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_3"
+    FilePartitionName: "RockSpawner_7"
   }
   InstanceHistory {
     SelfId: 13767551751191811026
@@ -4303,7 +4461,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_4"
+    FilePartitionName: "RockSpawner_9"
   }
   InstanceHistory {
     SelfId: 10143366605465057466
@@ -4342,7 +4500,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_5"
+    FilePartitionName: "RockSpawner_10"
   }
   InstanceHistory {
     SelfId: 18069237358294015096
@@ -4382,7 +4540,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_6"
+    FilePartitionName: "RockSpawner_11"
   }
   InstanceHistory {
     SelfId: 17719196393124048405
@@ -4421,7 +4579,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_7"
+    FilePartitionName: "RockSpawner_12"
   }
   InstanceHistory {
     SelfId: 15853497194626275103
@@ -4461,7 +4619,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_9"
+    FilePartitionName: "RockSpawner_13"
   }
   InstanceHistory {
     SelfId: 6727785966765252743
@@ -4500,7 +4658,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_10"
+    FilePartitionName: "RockSpawner_14"
   }
   InstanceHistory {
     SelfId: 11184864577335270992
@@ -4537,7 +4695,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_11"
+    FilePartitionName: "RockSpawner_15"
   }
   InstanceHistory {
     SelfId: 10988677416128734945
@@ -4621,7 +4779,7 @@ Objects {
   Name: "Architect"
   Transform {
     Location {
-      X: -1642.80469
+      X: 50000
       Y: -347.825317
       Z: 2559.73706
     }
@@ -4662,7 +4820,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CoreMesh {
     MeshAsset {
@@ -4683,6 +4841,14 @@ Objects {
         StartPosition: 0.482480824
         PlaybackRate: 1
         ShouldLoop: true
+      }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
+      }
+      SkinnedMeshes {
       }
     }
   }
@@ -4713,7 +4879,6 @@ Objects {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
   Trigger {
-    Interactable: true
     InteractionLabel: "Talk"
     TeamSettings {
       IsTeamCollisionEnabled: true
@@ -4832,6 +4997,7 @@ Objects {
   ChildIds: 13579967103648911087
   ChildIds: 5271566846307770488
   ChildIds: 194322440282189979
+  ChildIds: 11701481937421177063
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4840,6 +5006,43 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+}
+Objects {
+  Id: 11701481937421177063
+  Name: "BuyBerrySprout"
+  Transform {
+    Location {
+      X: -38.9257813
+      Y: -550.819092
+      Z: 2284.02466
+    }
+    Rotation {
+      Yaw: -161.681641
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4973484096715360362
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "BuyBerrySprout"
+  }
+  InstanceHistory {
+    SelfId: 16240130158429218647
+    SubobjectId: 8113092316498761747
+    InstanceId: 15966456142674523695
+    TemplateId: 7689519216032096316
+    WasRoot: true
   }
 }
 Objects {
@@ -4865,7 +5068,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
+    Value: "mc:evisibilitysetting:forceon"
   }
   Folder {
     IsFilePartition: true
@@ -4884,8 +5087,8 @@ Objects {
   Name: "SellBread"
   Transform {
     Location {
-      X: -488.925781
-      Y: -415.819092
+      X: -503.925781
+      Y: -395.819092
       Z: 2284.02466
     }
     Rotation {
@@ -5169,7 +5372,7 @@ Objects {
   Name: "BuyWheatSeed"
   Transform {
     Location {
-      X: -158.925781
+      X: -183.925781
       Y: -552.090454
       Z: 2284.02466
     }
@@ -5205,7 +5408,7 @@ Objects {
   Name: "BuySapling"
   Transform {
     Location {
-      X: -68.9257813
+      X: -103.925781
       Y: -550.819092
       Z: 2284.02466
     }

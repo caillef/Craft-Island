@@ -1,5 +1,7 @@
 ﻿local trigger = script.parent
 
+local eventName = "OpenUI"..script:GetCustomProperty("UIName")
+
 local events = {}
 
 function OnInteract(trigger, player)
@@ -9,10 +11,12 @@ function OnInteract(trigger, player)
 		end
 		return
 	end
-	while player:IsValid() and Events.BroadcastToPlayer(player, "OpenUIFurnace", trigger.id) ~= BroadcastEventResultCode.SUCCESS do
-		Task.Wait(0.25)
+	while player:IsValid() and Events.BroadcastToPlayer(player, eventName, trigger.id) ~= BroadcastEventResultCode.SUCCESS do
+		Task.Wait(1)
 	end
-	trigger.isInteractable = false
+	if trigger:IsValid() then
+		trigger.isInteractable = false
+	end
 end
 
 function OnEnableTrigger(id)

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 4629124411756255528
   Name: "Craftsman House 01"
   PlatformAssetType: 5
@@ -29796,5 +29796,5 @@
       AssetId: "Craftsman_House_01"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

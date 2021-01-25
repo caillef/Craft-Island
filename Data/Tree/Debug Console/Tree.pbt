@@ -1,4 +1,4 @@
-﻿Name: "Debug Console"
+Name: "Debug Console"
 RootId: 13644968004114680986
 Objects {
   Id: 4637766595276735296

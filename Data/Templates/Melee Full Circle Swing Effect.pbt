@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9386350048857057717
   Name: "Melee Full Circle Swing Effect"
   PlatformAssetType: 5
@@ -105,5 +105,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8565574200368624129
   Name: "Grenade Muzzle Flash"
   PlatformAssetType: 5
@@ -155,5 +155,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

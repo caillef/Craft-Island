@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15128924105355753610
   Name: "Item UI Chair"
   PlatformAssetType: 5
@@ -269,5 +269,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7295146239891326654
   Name: "Old Western Wooden Door"
   PlatformAssetType: 5
@@ -46,5 +46,5 @@
     Version: "1.0.0"
     Description: "An old western style door with open action and sound. \r\n\r\nThis is being built as part of a larger western themed set."
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

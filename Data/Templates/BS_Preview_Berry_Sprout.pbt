@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7817351220618703629
   Name: "BS_Preview_Berry_Sprout"
   PlatformAssetType: 5
@@ -155,5 +155,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

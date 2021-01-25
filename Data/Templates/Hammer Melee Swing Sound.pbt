@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 5202188592339298281
   Name: "Hammer Melee Swing Sound"
   PlatformAssetType: 5
@@ -79,5 +79,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2202564077630209716
   Name: "Market Stalls"
   PlatformAssetType: 5
@@ -52,5 +52,5 @@
     Version: "1.0.0"
     Description: "Three market stalls for selling things at the market!"
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 4617644088217816352
   Name: "Drivable Jeep"
   PlatformAssetType: 5
@@ -46,5 +46,5 @@
     Version: "1.0.0"
     Description: "It moves. thanks to knar and zurishimi for code and to twixler for model."
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

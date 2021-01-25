@@ -48,7 +48,18 @@ function CountItem(player, id)
 	return 0
 end
 
+local nextAddEvent = {}
 function Add(player, d)
+	if not player or not player:IsValid() then return end
+
+	if not nextAddEvent[player] then
+		nextAddEvent[player] = time()
+	end
+	while time() < nextAddEvent[player] do
+		Task.Wait(nextAddEvent[player] - time())
+	end
+	nextAddEvent[player] = time() + 0.2
+
 	local item = QueryObject(d.id)
 	if item == nil and d.idName then
 		item = QueryObject(d.idName)
@@ -80,20 +91,22 @@ function Add(player, d)
 	if qty <= 0 then
 		return
 	end
+
+	if not player:IsValid() then return end
 	data[player][ii] = { id=item.id, qty=qty }
 	while player:IsValid() and Events.BroadcastToPlayer(player, "requestInventoryAddEvent", data[player][ii], ii) ~= BroadcastEventResultCode.SUCCESS do
-		Task.Wait(0.25)
+		Task.Wait(1)
 	end
+	if not player:IsValid() then return end
 	Save(player)
-
-	local storage = Storage.GetPlayerData(player) or {}
-	local story = storage.story or {}
-	if story.step == 4 and CountItem(player, QueryObject("STONE").id) >= 20 and CountItem(player, QueryObject("COAL").id) >= 5 then
-		Events.Broadcast("STEP_COMPLETED", player)
-	end
-	if story.step == 5 and item.id == QueryObject("FURNACE").id then
-		Events.Broadcast("STEP_COMPLETED", player)
-	end
+	-- local storage = Storage.GetPlayerData(player) or {}
+	-- local story = storage.story or {}
+	-- if story.step == 4 and CountItem(player, QueryObject("STONE").id) >= 20 and CountItem(player, QueryObject("COAL").id) >= 5 then
+	-- 	Events.Broadcast("STEP_COMPLETED", player)
+	-- end
+	-- if story.step == 5 and item.id == QueryObject("FURNACE").id then
+	-- 	Events.Broadcast("STEP_COMPLETED", player)
+	-- end
 end
 
 function OnInventoryReady(player)
@@ -106,7 +119,7 @@ function OnInventoryReady(player)
 	for i=1,#finalInventory,64 do
 		AddLogEntry(string.sub(finalInventory, i, (i + 63 < #finalInventory) and i + 63 or #finalInventory), k, (i + 63 >= #finalInventory))
 		while player:IsValid() and Events.BroadcastToPlayer(player, "inventoryPLoadEvent", string.sub(finalInventory, i, (i + 63 < #finalInventory) and i + 63 or #finalInventory), k, (i + 63 >= #finalInventory)) ~= BroadcastEventResultCode.SUCCESS do
-			Task.Wait(0.25)
+			Task.Wait(1)
 		end
 		k = k + 1
 		Task.Wait(0.3)
@@ -191,7 +204,7 @@ function PlayerRemoveItems(player, d, qty)
 			if data[player][i].qty < qty then return false end
 			data[player][i].qty = data[player][i].qty - qty
 			while player:IsValid() and Events.BroadcastToPlayer(player, "requestInventoryRemoveEvent", data[player][i], i) ~= BroadcastEventResultCode.SUCCESS do
-				Task.Wait(0.25)
+				Task.Wait(1)
 			end
 			if qty == 0 then data[player][i] = nil end
 			return true
@@ -222,38 +235,20 @@ function GetCurrentItem(player)
 	return (item and item.id or nil)
 end
 
-local crafts = {
-	{
-		{ "WHEAT", 2 },
-		{ "DOUGH", 1 }
-	},
-	{
-		{ "DOUGH", 1, "BERRY", 2 },
-		{ "BERRY_DOUGH", 1 }
-	},
-	{
-		{ "STONE", 20 },
-		{ "FURNACE", 1 }
-	},
-	{
-		{ "WOOD_LOG", 2 },
-		{ "WOODEN_WALL", 3, "WOODEN_STAIRS", 3, "WOODEN_FLOOR", 3, "WOODEN_DOOR", 3, "SMALL_WOODEN_WINDOW", 3, "BIG_WOODEN_WINDOW", 3 }
-	}
-}
-
-function Craft(player, craftIdName)
-	for _,craft in pairs(crafts) do
+function Craft(player, craftIdName, qty)
+	qty = qty or 1
+	for _,craft in pairs(_G["caillef.craftisland.crafts"]) do
 		local recipe = craft[2]
 		for i=1,#recipe,2 do
 			if recipe[i] == craftIdName then
 				local ingredients = craft[1]
 				for j=1,#ingredients,2 do
-					if not PlayerHasItems(player, { idName=ingredients[j] }, ingredients[j + 1]) then return end
+					if not PlayerHasItems(player, { idName=ingredients[j] }, ingredients[j + 1] * qty) then return end
 				end
 				for j=1,#ingredients,2 do
-					PlayerRemoveItems(player, { idName=ingredients[j] }, ingredients[j + 1])
+					PlayerRemoveItems(player, { idName=ingredients[j] }, ingredients[j + 1] * qty)
 				end
-				Add(player, { idName=craftIdName, qty = recipe[i + 1] })
+				Add(player, { idName=craftIdName, qty = recipe[i + 1] * qty })
 				return
 			end
 		end
@@ -272,3 +267,15 @@ Events.Connect("requestInventoryFullEvent", FreeSlots)
 Events.Connect("inventoryCraftEvent", Craft)
 
 Events.ConnectForPlayer("removeItem", PlayerRemoveItems)
+
+Events.ConnectForPlayer("ReqCraft", function(player, ingredients)
+	local resp = {}
+	for _,i in pairs(data[player]) do
+		for _,igId in pairs(ingredients) do
+			if i.id == igId then
+				resp[igId] = i.qty
+			end
+		end
+	end
+	Events.BroadcastToPlayer(player, "RespCraft", resp)
+end)

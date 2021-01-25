@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 6683731155545627578
   Name: "Drivable Jeep"
   PlatformAssetType: 5
@@ -15040,7 +15040,7 @@
     }
     Assets {
       Id: 11638225697129107731
-      Name: "Street Barrier - Pedestrian"
+      Name: "Urban Pedestrian Barrier 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -15442,6 +15442,6 @@
   Marketplace {
     Description: "It moves. thanks to knar and zurishimi for code and to twixler for model."
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
   DirectlyPublished: true
 }

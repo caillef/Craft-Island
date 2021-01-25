@@ -182,7 +182,7 @@ end
 -- nil OnExecute(Ability)
 -- Spawns a swing effect template on ability execute
 function OnExecute(ability)
-    if _G["caillef.craftisland.inventoryopen"] then return end
+    if _G["caillef.craftisland.inventoryopen"] or _G["caillef.craftisland.craftopen"] then return end
     for _, abilityInfo in ipairs(abilityList) do
         if abilityInfo.ability == ability then
             abilityInfo.canAttack = true

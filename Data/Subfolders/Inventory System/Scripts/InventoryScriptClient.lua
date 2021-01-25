@@ -122,7 +122,7 @@ function Save()
 
 	if lastSave + 1 < time() then
 		while Events.BroadcastToServer("requestInventorySaveEvent", p) ~= BroadcastEventResultCode.SUCCESS do
-			Task.Wait(0.1)
+			Task.Wait(1)
 		end
 		lastSave = time()
 	end
@@ -357,7 +357,7 @@ function Select(pickedIndex)
 	lastSelection = pickedIndex
 	local it = GetItem(buttons[pickedIndex])
 	while Events.BroadcastToServer("inventoryEquipEvent", p, pickedIndex, it and it:GetCustomProperty("Equipment") or nil) ~= BroadcastEventResultCode.SUCCESS do
-		Task.Wait(0.2)
+		Task.Wait(1)
 	end
 	if it then
 		while _G["caillef.craftisland.findstructure"] == nil do
@@ -369,7 +369,7 @@ end
 
 function OnMove(id, dest)
 	while Events.BroadcastToServer("inventoryMoveEvent", p, id, dest) ~= BroadcastEventResultCode.SUCCESS do
-        Task.Wait(0.25)
+		Task.Wait(1)
     end
 end
 
@@ -379,6 +379,7 @@ function OnPress(_, key)
 		open = false
 		_G["caillef.craftisland.inventoryopen"] = open
 		Events.Broadcast("CloseUIFurnace")
+		Events.Broadcast("CloseUICraft")
 		return
 	end
 
@@ -393,7 +394,7 @@ function OnPress(_, key)
 		Events.Broadcast("InventoryFastMove", hoveredSlotIndex, GetItem(buttons[hoveredSlotIndex]))
 	end
 
-	if key == ability then
+	if key == ability and not _G["caillef.craftisland.craftopen"] then
 		if full.text == startupMessage then
 			fullTime = 60
 		end
@@ -401,6 +402,7 @@ function OnPress(_, key)
 		_G["caillef.craftisland.inventoryopen"] = open
 		if not open then
 			Events.Broadcast("CloseUIFurnace")
+			Events.Broadcast("CloseUICraft")
 		end
 		UI.SetCursorVisible(open)
 		UI.SetCanCursorInteractWithUI(open)
@@ -457,19 +459,9 @@ end)
 local propCraftSlot = script:GetCustomProperty("CraftSlot"):WaitForObject()
 propCraftSlot.hoveredEvent:Connect(OnHover)
 propCraftSlot.unhoveredEvent:Connect(OnUnhover)
-for i=0,100 do
-	local slot = script:GetCustomProperty("CraftSlot_"..tostring(i))
-	if slot == nil then
-		break
-	end
-	slot = slot:WaitForObject()
-	slot.hoveredEvent:Connect(OnHover)
-	slot.unhoveredEvent:Connect(OnUnhover)
-end
-
 del.clickedEvent:Connect(OnDelete)
 
-Task.Wait(3)
+Task.Wait(1)
 while Events.BroadcastToServer("inventoryReady", Game.GetLocalPlayer()) ~= BroadcastEventResultCode.SUCCESS do
-	Task.Wait(0.25)
+	Task.Wait(1)
 end

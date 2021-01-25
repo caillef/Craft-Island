@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 139171167005083361
   Name: "Fantasy Castle Wall 03 - Top Half Template"
   PlatformAssetType: 5
@@ -172,5 +172,5 @@
       AssetId: "Fantasy_Castle_Wall_03_-_Top_Half_Template"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

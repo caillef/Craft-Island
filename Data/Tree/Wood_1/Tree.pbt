@@ -1,4 +1,4 @@
-﻿Name: "Wood_1"
+Name: "Wood_1"
 RootId: 17961151247625310151
 Objects {
   Id: 15600431740798120653

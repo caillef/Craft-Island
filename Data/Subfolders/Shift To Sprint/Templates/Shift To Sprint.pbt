@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9813158920152109509
   Name: "Shift To Sprint"
   PlatformAssetType: 5
@@ -48,5 +48,5 @@
     Version: "1.0.0"
     Description: "Shift to sprint, ctrl to slow walk. Crouch variants available. Customizable speeds via properties."
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

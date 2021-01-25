@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9510856611355115166
   Name: "Sittable Folding Chair"
   PlatformAssetType: 5
@@ -1005,6 +1005,6 @@
   Marketplace {
     Description: "It\'s a folding chair, which you can interact with to sit in it. Jumping or pressing F again will allow players to move again, and other players to sit in the chair. \r\n\r\n- Based on script by AjArtuz"
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
   DirectlyPublished: true
 }

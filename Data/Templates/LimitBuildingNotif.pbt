@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9003925426603625064
   Name: "LimitBuildingNotif"
   PlatformAssetType: 5
@@ -95,5 +95,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

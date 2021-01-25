@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9145540542044751288
   Name: "Basic Hoe"
   PlatformAssetType: 5
@@ -698,5 +698,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 888442936584531077
   Name: "BS_Built_Wood_Door"
   PlatformAssetType: 5
@@ -504,5 +504,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

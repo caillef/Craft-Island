@@ -1,18 +1,15 @@
-﻿Name: "RockSpawner_3"
-RootId: 13767551751191811026
+Name: "RockSpawner_3"
+RootId: 899222680797267061
 Objects {
-  Id: 15583934813706553490
+  Id: 14310678012321908756
   Name: "StructureSpawner"
   Transform {
     Location {
-      X: -5144.27734
-      Y: 6876.25391
-      Z: -2311.83276
+      X: -172.202759
+      Y: -7036.46387
+      Z: -3438.48901
     }
     Rotation {
-      Pitch: 9.25639439
-      Yaw: -120.084229
-      Roll: 15.5179567
     }
     Scale {
       X: 1
@@ -20,7 +17,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 13767551751191811026
+  ParentId: 899222680797267061
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

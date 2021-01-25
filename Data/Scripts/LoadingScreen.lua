@@ -8,8 +8,7 @@ function Tick()
 end
 
 Task.Spawn(function()
-	Task.Wait(4)
+	Task.Wait(2)
 	Events.Broadcast("LoadingEnded")
-	Events.BroadcastToServer("LoadingEnded")	
 	script:Destroy()
 end)

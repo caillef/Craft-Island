@@ -11,7 +11,6 @@ end
 local config = World.GetRootObject():FindChildByName("CONFIG_RESOURCES")
 local growthConfig = config.context.GetGrowthConfig(script.parent.sourceTemplateId)
 
-print(script.parent.name)
 if growthConfig == nil then
     print("Missing growth configuration for object "..script.parent.name..", "..script.parent.sourceTemplateId)
     return

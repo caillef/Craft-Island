@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 389085212409933492
   Name: "BS_Preview_Table"
   PlatformAssetType: 5
@@ -130,5 +130,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

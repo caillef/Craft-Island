@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 17807725160681549342
   Name: "Berry Pie Dough"
   PlatformAssetType: 5
@@ -709,5 +709,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

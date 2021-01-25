@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 1971048685715293379
   Name: "BS_Built_Soil"
   PlatformAssetType: 5
@@ -158,5 +158,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

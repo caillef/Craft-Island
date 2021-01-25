@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3154814129809786441
   Name: "Cabane \303\240 bois"
   PlatformAssetType: 5
@@ -13506,6 +13506,6 @@
   Marketplace {
     Description: "Wood hut"
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
   DirectlyPublished: true
 }

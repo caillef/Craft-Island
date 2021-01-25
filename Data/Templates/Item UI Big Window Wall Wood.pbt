@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 10111999312995841294
   Name: "Item UI Big Window Wall Wood"
   PlatformAssetType: 5
@@ -321,5 +321,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 635060630630330843
   Name: "Grain Mill"
   PlatformAssetType: 5
@@ -335,5 +335,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

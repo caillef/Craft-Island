@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 1697846266050145255
   Name: "Item UI Wall Wood"
   PlatformAssetType: 5
@@ -380,5 +380,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

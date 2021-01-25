@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15126556236068574442
   Name: "Item UI Coal"
   PlatformAssetType: 5
@@ -135,5 +135,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

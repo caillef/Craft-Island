@@ -1,7 +1,7 @@
-﻿Name: "RockSpawner_1"
-RootId: 11662508113210616421
+Name: "RockSpawner_1"
+RootId: 14706937720793266945
 Objects {
-  Id: 8010389994256623620
+  Id: 15199007987485363212
   Name: "StructureSpawner"
   Transform {
     Location {
@@ -17,7 +17,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11662508113210616421
+  ParentId: 14706937720793266945
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

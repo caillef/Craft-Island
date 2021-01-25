@@ -1,4 +1,4 @@
-﻿Name: "Clou"
+Name: "Clou"
 RootId: 8142497718865142154
 Objects {
   Id: 6869275679482750442

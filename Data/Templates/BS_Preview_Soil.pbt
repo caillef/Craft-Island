@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 17292605868553633216
   Name: "BS_Preview_Soil"
   PlatformAssetType: 5
@@ -132,5 +132,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

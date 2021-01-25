@@ -1,4 +1,4 @@
-﻿Name: "Props_1"
+Name: "Props_1"
 RootId: 6027402639054720998
 Objects {
   Id: 17378626311441875400

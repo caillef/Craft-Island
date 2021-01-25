@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3122896575571490114
   Name: "Item UI Door Wood"
   PlatformAssetType: 5
@@ -316,5 +316,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2296331897865277471
   Name: "Item UI Berry Sprout"
   PlatformAssetType: 5
@@ -135,5 +135,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

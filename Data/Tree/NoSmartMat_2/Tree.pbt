@@ -1,4 +1,4 @@
-﻿Name: "NoSmartMat_2"
+Name: "NoSmartMat_2"
 RootId: 5675092394992617490
 Objects {
   Id: 8480121804373495880

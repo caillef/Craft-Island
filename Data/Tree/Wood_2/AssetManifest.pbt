@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15827214974872956504
   Name: "Cube - Chamfered Large"
   PlatformAssetType: 1

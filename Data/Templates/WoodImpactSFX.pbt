@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8919834695524188661
   Name: "WoodImpactSFX"
   PlatformAssetType: 5
@@ -52,5 +52,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

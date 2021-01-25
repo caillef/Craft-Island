@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 11322937860999079902
   Name: "Wood hut"
   PlatformAssetType: 5
@@ -40,5 +40,5 @@
     Version: "1.0.0"
     Description: "Wood hut"
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

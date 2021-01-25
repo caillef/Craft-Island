@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 17600278440057254884
   Name: "BS_Built_Wooden_Floor"
   PlatformAssetType: 5
@@ -163,5 +163,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 72
+  SerializationVersion: 73
 }

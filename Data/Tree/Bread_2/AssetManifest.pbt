@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15194088916443237272
   Name: "Capsule"
   PlatformAssetType: 1

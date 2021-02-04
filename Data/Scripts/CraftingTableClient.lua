@@ -142,7 +142,10 @@ Events.Connect("RespCraft", function(ingrQty)
 
 	local script = propQuantityController:FindChildByType("Script")
 	script.context.maxQuantity = nbMaxCraft
-	propQuantityController:FindChildByName("Qty").text = tostring(nbMaxCraft <= 0 and 0 or 1)
+	propQuantityController:FindChildByName("Qty").text = tostring(nbMaxCraft <= 0 and 0 or tonumber(propQuantityController:FindChildByName("Qty").text))
+	if propQuantityController:FindChildByName("Qty").text == "0" and nbMaxCraft > 0 then
+		propQuantityController:FindChildByName("Qty").text = "1"
+	end
 	propCraftInfo:FindChildByName("CraftButton").isInteractable = nbMaxCraft > 0
 end)
 

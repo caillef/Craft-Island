@@ -81,7 +81,7 @@ function AssignPlayerToObject(obj, player)
 end
 
 function SaveIsland(player)
-    if not player:IsValid() then print("Error: tried to save island of not valid player") return end
+    if not player or not player:IsValid() then print("Error: tried to save island of not valid player") return end
     local slot = playersSpawns[player]
     local storage = Storage.GetSharedPlayerData(propSharedKeyIslands, player)
     storage.pBlocks = GetBlockSerializer().SerializeList(slot.island:FindChildByName("Structures"):GetChildren(), slot.pos)
@@ -194,7 +194,7 @@ function PlaceObject(player, position, angle, type, isLoadingIsland)
     placedObjects[player] = placedObjects[player] or {}
 
     if CountNbStructures(placedObjects[player]) >= 300 then
-        while player:IsValid() and Events.BroadcastToPlayer(player, "BSLimit") ~= BroadcastEventResultCode.SUCCESS do
+        while player and player:IsValid() and Events.BroadcastToPlayer(player, "BSLimit") ~= BroadcastEventResultCode.SUCCESS do
             Task.Wait(1)
         end
         return
@@ -306,7 +306,7 @@ function OnInventoryReady(player)
     while playersSpawns[player] == nil do
         Task.Wait(0.1)
     end
-    while player:IsValid() and Events.BroadcastToPlayer(player, "OnPlayerInitialized", {islandPos = playersSpawns[player].pos}) ~= BroadcastEventResultCode.SUCCESS do
+    while player and player:IsValid() and Events.BroadcastToPlayer(player, "OnPlayerInitialized", {islandPos = playersSpawns[player].pos}) ~= BroadcastEventResultCode.SUCCESS do
         Task.Wait(1)
     end
 end

@@ -206,7 +206,7 @@ commands["i"] = {
                 local qty = args[3] and tonumber(args[3]) or 1
                 local muid = item.itemMuid
                 local name = item.name
-                Events.Broadcast("inventoryAddEvent", admin, { qty = qty, id=item.id })
+                Events.Broadcast("inventoryAddEvent", p, { qty = qty, id=item.id })
                 return (qty == 1 and "One" or tostring(qty)).." "..name.." given to "..p.name.."."
             end
         end

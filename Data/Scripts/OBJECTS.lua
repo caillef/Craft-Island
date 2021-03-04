@@ -3,12 +3,12 @@ local objectsId = {}
 
 function createObject(id, idName, name, templateMuid, itemMuid, previewMuid, builtConditions)
     if objectsId[idName] ~= nil then
-        print("ERROR: two objects have the same idName ("..idName..").")
+        print("Error: two objects have the same idName ("..idName..").")
         return nil
     end
     objectsId[idName] = id
     if objects[id] ~= nil then
-        print("ERROR: two objects have the same id ("..id..").")
+        print("Error: two objects have the same id ("..id..").")
         return
     end
     objects[id] = {
@@ -61,18 +61,20 @@ createObject(31, "WHEAT_SEEDS_2", "Wheat Seeds (step 2)", "7BA2BA8C590D39DF")
 createObject(32, "WHEAT_SEEDS_3", "Wheat Seeds (step 3)", "F20A02737F888FF0")
 createObject(33, "CRAFTING_TABLE", "Crafting Table", "F95AF4EFEEE7ED28", "50690DEBF9920EEA", "6ACAB5014996DD4B")
 createObject(34, "COOKING_TABLE", "Cooking Table", "59B79BAC58346826", "A9F30D0C73F26FC3", "4047C25B893EB776")
+createObject(35, "STONEBRICKS_WALL", "Stone Bricks Wall", "8ADBAD3470BDF271", "D94B675726659603", "D785C551FADA97B2") 
+createObject(36, "STONEBRICKS_WINDOW", "Stone Bricks Window", "5C79FED5ECB2988C", "1C320A5367ED0C60", "0336E0F4603BDBF1") 
+createObject(37, "STONEBRICKS_FLOOR", "Stone Bricks Floor", "117258AA93C5A99A", "5F1CC941472413F0", "BF60947C4D8E547C") 
+createObject(38, "STONEBRICKS_STAIRS", "Stone Bricks Stairs", "44E630CD0E3E4EEB", "05ED5D4E1CA9613F", "F7888B9462A8A926") 
+createObject(39, "STONEBRICKS_DOOR", "Stone Bricks Door", "643C2CF33CA51F8C", "2EB9B31CA3EC69A7", "6E060D37954CD7F0") 
 
 for _,item in pairs(objects) do
     for _,item2 in pairs(objects) do
         if item ~= item2 then
             if item.templateMuid and item.templateMuid == item2.templateMuid then
-                print("ERROR: two objects have the same templateMuid ("..item.templateMuid..").")
+                print("Error: two objects have the same templateMuid ("..item.templateMuid..").")
             end
             if item.itemMuid and item.itemMuid == item2.itemMuid then
-                print("ERROR: two objects have the same itemMuid ("..item.itemMuid..").")
-            end
-            if item.previewMuid and item.previewMuid == item2.previewMuid then
-                print("ERROR: two objects have the same previewMuid ("..item.previewMuid..").")
+                print("Error: two objects have the same itemMuid ("..item.itemMuid..").")
             end
         end
     end
@@ -98,35 +100,65 @@ _G["caillef.craftisland.findstructure"] = function(itemMuid)
     return nil
 end
 
+local CRAFTING_TABLE = 0
+local COOKING_TABLE = 1
+
 _G["caillef.craftisland.crafts"] = {
 	{
 		{ "WHEAT", 2 },
         { "DOUGH", 1 },
-        1
+        COOKING_TABLE
 	},
 	{
 		{ "DOUGH", 1, "BERRY", 2 },
         { "BERRY_PIE_DOUGH", 1 },
-        1
+        COOKING_TABLE
 	},
 	{
 		{ "STONE", 20 },
         { "FURNACE", 1 },
-        0
+        CRAFTING_TABLE
 	},
 	{
 		{ "WOOD_LOG", 5 },
         { "CRAFTING_TABLE", 1 },
-        0
+        CRAFTING_TABLE
 	},
 	{
 		{ "WOOD_LOG", 5 },
         { "COOKING_TABLE", 1 },
-        0
+        CRAFTING_TABLE
 	},
 	{
 		{ "WOOD_LOG", 2 },
         { "WOODEN_WALL", 3, "WOODEN_STAIRS", 3, "WOODEN_FLOOR", 3, "WOODEN_DOOR", 3, "SMALL_WOODEN_WINDOW", 3, "BIG_WOODEN_WINDOW", 3 },
-        0
+        CRAFTING_TABLE
+    },
+    {
+		{ "STONE", 2 },
+        { "STONEBRICKS_WALL", 3, "STONEBRICKS_STAIRS", 3, "STONEBRICKS_FLOOR", 3, "STONEBRICKS_WINDOW", 3, "STONEBRICKS_DOOR", 3 },
+        CRAFTING_TABLE
 	}
+}
+
+local SELL = 0
+local BUY = 1
+_G["caillef.craftisland.buysell"] = {
+    { -- 1 is for baker
+        { SELL, "BREAD", 10 },
+        { SELL, "BERRY_PIE", 100 },
+    },
+    { -- 2 for seeds
+        { BUY, "WHEAT_SEEDS", 20 },
+        { BUY, "BERRY_SPROUT", 200 },
+        { BUY, "SAPLING", 50 },
+    },
+    { -- 3 for farmer
+        { SELL, "WHEAT", 3 },
+        { SELL, "BERRY", 20 },
+    },
+    { -- 4 for material
+        { SELL, "STONE", 2 },
+        { SELL, "WOOD_LOG", 2 },
+    }
 }

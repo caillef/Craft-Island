@@ -53,6 +53,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12354617131837361692
+  Name: "Fantasy Coins 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Coins_004"
+  }
+}
+Assets {
   Id: 12117351831364607381
   Name: "BG Flat 002"
   PlatformAssetType: 9
@@ -86,6 +95,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameFlat_020"
+  }
+}
+Assets {
+  Id: 5666621345661469550
+  Name: "Icon Trash Can"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_Trash"
   }
 }
 Assets {

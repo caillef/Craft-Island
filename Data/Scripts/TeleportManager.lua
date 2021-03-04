@@ -41,12 +41,14 @@ Events.ConnectForPlayer("TP", TeleportPlayerTo)
 
 local teleportAllowLists = {}
 Events.ConnectForPlayer("AuthTP", function(player, other)
+    if not player:IsValid() then return end
     if other == player.name then return end
     teleportAllowLists[player.name] = teleportAllowLists[player.name] or {}
     table.insert(teleportAllowLists[player.name], other)
 end)
 
 Events.ConnectForPlayer("ReqTP", function(player, other)
+    if not player:IsValid() then return end
     if other == nil or teleportAllowLists[other] == nil then return end
     for _,p in pairs(teleportAllowLists[other]) do
         if p == player.name then
@@ -63,6 +65,7 @@ Events.ConnectForPlayer("ReqTP", function(player, other)
 end)
 
 Game.playerLeftEvent:Connect(function(player)
+    if not player:IsValid() then return end
     for n,list in pairs(teleportAllowLists) do
         for k,p in pairs(list) do
             if p and p:IsValid() and p.name == player then

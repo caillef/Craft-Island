@@ -35,7 +35,7 @@ Assets {
           UseParentWidth: true
           UseParentHeight: true
           Text {
-            Label: "You have reached the building limit (150)"
+            Label: "You have reached the building limit (300)"
             Color {
               R: 1
               G: 1
@@ -45,6 +45,8 @@ Assets {
             Size: 20
             Justification {
               Value: "mc:etextjustify:center"
+            }
+            Font {
             }
           }
           AnchorLayout {
@@ -95,5 +97,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 73
+  SerializationVersion: 76
 }

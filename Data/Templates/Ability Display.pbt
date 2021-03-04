@@ -330,6 +330,8 @@ Assets {
               Value: "mc:etextjustify:center"
             }
             ClipTextToSize: true
+            Font {
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -388,6 +390,8 @@ Assets {
             Size: 20
             Justification {
               Value: "mc:etextjustify:center"
+            }
+            Font {
             }
           }
           AnchorLayout {
@@ -812,6 +816,8 @@ Assets {
               Value: "mc:etextjustify:center"
             }
             ClipTextToSize: true
+            Font {
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -851,5 +857,5 @@ Assets {
       AssetId: "Ability_Display"
     }
   }
-  SerializationVersion: 73
+  SerializationVersion: 76
 }

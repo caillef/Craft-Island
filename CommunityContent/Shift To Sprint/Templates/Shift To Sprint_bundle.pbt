@@ -48,5 +48,5 @@ Assets {
     Version: "1.0.0"
     Description: "Shift to sprint, ctrl to slow walk. Crouch variants available. Customizable speeds via properties."
   }
-  SerializationVersion: 73
+  SerializationVersion: 76
 }

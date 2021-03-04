@@ -75,13 +75,14 @@ function GetTypeFromMuid(muid)
 end
 
 function AssignPlayerToObject(obj, player)
+    if not player or not player:IsValid() then return end
     local growingScript = obj:FindDescendantByName("GrowingAsset")
     if not growingScript then return end
     growingScript.context.SetOwner(player)
 end
 
 function SaveIsland(player)
-    if not player or not player:IsValid() then print("Error: tried to save island of not valid player") return end
+    if not player or not player:IsValid() then print("Warning: tried to save island of not valid player") return end
     local slot = playersSpawns[player]
     local storage = Storage.GetSharedPlayerData(propSharedKeyIslands, player)
     storage.pBlocks = GetBlockSerializer().SerializeList(slot.island:FindChildByName("Structures"):GetChildren(), slot.pos)
@@ -136,8 +137,9 @@ function GetStructureOnCellFromList(list, pos, player)
 end
 
 function Grow(objReplaced, newIdName, player)
+    if not player or not player:IsValid() then return end
     if not objReplaced or not objReplaced:IsValid() then
-        print("Error: objReplaced has already been destroyed")
+        print("Warning: objReplaced has already been destroyed")
         return
     end
     local type = GetTypeFromMuid(objReplaced.sourceTemplateId)
@@ -190,6 +192,7 @@ function CountNbStructures(placedObjects)
 end
 
 function PlaceObject(player, position, angle, type, isLoadingIsland)
+    if not player or not player:IsValid() then return end
     angle = getAlignedAngle(angle)
     placedObjects[player] = placedObjects[player] or {}
 
@@ -215,7 +218,6 @@ function PlaceObject(player, position, angle, type, isLoadingIsland)
         local block = GetStructureOnCellFromList(surfaceObjects, position, player)
         if not block or block.player ~= player then
             --TODO: send player message saying that he can't build on this type of block
-            print("Error: need block at that position to place this structure")
             return
         end
         RemoveStructure(block.obj, player)        
@@ -252,6 +254,7 @@ end
 
 
 function LoadPreviousBlocks(player)
+    if not player or not player:IsValid() then return end
     playersSpawns[player].isLoading = true
     local storage = Storage.GetSharedPlayerData(propSharedKeyIslands, player) or {}
     storage.pBlocks = storage.pBlocks or "v2*25|0=-5,-3,0|270=-7,6,0|90=0,2,0_12|0=-2,-1,0;-2,0,0;-2,-2,0"

@@ -57,7 +57,7 @@ function MeleeAttack(player, abilityInfo)
     local ability = abilityInfo.ability
 
     -- Ignore if the hitbox is overlapping with the owner
-    if not ability or player == ability.owner then return end
+    if not player or not player:IsValid() or not ability or not ability:IsValid() or player == ability.owner then return end
     -- Ignore friendly attack
     if Teams.AreTeamsFriendly(player.team, ability.owner.team) then return end
 

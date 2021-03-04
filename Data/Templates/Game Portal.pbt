@@ -190,6 +190,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           EnableCameraCollision: true
+          InteractWithTriggers: true
           StaticMesh {
             Physics {
             }
@@ -316,5 +317,5 @@ Assets {
       AssetId: "Game_Portal"
     }
   }
-  SerializationVersion: 73
+  SerializationVersion: 76
 }

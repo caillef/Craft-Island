@@ -14,38 +14,7 @@ local triggerId
 
 local tableType = 0
 
-local _queryObjectFunction
-function QueryObject(id)
-    _queryObjectFunction = _G["caillef.craftisland.queryobject"]
-    while _queryObjectFunction == nil do
-        Task.Wait(0.1)
-        _queryObjectFunction = _G["caillef.craftisland.queryobject"]
-    end
-    return _queryObjectFunction(id)
-end
-
-local objectsList
-function GetObjectsList()
-    objectsList = _G["caillef.craftisland.objects"]
-    while objectsList == nil do
-        Task.Wait(0.1)
-        objectsList = _G["caillef.craftisland.objects"]
-    end
-    return objectsList    
-end
-
 propUI.visibility =  Visibility.FORCE_OFF
-
-local function mysplit(inputstr, sep)
-    if sep == nil then
-            sep = "%s"
-    end
-    local t={}
-    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-            table.insert(t, str)
-    end
-    return t
-end
 
 Events.Connect("OpenUICraft", function(id)
 	if not id then return end

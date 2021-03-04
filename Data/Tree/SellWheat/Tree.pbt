@@ -1,7 +1,7 @@
 Name: "SellWheat"
-RootId: 16240130158429218647
+RootId: 3860228205628029101
 Objects {
-  Id: 9615740226136691553
+  Id: 13993198469444262699
   Name: "Wheat Seeds Model"
   Transform {
     Location {
@@ -14,13 +14,13 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 16240130158429218647
-  ChildIds: 280097838030261130
-  ChildIds: 16737445655117640463
-  ChildIds: 7647339723252279197
-  ChildIds: 18118593181184376139
-  ChildIds: 12620515880580766728
-  ChildIds: 9234305185415461040
+  ParentId: 3860228205628029101
+  ChildIds: 2746263940724016397
+  ChildIds: 3344879889232961607
+  ChildIds: 3678259294128214657
+  ChildIds: 2634468638701513772
+  ChildIds: 13685821818859156589
+  ChildIds: 7456901826298692547
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -38,7 +38,7 @@ Objects {
   }
 }
 Objects {
-  Id: 9234305185415461040
+  Id: 7456901826298692547
   Name: "Decal Hay Patch 02"
   Transform {
     Location {
@@ -55,7 +55,7 @@ Objects {
       Z: 0.30188477
     }
   }
-  ParentId: 9615740226136691553
+  ParentId: 13993198469444262699
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -75,7 +75,7 @@ Objects {
   }
 }
 Objects {
-  Id: 12620515880580766728
+  Id: 13685821818859156589
   Name: "Decal Hay Patch 02"
   Transform {
     Location {
@@ -92,7 +92,7 @@ Objects {
       Z: 0.329169929
     }
   }
-  ParentId: 9615740226136691553
+  ParentId: 13993198469444262699
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -112,7 +112,7 @@ Objects {
   }
 }
 Objects {
-  Id: 18118593181184376139
+  Id: 2634468638701513772
   Name: "Decal Hay Patch 02"
   Transform {
     Location {
@@ -129,7 +129,7 @@ Objects {
       Z: 0.37144044
     }
   }
-  ParentId: 9615740226136691553
+  ParentId: 13993198469444262699
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -149,7 +149,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7647339723252279197
+  Id: 3678259294128214657
   Name: "Decal Leaves 02"
   Transform {
     Location {
@@ -168,7 +168,7 @@ Objects {
       Z: 0.025
     }
   }
-  ParentId: 9615740226136691553
+  ParentId: 13993198469444262699
   UnregisteredParameters {
     Overrides {
       Name: "bp:color"
@@ -203,7 +203,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16737445655117640463
+  Id: 3344879889232961607
   Name: "Decal Hay Patch 02"
   Transform {
     Location {
@@ -220,7 +220,7 @@ Objects {
       Z: 0.281381875
     }
   }
-  ParentId: 9615740226136691553
+  ParentId: 13993198469444262699
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -240,7 +240,7 @@ Objects {
   }
 }
 Objects {
-  Id: 280097838030261130
+  Id: 2746263940724016397
   Name: "Hill 02"
   Transform {
     Location {
@@ -259,7 +259,7 @@ Objects {
       Z: 0.05
     }
   }
-  ParentId: 9615740226136691553
+  ParentId: 13993198469444262699
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -303,6 +303,7 @@ Objects {
       IsEnemyCollisionEnabled: true
     }
     EnableCameraCollision: true
+    InteractWithTriggers: true
     StaticMesh {
       Physics {
       }
@@ -311,113 +312,6 @@ Objects {
   InstanceHistory {
     SelfId: 6452765238615239286
     SubobjectId: 14446181891024508210
-    InstanceId: 15966456142674523695
-    TemplateId: 7689519216032096316
-  }
-}
-Objects {
-  Id: 9099155205340171159
-  Name: "BuySellTrigger"
-  Transform {
-    Location {
-      X: -0.0640564
-      Z: 12.7775879
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.547660232
-      Y: 0.669944763
-      Z: 0.580976725
-    }
-  }
-  ParentId: 16240130158429218647
-  ChildIds: 8163656669761087976
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:InventoryScriptServer"
-      ObjectReference {
-        SelfId: 8227678740540710611
-      }
-    }
-    Overrides {
-      Name: "cs:Price"
-      Int: 2
-    }
-    Overrides {
-      Name: "cs:Buy"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:GoldScriptServer"
-      ObjectReference {
-        SelfId: 7046807597298804878
-      }
-    }
-    Overrides {
-      Name: "cs:ItemId"
-      String: "WHEAT"
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  Trigger {
-    Interactable: true
-    InteractionLabel: "Sell Wheat (2g)"
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-  InstanceHistory {
-    SelfId: 9099155205340171159
-    SubobjectId: 17271664510564218067
-    InstanceId: 15966456142674523695
-    TemplateId: 7689519216032096316
-  }
-}
-Objects {
-  Id: 8163656669761087976
-  Name: "BuySellScript"
-  Transform {
-    Location {
-      X: -242.123932
-      Y: -1334.96
-      Z: -1242.10522
-    }
-    Rotation {
-      Yaw: 24.999979
-    }
-    Scale {
-      X: 0.476190448
-      Y: 1
-      Z: 0.526315749
-    }
-  }
-  ParentId: 9099155205340171159
-  UnregisteredParameters {
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 25654430572870202
-    }
-  }
-  InstanceHistory {
-    SelfId: 8163656669761087976
-    SubobjectId: 16194051813615310508
     InstanceId: 15966456142674523695
     TemplateId: 7689519216032096316
   }

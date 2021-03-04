@@ -8,6 +8,24 @@ Assets {
   }
 }
 Assets {
+  Id: 17471560546391109885
+  Name: "Military Guy 1"
+  PlatformAssetType: 17
+  PrimaryAsset {
+    AssetType: "AnimatedMeshAssetRef"
+    AssetId: "npc_guy_military_001_ref"
+  }
+}
+Assets {
+  Id: 17386725906433127088
+  Name: "Fantasy Human Guy 1"
+  PlatformAssetType: 17
+  PrimaryAsset {
+    AssetType: "AnimatedMeshAssetRef"
+    AssetId: "npc_human_guy_fantasy_001_ref"
+  }
+}
+Assets {
   Id: 17065419740092193562
   Name: "Stone Block Standard Broken"
   PlatformAssetType: 1
@@ -27,6 +45,15 @@ Assets {
         Value: "mc:enetreferencetype:sharedpersistence"
       }
     }
+  }
+}
+Assets {
+  Id: 16955162695139626198
+  Name: "Human Guy 2"
+  PlatformAssetType: 17
+  PrimaryAsset {
+    AssetType: "AnimatedMeshAssetRef"
+    AssetId: "npc_human_guy_basic_002_ref"
   }
 }
 Assets {
@@ -66,6 +93,19 @@ Assets {
   }
 }
 Assets {
+  Id: 9261566395112034950
+  Name: "Inventory"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "e6f6a0ce79ac4187b47b15c4d6b4579a"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
+      }
+    }
+  }
+}
+Assets {
   Id: 9097769791712818678
   Name: "Carpet Tile 01"
   PlatformAssetType: 1
@@ -81,6 +121,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_fantasy_block_03"
+  }
+}
+Assets {
+  Id: 8051971039432359698
+  Name: "Fantasy Human Gal 1"
+  PlatformAssetType: 17
+  PrimaryAsset {
+    AssetType: "AnimatedMeshAssetRef"
+    AssetId: "npc_human_gal_fantasy_003_ref"
   }
 }
 Assets {
@@ -153,6 +202,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_large_beam_6m"
+  }
+}
+Assets {
+  Id: 5125151642496914779
+  Name: "Cabin Bold"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "CabinBold_ref"
   }
 }
 Assets {

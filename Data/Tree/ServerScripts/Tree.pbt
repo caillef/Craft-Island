@@ -1,6 +1,44 @@
 Name: "ServerScripts"
 RootId: 11584135646992845074
 Objects {
+  Id: 10074411831079104885
+  Name: "BuySellServer"
+  Transform {
+    Location {
+      X: -100
+      Y: 65
+      Z: -45
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11584135646992845074
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:InventoryScriptServer"
+      ObjectReference {
+        SelfId: 8227678740540710611
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 6497723591349818000
+    }
+  }
+}
+Objects {
   Id: 4878395841234236053
   Name: "StoryManager"
   Transform {

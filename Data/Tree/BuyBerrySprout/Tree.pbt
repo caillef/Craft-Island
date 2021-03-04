@@ -54,6 +54,7 @@ Objects {
       IsEnemyCollisionEnabled: true
     }
     EnableCameraCollision: true
+    InteractWithTriggers: true
     StaticMesh {
       Physics {
       }
@@ -142,120 +143,12 @@ Objects {
       IsEnemyCollisionEnabled: true
     }
     EnableCameraCollision: true
+    InteractWithTriggers: true
     StaticMesh {
       Physics {
         Mass: 100
         LinearDamping: 0.01
       }
     }
-  }
-}
-Objects {
-  Id: 2382413403199521064
-  Name: "BuySellTrigger"
-  Transform {
-    Location {
-      X: 1.94784951
-      Y: -1.259781
-      Z: 12.7775879
-    }
-    Rotation {
-      Yaw: 161.681656
-    }
-    Scale {
-      X: 0.547660232
-      Y: 0.669944763
-      Z: 0.580976725
-    }
-  }
-  ParentId: 11701481937421177063
-  ChildIds: 110156196992014932
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:InventoryScriptServer"
-      ObjectReference {
-        SelfId: 8227678740540710611
-      }
-    }
-    Overrides {
-      Name: "cs:Price"
-      Int: 200
-    }
-    Overrides {
-      Name: "cs:Buy"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:GoldScriptServer"
-      ObjectReference {
-        SelfId: 7046807597298804878
-      }
-    }
-    Overrides {
-      Name: "cs:ItemId"
-      String: "BERRY_SPROUT"
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  Trigger {
-    Interactable: true
-    InteractionLabel: "Buy Berry Sprout (200g)"
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-  InstanceHistory {
-    SelfId: 9099155205340171159
-    SubobjectId: 17271664510564218067
-    InstanceId: 15966456142674523695
-    TemplateId: 7689519216032096316
-  }
-}
-Objects {
-  Id: 110156196992014932
-  Name: "BuySellScript"
-  Transform {
-    Location {
-      X: -242.123932
-      Y: -1334.96
-      Z: -1242.10522
-    }
-    Rotation {
-      Yaw: 24.999979
-    }
-    Scale {
-      X: 0.476190448
-      Y: 1
-      Z: 0.526315749
-    }
-  }
-  ParentId: 2382413403199521064
-  UnregisteredParameters {
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 25654430572870202
-    }
-  }
-  InstanceHistory {
-    SelfId: 8163656669761087976
-    SubobjectId: 16194051813615310508
-    InstanceId: 15966456142674523695
-    TemplateId: 7689519216032096316
   }
 }

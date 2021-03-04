@@ -52,5 +52,5 @@ Assets {
     Version: "1.0.0"
     Description: "Three market stalls for selling things at the market!"
   }
-  SerializationVersion: 73
+  SerializationVersion: 76
 }

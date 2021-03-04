@@ -2,7 +2,7 @@ Assets {
   Id: 11298517848542431636
   Name: "Tree hologram"
   PlatformAssetType: 13
-  SerializationVersion: 73
+  SerializationVersion: 76
   CustomMaterialAsset {
     BaseMaterialId: 231800746144079014
     ParameterOverrides {

@@ -139,9 +139,11 @@ function OnLoad(str)
 	end
 
 	for key,item in pairs(items) do
-		local prop = World.SpawnAsset(GetObjectsList()[item.id].itemMuid, {parent = buttons[key]})
-		local qtyText = World.SpawnAsset("173D841514156696", {parent = prop})
-		qtyText.text = item.qty > 1 and tostring(item.qty) or ""
+		if GetObjectsList()[item.id] and GetObjectsList()[item.id].itemMuid then
+			local prop = World.SpawnAsset(GetObjectsList()[item.id].itemMuid, {parent = buttons[key]})
+			local qtyText = World.SpawnAsset("173D841514156696", {parent = prop})
+			qtyText.text = item.qty > 1 and tostring(item.qty) or ""
+		end
 	end
 	Select(1)
 end
@@ -321,10 +323,14 @@ function OnAdd(data, ii)		-- ii - the button
 	for k,v in pairs(notifications) do
 		if v.name == item.name then
 			v.qty = v.qty + data.qty - oldQuantity
-			isNew = false
+			if v.qty > 0 then
+				isNew = false
+			else
+				table.remove(notifications, k)
+			end
 		end
 	end
-	if isNew then
+	if isNew and data.qty - oldQuantity > 0 then
 		table.insert(notifications, { qty=data.qty - oldQuantity, name=item.name })
 	end
 end
@@ -394,7 +400,7 @@ function OnPress(_, key)
 		Events.Broadcast("InventoryFastMove", hoveredSlotIndex, GetItem(buttons[hoveredSlotIndex]))
 	end
 
-	if key == ability and not _G["caillef.craftisland.craftopen"] then
+	if key == ability and not _G["caillef.craftisland.craftopen"] and not _G["caillef.craftisland.buysellopen"] then
 		if full.text == startupMessage then
 			fullTime = 60
 		end
@@ -419,19 +425,8 @@ function OnFull()
 	full.text = fullMessage
 end
 
-local fullInventory = {}
-function OnPrepareLoad(data, i, isEnd)
-	fullInventory[i] = data
-	if isEnd then
-		local str = ""
-		for i=1,1000 do
-			if fullInventory[i] == nil then
-				OnLoad(str)
-				return
-			end
-			str = str..fullInventory[i]
-		end
-	end
+function OnPrepareLoad(data)
+	OnLoad(data)
 end
 
 p.bindingPressedEvent:Connect(OnPress)
@@ -439,7 +434,7 @@ Events.Connect("openInventory", function()
 	if open then return end
 	OnPress(nil, ability)
 end)
-Events.Connect("inventoryPLoadEvent", OnPrepareLoad)
+Events.Connect("Inv", OnPrepareLoad)
 Events.Connect("inventoryFullEvent", OnFull)
 Events.Connect("requestInventoryAddEvent", OnAdd)
 Events.Connect("requestInventoryRemoveEvent", OnRemove)

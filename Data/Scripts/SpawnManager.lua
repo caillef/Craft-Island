@@ -3,7 +3,7 @@ local TELEPORT_MANAGER = script:GetCustomProperty("TeleportManager"):WaitForObje
 local propPlayerIsland = script:GetCustomProperty("PlayerIsland")
 local propIslands = script:GetCustomProperty("Islands"):WaitForObject()
 
-local NB_MAX_PLAYERS = 8
+local NB_MAX_PLAYERS = 3
 local SPACE_BETWEEN_ISLAND = 100000
 
 local playerSlots = {}
@@ -33,7 +33,7 @@ end
 
 local function AssignNextSlot(player)
     for _,s in pairs(playerSlots) do
-        if s.player == nil and s.island == nil then
+        if (s.player == nil or not s.player:IsValid()) and s.island == nil then
             return PrepareSlot(player, s)
         end
     end
@@ -46,12 +46,10 @@ permissionsBreak = {}
 local miningZone = World.GetRootObject():FindDescendantByName("MiningZone")
 miningZone.beginOverlapEvent:Connect(function(trigger, other)
     if not other:IsA("Player") then return end
-    print("canBreak")
     permissionsBreak[other.id] = true
 end)
 miningZone.endOverlapEvent:Connect(function(trigger, other)
     if not other:IsA("Player") then return end
-    print("cantBreak")
     permissionsBreak[other.id] = false
 end)
 
@@ -61,6 +59,7 @@ function OnPlayerJoined(player)
     if slot == nil then return end
     local buildingZone = slot.island:FindChildByName("BuildingZone")
     buildingZone.beginOverlapEvent:Connect(function(trigger, other)
+        if not player:IsValid() or not other:IsValid() then return end
         if not other:IsA("Player") then return end
         permissionsAll[other.id] = player == other
         while other:IsValid() and Events.BroadcastToPlayer(other, "OnBuildPermission", player == other) ~= BroadcastEventResultCode.SUCCESS do
@@ -68,6 +67,7 @@ function OnPlayerJoined(player)
         end
     end)
     buildingZone.endOverlapEvent:Connect(function(trigger, other)
+        if not player:IsValid() or not other:IsValid() then return end
         if not other:IsA("Player") then return end
         permissionsAll[other.id] = false
         while other:IsValid() and Events.BroadcastToPlayer(other, "OnBuildPermission", false) ~= BroadcastEventResultCode.SUCCESS do
@@ -81,6 +81,7 @@ end
 
 function OnPlayerLeft(player)
     local slot = GetSpawnSlotForPlayer(player)
+    if not slot then return end
     BUILDING_SYSTEM.UnloadIsland(slot)
     slot.player = nil
     slot.island = nil
@@ -88,11 +89,10 @@ end
 
 function GetSpawnSlotForPlayer(player)
     for _,s in pairs(playerSlots) do
-        if s.player and s.player:IsValid() and (s.player.name == player or (player.IsA and player:IsValid() and s.player.id == player.id)) then
+        if s.player and s.player:IsValid() and (s.player.name == player or s.player == player) then
             return s
         end
     end
-    print("No slot")
     return nil
 end
 

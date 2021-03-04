@@ -118,6 +118,7 @@ Assets {
           }
           DisableCastShadows: true
           EnableCameraCollision: true
+          InteractWithTriggers: true
           StaticMesh {
             Physics {
             }
@@ -172,6 +173,7 @@ Assets {
           }
           DisableCastShadows: true
           EnableCameraCollision: true
+          InteractWithTriggers: true
           StaticMesh {
             Physics {
             }
@@ -226,6 +228,7 @@ Assets {
           }
           DisableCastShadows: true
           EnableCameraCollision: true
+          InteractWithTriggers: true
           StaticMesh {
             Physics {
             }
@@ -280,6 +283,7 @@ Assets {
           }
           DisableCastShadows: true
           EnableCameraCollision: true
+          InteractWithTriggers: true
           StaticMesh {
             Physics {
             }
@@ -311,6 +315,8 @@ Assets {
         }
         Text {
           Text: "HELLO WORLD"
+          FontAsset {
+          }
           Color {
             R: 1
             G: 1
@@ -355,6 +361,8 @@ Assets {
         }
         Text {
           Text: "HELLO WORLD"
+          FontAsset {
+          }
           Color {
             R: 1
             G: 1
@@ -398,6 +406,8 @@ Assets {
         }
         Text {
           Text: "HELLO WORLD"
+          FontAsset {
+          }
           Color {
             A: 1
           }
@@ -473,6 +483,8 @@ Assets {
         }
         Text {
           Text: "HELLO WORLD"
+          FontAsset {
+          }
           Color {
             A: 1
           }
@@ -548,6 +560,8 @@ Assets {
         }
         Text {
           Text: "HELLO WORLD"
+          FontAsset {
+          }
           Color {
             A: 1
           }
@@ -623,6 +637,8 @@ Assets {
         }
         Text {
           Text: "HELLO WORLD"
+          FontAsset {
+          }
           Color {
             A: 1
           }
@@ -693,5 +709,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 73
+  SerializationVersion: 76
 }

@@ -344,6 +344,7 @@ Assets {
           DisableDistanceFieldLighting: true
           DisableCastShadows: true
           DisableReceiveDecals: true
+          InteractWithTriggers: true
           StaticMesh {
             Physics {
             }
@@ -825,5 +826,5 @@ Assets {
       AssetId: "Sky_Paradise_Planet"
     }
   }
-  SerializationVersion: 73
+  SerializationVersion: 76
 }

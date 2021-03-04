@@ -106,6 +106,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -175,6 +177,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -445,6 +449,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -514,6 +520,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -784,6 +792,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -853,6 +863,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -1123,6 +1135,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -1192,6 +1206,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -1462,6 +1478,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -1531,6 +1549,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -1801,6 +1821,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -1870,6 +1892,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -2140,6 +2164,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -2209,6 +2235,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -2478,6 +2506,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -2547,6 +2577,8 @@ Objects {
       }
       AutoWrapText: true
       ClipTextToSize: true
+      Font {
+      }
     }
     AnchorLayout {
       SelfAnchor {

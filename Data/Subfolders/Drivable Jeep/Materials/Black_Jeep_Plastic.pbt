@@ -2,7 +2,7 @@ Assets {
   Id: 1734010293662634999
   Name: "Black_Jeep_Plastic"
   PlatformAssetType: 13
-  SerializationVersion: 73
+  SerializationVersion: 76
   CustomMaterialAsset {
     BaseMaterialId: 11436023202306815330
     ParameterOverrides {

@@ -59,6 +59,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           EnableCameraCollision: true
+          InteractWithTriggers: true
           StaticMesh {
             Physics {
             }
@@ -96,6 +97,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           EnableCameraCollision: true
+          InteractWithTriggers: true
           StaticMesh {
             Physics {
             }
@@ -133,6 +135,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           EnableCameraCollision: true
+          InteractWithTriggers: true
           StaticMesh {
             Physics {
             }
@@ -172,5 +175,5 @@ Assets {
       AssetId: "Fantasy_Castle_Wall_03_-_Top_Half_Template"
     }
   }
-  SerializationVersion: 73
+  SerializationVersion: 76
 }

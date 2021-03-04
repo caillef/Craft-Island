@@ -40,5 +40,5 @@ Assets {
     Version: "1.0.0"
     Description: "Wood hut"
   }
-  SerializationVersion: 73
+  SerializationVersion: 76
 }

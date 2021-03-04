@@ -18,42 +18,42 @@ function utf8_from(t)
     return table.concat(bytearr)
 end
 
--- function SerializeItem(pos, type, qty)
--- if type >= 0x3FF then
---     print("Error: trying to serialize an item id above limit "..type)
---     return nil
--- end
--- if qty >= 0x3FFF then
---     print("Error: trying to serialize an item quantity above limit "..qty)
---     return nil
--- end
--- A = (type >> 2) + 1
--- B = ((type & 0x03) << 6) + (qty >> 8) + 1
--- C = (qty & 0xFF) + 1
--- D = pos + 1
--- return utf8_from({A, B, C, D})
--- end
-
--- function DeserializeItem(str)
---     if #str ~= 4 then
---         print("Error: item serialized in less than 4 characters.")
---         return nil
---     end
---     chars = {}
---     for i=1,#str do
---         table.insert(chars, str:sub(i,i):byte() - 1)
---     end
---     item = {
---         type = (chars[1] << 2) + (chars[2] >> 6),
---         qty = ((chars[2] & 0x3F) << 8) + chars[3],
---         pos = chars[4]
---     }
---     return item
--- end
-
-function SerializeItem(pos, type, qty)
-    return pos..";"..type..";"..qty
+function SerializeItem(pos, id, qty)
+	if id > 1023 then
+	    print("Error: trying to serialize an item id above limit "..id)
+	    return nil
+	end
+	if pos > 31 then
+	    print("Error: trying to serialize an item position above limit "..pos)
+	    return nil
+	end
+	if qty > 63 then
+        qty = 63
+	end
+	A = 1 + ((id >> 4) << 1)
+	B = 1 + ((id & 15) << 3) + ((qty >> 4) << 1)
+	C = 1 + ((qty & 15) << 3) + ((pos >> 3) << 1)
+	D = 1 + ((pos & 7) << 4)
+	return utf8_from({A, B, C, D})
 end
+
+function DeserializeItem(str)
+    if #str < 4 then return nil end
+    chars = {}
+    for i=1,#str do
+        table.insert(chars, str:sub(i,i):byte())
+    end
+    item = {
+        id = ((chars[1] >> 1) << 4) + (chars[2] >> 3),
+        qty = (((chars[2] >> 1) & 3) << 4) + (chars[3] >> 3),
+        pos = (((chars[3] >> 1) & 3) << 3) + (chars[4] >> 4)
+    }
+    return item
+end
+
+-- function SerializeItem(pos, type, qty)
+--     return pos..";"..type..";"..qty
+-- end
 
 local logs = {}
 function GetLogs()
@@ -72,11 +72,13 @@ function ClearLogs()
 end
 
 function SerializeInventory(list)
-    local str = "v2*"
+    local str = "v3*"
     for key,item in pairs(list) do
         if item ~= nil and item.id ~= nil and item.qty > 0 then
-            AddLogEntry(SerializeItem(key, item.id, item.qty))
-            str = str..SerializeItem(key, item.id, item.qty)..'|'
+            local serialized = SerializeItem(key, item.id, item.qty)
+            if serialized then
+                str = str..serialized
+            end
         end
     end
     return str
@@ -105,14 +107,17 @@ function DeserializeInventory(str)
         end
         return inventory
     end
-    -- if version == "v3" then
-    --     local inv = mysplit(str, "*")[2]
-    --     for i=1,#inv,4 do
-    --         local item = DeserializeItem(inv:sub(i, i + 3))
-    --         inventory[item.pos] = { muid=chopermuid, qty=item.qty }
-    --     end
-    --     return inventory
-    -- end
+    if version == "v3" then
+        local inv = mysplit(str, "*")[2]
+        for i=1,#inv,4 do
+            local item = DeserializeItem(inv:sub(i, i + 3))
+            if not item then
+                return {}
+            end
+            inventory[item.pos] = { id=item.id, qty=item.qty }
+        end
+        return inventory
+    end
     print("Error: DeserializeInventory, using default value")
     return inventory
 end

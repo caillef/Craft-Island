@@ -1,8 +1,8 @@
 Assets {
   Id: 1347959603203994334
-  Name: "FurnaceTriggerScript"
+  Name: "UITriggerScript"
   PlatformAssetType: 3
   TextAsset {
   }
-  SerializationVersion: 73
+  SerializationVersion: 76
 }

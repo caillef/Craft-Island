@@ -68,7 +68,7 @@ function Add(player, d)
 	local qty = d.qty or 1
 	local ii
 	for i = 1, 27 do
-		if data[player] and data[player][i] and data[player][i].id == item.id and data[player][i].qty > 0 then
+		if data[player] and data[player][i] and data[player][i].id == item.id and data[player][i].qty > 0 and data[player][i].qty < 63 then
 			ii = i
 			break
 		end
@@ -92,40 +92,39 @@ function Add(player, d)
 		return
 	end
 
-	if not player:IsValid() then return end
+	local excess = qty - 63
+
+	if excess > 0 then
+		qty = 63
+	end
+
 	data[player][ii] = { id=item.id, qty=qty }
 	while player:IsValid() and Events.BroadcastToPlayer(player, "requestInventoryAddEvent", data[player][ii], ii) ~= BroadcastEventResultCode.SUCCESS do
 		Task.Wait(1)
 	end
-	if not player:IsValid() then return end
+
+	if excess > 0 then
+		d.qty = excess
+		Add(player, d)
+	end
+
 	Save(player)
-	-- local storage = Storage.GetPlayerData(player) or {}
-	-- local story = storage.story or {}
-	-- if story.step == 4 and CountItem(player, QueryObject("STONE").id) >= 20 and CountItem(player, QueryObject("COAL").id) >= 5 then
-	-- 	Events.Broadcast("STEP_COMPLETED", player)
-	-- end
-	-- if story.step == 5 and item.id == QueryObject("FURNACE").id then
-	-- 	Events.Broadcast("STEP_COMPLETED", player)
-	-- end
 end
 
 function OnInventoryReady(player)
 	local d = Storage.GetPlayerData(player)
 	local inventory = d.inventory or ""
 	data[player] = GetInventorySerializer().Deserialize(inventory)
-	local finalInventory = GetInventorySerializer().Serialize(data[player])
-	local k = 1
-	Task.Wait(0.2)
-	for i=1,#finalInventory,64 do
-		AddLogEntry(string.sub(finalInventory, i, (i + 63 < #finalInventory) and i + 63 or #finalInventory), k, (i + 63 >= #finalInventory))
-		while player:IsValid() and Events.BroadcastToPlayer(player, "inventoryPLoadEvent", string.sub(finalInventory, i, (i + 63 < #finalInventory) and i + 63 or #finalInventory), k, (i + 63 >= #finalInventory)) ~= BroadcastEventResultCode.SUCCESS do
-			Task.Wait(1)
-		end
-		k = k + 1
-		Task.Wait(0.3)
+	while player:IsValid() and Events.BroadcastToPlayer(player, "Inv", inventory) ~= BroadcastEventResultCode.SUCCESS do
+		Task.Wait(1)
 	end
 	Events.Broadcast("SInventoryReady", player)
 	GiveMandatoryItems(player)
+end
+
+function GetInventory(player)
+	if player == nil or not player:IsValid() then return end
+	return GetInventorySerializer().Serialize(data[player])
 end
 
 function GiveMandatoryItems(player)
@@ -186,31 +185,39 @@ function PlayerHasItems(player, d, qty)
 	if not player or not player:IsValid() or not id then return false end
 	if id == QueryObject("SOIL").id then return true end
 	qty = qty or 1
+	local currentQty = 0
 	for i = 1,27 do
 		if data[player][i] and data[player][i].id == id then
-			return data[player][i].qty >= qty
+			currentQty = currentQty + data[player][i].qty
 		end
 	end
-	return false
+	return currentQty >= qty
 end
 
 function PlayerRemoveItems(player, d, qty)
+	if not PlayerHasItems(player, d, qty) then return false end
 	local id = d.id or QueryObject(d.idName).id
 	if not player or not player:IsValid() or not id then return false end
 	if id == QueryObject("SOIL").id then return true end
 	qty = qty or 1
 	for i = 1, 27 do
 		if data[player][i] and data[player][i].id == id then
-			if data[player][i].qty < qty then return false end
-			data[player][i].qty = data[player][i].qty - qty
+			local excess = data[player][i].qty - qty
+			if excess >= 0 then
+				data[player][i].qty = excess
+				qty = 0
+			else
+				data[player][i].qty = 0
+				qty = excess * -1
+			end
 			while player:IsValid() and Events.BroadcastToPlayer(player, "requestInventoryRemoveEvent", data[player][i], i) ~= BroadcastEventResultCode.SUCCESS do
 				Task.Wait(1)
 			end
-			if qty == 0 then data[player][i] = nil end
-			return true
+			if data[player][i].qty == 0 then data[player][i] = nil end
+			if qty == 0 then return true end
 		end
 	end
-	return false
+	return qty == 0
 end
 
 function FreeSlots(player, d)
@@ -273,7 +280,7 @@ Events.ConnectForPlayer("ReqCraft", function(player, ingredients)
 	for _,i in pairs(data[player]) do
 		for _,igId in pairs(ingredients) do
 			if i.id == igId then
-				resp[igId] = i.qty
+				resp[igId] = (resp[igId] or 0) + i.qty
 			end
 		end
 	end

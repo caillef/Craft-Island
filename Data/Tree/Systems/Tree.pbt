@@ -1,6 +1,50 @@
 Name: "Systems"
 RootId: 9416028156443735960
 Objects {
+  Id: 1623876683925347242
+  Name: "GiftSystem"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9416028156443735960
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 3060317777236319746
+      value {
+        Overrides {
+          Name: "Name"
+          String: "GiftSystem"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 17875157770584550394
+    }
+  }
+}
+Objects {
   Id: 5590571996768615592
   Name: "UIBuySell"
   Transform {

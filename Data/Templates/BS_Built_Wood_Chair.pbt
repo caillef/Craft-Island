@@ -156,7 +156,7 @@ Assets {
         Name: "Craftsman Dining Chair"
         Transform {
           Location {
-            X: 95
+            X: 100
             Y: -130
             Z: 2
           }

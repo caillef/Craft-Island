@@ -18,7 +18,7 @@ function utf8_from(t)
     return table.concat(bytearr)
 end
 
-function SerializeItem(pos, id, qty)
+function SerializeItemv3(pos, id, qty)
 	if id > 1023 then
 	    print("Error: trying to serialize an item id above limit "..id)
 	    return nil
@@ -51,9 +51,9 @@ function DeserializeItem(str)
     return item
 end
 
--- function SerializeItem(pos, type, qty)
---     return pos..";"..type..";"..qty
--- end
+function SerializeItemv2(pos, type, qty)
+    return pos..";"..type..";"..qty
+end
 
 local logs = {}
 function GetLogs()
@@ -71,15 +71,30 @@ function ClearLogs()
     logs = {}
 end
 
+local USED_VERSION = 3
 function SerializeInventory(list)
-    local str = "v3*"
-    for key,item in pairs(list) do
-        if item ~= nil and item.id ~= nil and item.qty > 0 then
-            local serialized = SerializeItem(key, item.id, item.qty)
-            if serialized then
-                str = str..serialized
+    local str = "v2*"
+    if USED_VERSION == 2 then
+        str = "v2*"
+        for key,item in pairs(list) do
+            if item ~= nil and item.id ~= nil and item.qty > 0 then
+                local serialized = SerializeItemv2(key, item.id, item.qty)
+                if serialized then
+                    str = str..serialized.."|"
+                end
             end
         end
+    end
+    if USED_VERSION == 3 then
+        str = "v3*"
+        for key,item in pairs(list) do
+            if item ~= nil and item.id ~= nil and item.qty > 0 then
+                local serialized = SerializeItemv3(key, item.id, item.qty)
+                if serialized then
+                    str = str..serialized
+                end
+            end
+        end    
     end
     return str
 end

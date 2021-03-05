@@ -87,7 +87,9 @@ function SetItemEmptySlot(item)
 end
 
 function HasRawItemInside(f)
-	return (f.slots[1] and (f.slots[1].idName == "DOUGH" or f.slots[1].idName == "BERRY_PIE_DOUGH")) or (f.slots[2] and (f.slots[2].idName == "DOUGH" or f.slots[2].idName == "BERRY_PIE_DOUGH")) or (f.slots[3] and (f.slots[3].idName == "DOUGH" or f.slots[3].idName == "BERRY_PIE_DOUGH"))
+	return (f.slots[1] and (f.slots[1].idName == "DOUGH" or f.slots[1].idName == "BERRY_PIE_DOUGH" or f.slots[1].idName == "CARROT_CAKE_DOUGH")) or
+	       (f.slots[2] and (f.slots[2].idName == "DOUGH" or f.slots[2].idName == "BERRY_PIE_DOUGH" or f.slots[2].idName == "CARROT_CAKE_DOUGH")) or
+		   (f.slots[3] and (f.slots[3].idName == "DOUGH" or f.slots[3].idName == "BERRY_PIE_DOUGH" or f.slots[3].idName == "CARROT_CAKE_DOUGH"))
 end
 
 function Tick()
@@ -116,6 +118,8 @@ function Tick()
 								TransformItem(f, QueryObject("BERRY_PIE"), i, updateUI)
 							elseif f.slots[i].idName == "DOUGH" then
 								TransformItem(f, QueryObject("BREAD"), i, updateUI)
+							elseif f.slots[i].idName == "CARROT_CAKE_DOUGH" then
+								TransformItem(f, QueryObject("CARROT_CAKE"), i, updateUI)
 							end
 							f.slotsTimer[i] = nil
 						else
@@ -164,8 +168,9 @@ Events.Connect("InventoryFastMove", function(buttonIndex, icon)
 		return
 	end
 	if (item.idName == "DOUGH" and SetItemEmptySlot(QueryObject("DOUGH"))) or
-	   (item.idName == "BERRY_PIE_DOUGH" and SetItemEmptySlot(QueryObject("BERRY_PIE_DOUGH"))) then
-		while Events.BroadcastToServer("removeItem", { idName=item.idName }, 1) ~= BroadcastEventResultCode.SUCCESS do
+		(item.idName == "BERRY_PIE_DOUGH" and SetItemEmptySlot(QueryObject("BERRY_PIE_DOUGH"))) or
+		(item.idName == "CARROT_CAKE_DOUGH" and SetItemEmptySlot(QueryObject("CARROT_CAKE_DOUGH"))) then
+			while Events.BroadcastToServer("removeItem", { idName=item.idName }, 1) ~= BroadcastEventResultCode.SUCCESS do
 			Task.Wait(1)
 		end
 		return

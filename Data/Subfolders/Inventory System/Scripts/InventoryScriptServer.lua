@@ -93,7 +93,6 @@ function Add(player, d)
 	end
 
 	local excess = qty - 63
-
 	if excess > 0 then
 		qty = 63
 	end
@@ -103,7 +102,7 @@ function Add(player, d)
 		Task.Wait(1)
 	end
 
-	if excess > 0 then
+	if excess and excess > 0 then
 		d.qty = excess
 		Add(player, d)
 	end
@@ -151,10 +150,16 @@ function Save(player)
 end
 
 function Delete(player, i)
+	local id = data[player][i].id
 	data[player][i] = nil
 	if i >= 1 or i <= 9 then
 		EquipItem(player, i, 0)
 	end
+
+	if id == 1 or id == 2 or id == 21 then
+		Add(player, { id=id, qty=1 })
+	end
+
 	Save(player)
 end
 

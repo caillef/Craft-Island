@@ -1,13 +1,13 @@
 Assets {
-  Id: 7713744306647527414
-  Name: "Item UI Berry Pie"
+  Id: 15070939940452321454
+  Name: "Item UI Carrot"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 4504991017636525777
+      RootId: 11844617556182337040
       Objects {
-        Id: 4504991017636525777
-        Name: "Item UI Berry Pie"
+        Id: 11844617556182337040
+        Name: "Item UI Carrot"
         Transform {
           Scale {
             X: 1
@@ -15,16 +15,16 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3908843813309236731
-        ChildIds: 14289212789738675712
+        ParentId: 13863783895100579321
+        ChildIds: 8985362170446436859
         UnregisteredParameters {
           Overrides {
             Name: "cs:Name"
-            String: "Berry Pie"
+            String: "Carrot"
           }
           Overrides {
             Name: "cs:Type"
-            String: "Ingredient"
+            String: "Resource"
           }
           Overrides {
             Name: "cs:Level"
@@ -64,7 +64,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14289212789738675712
+        Id: 8985362170446436859
         Name: "UI Image"
         Transform {
           Location {
@@ -77,7 +77,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4504991017636525777
+        ParentId: 11844617556182337040
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -95,12 +95,12 @@ Assets {
           }
           Image {
             Brush {
-              Id: 6638248139959178187
+              Id: 8753828692907483247
             }
             Color {
               R: 1
-              G: 0.996291399
-              B: 0.98
+              G: 1
+              B: 1
               A: 1
             }
             TeamSettings {
@@ -122,12 +122,12 @@ Assets {
       }
     }
     Assets {
-      Id: 6638248139959178187
-      Name: "Fantasy Dessert 002"
+      Id: 8753828692907483247
+      Name: "Fantasy Vegetable 005"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Food_Dessert_002"
+        AssetId: "UI_Fantasy_Food_Vegetable_005"
       }
     }
     PrimaryAssetId {

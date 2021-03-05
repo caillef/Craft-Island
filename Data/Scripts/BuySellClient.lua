@@ -104,7 +104,6 @@ function SelectItem(button)
 		local maxQty = CountItems(currentItem.item.id)
 		script.context.maxQuantity = maxQty
 		nbMaxCraft = maxQty
-		print(maxQty)
 		propCraftInfo:FindChildByName("BuySellButton").isInteractable = maxQty > 0
 		propQuantityController:FindChildByName("Qty").text = tostring(nbMaxCraft <= 0 and 0 or tonumber(propQuantityController:FindChildByName("Qty").text))
 		if propQuantityController:FindChildByName("Qty").text == "0" and nbMaxCraft > 0 then

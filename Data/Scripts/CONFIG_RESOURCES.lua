@@ -18,9 +18,14 @@ growthConfig["E90DF6F7DCB80F51"] = { 200, 240, "BERRY_BUSH_FULL" }
 growthConfig["27313876BD39650C"] = { 30, 45, "TREE" }
 
 -- Wheat
-growthConfig["42793220AEB392CF"] = { 10, 15, "WHEAT_SEEDS_2" }
-growthConfig["7BA2BA8C590D39DF"] = { 10, 15, "WHEAT_SEEDS_3" }
-growthConfig["F20A02737F888FF0"] = { 10, 15, "WHEAT" }
+growthConfig["42793220AEB392CF"] = { 15, 20, "WHEAT_SEEDS_2" }
+growthConfig["7BA2BA8C590D39DF"] = { 15, 20, "WHEAT_SEEDS_3" }
+growthConfig["F20A02737F888FF0"] = { 15, 20, "WHEAT" }
+
+-- Carrots
+growthConfig["C1A4AA9C6FE28B6E"] = { 40, 45, "CARROT_SEEDS_2" }
+growthConfig["958AB68F519C22B7"] = { 40, 45, "CARROT_SEEDS_3" }
+growthConfig["AE55DAF95CF23E0E"] = { 40, 45, "CARROT" }
 
 for key,value in pairs(growthConfig) do 
     devgrowthConfig[key] = { 1, 1, value[3] }

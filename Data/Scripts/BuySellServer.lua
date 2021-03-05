@@ -1,7 +1,6 @@
 local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
 
 Events.ConnectForPlayer("Sell", function(player, data)
-    print(data.qty)
     if INVENTORY.PlayerRemoveItems(player, { idName=data.idName }, data.qty) then
         Events.Broadcast("SGoldAddForPlayer", player, data.price * data.qty)
     end

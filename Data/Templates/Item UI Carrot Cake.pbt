@@ -1,13 +1,13 @@
 Assets {
-  Id: 7713744306647527414
-  Name: "Item UI Berry Pie"
+  Id: 12384349924532530123
+  Name: "Item UI Carrot Cake"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 4504991017636525777
       Objects {
         Id: 4504991017636525777
-        Name: "Item UI Berry Pie"
+        Name: "Item UI Carrot Cake"
         Transform {
           Scale {
             X: 1
@@ -20,7 +20,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:Name"
-            String: "Berry Pie"
+            String: "Carrot Cake"
           }
           Overrides {
             Name: "cs:Type"
@@ -95,12 +95,12 @@ Assets {
           }
           Image {
             Brush {
-              Id: 6638248139959178187
+              Id: 7053648917313143932
             }
             Color {
-              R: 1
-              G: 0.996291399
-              B: 0.98
+              R: 0.384
+              G: 0.382575899
+              B: 0.37632
               A: 1
             }
             TeamSettings {
@@ -122,12 +122,12 @@ Assets {
       }
     }
     Assets {
-      Id: 6638248139959178187
-      Name: "Fantasy Dessert 002"
+      Id: 7053648917313143932
+      Name: "Fantasy Bread 004"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Food_Dessert_002"
+        AssetId: "UI_Fantasy_Food_Bread_004"
       }
     }
     PrimaryAssetId {

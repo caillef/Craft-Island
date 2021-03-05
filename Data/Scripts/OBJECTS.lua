@@ -46,7 +46,7 @@ createObject(16, "BIG_WOODEN_WINDOW", "Big Wooden Window", "B1BE272F2A3FD51A", "
 createObject(17, "SMALL_WOODEN_WINDOW", "Small Wooden Window", "DC823597FE997BE1", "1F4C8911AF77BAFA", "0336E0F4603BDBF1")
 createObject(18, "CHAIR", "Chair", "B6749DB861E6DDED", "D1F4BC513D92F88A", "82A86A138A4BA145")
 createObject(19, "WOODEN_DOOR", "Wooden Door", "0C546224C6536C85", "2B56C1E3C138F542", "6E060D37954CD7F0")
-createObject(20, "TABLE", "Table", "76C9DD010BBBBDD3", "BC4C40A42D63733D1", "05664EF0710D2EB4")
+createObject(20, "TABLE", "Table", "76C9DD010BBBBDD3", "BC4C40A42D63733D", "05664EF0710D2EB4")
 createObject(21, "BASIC_PICKAXE", "Basic Pickaxe", "9B0E9CDD3D19EB9E", "AECB1226211DC37C")
 createObject(22, "FURNACE", "Furnace", "58C8D2760D98333B", "0B66793FF08195AC", "E5F4BD6594A353C6")
 createObject(23, "STONE", "Stone", nil, "51D4970917797698")
@@ -66,6 +66,13 @@ createObject(36, "STONEBRICKS_WINDOW", "Stone Bricks Window", "5C79FED5ECB2988C"
 createObject(37, "STONEBRICKS_FLOOR", "Stone Bricks Floor", "117258AA93C5A99A", "5F1CC941472413F0", "BF60947C4D8E547C") 
 createObject(38, "STONEBRICKS_STAIRS", "Stone Bricks Stairs", "44E630CD0E3E4EEB", "05ED5D4E1CA9613F", "F7888B9462A8A926") 
 createObject(39, "STONEBRICKS_DOOR", "Stone Bricks Door", "643C2CF33CA51F8C", "2EB9B31CA3EC69A7", "6E060D37954CD7F0") 
+
+createObject(40, "CARROT_SEEDS", "Carrot Seeds", "C1A4AA9C6FE28B6E", "9E40FB62220F7B65", "2D75F4CC5455EDD6", { mustBeBuiltOn=30 })
+createObject(41, "CARROT_SEEDS_2", "Carrot Seeds (step 2)", "958AB68F519C22B7")
+createObject(42, "CARROT_SEEDS_3", "Carrot Seeds (step 3)", "AE55DAF95CF23E0E")
+createObject(43, "CARROT", "Carrot", "6408EF122263758C", "D126BC06CDE848AE")
+createObject(44, "CARROT_CAKE", "Carrot Cake", nil, "ABDE0CA429E5ABCB")
+createObject(45, "CARROT_CAKE_DOUGH", "Carrot Cake Dough", nil, "30DDBB38EFE77CEB")
 
 for _,item in pairs(objects) do
     for _,item2 in pairs(objects) do
@@ -115,6 +122,11 @@ _G["caillef.craftisland.crafts"] = {
         COOKING_TABLE
 	},
 	{
+		{ "DOUGH", 1, "CARROT", 2 },
+        { "CARROT_CAKE_DOUGH", 1 },
+        COOKING_TABLE
+	},
+    {
 		{ "STONE", 20 },
         { "FURNACE", 1 },
         CRAFTING_TABLE
@@ -127,6 +139,16 @@ _G["caillef.craftisland.crafts"] = {
 	{
 		{ "WOOD_LOG", 5 },
         { "COOKING_TABLE", 1 },
+        CRAFTING_TABLE
+	},
+	{
+		{ "WOOD_LOG", 5 },
+        { "CHAIR", 1 },
+        CRAFTING_TABLE
+	},
+	{
+		{ "WOOD_LOG", 10 },
+        { "TABLE", 1 },
         CRAFTING_TABLE
 	},
 	{
@@ -146,15 +168,18 @@ local BUY = 1
 _G["caillef.craftisland.buysell"] = {
     { -- 1 is for baker
         { SELL, "BREAD", 10 },
+        { SELL, "CARROT_CAKE", 30 },
         { SELL, "BERRY_PIE", 100 },
     },
     { -- 2 for seeds
-        { BUY, "WHEAT_SEEDS", 20 },
-        { BUY, "BERRY_SPROUT", 200 },
         { BUY, "SAPLING", 50 },
+        { BUY, "WHEAT_SEEDS", 20 },
+        { BUY, "CARROT_SEEDS", 50 },
+        { BUY, "BERRY_SPROUT", 200 },
     },
     { -- 3 for farmer
         { SELL, "WHEAT", 3 },
+        { SELL, "CARROT", 10 },
         { SELL, "BERRY", 20 },
     },
     { -- 4 for material

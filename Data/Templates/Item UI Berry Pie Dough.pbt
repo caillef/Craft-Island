@@ -23,7 +23,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:Name"
-            String: "Dough"
+            String: "Berry Pie Dough"
           }
           Overrides {
             Name: "cs:Type"

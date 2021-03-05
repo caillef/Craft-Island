@@ -7,7 +7,7 @@ Assets {
       RootId: 8367639494184782803
       Objects {
         Id: 8367639494184782803
-        Name: "BS_Previsu_Chair"
+        Name: "BS_Preview_Chair"
         Transform {
           Scale {
             X: 1
@@ -48,7 +48,8 @@ Assets {
         Transform {
           Location {
             X: 100
-            Y: -100
+            Y: -130
+            Z: 2
           }
           Rotation {
           }

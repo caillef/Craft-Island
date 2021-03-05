@@ -1,9 +1,9 @@
-﻿local BUILDING_SYSTEM = script:GetCustomProperty("BuildingSystemServerattherootofthe"):WaitForObject().context
+local BUILDING_SYSTEM = script:GetCustomProperty("BuildingSystemServerattherootofthe"):WaitForObject().context
 local TELEPORT_MANAGER = script:GetCustomProperty("TeleportManager"):WaitForObject().context
 local propPlayerIsland = script:GetCustomProperty("PlayerIsland")
 local propIslands = script:GetCustomProperty("Islands"):WaitForObject()
 
-local NB_MAX_PLAYERS = 3
+local NB_MAX_PLAYERS = 4
 local SPACE_BETWEEN_ISLAND = 100000
 
 local playerSlots = {}
@@ -34,7 +34,8 @@ end
 local function AssignNextSlot(player)
     for _,s in pairs(playerSlots) do
         if (s.player == nil or not s.player:IsValid()) and s.island == nil then
-            return PrepareSlot(player, s)
+            local slot = PrepareSlot(player, s)
+            return slot
         end
     end
     return nil

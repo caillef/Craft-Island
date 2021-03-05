@@ -7,7 +7,7 @@ Assets {
       RootId: 4693894508928750058
       Objects {
         Id: 4693894508928750058
-        Name: "BS_Previsu_Table"
+        Name: "BS_Preview_Table"
         Transform {
           Scale {
             X: 1
@@ -49,6 +49,7 @@ Assets {
           Location {
             X: 100
             Y: -100
+            Z: 2
           }
           Rotation {
           }

@@ -75,8 +75,8 @@ Assets {
         Name: "Craftsman Dining Table"
         Transform {
           Location {
-            X: 95
-            Y: -90
+            X: 100
+            Y: -100
             Z: 2
           }
           Rotation {

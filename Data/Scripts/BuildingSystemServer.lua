@@ -196,7 +196,7 @@ function PlaceObject(player, position, angle, type, isLoadingIsland)
     angle = getAlignedAngle(angle)
     placedObjects[player] = placedObjects[player] or {}
 
-    if CountNbStructures(placedObjects[player]) >= 300 then
+    if CountNbStructures(placedObjects[player]) >= 750 then
         while player and player:IsValid() and Events.BroadcastToPlayer(player, "BSLimit") ~= BroadcastEventResultCode.SUCCESS do
             Task.Wait(1)
         end
@@ -309,6 +309,7 @@ function OnInventoryReady(player)
     while playersSpawns[player] == nil do
         Task.Wait(0.1)
     end
+    Task.Wait(math.random())
     while player and player:IsValid() and Events.BroadcastToPlayer(player, "OnPlayerInitialized", {islandPos = playersSpawns[player].pos}) ~= BroadcastEventResultCode.SUCCESS do
         Task.Wait(1)
     end

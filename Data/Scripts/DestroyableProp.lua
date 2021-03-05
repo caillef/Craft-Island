@@ -63,7 +63,7 @@ function OnHit(data)
                 return
             end
             Events.Broadcast("requestInventoryFullEvent", player, { id=propItemId, string=listenID })
-            if propItemId2 and (not data.harvest or propItemId2 == "WHEAT_SEEDS") then
+            if propItemId2 and (not data.harvest or propItemId2 == "WHEAT_SEEDS" or propItemId2 == "CARROT_SEEDS") then
                 Events.Broadcast("requestInventoryFullEvent", player, { id=propItemId2, string=listenID2 })
             end
         end
@@ -142,8 +142,8 @@ function PickUp(id, bool)
             Events.BroadcastToPlayer(player, "inventoryFullEvent")
             return
         end
-        if propItemId2 == "WHEAT_SEEDS" then
-            if math.random() < 0.15 then
+        if propItemId2 == "WHEAT_SEEDS" or propItemId2 == "CARROT_SEEDS" then
+            if math.random() < 0.1 then
                 Events.Broadcast("inventoryAddEvent", player, { idName=propItemId2, qty = 1 })
                 GetSoundManager().PlaySound("BonusItemSFX", script:GetWorldPosition())
             end

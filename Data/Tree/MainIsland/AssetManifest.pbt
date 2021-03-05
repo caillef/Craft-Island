@@ -8,6 +8,24 @@ Assets {
   }
 }
 Assets {
+  Id: 17471560546391109885
+  Name: "Military Guy 1"
+  PlatformAssetType: 17
+  PrimaryAsset {
+    AssetType: "AnimatedMeshAssetRef"
+    AssetId: "npc_guy_military_001_ref"
+  }
+}
+Assets {
+  Id: 17386725906433127088
+  Name: "Fantasy Human Guy 1"
+  PlatformAssetType: 17
+  PrimaryAsset {
+    AssetType: "AnimatedMeshAssetRef"
+    AssetId: "npc_human_guy_fantasy_001_ref"
+  }
+}
+Assets {
   Id: 16955162695139626198
   Name: "Human Guy 2"
   PlatformAssetType: 17
@@ -107,6 +125,15 @@ Assets {
   }
 }
 Assets {
+  Id: 8051971039432359698
+  Name: "Fantasy Human Gal 1"
+  PlatformAssetType: 17
+  PrimaryAsset {
+    AssetType: "AnimatedMeshAssetRef"
+    AssetId: "npc_human_gal_fantasy_003_ref"
+  }
+}
+Assets {
   Id: 7959943984560897135
   Name: "Rock Block 02"
   PlatformAssetType: 1
@@ -158,6 +185,15 @@ Assets {
   PrimaryAsset {
     AssetType: "DecalBlueprintAssetRef"
     AssetId: "bp_decal_moss_patch_001"
+  }
+}
+Assets {
+  Id: 5125151642496914779
+  Name: "Cabin Bold"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "CabinBold_ref"
   }
 }
 Assets {

@@ -148,7 +148,7 @@ function SetupUI()
 					local item = _G["caillef.craftisland.queryobject"](recipe[i])
 					World.SpawnAsset(item.itemMuid, { parent = button })
 					table.insert(craftItems, { item=item, ingredients=craft[1], qty=recipe[i + 1] })
-					button.x = math.floor(slotIndex % 4) * 110
+					button.x = (slotIndex % 4) * 110
 					button.y = math.floor(slotIndex / 4) * 110
 					button.clickedEvent:Connect(SelectCraftItem)
 					slotIndex = slotIndex + 1

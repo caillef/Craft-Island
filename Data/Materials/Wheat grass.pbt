@@ -1,6 +1,6 @@
 Assets {
   Id: 8418606461963829689
-  Name: "Custom Grass from Grass Tall"
+  Name: "Wheat grass"
   PlatformAssetType: 13
   SerializationVersion: 76
   CustomMaterialAsset {

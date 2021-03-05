@@ -8,24 +8,6 @@ Assets {
   }
 }
 Assets {
-  Id: 17471560546391109885
-  Name: "Military Guy 1"
-  PlatformAssetType: 17
-  PrimaryAsset {
-    AssetType: "AnimatedMeshAssetRef"
-    AssetId: "npc_guy_military_001_ref"
-  }
-}
-Assets {
-  Id: 17386725906433127088
-  Name: "Fantasy Human Guy 1"
-  PlatformAssetType: 17
-  PrimaryAsset {
-    AssetType: "AnimatedMeshAssetRef"
-    AssetId: "npc_human_guy_fantasy_001_ref"
-  }
-}
-Assets {
   Id: 17065419740092193562
   Name: "Stone Block Standard Broken"
   PlatformAssetType: 1
@@ -124,15 +106,6 @@ Assets {
   }
 }
 Assets {
-  Id: 8051971039432359698
-  Name: "Fantasy Human Gal 1"
-  PlatformAssetType: 17
-  PrimaryAsset {
-    AssetType: "AnimatedMeshAssetRef"
-    AssetId: "npc_human_gal_fantasy_003_ref"
-  }
-}
-Assets {
   Id: 8025825663388997787
   Name: "Fantasy Glasses 001"
   PlatformAssetType: 9
@@ -202,15 +175,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_large_beam_6m"
-  }
-}
-Assets {
-  Id: 5125151642496914779
-  Name: "Cabin Bold"
-  PlatformAssetType: 28
-  PrimaryAsset {
-    AssetType: "FontAssetRef"
-    AssetId: "CabinBold_ref"
   }
 }
 Assets {

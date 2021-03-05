@@ -124,12 +124,14 @@ function DeserializeInventory(str)
     end
     if version == "v3" then
         local inv = mysplit(str, "*")[2]
-        for i=1,#inv,4 do
-            local item = DeserializeItem(inv:sub(i, i + 3))
-            if not item then
-                return {}
+        if inv then
+            for i=1,#inv,4 do
+                local item = DeserializeItem(inv:sub(i, i + 3))
+                if not item then
+                    return {}
+                end
+                inventory[item.pos] = { id=item.id, qty=item.qty }
             end
-            inventory[item.pos] = { id=item.id, qty=item.qty }
         end
         return inventory
     end
@@ -137,11 +139,13 @@ function DeserializeInventory(str)
     return inventory
 end
 
+local netRefInventory = script:GetCustomProperty("Inventory")
+
 function OnSaveInventory(player, d)
     if not player or not player:IsValid() then return end
-    local data = Storage.GetPlayerData(player)
+    local data = Storage.GetSharedPlayerData(netRefInventory, player)
     data.inventory = SerializeInventory(d)
-    Storage.SetPlayerData(player, data)
+    Storage.SetSharedPlayerData(netRefInventory, player, data)
 end
 
 _G["caillef.craftisland.inventorySerializer"] = {

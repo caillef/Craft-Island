@@ -40,11 +40,6 @@ function OnInteract(trigger, player)
     else
         if INVENTORY.PlayerRemoveItems(player, { idName=itemIdName }) then
             Events.Broadcast("SGoldAddForPlayer", player, price)
-            -- local storage = Storage.GetPlayerData(player) or {}
-            -- local story = storage.story or {}
-            -- if story.step == 6 and "BREAD" == itemIdName then --Bread
-            --     Events.Broadcast("STEP_COMPLETED", player)
-            -- end
             return
         end
     end

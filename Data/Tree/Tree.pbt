@@ -2727,7 +2727,7 @@ Objects {
   ParentId: 4781671109827199097
   ChildIds: 85033232267587940
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
+    Value: "mc:ecollisionsetting:forceon"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
@@ -2750,8 +2750,7 @@ Objects {
     }
   }
   ParentId: 15498874708719638745
-  ChildIds: 7100799157873924816
-  ChildIds: 8839980271334706156
+  ChildIds: 11690253665477662038
   ChildIds: 3960498993942736908
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2799,7 +2798,19 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:NbSeconds"
-      Int: 60
+      Int: 10000
+    }
+    Overrides {
+      Name: "cs:YesButton"
+      ObjectReference {
+        SelfId: 2758812554006629877
+      }
+    }
+    Overrides {
+      Name: "cs:NoButton"
+      ObjectReference {
+        SelfId: 4176025150786985101
+      }
     }
   }
   Collidable_v2 {
@@ -2811,6 +2822,222 @@ Objects {
   Script {
     ScriptAsset {
       Id: 8954602945841449599
+    }
+  }
+}
+Objects {
+  Id: 11690253665477662038
+  Name: "UI Panel"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 85033232267587940
+  ChildIds: 15511861645215772869
+  ChildIds: 8839980271334706156
+  ChildIds: 2758812554006629877
+  ChildIds: 4176025150786985101
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Control {
+    Width: 500
+    Height: 200
+    UIX: -699.167236
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Panel {
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middleright"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 4176025150786985101
+  Name: "NoButton"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11690253665477662038
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Control {
+    Width: 102
+    Height: 49
+    UIX: 257.889526
+    UIY: 97.3946838
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Button {
+      Label: "No"
+      FontColor {
+        A: 1
+      }
+      FontSize: 20
+      ButtonColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      HoveredColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      PressedColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      DisabledColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Brush {
+        Id: 841534158063459245
+      }
+      IsButtonEnabled: true
+      ClickMode {
+        Value: "mc:ebuttonclickmode:default"
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 2758812554006629877
+  Name: "YesButton"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11690253665477662038
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Control {
+    Width: 102
+    Height: 49
+    UIX: 139.451538
+    UIY: 97.3946838
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Button {
+      Label: "Yes"
+      FontColor {
+        A: 1
+      }
+      FontSize: 20
+      ButtonColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      HoveredColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      PressedColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      DisabledColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Brush {
+        Id: 841534158063459245
+      }
+      IsButtonEnabled: true
+      ClickMode {
+        Value: "mc:ebuttonclickmode:default"
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
     }
   }
 }
@@ -2828,7 +3055,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 85033232267587940
+  ParentId: 11690253665477662038
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2838,15 +3065,14 @@ Objects {
   Control {
     Width: 450
     Height: 59
-    UIX: 17.1308899
-    UIY: -156.044067
+    UIY: -49.6521301
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
       }
     }
     Text {
-      Label: "NEW UPDATE: if you have already played Craft Island before, your island has been reset. Lots of things has changed so I would recommend you to press N to start from sratch. The issue with island not being saved is fixed."
+      Label: "Is your inventory empty ?"
       Color {
         R: 1
         G: 1
@@ -2864,20 +3090,20 @@ Objects {
     AnchorLayout {
       SelfAnchor {
         Anchor {
-          Value: "mc:euianchor:bottomleft"
+          Value: "mc:euianchor:middlecenter"
         }
       }
       TargetAnchor {
         Anchor {
-          Value: "mc:euianchor:bottomleft"
+          Value: "mc:euianchor:middlecenter"
         }
       }
     }
   }
 }
 Objects {
-  Id: 7100799157873924816
-  Name: "UI Text Box"
+  Id: 15511861645215772869
+  Name: "UI Image"
   Transform {
     Location {
     }
@@ -2889,7 +3115,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 85033232267587940
+  ParentId: 11690253665477662038
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2897,37 +3123,35 @@ Objects {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
   Control {
-    Width: 450
-    Height: 60
-    UIX: 17.1308899
-    UIY: -156.044067
+    Width: 200
+    Height: 200
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
       }
     }
-    Text {
-      Label: "NEW UPDATE: if you have already played Craft Island before, your island has been reset. Lots of things has changed so I would recommend you to press N to start from sratch. The issue with island not being saved is fixed."
+    UseParentWidth: true
+    UseParentHeight: true
+    Image {
+      Brush {
+      }
       Color {
-        A: 1
+        R: 0.89
+        G: 4.24385064e-07
+        A: 0.619
       }
-      Size: 20
-      Justification {
-        Value: "mc:etextjustify:center"
-      }
-      AutoWrapText: true
-      Font {
+      TeamSettings {
       }
     }
     AnchorLayout {
       SelfAnchor {
         Anchor {
-          Value: "mc:euianchor:bottomleft"
+          Value: "mc:euianchor:topleft"
         }
       }
       TargetAnchor {
         Anchor {
-          Value: "mc:euianchor:bottomleft"
+          Value: "mc:euianchor:topleft"
         }
       }
     }

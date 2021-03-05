@@ -6587,9 +6587,9 @@ Objects {
   ParentId: 15776358281255524550
   UnregisteredParameters {
     Overrides {
-      Name: "cs:Inventories"
+      Name: "cs:Inventory"
       NetReference {
-        Key: "8a6b3e9973914a24b1ec834e256e18c4"
+        Key: "e6f6a0ce79ac4187b47b15c4d6b4579a"
         Type {
           Value: "mc:enetreferencetype:sharedpersistence"
         }

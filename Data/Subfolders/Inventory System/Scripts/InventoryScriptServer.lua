@@ -1,4 +1,6 @@
-﻿local data = {}
+﻿local netRefInventory = script:GetCustomProperty("Inventory")
+
+local data = {}
 
 local _queryObjectFunction
 function QueryObject(id)
@@ -111,12 +113,28 @@ function Add(player, d)
 end
 
 function OnInventoryReady(player)
-	local d = Storage.GetPlayerData(player)
+	AddLogEntry("OnInventoryReady", player.name)
+	local d = Storage.GetSharedPlayerData(netRefInventory, player)
 	local inventory = d.inventory or ""
+
+	-- check if it's old version with playerStorage
+	if d.inventory == nil then
+		local storage = Storage.GetPlayerData(player)
+		inventory = storage.inventory or ""
+		AddLogEntry("Found inventory in old system")
+	end
+
+	AddLogEntry(inventory)
 	data[player] = GetInventorySerializer().Deserialize(inventory)
+	inventory = GetInventorySerializer().Serialize(data[player])
+	data[player] = GetInventorySerializer().Deserialize(inventory)
+	AddLogEntry(inventory)
+	AddLogEntry("A")
 	while player:IsValid() and Events.BroadcastToPlayer(player, "Inv", inventory) ~= BroadcastEventResultCode.SUCCESS do
 		Task.Wait(1)
+		AddLogEntry("B")
 	end
+	AddLogEntry("C")
 	Events.Broadcast("SInventoryReady", player)
 	GiveMandatoryItems(player)
 end

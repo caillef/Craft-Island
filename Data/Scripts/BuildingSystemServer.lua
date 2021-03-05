@@ -231,21 +231,6 @@ function PlaceObject(player, position, angle, type, isLoadingIsland)
     placedTypedObjects[position.z][position.y][position.x][angle] = { obj=obj, player=player }
     placedObjects[player][type] = placedTypedObjects
 
-    -- if type == 9 then
-    --     local storage = Storage.GetPlayerData(player) or {}
-    --     local story = storage.story or {}
-    --     if story.step == 2 then
-    --         Events.Broadcast("STEP_COMPLETED", player)
-    --     end    
-    -- end    
-    -- if type == 11 then
-    --     local storage = Storage.GetPlayerData(player) or {}
-    --     local story = storage.story or {}
-    --     if story.step == 8 then
-    --         Events.Broadcast("STEP_COMPLETED", player)
-    --     end    
-    -- end
-
     if not isLoadingIsland then
         SaveIsland(player)
     end

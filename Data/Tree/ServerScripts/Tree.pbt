@@ -102,6 +102,15 @@ Objects {
         }
       }
     }
+    Overrides {
+      Name: "cs:SharedKeyInventory"
+      NetReference {
+        Key: "e6f6a0ce79ac4187b47b15c4d6b4579a"
+        Type {
+          Value: "mc:enetreferencetype:sharedpersistence"
+        }
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -175,6 +184,15 @@ Objects {
   }
   ParentId: 11584135646992845074
   UnregisteredParameters {
+    Overrides {
+      Name: "cs:Inventory"
+      NetReference {
+        Key: "e6f6a0ce79ac4187b47b15c4d6b4579a"
+        Type {
+          Value: "mc:enetreferencetype:sharedpersistence"
+        }
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

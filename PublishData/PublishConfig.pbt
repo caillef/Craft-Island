@@ -12,4 +12,5 @@ ScreenshotPaths: "C:\\Users\\hiind\\Desktop\\Craft (1).png"
 ScreenshotPaths: "C:/Users/hiind/Documents/My Games/CORE/Saved/Maps/Craft Island/Screenshots/Screenshot0008.png"
 OwnerId: "be87c969b2e5444dac5c09d330a142ab"
 SerializationVersion: 1
+PublishedState: Public
 CubemapPath: "C:/Users/hiind/Documents/My Games/CORE/Saved/Maps/Craft Island/Screenshots/Cubemaps/Cubemap0001.png"

@@ -86,7 +86,7 @@ function SaveIsland(player)
     local slot = playersSpawns[player]
     local storage = Storage.GetSharedPlayerData(propSharedKeyIslands, player)
     storage.pBlocks = GetBlockSerializer().SerializeList(slot.island:FindChildByName("Structures"):GetChildren(), slot.pos)
-    if Storage.SizeOfData(storage) < 15000 then
+    if Storage.SizeOfData(storage) < 15800 then
         Storage.SetSharedPlayerData(propSharedKeyIslands, player, storage)
     else
         print("Warning: reached limit")
@@ -196,7 +196,7 @@ function PlaceObject(player, position, angle, type, isLoadingIsland)
     angle = getAlignedAngle(angle)
     placedObjects[player] = placedObjects[player] or {}
 
-    if CountNbStructures(placedObjects[player]) >= 750 then
+    if CountNbStructures(placedObjects[player]) >= 2000 then
         while player and player:IsValid() and Events.BroadcastToPlayer(player, "BSLimit") ~= BroadcastEventResultCode.SUCCESS do
             Task.Wait(1)
         end

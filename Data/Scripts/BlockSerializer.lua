@@ -22,33 +22,53 @@ local function mysplit(inputstr, sep)
     return t
 end
 
-function Block_SerializePosition(pos)
-    return math.floor(pos.x / WALL_SIZE)..","..math.floor(pos.y / WALL_SIZE)..","..math.floor(pos.z / WALL_HEIGHT) 
-end
-
 local function Block_DeserializePosition(value)
     local data = mysplit(value, ",")
     return Vector3.New(tonumber(data[1]) * WALL_SIZE, tonumber(data[2]) * WALL_SIZE, tonumber(data[3]) * WALL_HEIGHT)
 end
 
-local function Block_SerializeAngle(angle)
-    return math.floor((angle + 360) / 90) % 4
+function utf8_from(t)
+    local bytearr = {}
+    for _, v in ipairs(t) do
+        local utf8byte = v < 0 and (0xff + v + 1) or v
+        table.insert(bytearr, string.char(utf8byte))
+    end
+    return table.concat(bytearr)
 end
 
-local function Block_DeserializeAngle(v)
-    return v * 90
+function Block_Serialize_v3(p, a, t)
+    if t <= 0 or t >= 512 then
+        print("Error: tried to serialize an invalid type (not between 0 and 511 included)")
+        return ""
+    end
+    local x = math.floor(p.x / WALL_SIZE) + 128
+    local y = math.floor(p.y / WALL_SIZE) + 128
+    local z = math.floor(p.z / WALL_HEIGHT) + 128
+    local A = ((t >> 3) << 1) + 1
+    local angle = getAlignedAngle(a)
+    local B = ((t % 8) << 4) + (angle << 2) + ((x >> 8) << 1) + 1
+    local C = (((x % 256) >> 2) << 1) + 1
+    local D = ((x % 4) << 5) + ((y >> 5) << 1) + 1
+    local E = ((y % 32) << 2) + ((z >> 8) << 1) + 1
+    local F = (((z % 256) >> 2) << 1) + 1
+    local G = ((z % 4) << 5) + 1
+    return utf8_from({A, B, C, D, E, F, G})
 end
 
-function Block_Serialize(p, a, t, islandPos)
-    return Block_SerializePosition(p - islandPos)..":"..Block_SerializeAngle(a)..":"..t
-end
-
-function Block_Deserialize(v, islandPos)
-    local data = mysplit(v, ":")
+function Block_Deserialize_v3(str, islandPos)
+    chars = {}
+    for i=1,#str do
+        table.insert(chars, str:sub(i,i):byte())
+    end
+    local type = ((chars[1] >> 1) << 3) + (chars[2] >> 4)
+    local angle = (chars[2] >> 2) % 4
+    local x = (((chars[2] >> 1) % 2) << 9) + ((chars[3] >> 1) << 2) + (chars[4] >> 5) - 128
+    local y = (((chars[4] >> 1) % 16) << 5) + (chars[5] >> 2) - 128
+    local z = (((chars[5] >> 1) % 2) << 9) + ((chars[6] >> 1) << 2) + (chars[7] >> 5) - 128
     return {
-        pos = Block_DeserializePosition(data[1]) + islandPos,
-        angle = Block_DeserializeAngle(tonumber(data[2])),
-        type = tonumber(data[3])
+        pos = Vector3.New(x * WALL_SIZE, y * WALL_SIZE, z * WALL_HEIGHT) + islandPos,
+        angle = angle * 90,
+        type = type
     }
 end
 
@@ -63,47 +83,25 @@ end
 
 function getAlignedAngle(a)
     a = math.floor(a)
-    if a == 0 and a == 180 and a == 90 and a == 270 then return angle end
     while a < 0 do a = a + 360 end
     while a > 360 do a = a - 360 end
-    if a > 80 and a < 100 then return 90 end
-    if a > 170 and a < 190 then return 180 end
-    if a > 260 and a < 280 then return 270 end
+    if a > 80 and a < 100 then return 1 end
+    if a > 170 and a < 190 then return 2 end
+    if a > 260 and a < 280 then return 3 end
     return 0
 end
 
 function Block_SerializeStructures(structures, slotPos)
     local pBlocks = {}
+    local stringBlocks = "v3*"
     for _,structure in pairs(structures) do
         local pos = structure:GetWorldPosition() - slotPos
-        local angle = getAlignedAngle(structure:GetRotation().z)
+        local angle = structure:GetRotation().z
         local type = GetTypeFromMuid(structure.sourceTemplateId)
-        pBlocks[type] = pBlocks[type] or {}
-        pBlocks[type][angle] = pBlocks[type][angle] or {}
-        table.insert(pBlocks[type][angle], Block_SerializePosition(pos))
-    end
-    local stringBlocks = "v2*"
-    local firstType = true
-    for t,angles in pairs(pBlocks) do
-        stringBlocks = stringBlocks..(firstType and "" or "_")..tostring(t).."|" 
-        firstType = false
-        local firstAngle = true
-        for a,positions in pairs(angles) do
-            stringBlocks = stringBlocks..(firstAngle and "" or "|")..tostring(a).."="
-            firstAngle = false
-            local first = true
-            for _,pos in pairs(positions) do
-                stringBlocks = stringBlocks..(first and "" or ";")..pos
-                if Storage.SizeOfData({pBlocks=stringBlocks}) > 12000 then
-                    return stringBlocks
-                end
-                first = false
-            end
-        end
+        stringBlocks = stringBlocks..Block_Serialize_v3(pos, angle, type)
     end
     return stringBlocks
 end
-
 
 function Block_DeserializeStructures(structures, slotPos)
     local pBlocks = {}
@@ -128,12 +126,20 @@ function Block_DeserializeStructures(structures, slotPos)
             end
         end
     end
+    if version == "v3" and mysplit(structures, "*")[2] then
+        local data = structures
+        for i=4,#data,7 do
+            local serializedBlock = data:sub(i, i + 7)
+            local structure = Block_Deserialize_v3(serializedBlock, slotPos)
+            table.insert(pBlocks, structure)
+        end
+    end
     return pBlocks
 end
 
 _G["caillef.craftisland.buildSerializer"] = {
-    Serialize = Block_Serialize,
-    Deserialize = Block_Deserialize,
+    Serialize = Block_Serialize_v3,
+    Deserialize = Block_Deserialize_v3,
     SerializeList = Block_SerializeStructures,
     DeserializeList = Block_DeserializeStructures
 }

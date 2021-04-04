@@ -19,6 +19,9 @@ Assets {
             Z: 1
           }
         }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
         Folder {
           BundleDummy {
             ReferencedAssets {
@@ -39,5 +42,5 @@ Assets {
     OwnerName: "caillef"
     Description: "A seed bag for your market !"
   }
-  SerializationVersion: 76
+  SerializationVersion: 78
 }

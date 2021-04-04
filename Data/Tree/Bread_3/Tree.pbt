@@ -52,6 +52,9 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
   CoreMesh {
     MeshAsset {
       Id: 15194088916443237272
@@ -60,7 +63,6 @@ Objects {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
     }
-    EnableCameraCollision: true
     InteractWithTriggers: true
     StaticMesh {
       Physics {
@@ -113,6 +115,9 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
   Blueprint {
     BlueprintAsset {
       Id: 8539981025625262831
@@ -127,6 +132,9 @@ Objects {
     SubobjectId: 9081237979508604968
     InstanceId: 12981778777996398231
     TemplateId: 11374977346855187947
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -168,6 +176,9 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
   Blueprint {
     BlueprintAsset {
       Id: 8539981025625262831
@@ -182,6 +193,9 @@ Objects {
     SubobjectId: 18201306571508498905
     InstanceId: 12981778777996398231
     TemplateId: 11374977346855187947
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -223,6 +237,9 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
   Blueprint {
     BlueprintAsset {
       Id: 8539981025625262831
@@ -237,6 +254,9 @@ Objects {
     SubobjectId: 17969141740757919907
     InstanceId: 12981778777996398231
     TemplateId: 11374977346855187947
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -278,6 +298,9 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
   Blueprint {
     BlueprintAsset {
       Id: 8539981025625262831
@@ -292,5 +315,8 @@ Objects {
     SubobjectId: 13328537689637942402
     InstanceId: 12981778777996398231
     TemplateId: 11374977346855187947
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }

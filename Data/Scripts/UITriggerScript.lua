@@ -1,6 +1,8 @@
-﻿local trigger = script.parent
+local trigger = script.parent
 
 local eventName = "OpenUI"..script:GetCustomProperty("UIName")
+
+local currentPlayer
 
 local events = {}
 
@@ -15,7 +17,8 @@ function OnInteract(trigger, player)
 		Task.Wait(1)
 	end
 	if trigger:IsValid() then
-		trigger.isInteractable = false
+		currentPlayer = player
+		trigger.isInteractable = true
 	end
 end
 
@@ -27,9 +30,17 @@ function OnEnableTrigger(id)
 		return
 	end
 	if id == trigger.id then
+		currentPlayer = nil
 		trigger.isInteractable = true
 	end
 end
 
 table.insert(events, Events.Connect("EnableTrigger", OnEnableTrigger))
 table.insert(events, trigger.interactedEvent:Connect(OnInteract))
+
+Game.playerLeftEvent:Connect(function(player)
+	if player == currentPlayer then
+		currentPlayer = nil
+		trigger.isInteractable = true	
+	end
+end)

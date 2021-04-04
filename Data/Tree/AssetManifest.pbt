@@ -30,15 +30,6 @@ Assets {
   }
 }
 Assets {
-  Id: 16955162695139626198
-  Name: "Human Guy 2"
-  PlatformAssetType: 17
-  PrimaryAsset {
-    AssetType: "AnimatedMeshAssetRef"
-    AssetId: "npc_human_guy_basic_002_ref"
-  }
-}
-Assets {
   Id: 16247792708902319748
   Name: "Fantasy Book 012"
   PlatformAssetType: 9

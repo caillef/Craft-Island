@@ -19,6 +19,9 @@ Assets {
             Z: 1
           }
         }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
         Folder {
           BundleDummy {
             ReferencedAssets {
@@ -40,5 +43,5 @@ Assets {
     Version: "1.0.0"
     Description: "Hello everyone!,\r\n\r\nI hope you find this CC usefull to place into your RPG games :D"
   }
-  SerializationVersion: 76
+  SerializationVersion: 78
 }

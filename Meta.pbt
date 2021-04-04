@@ -1,5 +1,5 @@
 GameId: "08A842F140FC39E3955BFCA86A0EED6A"
 DisplayName: "Craft Island Real"
-GameSerializationVersion: 76
+GameSerializationVersion: 78
 Framework: "Empty Project"
 StorageVersion: 1

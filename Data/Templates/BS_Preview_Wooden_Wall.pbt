@@ -7,7 +7,7 @@ Assets {
       RootId: 10072055652865656459
       Objects {
         Id: 10072055652865656459
-        Name: "BS_Previsu_Wall_Wood"
+        Name: "BS_Preview_Wooden_Wall"
         Transform {
           Scale {
             X: 1
@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13835058745715878551
+        ParentId: 4781671109827199097
         ChildIds: 5081569610553487359
         UnregisteredParameters {
           Overrides {
@@ -36,6 +36,9 @@ Assets {
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Folder {
           IsFilePartition: true
@@ -77,6 +80,9 @@ Assets {
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
         CoreMesh {
           MeshAsset {
             Id: 1608526019857160819
@@ -85,7 +91,6 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
-          EnableCameraCollision: true
           InteractWithTriggers: true
           StaticMesh {
             Physics {
@@ -117,5 +122,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 76
+  SerializationVersion: 78
 }

@@ -131,6 +131,7 @@ function Tick()
     if currentPrevisu then
         BuildSystem_Open()
     end
+
     local playerPos, viewRotation = player:GetWorldPosition(), player:GetViewWorldRotation()
     local vertAngle = viewRotation.y
     local angle = viewRotation.z + 135 -- Bring angle from 0 to 270
@@ -167,7 +168,7 @@ function OnBindingReleased(player, actionName)
             if (obj.idName == "SOIL" or obj.idName == "SAPLING" or obj.idName == "WHEAT_SEEDS") and zPos ~= islandPos.z then -- only on ground
                 return -- must be placed on ground
             end
-            local data = GetBlockSerializer().Serialize(currentPrevisu:GetWorldPosition(), math.ceil(currentPrevisu:GetRotation().z), obj.id, islandPos)
+            local data = GetBlockSerializer().Serialize(currentPrevisu:GetWorldPosition() - islandPos, currentPrevisu:GetRotation().z, obj.id)
             while Events.BroadcastToServer("BSPS", data) ~= BroadcastEventResultCode.SUCCESS do -- BuildingSystemPlaceStructure (BuildingSystemServer.lua)
                 Task.Wait(1)
             end
@@ -182,6 +183,7 @@ function OnBindingReleased(player, actionName)
     end
 end
 
+local triggerOverlapEvent
 function SelectStructure(id)
     if currentPrevisu then
         if currentPrevisu:IsValid() then
@@ -195,6 +197,9 @@ function SelectStructure(id)
     end
     objectIndex = id
     currentPrevisu = World.SpawnAsset(GetObjectsList()[id].previewMuid)
+    if triggerOverlapEvent then
+        triggerOverlapEvent:Disconnect()
+    end
     currentPrevisu.collision = Collision.FORCE_OFF
     BuildSystem_Open()
 end

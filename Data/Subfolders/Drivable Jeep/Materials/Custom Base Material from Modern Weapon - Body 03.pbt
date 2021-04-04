@@ -2,7 +2,7 @@ Assets {
   Id: 243275085052259205
   Name: "Custom Base Material from Modern Weapon - Body 03"
   PlatformAssetType: 13
-  SerializationVersion: 76
+  SerializationVersion: 78
   CustomMaterialAsset {
     BaseMaterialId: 8869345219158106122
     ParameterOverrides {

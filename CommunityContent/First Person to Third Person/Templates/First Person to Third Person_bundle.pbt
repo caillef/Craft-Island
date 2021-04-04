@@ -19,6 +19,9 @@ Assets {
             Z: 1
           }
         }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
         Folder {
           BundleDummy {
             ReferencedAssets {
@@ -40,5 +43,5 @@ Assets {
     Version: "1.0.0"
     Description: "First Person to Third Person camera changer\r\n\r\n== IMPORTANT ==\r\nHOW TO USE\r\n\r\nDelete your camera object that you\'re using, and drag and drop this template... thats it\r\n\r\n---------------\r\n\r\n-- Press V to change the camera\r\n-- Keybind can be changed by look at the custom properties of the main folder"
   }
-  SerializationVersion: 76
+  SerializationVersion: 78
 }

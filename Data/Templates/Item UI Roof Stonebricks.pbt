@@ -1,13 +1,13 @@
 Assets {
-  Id: 427100129739759935
-  Name: "Item UI Stairs Stonebricks"
+  Id: 3483418282313291843
+  Name: "Item UI Roof Stonebricks"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 862969822547714924
       Objects {
         Id: 862969822547714924
-        Name: "Item UI Stairs Stonebricks"
+        Name: "Item UI Roof Stonebricks"
         Transform {
           Scale {
             X: 1
@@ -15,14 +15,16 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 6425081111160080356
+        ParentId: 9398089530668746296
         ChildIds: 10246452384551235797
+        ChildIds: 445995148167833167
         ChildIds: 9606924166686805154
+        ChildIds: 12293142645457816975
         ChildIds: 11229386404475024683
         UnregisteredParameters {
           Overrides {
             Name: "cs:Name"
-            String: "Stairs Wood"
+            String: "Stone Bricks Roof"
           }
           Overrides {
             Name: "cs:Type"
@@ -132,6 +134,69 @@ Assets {
         }
       }
       Objects {
+        Id: 445995148167833167
+        Name: "UI Image"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 862969822547714924
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 20
+          Height: 60
+          UIX: -8.00561523
+          UIY: 10
+          RotationAngle: 90
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Image {
+            Brush {
+              Id: 14711293301163987952
+            }
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+      }
+      Objects {
         Id: 9606924166686805154
         Name: "UI Image"
         Transform {
@@ -160,6 +225,69 @@ Assets {
           Width: 20
           Height: 60
           UIX: 1.99438477
+          RotationAngle: 90
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Image {
+            Brush {
+              Id: 14711293301163987952
+            }
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 12293142645457816975
+        Name: "UI Image"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 862969822547714924
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 20
+          Height: 60
+          UIX: 11.9943848
+          UIY: -10
           RotationAngle: 90
           RenderTransformPivot {
             Anchor {

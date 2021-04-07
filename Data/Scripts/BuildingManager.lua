@@ -1,4 +1,4 @@
-﻿local propUIPanel = script:GetCustomProperty("UIPanel"):WaitForObject()
+local propUIPanel = script:GetCustomProperty("UIPanel"):WaitForObject()
 
 local ACTION_PLACE = "ability_primary" -- left click
 local ACTION_ROTATE = "ability_secondary" -- right click
@@ -156,8 +156,10 @@ function Tick()
         currentPrevisu.visibility = objPos.z ~= islandPos.z and Visibility.FORCE_OFF or Visibility.FORCE_ON 
     end
 
-    currentPrevisu:SetPosition(objPos)
-    currentPrevisu:SetRotation(Rotation.New(0, 0, o * 90 + rotateAngle * 90))
+	if currentPrevisu then
+    	currentPrevisu:SetPosition(objPos)
+    	currentPrevisu:SetRotation(Rotation.New(0, 0, o * 90 + rotateAngle * 90))
+    end
 end
 
 function OnBindingReleased(player, actionName)

@@ -38,7 +38,7 @@ Assets {
           UseParentWidth: true
           UseParentHeight: true
           Text {
-            Label: "You have reached the building limit (400)"
+            Label: "You have reached the building limit (2000)"
             Color {
               R: 1
               G: 1

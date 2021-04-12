@@ -14,9 +14,10 @@ local CODES = {
     },
     {
         code={ BLUE, GREEN, GREEN, YELLOW }, -- The 4 colors of the code
-        storageKey="WELCOME", -- The storage key to be able to use the code only once (you must activate player storage)
+        storageKey="VIP72HOURS", -- The storage key to be able to use the code only once (you must activate player storage)
         fct=function(player) -- The function that is going to be called if the code is entered
-            return "This gift code does nothing"
+            Events.Broadcast("ActivateVIP", player, 3)
+            return "You are now a VIP member for 72 hours!"
         end
     }
 }

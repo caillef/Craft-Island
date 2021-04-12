@@ -195,5 +195,5 @@ Assets {
       AssetId: "First_Person_Camera_Settings"
     }
   }
-  SerializationVersion: 78
+  SerializationVersion: 81
 }

@@ -86,10 +86,20 @@ function SetItemEmptySlot(item)
 	return false
 end
 
+local raw_item_list = { "DOUGH", "BERRY_PIE_DOUGH", "CARROT_CAKE_DOUGH" }
+
+function word_in_list(list, word)
+	if not word then return false end
+	for _,v in pairs(list) do
+		if word == v then return true end
+	end
+	return false
+end
+
 function HasRawItemInside(f)
-	return (f.slots[1] and (f.slots[1].idName == "DOUGH" or f.slots[1].idName == "BERRY_PIE_DOUGH" or f.slots[1].idName == "CARROT_CAKE_DOUGH")) or
-	       (f.slots[2] and (f.slots[2].idName == "DOUGH" or f.slots[2].idName == "BERRY_PIE_DOUGH" or f.slots[2].idName == "CARROT_CAKE_DOUGH")) or
-		   (f.slots[3] and (f.slots[3].idName == "DOUGH" or f.slots[3].idName == "BERRY_PIE_DOUGH" or f.slots[3].idName == "CARROT_CAKE_DOUGH"))
+	return (f.slots[1] and word_in_list(raw_item_list, f.slots[1].idName)) or
+		(f.slots[2] and word_in_list(raw_item_list, f.slots[2].idName)) or
+		(f.slots[3] and word_in_list(raw_item_list, f.slots[3].idName))
 end
 
 function Tick()
@@ -170,7 +180,7 @@ Events.Connect("InventoryFastMove", function(buttonIndex, icon)
 	if (item.idName == "DOUGH" and SetItemEmptySlot(QueryObject("DOUGH"))) or
 		(item.idName == "BERRY_PIE_DOUGH" and SetItemEmptySlot(QueryObject("BERRY_PIE_DOUGH"))) or
 		(item.idName == "CARROT_CAKE_DOUGH" and SetItemEmptySlot(QueryObject("CARROT_CAKE_DOUGH"))) then
-			while Events.BroadcastToServer("removeItem", { idName=item.idName }, 1) ~= BroadcastEventResultCode.SUCCESS do
+		while Events.BroadcastToServer("removeItem", { idName=item.idName }, 1) ~= BroadcastEventResultCode.SUCCESS do
 			Task.Wait(1)
 		end
 		return
@@ -219,6 +229,19 @@ function OnPress(_, key)
 		end
 		while Events.BroadcastToServer("inventoryAddEvent", player, { id=f.slots[hoveredSlotIndex].id, qty = 1 }) ~= BroadcastEventResultCode.SUCCESS do
 			Task.Wait(1)
+		end
+		local idName = f.slots[hoveredSlotIndex].idName
+		if idName == "BREAD" then
+			Task.Wait(0.3)
+			Events.BroadcastToServer("TrackAction", { p=Game.GetLocalPlayer(), t=6, qty=1 })
+		end
+		if idName == "BERRY_PIE" then
+			Task.Wait(0.3)
+			Events.BroadcastToServer("TrackAction", { p=Game.GetLocalPlayer(), t=7, qty=1 })
+		end
+		if idName == "CARROT_CAKE" then
+			Task.Wait(0.3)
+			Events.BroadcastToServer("TrackAction", { p=Game.GetLocalPlayer(), t=8, qty=1 })
 		end
 		f.slotsTimer[hoveredSlotIndex] = nil
 		f.slots[hoveredSlotIndex] = nil

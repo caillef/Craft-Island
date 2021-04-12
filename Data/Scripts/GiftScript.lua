@@ -58,10 +58,9 @@ Events.Connect("GiftCodeResp", function(success, data)
         propResult.text = "Gift code not valid."
     end
 
-    if success then
-        Task.Wait(1)
-        propGift.visibility = Visibility.FORCE_OFF
-        UI.SetCursorVisible(false)
-        UI.SetCanCursorInteractWithUI(false)
-    end
+    if not success then return end
+    Task.Wait(3)
+    propGift.visibility = Visibility.FORCE_OFF
+    UI.SetCursorVisible(false)
+    UI.SetCanCursorInteractWithUI(false)
 end)

@@ -1068,5 +1068,5 @@ Assets {
       AssetId: "Advanced_Hammer"
     }
   }
-  SerializationVersion: 78
+  SerializationVersion: 81
 }

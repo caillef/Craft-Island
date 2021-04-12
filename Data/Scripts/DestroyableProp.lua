@@ -30,6 +30,21 @@ function GetSoundManager()
     return _SOUNDS
 end
 
+local trackIds = { "WHEAT", "BERRY", "CARROT", "STONE", "COAL" }
+function ManageTracking(player, name, qty)
+    qty = qty or 1
+    local type
+    for k,v in pairs(trackIds) do
+        if v == name then
+            type = k
+            break
+        end
+    end
+    if type then
+        Events.Broadcast("TrackAction", {p=player, t=type, qty=qty})
+    end
+end
+
 function OnHit(data) 
     if not script:IsValid() then return end
     for _,p in pairs(Game.GetPlayers()) do
@@ -73,6 +88,7 @@ function OnHit(data)
         eventListenerOnHit:Disconnect()
         Task.Spawn(function()
             if FallSFX then
+                Events.Broadcast("TrackAction", {p=player, t=12, qty=1})
                 local tree = prop:FindChildByName("Built")
                 Task.Spawn(function()
                     tree:RotateContinuous(Rotation.New(20, 0, 0))
@@ -134,7 +150,9 @@ function PickUp(id, bool)
                 GetSoundManager().PlaySound("BonusItemSFX", script:GetWorldPosition())
             end
         end
-        print(Events.Broadcast("inventoryAddEvent", player, { idName=propItemId, qty = math.floor(math.random(propItemUIQty.x, propItemUIQty.y)) }))
+        local qty = math.floor(math.random(propItemUIQty.x, propItemUIQty.y))
+        ManageTracking(player, propItemId, qty)
+        Events.Broadcast("inventoryAddEvent", player, { idName=propItemId, qty = qty })
 	end
     if propItemId2 and id == listenID2 then
 		if bool then
@@ -148,7 +166,9 @@ function PickUp(id, bool)
                 GetSoundManager().PlaySound("BonusItemSFX", script:GetWorldPosition())
             end
         end
-        Events.Broadcast("inventoryAddEvent", player, { idName=propItemId2, qty = math.floor(math.random(propItemUI2Qty.x , propItemUI2Qty.y)) })
+        local qty = math.floor(math.random(propItemUI2Qty.x, propItemUI2Qty.y))
+        ManageTracking(player, propItemId2, qty)
+        Events.Broadcast("inventoryAddEvent", player, { idName=propItemId2, qty = qty })
 	end
 end
 

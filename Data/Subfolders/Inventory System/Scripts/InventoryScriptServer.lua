@@ -267,7 +267,7 @@ end
 
 function Craft(player, craftIdName, qty)
 	qty = qty or 1
-	for _,craft in pairs(_G["caillef.craftisland.crafts"]) do
+	for craftkey,craft in pairs(_G["caillef.craftisland.crafts"]) do
 		local recipe = craft[2]
 		for i=1,#recipe,2 do
 			if recipe[i] == craftIdName then
@@ -279,6 +279,18 @@ function Craft(player, craftIdName, qty)
 					PlayerRemoveItems(player, { idName=ingredients[j] }, ingredients[j + 1] * qty)
 				end
 				Add(player, { idName=craftIdName, qty = recipe[i + 1] * qty })
+				if craftkey >= 7 and craftkey <= 10 then
+					Events.Broadcast("TrackAction", {p=player, t=9, qty=recipe[i + 1] * qty })
+				end
+				if craftIdName == "CRAFTING_TABLE" then
+					Events.Broadcast("TrackAction", {p=player, t=10, qty=recipe[i + 1] * qty })
+				end
+				if craftIdName == "FURNACE" then
+					Events.Broadcast("TrackAction", {p=player, t=11, qty=recipe[i + 1] * qty })
+				end
+				if craftIdName == "COOKING_TABLE" then
+					Events.Broadcast("TrackAction", {p=player, t=16, qty=recipe[i + 1] * qty })
+				end
 				return
 			end
 		end

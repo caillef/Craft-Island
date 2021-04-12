@@ -2,7 +2,7 @@ Assets {
   Id: 2221240351439648399
   Name: "Carrot grass"
   PlatformAssetType: 13
-  SerializationVersion: 78
+  SerializationVersion: 81
   CustomMaterialAsset {
     BaseMaterialId: 18038322182071613674
     ParameterOverrides {

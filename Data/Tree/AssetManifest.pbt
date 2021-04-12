@@ -66,6 +66,41 @@ Assets {
   }
 }
 Assets {
+  Id: 12489375982693103136
+  Name: "Achievements"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "a8b81ca33fab4cc085adb0a8ecb32667"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
+      }
+    }
+  }
+}
+Assets {
+  Id: 12026943570949950239
+  Name: "Fantasy Trophy 003"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Equip_Trophy_003"
+  }
+}
+Assets {
+  Id: 9724731050776351478
+  Name: "PerksRelated"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "cf8d43744c274942b813535ac74884d6"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
+      }
+    }
+  }
+}
+Assets {
   Id: 9261566395112034950
   Name: "Inventory"
   PlatformAssetType: 23

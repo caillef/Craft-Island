@@ -457,6 +457,12 @@ Objects {
         Id: 10821605564121231263
       }
     }
+    Overrides {
+      Name: "cs:RewardSFX"
+      AssetReference {
+        Id: 12796290651307140757
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

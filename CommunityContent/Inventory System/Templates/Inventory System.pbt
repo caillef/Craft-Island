@@ -144,6 +144,7 @@ Assets {
             }
           }
           Canvas {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -685,6 +686,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -829,6 +836,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -1097,6 +1110,9 @@ Assets {
           UseParentWidth: true
           UseParentHeight: true
           ScrollPanel {
+            Orientation {
+              Value: "mc:eorientation:orient_vertical"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -1178,6 +1194,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -1321,6 +1343,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -1464,6 +1492,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -1607,6 +1641,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -1751,6 +1791,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -1895,6 +1941,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -2038,6 +2090,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -2182,6 +2240,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -2326,6 +2390,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -2469,6 +2539,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -2613,6 +2689,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -2757,6 +2839,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -2900,6 +2988,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -3044,6 +3138,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -3188,6 +3288,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -3331,6 +3437,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -3475,6 +3587,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -3619,6 +3737,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -3762,6 +3886,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -3906,6 +4036,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -4050,6 +4186,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -4193,6 +4335,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -4337,6 +4485,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -4481,6 +4635,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -4624,6 +4784,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -4768,6 +4934,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -4912,6 +5084,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -5055,6 +5233,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -5199,6 +5383,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -5343,6 +5533,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -5610,6 +5806,12 @@ Assets {
               Id: 12117351831364607381
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -5724,6 +5926,7 @@ Assets {
           }
           Panel {
             IsClipping: true
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -6141,6 +6344,6 @@ Assets {
   Marketplace {
     Description: "The inventory system can hold up to 30 unequipped items and 2 different equipped items at the same time.\r\nIt was designed to work specifically with RPG games, but will work with other game genres just as well.\r\nIt can save its state with Player Storage, have a level requirement for items, item descriptions and much more. Read the README for more information."
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
   DirectlyPublished: true
 }

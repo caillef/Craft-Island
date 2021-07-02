@@ -1,4 +1,4 @@
-﻿local _objectsList
+local _objectsList
 function GetObjectsList()
     _objectsList = _G["caillef.craftisland.objects"]
     while _objectsList == nil do
@@ -44,6 +44,9 @@ function Block_Serialize_v3(p, a, t)
     local x = math.floor(p.x / WALL_SIZE) + 128
     local y = math.floor(p.y / WALL_SIZE) + 128
     local z = math.floor(p.z / WALL_HEIGHT) + 128
+    if x >= 255 or y >= 255 or z >= 255 or x < 0 or y < 0 or z < 0 then
+    	return ""
+    end
     local A = ((t >> 3) << 1) + 1
     local angle = getAlignedAngle(a)
     local B = ((t % 8) << 4) + (angle << 2) + ((x >> 8) << 1) + 1
@@ -56,6 +59,7 @@ function Block_Serialize_v3(p, a, t)
 end
 
 function Block_Deserialize_v3(str, islandPos)
+    if #str == 0 then return nil end
     chars = {}
     for i=1,#str do
         table.insert(chars, str:sub(i,i):byte())
@@ -131,7 +135,9 @@ function Block_DeserializeStructures(structures, slotPos)
         for i=4,#data,7 do
             local serializedBlock = data:sub(i, i + 7)
             local structure = Block_Deserialize_v3(serializedBlock, slotPos)
-            table.insert(pBlocks, structure)
+            if structure then
+                table.insert(pBlocks, structure)
+            end
         end
     end
     return pBlocks

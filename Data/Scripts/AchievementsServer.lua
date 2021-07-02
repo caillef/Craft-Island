@@ -10,14 +10,14 @@ function GetSoundManager()
     return _SOUNDS
 end
 
-local order = { 12, 1, 10, 16, 4, 11, 5, 6, 13, 14, 2, 3, 15 }
+local order = { 12, 1, 10, 16, 4, 11, 5, 6, 13, 14, 3, 15 }
 
 local achievements = {
 	{ type = 1, name = "Harvest ;; wheats", qtys = { 1, 10, 25, 50, 100, 200, 500, 1000 } },
 	{ type = 2, name = "Harvest ;; berries", qtys = { 1, 10, 25, 50, 100, 200, 500, 1000 } },
 	{ type = 3, name = "Harvest ;; carrots", qtys = { 1, 10, 25, 50, 100, 200, 500, 1000 } },
-	{ type = 4, name = "Mine on the mining island ;; stones", qtys = { 1, 10, 50, 100, 200, 500, 1000 } },
-	{ type = 5, name = "Mine on the mining island ;; coals", qtys = { 1, 10, 50, 100, 200, 500, 1000 } },
+	{ type = 4, name = "Mine on the mining island ;; stones", qtys = { 1, 25, 50, 100, 200, 500, 1000 } },
+	{ type = 5, name = "Mine on the mining island ;; coals", qtys = { 1, 25, 50, 100, 200, 500, 1000 } },
 	{ type = 6, name = "Bake ;; breads", qtys = { 1, 10, 25, 50, 100, 200, 500, 1000 } },
 	{ type = 7, name = "Bake ;; berry pies", qtys = { 1, 10, 25, 50, 100, 200, 500, 1000 } },
 	{ type = 8, name = "Bake ;; carrot cakes", qtys = { 1, 10, 25, 50, 100, 200, 500, 1000 } },
@@ -56,6 +56,7 @@ end
 Events.Connect("TrackAction", function(data)
 	if data.t == -1 then return end
 	local storage = Storage.GetSharedPlayerData(propAchievementsSharedKey, data.p) or { track = {} }
+	storage.track = storage.track or {}
 	storage.track[data.t] = storage.track[data.t] or { qty = 0, t = 1 }
 	storage.track[data.t].qty = storage.track[data.t].qty + data.qty
 
@@ -72,6 +73,17 @@ Events.Connect("TrackAction", function(data)
 		SetAchievementStatus(storage, data.t, current_achievement.t, "1")
 		current_achievement.t = current_achievement.t + 1
 	end
+	local rewardGoldVIP = 0
+	local rewardGemVIP = 0
+	for i=1,#storage.ach do
+		local state = storage.ach:sub(i,i)
+		if storage.ach:sub(i,i) == "1" or storage.ach:sub(i,i) == "2" then
+			rewardGoldVIP = rewardGoldVIP + ((i - 1) % 10 + 1) * 10
+			rewardGemVIP = rewardGemVIP + ((i - 1) % 10 + 1) * 10
+		end
+	end
+	data.p:SetResource("RewardGoldVIP", rewardGoldVIP)
+	data.p:SetResource("RewardGemVIP", rewardGemVIP)
 	Storage.SetSharedPlayerData(propAchievementsSharedKey, data.p, storage)
 end)
 
@@ -93,7 +105,8 @@ end
 
 Events.ConnectForPlayer("GetAchi", function(player)
 	local list = {}
-	local storage = Storage.GetSharedPlayerData(propAchievementsSharedKey, player) or { track = {} }	
+	local storage = Storage.GetSharedPlayerData(propAchievementsSharedKey, player) or { track = {} }
+	storage.track = storage.track or {}
 	if not storage.ach then
 		for i=1,NB_ACHIEVEMENTS do
 			storage.ach = (storage.ach or "").."0000000000"
@@ -135,29 +148,32 @@ Events.ConnectForPlayer("GetAchi", function(player)
 	local storage = Storage.GetSharedPlayerData(propAchievementsSharedKey, player) or { track = {} }
 	local rewardAvailable = 0
 	for i=1,#storage.ach do
-		if storage.ach:sub(i,i) == "1" or (storage.ach:sub(i,i) == "2" and player.serverUserData.isVIP) then
+		if storage.ach:sub(i,i) == "1" or (storage.ach:sub(i,i) == "2" and player:GetResource("VIP") == 1) then
 			rewardAvailable = 1
 		end
 	end
 	Events.BroadcastToPlayer(player, "GetAchiR", rewardAvailable, msg)
 end)
 
+function GetStepFromAchIndex(i) return ((i - 1) % 10 + 1) end
+
 Events.ConnectForPlayer("Rew", function(player)
 	local storage = Storage.GetSharedPlayerData(propAchievementsSharedKey, player) or { track = {} }
+	storage.track = storage.track or {}
 	if not storage.ach then return end
 	local goldAmount = 0
 	local gemAmount = 0
-
 	for i=1,#storage.ach do
 		local state = storage.ach:sub(i,i)
+		local step = GetStepFromAchIndex(i)
 		if state == "1" then
-			goldAmount = goldAmount + ((i - 1) % 10 + 1) * 10 * (player.serverUserData.isVIP and 2 or 1)
-			gemAmount = gemAmount + ((i - 1) % 10 + 1) * 10 * (player.serverUserData.isVIP and 3 or 1)
-			SetAchievementStatus(storage, math.floor(i / 10) + 1, (i - 1) % 10 + 1, player.serverUserData.isVIP and "3" or "2")
-		elseif state == "2" and player.serverUserData.isVIP then
-			goldAmount = goldAmount + ((i - 1) % 10 + 1) * 10
-			gemAmount = gemAmount + ((i - 1) % 10 + 1) * 10 * 2
-			SetAchievementStatus(storage, math.floor(i / 10) + 1, (i - 1) % 10 + 1, "3")
+			goldAmount = goldAmount + step * 10 * (player:GetResource("VIP") == 1 and 2 or 1)
+			gemAmount = gemAmount + step * 5 * (player:GetResource("VIP") == 1 and 3 or 1)
+			SetAchievementStatus(storage, math.floor(i / 10) + 1, step, player:GetResource("VIP") == 1 and "3" or "2")
+		elseif state == "2" and player:GetResource("VIP") == 1 then
+			goldAmount = goldAmount + step * 10
+			gemAmount = gemAmount + step * 5 * 2
+			SetAchievementStatus(storage, math.floor(i / 10) + 1, step, "3")
 		end
 	end
 	Storage.SetSharedPlayerData(propAchievementsSharedKey, player, storage)
@@ -167,8 +183,23 @@ Events.ConnectForPlayer("Rew", function(player)
 	GetSoundManager().PlaySound("RewardSFX", player:GetWorldPosition())
 end)
 
--- --TODO: remove
--- Events.ConnectForPlayer("AchReset", function(player) 
--- 	Storage.SetSharedPlayerData(propAchievementsSharedKey, player, { track = {}})
--- 	print("reset")
--- end)
+Events.ConnectForPlayer("VIPRew", function(player)
+	local storage = Storage.GetSharedPlayerData(propAchievementsSharedKey, player) or { track = {} }
+	if not storage.ach then return end
+	local goldAmount = 0
+	local gemAmount = 0
+	for i=1,#storage.ach do
+		local state = storage.ach:sub(i,i)
+		if state == "2" then
+			goldAmount = goldAmount + ((i - 1) % 10 + 1) * 10
+			gemAmount = gemAmount + ((i - 1) % 10 + 1) * 5 * 2
+		end
+	end
+	Events.BroadcastToPlayer(player, "VIPRewR", goldAmount, gemAmount)
+end)
+
+--TODO: remove
+Events.ConnectForPlayer("AchReset", function(player) 
+	Storage.SetSharedPlayerData(propAchievementsSharedKey, player, { track = {}})
+	print("reset")
+end)

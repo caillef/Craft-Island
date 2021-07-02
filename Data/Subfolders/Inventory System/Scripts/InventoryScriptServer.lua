@@ -168,6 +168,7 @@ function Save(player)
 end
 
 function Delete(player, i)
+	if not data[player] or not data[player][i] then return end
 	local id = data[player][i].id
 	data[player][i] = nil
 	if i >= 1 or i <= 9 then

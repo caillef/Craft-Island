@@ -94,6 +94,7 @@ Assets {
               Mass: 100
               LinearDamping: 0.01
             }
+            BoundsScale: 1
           }
         }
       }
@@ -148,6 +149,7 @@ Assets {
               Mass: 100
               LinearDamping: 0.01
             }
+            BoundsScale: 1
           }
         }
       }
@@ -190,6 +192,7 @@ Assets {
               Mass: 100
               LinearDamping: 0.01
             }
+            BoundsScale: 1
           }
         }
       }
@@ -232,6 +235,7 @@ Assets {
               Mass: 100
               LinearDamping: 0.01
             }
+            BoundsScale: 1
           }
         }
       }
@@ -289,6 +293,6 @@ Assets {
   Marketplace {
     Description: "Just a little oak tree planter for decoration. Could be considered a bonsai maybe? Enjoy!"
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
   DirectlyPublished: true
 }

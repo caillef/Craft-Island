@@ -121,6 +121,31 @@ commands["gold"] = {
     end
 }
 
+commands["gem"] = {
+    desc="Give gem to a player (gold add/remove AMOUNT [PLAYER_NAME])",
+    func= function(admin, args)
+        local player
+        if #args == 2 then
+            player = admin
+        else
+            for _,p in pairs(Game.GetPlayers()) do
+                if p.name == args[3] then
+                    player = p
+                    break
+                end
+            end
+        end
+        if not player then
+            return "Error: player "..args[3].." not found."
+        end
+        player:AddResource("Gem", (args[1] == "add" and 1 or -1) * tonumber(args[2]))
+        if player:GetResource("Gem") < 0 then
+            player:SetResource("Gem", 0)
+        end
+        return (args[1] == "add" and "Added " or "Removed ")..args[2].. " gems to player "..player.name
+    end
+}
+
 commands["kill"] = {
     desc="Kill player (kill PLAYER_NAME)",
     func= function(admin, args)
@@ -153,6 +178,33 @@ commands["s"] = {
                 local storage = Storage.GetPlayerData(p)
                 local resp = "Inventory: "..storage.inventory.."\n"
                 return resp
+            end
+        end
+        return "Player "..args[1].." not found."
+    end
+}
+
+commands["vip"] = {
+    desc="Set VIP status (s PLAYER_NAME duration)",
+    func= function(admin, args)
+        for _,p in pairs(Game.GetPlayers()) do
+            if p.name == args[1] then
+                local duration = args[2] and tonumber(args[2]) or 1
+                Events.Broadcast("ActivateVIP", p, duration)
+                return "Player "..args[1].." is now VIP for "..duration.." days."
+            end
+        end
+        return "Player "..args[1].." not found."
+    end
+}
+
+commands["unvip"] = {
+    desc="Reset VIP status (s PLAYER_NAME)",
+    func= function(admin, args)
+        for _,p in pairs(Game.GetPlayers()) do
+            if p.name == args[1] then
+                Events.Broadcast("DeactivateVIP", p)
+                return "Player "..args[1].." is no longer a VIP."
             end
         end
         return "Player "..args[1].." not found."
@@ -212,6 +264,20 @@ commands["i"] = {
         end
         return "Player "..args[1].." not found."
     end
+}
+
+local propIslands = script:GetCustomProperty("Islands")
+
+commands["on"] = {
+    desc="Debug oncle (debugoncle <NAME>)",
+    func= function(admin, args)
+        for _,p in pairs(Game.GetPlayers()) do
+            if p.name == "Oncle_Toni" then
+                return tostring(Storage.SizeOfData(Storage.GetSharedPlayerData(propIslands, p))).." bytes vs "..tostring(Storage.SizeOfData(Storage.GetSharedPlayerData(propIslands, admin)))
+            end
+        end
+        return tostring(Storage.SizeOfData(Storage.GetSharedPlayerData(propIslands, admin)))
+    end    
 }
 
 commands["lo"] = {

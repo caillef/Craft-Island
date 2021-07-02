@@ -197,5 +197,5 @@ Assets {
       AssetId: "Third_Person_Camera_Settings"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

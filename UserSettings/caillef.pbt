@@ -856,6 +856,11 @@ ObjectSettings {
     }
   }
   ObjectStates {
+    key: 9849534251865595013
+    value {
+    }
+  }
+  ObjectStates {
     key: 9968437284215760353
     value {
     }
@@ -1420,6 +1425,11 @@ ObjectSettings {
     }
   }
   ObjectStates {
+    key: 15394154542568400997
+    value {
+    }
+  }
+  ObjectStates {
     key: 15454537140802278341
     value {
     }
@@ -1659,3 +1669,63 @@ ObjectSettings {
     }
   }
 }
+DebugPerks {
+  Perks {
+    PerkId: "d7efb1d22e614c5f913da185199c95d1"
+    PerkCounts {
+      key: 0
+      value: 1
+    }
+    PerkCounts {
+      key: 1
+      value: 0
+    }
+    PerkCounts {
+      key: 2
+      value: 0
+    }
+    PerkCounts {
+      key: 3
+      value: 0
+    }
+  }
+  Perks {
+    PerkId: "f0177c3020c74520bb9738394fe5119f"
+    PerkCounts {
+      key: 0
+      value: 0
+    }
+    PerkCounts {
+      key: 1
+      value: 0
+    }
+    PerkCounts {
+      key: 2
+      value: 0
+    }
+    PerkCounts {
+      key: 3
+      value: 0
+    }
+  }
+  Perks {
+    PerkId: "79d631e81fcb42e681f7ddcbc53f9434"
+    PerkCounts {
+      key: 0
+      value: 1
+    }
+    PerkCounts {
+      key: 1
+      value: 1
+    }
+    PerkCounts {
+      key: 2
+      value: 0
+    }
+    PerkCounts {
+      key: 3
+      value: 0
+    }
+  }
+}
+LastSavedScene: "Main"

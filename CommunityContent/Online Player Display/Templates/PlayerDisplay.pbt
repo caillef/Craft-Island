@@ -66,6 +66,7 @@ Assets {
             }
           }
           Canvas {
+            Opacity: 1
           }
         }
       }
@@ -110,6 +111,7 @@ Assets {
             }
           }
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -188,6 +190,7 @@ Assets {
           UseParentWidth: true
           UseParentHeight: true
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -451,6 +454,12 @@ Assets {
               Id: 5112195540822073206
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -507,6 +516,7 @@ Assets {
           AddSizeToParentIfUsingParentSize: true
           UseParentWidth: true
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -810,6 +820,7 @@ Assets {
           AddSizeToParentIfUsingParentSize: true
           UseParentWidth: true
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -1728,6 +1739,7 @@ Assets {
           }
           UseParentWidth: true
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -1937,6 +1949,12 @@ Assets {
               Id: 13343236980879465439
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -2024,6 +2042,12 @@ Assets {
               Id: 13343236980879465439
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -2140,6 +2164,7 @@ Assets {
           }
           UseParentWidth: true
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -2224,6 +2249,12 @@ Assets {
             Brush {
               Id: 841534158063459245
             }
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -2278,6 +2309,7 @@ Assets {
           UseParentWidth: true
           UseParentHeight: true
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -2372,6 +2404,7 @@ Assets {
           }
           UseParentWidth: true
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -2450,6 +2483,12 @@ Assets {
               Id: 2031285520022528877
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -2695,6 +2734,7 @@ Assets {
           }
           UseParentWidth: true
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -2773,6 +2813,12 @@ Assets {
               Id: 2031285520022528877
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -3018,6 +3064,7 @@ Assets {
           }
           UseParentWidth: true
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -3096,6 +3143,12 @@ Assets {
               Id: 2031285520022528877
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -3341,6 +3394,7 @@ Assets {
           }
           UseParentWidth: true
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -3419,6 +3473,12 @@ Assets {
               Id: 2031285520022528877
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -3664,6 +3724,7 @@ Assets {
           }
           UseParentWidth: true
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -3742,6 +3803,12 @@ Assets {
               Id: 2031285520022528877
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -3987,6 +4054,7 @@ Assets {
           }
           UseParentWidth: true
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -4065,6 +4133,12 @@ Assets {
               Id: 2031285520022528877
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -4310,6 +4384,7 @@ Assets {
           }
           UseParentWidth: true
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -4388,6 +4463,12 @@ Assets {
               Id: 2031285520022528877
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -4633,6 +4714,7 @@ Assets {
           }
           UseParentWidth: true
           Panel {
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -4711,6 +4793,12 @@ Assets {
               Id: 2031285520022528877
             }
             IsButtonEnabled: true
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
+            }
           }
           AnchorLayout {
             SelfAnchor {
@@ -5077,6 +5165,6 @@ Assets {
   Marketplace {
     Description: "Displays players currently online, as well as their health. The base version of this template supports up to 8 players. If you want more than that, you\'ll have to edit the script a bit.\r\nThis is a generalized version of the player list used in World of CoreCraft.\r\n\r\nFeatures:\r\n\r\n-A list of online players that can be toggled open and closed\r\n-A player info display with some blank fields that can be used for other stats\r\n-Framework for having multiple tabs in the display (though this will require some code setup)"
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
   DirectlyPublished: true
 }

@@ -42,6 +42,7 @@ Assets {
           Location {
             X: 175
             Y: -10
+            Z: -6
           }
           Rotation {
           }
@@ -76,6 +77,7 @@ Assets {
               Mass: 100
               LinearDamping: 0.01
             }
+            BoundsScale: 1
           }
         }
       }
@@ -85,6 +87,7 @@ Assets {
         Transform {
           Location {
             X: 5
+            Z: -6
           }
           Rotation {
           }
@@ -225,6 +228,7 @@ Assets {
           StaticMesh {
             Physics {
             }
+            BoundsScale: 1
           }
         }
       }
@@ -276,6 +280,7 @@ Assets {
           StaticMesh {
             Physics {
             }
+            BoundsScale: 1
           }
         }
       }
@@ -369,7 +374,7 @@ Assets {
         Transform {
           Location {
             X: 107.543755
-            Z: 134.782623
+            Z: 128.782623
           }
           Rotation {
             Yaw: 87.2511749
@@ -414,6 +419,7 @@ Assets {
           Location {
             X: -10
             Y: -10
+            Z: -6
           }
           Rotation {
           }
@@ -448,6 +454,7 @@ Assets {
               Mass: 100
               LinearDamping: 0.01
             }
+            BoundsScale: 1
           }
         }
       }
@@ -458,7 +465,7 @@ Assets {
           Location {
             X: 5
             Y: -10
-            Z: 300
+            Z: 294
           }
           Rotation {
             Pitch: -90
@@ -495,6 +502,7 @@ Assets {
               Mass: 100
               LinearDamping: 0.01
             }
+            BoundsScale: 1
           }
         }
       }
@@ -540,5 +548,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

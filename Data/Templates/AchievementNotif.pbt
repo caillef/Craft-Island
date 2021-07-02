@@ -34,8 +34,8 @@ Assets {
         Control {
           Width: 454
           Height: 105
-          UIX: -24.6938477
-          UIY: -222.357483
+          UIX: 27
+          UIY: -159
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -56,12 +56,12 @@ Assets {
           AnchorLayout {
             SelfAnchor {
               Anchor {
-                Value: "mc:euianchor:bottomright"
+                Value: "mc:euianchor:bottomleft"
               }
             }
             TargetAnchor {
               Anchor {
-                Value: "mc:euianchor:bottomright"
+                Value: "mc:euianchor:bottomleft"
               }
             }
           }
@@ -85,7 +85,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:Duration"
-            Int: 10
+            Int: 5
           }
         }
         Collidable_v2 {
@@ -335,7 +335,7 @@ Assets {
             }
           }
           Button {
-            Label: "Press P"
+            Label: "Press R"
             FontColor {
               R: 1
               G: 1
@@ -374,6 +374,12 @@ Assets {
               Value: "mc:ebuttonclickmode:default"
             }
             Font {
+            }
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
             }
           }
           AnchorLayout {
@@ -466,5 +472,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

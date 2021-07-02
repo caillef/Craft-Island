@@ -14,10 +14,10 @@ local CODES = {
     },
     {
         code={ BLUE, GREEN, GREEN, YELLOW }, -- The 4 colors of the code
-        storageKey="VIP72HOURS", -- The storage key to be able to use the code only once (you must activate player storage)
+        storageKey="VIP24HOURS", -- The storage key to be able to use the code only once (you must activate player storage)
         fct=function(player) -- The function that is going to be called if the code is entered
-            Events.Broadcast("ActivateVIP", player, 3)
-            return "You are now a VIP member for 72 hours!"
+            Events.Broadcast("ActivateVIP", player, 1)
+            return "You are now a VIP member for 24 hours!"
         end
     }
 }

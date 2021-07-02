@@ -60,6 +60,14 @@ Assets {
               Id: 7426454697044131321
             }
           }
+          Overrides {
+            Name: "ma:Building_Foundation:smart"
+            Bool: false
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:smart"
+            Bool: false
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -83,6 +91,7 @@ Assets {
           StaticMesh {
             Physics {
             }
+            BoundsScale: 1
           }
         }
       }
@@ -154,5 +163,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

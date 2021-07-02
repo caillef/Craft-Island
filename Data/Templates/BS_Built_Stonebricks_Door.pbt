@@ -19,9 +19,7 @@ Assets {
         ChildIds: 2284067968660856587
         ChildIds: 18051067341678177728
         ChildIds: 10635343289658922323
-        ChildIds: 13393211861048444740
         ChildIds: 10215272691844556202
-        ChildIds: 11105157724529907693
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -34,6 +32,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Built_Stonebricks_Door"
         }
       }
       Objects {
@@ -41,24 +40,41 @@ Assets {
         Name: "Craftsman Wall 02 Corner"
         Transform {
           Location {
+            Z: -4
           }
           Rotation {
           }
           Scale {
-            X: 0.0964473411
-            Y: 0.972766638
-            Z: 0.5
+            X: 0.9
+            Y: 1
+            Z: 0.86
           }
         }
         ParentId: 3592139336295586736
         UnregisteredParameters {
           Overrides {
             Name: "ma:Building_WallInner:utile"
-            Float: 0.169014171
+            Float: 1
           }
           Overrides {
             Name: "ma:Building_WallOuter:utile"
             Float: 0.282603621
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:id"
+            AssetReference {
+              Id: 17805378747911087859
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner:id"
+            AssetReference {
+              Id: 17805378747911087859
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner:vtile"
+            Float: 1.52
           }
         }
         WantsNetworking: true
@@ -73,7 +89,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 2452465297983906772
+            Id: 1628849511756280386
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -85,6 +101,7 @@ Assets {
               Mass: 100
               LinearDamping: 0.01
             }
+            BoundsScale: 1
           }
         }
       }
@@ -94,7 +111,7 @@ Assets {
         Transform {
           Location {
             X: 27.4014206
-            Z: 16.5967712
+            Z: 12.5967712
           }
           Rotation {
           }
@@ -196,15 +213,15 @@ Assets {
         Name: "Craftsman Front Door 01"
         Transform {
           Location {
-            X: 90.0000076
-            Y: -3.33786193e-06
-            Z: -170.000015
+            X: 109.251709
+            Y: -1.710775e-05
+            Z: -170
           }
           Rotation {
             Yaw: 179.999954
           }
           Scale {
-            X: 0.895031
+            X: 1.1
             Y: 1
             Z: 0.8
           }
@@ -234,6 +251,7 @@ Assets {
           StaticMesh {
             Physics {
             }
+            BoundsScale: 1
           }
         }
       }
@@ -327,7 +345,7 @@ Assets {
         Transform {
           Location {
             X: 107.543755
-            Z: 134.782623
+            Z: 130.782623
           }
           Rotation {
             Yaw: 87.2511749
@@ -366,72 +384,19 @@ Assets {
         }
       }
       Objects {
-        Id: 13393211861048444740
-        Name: "Craftsman Wall 02 Corner"
-        Transform {
-          Location {
-            X: 162.620651
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.0964473411
-            Y: 0.972766638
-            Z: 0.5
-          }
-        }
-        ParentId: 3592139336295586736
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Building_WallInner:utile"
-            Float: 0.169014171
-          }
-          Overrides {
-            Name: "ma:Building_WallOuter:utile"
-            Float: 0.282603621
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 2452465297983906772
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          InteractWithTriggers: true
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
         Id: 10215272691844556202
         Name: "Craftsman Wall 02 Corner"
         Transform {
           Location {
-            X: 28.6842804
-            Z: 194.000107
+            X: 10
+            Z: 176
           }
           Rotation {
           }
           Scale {
-            X: 0.175097167
-            Y: 0.763048
-            Z: 0.17219
+            X: 0.22
+            Y: 0.8
+            Z: 0.2
           }
         }
         ParentId: 3592139336295586736
@@ -477,77 +442,18 @@ Assets {
               Mass: 100
               LinearDamping: 0.01
             }
-          }
-        }
-      }
-      Objects {
-        Id: 11105157724529907693
-        Name: "Craftsman Wall 02 Corner"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.458596796
-            Y: 0.850171745
-            Z: 0.0359382778
-          }
-        }
-        ParentId: 3592139336295586736
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Building_WallInner:utile"
-            Float: 2.09382629
-          }
-          Overrides {
-            Name: "ma:Building_WallInner:vtile"
-            Float: 0.1
-          }
-          Overrides {
-            Name: "ma:Building_WallOuter:vtile"
-            Float: 0.125
-          }
-          Overrides {
-            Name: "ma:Building_WallOuter:utile"
-            Float: 2.1621902
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 2452465297983906772
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          InteractWithTriggers: true
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
+            BoundsScale: 1
           }
         }
       }
     }
     Assets {
-      Id: 2452465297983906772
-      Name: "Fantasy Castle Wall 03 Half"
+      Id: 1628849511756280386
+      Name: "Whitebox Wall 01 Doorway 01 Frame"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_ts_fan_cas_wall_half_003"
+        AssetId: "sm_gen_whitebox_wall_001_doorframe"
       }
     }
     Assets {
@@ -573,5 +479,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

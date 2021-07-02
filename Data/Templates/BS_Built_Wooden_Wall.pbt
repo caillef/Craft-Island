@@ -37,14 +37,12 @@ Assets {
         Name: "BuiltWall"
         Transform {
           Location {
-            X: 200
           }
           Rotation {
-            Yaw: 180
           }
           Scale {
-            X: 0.25
-            Y: 0.25
+            X: 0.5
+            Y: 0.5
             Z: 0.5
           }
         }
@@ -53,13 +51,13 @@ Assets {
           Overrides {
             Name: "ma:Building_WallInner:id"
             AssetReference {
-              Id: 7426454697044131321
+              Id: 3605030238014728915
             }
           }
           Overrides {
             Name: "ma:Building_WallInner2:id"
             AssetReference {
-              Id: 7426454697044131321
+              Id: 3605030238014728915
             }
           }
           Overrides {
@@ -72,17 +70,55 @@ Assets {
           }
           Overrides {
             Name: "ma:Building_WallInner2:utile"
-            Float: 0.613038778
+            Float: 1
           }
           Overrides {
             Name: "ma:Building_WallInner:utile"
-            Float: 0.613
+            Float: 1
           }
           Overrides {
             Name: "ma:Building_WallOuter:color"
             Color {
               R: 0.179999948
               G: 0.0822516
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallOuter:id"
+            AssetReference {
+              Id: 15253620613510313924
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 15253620613510313924
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.179999948
+              G: 0.0822516
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner:color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
               A: 1
             }
           }
@@ -99,7 +135,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 453487308539368474
+            Id: 11953071235911961786
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -109,6 +145,7 @@ Assets {
           StaticMesh {
             Physics {
             }
+            BoundsScale: 1
           }
         }
       }
@@ -158,16 +195,16 @@ Assets {
       }
     }
     Assets {
-      Id: 453487308539368474
-      Name: "Craftsman Wall 02"
+      Id: 11953071235911961786
+      Name: "Whitebox Wall 01 Half"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_urb_sub_craftsman_wall_002"
+        AssetId: "sm_ts_gen_whitebox_wall_001_half"
       }
     }
     Assets {
-      Id: 7426454697044131321
+      Id: 3605030238014728915
       Name: "Wood Planks"
       PlatformAssetType: 2
       PrimaryAsset {
@@ -180,5 +217,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

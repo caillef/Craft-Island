@@ -310,7 +310,7 @@ Assets {
           }
           Image {
             Brush {
-              Id: 10068786726502919382
+              Id: 12117351831364607381
             }
             Color {
               R: 0.820000052
@@ -361,8 +361,8 @@ Assets {
         Control {
           Width: 50
           Height: 50
-          UIX: -26.4573975
-          UIY: -3.5295105
+          UIX: -13
+          UIY: -5
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -422,8 +422,7 @@ Assets {
         Control {
           Width: 200
           Height: 60
-          UIX: -95.24646
-          UIY: -1.76477051
+          UIX: -83
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -440,7 +439,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 841534158063459245
+              Id: 5201332512792357676
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -498,7 +497,7 @@ Assets {
           }
           Image {
             Brush {
-              Id: 10068786726502919382
+              Id: 12117351831364607381
             }
             Color {
               G: 0.440397084
@@ -549,7 +548,7 @@ Assets {
         Control {
           Width: 50
           Height: 50
-          UIX: -26.4573975
+          UIX: -13
           UIY: -3.5295105
           RenderTransformPivot {
             Anchor {
@@ -610,8 +609,7 @@ Assets {
         Control {
           Width: 200
           Height: 60
-          UIX: -105.82959
-          UIY: -1.76477051
+          UIX: -94
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -628,7 +626,7 @@ Assets {
             }
             AutoWrapText: true
             Font {
-              Id: 841534158063459245
+              Id: 5201332512792357676
             }
             VerticalJustification {
               Value: "mc:everticaljustification:center"
@@ -650,12 +648,12 @@ Assets {
       }
     }
     Assets {
-      Id: 10068786726502919382
-      Name: "BG Flat 009"
+      Id: 12117351831364607381
+      Name: "BG Flat 002"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "BackgroundNoOutline_26"
+        AssetId: "BackgroundNoOutline_019"
       }
     }
     Assets {
@@ -665,6 +663,15 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "UI_Fantasy_Equip_Coins_004"
+      }
+    }
+    Assets {
+      Id: 5201332512792357676
+      Name: "Roboto"
+      PlatformAssetType: 28
+      PrimaryAsset {
+        AssetType: "FontAssetRef"
+        AssetId: "RobotoRegular_ref"
       }
     }
     Assets {
@@ -681,5 +688,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

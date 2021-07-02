@@ -7,7 +7,7 @@ Assets {
       RootId: 11827591345804475796
       Objects {
         Id: 11827591345804475796
-        Name: "BS_Previsu_Big_Window_Wall_Wood"
+        Name: "BS_Preview_Big_Window_Wall_Wood"
         Transform {
           Scale {
             X: 1
@@ -15,8 +15,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13835058745715878551
-        ChildIds: 354821306111018628
+        ParentId: 4781671109827199097
+        ChildIds: 9619304678842725560
+        ChildIds: 17384904670710790380
         UnregisteredParameters {
           Overrides {
             Name: "cs:Built"
@@ -32,6 +33,88 @@ Assets {
           }
         }
         Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "BS_Previsu_Big_Window_Wall_Wood"
+        }
+      }
+      Objects {
+        Id: 9619304678842725560
+        Name: "Whitebox Wall 01 Half - Window Slot 1x"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.25
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 11827591345804475796
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_WallInner2:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner:id"
+            AssetReference {
+              Id: 231800746144079014
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:color"
+            Color {
+              R: 0.220000029
+              G: 0.488609076
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner:color"
+            Color {
+              R: 0.220000029
+              G: 0.488609076
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:smart"
+            Bool: false
+          }
+          Overrides {
+            Name: "ma:Building_WallInner:smart"
+            Bool: false
+          }
+          Overrides {
+            Name: "ma:Building_WallInner:vtile"
+            Float: 1
+          }
+          Overrides {
+            Name: "ma:Building_WallInner:utile"
+            Float: 0.5
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:utile"
+            Float: 0.5
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
@@ -40,50 +123,78 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "BS_Previsu_Big_Window_Wall_Wood"
+        CoreMesh {
+          MeshAsset {
+            Id: 6923167763518814697
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
         }
       }
       Objects {
-        Id: 354821306111018628
-        Name: "Preview"
+        Id: 17384904670710790380
+        Name: "Whitebox Wall 01 Half - Window Slot 1x"
         Transform {
           Location {
+            X: 100
+            Z: 70
           }
           Rotation {
           }
           Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
+            X: 0.45
+            Y: 0.5
+            Z: 0.55
           }
         }
         ParentId: 11827591345804475796
         UnregisteredParameters {
           Overrides {
-            Name: "ma:Building_WallInner:id"
-            AssetReference {
-              Id: 231800746144079014
-            }
-          }
-          Overrides {
             Name: "ma:Building_WallInner2:id"
             AssetReference {
-              Id: 231800746144079014
+              Id: 3605030238014728915
             }
           }
           Overrides {
-            Name: "ma:Building_Accent:id"
+            Name: "ma:Building_WallInner:id"
             AssetReference {
-              Id: 231800746144079014
+              Id: 3605030238014728915
             }
           }
           Overrides {
-            Name: "ma:Building_WallOuter:id"
-            AssetReference {
-              Id: 231800746144079014
+            Name: "ma:Building_WallInner2:color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
             }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner:color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:smart"
+            Bool: false
+          }
+          Overrides {
+            Name: "ma:Building_WallInner:smart"
+            Bool: false
           }
           Overrides {
             Name: "ma:Shared_Trim:id"
@@ -92,6 +203,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -99,31 +211,33 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:inheritfromparent"
         }
         CoreMesh {
           MeshAsset {
-            Id: 5192154625567753900
+            Id: 12690870342875295760
           }
           Teams {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
-          InteractWithTriggers: true
           StaticMesh {
             Physics {
+              Mass: 100
+              LinearDamping: 0.01
             }
+            BoundsScale: 1
           }
         }
       }
     }
     Assets {
-      Id: 5192154625567753900
-      Name: "Craftsman Wall 02 Window 3x"
+      Id: 6923167763518814697
+      Name: "Whitebox Wall 01 Window Large"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_urb_sub_craftsman_wall_002_window3x"
+        AssetId: "sm_ts_gen_whitebox_wall_001_windowL"
       }
     }
     Assets {
@@ -135,10 +249,28 @@ Assets {
         AssetId: "fxmi_basic_hologram"
       }
     }
+    Assets {
+      Id: 12690870342875295760
+      Name: "Craftsman Part - Window 01 2x"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_urb_sub_craftsman_part_window_001_2x"
+      }
+    }
+    Assets {
+      Id: 3605030238014728915
+      Name: "Wood Planks"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "mi_wood_planks_001_uv"
+      }
+    }
     PrimaryAssetId {
       AssetType: "None"
       AssetId: "None"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

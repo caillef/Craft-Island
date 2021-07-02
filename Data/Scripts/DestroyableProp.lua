@@ -91,16 +91,23 @@ function OnHit(data)
                 Events.Broadcast("TrackAction", {p=player, t=12, qty=1})
                 local tree = prop:FindChildByName("Built")
                 Task.Spawn(function()
+                    --TODO: Use debris physics
                     tree:RotateContinuous(Rotation.New(20, 0, 0))
                     Task.Wait(0.25)
                     tree:RotateContinuous(Rotation.New(40, 0, 0))
                     Task.Wait(0.25)
-                    tree:RotateContinuous(Rotation.New(80, 0, 0))
+                    if tree:IsValid() then
+                        tree:RotateContinuous(Rotation.New(80, 0, 0))
+                    end
                     Task.Wait(0.25)
                     FallSFX:Play()
-                    tree:RotateContinuous(Rotation.New(140, 0, 0))
+                    if tree:IsValid() then
+                        tree:RotateContinuous(Rotation.New(140, 0, 0))
+                    end
                     Task.Wait(0.25)
-                    tree:StopRotate()
+                    if tree:IsValid() then
+                        tree:StopRotate()
+                    end
                     Task.Wait(1)
                 end)
             end

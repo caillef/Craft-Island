@@ -41,6 +41,8 @@ table.insert(events, trigger.interactedEvent:Connect(OnInteract))
 Game.playerLeftEvent:Connect(function(player)
 	if player == currentPlayer then
 		currentPlayer = nil
-		trigger.isInteractable = true	
+		if trigger and trigger:IsValid() then
+			trigger.isInteractable = true
+		end
 	end
 end)

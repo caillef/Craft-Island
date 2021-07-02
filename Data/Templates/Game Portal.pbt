@@ -208,6 +208,7 @@ Assets {
           StaticMesh {
             Physics {
             }
+            BoundsScale: 1
           }
         }
       }
@@ -337,5 +338,5 @@ Assets {
       AssetId: "Game_Portal"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

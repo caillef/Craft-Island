@@ -62,11 +62,11 @@ Assets {
           }
           Overrides {
             Name: "ma:Building_Floor:smart"
-            Bool: true
+            Bool: false
           }
           Overrides {
             Name: "ma:Building_Ceiling:smart"
-            Bool: true
+            Bool: false
           }
           Overrides {
             Name: "ma:Shared_Trim:id"
@@ -76,7 +76,7 @@ Assets {
           }
           Overrides {
             Name: "ma:Shared_Trim:smart"
-            Bool: true
+            Bool: false
           }
         }
         WantsNetworking: true
@@ -101,6 +101,7 @@ Assets {
           StaticMesh {
             Physics {
             }
+            BoundsScale: 1
           }
         }
       }
@@ -172,5 +173,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

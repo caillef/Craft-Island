@@ -1,4 +1,4 @@
-﻿
+
 local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
 local propSharedKeyIslands = script:GetCustomProperty("SharedKeyIslands")
 
@@ -86,7 +86,7 @@ function SaveIsland(player)
     local slot = playersSpawns[player]
     local storage = Storage.GetSharedPlayerData(propSharedKeyIslands, player)
     storage.pBlocks = GetBlockSerializer().SerializeList(slot.island:FindChildByName("Structures"):GetChildren(), slot.pos)
-    if Storage.SizeOfData(storage) < 15800 then
+    if Storage.SizeOfData(storage) < 16000 then
         Storage.SetSharedPlayerData(propSharedKeyIslands, player, storage)
     else
         print("Warning: reached limit")
@@ -95,6 +95,7 @@ end
 
 function BuildingSystem_OnPlaceStructure(player, serializedBlock)
     local data = GetBlockSerializer().Deserialize(serializedBlock, playersSpawns[player].pos)
+    if not data then return end
     if not INVENTORY.PlayerHasItems(player, { id=data.type }) or
        not PlaceObject(player, data.pos, data.angle, data.type) then
         return
@@ -196,7 +197,7 @@ function PlaceObject(player, position, angle, type, isLoadingIsland)
     angle = getAlignedAngle(angle)
     placedObjects[player] = placedObjects[player] or {}
 
-    if CountNbStructures(placedObjects[player]) >= 2000 then
+    if not isLoadingIsland and CountNbStructures(placedObjects[player]) >= 2000 then
         while player and player:IsValid() and Events.BroadcastToPlayer(player, "BSLimit") ~= BroadcastEventResultCode.SUCCESS do
             Task.Wait(1)
         end
@@ -239,8 +240,6 @@ end
 
 
 function LoadPreviousBlocks(player)
-    if not player or not player:IsValid() then return end
-    playersSpawns[player].isLoading = true
     local storage = Storage.GetSharedPlayerData(propSharedKeyIslands, player) or {}
     storage.pBlocks = storage.pBlocks or "v2*25|0=-5,-3,0|270=-7,6,0|90=0,2,0_12|0=-2,-1,0;-2,0,0;-2,-2,0"
     local blocks = GetBlockSerializer().DeserializeList(storage.pBlocks, playersSpawns[player].pos)
@@ -249,7 +248,6 @@ function LoadPreviousBlocks(player)
         PlaceObject(player, data.pos, data.angle, data.type, true)
         i = i + 1
     end
-    playersSpawns[player].isLoading = false
 end
 
 function RemoveStructure(obj, player)
@@ -278,17 +276,24 @@ end
 function LoadIsland(slot)
     if slot == nil then AddLogEntry("Tried loading slot but got nil") return end
     local player = slot.player
+    if not player or not player:IsValid() then return end
     playersSpawns[player] = slot
+    playersSpawns[player].isLoading = true
     LoadPreviousBlocks(player)
+    playersSpawns[player].isLoading = false
 end
+Events.Connect("BSLI", LoadIsland)
 
 function UnloadIsland(slot)
     if slot == nil then AddLogEntry("Tried unloading slot but got nil") return end
     local player = slot.player
+    SaveIsland(player)
     slot.island:Destroy()
     placedObjects[player] = nil 
     playersSpawns[player] = nil
 end
+Events.Connect("BSULI", UnloadIsland)
+
 
 function OnInventoryReady(player)
     while playersSpawns[player] == nil do

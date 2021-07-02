@@ -396,6 +396,7 @@ Assets {
           StaticMesh {
             Physics {
             }
+            BoundsScale: 1
           }
         }
       }
@@ -440,6 +441,7 @@ Assets {
           StaticMesh {
             Physics {
             }
+            BoundsScale: 1
           }
         }
       }
@@ -467,5 +469,5 @@ Assets {
       AssetId: "Basic_Grenade"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

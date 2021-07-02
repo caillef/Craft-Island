@@ -366,6 +366,7 @@ Assets {
           StaticMesh {
             Physics {
             }
+            BoundsScale: 1
           }
         }
       }
@@ -859,5 +860,5 @@ Assets {
       AssetId: "Sky_Paradise_Planet"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

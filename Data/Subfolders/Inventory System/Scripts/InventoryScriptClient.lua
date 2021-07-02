@@ -1,6 +1,5 @@
-﻿local loading = true
+local loading = true
 
-local BUILD_MANAGER = script:GetCustomProperty("BuildingScript"):WaitForObject().context
 local propAddItemPanel = script:GetCustomProperty("AddItemPanel"):WaitForObject()
 local propAddItemNotif = script:GetCustomProperty("AddItemNotif")
 
@@ -70,7 +69,7 @@ end)
 do
 	fullTime = 400
 	local c = full:GetColor()
-	c.a = 1
+	c.a = 0
 	full:SetColor(c)
 	full.width = 0
 	full.text = startupMessage
@@ -341,7 +340,7 @@ function OnRemove(data, ii)		-- ii - the button
 		qtyText = GetItem(buttons[ii]):FindChildByType("UIText")
 		if data.qty == 0 then
 			GetItem(buttons[ii]):Destroy()
-			BUILD_MANAGER.SelectStructure(nil)
+			Events.Broadcast("SelectStructure", nil)
 		else
 			qtyText.text = (data.qty == 1 and "" or tostring(data.qty))
 		end
@@ -369,8 +368,8 @@ function Select(pickedIndex)
 		while _G["caillef.craftisland.findstructure"] == nil do
 			Task.Wait(0.1)
 		end
-		BUILD_MANAGER.SelectStructure(_G["caillef.craftisland.findstructure"](it.sourceTemplateId))
-	end
+		Events.Broadcast("SelectStructure", _G["caillef.craftisland.findstructure"](it.sourceTemplateId))
+		end
 end
 
 function OnMove(id, dest)

@@ -4,25 +4,13 @@ local propNotVIP = script:GetCustomProperty("NotVIP"):WaitForObject()
 local propNext = script:GetCustomProperty("Next"):WaitForObject()
 local propRewardButton = script:GetCustomProperty("RewardButton"):WaitForObject()
 local propNextAchivements = script:GetCustomProperty("NextAchivements"):WaitForObject()
+local propClickheretext = script:GetCustomProperty("Clickheretext"):WaitForObject()
 
 propUIPanel.visibility = Visibility.FORCE_OFF
 propVIP.visibility = Visibility.FORCE_OFF
 propNotVIP.visibility = Visibility.FORCE_OFF
 
 local player = Game.GetLocalPlayer()
-local isVIP = false
-
-Events.Connect("IsVIPR", function(date, vipuntil)
-	isVIP = vipuntil and date < vipuntil
-	if isVIP then
-		propNotVIP.visibility = Visibility.FORCE_OFF
-		propVIP.visibility = Visibility.FORCE_ON
-		propVIP:FindChildByType("UIText").text = "Member: VIP (golds x2, gems x3) (still "..math.floor((vipuntil - date) / 3600 / 24).." days and "..math.floor((vipuntil - date) / 3600 % 24).." hours)"
-	else
-		propVIP.visibility = Visibility.FORCE_OFF
-		propNotVIP.visibility = Visibility.FORCE_ON
-	end
-end)
 
 local function mysplit(inputstr, sep)
     if sep == nil then
@@ -88,19 +76,21 @@ Events.Connect("GetAchiR", function(rewardAvailable, data)
 		end
 		local description = mysplit(name, ";;")[1]..tostring(achievement.qtys[v.step])..mysplit(name, ";;")[2]
 		obj:FindDescendantByName("Name").text = description
-		obj:FindDescendantByName("Reward1Amount").text = tostring(v.step * 10)
-		obj:FindDescendantByName("Reward2Amount").text = tostring(v.step * 10)
+		obj:FindDescendantByName("Reward1Amount").text = tostring(v.step * 10)..(player:GetResource("VIP") == 1 and "(x2)" or "")
+		obj:FindDescendantByName("Reward2Amount").text = tostring(v.step * 5)..(player:GetResource("VIP") == 1 and "(x3)" or "")
 		i = i + 1
 	end
 end)
 
 function LoadUI()
-	Events.BroadcastToServer("IsVIP")
+	for _,child in pairs(propRewardButton:GetChildren()) do
+		child.visibility = Visibility.FORCE_OFF
+	end
 	Events.BroadcastToServer("GetAchi")
 end
 
 function OnBindingPressed(player, bindingPressed)
-    if bindingPressed == "ability_extra_29" then
+    if bindingPressed == "ability_extra_23" then
         propUIPanel.visibility = propUIPanel.visibility == Visibility.FORCE_ON and Visibility.FORCE_OFF or Visibility.FORCE_ON
         UI.SetCursorVisible(propUIPanel.visibility == Visibility.FORCE_ON)
         UI.SetCanCursorInteractWithUI(propUIPanel.visibility == Visibility.FORCE_ON)
@@ -134,6 +124,36 @@ propRewardButton.clickedEvent:Connect(function()
 	for _,child in pairs(propRewardButton:GetChildren()) do
 		child.visibility = Visibility.FORCE_OFF
 	end
+	propClickheretext.visibility = Visibility.FORCE_OFF
 end)
+
+local propUnlockVIP = script:GetCustomProperty("UnlockVIP"):WaitForObject()
+propUnlockVIP.clickedEvent:Connect(function()
+	propUIPanel.visibility = Visibility.FORCE_OFF
+	UI.SetCursorVisible(false)
+	UI.SetCanCursorInteractWithUI(false)
+	Events.Broadcast("ToggleVIPUI", true)
+end)
+
+player.resourceChangedEvent:Connect(function(player, resourceId, amount)
+	if resourceId ~= "VIP" then return end
+	if amount == 1 then
+		propNotVIP.visibility = Visibility.FORCE_OFF
+		propVIP.visibility = Visibility.FORCE_ON
+		propVIP:FindChildByType("UIText").text = "Member: VIP (golds x2, gems x3)"
+	else
+		propVIP.visibility = Visibility.FORCE_OFF
+		propNotVIP.visibility = Visibility.FORCE_ON
+	end
+end)
+if player:GetResource("VIP") == 1 then
+	propNotVIP.visibility = Visibility.FORCE_OFF
+	propVIP.visibility = Visibility.FORCE_ON
+	propVIP:FindChildByType("UIText").text = "Member: VIP (golds x2, gems x3)"
+else
+	propVIP.visibility = Visibility.FORCE_OFF
+	propNotVIP.visibility = Visibility.FORCE_ON
+end
+
 
 player.bindingPressedEvent:Connect(OnBindingPressed)

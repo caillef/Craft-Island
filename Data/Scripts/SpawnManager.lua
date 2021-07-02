@@ -1,15 +1,16 @@
-local BUILDING_SYSTEM = script:GetCustomProperty("BuildingSystemServerattherootofthe"):WaitForObject().context
 local TELEPORT_MANAGER = script:GetCustomProperty("TeleportManager"):WaitForObject().context
 local propPlayerIsland = script:GetCustomProperty("PlayerIsland")
 local propIslands = script:GetCustomProperty("Islands"):WaitForObject()
 
-local NB_MAX_PLAYERS = 4
-local SPACE_BETWEEN_ISLAND = 100000
+local NB_MAX_PLAYERS = 8
+local SPACE_BETWEEN_ISLAND = 8000
 
 local playerSlots = {}
 
 local function GetSpawnWorldPosition(i)
-    local pos = Vector3.ONE * i * SPACE_BETWEEN_ISLAND
+    local pos = Vector3.New()
+    pos.x = (i - 1) % (NB_MAX_PLAYERS / 2) * SPACE_BETWEEN_ISLAND + 30000
+    pos.y = math.floor((i - 1) / (NB_MAX_PLAYERS / 2)) * SPACE_BETWEEN_ISLAND
     pos.z = 0
     return pos
 end
@@ -76,14 +77,14 @@ function OnPlayerJoined(player)
         end
     end)
     Task.Wait(1)
-    BUILDING_SYSTEM.LoadIsland(slot)
+    Events.Broadcast("BSLI", slot) -- Building Manager Load Island
     TELEPORT_MANAGER.TeleportPlayerTo(player, "own_island")
 end
 
 function OnPlayerLeft(player)
     local slot = GetSpawnSlotForPlayer(player)
     if not slot then return end
-    BUILDING_SYSTEM.UnloadIsland(slot)
+    Events.Broadcast("BSULI", slot)
     slot.player = nil
     slot.island = nil
 end

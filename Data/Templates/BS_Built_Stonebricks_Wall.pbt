@@ -30,6 +30,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Built_Stonebricks_Wall"
         }
       }
       Objects {
@@ -85,7 +86,7 @@ Assets {
         Name: "Fantasy Castle Wall 01 Half"
         Transform {
           Location {
-            X: 199.972122
+            X: 200
           }
           Rotation {
             Yaw: 180
@@ -97,6 +98,28 @@ Assets {
           }
         }
         ParentId: 9022986329737783930
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_WallInner:id"
+            AssetReference {
+              Id: 17805378747911087859
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:id"
+            AssetReference {
+              Id: 17805378747911087859
+            }
+          }
+          Overrides {
+            Name: "ma:Building_WallInner:vtile"
+            Float: 1
+          }
+          Overrides {
+            Name: "ma:Building_WallInner2:vtile"
+            Float: 1
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -109,7 +132,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 2452465297983906772
+            Id: 11953071235911961786
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -121,17 +144,18 @@ Assets {
               Mass: 100
               LinearDamping: 0.01
             }
+            BoundsScale: 1
           }
         }
       }
     }
     Assets {
-      Id: 2452465297983906772
-      Name: "Fantasy Castle Wall 03 Half"
+      Id: 11953071235911961786
+      Name: "Whitebox Wall 01 Half"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_ts_fan_cas_wall_half_003"
+        AssetId: "sm_ts_gen_whitebox_wall_001_half"
       }
     }
     PrimaryAssetId {
@@ -139,5 +163,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

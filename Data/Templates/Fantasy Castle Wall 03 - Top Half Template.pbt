@@ -68,6 +68,7 @@ Assets {
           StaticMesh {
             Physics {
             }
+            BoundsScale: 1
           }
         }
       }
@@ -108,6 +109,7 @@ Assets {
           StaticMesh {
             Physics {
             }
+            BoundsScale: 1
           }
         }
       }
@@ -148,6 +150,7 @@ Assets {
           StaticMesh {
             Physics {
             }
+            BoundsScale: 1
           }
         }
       }
@@ -184,5 +187,5 @@ Assets {
       AssetId: "Fantasy_Castle_Wall_03_-_Top_Half_Template"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

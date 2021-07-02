@@ -100,6 +100,18 @@ Assets {
               A: 1
             }
           }
+          Overrides {
+            Name: "ma:Building_Ceiling:utile"
+            Float: 0.75
+          }
+          Overrides {
+            Name: "ma:Building_Roof:utile"
+            Float: 1
+          }
+          Overrides {
+            Name: "ma:Building_Roof:vtile"
+            Float: 0.75
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -123,6 +135,7 @@ Assets {
           StaticMesh {
             Physics {
             }
+            BoundsScale: 1
           }
         }
       }
@@ -203,5 +216,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 81
+  SerializationVersion: 91
 }

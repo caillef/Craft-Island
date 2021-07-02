@@ -205,6 +205,9 @@ function SelectStructure(id)
     currentPrevisu.collision = Collision.FORCE_OFF
     BuildSystem_Open()
 end
+Events.Connect("SelectStructure", function(id)
+    SelectStructure(id)
+end)
 
 function OnPlayerInitialized(data)
     islandPos = data.islandPos

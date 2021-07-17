@@ -43,5 +43,5 @@ Assets {
     Version: "1.0.0"
     Description: "Burlap Bags for grain/rice/treasure"
   }
-  SerializationVersion: 91
+  SerializationVersion: 92
 }

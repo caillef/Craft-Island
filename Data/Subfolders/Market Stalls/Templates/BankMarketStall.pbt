@@ -2360,6 +2360,6 @@ Assets {
   Marketplace {
     Description: "Three market stalls for selling things at the market!"
   }
-  SerializationVersion: 91
+  SerializationVersion: 92
   DirectlyPublished: true
 }

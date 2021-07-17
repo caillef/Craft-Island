@@ -14641,6 +14641,6 @@ Assets {
   Marketplace {
     Description: "Wood hut"
   }
-  SerializationVersion: 91
+  SerializationVersion: 92
   DirectlyPublished: true
 }

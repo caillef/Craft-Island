@@ -81,6 +81,10 @@ createObject(49, "STONEBRICKS_HALF_WALL", "Stone Bricks Half Wall", "A41A2492C9B
 createObject(50, "WOODEN_TRI_WALL", "Wood Triangle Wall", "31D16B93745142FD", "59128C7BC620BB43", "6C5FB010071FF0D5")
 createObject(51, "STONEBRICKS_TRI_WALL", "Stone Bricks Triangle Wall", "454F0A6798EB78A2", "DE0403C123E32DDE", "6C5FB010071FF0D5")
 
+createObject(52, "FISH", "Fish", nil, "D0217B0C80A7903E")
+createObject(53, "FISHING_ROD", "Fishing Rod", "5B12901D72C18C90", "E241E71578A23273")
+createObject(54, "COOKED_FISH", "Cooked Fish", nil, "80D099987281F9E9")
+
 for _,item in pairs(objects) do
     for _,item2 in pairs(objects) do
         if item ~= item2 then
@@ -148,6 +152,11 @@ _G["caillef.craftisland.crafts"] = {
         { "COOKING_TABLE", 1 },
         CRAFTING_TABLE
 	},
+    {
+		{ "WOOD_LOG", 5 },
+        { "FISHING_ROD", 1 },
+        CRAFTING_TABLE
+	},
 	{
 		{ "WOOD_LOG", 5 },
         { "CHAIR", 1 },
@@ -177,6 +186,7 @@ _G["caillef.craftisland.buysell"] = {
         { SELL, "BREAD", 10 },
         { SELL, "CARROT_CAKE", 30 },
         { SELL, "BERRY_PIE", 100 },
+        { SELL, "COOKED_FISH", 50 },
     },
     { -- 2 for seeds
         { BUY, "SAPLING", 50 },

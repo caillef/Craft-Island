@@ -16,12 +16,18 @@ Objects {
   }
   ChildIds: 12292613699356748057
   ChildIds: 2933062870931889915
+  ChildIds: 9416028156443735960
   ChildIds: 12243267191862395269
   ChildIds: 11584135646992845074
-  ChildIds: 9416028156443735960
   ChildIds: 11678237838342285850
   ChildIds: 15498874708719638745
   ChildIds: 3158832844170323818
+  ChildIds: 14230598138946358933
+  ChildIds: 4888686829961194661
+  ChildIds: 276426636095154814
+  ChildIds: 5576106819183588476
+  ChildIds: 15086921634544753310
+  ChildIds: 17872065178085272721
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -34,6 +40,275 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 17872065178085272721
+  Name: "Palm Tree"
+  Transform {
+    Location {
+      X: -7163.96875
+      Y: 1558.15039
+      Z: 1718.11487
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16943467546914236483
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Palm Tree"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -5367.06787
+            Y: 1564.79553
+            Z: 1622.61511
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 103.942528
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 8528089699025246121
+    }
+  }
+}
+Objects {
+  Id: 15086921634544753310
+  Name: "Palm Tree"
+  Transform {
+    Location {
+      X: -5673.80078
+      Y: -1423.85742
+      Z: 1546.12439
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16943467546914236483
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Palm Tree"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -3941.57153
+            Y: -131.153625
+            Z: 1734.51245
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -136.486984
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 11703909996055005150
+    }
+  }
+}
+Objects {
+  Id: 5576106819183588476
+  Name: "Palm Tree"
+  Transform {
+    Location {
+      X: -7048.06104
+      Y: 1638.07935
+      Z: 1718.11487
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16943467546914236483
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Palm Tree"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -5804.97607
+            Y: -1423.85742
+            Z: 1546.12439
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -101.250061
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 11703909996055005150
+    }
+  }
+}
+Objects {
+  Id: 276426636095154814
+  Name: "Palm Tree"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16943467546914236483
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Palm Tree"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -7163.96875
+            Y: 1558.15039
+            Z: 1718.11487
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 8528089699025246121
+    }
+  }
+}
+Objects {
+  Id: 4888686829961194661
+  Name: "RewardPointsDaily"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9525272680058773397
+    }
+  }
+}
+Objects {
+  Id: 14230598138946358933
+  Name: "Minigam Fishing System"
+  Transform {
+    Location {
+      X: -5211.88428
+      Y: -187.518311
+      Z: 1542.91833
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Minigam Fishing System"
+  }
+  InstanceHistory {
+    SelfId: 14230598138946358933
+    SubobjectId: 13324258260031528677
+    InstanceId: 11638937993570712534
+    TemplateId: 15898429781010274466
+    WasRoot: true
   }
 }
 Objects {
@@ -370,7 +645,7 @@ Objects {
       Z: 9.91375732
     }
     Rotation {
-      Yaw: -24.3938961
+      Yaw: -24.3938904
     }
     Scale {
       X: 0.387827456
@@ -3347,35 +3622,6 @@ Objects {
   }
 }
 Objects {
-  Id: 9416028156443735960
-  Name: "Systems"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Systems"
-  }
-}
-Objects {
   Id: 11584135646992845074
   Name: "ServerScripts"
   Transform {
@@ -6207,6 +6453,35 @@ Objects {
     ScriptAsset {
       Id: 11526358357864682441
     }
+  }
+}
+Objects {
+  Id: 9416028156443735960
+  Name: "Systems"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Systems"
   }
 }
 Objects {

@@ -29,6 +29,7 @@ local achievements = {
 	{ type = 14, name = "Buy ;; carrot seeds", qtys = { 1 } },
 	{ type = 15, name = "Buy ;; berry sprouts", qtys = { 1 } },
 	{ type = 16, name = "Craft ;; cooking table.", qtys = { 1 } },
+	{ type = 17, name = "Cook ;; fish.", qtys = { 1, 10, 25, 50, 100, 200, 500, 1000 } },
 }
 local NB_ACHIEVEMENTS = #achievements
 

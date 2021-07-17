@@ -86,7 +86,7 @@ function SetItemEmptySlot(item)
 	return false
 end
 
-local raw_item_list = { "DOUGH", "BERRY_PIE_DOUGH", "CARROT_CAKE_DOUGH" }
+local raw_item_list = { "DOUGH", "BERRY_PIE_DOUGH", "CARROT_CAKE_DOUGH", "FISH" }
 
 function word_in_list(list, word)
 	if not word then return false end
@@ -128,6 +128,8 @@ function Tick()
 								TransformItem(f, QueryObject("BERRY_PIE"), i, updateUI)
 							elseif f.slots[i].idName == "DOUGH" then
 								TransformItem(f, QueryObject("BREAD"), i, updateUI)
+							elseif f.slots[i].idName == "FISH" then
+								TransformItem(f, QueryObject("COOKED_FISH"), i, updateUI)
 							elseif f.slots[i].idName == "CARROT_CAKE_DOUGH" then
 								TransformItem(f, QueryObject("CARROT_CAKE"), i, updateUI)
 							end
@@ -179,6 +181,7 @@ Events.Connect("InventoryFastMove", function(buttonIndex, icon)
 	end
 	if (item.idName == "DOUGH" and SetItemEmptySlot(QueryObject("DOUGH"))) or
 		(item.idName == "BERRY_PIE_DOUGH" and SetItemEmptySlot(QueryObject("BERRY_PIE_DOUGH"))) or
+		(item.idName == "FISH" and SetItemEmptySlot(QueryObject("FISH"))) or
 		(item.idName == "CARROT_CAKE_DOUGH" and SetItemEmptySlot(QueryObject("CARROT_CAKE_DOUGH"))) then
 		while Events.BroadcastToServer("removeItem", { idName=item.idName }, 1) ~= BroadcastEventResultCode.SUCCESS do
 			Task.Wait(1)
@@ -242,6 +245,10 @@ function OnPress(_, key)
 		if idName == "CARROT_CAKE" then
 			Task.Wait(0.3)
 			Events.BroadcastToServer("TrackAction", { p=Game.GetLocalPlayer(), t=8, qty=1 })
+		end
+		if idName == "COOKED_FISH" then
+			Task.Wait(0.3)
+			Events.BroadcastToServer("TrackAction", { p=Game.GetLocalPlayer(), t=17, qty=1 })
 		end
 		f.slotsTimer[hoveredSlotIndex] = nil
 		f.slots[hoveredSlotIndex] = nil

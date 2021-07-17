@@ -45753,7 +45753,6 @@ Objects {
   ChildIds: 12719046417129091663
   ChildIds: 11426492425935201379
   ChildIds: 2877597540733440094
-  ChildIds: 13398116596257927102
   ChildIds: 5726556702662914862
   ChildIds: 9806235200343985608
   ChildIds: 9129838218751865285
@@ -47161,84 +47160,12 @@ Objects {
   }
 }
 Objects {
-  Id: 13398116596257927102
-  Name: "Tree"
-  Transform {
-    Location {
-      X: -2493.93652
-      Y: 139.93396
-      Z: 2146.86401
-    }
-    Rotation {
-      Pitch: 6.92110538
-      Yaw: 2.46393776
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 12770056801352948475
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Nature_Trunk:smart"
-      Bool: false
-    }
-    Overrides {
-      Name: "ma:Nature_Trunk:color"
-      Color {
-        R: 0.669999957
-        G: 0.332781464
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Trunk:id"
-      AssetReference {
-        Id: 14307244558911102288
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 9086663986850406737
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    InteractWithTriggers: true
-    StaticMesh {
-      Physics {
-      }
-      BoundsScale: 1
-    }
-  }
-  InstanceHistory {
-    SelfId: 13398116596257927102
-    SubobjectId: 3494863415926496995
-    InstanceId: 5185527036259570636
-    TemplateId: 1025420993210746566
-    WasRoot: true
-  }
-}
-Objects {
   Id: 2877597540733440094
   Name: "Tree"
   Transform {
     Location {
       X: -3176.5686
-      Y: -1025.19983
+      Y: -1468.25867
       Z: 2119.5061
     }
     Rotation {

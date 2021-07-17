@@ -47,10 +47,13 @@ Assets {
             }
             Size: 20
             Justification {
-              Value: "mc:etextjustify:right"
+              Value: "mc:etextjustify:center"
             }
             AutoWrapText: true
             Font {
+            }
+            VerticalJustification {
+              Value: "mc:everticaljustification:center"
             }
           }
           AnchorLayout {
@@ -104,5 +107,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 91
+  SerializationVersion: 92
 }

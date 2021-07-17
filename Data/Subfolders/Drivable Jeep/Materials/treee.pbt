@@ -2,7 +2,7 @@ Assets {
   Id: 10657680607618848076
   Name: "treee"
   PlatformAssetType: 13
-  SerializationVersion: 91
+  SerializationVersion: 92
   CustomMaterialAsset {
     BaseMaterialId: 8866898709121265691
     ParameterOverrides {

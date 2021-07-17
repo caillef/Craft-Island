@@ -8,12 +8,12 @@ Tags: "Simulation"
 Tags: "OpenWorld"
 Tags: "Farming"
 Tags: "ThirdPerson"
-ScreenshotPaths: "C:\\Users\\hiind\\Desktop\\Core\\Craft.png"
-ScreenshotPaths: "C:\\Users\\hiind\\Documents\\My Games\\CORE\\Saved\\Maps\\Craft Island\\Screenshots\\Screenshot0004.png"
-ScreenshotPaths: "C:\\Users\\hiind\\Desktop\\Core\\craftisland2.png"
-ScreenshotPaths: "C:\\Users\\hiind\\Desktop\\Core\\Capture d\342\200\231\303\251cran 2021-04-20 232536.png"
+ScreenshotPaths: "C:\\Users\\hiind\\Desktop\\Craft (1).png"
 ScreenshotPaths: "C:\\Users\\hiind\\Desktop\\Core\\craftisland.png"
+ScreenshotPaths: "C:\\Users\\hiind\\Desktop\\Core\\craftisland2.png"
+ScreenshotPaths: "C:\\Users\\hiind\\Documents\\My Games\\CORE\\Saved\\Maps\\Craft Island\\Screenshots\\Screenshot0004.png"
 OwnerId: "be87c969b2e5444dac5c09d330a142ab"
 SerializationVersion: 1
 PublishedState: Public
 CubemapPath: "C:/Users/hiind/Documents/My Games/CORE/Saved/Maps/Craft Island/Screenshots/Cubemaps/Cubemap0001.png"
+ContainsRewardPointEvents: true

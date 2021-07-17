@@ -32379,5 +32379,5 @@ Assets {
       AssetId: "Craftsman_House_01"
     }
   }
-  SerializationVersion: 91
+  SerializationVersion: 92
 }

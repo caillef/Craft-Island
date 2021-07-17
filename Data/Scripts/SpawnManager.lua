@@ -2,7 +2,7 @@ local TELEPORT_MANAGER = script:GetCustomProperty("TeleportManager"):WaitForObje
 local propPlayerIsland = script:GetCustomProperty("PlayerIsland")
 local propIslands = script:GetCustomProperty("Islands"):WaitForObject()
 
-local NB_MAX_PLAYERS = 8
+local NB_MAX_PLAYERS = 4
 local SPACE_BETWEEN_ISLAND = 8000
 
 local playerSlots = {}

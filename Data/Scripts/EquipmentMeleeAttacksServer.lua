@@ -28,6 +28,7 @@ end
 
 -- Internal variables
 local abilityList = {}
+local globalHitbox
 
 -- nil Tick()
 -- Checks the players within hitbox, and makes sure swipe effects stay at the player's location
@@ -48,6 +49,17 @@ function Tick()
             end
         end
     end
+end
+
+local function mysplit(inputstr, sep)
+    if sep == nil then
+            sep = "%s"
+    end
+    local t={}
+    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+            table.insert(t, str)
+    end
+    return t
 end
 
 -- nil MeleeAttack(Player)
@@ -74,6 +86,48 @@ function MeleeAttack(player, abilityInfo)
     end
 end
 
+function CheckForProp(prop)
+    local player = EQUIPMENT.owner
+    print(player.id)
+    if not (prop and prop.name ~= "BuildingZone") then return false end
+    if prop and prop:IsValid() and prop.parent and prop.parent.name == "Geo" then
+        prop = prop.parent
+    end
+    if not prop.parent then return false end
+    local eventObjectId = "H"..mysplit(prop.parent.id, ":")[1]
+    print(">", eventObjectId)
+    if prop and prop:IsValid() and prop.parent and prop.parent.parent then
+        print(prop.parent.parent.name)
+        -- Is on mining island
+        if prop.parent.parent.name == "Rocks" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
+            Events.Broadcast(eventObjectId, { p=player.id, t=0 })
+            return true
+        end
+        -- Is on player island with pickaxe
+        if (prop.parent.parent.name == "Static Structures" or prop.parent.parent.name == "Structures") and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
+            print("go")
+            Events.Broadcast(eventObjectId, { p=player.id, t=0 })
+            return true
+        end
+        -- Is on player island with axe
+        if (prop.parent.parent.name == "Static Structures" or prop.parent.parent.name == "Structures") and EQUIPMENT.sourceTemplateId == "F27A87BB28DA0B17" then
+            print("go")
+            Events.Broadcast(eventObjectId, { p=player.id, t=1 })
+            return true
+        end
+    end
+    return false
+end
+
+function ActionOnCloserProp()
+    for _,prop in ipairs(globalHitbox:GetOverlappingObjects()) do
+        if CheckForProp(prop) then
+            return
+        end
+    end
+end
+
+local prop
 -- nil OnBeginOverlap(Trigger, Object)
 -- Event when the hitbox hits a player
 function OnBeginOverlap(trigger, other)
@@ -98,6 +152,7 @@ function OnExecute(ability)
     for _, abilityInfo in ipairs(abilityList) do
         if abilityInfo.ability == ability then
             abilityInfo.canAttack = true
+            ActionOnCloserProp()
             abilityInfo.ignoreList = {}
         end
     end
@@ -130,6 +185,7 @@ for _, ability in ipairs(abilityDescendants) do
 
     if hitBox then
         hitBox = ability:GetCustomProperty("Hitbox"):WaitForObject()
+        globalHitbox = hitBox
         hitBox.beginOverlapEvent:Connect(OnBeginOverlap)
 
         ability.executeEvent:Connect(OnExecute)

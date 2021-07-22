@@ -21,7 +21,7 @@ function GetCurrentTime()
 end
 
 function SpawnNextStep()
-    World.GetRootObject():FindChildByName("ServerScripts"):FindChildByName("BuildingSystemServer").context.Grow(script.parent, growthConfig[3], owner)
+    Events.Broadcast("Grow", script.parent, growthConfig[3], owner)
 end
 
 local dateNextGrowth = GetCurrentTime() + math.random(growthConfig[1], growthConfig[2])

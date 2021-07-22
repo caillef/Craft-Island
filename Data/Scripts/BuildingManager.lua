@@ -1,4 +1,5 @@
-local propUIPanel = script:GetCustomProperty("UIPanel"):WaitForObject()
+﻿local propUIPanel = script:GetCustomProperty("UIPanel"):WaitForObject()
+local PREVIEW_MATERIAL = script:GetCustomProperty("MatPreviewHologram")
 
 local ACTION_PLACE = "ability_primary" -- left click
 local ACTION_ROTATE = "ability_secondary" -- right click
@@ -193,12 +194,17 @@ function SelectStructure(id)
         end
         currentPrevisu = nil
     end
-    if id == nil or not PlayerCanBuild() or GetObjectsList()[id].previewMuid == nil then
+    if id == nil or not PlayerCanBuild() or not GetObjectsList()[id].canBeBuilt then
         objectIndex = nil
         return BuildSystem_Close()
     end
     objectIndex = id
     currentPrevisu = World.SpawnAsset(GetObjectsList()[id].previewMuid)
+    -- currentPrevisu = World.SpawnAsset(GetObjectsList()[id].templateMuid)
+    --currentPrevisu.collision = Collision.FORCE_OFF
+    -- for _, materialSlot in pairs(currentPrevisu:GetMaterialSlots()) do
+    --     currentPrevisu:SetMaterialForSlot(PREVIEW_MATERIAL, materialSlot.slotName)
+    -- end
     if triggerOverlapEvent then
         triggerOverlapEvent:Disconnect()
     end

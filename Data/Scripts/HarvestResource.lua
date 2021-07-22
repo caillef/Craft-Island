@@ -1,4 +1,4 @@
-﻿local propTrigger = script:GetCustomProperty("Trigger"):WaitForObject()
+local propTrigger = script:GetCustomProperty("Trigger"):WaitForObject()
 
 local function mysplit(inputstr, sep)
     if sep == nil then
@@ -14,6 +14,7 @@ end
 local eventName = "H"..mysplit(propTrigger.parent.id, ":")[1]
 
 function OnHarvest(trigger, other)
+	print(eventName)
     Events.Broadcast(eventName, { p=other.id, harvest=true, pos = trigger.parent:GetWorldPosition(), angle = trigger.parent:GetRotation().z, t=2 })
 end
 

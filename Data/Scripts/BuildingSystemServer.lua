@@ -1,4 +1,4 @@
-
+﻿
 local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
 local propSharedKeyIslands = script:GetCustomProperty("SharedKeyIslands")
 
@@ -83,9 +83,16 @@ end
 
 function SaveIsland(player)
     if not player or not player:IsValid() then print("Warning: tried to save island of not valid player") return end
-    local slot = playersSpawns[player]
+    local island = playersSpawns[player]
     local storage = Storage.GetSharedPlayerData(propSharedKeyIslands, player)
-    storage.pBlocks = GetBlockSerializer().SerializeList(slot.island:FindChildByName("Structures"):GetChildren(), slot.pos)
+    local objectsList = {}
+    for _,obj in pairs(island:FindChildByName("Static Structures"):GetChildren()) do
+        table.insert(objectsList, obj)
+    end
+    for _,obj in pairs(island:FindChildByName("Structures"):GetChildren()) do
+        table.insert(objectsList, obj)
+    end
+    storage.pBlocks = GetBlockSerializer().SerializeList(objectsList, island:GetWorldPosition())
     if Storage.SizeOfData(storage) < 16000 then
         Storage.SetSharedPlayerData(propSharedKeyIslands, player, storage)
     else
@@ -94,7 +101,7 @@ function SaveIsland(player)
 end
 
 function BuildingSystem_OnPlaceStructure(player, serializedBlock)
-    local data = GetBlockSerializer().Deserialize(serializedBlock, playersSpawns[player].pos)
+    local data = GetBlockSerializer().Deserialize(serializedBlock, playersSpawns[player]:GetWorldPosition())
     if not data then return end
     if not INVENTORY.PlayerHasItems(player, { id=data.type }) or
        not PlaceObject(player, data.pos, data.angle, data.type) then
@@ -157,7 +164,7 @@ function Grow(objReplaced, newIdName, player)
                 local player = obj.player
                 local parent = objReplaced.parent
                 local rotation = objReplaced:GetRotation()
-                RemoveStructure(objReplaced, player)
+                RemoveStructure(player, objReplaced)
                 local newObj = QueryObject(newIdName)
                 local obj = World.SpawnAsset(newObj.templateMuid, { parent=parent , position = pos, rotation = rotation })
                 AssignPlayerToObject(obj, player)
@@ -175,6 +182,8 @@ function Grow(objReplaced, newIdName, player)
     print("Error while growing "..objReplaced.name)
     print(placedTypedObjects, placedTypedObjects[pos.z], placedTypedObjects[pos.z][pos.y], placedTypedObjects[pos.z][pos.y][pos.x])
 end
+
+Events.Connect("Grow", Grow)
 
 function CountNbStructures(placedObjects)
     local sum = 0
@@ -205,7 +214,7 @@ function PlaceObject(player, position, angle, type, isLoadingIsland)
     end
 
     local placedTypedObjects = placedObjects[player][type] or {}
-    position = position - playersSpawns[player].island:FindChildByName("Structures"):GetWorldPosition()
+    position = position - playersSpawns[player]:FindChildByName("Static Structures"):GetWorldPosition()
     if placedTypedObjects[position.z] ~= nil and
        placedTypedObjects[position.z][position.y] ~= nil and
        placedTypedObjects[position.z][position.y][position.x] ~= nil and
@@ -214,17 +223,17 @@ function PlaceObject(player, position, angle, type, isLoadingIsland)
     end
 
     local mandatorySurface = GetObjectsList()[type].buildConditions and GetObjectsList()[type].buildConditions.mustBeBuiltOn or nil
-    if not playersSpawns[player].isLoading and mandatorySurface then
+    if not playersSpawns[player].serverUserData.isLoading and mandatorySurface then
         local surfaceObjects = placedObjects[player][mandatorySurface] or {}
         local block = GetStructureOnCellFromList(surfaceObjects, position, player)
         if not block or block.player ~= player then
             --TODO: send player message saying that he can't build on this type of block
             return
         end
-        RemoveStructure(block.obj, player)        
+        RemoveStructure(player, block.obj)        
     end
 
-    local obj = World.SpawnAsset(GetObjectsList()[type].templateMuid, { position = position, rotation = Rotation.New(0, 0, angle), parent = playersSpawns[player].island:FindChildByName("Structures") })
+    local obj = World.SpawnAsset(GetObjectsList()[type].templateMuid, { position = position, rotation = Rotation.New(0, 0, angle), parent = playersSpawns[player]:FindChildByName(GetObjectsList()[type].isNetworked and "Structures" or "Static Structures") })
     AssignPlayerToObject(obj, player)
     placedTypedObjects[position.z] = placedTypedObjects[position.z] or {}
     placedTypedObjects[position.z][position.y] = placedTypedObjects[position.z][position.y] or {}
@@ -242,7 +251,7 @@ end
 function LoadPreviousBlocks(player)
     local storage = Storage.GetSharedPlayerData(propSharedKeyIslands, player) or {}
     storage.pBlocks = storage.pBlocks or "v2*25|0=-5,-3,0|270=-7,6,0|90=0,2,0_12|0=-2,-1,0;-2,0,0;-2,-2,0"
-    local blocks = GetBlockSerializer().DeserializeList(storage.pBlocks, playersSpawns[player].pos)
+    local blocks = GetBlockSerializer().DeserializeList(storage.pBlocks, playersSpawns[player]:GetWorldPosition())
     local i = 0
     for _,data in pairs(blocks) do
         PlaceObject(player, data.pos, data.angle, data.type, true)
@@ -250,7 +259,7 @@ function LoadPreviousBlocks(player)
     end
 end
 
-function RemoveStructure(obj, player)
+function RemoveStructure(player, obj)
     if not obj or not obj:IsValid() then
         print("Warning: Tried to removed nil object")
         return
@@ -272,15 +281,16 @@ function RemoveStructure(obj, player)
     obj:Destroy()
     return true
 end
+Events.ConnectForPlayer("RemoveStructure", RemoveStructure)
 
-function LoadIsland(slot)
-    if slot == nil then AddLogEntry("Tried loading slot but got nil") return end
-    local player = slot.player
+function LoadIsland(island)
+    if island == nil then AddLogEntry("Tried loading island but got nil") return end
+    local player = island.serverUserData.player
     if not player or not player:IsValid() then return end
-    playersSpawns[player] = slot
-    playersSpawns[player].isLoading = true
+    playersSpawns[player] = island
+    playersSpawns[player].serverUserData.isLoading = true
     LoadPreviousBlocks(player)
-    playersSpawns[player].isLoading = false
+    playersSpawns[player].serverUserData.isLoading = false
 end
 Events.Connect("BSLI", LoadIsland)
 
@@ -288,7 +298,12 @@ function UnloadIsland(slot)
     if slot == nil then AddLogEntry("Tried unloading slot but got nil") return end
     local player = slot.player
     SaveIsland(player)
-    slot.island:Destroy()
+    for _,obj in ipairs(slot.island:FindDescendantByName("Static Structures"):GetChildren()) do
+        obj:Destroy()
+    end
+    for _,obj in ipairs(slot.island:FindDescendantByName("Structures"):GetChildren()) do
+        obj:Destroy()
+    end
     placedObjects[player] = nil 
     playersSpawns[player] = nil
 end
@@ -300,7 +315,7 @@ function OnInventoryReady(player)
         Task.Wait(0.1)
     end
     Task.Wait(math.random())
-    while player and player:IsValid() and Events.BroadcastToPlayer(player, "OnPlayerInitialized", {islandPos = playersSpawns[player].pos}) ~= BroadcastEventResultCode.SUCCESS do
+    while player and player:IsValid() and Events.BroadcastToPlayer(player, "OnPlayerInitialized", {islandPos = playersSpawns[player]:GetWorldPosition() }) ~= BroadcastEventResultCode.SUCCESS do
         Task.Wait(1)
     end
 end

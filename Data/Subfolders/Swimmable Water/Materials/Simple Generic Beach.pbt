@@ -60,7 +60,7 @@ Assets {
       }
       Overrides {
         Name: "opacity"
-        Float: 0.968325913
+        Float: 1
       }
       Overrides {
         Name: "normal distance"

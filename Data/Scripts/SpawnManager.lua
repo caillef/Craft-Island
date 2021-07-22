@@ -1,26 +1,26 @@
-local TELEPORT_MANAGER = script:GetCustomProperty("TeleportManager"):WaitForObject().context
-local propPlayerIsland = script:GetCustomProperty("PlayerIsland")
+﻿local TELEPORT_MANAGER = script:GetCustomProperty("TeleportManager"):WaitForObject().context
+-- local propPlayerIsland = script:GetCustomProperty("PlayerIsland")
 local propIslands = script:GetCustomProperty("Islands"):WaitForObject()
 
 local NB_MAX_PLAYERS = 4
-local SPACE_BETWEEN_ISLAND = 8000
+-- local SPACE_BETWEEN_ISLAND = 8000
 
 local playerSlots = {}
 
-local function GetSpawnWorldPosition(i)
-    local pos = Vector3.New()
-    pos.x = (i - 1) % (NB_MAX_PLAYERS / 2) * SPACE_BETWEEN_ISLAND + 30000
-    pos.y = math.floor((i - 1) / (NB_MAX_PLAYERS / 2)) * SPACE_BETWEEN_ISLAND
-    pos.z = 0
-    return pos
-end
+-- local function GetSpawnWorldPosition(i)
+--     local pos = Vector3.New()
+--     pos.x = (i - 1) % (NB_MAX_PLAYERS / 2) * SPACE_BETWEEN_ISLAND + 30000
+--     pos.y = math.floor((i - 1) / (NB_MAX_PLAYERS / 2)) * SPACE_BETWEEN_ISLAND
+--     pos.z = 0
+--     return pos
+-- end
 
 local function initPlayerSpots()
     for i=1,NB_MAX_PLAYERS do
         playerSlots[i] = {
-            pos = GetSpawnWorldPosition(i),
+            pos = propIslands:GetChildren()[i]:GetWorldPosition(),
             player = nil,
-            island = nil
+            island = propIslands:GetChildren()
         } 
     end
 end
@@ -28,13 +28,17 @@ initPlayerSpots()
 
 local function PrepareSlot(player, slot)
     slot.player = player
-    slot.island = World.SpawnAsset(propPlayerIsland, { position = slot.pos, parent = propIslands })
+    for _,island in pairs(propIslands:GetChildren()) do
+        if island.serverUserData.owner == nil then
+            island.serverUserData.owner = player
+        end
+    end
     return slot
 end
 
 local function AssignNextSlot(player)
     for _,s in pairs(playerSlots) do
-        if (s.player == nil or not s.player:IsValid()) and s.island == nil then
+        if (s.player == nil or not s.player:IsValid()) then
             local slot = PrepareSlot(player, s)
             return slot
         end
@@ -60,9 +64,13 @@ function OnPlayerJoined(player)
     local slot = AssignNextSlot(player)
     if slot == nil then return end
     local buildingZone = slot.island:FindChildByName("BuildingZone")
+    print(">>>MLDMLD")
     buildingZone.beginOverlapEvent:Connect(function(trigger, other)
+        print("AAA")
         if not player:IsValid() or not other:IsValid() then return end
+        print("BBB")
         if not other:IsA("Player") then return end
+        print("CCC")
         permissionsAll[other.id] = player == other
         while other:IsValid() and Events.BroadcastToPlayer(other, "OnBuildPermission", player == other) ~= BroadcastEventResultCode.SUCCESS do
             Task.Wait(1)
@@ -86,6 +94,7 @@ function OnPlayerLeft(player)
     if not slot then return end
     Events.Broadcast("BSULI", slot)
     slot.player = nil
+    slot.island.serverUserData.owner = nil
     slot.island = nil
 end
 

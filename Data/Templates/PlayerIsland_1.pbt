@@ -19,6 +19,7 @@ Assets {
         ChildIds: 14249821473658384158
         ChildIds: 5255360405524450925
         ChildIds: 10226459261057948952
+        ChildIds: 7621933295517006939
         ChildIds: 16416874873876112814
         ChildIds: 7057006111918251491
         WantsNetworking: true
@@ -467,6 +468,38 @@ Assets {
         }
       }
       Objects {
+        Id: 7621933295517006939
+        Name: "Static Structures"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 10521384055258147901
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+          Type: RuntimeStatic
+        }
+      }
+      Objects {
         Id: 16416874873876112814
         Name: "Structures"
         Transform {
@@ -507,9 +540,9 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 41.1000023
-            Y: 40.2
-            Z: 34.6000023
+            X: 40
+            Y: 40
+            Z: 34
           }
         }
         ParentId: 10521384055258147901

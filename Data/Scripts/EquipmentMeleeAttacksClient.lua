@@ -149,37 +149,40 @@ local function mysplit(inputstr, sep)
     return t
 end
 
-function ActionOnCloserProp()
-    for _,prop in ipairs(weaponHitbox:GetOverlappingObjects()) do
-        if prop and prop.name ~= "BuildingZone" then
-            print(prop.name)
-            if prop and prop:IsValid() and prop.parent and prop.parent.name == "Geo" then
-                prop = prop.parent
-            end
-            if prop.parent then
-                local eventObjectId = "H"..mysplit(prop.parent.id, ":")[1]
-                print(">", eventObjectId)
-                -- Is on mining island
-                if prop and prop:IsValid() and prop.parent and prop.parent.parent and prop.parent.parent.name == "Rocks" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
-                    Events.BroadcastToServer(eventObjectId, { p=Game.GetLocalPlayer().id, t=0 })
-                    return
-                end
-    
-                -- Is on player island with pickaxe
-                if prop and prop:IsValid() and prop.parent and prop.parent.parent and prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
-                    Events.BroadcastToServer(eventObjectId, { p=Game.GetLocalPlayer().id, t=0 })
-                    return
-                end
-    
-                -- Is on player island with axe
-                if prop and prop:IsValid() and prop.parent and prop.parent.parent and prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "F27A87BB28DA0B17" then
-                    Events.BroadcastToServer(eventObjectId, { p=Game.GetLocalPlayer().id, t=1 })
-                    return
-                end
-            end
-        end
-    end
-end
+-- function ActionOnCloserProp()
+--     for _,prop in ipairs(weaponHitbox:GetOverlappingObjects()) do
+--         if prop and prop.name ~= "BuildingZone" then
+--             print(prop.name)
+--             if prop and prop:IsValid() and prop.parent and prop.parent.name == "Geo" then
+--                 prop = prop.parent
+--             end
+--             if prop.parent then
+--                 local eventObjectId = "H"..mysplit(prop.parent.id, ":")[1]
+--                 print(">", eventObjectId)
+--                 if prop and prop:IsValid() and prop.parent and prop.parent.parent then
+--                     print(prop.parent.parent.name)
+--                     -- Is on mining island
+--                     if prop.parent.parent.name == "Rocks" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
+--                         Events.BroadcastToServer(eventObjectId, { p=Game.GetLocalPlayer().id, t=0 })
+--                         return
+--                     end
+--                     -- Is on player island with pickaxe
+--                     if (prop.parent.parent.name == "Static Structures" or prop.parent.parent.name == "Structures") and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
+--                         print("go")
+--                         Events.BroadcastToServer(eventObjectId, { p=Game.GetLocalPlayer().id, t=0 })
+--                         return
+--                     end
+--                     -- Is on player island with axe
+--                     if (prop.parent.parent.name == "Static Structures" or prop.parent.parent.name == "Structures") and EQUIPMENT.sourceTemplateId == "F27A87BB28DA0B17" then
+--                         print("go")
+--                         Events.BroadcastToServer(eventObjectId, { p=Game.GetLocalPlayer().id, t=1 })
+--                         return
+--                     end
+--                 end
+--             end
+--         end
+--     end
+-- end
 
 -- nil OnExecute(Ability)
 -- Spawns a swing effect template on ability execute
@@ -190,7 +193,7 @@ function OnExecute(ability)
             abilityInfo.canAttack = true
             abilityInfo.ignoreList = {}
             if Game.GetLocalPlayer() == ability.owner then
-                ActionOnCloserProp()
+                -- ActionOnCloserProp()
             end
             SpawnSwingEffect(abilityInfo)
             return

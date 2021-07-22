@@ -1,6 +1,6 @@
 Assets {
   Id: 11298517848542431636
-  Name: "Tree hologram"
+  Name: "Mat Preview Hologram"
   PlatformAssetType: 13
   SerializationVersion: 92
   CustomMaterialAsset {

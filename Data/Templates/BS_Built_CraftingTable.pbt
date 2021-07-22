@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4044724888417772871
+        ParentId: 4781671109827199097
         ChildIds: 2904280495379188304
         ChildIds: 6562014707939133006
         ChildIds: 7000991593123835632
@@ -931,7 +931,7 @@ Assets {
         ChildIds: 6288521840762041748
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceon"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"

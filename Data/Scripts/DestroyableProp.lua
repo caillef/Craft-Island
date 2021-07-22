@@ -1,4 +1,4 @@
-﻿local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
+local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
 local FallSFX = script:GetCustomProperty("FallSFX") and script:GetCustomProperty("FallSFX"):WaitForObject() or nil
 local type = script:GetCustomProperty("Material") or 1
 local propItemId = script:GetCustomProperty("ItemId")
@@ -52,7 +52,7 @@ function OnHit(data)
             player = p
         end
     end
-    if not player or not SPAWN_MANAGER.permissionsBreak[player.id] and not SPAWN_MANAGER.permissionsAll[player.id] then
+    if not player or not SPAWN_MANAGER.permissionsBreak[player.id] or not SPAWN_MANAGER.permissionsAll[player.id] then
         return
     end
     HP = HP - 1 * ((data.t==2 or type == data.t) and 1 or 0.5)
@@ -62,10 +62,11 @@ function OnHit(data)
             HP = MAX_HP
         end
     end)
+
+
     if prop.name == "BS_Built_Rock" or prop.name == "BS_Built_Rock_Coal" then
         prop:GetChildren()[1]:SetScale(prop:GetChildren()[1]:GetScale() * 0.9)
     end
-
     if data.t ~= 2 then
         GetSoundManager().PlaySound(type == 0 and "StoneImpactSFX" or "WoodImpactSFX", script:GetWorldPosition())
     end
@@ -112,7 +113,7 @@ function OnHit(data)
                 end)
             end
         end)
-        BUILD_SYSTEM.RemoveStructure(prop, player)
+        BUILD_SYSTEM.RemoveStructure(player, prop)
 
         -- Check if not an harvest trigger
         if not data.harvest then

@@ -1,7 +1,34 @@
 ﻿local objects = {}
 local objectsId = {}
 
-function createObject(id, idName, name, templateMuid, itemMuid, previewMuid, builtConditions)
+local NETWORKED_OBJECTS = {
+    "WOODEN_DOOR",
+    "STONEBRICKS_DOOR",
+    "CRAFTING_TABLE",
+    "FURNACE",
+    "WHEAT",
+    "WHEAT_SEEDS",
+    "WHEAT_SEEDS_2",
+    "WHEAT_SEEDS_3",
+    "BERRY_BUSH_FULL",
+    "COOKING_TABLE",
+    "CARROT",
+    "CARROT_SEEDS",
+    "CARROT_SEEDS_2",
+    "CARROT_SEEDS_3",
+    "SOIL"
+}
+
+local function isNetworked(idName)
+    for _,obj in ipairs(NETWORKED_OBJECTS) do
+        if idName == obj then
+            return true
+        end
+    end
+    return false
+end
+
+local function createObject(id, idName, name, templateMuid, itemMuid, previewMuid, builtConditions)
     if objectsId[idName] ~= nil then
         print("Error: two objects have the same idName ("..idName..").")
         return nil
@@ -20,6 +47,7 @@ function createObject(id, idName, name, templateMuid, itemMuid, previewMuid, bui
         previewMuid=previewMuid,
         canBeBuilt=previewMuid ~= nil,
         buildConditions=builtConditions,
+        isNetworked=isNetworked(idName),
         tostring=function(obj)
             return tostring(obj.id).." "..obj.idName.." "..obj.name
         end

@@ -1,6 +1,45 @@
 Name: "Systems"
 RootId: 9416028156443735960
 Objects {
+  Id: 14230598138946358933
+  Name: "Minigam Fishing System"
+  Transform {
+    Location {
+      X: -5211.88428
+      Y: -187.518311
+      Z: 1542.91833
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9416028156443735960
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Minigam Fishing System"
+  }
+  InstanceHistory {
+    SelfId: 14230598138946358933
+    SubobjectId: 13324258260031528677
+    InstanceId: 11638937993570712534
+    TemplateId: 15898429781010274466
+    WasRoot: true
+  }
+}
+Objects {
   Id: 17470901873130497826
   Name: "PerksVIP"
   Transform {
@@ -10124,6 +10163,11 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   TemplateInstance {
+    ParameterOverrideMap {
+      key: 39110604354521022
+      value {
+      }
+    }
     ParameterOverrideMap {
       key: 5031795963634508887
       value {

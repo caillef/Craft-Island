@@ -1,4 +1,4 @@
-local _objectsList
+﻿local _objectsList
 function GetObjectsList()
     _objectsList = _G["caillef.craftisland.objects"]
     while _objectsList == nil do

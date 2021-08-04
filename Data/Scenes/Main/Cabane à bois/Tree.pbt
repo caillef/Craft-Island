@@ -52,7 +52,7 @@ Objects {
     }
     Rotation {
       Pitch: -3.05175781e-05
-      Yaw: -0.000122070313
+      Yaw: -0.000122070312
       Roll: 12.5751238
     }
     Scale {
@@ -416,7 +416,7 @@ Objects {
     Location {
       X: -121.015625
       Y: 554.53125
-      Z: 66.3789063
+      Z: 66.3789062
     }
     Rotation {
       Pitch: -44.0836487
@@ -469,7 +469,7 @@ Objects {
     }
     Rotation {
       Pitch: -52.8250427
-      Yaw: -6.10351563e-05
+      Yaw: -6.10351562e-05
       Roll: 89.9998779
     }
     Scale {
@@ -1043,7 +1043,7 @@ Objects {
   Transform {
     Location {
       X: -225.146484
-      Y: 576.132813
+      Y: 576.132812
       Z: 8.52978516
     }
     Rotation {
@@ -1084,7 +1084,7 @@ Objects {
   Transform {
     Location {
       X: -225.146484
-      Y: 576.132813
+      Y: 576.132812
       Z: -31.8710938
     }
     Rotation {
@@ -2707,7 +2707,7 @@ Objects {
   Name: "Clou"
   Transform {
     Location {
-      X: -186.414063
+      X: -186.414062
       Y: 380.162109
       Z: 306.621094
     }
@@ -3819,7 +3819,7 @@ Objects {
   Name: "Wood 2x4 4m"
   Transform {
     Location {
-      X: 203.507813
+      X: 203.507812
       Y: 373.324219
       Z: 281.972656
     }
@@ -4647,7 +4647,7 @@ Objects {
   Name: "Wood 2x4 4m"
   Transform {
     Location {
-      X: -230.976563
+      X: -230.976562
       Y: 373.324219
       Z: 281.972656
     }
@@ -4803,7 +4803,7 @@ Objects {
   Name: "Wood 2x4 4m"
   Transform {
     Location {
-      X: -85.0664063
+      X: -85.0664062
       Y: 373.324219
       Z: 281.972656
     }
@@ -5264,7 +5264,7 @@ Objects {
   Transform {
     Location {
       X: -204.453125
-      Y: 390.445313
+      Y: 390.445312
       Z: -77.6108398
     }
     Rotation {

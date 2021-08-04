@@ -619,7 +619,7 @@ Assets {
         Name: "Hill 05"
         Transform {
           Location {
-            X: 11.1601563
+            X: 11.1601562
             Y: 0.56640625
             Z: 109.771851
           }
@@ -1284,5 +1284,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
 }

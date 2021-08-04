@@ -132,7 +132,7 @@ Assets {
         Name: "Frying Pan"
         Transform {
           Location {
-            X: 0.000122070313
+            X: 0.000122070312
             Y: -14.9999523
             Z: 30
           }
@@ -1360,7 +1360,7 @@ Assets {
             Z: 2.50807405
           }
           Rotation {
-            Pitch: -6.10351563e-05
+            Pitch: -6.10351562e-05
             Yaw: -90
             Roll: -90
           }
@@ -1415,7 +1415,7 @@ Assets {
             Z: 2.50807405
           }
           Rotation {
-            Pitch: -6.10351563e-05
+            Pitch: -6.10351562e-05
             Yaw: -9.15527344e-05
             Roll: -90
           }
@@ -2237,5 +2237,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
 }

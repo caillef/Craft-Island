@@ -2,7 +2,7 @@ Assets {
   Id: 11298517848542431636
   Name: "Mat Preview Hologram"
   PlatformAssetType: 13
-  SerializationVersion: 92
+  SerializationVersion: 94
   CustomMaterialAsset {
     BaseMaterialId: 231800746144079014
     ParameterOverrides {

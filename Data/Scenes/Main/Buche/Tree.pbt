@@ -2688,7 +2688,7 @@ Objects {
   Name: "Large Round Wood Beam 8m"
   Transform {
     Location {
-      X: 121.507813
+      X: 121.507812
       Y: -89.1816406
       Z: -117.875
     }
@@ -2804,7 +2804,7 @@ Objects {
   Name: "Large Round Wood Beam 8m"
   Transform {
     Location {
-      X: 5.40039063
+      X: 5.40039062
       Y: -89.1816406
       Z: -73.0529785
     }

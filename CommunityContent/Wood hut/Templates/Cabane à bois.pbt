@@ -199,7 +199,7 @@ Assets {
         Transform {
           Location {
             X: -204.453125
-            Y: 390.445313
+            Y: 390.445312
             Z: -77.6108398
           }
           Rotation {
@@ -604,7 +604,7 @@ Assets {
         Name: "Wood 2x4 4m"
         Transform {
           Location {
-            X: -85.0664063
+            X: -85.0664062
             Y: 373.324219
             Z: 281.972656
           }
@@ -742,7 +742,7 @@ Assets {
         Name: "Wood 2x4 4m"
         Transform {
           Location {
-            X: -230.976563
+            X: -230.976562
             Y: 373.324219
             Z: 281.972656
           }
@@ -1475,7 +1475,7 @@ Assets {
         Name: "Wood 2x4 4m"
         Transform {
           Location {
-            X: 203.507813
+            X: 203.507812
             Y: 373.324219
             Z: 281.972656
           }
@@ -1886,7 +1886,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -2027,7 +2027,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -2168,7 +2168,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -2533,7 +2533,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -2674,7 +2674,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -2815,7 +2815,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -2956,7 +2956,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -3097,7 +3097,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -3238,7 +3238,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -3379,7 +3379,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -3520,7 +3520,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -3661,7 +3661,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -3802,7 +3802,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -3854,7 +3854,7 @@ Assets {
         Name: "Clou"
         Transform {
           Location {
-            X: -186.414063
+            X: -186.414062
             Y: 380.162109
             Z: 306.621094
           }
@@ -3943,7 +3943,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -4084,7 +4084,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -4225,7 +4225,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -4366,7 +4366,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -4507,7 +4507,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -4648,7 +4648,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -4789,7 +4789,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -4930,7 +4930,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -5071,7 +5071,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -5212,7 +5212,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -5353,7 +5353,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -5494,7 +5494,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -5635,7 +5635,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -5776,7 +5776,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -5917,7 +5917,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -6058,7 +6058,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -6199,7 +6199,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -6340,7 +6340,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -6481,7 +6481,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -6622,7 +6622,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -6763,7 +6763,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -6904,7 +6904,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -7045,7 +7045,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -7186,7 +7186,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -7327,7 +7327,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -7468,7 +7468,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -7609,7 +7609,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -7750,7 +7750,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -7891,7 +7891,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -8032,7 +8032,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -8173,7 +8173,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -8314,7 +8314,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -8455,7 +8455,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -8596,7 +8596,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -8737,7 +8737,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -8878,7 +8878,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -9019,7 +9019,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -9160,7 +9160,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -9301,7 +9301,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -9442,7 +9442,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -9495,7 +9495,7 @@ Assets {
         Transform {
           Location {
             X: -225.146484
-            Y: 576.132813
+            Y: 576.132812
             Z: -31.8710938
           }
           Rotation {
@@ -9583,7 +9583,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -9636,7 +9636,7 @@ Assets {
         Transform {
           Location {
             X: -225.146484
-            Y: 576.132813
+            Y: 576.132812
             Z: 8.52978516
           }
           Rotation {
@@ -9724,7 +9724,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -9865,7 +9865,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -10006,7 +10006,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -10147,7 +10147,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -10288,7 +10288,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -10429,7 +10429,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -10570,7 +10570,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -10711,7 +10711,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -10852,7 +10852,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -10993,7 +10993,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -11134,7 +11134,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -11275,7 +11275,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -11416,7 +11416,7 @@ Assets {
         Name: "Gem - Round Polished"
         Transform {
           Location {
-            X: 22.0039063
+            X: 22.0039062
             Y: 10.6835938
             Z: 9.6875
           }
@@ -11545,7 +11545,7 @@ Assets {
         Name: "Large Round Wood Beam 8m"
         Transform {
           Location {
-            X: 5.40039063
+            X: 5.40039062
             Y: -89.1816406
             Z: -73.0529785
           }
@@ -11649,7 +11649,7 @@ Assets {
         Name: "Large Round Wood Beam 8m"
         Transform {
           Location {
-            X: 121.507813
+            X: 121.507812
             Y: -89.1816406
             Z: -117.875
           }
@@ -14171,7 +14171,7 @@ Assets {
           Location {
             X: -121.015625
             Y: 554.53125
-            Z: 66.3789063
+            Z: 66.3789062
           }
           Rotation {
             Pitch: -44.0836525
@@ -14641,6 +14641,6 @@ Assets {
   Marketplace {
     Description: "Wood hut"
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
   DirectlyPublished: true
 }

@@ -632,7 +632,7 @@ Assets {
             Color {
               R: 0.34375
               G: 0.334288329
-              B: 0.333007813
+              B: 0.333007812
               A: 1
             }
           }
@@ -693,7 +693,7 @@ Assets {
             Color {
               R: 0.34375
               G: 0.334288329
-              B: 0.333007813
+              B: 0.333007812
               A: 1
             }
           }
@@ -754,7 +754,7 @@ Assets {
             Color {
               R: 0.34375
               G: 0.334288329
-              B: 0.333007813
+              B: 0.333007812
               A: 1
             }
           }
@@ -813,7 +813,7 @@ Assets {
             Color {
               R: 0.34375
               G: 0.334288329
-              B: 0.333007813
+              B: 0.333007812
               A: 1
             }
           }
@@ -873,7 +873,7 @@ Assets {
             Color {
               R: 0.34375
               G: 0.334288329
-              B: 0.333007813
+              B: 0.333007812
               A: 1
             }
           }
@@ -933,7 +933,7 @@ Assets {
             Color {
               R: 0.34375
               G: 0.334288329
-              B: 0.333007813
+              B: 0.333007812
               A: 1
             }
           }
@@ -2051,7 +2051,7 @@ Assets {
             Color {
               R: 0.34375
               G: 0.334288329
-              B: 0.333007813
+              B: 0.333007812
               A: 1
             }
           }
@@ -2112,7 +2112,7 @@ Assets {
             Color {
               R: 0.34375
               G: 0.334288329
-              B: 0.333007813
+              B: 0.333007812
               A: 1
             }
           }
@@ -2173,7 +2173,7 @@ Assets {
             Color {
               R: 0.34375
               G: 0.334288329
-              B: 0.333007813
+              B: 0.333007812
               A: 1
             }
           }
@@ -2232,7 +2232,7 @@ Assets {
             Color {
               R: 0.34375
               G: 0.334288329
-              B: 0.333007813
+              B: 0.333007812
               A: 1
             }
           }
@@ -2292,7 +2292,7 @@ Assets {
             Color {
               R: 0.34375
               G: 0.334288329
-              B: 0.333007813
+              B: 0.333007812
               A: 1
             }
           }
@@ -2352,7 +2352,7 @@ Assets {
             Color {
               R: 0.34375
               G: 0.334288329
-              B: 0.333007813
+              B: 0.333007812
               A: 1
             }
           }
@@ -4367,7 +4367,7 @@ Assets {
         Name: "Decal Stains Bottom 01"
         Transform {
           Location {
-            X: -27.0195313
+            X: -27.0195312
             Y: -16.4658203
             Z: 103.599648
           }
@@ -4637,6 +4637,6 @@ Assets {
   Marketplace {
     Description: "An old western style door with open action and sound. \r\n\r\nThis is being built as part of a larger western themed set."
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
   DirectlyPublished: true
 }

@@ -578,7 +578,7 @@ Assets {
         Name: "Hill 05"
         Transform {
           Location {
-            X: 11.1601563
+            X: 11.1601562
             Y: 0.56640625
             Z: 109.771851
           }
@@ -1236,6 +1236,6 @@ Assets {
   Marketplace {
     Description: "a chef\'s hat for your various chef-ing needs"
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
   DirectlyPublished: true
 }

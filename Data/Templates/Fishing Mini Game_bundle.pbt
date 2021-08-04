@@ -40,5 +40,5 @@ Assets {
     Version: "1.0.0"
     Description: "Stardew Valley fishing"
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
 }

@@ -925,7 +925,7 @@ Objects {
     Location {
       X: -203.26265
       Y: 111.38559
-      Z: 117.007813
+      Z: 117.007812
     }
     Rotation {
       Yaw: -40.3926086
@@ -2097,7 +2097,7 @@ Objects {
   Transform {
     Location {
       X: 789.365234
-      Y: -479.757813
+      Y: -479.757812
       Z: 68.2334
     }
     Rotation {
@@ -2239,7 +2239,7 @@ Objects {
   Name: "Decal Ivy Big"
   Transform {
     Location {
-      X: 655.382813
+      X: 655.382812
       Y: -561.390625
       Z: 68.2334
     }
@@ -2320,7 +2320,7 @@ Objects {
   Name: "Decal Moss Patch"
   Transform {
     Location {
-      X: -799.757813
+      X: -799.757812
       Y: 588.541
       Z: 68.2334
     }
@@ -2897,7 +2897,7 @@ Objects {
   Name: "Cube - Polished"
   Transform {
     Location {
-      X: -881.007813
+      X: -881.007812
       Y: 441.259766
       Z: 212.864624
     }
@@ -3234,7 +3234,7 @@ Objects {
   Transform {
     Location {
       X: -211.792969
-      Y: 116.539063
+      Y: 116.539062
       Z: 212.864624
     }
     Rotation {
@@ -3742,7 +3742,7 @@ Objects {
   Transform {
     Location {
       X: 78.2148438
-      Y: -25.6132813
+      Y: -25.6132812
     }
     Rotation {
     }
@@ -4500,7 +4500,7 @@ Objects {
   Transform {
     Location {
       X: -1097.85156
-      Y: -93.8007813
+      Y: -93.8007812
       Z: 1183.63599
     }
     Rotation {
@@ -4557,9 +4557,9 @@ Objects {
   Name: "Prism - 8-Sided Polished"
   Transform {
     Location {
-      X: -557.164063
+      X: -557.164062
       Y: 880.097656
-      Z: 1433.76563
+      Z: 1433.76562
     }
     Rotation {
       Pitch: 0.142682642
@@ -5369,7 +5369,7 @@ Objects {
   Name: "Prism - 8-Sided Polished"
   Transform {
     Location {
-      X: 616.695313
+      X: 616.695312
       Y: -897.421875
       Z: 1214.97241
     }
@@ -6376,7 +6376,7 @@ Objects {
   Transform {
     Location {
       X: 789.365234
-      Y: -479.757813
+      Y: -479.757812
       Z: 68.2334
     }
     Rotation {
@@ -6518,7 +6518,7 @@ Objects {
   Name: "Decal Ivy Big"
   Transform {
     Location {
-      X: 655.382813
+      X: 655.382812
       Y: -561.390625
       Z: 68.2334
     }
@@ -6599,7 +6599,7 @@ Objects {
   Name: "Decal Moss Patch"
   Transform {
     Location {
-      X: -799.757813
+      X: -799.757812
       Y: 588.541
       Z: 68.2334
     }
@@ -7176,7 +7176,7 @@ Objects {
   Name: "Cube - Polished"
   Transform {
     Location {
-      X: -881.007813
+      X: -881.007812
       Y: 441.259766
       Z: 212.864624
     }
@@ -7513,7 +7513,7 @@ Objects {
   Transform {
     Location {
       X: -211.792969
-      Y: 116.539063
+      Y: 116.539062
       Z: 212.864624
     }
     Rotation {
@@ -8021,7 +8021,7 @@ Objects {
   Transform {
     Location {
       X: 78.2148438
-      Y: -25.6132813
+      Y: -25.6132812
     }
     Rotation {
     }
@@ -8779,7 +8779,7 @@ Objects {
   Transform {
     Location {
       X: -1097.85156
-      Y: -93.8007813
+      Y: -93.8007812
       Z: 1183.63599
     }
     Rotation {
@@ -8836,9 +8836,9 @@ Objects {
   Name: "Prism - 8-Sided Polished"
   Transform {
     Location {
-      X: -557.164063
+      X: -557.164062
       Y: 880.097656
-      Z: 1433.76563
+      Z: 1433.76562
     }
     Rotation {
       Pitch: 0.142682642
@@ -9648,7 +9648,7 @@ Objects {
   Name: "Prism - 8-Sided Polished"
   Transform {
     Location {
-      X: 616.695313
+      X: 616.695312
       Y: -897.421875
       Z: 1214.97241
     }

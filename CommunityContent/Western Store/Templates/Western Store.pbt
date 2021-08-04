@@ -44,7 +44,7 @@ Assets {
           Location {
             X: -1274.53906
             Y: 141.217773
-            Z: 610.414063
+            Z: 610.414062
           }
           Rotation {
           }
@@ -6991,6 +6991,6 @@ Assets {
   Marketplace {
     Description: "created for my Tombstone Game\r\n\r\nv1.1\r\n\r\ncleaned up the heirarchy and organized everything by group\r\n\r\nOriginal western style store front and wagon wheel created by Gambit\r\nbut modified it to suit my tastes."
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
   DirectlyPublished: true
 }

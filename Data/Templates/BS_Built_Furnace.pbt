@@ -18,7 +18,7 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 4556504054537610333
         ChildIds: 5483144257556703764
-        ChildIds: 13613409068178849242
+        ChildIds: 11973581583566965122
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -505,8 +505,8 @@ Assets {
         }
       }
       Objects {
-        Id: 13613409068178849242
-        Name: "Trigger"
+        Id: 11973581583566965122
+        Name: "ClientContext"
         Transform {
           Location {
             X: 100
@@ -517,15 +517,46 @@ Assets {
           }
           Scale {
             X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15114917028051313832
+        ChildIds: 13613409068178849242
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+        }
+      }
+      Objects {
+        Id: 13613409068178849242
+        Name: "Trigger"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
             Y: 1.2
             Z: 0.8
           }
         }
-        ParentId: 15114917028051313832
+        ParentId: 11973581583566965122
         ChildIds: 2368978302117215730
-        WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceon"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -569,7 +600,6 @@ Assets {
             String: "Furnace"
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -636,5 +666,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
 }

@@ -5,7 +5,7 @@ Objects {
   Name: "Gem - Round Polished"
   Transform {
     Location {
-      X: 22.0039063
+      X: 22.0039062
       Y: 10.6835938
       Z: 9.6875
     }

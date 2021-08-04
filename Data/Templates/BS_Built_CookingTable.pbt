@@ -18,7 +18,7 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 14309973534957375582
         ChildIds: 8647392713150939892
-        ChildIds: 12174378869110509450
+        ChildIds: 11300734801808916334
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -132,7 +132,7 @@ Assets {
         Name: "Frying Pan"
         Transform {
           Location {
-            X: 0.000122070313
+            X: 0.000122070312
             Y: -14.9999523
             Z: 30
           }
@@ -1360,7 +1360,7 @@ Assets {
             Z: 2.50807405
           }
           Rotation {
-            Pitch: -6.10351563e-05
+            Pitch: -6.10351562e-05
             Yaw: -90
             Roll: -90
           }
@@ -1415,7 +1415,7 @@ Assets {
             Z: 2.50807405
           }
           Rotation {
-            Pitch: -6.10351563e-05
+            Pitch: -6.10351562e-05
             Yaw: -9.15527344e-05
             Roll: -90
           }
@@ -2025,8 +2025,8 @@ Assets {
         }
       }
       Objects {
-        Id: 12174378869110509450
-        Name: "Trigger"
+        Id: 11300734801808916334
+        Name: "ClientContext"
         Transform {
           Location {
             X: 100
@@ -2037,21 +2037,55 @@ Assets {
           }
           Scale {
             X: 1
-            Y: 1.2
-            Z: 0.8
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 4340000938574330803
-        ChildIds: 8396086275653909245
+        ChildIds: 12174378869110509450
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+        }
+      }
+      Objects {
+        Id: 12174378869110509450
+        Name: "Trigger"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1.2
+            Z: 0.8
+          }
+        }
+        ParentId: 11300734801808916334
+        ChildIds: 8396086275653909245
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Trigger {
           Interactable: true
@@ -2089,7 +2123,6 @@ Assets {
             String: "Cooking"
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2237,5 +2270,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
 }

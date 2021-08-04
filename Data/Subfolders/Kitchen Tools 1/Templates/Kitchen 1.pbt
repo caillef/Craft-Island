@@ -1544,7 +1544,7 @@ Assets {
             Z: 2.50807405
           }
           Rotation {
-            Pitch: -6.10351563e-05
+            Pitch: -6.10351562e-05
             Yaw: -90
             Roll: -90
           }
@@ -1598,7 +1598,7 @@ Assets {
             Z: 2.50807405
           }
           Rotation {
-            Pitch: -6.10351563e-05
+            Pitch: -6.10351562e-05
             Yaw: -9.15527344e-05
             Roll: -90
           }
@@ -2211,7 +2211,7 @@ Assets {
             Z: 2.50807405
           }
           Rotation {
-            Pitch: -6.10351563e-05
+            Pitch: -6.10351562e-05
             Yaw: -90
             Roll: -90
           }
@@ -2265,7 +2265,7 @@ Assets {
             Z: 2.50807405
           }
           Rotation {
-            Pitch: -6.10351563e-05
+            Pitch: -6.10351562e-05
             Yaw: -9.15527344e-05
             Roll: -90
           }
@@ -3603,6 +3603,6 @@ Assets {
   Marketplace {
     Description: "Pots, pan, forks, spoons, spatula, apples and of course some delicious meats"
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
   DirectlyPublished: true
 }

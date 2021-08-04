@@ -55,9 +55,7 @@ Events.Connect("CloseUIFurnace", function()
 	if not currentFurnace then return end
 	propUI.visibility = Visibility.FORCE_OFF
 	currentFurnace = nil
-	while Events.BroadcastToServer("EnableTrigger", triggerId) ~= BroadcastEventResultCode.SUCCESS do
-		Task.Wait(1)
-	end
+	Events.Broadcast("EnableTrigger", triggerId)
 end)
 
 function TransformItem(furnace, item, index, updateUI)

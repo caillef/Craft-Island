@@ -2,7 +2,7 @@ local trigger = script.parent
 
 local eventName = "OpenUI"..script:GetCustomProperty("UIName")
 
-local currentPlayer
+local PLAYER = Game.GetLocalPlayer()
 
 local events = {}
 
@@ -13,13 +13,9 @@ function OnInteract(trigger, player)
 		end
 		return
 	end
-	while player:IsValid() and Events.BroadcastToPlayer(player, eventName, trigger.id) ~= BroadcastEventResultCode.SUCCESS do
-		Task.Wait(1)
-	end
-	if trigger:IsValid() then
-		currentPlayer = player
-		trigger.isInteractable = true
-	end
+	if player ~= PLAYER then return end
+	Events.Broadcast(eventName, trigger.id)
+	trigger.isInteractable = false
 end
 
 function OnEnableTrigger(id)
@@ -29,20 +25,8 @@ function OnEnableTrigger(id)
 		end
 		return
 	end
-	if id == trigger.id then
-		currentPlayer = nil
-		trigger.isInteractable = true
-	end
+	trigger.isInteractable = true
 end
 
 table.insert(events, Events.Connect("EnableTrigger", OnEnableTrigger))
 table.insert(events, trigger.interactedEvent:Connect(OnInteract))
-
-Game.playerLeftEvent:Connect(function(player)
-	if player == currentPlayer then
-		currentPlayer = nil
-		if trigger and trigger:IsValid() then
-			trigger.isInteractable = true
-		end
-	end
-end)

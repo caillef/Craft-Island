@@ -1,4 +1,4 @@
-﻿--The parent object for the player list
+--The parent object for the player list
 local propPlayerList = script:GetCustomProperty("PlayerList"):WaitForObject()
 
 --The parent object for the player displays
@@ -225,7 +225,7 @@ function DisplayPlayerPanel(button, player)
 	end
 	
 	--Set the player image and name on the panel
-	infoPicture:SetImage(player)
+	infoPicture:SetPlayerProfile(player)
 	infoName.text = player.name
 end
 

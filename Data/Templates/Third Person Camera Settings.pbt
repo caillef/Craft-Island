@@ -189,6 +189,7 @@ Assets {
           MinPitch: -89
           MaxPitch: 89
           DoesPositionOffsetSpring: true
+          UseAsAudioListener: true
         }
       }
     }
@@ -197,5 +198,5 @@ Assets {
       AssetId: "Third_Person_Camera_Settings"
     }
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
 }

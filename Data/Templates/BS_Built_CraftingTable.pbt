@@ -15,10 +15,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4044724888417772871
+        ParentId: 4781671109827199097
         ChildIds: 2904280495379188304
         ChildIds: 6562014707939133006
-        ChildIds: 7000991593123835632
+        ChildIds: 934264331517203704
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -911,8 +911,8 @@ Assets {
         }
       }
       Objects {
-        Id: 7000991593123835632
-        Name: "Trigger"
+        Id: 934264331517203704
+        Name: "ClientContext"
         Transform {
           Location {
             X: 100
@@ -923,15 +923,46 @@ Assets {
           }
           Scale {
             X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17098445726098863416
+        ChildIds: 7000991593123835632
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+        }
+      }
+      Objects {
+        Id: 7000991593123835632
+        Name: "Trigger"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
             Y: 1.2
             Z: 0.8
           }
         }
-        ParentId: 17098445726098863416
+        ParentId: 934264331517203704
         ChildIds: 6288521840762041748
-        WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceon"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -975,7 +1006,6 @@ Assets {
             String: "Craft"
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1078,5 +1108,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
 }

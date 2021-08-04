@@ -801,7 +801,7 @@ Assets {
         Name: "Foot Stopper"
         Transform {
           Location {
-            X: -463.976563
+            X: -463.976562
             Y: 484.802277
             Z: -888.220276
           }
@@ -1069,6 +1069,6 @@ Assets {
   Marketplace {
     Description: "It\'s a folding chair, which you can interact with to sit in it. Jumping or pressing F again will allow players to move again, and other players to sit in the chair. \r\n\r\n- Based on script by AjArtuz"
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
   DirectlyPublished: true
 }

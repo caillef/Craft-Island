@@ -1,4 +1,4 @@
-﻿local SPAWN_MANAGER = script:GetCustomProperty("SpawnManager"):WaitForObject().context
+local SPAWN_MANAGER = script:GetCustomProperty("SpawnManager"):WaitForObject().context
 local PortalSFX = script:GetCustomProperty("PortalSFX")
 local propMainPortal = script:GetCustomProperty("MainPortal"):WaitForObject()
 
@@ -67,8 +67,8 @@ end)
 Game.playerLeftEvent:Connect(function(player)
     if not player:IsValid() then return end
     for n,list in pairs(teleportAllowLists) do
-        for k,p in pairs(list) do
-            if p and p:IsValid() and p.name == player then
+        for _,pname in ipairs(list) do
+            if pname == player.name then
                 print("Removed player from allow list")
                 table.remove(teleportAllowLists[n], k)
             end

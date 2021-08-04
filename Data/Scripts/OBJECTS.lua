@@ -153,7 +153,7 @@ _G["caillef.craftisland.crafts"] = {
         CRAFTING_TABLE
 	},
     {
-		{ "WOOD_LOG", 5 },
+		{ "WOOD_LOG", 30 },
         { "FISHING_ROD", 1 },
         CRAFTING_TABLE
 	},

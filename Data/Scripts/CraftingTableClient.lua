@@ -162,9 +162,7 @@ end
 function CloseUI()
 	_G["caillef.craftisland.craftopen"] = false
 	propUI.visibility = Visibility.FORCE_OFF
-	while Events.BroadcastToServer("EnableTrigger", triggerId) ~= BroadcastEventResultCode.SUCCESS do
-		Task.Wait(1)
-	end
+	Events.Broadcast("EnableTrigger", triggerId)
 	UI.SetCursorVisible(false)
 	UI.SetCanCursorInteractWithUI(false)
 end

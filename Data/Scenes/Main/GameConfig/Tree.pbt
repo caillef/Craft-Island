@@ -68,7 +68,8 @@ Objects {
         ChatMode {
         }
         ChatPosition {
-          X: 40
+          X: 20
+          Y: -100
         }
         ChatSize {
           X: 450
@@ -78,7 +79,7 @@ Objects {
           Value: "mc:ecorehorizontalalign:left"
         }
         ChatVerticalAlignment {
-          Value: "mc:ecorehorizontalalign:center"
+          Value: "mc:ecoreverticalalign:bottom"
         }
       }
       PhysicsSettings {
@@ -104,6 +105,37 @@ Objects {
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 9000
+        }
+      }
+      EnableInGameSocialUI: true
+      VoiceChatSettings {
+        VoiceChatMode {
+          Value: "mc:evoicechatmode:all"
+        }
+        VoiceChannelType {
+          Value: "mc:evoicechanneltype:normal"
+        }
+        AudibleDistance: 6000
+        ConversationalDistance: 1500
+        AudioFadeModel {
+          Value: "mc:evoiceaudiofademodel:inverse"
+        }
+        AudioFadeIntensityByDistance: 1
+        VoiceChatPosition {
+          X: -40
+          Y: 40
+        }
+        VoiceChatHorizontalAlignment {
+          Value: "mc:ecorehorizontalalign:right"
+        }
+        VoiceChatVerticalAlignment {
+          Value: "mc:ecoreverticalalign:top"
+        }
+        VoiceChatEntryHorizontalFlow {
+          Value: "mc:ecorehorizontalflow:righttoleft"
+        }
+        VoiceChatEntryVerticalFlow {
+          Value: "mc:ecoreverticalflow:toptobottom"
         }
       }
       PlayerInteractDistance: 500

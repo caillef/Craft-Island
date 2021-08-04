@@ -1,55 +1,6 @@
 DebuggerSettings {
   ScriptSettings {
     Script {
-      Id: 440168262593430639
-    }
-    Breakpoints {
-      LineNumber: 39
-    }
-  }
-  ScriptSettings {
-    Script {
-      Id: 12439034694186114331
-    }
-    Breakpoints {
-      LineNumber: 50
-    }
-    Breakpoints {
-      LineNumber: 42
-    }
-  }
-  ScriptSettings {
-    Script {
-      Id: 5082628058110625875
-    }
-    Breakpoints {
-      LineNumber: 92
-    }
-  }
-  ScriptSettings {
-    Script {
-      Id: 8459825612529451237
-    }
-    Breakpoints {
-      LineNumber: 34
-    }
-    Breakpoints {
-      LineNumber: 43
-    }
-  }
-  ScriptSettings {
-    Script {
-      Id: 10935553613204209229
-    }
-    Breakpoints {
-      LineNumber: 44
-    }
-    Breakpoints {
-      LineNumber: 51
-    }
-  }
-  ScriptSettings {
-    Script {
       Id: 4316728097649207683
     }
     Breakpoints {

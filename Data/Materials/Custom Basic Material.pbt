@@ -2,7 +2,7 @@ Assets {
   Id: 15618972549546076307
   Name: "BreadMaterial"
   PlatformAssetType: 13
-  SerializationVersion: 92
+  SerializationVersion: 94
   CustomMaterialAsset {
     BaseMaterialId: 10184847056121543272
     ParameterOverrides {

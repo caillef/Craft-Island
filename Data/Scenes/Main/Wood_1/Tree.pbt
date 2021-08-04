@@ -207,7 +207,7 @@ Objects {
   Name: "Cube - Chamfered Large"
   Transform {
     Location {
-      X: 48.9882813
+      X: 48.9882812
       Y: -460.671814
       Z: 207.037109
     }
@@ -410,7 +410,7 @@ Objects {
     Location {
       X: -304.437469
       Y: -41.65625
-      Z: 245.007813
+      Z: 245.007812
     }
     Rotation {
     }
@@ -743,7 +743,7 @@ Objects {
   Name: "Cube - Chamfered Large"
   Transform {
     Location {
-      X: 48.9882813
+      X: 48.9882812
       Y: 448.890564
       Z: 207.037109
     }
@@ -1016,7 +1016,7 @@ Objects {
   Name: "Cube - Chamfered Large"
   Transform {
     Location {
-      X: -44.3945313
+      X: -44.3945312
       Y: 487.365173
       Z: 597.268555
     }
@@ -1084,7 +1084,7 @@ Objects {
   Name: "Cube - Chamfered Large"
   Transform {
     Location {
-      X: 76.5976563
+      X: 76.5976562
       Y: 487.365173
       Z: 597.268555
     }
@@ -1153,7 +1153,7 @@ Objects {
   Name: "Cube - Chamfered Large"
   Transform {
     Location {
-      X: 17.1445313
+      X: 17.1445312
       Y: 487.365173
       Z: 592.575195
     }

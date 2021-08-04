@@ -2025,7 +2025,7 @@ Assets {
             Z: 230
           }
           Rotation {
-            Pitch: -0.000122070313
+            Pitch: -0.000122070312
             Yaw: -179.999954
             Roll: -179.999939
           }
@@ -2261,6 +2261,8 @@ Assets {
         }
         Text {
           Text: "Bank"
+          FontAsset {
+          }
           Color {
             R: 1
             G: 1
@@ -2358,6 +2360,6 @@ Assets {
   Marketplace {
     Description: "Three market stalls for selling things at the market!"
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
   DirectlyPublished: true
 }

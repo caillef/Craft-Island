@@ -187,6 +187,7 @@ Assets {
           }
           MinPitch: -89
           MaxPitch: 89
+          UseAsAudioListener: true
         }
       }
     }
@@ -195,5 +196,5 @@ Assets {
       AssetId: "First_Person_Camera_Settings"
     }
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
 }

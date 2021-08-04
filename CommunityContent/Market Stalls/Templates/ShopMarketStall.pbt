@@ -3448,7 +3448,7 @@ Assets {
         Transform {
           Location {
             X: -165.448395
-            Y: -3.60351563
+            Y: -3.60351562
           }
           Rotation {
           }
@@ -3996,6 +3996,6 @@ Assets {
   Marketplace {
     Description: "Three market stalls for selling things at the market!"
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
   DirectlyPublished: true
 }

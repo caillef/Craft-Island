@@ -54,8 +54,8 @@ Objects {
     }
   }
   ParentId: 3875291460084591420
-  ChildIds: 18354816756218499678
   ChildIds: 8678575965044671623
+  ChildIds: 12511711667366630750
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -91,6 +91,110 @@ Objects {
       }
       SkinnedMeshes {
       }
+    }
+  }
+}
+Objects {
+  Id: 12511711667366630750
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7086928093804741488
+  ChildIds: 18354816756218499678
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 18354816756218499678
+  Name: "Trigger"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 2.28212476
+    }
+  }
+  ParentId: 12511711667366630750
+  ChildIds: 5058024693623340580
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    Interactable: true
+    InteractionLabel: "Trade"
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
+  Id: 5058024693623340580
+  Name: "UITriggerScript"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 0.438188136
+    }
+  }
+  ParentId: 18354816756218499678
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:UIName"
+      String: "BuySellMaterials"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 1347959603203994334
     }
   }
 }
@@ -141,81 +245,6 @@ Objects {
   }
 }
 Objects {
-  Id: 18354816756218499678
-  Name: "Trigger"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 2.28212476
-    }
-  }
-  ParentId: 7086928093804741488
-  ChildIds: 5058024693623340580
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    Interactable: true
-    InteractionLabel: "Trade"
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 5058024693623340580
-  Name: "UITriggerScript"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 0.438188136
-    }
-  }
-  ParentId: 18354816756218499678
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:UIName"
-      String: "BuySellMaterials"
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 1347959603203994334
-    }
-  }
-}
-Objects {
   Id: 11626730896790120294
   Name: "Farmer"
   Transform {
@@ -234,8 +263,8 @@ Objects {
     }
   }
   ParentId: 3875291460084591420
-  ChildIds: 9363295296355310752
   ChildIds: 18334681479680838131
+  ChildIds: 2719154698229303389
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -271,6 +300,110 @@ Objects {
       }
       SkinnedMeshes {
       }
+    }
+  }
+}
+Objects {
+  Id: 2719154698229303389
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11626730896790120294
+  ChildIds: 9363295296355310752
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 9363295296355310752
+  Name: "Trigger"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 2.28212476
+    }
+  }
+  ParentId: 2719154698229303389
+  ChildIds: 7916215167290344635
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    Interactable: true
+    InteractionLabel: "Trade"
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
+  Id: 7916215167290344635
+  Name: "UITriggerScript"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 0.438188136
+    }
+  }
+  ParentId: 9363295296355310752
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:UIName"
+      String: "BuySellFarmer"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 1347959603203994334
     }
   }
 }
@@ -323,81 +456,6 @@ Objects {
   }
 }
 Objects {
-  Id: 9363295296355310752
-  Name: "Trigger"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 2.28212476
-    }
-  }
-  ParentId: 11626730896790120294
-  ChildIds: 7916215167290344635
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    Interactable: true
-    InteractionLabel: "Trade"
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 7916215167290344635
-  Name: "UITriggerScript"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 0.438188136
-    }
-  }
-  ParentId: 9363295296355310752
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:UIName"
-      String: "BuySellFarmer"
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 1347959603203994334
-    }
-  }
-}
-Objects {
   Id: 2266316651283896195
   Name: "Seeds"
   Transform {
@@ -415,8 +473,8 @@ Objects {
     }
   }
   ParentId: 3875291460084591420
-  ChildIds: 13505538043456871352
   ChildIds: 1315627219650353016
+  ChildIds: 6882535522941914510
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -452,6 +510,110 @@ Objects {
       }
       SkinnedMeshes {
       }
+    }
+  }
+}
+Objects {
+  Id: 6882535522941914510
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2266316651283896195
+  ChildIds: 13505538043456871352
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 13505538043456871352
+  Name: "Trigger"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 2.28212476
+    }
+  }
+  ParentId: 6882535522941914510
+  ChildIds: 799686389351956084
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    Interactable: true
+    InteractionLabel: "Trade"
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
+  Id: 799686389351956084
+  Name: "UITriggerScript"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 0.438188136
+    }
+  }
+  ParentId: 13505538043456871352
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:UIName"
+      String: "BuySellSeeds"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 1347959603203994334
     }
   }
 }
@@ -502,81 +664,6 @@ Objects {
   }
 }
 Objects {
-  Id: 13505538043456871352
-  Name: "Trigger"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 2.28212476
-    }
-  }
-  ParentId: 2266316651283896195
-  ChildIds: 799686389351956084
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    Interactable: true
-    InteractionLabel: "Trade"
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 799686389351956084
-  Name: "UITriggerScript"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 0.438188136
-    }
-  }
-  ParentId: 13505538043456871352
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:UIName"
-      String: "BuySellSeeds"
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 1347959603203994334
-    }
-  }
-}
-Objects {
   Id: 17962164154774248583
   Name: "Baker"
   Transform {
@@ -595,7 +682,6 @@ Objects {
     }
   }
   ParentId: 3875291460084591420
-  ChildIds: 11941888192035615859
   ChildIds: 17034746523230958290
   ChildIds: 5311818264508629817
   UnregisteredParameters {
@@ -651,8 +737,8 @@ Objects {
       AnimationStanceShouldLoop: true
       AnimationPlaybackRateMultiplier: 1
       PlayOnStartAnimation {
-        Animation: "unarmed_wave"
         PlaybackRate: 1
+        ShouldLoop: true
       }
       SkinnedMeshes {
       }
@@ -729,6 +815,7 @@ Objects {
   }
   ParentId: 17962164154774248583
   ChildIds: 5393001555951308276
+  ChildIds: 11941888192035615859
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -739,6 +826,82 @@ Objects {
     Value: "mc:ecollisionsetting:forceoff"
   }
   NetworkContext {
+  }
+}
+Objects {
+  Id: 11941888192035615859
+  Name: "Trigger"
+  Transform {
+    Location {
+      X: -1476.15662
+      Y: -494.671875
+      Z: 2270.15454
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 2.28212476
+    }
+  }
+  ParentId: 17034746523230958290
+  ChildIds: 8753953635876348695
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    Interactable: true
+    InteractionLabel: "Trade"
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
+  Id: 8753953635876348695
+  Name: "UITriggerScript"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 0.438188136
+    }
+  }
+  ParentId: 11941888192035615859
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:UIName"
+      String: "BuySellBaker"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 1347959603203994334
+    }
   }
 }
 Objects {
@@ -783,81 +946,6 @@ Objects {
   Script {
     ScriptAsset {
       Id: 6652383155670487881
-    }
-  }
-}
-Objects {
-  Id: 11941888192035615859
-  Name: "Trigger"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 2.28212476
-    }
-  }
-  ParentId: 17962164154774248583
-  ChildIds: 8753953635876348695
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    Interactable: true
-    InteractionLabel: "Trade"
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 8753953635876348695
-  Name: "UITriggerScript"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 0.438188136
-    }
-  }
-  ParentId: 11941888192035615859
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:UIName"
-      String: "BuySellBaker"
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 1347959603203994334
     }
   }
 }
@@ -925,7 +1013,7 @@ Objects {
     Location {
       X: -203.26265
       Y: 111.38559
-      Z: 117.007813
+      Z: 117.007812
     }
     Rotation {
       Yaw: -40.3926086
@@ -1847,7 +1935,7 @@ Objects {
   Transform {
     Location {
       X: 789.365234
-      Y: -479.757813
+      Y: -479.757812
       Z: 68.2334
     }
     Rotation {
@@ -1989,7 +2077,7 @@ Objects {
   Name: "Decal Ivy Big"
   Transform {
     Location {
-      X: 655.382813
+      X: 655.382812
       Y: -561.390625
       Z: 68.2334
     }
@@ -2070,7 +2158,7 @@ Objects {
   Name: "Decal Moss Patch"
   Transform {
     Location {
-      X: -799.757813
+      X: -799.757812
       Y: 588.541
       Z: 68.2334
     }
@@ -2647,7 +2735,7 @@ Objects {
   Name: "Cube - Polished"
   Transform {
     Location {
-      X: -881.007813
+      X: -881.007812
       Y: 441.259766
       Z: 212.864624
     }
@@ -2984,7 +3072,7 @@ Objects {
   Transform {
     Location {
       X: -211.792969
-      Y: 116.539063
+      Y: 116.539062
       Z: 212.864624
     }
     Rotation {
@@ -3492,7 +3580,7 @@ Objects {
   Transform {
     Location {
       X: 78.2148438
-      Y: -25.6132813
+      Y: -25.6132812
     }
     Rotation {
     }
@@ -4250,7 +4338,7 @@ Objects {
   Transform {
     Location {
       X: -1097.85156
-      Y: -93.8007813
+      Y: -93.8007812
       Z: 1183.63599
     }
     Rotation {
@@ -4307,9 +4395,9 @@ Objects {
   Name: "Prism - 8-Sided Polished"
   Transform {
     Location {
-      X: -557.164063
+      X: -557.164062
       Y: 880.097656
-      Z: 1433.76563
+      Z: 1433.76562
     }
     Rotation {
       Pitch: 0.142682642
@@ -5119,7 +5207,7 @@ Objects {
   Name: "Prism - 8-Sided Polished"
   Transform {
     Location {
-      X: 616.695313
+      X: 616.695312
       Y: -897.421875
       Z: 1214.97241
     }
@@ -6126,7 +6214,7 @@ Objects {
   Transform {
     Location {
       X: 789.365234
-      Y: -479.757813
+      Y: -479.757812
       Z: 68.2334
     }
     Rotation {
@@ -6268,7 +6356,7 @@ Objects {
   Name: "Decal Ivy Big"
   Transform {
     Location {
-      X: 655.382813
+      X: 655.382812
       Y: -561.390625
       Z: 68.2334
     }
@@ -6349,7 +6437,7 @@ Objects {
   Name: "Decal Moss Patch"
   Transform {
     Location {
-      X: -799.757813
+      X: -799.757812
       Y: 588.541
       Z: 68.2334
     }
@@ -6926,7 +7014,7 @@ Objects {
   Name: "Cube - Polished"
   Transform {
     Location {
-      X: -881.007813
+      X: -881.007812
       Y: 441.259766
       Z: 212.864624
     }
@@ -7263,7 +7351,7 @@ Objects {
   Transform {
     Location {
       X: -211.792969
-      Y: 116.539063
+      Y: 116.539062
       Z: 212.864624
     }
     Rotation {
@@ -7771,7 +7859,7 @@ Objects {
   Transform {
     Location {
       X: 78.2148438
-      Y: -25.6132813
+      Y: -25.6132812
     }
     Rotation {
     }
@@ -8529,7 +8617,7 @@ Objects {
   Transform {
     Location {
       X: -1097.85156
-      Y: -93.8007813
+      Y: -93.8007812
       Z: 1183.63599
     }
     Rotation {
@@ -8586,9 +8674,9 @@ Objects {
   Name: "Prism - 8-Sided Polished"
   Transform {
     Location {
-      X: -557.164063
+      X: -557.164062
       Y: 880.097656
-      Z: 1433.76563
+      Z: 1433.76562
     }
     Rotation {
       Pitch: 0.142682642
@@ -9398,7 +9486,7 @@ Objects {
   Name: "Prism - 8-Sided Polished"
   Transform {
     Location {
-      X: 616.695313
+      X: 616.695312
       Y: -897.421875
       Z: 1214.97241
     }

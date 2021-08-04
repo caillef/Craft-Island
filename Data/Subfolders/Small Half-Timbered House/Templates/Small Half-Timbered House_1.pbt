@@ -281,7 +281,7 @@ Assets {
           Location {
             X: 15.3398438
             Y: 448.523376
-            Z: 65.3945313
+            Z: 65.3945312
           }
           Rotation {
             Yaw: -89.9999313
@@ -488,7 +488,7 @@ Assets {
           Location {
             X: 15.3398132
             Y: -456.61322
-            Z: 65.3945313
+            Z: 65.3945312
           }
           Rotation {
             Yaw: -89.9999313
@@ -1000,7 +1000,7 @@ Assets {
         Name: "Cube"
         Transform {
           Location {
-            X: 11.8789063
+            X: 11.8789062
             Y: -497.322205
             Z: 494.06543
           }
@@ -1052,7 +1052,7 @@ Assets {
         Name: "Cube"
         Transform {
           Location {
-            X: 11.8789063
+            X: 11.8789062
             Y: -497.322205
             Z: 676.755859
           }
@@ -1207,7 +1207,7 @@ Assets {
         Transform {
           Location {
             X: -339.863251
-            Y: 10.2226563
+            Y: 10.2226562
             Z: 670.457031
           }
           Rotation {
@@ -1258,7 +1258,7 @@ Assets {
         Transform {
           Location {
             X: -339.863251
-            Y: -12.2851563
+            Y: -12.2851562
             Z: 506.352539
           }
           Rotation {
@@ -1771,7 +1771,7 @@ Assets {
           Location {
             X: 18.1835918
             Y: -5.62304688
-            Z: 28.7851563
+            Z: 28.7851562
           }
           Rotation {
           }
@@ -5352,7 +5352,7 @@ Assets {
           Location {
             X: 14.921875
             Y: -496.486267
-            Z: 525.632813
+            Z: 525.632812
           }
           Rotation {
             Pitch: -0.00152996229
@@ -5478,7 +5478,7 @@ Assets {
           Location {
             X: 14.9219055
             Y: 486.718658
-            Z: 525.632813
+            Z: 525.632812
           }
           Rotation {
             Pitch: -0.00152996229
@@ -7659,7 +7659,7 @@ Assets {
         Name: "Cube - Chamfered Large"
         Transform {
           Location {
-            X: 338.882813
+            X: 338.882812
             Y: -8.39453125
             Z: 295.167
           }
@@ -7721,7 +7721,7 @@ Assets {
         Name: "Cube - Chamfered Large"
         Transform {
           Location {
-            X: 338.882813
+            X: 338.882812
             Y: -8.39453125
             Z: 144.561523
           }
@@ -7845,7 +7845,7 @@ Assets {
         Name: "Cube - Chamfered Large"
         Transform {
           Location {
-            X: 338.882813
+            X: 338.882812
             Y: -157.021484
             Z: 212.313477
           }
@@ -7907,7 +7907,7 @@ Assets {
         Name: "Cube - Chamfered Large"
         Transform {
           Location {
-            X: 338.882813
+            X: 338.882812
             Y: -207.751953
             Z: 209.270508
           }
@@ -8032,7 +8032,7 @@ Assets {
         Name: "Cube - Chamfered Large"
         Transform {
           Location {
-            X: 338.882813
+            X: 338.882812
             Y: 105.339844
             Z: 212.313477
           }
@@ -8094,7 +8094,7 @@ Assets {
         Name: "Cube - Chamfered Large"
         Transform {
           Location {
-            X: 338.882813
+            X: 338.882812
             Y: 277.96875
             Z: 212.313477
           }
@@ -8156,7 +8156,7 @@ Assets {
         Name: "Cube - Chamfered Large"
         Transform {
           Location {
-            X: 338.882813
+            X: 338.882812
             Y: -27.7050781
             Z: 212.313477
           }
@@ -8218,7 +8218,7 @@ Assets {
         Name: "Cube - Chamfered Large"
         Transform {
           Location {
-            X: 338.882813
+            X: 338.882812
             Y: 356.515625
             Z: 219.810547
           }
@@ -8281,7 +8281,7 @@ Assets {
         Name: "Cube - Chamfered Large"
         Transform {
           Location {
-            X: 338.882813
+            X: 338.882812
             Y: -386.464844
             Z: 225.047852
           }
@@ -8583,7 +8583,7 @@ Assets {
         Name: "Cube"
         Transform {
           Location {
-            X: 16.0507813
+            X: 16.0507812
             Y: 435.085907
             Z: 43.7255859
           }
@@ -10622,7 +10622,7 @@ Assets {
         Name: "Cube - Chamfered Large"
         Transform {
           Location {
-            X: 17.1445313
+            X: 17.1445312
             Y: 487.365173
             Z: 592.575195
           }
@@ -10683,7 +10683,7 @@ Assets {
         Name: "Cube - Chamfered Large"
         Transform {
           Location {
-            X: 76.5976563
+            X: 76.5976562
             Y: 487.365173
             Z: 597.268555
           }
@@ -10746,7 +10746,7 @@ Assets {
         Name: "Cube - Chamfered Large"
         Transform {
           Location {
-            X: -44.3945313
+            X: -44.3945312
             Y: 487.365173
             Z: 597.268555
           }
@@ -10996,7 +10996,7 @@ Assets {
         Name: "Cube - Chamfered Large"
         Transform {
           Location {
-            X: 48.9882813
+            X: 48.9882812
             Y: 448.890564
             Z: 207.037109
           }
@@ -11309,7 +11309,7 @@ Assets {
           Location {
             X: -304.437469
             Y: -41.65625
-            Z: 245.007813
+            Z: 245.007812
           }
           Rotation {
           }
@@ -11490,7 +11490,7 @@ Assets {
         Name: "Cube - Chamfered Large"
         Transform {
           Location {
-            X: 48.9882813
+            X: 48.9882812
             Y: -460.671814
             Z: 207.037109
           }
@@ -12255,7 +12255,7 @@ Assets {
           Location {
             X: -216.94136
             Y: 416.173767
-            Z: 413.039063
+            Z: 413.039062
           }
           Rotation {
             Yaw: -178.66449
@@ -12435,7 +12435,7 @@ Assets {
         Transform {
           Location {
             X: 292.269501
-            Y: -277.539063
+            Y: -277.539062
             Z: 49.6308594
           }
           Rotation {
@@ -13167,7 +13167,7 @@ Assets {
         Transform {
           Location {
             X: -4.47656202
-            Y: 5.65039063
+            Y: 5.65039062
             Z: 450.206055
           }
           Rotation {
@@ -13411,7 +13411,7 @@ Assets {
         Transform {
           Location {
             X: -274.957
-            Y: 77.2695313
+            Y: 77.2695312
             Z: 486.025391
           }
           Rotation {
@@ -13474,7 +13474,7 @@ Assets {
         Transform {
           Location {
             X: -274.957
-            Y: -63.5507813
+            Y: -63.5507812
             Z: 486.025391
           }
           Rotation {
@@ -13744,7 +13744,7 @@ Assets {
         Transform {
           Location {
             X: -259.191376
-            Y: -3.90820313
+            Y: -3.90820312
             Z: 204.318359
           }
           Rotation {
@@ -13796,7 +13796,7 @@ Assets {
         Transform {
           Location {
             X: -257.234344
-            Y: -10.8945313
+            Y: -10.8945312
             Z: 203.756836
           }
           Rotation {
@@ -14257,7 +14257,7 @@ Assets {
         Name: "Cube"
         Transform {
           Location {
-            X: -218.726563
+            X: -218.726562
             Y: -373.089813
             Z: 615.220703
           }
@@ -14723,7 +14723,7 @@ Assets {
           Location {
             X: -229.515656
             Y: -375.279236
-            Z: 84.9882813
+            Z: 84.9882812
           }
           Rotation {
             Pitch: 46.0223503
@@ -15991,7 +15991,7 @@ Assets {
           Location {
             X: -307.160187
             Y: -480.915955
-            Z: 45.6132813
+            Z: 45.6132812
           }
           Rotation {
             Pitch: 17.8498306
@@ -16333,7 +16333,7 @@ Assets {
         Name: "Decal Ivy Small (variations)"
         Transform {
           Location {
-            X: -350.757813
+            X: -350.757812
             Y: -514.845642
             Z: 462.489258
           }
@@ -16376,7 +16376,7 @@ Assets {
         Name: "Decal Ivy Small (variations)"
         Transform {
           Location {
-            X: -350.757813
+            X: -350.757812
             Y: -509.576111
             Z: 514.458
           }
@@ -16464,7 +16464,7 @@ Assets {
           Location {
             X: -318.210938
             Y: -272.265594
-            Z: 94.7695313
+            Z: 94.7695312
           }
           Rotation {
             Pitch: 2.89514637
@@ -16593,7 +16593,7 @@ Assets {
           Location {
             X: -278.535156
             Y: -523.572205
-            Z: 610.414063
+            Z: 610.414062
           }
           Rotation {
             Pitch: 17.8498306
@@ -16636,7 +16636,7 @@ Assets {
           Location {
             X: -321.585938
             Y: -523.572205
-            Z: 610.414063
+            Z: 610.414062
           }
           Rotation {
             Pitch: 17.8498306
@@ -17909,6 +17909,6 @@ Assets {
   Marketplace {
     Description: "My first creation here, a medieval style house with some furniture (core content and self tinkered)\r\n\r\nUpdate Notes:\r\n\r\n1.1.0:\r\n\r\n- Fixed Texture allignment at some prominent parts to avoid strange looks when rotating/moving.\r\n\r\n- Fixed the Door, it should now open/close properly.\r\n\r\n\r\n1.2.0:\r\n\r\n- Improved folder structure for better modification.\r\n\r\n- Increased foundation size to ease placement.\r\n\r\n- All the walls are made of basic shapes now.\r\n\r\n- Matched names of the template and the hierarchy folder.\r\n\r\n\r\nBack to 1.0.0:\r\n\r\n- I screwed up the republish thing and broke it, so now i made it a new file...\r\n\r\n1.1.0:\r\n\r\n- Fixed context (hopefully)\r\n\r\n\r\nKnown Issues: - It was made without the \"Snap to Grid\" feature and many parts are weird in sizes, so bigger modifications may cause a bit of trouble."
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
   DirectlyPublished: true
 }

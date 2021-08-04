@@ -4066,7 +4066,7 @@ Assets {
         Name: "Hood_Small"
         Transform {
           Location {
-            X: 6.10351563e-05
+            X: 6.10351562e-05
             Y: 33.3394775
             Z: -45.8124695
           }
@@ -9963,7 +9963,7 @@ Assets {
         Transform {
           Location {
             X: 82.5451813
-            Y: 6.10351563e-05
+            Y: 6.10351562e-05
             Z: -8.02626
           }
           Rotation {
@@ -12797,7 +12797,7 @@ Assets {
         Name: "Street Barrier - Pedestrian"
         Transform {
           Location {
-            X: -0.000610351563
+            X: -0.000610351562
             Y: -107.012497
             Z: -31.3569183
           }
@@ -15445,7 +15445,7 @@ Assets {
         Transform {
           Location {
             X: -102.5
-            Y: -384.070313
+            Y: -384.070312
           }
           Rotation {
           }
@@ -16954,6 +16954,6 @@ Assets {
   Marketplace {
     Description: "It moves. thanks to knar and zurishimi for code and to twixler for model."
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
   DirectlyPublished: true
 }

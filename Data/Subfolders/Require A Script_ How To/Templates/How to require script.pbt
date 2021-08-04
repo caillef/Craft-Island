@@ -43,5 +43,5 @@ Assets {
     Version: "1.7.0"
     Description: "This is a short example of how to use the powerful require script feature. Well documented, short, and to the point.\r\n\r\n@LuckofBuck on Twitter"
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
 }

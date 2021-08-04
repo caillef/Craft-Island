@@ -5635,21 +5635,23 @@ Objects {
   ChildIds: 1400440669061504928
   UnregisteredParameters {
     Overrides {
-      Name: "cs:BlockSerializer"
-      ObjectReference {
-        SelfId: 841534158063459245
-      }
-    }
-    Overrides {
-      Name: "cs:BuildingSystemList"
-      ObjectReference {
-        SelfId: 841534158063459245
-      }
-    }
-    Overrides {
       Name: "cs:UIPanel"
       ObjectReference {
         SelfId: 14440130256340139604
+      }
+    }
+    Overrides {
+      Name: "cs:PreviewMaterial"
+      AssetReference {
+        Id: 11298517848542431636
+      }
+    }
+    Overrides {
+      Name: "cs:PreviewColor"
+      Color {
+        G: 0.381456882
+        B: 0.9
+        A: 1
       }
     }
   }

@@ -40,6 +40,7 @@ local achievements = {
 	{ type = 14, name = "Buy ;; carrot seeds", qtys = { 1 } },
 	{ type = 15, name = "Buy ;; berry sprouts", qtys = { 1 } },
 	{ type = 16, name = "Craft ;; cooking table.", qtys = { 1 } },
+	{ type = 17, name = "Cook ;; fish.", qtys = { 1, 10, 25, 50, 100, 200, 500, 1000 } },
 }
 
 function DeserializeAchievementList(data)
@@ -68,6 +69,7 @@ Events.Connect("GetAchiR", function(rewardAvailable, data)
 	local list = DeserializeAchievementList(data)
 	for _,v in pairs(list) do
 		local obj = World.SpawnAsset("9CBD759C30CF94A9:AchievementUI", { parent=childList[i] })
+		print(v.i)
 		local achievement = achievements[v.i]
 		obj:FindChildByName("ProgressBar").width = math.floor(v.p * 400)
 		local name = achievement.name

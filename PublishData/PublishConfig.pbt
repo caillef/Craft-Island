@@ -12,7 +12,6 @@ ScreenshotPaths: "C:\\Users\\hiind\\Desktop\\Craft (1).png"
 ScreenshotPaths: "C:\\Users\\hiind\\Desktop\\Core\\craftisland.png"
 ScreenshotPaths: "C:\\Users\\hiind\\Desktop\\Core\\craftisland2.png"
 ScreenshotPaths: "C:\\Users\\hiind\\Documents\\My Games\\CORE\\Saved\\Maps\\Craft Island\\Screenshots\\Screenshot0004.png"
-ReleaseNotes: "- Added Fishing\r\n- Voice Chat Enabled\r\n"
 OwnerId: "be87c969b2e5444dac5c09d330a142ab"
 SerializationVersion: 1
 PublishedState: Public

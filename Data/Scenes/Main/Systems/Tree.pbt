@@ -11978,7 +11978,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
+    Value: "mc:evisibilitysetting:forceon"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -11996,7 +11996,7 @@ Objects {
         Id: 4763468874179608279
       }
       Color {
-        A: 0.5
+        A: 0.410000026
       }
       TeamSettings {
       }
@@ -12472,7 +12472,6 @@ Objects {
         R: 0.5
         G: 0.5
         B: 0.5
-        A: 0.25
       }
       TeamSettings {
       }
@@ -13445,7 +13444,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -13609,7 +13607,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -13773,7 +13770,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -13937,7 +13933,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -14101,7 +14096,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -14265,7 +14259,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -14429,7 +14422,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -14593,7 +14585,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -14756,7 +14747,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -14920,7 +14910,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -15084,7 +15073,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -15248,7 +15236,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -15412,7 +15399,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -15576,7 +15562,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -15740,7 +15725,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -15904,7 +15888,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -16068,7 +16051,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -16231,7 +16213,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -16394,7 +16375,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -16557,7 +16537,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -16720,7 +16699,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -16883,7 +16861,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -17046,7 +17023,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -17209,7 +17185,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -17372,7 +17347,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -17535,7 +17509,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -17697,7 +17670,6 @@ Objects {
         R: 1
         G: 1
         B: 1
-        A: 0.3
       }
       HoveredColor {
         R: 1
@@ -18596,8 +18568,10 @@ Objects {
     UseParentHeight: true
     Image {
       Brush {
+        Id: 2352972141113830561
       }
       Color {
+        A: 0.00500000035
       }
       TeamSettings {
       }

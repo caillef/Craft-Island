@@ -1,4 +1,4 @@
-﻿local FP = script:GetCustomProperty("FirstCam"):WaitForObject(1)
+local FP = script:GetCustomProperty("FirstCam"):WaitForObject(1)
 local TP = script:GetCustomProperty("ThirdCam"):WaitForObject(1)
 local player = Game.GetLocalPlayer()
 local binding = script.parent.parent:GetCustomProperty("KeyBind")

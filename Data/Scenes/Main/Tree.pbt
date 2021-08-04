@@ -28,6 +28,7 @@ Objects {
   ChildIds: 5576106819183588476
   ChildIds: 15086921634544753310
   ChildIds: 17872065178085272721
+  ChildIds: 3312948227838941181
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -40,6 +41,48 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 3312948227838941181
+  Name: "Inventory Background"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 2738305519234598254
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Inventory Background"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2367129066144732903
+    }
   }
 }
 Objects {

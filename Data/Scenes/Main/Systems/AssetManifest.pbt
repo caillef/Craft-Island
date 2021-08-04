@@ -233,6 +233,15 @@ Assets {
   }
 }
 Assets {
+  Id: 2352972141113830561
+  Name: "Frame Outlined Thick 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameFlat_019"
+  }
+}
+Assets {
   Id: 2203390054718287944
   Name: "BG Gradient 006"
   PlatformAssetType: 9

@@ -140,15 +140,83 @@ function OnLoad(str)
 	for key,item in pairs(items) do
 		if GetObjectsList()[item.id] and GetObjectsList()[item.id].itemMuid then
 			local prop = World.SpawnAsset(GetObjectsList()[item.id].itemMuid, {parent = buttons[key]})
+			prop.visibility = Visibility.FORCE_OFF
+			if GetObjectsList()[item.id].templateMuid then
+				local obj = World.SpawnAsset(GetObjectsList()[item.id].templateMuid)
+				prop.clientUserData.obj = obj
+				obj:SetScale(Vector3.New(0.005, 0.005, 0.005))
+				function RemoveCollision(prop)
+					prop.collision = Collision.FORCE_OFF
+					prop.cameraCollision = Collision.FORCE_OFF
+					for _,p in ipairs(prop:GetChildren()) do
+						RemoveCollision(p)						
+					end
+				end
+				RemoveCollision(obj)
+				obj.collision = Collision.FORCE_OFF
+				obj.cameraCollision = Collision.FORCE_OFF
+			end
 			local qtyText = World.SpawnAsset("173D841514156696", {parent = prop})
 			qtyText.text = item.qty > 1 and tostring(item.qty) or ""
+			qtyText.visibility = Visibility.FORCE_ON
 		end
 	end
 	Select(1)
 end
 
+local inv3dBg = World.SpawnAsset("20D9BB58150F16E7:Inventory Background")
 
-function Tick(_)
+local slotX = 0
+local slotY = 2
+
+function GetWorldPos(x, y)
+	local player = Game.GetLocalPlayer()
+	local rayStart = player:GetViewWorldPosition()
+	rayStart.x = rayStart.x + 2
+	rayStart.y = rayStart.y - 0.8
+	rayStart.z = rayStart.z + 4.6 + -y * 2.55
+	rayStart.y = rayStart.y - 9.5 + x * 2.7
+	local cameraForward = player:GetViewWorldRotation() * Vector3.FORWARD
+	local rayEnd = rayStart + cameraForward * 30
+	return rayEnd
+end
+
+local time = 0
+function Tick(delta)
+	if frame.visibility == Visibility.FORCE_OFF then
+		inv3dBg:SetWorldPosition(Vector3.ZERO)
+	else
+		local player = Game.GetLocalPlayer()
+
+		local rayStart = player:GetViewWorldPosition()
+		rayStart.y = rayStart.y - 0.8
+	
+		rayStart.x = rayStart.x + 3
+		local cameraForward = player:GetViewWorldRotation() * Vector3.FORWARD
+		local rayEnd = rayStart + cameraForward * 30
+	
+		inv3dBg:SetWorldRotation(player:GetViewWorldRotation())
+		inv3dBg:SetWorldPosition(rayEnd)
+
+		inv3dBg:SetWorldPosition(Vector3.ZERO)
+		for i=1,27 do
+			for k,c in pairs(buttons[i]:GetChildren()) do
+				if k ~= 1 then -- Keep background
+					print((i - 1) % 9, math.floor((i - 1) / 9))
+					local obj = c.clientUserData.obj
+					if obj then
+						local itemPos = GetWorldPos((i - 1) % 9, math.floor((i - 1) / 9))
+						local rot = player:GetViewWorldRotation()
+						rot.z = rot.z + time * 10
+						obj:SetWorldRotation(rot)
+						obj:SetWorldPosition(itemPos)							
+					end
+				end
+			end
+		end
+		time = time+delta
+	end
+
 	if loading then return end	
 	if UI.GetCursorPosition().x > UI.GetScreenSize().x/2 + 400 then
 		hoveredSlotIndex = nil

@@ -1,5 +1,8 @@
 ﻿local propUIPanel = script:GetCustomProperty("UIPanel"):WaitForObject()
 
+local PREVIEW_MATERIAL = script:GetCustomProperty("PreviewMaterial")
+local PREVIEW_COLOR = script:GetCustomProperty("PreviewColor")
+
 local ACTION_PLACE = "ability_primary" -- left click
 local ACTION_ROTATE = "ability_secondary" -- right click
 
@@ -205,8 +208,8 @@ function SelectStructure(id)
         prop.collision = Collision.FORCE_OFF
         prop.cameraCollision = Collision.FORCE_OFF
         for _, materialSlot in ipairs(prop:GetMaterialSlots()) do
-            prop:SetMaterialForSlot(script:GetCustomProperty("PreviewMaterial"), materialSlot.slotName)
-            prop:SetColor(script:GetCustomProperty("PreviewColor"))
+            prop:SetMaterialForSlot(PREVIEW_MATERIAL, materialSlot.slotName)
+            materialSlot:SetColor(PREVIEW_COLOR)
         end            
     end
     if triggerOverlapEvent then

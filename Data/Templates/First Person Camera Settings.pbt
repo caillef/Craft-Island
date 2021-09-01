@@ -109,6 +109,7 @@ Assets {
             CanMoveDown: true
             IsMountEnabled: true
             MaxHitpoints: 100
+            PlayerMasterVolumeMultiplier: 1
           }
         }
       }
@@ -196,5 +197,5 @@ Assets {
       AssetId: "First_Person_Camera_Settings"
     }
   }
-  SerializationVersion: 94
+  SerializationVersion: 97
 }

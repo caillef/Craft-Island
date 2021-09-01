@@ -187,5 +187,5 @@ Assets {
       AssetId: "Fantasy_Castle_Wall_03_-_Top_Half_Template"
     }
   }
-  SerializationVersion: 94
+  SerializationVersion: 97
 }

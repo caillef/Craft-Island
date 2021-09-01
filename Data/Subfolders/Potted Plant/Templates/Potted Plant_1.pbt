@@ -328,6 +328,6 @@ Assets {
   Marketplace {
     Description: "A small potted plant. Will reupload when I learn how to turn off plant animations so it suits an indoor environment more. Enjoy ^^"
   }
-  SerializationVersion: 94
+  SerializationVersion: 97
   DirectlyPublished: true
 }

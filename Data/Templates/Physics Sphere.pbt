@@ -35,8 +35,15 @@ Assets {
             IsEnabled: true
             Mass: 100
           }
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
           Radius: 50
           Length: 200
+          DamageSettings {
+            StartImmortal: true
+          }
         }
       }
       Objects {
@@ -129,5 +136,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 94
+  SerializationVersion: 97
 }

@@ -1236,6 +1236,6 @@ Assets {
   Marketplace {
     Description: "a chef\'s hat for your various chef-ing needs"
   }
-  SerializationVersion: 94
+  SerializationVersion: 97
   DirectlyPublished: true
 }

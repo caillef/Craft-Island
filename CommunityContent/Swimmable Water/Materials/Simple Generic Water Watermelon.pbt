@@ -2,7 +2,7 @@ Assets {
   Id: 6042712840904892589
   Name: "Simple Generic Water Watermelon"
   PlatformAssetType: 13
-  SerializationVersion: 94
+  SerializationVersion: 97
   CustomMaterialAsset {
     BaseMaterialId: 3627032956109716191
     ParameterOverrides {

@@ -1165,6 +1165,6 @@ Assets {
   Marketplace {
     Description: "Just drag in the swimmable water cube and you\'ll have water that you can swim in! Now just scale the water to the dimensions you want and you\'re done.\r\n\r\n@LuckofBuck on Twitter"
   }
-  SerializationVersion: 94
+  SerializationVersion: 97
   DirectlyPublished: true
 }

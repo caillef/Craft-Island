@@ -197,6 +197,12 @@ Objects {
         }
       }
     }
+    Overrides {
+      Name: "cs:Constants"
+      AssetReference {
+        Id: 1824351816134648897
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

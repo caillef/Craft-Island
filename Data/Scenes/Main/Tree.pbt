@@ -22,6 +22,10 @@ Objects {
   ChildIds: 11678237838342285850
   ChildIds: 15498874708719638745
   ChildIds: 3158832844170323818
+  ChildIds: 7282063893527213809
+  ChildIds: 18342988714778428341
+  ChildIds: 18375482580815605843
+  ChildIds: 7338830643380405251
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -34,6 +38,232 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 7338830643380405251
+  Name: "PlayerIsland"
+  Transform {
+    Location {
+      Y: -23397.7305
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10521384055258147901
+      value {
+        Overrides {
+          Name: "Name"
+          String: "PlayerIsland4"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            Y: -33324.8164
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14249821473658384158
+      value {
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 25
+            Y: 25
+            Z: 12.5
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -3047.03125
+            Y: 955.972656
+            Z: -312.5
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 3526051123066352755
+    }
+  }
+}
+Objects {
+  Id: 18375482580815605843
+  Name: "PlayerIsland"
+  Transform {
+    Location {
+      Y: -16731.5977
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10521384055258147901
+      value {
+        Overrides {
+          Name: "Name"
+          String: "PlayerIsland3"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            Y: -23397.7305
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14249821473658384158
+      value {
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 20
+            Y: 20
+            Z: 12.5
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -3047.03125
+            Y: 955.972656
+            Z: -312.5
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 3526051123066352755
+    }
+  }
+}
+Objects {
+  Id: 18342988714778428341
+  Name: "PlayerIsland"
+  Transform {
+    Location {
+      Y: -10770.1484
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10521384055258147901
+      value {
+        Overrides {
+          Name: "Name"
+          String: "PlayerIsland2"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            Y: -16731.5977
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 14249821473658384158
+      value {
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 15
+            Y: 15
+            Z: 12.5
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 3526051123066352755
+    }
+  }
+}
+Objects {
+  Id: 7282063893527213809
+  Name: "PlayerIsland"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 10521384055258147901
+      value {
+        Overrides {
+          Name: "Name"
+          String: "PlayerIsland"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            Y: -10770.1484
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 3526051123066352755
+    }
   }
 }
 Objects {
@@ -5401,6 +5631,12 @@ Objects {
         G: 0.381456882
         B: 0.9
         A: 1
+      }
+    }
+    Overrides {
+      Name: "cs:Constants"
+      AssetReference {
+        Id: 1824351816134648897
       }
     }
   }

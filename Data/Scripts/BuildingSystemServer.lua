@@ -1,42 +1,13 @@
-
+﻿
 local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
 local propSharedKeyIslands = script:GetCustomProperty("SharedKeyIslands")
-
-local _objectsList
-function GetObjectsList()
-    _objectsList = _G["caillef.craftisland.objects"]
-    while _objectsList == nil do
-        Task.Wait(0.1)
-        _objectsList = _G["caillef.craftisland.objects"]
-    end
-    return _objectsList    
-end
-
-local _blockSerializer
-function GetBlockSerializer()
-    _blockSerializer = _G["caillef.craftisland.buildSerializer"]
-    while _blockSerializer == nil do
-        Task.Wait(0.1)
-        _blockSerializer = _G["caillef.craftisland.buildSerializer"]
-    end
-    return _blockSerializer    
-end
-
-local _queryObjectFunction
-function QueryObject(id)
-    _queryObjectFunction = _G["caillef.craftisland.queryobject"]
-    while _queryObjectFunction == nil do
-        Task.Wait(0.1)
-        _queryObjectFunction = _G["caillef.craftisland.queryobject"]
-    end
-    return _queryObjectFunction(id)
-end
+local CONSTANTS = require(script:GetCustomProperty("Constants"))
+local APIB = require(script:GetCustomProperty("APIBuildingSystem"))
+local APIO = require(script:GetCustomProperty("APIObjects"))
+local APIBSerializer = require(script:GetCustomProperty("APIBlockSerializer"))
 
 local placedObjects = {}
 local playersSpawns = {}
-
-local WALL_SIZE = 200
-local WALL_HEIGHT = 150
 
 local logs = {}
 function GetLogs()
@@ -54,19 +25,8 @@ function ClearLogs()
     logs = {}
 end
 
-function getAlignedAngle(a)
-    a = math.floor(a)
-    if a == 0 and a == 180 and a == 90 and a == 270 then return angle end
-    while a < 0 do a = a + 360 end
-    while a > 360 do a = a - 360 end
-    if a > 80 and a < 100 then return 90 end
-    if a > 170 and a < 190 then return 180 end
-    if a > 260 and a < 280 then return 270 end
-    return 0
-end
-
 function GetTypeFromMuid(muid)
-    for key,obj in pairs(GetObjectsList()) do
+    for key,obj in pairs(APIO.OBJECTS) do
         if obj.templateMuid == muid then
             return key
         end
@@ -85,7 +45,7 @@ function SaveIsland(player)
     if not player or not player:IsValid() then print("Warning: tried to save island of not valid player") return end
     local slot = playersSpawns[player]
     local storage = Storage.GetSharedPlayerData(propSharedKeyIslands, player)
-    storage.pBlocks = GetBlockSerializer().SerializeList(slot.island:FindChildByName("Structures"):GetChildren(), slot.pos)
+    storage.pBlocks = APIBSerializer.SerializeList(slot.island:FindChildByName("Structures"):GetChildren(), slot.pos)
     if Storage.SizeOfData(storage) < 16000 then
         Storage.SetSharedPlayerData(propSharedKeyIslands, player, storage)
     else
@@ -94,7 +54,7 @@ function SaveIsland(player)
 end
 
 function BuildingSystem_OnPlaceStructure(player, serializedBlock)
-    local data = GetBlockSerializer().Deserialize(serializedBlock, playersSpawns[player].pos)
+    local data = APIBSerializer.Deserialize(serializedBlock, playersSpawns[player].pos)
     if not data then return end
     if not INVENTORY.PlayerHasItems(player, { id=data.type }) or
        not PlaceObject(player, data.pos, data.angle, data.type) then
@@ -122,15 +82,15 @@ function GetStructureOnCellFromList(list, pos, player)
     if list and list[z] and list[z][y] and list[z][y][x] and list[z][y][x][0] then
         return list[z][y][x][0]
     end
-    y = y - WALL_SIZE
+    y = y - APIB.WALL_SIZE
     if list and list[z] and list[z][y] and list[z][y][x] and list[z][y][x][90] then
         return list[z][y][x][90]
     end
-    x = x + WALL_SIZE
+    x = x + APIB.WALL_SIZE
     if list and list[z] and list[z][y] and list[z][y][x] and list[z][y][x][180] then
         return list[z][y][x][180]
     end
-    y = y + WALL_SIZE
+    y = y + APIB.WALL_SIZE
     if list and list[z] and list[z][y] and list[z][y][x] and list[z][y][x][270] then
         return list[z][y][x][270]
     end
@@ -158,7 +118,7 @@ function Grow(objReplaced, newIdName, player)
                 local parent = objReplaced.parent
                 local rotation = objReplaced:GetRotation()
                 RemoveStructure(objReplaced, player)
-                local newObj = QueryObject(newIdName)
+                local newObj = APIO.QueryObject(newIdName)
                 local obj = World.SpawnAsset(newObj.templateMuid, { parent=parent , position = pos, rotation = rotation })
                 AssignPlayerToObject(obj, player)
                 local newPlacedTypedObjects = placedObjects[player][newObj.id] or {}
@@ -194,7 +154,7 @@ end
 
 function PlaceObject(player, position, angle, type, isLoadingIsland)
     if not player or not player:IsValid() then return end
-    angle = getAlignedAngle(angle)
+    angle = APIB.GetAlignedAngle(angle)
     placedObjects[player] = placedObjects[player] or {}
 
     if not isLoadingIsland and CountNbStructures(placedObjects[player]) >= 2000 then
@@ -205,7 +165,13 @@ function PlaceObject(player, position, angle, type, isLoadingIsland)
     end
 
     local placedTypedObjects = placedObjects[player][type] or {}
+    local islandLimit = CONSTANTS.ISLAND_SIZES[1] -- TODO: get island size form player
+    if not APIB.IsValidPlaceToBuild(position, angle, playersSpawns[player].island:FindChildByName("Structures"):GetWorldPosition(), islandLimit) then
+        return
+    end
+
     position = position - playersSpawns[player].island:FindChildByName("Structures"):GetWorldPosition()
+
     if placedTypedObjects[position.z] ~= nil and
        placedTypedObjects[position.z][position.y] ~= nil and
        placedTypedObjects[position.z][position.y][position.x] ~= nil and
@@ -213,7 +179,7 @@ function PlaceObject(player, position, angle, type, isLoadingIsland)
         return false
     end
 
-    local mandatorySurface = GetObjectsList()[type].buildConditions and GetObjectsList()[type].buildConditions.mustBeBuiltOn or nil
+    local mandatorySurface = APIO.OBJECTS[type].buildConditions and APIO.OBJECTS[type].buildConditions.mustBeBuiltOn or nil
     if not playersSpawns[player].isLoading and mandatorySurface then
         local surfaceObjects = placedObjects[player][mandatorySurface] or {}
         local block = GetStructureOnCellFromList(surfaceObjects, position, player)
@@ -224,7 +190,7 @@ function PlaceObject(player, position, angle, type, isLoadingIsland)
         RemoveStructure(block.obj, player)        
     end
 
-    local obj = World.SpawnAsset(GetObjectsList()[type].templateMuid, { position = position, rotation = Rotation.New(0, 0, angle), parent = playersSpawns[player].island:FindChildByName("Structures") })
+    local obj = World.SpawnAsset(APIO.OBJECTS[type].templateMuid, { position = position, rotation = Rotation.New(0, 0, angle), parent = playersSpawns[player].island:FindChildByName("Structures") })
     AssignPlayerToObject(obj, player)
     placedTypedObjects[position.z] = placedTypedObjects[position.z] or {}
     placedTypedObjects[position.z][position.y] = placedTypedObjects[position.z][position.y] or {}
@@ -242,7 +208,7 @@ end
 function LoadPreviousBlocks(player)
     local storage = Storage.GetSharedPlayerData(propSharedKeyIslands, player) or {}
     storage.pBlocks = storage.pBlocks or "v2*25|0=-5,-3,0|270=-7,6,0|90=0,2,0_12|0=-2,-1,0;-2,0,0;-2,-2,0"
-    local blocks = GetBlockSerializer().DeserializeList(storage.pBlocks, playersSpawns[player].pos)
+    local blocks = APIBSerializer.DeserializeList(storage.pBlocks, playersSpawns[player].pos)
     local i = 0
     for _,data in pairs(blocks) do
         PlaceObject(player, data.pos, data.angle, data.type, true)
@@ -265,7 +231,7 @@ function RemoveStructure(obj, player)
     end
     local pos = obj:GetPosition()
     local placedTypedObjects = placedObjects[player] and placedObjects[player][type] or nil
-    local angle = getAlignedAngle(obj:GetRotation().z)
+    local angle = APIB.GetAlignedAngle(obj:GetRotation().z)
     if placedTypedObjects and placedTypedObjects[pos.z] and placedTypedObjects[pos.z][pos.y] and placedTypedObjects[pos.z][pos.y][pos.x] then
         placedTypedObjects[pos.z][pos.y][pos.x][angle] = nil
     end

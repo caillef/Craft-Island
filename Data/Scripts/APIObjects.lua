@@ -1,4 +1,4 @@
-﻿local objects = {}
+local objects = {}
 local objectsId = {}
 
 local CAN_BE_BUILT = true
@@ -205,3 +205,28 @@ _G["caillef.craftisland.buysell"] = {
         { SELL, "WOOD_LOG", 2 },
     }
 }
+
+local API = {}
+API.OBJECTS = objects
+API.OBJECTS_ID = objectsId
+API.QueryObject = function(data)
+    if objects[data] then
+        return objects[data]
+    end
+    return objectsId[data] and objects[objectsId[data]] or nil
+end
+API.FindStructure = function(itemMuid)
+    if itemMuid == objects[objectsId["BASIC_HOE"]].itemMuid then
+        return objectsId["SOIL"]
+    end
+    for k,v in pairs(objects) do
+        if v.itemMuid == itemMuid then
+            return k
+        end
+    end
+    return nil
+end
+API.CRAFTS = _G["caillef.craftisland.crafts"]
+API.BUYSELL_LIST = _G["caillef.craftisland.buysell"]
+
+return API

@@ -17,6 +17,15 @@ Assets {
   }
 }
 Assets {
+  Id: 11970518242149363014
+  Name: "Good"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Scifi_Icon_037"
+  }
+}
+Assets {
   Id: 11264250809069548060
   Name: "Fantasy Craft Gem 016"
   PlatformAssetType: 9
@@ -32,6 +41,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Equip_Chest_002"
+  }
+}
+Assets {
+  Id: 5210670975336869636
+  Name: "Lock"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Urban_Icon_060"
   }
 }
 Assets {

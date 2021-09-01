@@ -1,34 +1,14 @@
-﻿local propUI = script:GetCustomProperty("UI"):WaitForObject()
+﻿local APIO = require(script:GetCustomProperty("APIObjects"))
+
+local propUI = script:GetCustomProperty("UI"):WaitForObject()
 local propCoalSlot = script:GetCustomProperty("CoalSlot"):WaitForObject()
 local propSlots = script:GetCustomProperty("Slots"):WaitForObject():GetChildren()
 local propFlame = script:GetCustomProperty("Flame"):WaitForObject()
-
 local player = Game.GetLocalPlayer()
-local trigger
 local hoveredSlotIndex
 
 local COAL_INDEX = -1
 local COAL_DURATION = 20
-
-local _queryObjectFunction
-function QueryObject(id)
-    _queryObjectFunction = _G["caillef.craftisland.queryobject"]
-    while _queryObjectFunction == nil do
-        Task.Wait(0.1)
-        _queryObjectFunction = _G["caillef.craftisland.queryobject"]
-    end
-    return _queryObjectFunction(id)
-end
-
-local objectsList
-function GetObjectsList()
-    objectsList = _G["caillef.craftisland.objects"]
-    while objectsList == nil do
-        Task.Wait(0.1)
-        objectsList = _G["caillef.craftisland.objects"]
-    end
-    return objectsList    
-end
 
 propFlame.visibility = Visibility.FORCE_OFF
 propUI.visibility =  Visibility.FORCE_OFF
@@ -123,13 +103,13 @@ function Tick()
 						if f.slotsTimer[i] == nil then f.slotsTimer[i] = 7 end
 						if f.slotsTimer[i] <= 0 then
 							if f.slots[i].idName == "BERRY_PIE_DOUGH" then
-								TransformItem(f, QueryObject("BERRY_PIE"), i, updateUI)
+								TransformItem(f, APIO.QueryObject("BERRY_PIE"), i, updateUI)
 							elseif f.slots[i].idName == "DOUGH" then
-								TransformItem(f, QueryObject("BREAD"), i, updateUI)
+								TransformItem(f, APIO.QueryObject("BREAD"), i, updateUI)
 							elseif f.slots[i].idName == "FISH" then
-								TransformItem(f, QueryObject("COOKED_FISH"), i, updateUI)
+								TransformItem(f, APIO.QueryObject("COOKED_FISH"), i, updateUI)
 							elseif f.slots[i].idName == "CARROT_CAKE_DOUGH" then
-								TransformItem(f, QueryObject("CARROT_CAKE"), i, updateUI)
+								TransformItem(f, APIO.QueryObject("CARROT_CAKE"), i, updateUI)
 							end
 							f.slotsTimer[i] = nil
 						else
@@ -154,7 +134,7 @@ Events.Connect("InventoryFastMove", function(buttonIndex, icon)
 	if nextFastMove and nextFastMove >= time() then return end
 
 	local item
-	for key,obj in pairs(GetObjectsList()) do
+	for _,obj in ipairs(APIO.OBJECTS) do
 		if obj.itemMuid == icon.sourceTemplateId then
 			item = obj
 		end
@@ -177,10 +157,10 @@ Events.Connect("InventoryFastMove", function(buttonIndex, icon)
 		end
 		return
 	end
-	if (item.idName == "DOUGH" and SetItemEmptySlot(QueryObject("DOUGH"))) or
-		(item.idName == "BERRY_PIE_DOUGH" and SetItemEmptySlot(QueryObject("BERRY_PIE_DOUGH"))) or
-		(item.idName == "FISH" and SetItemEmptySlot(QueryObject("FISH"))) or
-		(item.idName == "CARROT_CAKE_DOUGH" and SetItemEmptySlot(QueryObject("CARROT_CAKE_DOUGH"))) then
+	if (item.idName == "DOUGH" and SetItemEmptySlot(APIO.QueryObject("DOUGH"))) or
+		(item.idName == "BERRY_PIE_DOUGH" and SetItemEmptySlot(APIO.QueryObject("BERRY_PIE_DOUGH"))) or
+		(item.idName == "FISH" and SetItemEmptySlot(APIO.QueryObject("FISH"))) or
+		(item.idName == "CARROT_CAKE_DOUGH" and SetItemEmptySlot(APIO.QueryObject("CARROT_CAKE_DOUGH"))) then
 		while Events.BroadcastToServer("removeItem", { idName=item.idName }, 1) ~= BroadcastEventResultCode.SUCCESS do
 			Task.Wait(1)
 		end

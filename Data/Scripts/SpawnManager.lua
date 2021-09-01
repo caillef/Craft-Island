@@ -1,4 +1,4 @@
-local TELEPORT_MANAGER = script:GetCustomProperty("TeleportManager"):WaitForObject().context
+﻿local TELEPORT_MANAGER = script:GetCustomProperty("TeleportManager"):WaitForObject().context
 local propPlayerIsland = script:GetCustomProperty("PlayerIsland")
 local propIslands = script:GetCustomProperty("Islands"):WaitForObject()
 
@@ -64,17 +64,11 @@ function OnPlayerJoined(player)
         if not player:IsValid() or not other:IsValid() then return end
         if not other:IsA("Player") then return end
         permissionsAll[other.id] = player == other
-        while other:IsValid() and Events.BroadcastToPlayer(other, "OnBuildPermission", player == other) ~= BroadcastEventResultCode.SUCCESS do
-            Task.Wait(1)
-        end
     end)
     buildingZone.endOverlapEvent:Connect(function(trigger, other)
         if not player:IsValid() or not other:IsValid() then return end
         if not other:IsA("Player") then return end
         permissionsAll[other.id] = false
-        while other:IsValid() and Events.BroadcastToPlayer(other, "OnBuildPermission", false) ~= BroadcastEventResultCode.SUCCESS do
-            Task.Wait(1)
-        end
     end)
     Task.Wait(1)
     Events.Broadcast("BSLI", slot) -- Building Manager Load Island

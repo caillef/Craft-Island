@@ -69,7 +69,6 @@ Events.Connect("GetAchiR", function(rewardAvailable, data)
 	local list = DeserializeAchievementList(data)
 	for _,v in pairs(list) do
 		local obj = World.SpawnAsset("9CBD759C30CF94A9:AchievementUI", { parent=childList[i] })
-		print(v.i)
 		local achievement = achievements[v.i]
 		obj:FindChildByName("ProgressBar").width = math.floor(v.p * 400)
 		local name = achievement.name

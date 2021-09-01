@@ -1,12 +1,4 @@
-local _objectsList
-function GetObjectsList()
-    _objectsList = _G["caillef.craftisland.objects"]
-    while _objectsList == nil do
-        Task.Wait(0.1)
-        _objectsList = _G["caillef.craftisland.objects"]
-    end
-    return _objectsList    
-end
+local OBJECTS = require(script:GetCustomProperty("APIObjects")).OBJECTS
 
 local WALL_SIZE = 200
 local WALL_HEIGHT = 150
@@ -77,7 +69,7 @@ function Block_Deserialize_v3(str, islandPos)
 end
 
 function GetTypeFromMuid(muid)
-    for key,obj in pairs(GetObjectsList()) do
+    for key,obj in pairs(OBJECTS) do
         if obj.templateMuid == muid then
             return key
         end
@@ -143,9 +135,11 @@ function Block_DeserializeStructures(structures, slotPos)
     return pBlocks
 end
 
-_G["caillef.craftisland.buildSerializer"] = {
+local APIBS = {
     Serialize = Block_Serialize_v3,
     Deserialize = Block_Deserialize_v3,
     SerializeList = Block_SerializeStructures,
     DeserializeList = Block_DeserializeStructures
 }
+
+return APIBS

@@ -8,5 +8,13 @@ Assets {
       VirtualFolderPath: "Automation"
       PlatformAssetType: 5
     }
+    Folders {
+      VirtualFolderPath: "Constants"
+      PlatformAssetType: 3
+    }
+    Folders {
+      VirtualFolderPath: "Building"
+      PlatformAssetType: 3
+    }
   }
 }

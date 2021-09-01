@@ -369,7 +369,7 @@ function Select(pickedIndex)
 			Task.Wait(0.1)
 		end
 		Events.Broadcast("SelectStructure", _G["caillef.craftisland.findstructure"](it.sourceTemplateId))
-		end
+	end
 end
 
 function OnMove(id, dest)

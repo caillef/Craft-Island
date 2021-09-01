@@ -16,5 +16,25 @@ Assets {
       VirtualFolderPath: "Building"
       PlatformAssetType: 3
     }
+    Folders {
+      VirtualFolderPath: "StructureTemplates"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Achievements"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Tools"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "UI Icons"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "SFX"
+      PlatformAssetType: 5
+    }
   }
 }

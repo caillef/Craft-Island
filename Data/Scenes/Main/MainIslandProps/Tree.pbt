@@ -47011,13 +47011,6 @@ Objects {
       BoundsScale: 1
     }
   }
-  InstanceHistory {
-    SelfId: 9129838218751865285
-    SubobjectId: 3494863415926496995
-    InstanceId: 8193155094916861118
-    TemplateId: 1025420993210746566
-    WasRoot: true
-  }
 }
 Objects {
   Id: 9806235200343985608
@@ -47081,13 +47074,6 @@ Objects {
       BoundsScale: 1
     }
   }
-  InstanceHistory {
-    SelfId: 9806235200343985608
-    SubobjectId: 3494863415926496995
-    InstanceId: 1774931912894611767
-    TemplateId: 1025420993210746566
-    WasRoot: true
-  }
 }
 Objects {
   Id: 5726556702662914862
@@ -47150,13 +47136,6 @@ Objects {
       }
       BoundsScale: 1
     }
-  }
-  InstanceHistory {
-    SelfId: 5726556702662914862
-    SubobjectId: 3494863415926496995
-    InstanceId: 11282763695852678969
-    TemplateId: 1025420993210746566
-    WasRoot: true
   }
 }
 Objects {
@@ -47223,13 +47202,6 @@ Objects {
       BoundsScale: 1
     }
   }
-  InstanceHistory {
-    SelfId: 2877597540733440094
-    SubobjectId: 3494863415926496995
-    InstanceId: 665071206527891573
-    TemplateId: 1025420993210746566
-    WasRoot: true
-  }
 }
 Objects {
   Id: 11426492425935201379
@@ -47294,13 +47266,6 @@ Objects {
       }
       BoundsScale: 1
     }
-  }
-  InstanceHistory {
-    SelfId: 11426492425935201379
-    SubobjectId: 3494863415926496995
-    InstanceId: 11547715981393736080
-    TemplateId: 1025420993210746566
-    WasRoot: true
   }
 }
 Objects {
@@ -47367,13 +47332,6 @@ Objects {
       BoundsScale: 1
     }
   }
-  InstanceHistory {
-    SelfId: 12719046417129091663
-    SubobjectId: 3494863415926496995
-    InstanceId: 7665597897643335313
-    TemplateId: 1025420993210746566
-    WasRoot: true
-  }
 }
 Objects {
   Id: 14648912389809801844
@@ -47438,13 +47396,6 @@ Objects {
       }
       BoundsScale: 1
     }
-  }
-  InstanceHistory {
-    SelfId: 14648912389809801844
-    SubobjectId: 3494863415926496995
-    InstanceId: 1197980143877577718
-    TemplateId: 1025420993210746566
-    WasRoot: true
   }
 }
 Objects {

@@ -1,4 +1,4 @@
-﻿local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
+local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
 local FallSFX = script:GetCustomProperty("FallSFX") and script:GetCustomProperty("FallSFX"):WaitForObject() or nil
 local type = script:GetCustomProperty("Material") or 1
 local propItemId = script:GetCustomProperty("ItemId")
@@ -33,15 +33,15 @@ end
 local trackIds = { "WHEAT", "BERRY", "CARROT", "STONE", "COAL" }
 function ManageTracking(player, name, qty)
     qty = qty or 1
-    local type
+    local t
     for k,v in pairs(trackIds) do
         if v == name then
-            type = k
+            t = k
             break
         end
     end
-    if type then
-        Events.Broadcast("TrackAction", {p=player, t=type, qty=qty})
+    if t then
+        Events.Broadcast("TrackAction", {p=player, t=t, qty=qty})
     end
 end
 
@@ -52,9 +52,14 @@ function OnHit(data)
             player = p
         end
     end
-    if not player or not SPAWN_MANAGER.permissionsBreak[player.id] and not SPAWN_MANAGER.permissionsAll[player.id] then
-        return
+    if not player then return end
+    local structures = prop:FindAncestorByName("Structures")
+    if structures then
+        if structures.parent.serverUserData.owner ~= player then
+            return
+        end
     end
+
     HP = HP - 1 * ((data.t==2 or type == data.t) and 1 or 0.5)
     Task.Spawn(function()
         Task.Wait(10)
@@ -62,8 +67,9 @@ function OnHit(data)
             HP = MAX_HP
         end
     end)
-    if prop.name == "BS_Built_Rock" or prop.name == "BS_Built_Rock_Coal" then
+    if prop.name == "BS_Built_Rock" or prop.name == "BS_Built_Rock_Coal" or prop.name == "BS_Built_Rock_Iron" then
         prop:GetChildren()[1]:SetScale(prop:GetChildren()[1]:GetScale() * 0.9)
+        -- todo spawn rocks debris
     end
 
     if data.t ~= 2 then

@@ -3313,6 +3313,6 @@ Assets {
   Marketplace {
     Description: "Hello everyone!,\r\n\r\nI hope you find this CC usefull to place into your RPG games :D"
   }
-  SerializationVersion: 97
+  SerializationVersion: 100
   DirectlyPublished: true
 }

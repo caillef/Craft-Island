@@ -2,7 +2,7 @@ Assets {
   Id: 4658297901084177103
   Name: "taillight_red"
   PlatformAssetType: 13
-  SerializationVersion: 97
+  SerializationVersion: 100
   CustomMaterialAsset {
     BaseMaterialId: 3472801240966347079
     ParameterOverrides {

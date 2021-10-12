@@ -2,7 +2,7 @@ Assets {
   Id: 8418606461963829689
   Name: "Wheat grass"
   PlatformAssetType: 13
-  SerializationVersion: 97
+  SerializationVersion: 100
   CustomMaterialAsset {
     BaseMaterialId: 18038322182071613674
     ParameterOverrides {

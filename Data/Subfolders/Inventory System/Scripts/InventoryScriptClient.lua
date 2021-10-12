@@ -12,6 +12,7 @@ local fullSFX = script.parent.parent.parent:GetCustomProperty("FullSFX"):GetObje
 local pickupSFX = script.parent.parent.parent:GetCustomProperty("PickupSFX"):GetObject()
 local fullTime = 0
 local scroll = script.parent:FindDescendantByName("Slots")
+local TOOLTIP_NUMBERS = script:GetCustomProperty("Numbers"):WaitForObject()
 local buttons = scroll:GetChildren()
 local info = frame:FindChildByName("Info")
 local stats = info:FindChildByName("Stats")
@@ -205,6 +206,7 @@ function Tick(_)
 
 	frame.visibility = open and Visibility.FORCE_ON or Visibility.FORCE_OFF
 	scroll.y = open and 55 or 710
+	TOOLTIP_NUMBERS.y = open and 55 or 710
 	local c = slotText[1]:GetColor()
 	c.a = Approach(c.a, open and 1 or 0, 0.1)
 	slotText[1]:SetColor(c)

@@ -1,15 +1,20 @@
 ﻿local TELEPORT_MANAGER = script:GetCustomProperty("TeleportManager"):WaitForObject().context
-local propPlayerIsland = script:GetCustomProperty("PlayerIsland")
+local ISLANDS_TEMPLATE = {
+    script:GetCustomProperty("PlayerIsland"),
+    script:GetCustomProperty("PlayerIsland2"),
+    script:GetCustomProperty("PlayerIsland3"),
+    script:GetCustomProperty("PlayerIsland4")
+}
 local propIslands = script:GetCustomProperty("Islands"):WaitForObject()
 
 local NB_MAX_PLAYERS = 4
-local SPACE_BETWEEN_ISLAND = 8000
+local SPACE_BETWEEN_ISLAND = 35000
 
 local playerSlots = {}
 
 local function GetSpawnWorldPosition(i)
     local pos = Vector3.New()
-    pos.x = (i - 1) % (NB_MAX_PLAYERS / 2) * SPACE_BETWEEN_ISLAND + 30000
+    pos.x = (i - 1) % (NB_MAX_PLAYERS / 2) * SPACE_BETWEEN_ISLAND + 40000
     pos.y = math.floor((i - 1) / (NB_MAX_PLAYERS / 2)) * SPACE_BETWEEN_ISLAND
     pos.z = 0
     return pos
@@ -28,13 +33,17 @@ initPlayerSpots()
 
 local function PrepareSlot(player, slot)
     slot.player = player
-    slot.island = World.SpawnAsset(propPlayerIsland, { position = slot.pos, parent = propIslands })
+    slot.island = World.SpawnAsset(ISLANDS_TEMPLATE[player.serverUserData.islandType], { position = slot.pos, parent = propIslands })
+    slot.island.serverUserData.owner = player
     return slot
 end
 
 local function AssignNextSlot(player)
     for _,s in pairs(playerSlots) do
-        if (s.player == nil or not s.player:IsValid()) and s.island == nil then
+        if (s.player == nil or not s.player:IsValid()) then
+            if s.island and s.island:IsValid() then
+                s.island:Destroy()
+            end
             local slot = PrepareSlot(player, s)
             return slot
         end
@@ -42,34 +51,12 @@ local function AssignNextSlot(player)
     return nil
 end
 
-permissionsAll = {}
-permissionsBreak = {}
-
-local miningZone = World.GetRootObject():FindDescendantByName("MiningZone")
-miningZone.beginOverlapEvent:Connect(function(trigger, other)
-    if not other:IsA("Player") then return end
-    permissionsBreak[other.id] = true
-end)
-miningZone.endOverlapEvent:Connect(function(trigger, other)
-    if not other:IsA("Player") then return end
-    permissionsBreak[other.id] = false
-end)
-
 function OnPlayerJoined(player)
+    local storage = Storage.GetPlayerData(player)
+    player.serverUserData.islandType = storage.islandType or 1
     TELEPORT_MANAGER.TeleportPlayerTo(player, "main_island")
     local slot = AssignNextSlot(player)
     if slot == nil then return end
-    local buildingZone = slot.island:FindChildByName("BuildingZone")
-    buildingZone.beginOverlapEvent:Connect(function(trigger, other)
-        if not player:IsValid() or not other:IsValid() then return end
-        if not other:IsA("Player") then return end
-        permissionsAll[other.id] = player == other
-    end)
-    buildingZone.endOverlapEvent:Connect(function(trigger, other)
-        if not player:IsValid() or not other:IsValid() then return end
-        if not other:IsA("Player") then return end
-        permissionsAll[other.id] = false
-    end)
     Task.Wait(1)
     Events.Broadcast("BSLI", slot) -- Building Manager Load Island
     TELEPORT_MANAGER.TeleportPlayerTo(player, "own_island")
@@ -79,8 +66,6 @@ function OnPlayerLeft(player)
     local slot = GetSpawnSlotForPlayer(player)
     if not slot then return end
     Events.Broadcast("BSULI", slot)
-    slot.player = nil
-    slot.island = nil
 end
 
 function GetSpawnSlotForPlayer(player)
@@ -91,6 +76,29 @@ function GetSpawnSlotForPlayer(player)
     end
     return nil
 end
+
+function UnlockNextIslandType(player, nextType)
+    local currentType = player.serverUserData.islandType
+    if currentType + 1 == nextType and player:GetResource("Gem") >= (nextType + 1) * 100 then
+        player:RemoveResource("Gem", (nextType + 1) * 100)
+        Events.BroadcastToPlayer(player, "UpdateNextIslandType", nextType + 1)
+        local storage = Storage.GetPlayerData(player)
+        storage.islandType = nextType
+        player.serverUserData.islandType = storage.islandType
+        Storage.SetPlayerData(player, storage)
+        TELEPORT_MANAGER.TeleportPlayerTo(player, "main_island")
+        local slot = GetSpawnSlotForPlayer(player)
+        if not slot then return end
+        Events.Broadcast("BSULI", slot)
+        Task.Wait(1)
+        local slot = AssignNextSlot(player)
+        if slot == nil then return end
+        Task.Wait(1)
+        Events.Broadcast("BSLI", slot) -- Building Manager Load Island
+        TELEPORT_MANAGER.TeleportPlayerTo(player, "own_island")
+    end
+end
+Events.ConnectForPlayer("UnlockNextIsland", UnlockNextIslandType)
 
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 Game.playerLeftEvent:Connect(OnPlayerLeft)

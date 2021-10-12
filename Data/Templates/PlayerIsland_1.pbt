@@ -20,7 +20,16 @@ Assets {
         ChildIds: 5255360405524450925
         ChildIds: 10226459261057948952
         ChildIds: 16416874873876112814
-        ChildIds: 7057006111918251491
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerName"
+            String: ""
+          }
+          Overrides {
+            Name: "cs:PlayerName:isrep"
+            Bool: true
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -495,44 +504,6 @@ Assets {
           IsGroup: true
         }
       }
-      Objects {
-        Id: 7057006111918251491
-        Name: "BuildingZone"
-        Transform {
-          Location {
-            X: -1055
-            Y: 107.062012
-            Z: 3.17333984
-          }
-          Rotation {
-          }
-          Scale {
-            X: 41.1000023
-            Y: 40.2
-            Z: 34.6000023
-          }
-        }
-        ParentId: 10521384055258147901
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Trigger {
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
-          }
-        }
-      }
     }
     Assets {
       Id: 10888788159873929006
@@ -584,5 +555,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 97
+  SerializationVersion: 100
 }

@@ -293,6 +293,6 @@ Assets {
   Marketplace {
     Description: "Just a little oak tree planter for decoration. Could be considered a bonsai maybe? Enjoy!"
   }
-  SerializationVersion: 97
+  SerializationVersion: 100
   DirectlyPublished: true
 }

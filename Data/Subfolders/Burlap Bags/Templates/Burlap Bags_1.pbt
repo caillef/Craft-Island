@@ -873,6 +873,6 @@ Assets {
   Marketplace {
     Description: "Burlap Bags for grain/rice/treasure"
   }
-  SerializationVersion: 97
+  SerializationVersion: 100
   DirectlyPublished: true
 }

@@ -86,6 +86,13 @@ createObject(52, "FISH", "Fish", nil, "D0217B0C80A7903E")
 createObject(53, "FISHING_ROD", "Fishing Rod", "5B12901D72C18C90", "E241E71578A23273")
 createObject(54, "COOKED_FISH", "Cooked Fish", nil, "80D099987281F9E9")
 
+createObject(55, "LANTERN", "Lantern", "81C0362A7379CE60", "C85154B189F4B8F4", CAN_BE_BUILT)
+createObject(56, "WALLTORCH", "Wall Torch", "C46A3D3062C5A0C9", "39472EF77277F5AE", CAN_BE_BUILT)
+
+createObject(57, "IRON_ROCK", "Iron Rock", "CA41BB1CFD9573AC")
+createObject(58, "IRON", "Iron", nil, "D759E42007B25621")
+
+
 for _,item in pairs(objects) do
     for _,item2 in pairs(objects) do
         if item ~= item2 then
@@ -176,6 +183,11 @@ _G["caillef.craftisland.crafts"] = {
     {
 		{ "STONE", 2 },
         { "STONEBRICKS_WALL", 3, "STONEBRICKS_STAIRS", 3, "STONEBRICKS_FLOOR", 3, "STONEBRICKS_WINDOW", 3, "STONEBRICKS_DOOR", 3, "STONEBRICKS_ROOF", 3, "STONEBRICKS_HALF_WALL", 3, "STONEBRICKS_TRI_WALL", 3 },
+        CRAFTING_TABLE
+	},
+    {
+		{ "IRON", 5, "COAL", 1 },
+        { "LANTERN", 1, "WALLTORCH", 1 },
         CRAFTING_TABLE
 	}
 }

@@ -26,6 +26,8 @@ local myFishingAbility = nil
 
 local localPlayer = Game.GetLocalPlayer()
 
+local NOTIF_PANEL = World.FindObjectByName("NotifPanel")
+
 function BeginFishing(whichTrigger, player)
     if isFishing then
         StopFishing(player)
@@ -34,6 +36,8 @@ function BeginFishing(whichTrigger, player)
 
     if requireTool then
         if not CheckForFishingRod(player) then
+			local obj = World.SpawnAsset("7CF45E787CD10A68:LimitBuildingNotif", { parent=NOTIF_PANEL })
+			obj.text = "You need to equip a Fishing Rod (available in Crafting Table)"
             return
         end
     end

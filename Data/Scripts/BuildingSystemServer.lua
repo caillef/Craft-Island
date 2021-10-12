@@ -165,7 +165,7 @@ function PlaceObject(player, position, angle, type, isLoadingIsland)
     end
 
     local placedTypedObjects = placedObjects[player][type] or {}
-    local islandLimit = CONSTANTS.ISLAND_SIZES[1] -- TODO: get island size form player
+    local islandLimit = CONSTANTS.ISLAND_SIZES[player.serverUserData.islandType]
     if not APIB.IsValidPlaceToBuild(position, angle, playersSpawns[player].island:FindChildByName("Structures"):GetWorldPosition(), islandLimit) then
         return
     end
@@ -255,6 +255,8 @@ function UnloadIsland(slot)
     local player = slot.player
     SaveIsland(player)
     slot.island:Destroy()
+    slot.island = nil
+    slot.player = nil
     placedObjects[player] = nil 
     playersSpawns[player] = nil
 end
@@ -265,10 +267,11 @@ function OnInventoryReady(player)
     while playersSpawns[player] == nil do
         Task.Wait(0.1)
     end
-    Task.Wait(math.random())
-    while player and player:IsValid() and Events.BroadcastToPlayer(player, "OnPlayerInitialized", {islandPos = playersSpawns[player].pos}) ~= BroadcastEventResultCode.SUCCESS do
+    Task.Wait(1)
+    while player and player:IsValid() and Events.BroadcastToPlayer(player, "OnPlayerInitialized", {islandPos = playersSpawns[player].pos, iType= player.serverUserData.islandType }) ~= BroadcastEventResultCode.SUCCESS do
         Task.Wait(1)
     end
+    Events.BroadcastToPlayer(player, "UpdateNextIslandType", player.serverUserData.islandType + 1)
 end
 
 Events.Connect("SInventoryReady", OnInventoryReady)

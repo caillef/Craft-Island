@@ -10,7 +10,8 @@ propUIPanel.visibility = Visibility.FORCE_OFF
 propVIP.visibility = Visibility.FORCE_OFF
 propNotVIP.visibility = Visibility.FORCE_OFF
 
-local player = Game.GetLocalPlayer()
+local PLAYER = Game.GetLocalPlayer()
+local nextIslandType = 2
 
 local function mysplit(inputstr, sep)
     if sep == nil then
@@ -77,8 +78,8 @@ Events.Connect("GetAchiR", function(rewardAvailable, data)
 		end
 		local description = mysplit(name, ";;")[1]..tostring(achievement.qtys[v.step])..mysplit(name, ";;")[2]
 		obj:FindDescendantByName("Name").text = description
-		obj:FindDescendantByName("Reward1Amount").text = tostring(v.step * 10)..(player:GetResource("VIP") == 1 and "(x2)" or "")
-		obj:FindDescendantByName("Reward2Amount").text = tostring(v.step * 5)..(player:GetResource("VIP") == 1 and "(x3)" or "")
+		obj:FindDescendantByName("Reward1Amount").text = tostring(v.step * 10)..(PLAYER:GetResource("VIP") == 1 and "(x2)" or "")
+		obj:FindDescendantByName("Reward2Amount").text = tostring(v.step * 5)..(PLAYER:GetResource("VIP") == 1 and "(x3)" or "")
 		i = i + 1
 	end
 end)
@@ -95,6 +96,7 @@ function OnBindingPressed(player, bindingPressed)
         propUIPanel.visibility = propUIPanel.visibility == Visibility.FORCE_ON and Visibility.FORCE_OFF or Visibility.FORCE_ON
         UI.SetCursorVisible(propUIPanel.visibility == Visibility.FORCE_ON)
         UI.SetCanCursorInteractWithUI(propUIPanel.visibility == Visibility.FORCE_ON)
+		OpenAchievement()
 		if propUIPanel.visibility == Visibility.FORCE_ON then
 			LoadUI()
 		end
@@ -136,7 +138,7 @@ propUnlockVIP.clickedEvent:Connect(function()
 	Events.Broadcast("ToggleVIPUI", true)
 end)
 
-player.resourceChangedEvent:Connect(function(player, resourceId, amount)
+PLAYER.resourceChangedEvent:Connect(function(player, resourceId, amount)
 	if resourceId ~= "VIP" then return end
 	if amount == 1 then
 		propNotVIP.visibility = Visibility.FORCE_OFF
@@ -147,7 +149,7 @@ player.resourceChangedEvent:Connect(function(player, resourceId, amount)
 		propNotVIP.visibility = Visibility.FORCE_ON
 	end
 end)
-if player:GetResource("VIP") == 1 then
+if PLAYER:GetResource("VIP") == 1 then
 	propNotVIP.visibility = Visibility.FORCE_OFF
 	propVIP.visibility = Visibility.FORCE_ON
 	propVIP:FindChildByType("UIText").text = "Member: VIP (golds x2, gems x3)"
@@ -156,5 +158,69 @@ else
 	propNotVIP.visibility = Visibility.FORCE_ON
 end
 
+PLAYER.bindingPressedEvent:Connect(OnBindingPressed)
 
-player.bindingPressedEvent:Connect(OnBindingPressed)
+
+
+---- new script
+
+local ABTN = script:GetCustomProperty("AchievementsBtn"):WaitForObject()
+local GBTN = script:GetCustomProperty("GemsShopBtn"):WaitForObject()
+local ATAB = script:GetCustomProperty("Achievements"):WaitForObject()
+local GTAB = script:GetCustomProperty("GemsShop"):WaitForObject()
+
+local TAB_ACH, TAB_GEM = 0,1
+
+local currentTab = TAB_ACH
+
+ATAB.visibility = Visibility.INHERIT
+GTAB.visibility = Visibility.FORCE_OFF
+
+GBTN.clickedEvent:Connect(function()
+	if currentTab == TAB_GEM then return end
+	ATAB.visibility = Visibility.FORCE_OFF
+	GTAB.visibility = Visibility.INHERIT
+	SetGISlotsState(nextIslandType)
+	currentTab = TAB_GEM
+end)
+
+ABTN.clickedEvent:Connect(function()
+	if currentTab == TAB_ACH then return end
+	GTAB.visibility = Visibility.FORCE_OFF
+	ATAB.visibility = Visibility.INHERIT
+	currentTab = TAB_ACH
+end)
+
+local GROW_ISLANDS_PARENT = script:GetCustomProperty("GrowIslandButton"):WaitForObject()
+local growIslandSlots = {}
+growIslandSlots[1] = GROW_ISLANDS_PARENT:FindChildByName("1")
+growIslandSlots[2] = GROW_ISLANDS_PARENT:FindChildByName("2")
+growIslandSlots[3] = GROW_ISLANDS_PARENT:FindChildByName("3")
+growIslandSlots[4] = GROW_ISLANDS_PARENT:FindChildByName("4")
+
+function OpenAchievement()
+	GTAB.visibility = Visibility.FORCE_OFF
+	ATAB.visibility = Visibility.INHERIT
+	currentTab = TAB_ACH
+end
+
+function SetGISlotsState(indexState)
+	for k,v in ipairs(growIslandSlots) do
+		v:FindChildByName("Owned").visibility = k < indexState and Visibility.INHERIT or Visibility.FORCE_OFF
+		v:FindChildByName("Locked").visibility = k > indexState and Visibility.INHERIT or Visibility.FORCE_OFF
+		v:FindChildByName("Unlock").visibility = k == indexState and Visibility.INHERIT or Visibility.FORCE_OFF
+		if k == indexState then
+			v:FindChildByName("Unlock").isInteractable = PLAYER:GetResource("Gem") >= (indexState + 1) * 100
+			v:FindChildByName("Unlock").clickedEvent:Connect(function()
+				Events.BroadcastToServer("UnlockNextIsland", k)
+			end)
+		end
+	end
+end
+SetGISlotsState(nextIslandType)
+
+Events.Connect("UpdateNextIslandType", function(type)
+	nextIslandType = type
+	SetGISlotsState(nextIslandType)
+end)
+

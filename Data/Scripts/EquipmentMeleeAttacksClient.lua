@@ -26,7 +26,7 @@ if not EQUIPMENT:IsA('Equipment') then
     error(script.name .. " should be part of Equipment object hierarchy.")
 end
 
-local player = Game.GetLocalPlayer()
+local PLAYER = Game.GetLocalPlayer()
 
 -- User exposed variables
 local PLAYER_IMPACT = EQUIPMENT:GetCustomProperty("PlayerImpact")
@@ -151,29 +151,29 @@ end
 
 function ActionOnCloserProp()
     for _,prop in ipairs(weaponHitbox:GetOverlappingObjects()) do
-        if prop and prop.name ~= "BuildingZone" then
-            if prop and prop:IsValid() and prop.parent and prop.parent.name == "Geo" then
-                prop = prop.parent
+        if not prop or not prop:IsValid() then return end
+        if prop and prop:IsValid() and prop.parent and prop.parent.name == "Geo" then
+            prop = prop.parent
+        end
+        if prop.parent then
+            local eventObjectId = "H"..mysplit(prop.parent.id, ":")[1]
+            if not (prop and prop:IsValid() and prop.parent and prop.parent.parent) then return end
+            -- Is on mining island
+            if prop.parent.parent.name == "Rocks" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
+                Events.BroadcastToServer(eventObjectId, { p=PLAYER.id, t=0 })
+                return
             end
-            if prop.parent then
-                local eventObjectId = "H"..mysplit(prop.parent.id, ":")[1]
-                -- Is on mining island
-                if prop and prop:IsValid() and prop.parent and prop.parent.parent and prop.parent.parent.name == "Rocks" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
-                    Events.BroadcastToServer(eventObjectId, { p=Game.GetLocalPlayer().id, t=0 })
-                    return
-                end
-    
-                -- Is on player island with pickaxe
-                if prop and prop:IsValid() and prop.parent and prop.parent.parent and prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
-                    Events.BroadcastToServer(eventObjectId, { p=Game.GetLocalPlayer().id, t=0 })
-                    return
-                end
-    
-                -- Is on player island with axe
-                if prop and prop:IsValid() and prop.parent and prop.parent.parent and prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "F27A87BB28DA0B17" then
-                    Events.BroadcastToServer(eventObjectId, { p=Game.GetLocalPlayer().id, t=1 })
-                    return
-                end
+
+            -- Is on player island with pickaxe
+            if prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
+                Events.BroadcastToServer(eventObjectId, { p=PLAYER.id, t=0 })
+                return
+            end
+
+            -- Is on player island with axe
+            if prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "F27A87BB28DA0B17" then
+                Events.BroadcastToServer(eventObjectId, { p=PLAYER.id, t=1 })
+                return
             end
         end
     end
@@ -187,7 +187,7 @@ function OnExecute(ability)
         if abilityInfo.ability == ability then
             abilityInfo.canAttack = true
             abilityInfo.ignoreList = {}
-            if Game.GetLocalPlayer() == ability.owner then
+            if PLAYER == ability.owner then
                 ActionOnCloserProp()
             end
             SpawnSwingEffect(abilityInfo)

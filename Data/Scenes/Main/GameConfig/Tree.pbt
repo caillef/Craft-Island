@@ -64,6 +64,7 @@ Objects {
       ChatMode {
         Value: "mc:echatmode:teamandall"
       }
+      EnablePlayModeProfiler: true
       ChatSettings {
         ChatMode {
         }
@@ -140,6 +141,9 @@ Objects {
       }
       PlayerInteractDistance: 500
       PlayerInteractAngleDeg: 50
+      PlayerStorageMode {
+        Value: "mc:eplayerstoragemode:none"
+      }
     }
   }
 }

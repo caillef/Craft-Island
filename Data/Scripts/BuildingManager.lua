@@ -103,7 +103,7 @@ function rotateObjectWithClick(pos, o)
 end
 
 function PlayerIsOnIsland()
-    local limits = CONSTANTS.ISLAND_SIZES[1]
+    local limits = CONSTANTS.ISLAND_SIZES[PLAYER.clientUserData.islandType]
     local pos = PLAYER:GetWorldPosition()
     local minLimit = islandPos + limits[1]
     local maxLimit = islandPos + limits[2] + Vector3.ONE * APIB.WALL_SIZE
@@ -146,7 +146,7 @@ function Tick()
 
     local angle = APIB.GetAlignedAngle(o * 90 + rotateAngle * 90)
 	if currentPrevisu then
-        local islandLimit = CONSTANTS.ISLAND_SIZES[1] -- TODO: get island size form player
+        local islandLimit = CONSTANTS.ISLAND_SIZES[PLAYER.clientUserData.islandType]
         if not APIB.IsValidPlaceToBuild(objPos, angle, islandPos, islandLimit) then
             currentPrevisu.visibility = Visibility.FORCE_OFF
             return
@@ -193,6 +193,9 @@ function SpawnPrevisu(template)
             materialSlot:SetColor(PREVIEW_COLOR)
         end
     end
+    for _,vfx in ipairs(previsu:FindDescendantsByType("Vfx")) do
+        vfx:Destroy()
+    end
     return previsu
 end
 
@@ -220,6 +223,7 @@ end)
 
 function OnPlayerInitialized(data)
     islandPos = data.islandPos
+    PLAYER.clientUserData.islandType = data.iType
 end
 
 Events.Connect("OnPlayerInitialized", OnPlayerInitialized)

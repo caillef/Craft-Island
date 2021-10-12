@@ -16705,7 +16705,7 @@ Assets {
     }
     Assets {
       Id: 10633885543455162832
-      Name: "Modern Weapon Ammo - Cannister 01"
+      Name: "Modern Weapon Ammo - Canister 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -16954,6 +16954,6 @@ Assets {
   Marketplace {
     Description: "It moves. thanks to knar and zurishimi for code and to twixler for model."
   }
-  SerializationVersion: 97
+  SerializationVersion: 100
   DirectlyPublished: true
 }

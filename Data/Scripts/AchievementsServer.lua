@@ -64,13 +64,14 @@ Events.Connect("TrackAction", function(data)
 	local achievement = achievements[data.t]
 	local current_achievement = storage.track[data.t]
 	local target_qty = achievement.qtys[current_achievement.t]
-	while current_achievement.t <= #achievement.qtys and current_achievement.qty >= achievement.qtys[current_achievement.t] do
+	while current_achievement.t <= #achievement.qtys and current_achievement.qty >= target_qty do
 		local name = achievement.name
 		if current_achievement.t == 1 then
 			name = name:sub(1, #name - 1)
 		end
-		local name = mysplit(name, ";;")[1]..tostring(achievement.qtys[current_achievement.t])..mysplit(name, ";;")[2]
+		local name = mysplit(name, ";;")[1]..tostring(target_qty)..mysplit(name, ";;")[2]
 		Events.BroadcastToPlayer(data.p, "AchGet", name)
+		data.p:GrantRewardPoints(current_achievement.t * 100, "Achievement")
 		SetAchievementStatus(storage, data.t, current_achievement.t, "1")
 		current_achievement.t = current_achievement.t + 1
 	end

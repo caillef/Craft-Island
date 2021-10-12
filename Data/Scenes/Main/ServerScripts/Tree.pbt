@@ -336,12 +336,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:PlayerIsland"
-      AssetReference {
-        Id: 3526051123066352755
-      }
-    }
-    Overrides {
       Name: "cs:Islands"
       ObjectReference {
         SelfId: 10357142915619545493
@@ -351,6 +345,30 @@ Objects {
       Name: "cs:TeleportManager"
       ObjectReference {
         SelfId: 11215959900169722424
+      }
+    }
+    Overrides {
+      Name: "cs:PlayerIsland"
+      AssetReference {
+        Id: 3526051123066352755
+      }
+    }
+    Overrides {
+      Name: "cs:PlayerIsland2"
+      AssetReference {
+        Id: 4829224692537125149
+      }
+    }
+    Overrides {
+      Name: "cs:PlayerIsland3"
+      AssetReference {
+        Id: 4792945804198263382
+      }
+    }
+    Overrides {
+      Name: "cs:PlayerIsland4"
+      AssetReference {
+        Id: 8839826875352274532
       }
     }
   }

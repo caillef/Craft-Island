@@ -703,6 +703,6 @@ Assets {
       AssetId: "Advanced_Axe"
     }
   }
-  SerializationVersion: 97
+  SerializationVersion: 100
   VirtualFolderPath: "Tools"
 }

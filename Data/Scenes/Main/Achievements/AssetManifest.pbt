@@ -1,4 +1,13 @@
 Assets {
+  Id: 15611624404648867769
+  Name: "Center Rect 001 Outline"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "CenterRect_001Outline"
+  }
+}
+Assets {
   Id: 12964281406925428348
   Name: "Sparkles"
   PlatformAssetType: 9
@@ -17,15 +26,6 @@ Assets {
   }
 }
 Assets {
-  Id: 11970518242149363014
-  Name: "Good"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Scifi_Icon_037"
-  }
-}
-Assets {
   Id: 11264250809069548060
   Name: "Fantasy Craft Gem 016"
   PlatformAssetType: 9
@@ -41,15 +41,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Equip_Chest_002"
-  }
-}
-Assets {
-  Id: 5210670975336869636
-  Name: "Lock"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Urban_Icon_060"
   }
 }
 Assets {

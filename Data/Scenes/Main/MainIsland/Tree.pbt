@@ -10284,6 +10284,10 @@ Objects {
   ChildIds: 11326784880562780340
   ChildIds: 4144007005040499251
   ChildIds: 14706937720793266945
+  ChildIds: 1640473116834735572
+  ChildIds: 6807137089033816632
+  ChildIds: 3358037442137189521
+  ChildIds: 1782503902710033258
   UnregisteredParameters {
     Overrides {
       Name: "cs:ParentProp"
@@ -10307,13 +10311,25 @@ Objects {
     Overrides {
       Name: "cs:Prop2"
       AssetReference {
-        Id: 7549492464676050365
+        Id: 12608001148984257959
       }
     }
     Overrides {
       Name: "cs:Prop3"
       AssetReference {
         Id: 12608001148984257959
+      }
+    }
+    Overrides {
+      Name: "cs:Prop4"
+      AssetReference {
+        Id: 7549492464676050365
+      }
+    }
+    Overrides {
+      Name: "cs:Prop5"
+      AssetReference {
+        Id: 14574135602335544236
       }
     }
     Overrides {
@@ -10333,6 +10349,170 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+}
+Objects {
+  Id: 1782503902710033258
+  Name: "RockSpawner"
+  Transform {
+    Location {
+      X: 4127.46
+      Y: 1333.92334
+      Z: 5009.74072
+    }
+    Rotation {
+      Pitch: -3.3477478
+      Yaw: 76.5315
+      Roll: -13.703125
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10753996777154350082
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "RockSpawner_1"
+  }
+  InstanceHistory {
+    SelfId: 10988677416128734945
+    SubobjectId: 13326456227818208202
+    InstanceId: 10831329912381409974
+    TemplateId: 12608001148984257959
+    WasRoot: true
+  }
+}
+Objects {
+  Id: 3358037442137189521
+  Name: "RockSpawner"
+  Transform {
+    Location {
+      X: 4341.74756
+      Y: 1957.80518
+      Z: 5095.62109
+    }
+    Rotation {
+      Pitch: -14.594635
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10753996777154350082
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "RockSpawner"
+  }
+  InstanceHistory {
+    SelfId: 10988677416128734945
+    SubobjectId: 13326456227818208202
+    InstanceId: 10831329912381409974
+    TemplateId: 12608001148984257959
+    WasRoot: true
+  }
+}
+Objects {
+  Id: 6807137089033816632
+  Name: "RockSpawner"
+  Transform {
+    Location {
+      X: 3057.45166
+      Y: 687.616211
+      Z: 4433.70312
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10753996777154350082
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "RockSpawner_2"
+  }
+  InstanceHistory {
+    SelfId: 10988677416128734945
+    SubobjectId: 13326456227818208202
+    InstanceId: 10831329912381409974
+    TemplateId: 12608001148984257959
+    WasRoot: true
+  }
+}
+Objects {
+  Id: 1640473116834735572
+  Name: "RockSpawner"
+  Transform {
+    Location {
+      X: 3725.15918
+      Y: 583.521
+      Z: 4258.92578
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10753996777154350082
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "RockSpawner_3"
+  }
+  InstanceHistory {
+    SelfId: 10988677416128734945
+    SubobjectId: 13326456227818208202
+    InstanceId: 10831329912381409974
+    TemplateId: 12608001148984257959
+    WasRoot: true
   }
 }
 Objects {
@@ -10365,7 +10545,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_1"
+    FilePartitionName: "RockSpawner_4"
   }
   InstanceHistory {
     SelfId: 10988677416128734945
@@ -10405,7 +10585,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner"
+    FilePartitionName: "RockSpawner_5"
   }
   InstanceHistory {
     SelfId: 10988677416128734945
@@ -10448,7 +10628,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_4"
+    FilePartitionName: "RockSpawner_6"
   }
   InstanceHistory {
     SelfId: 10143366605465057466
@@ -10491,7 +10671,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_2"
+    FilePartitionName: "RockSpawner_7"
   }
   InstanceHistory {
     SelfId: 10143366605465057466
@@ -10571,7 +10751,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_3"
+    FilePartitionName: "RockSpawner_9"
   }
   InstanceHistory {
     SelfId: 10988677416128734945
@@ -10611,7 +10791,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_5"
+    FilePartitionName: "RockSpawner_10"
   }
   InstanceHistory {
     SelfId: 10988677416128734945
@@ -10654,7 +10834,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_6"
+    FilePartitionName: "RockSpawner_11"
   }
   InstanceHistory {
     SelfId: 15066965380313906341
@@ -10697,7 +10877,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_7"
+    FilePartitionName: "RockSpawner_12"
   }
   InstanceHistory {
     SelfId: 13767551751191811026
@@ -10740,7 +10920,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_9"
+    FilePartitionName: "RockSpawner_13"
   }
   InstanceHistory {
     SelfId: 10143366605465057466
@@ -10782,7 +10962,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_10"
+    FilePartitionName: "RockSpawner_14"
   }
   InstanceHistory {
     SelfId: 18069237358294015096
@@ -10825,7 +11005,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_11"
+    FilePartitionName: "RockSpawner_15"
   }
   InstanceHistory {
     SelfId: 17719196393124048405
@@ -10867,7 +11047,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_12"
+    FilePartitionName: "RockSpawner_16"
   }
   InstanceHistory {
     SelfId: 15853497194626275103
@@ -10910,7 +11090,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_13"
+    FilePartitionName: "RockSpawner_17"
   }
   InstanceHistory {
     SelfId: 6727785966765252743
@@ -10952,7 +11132,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_14"
+    FilePartitionName: "RockSpawner_18"
   }
   InstanceHistory {
     SelfId: 11184864577335270992
@@ -10992,7 +11172,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RockSpawner_15"
+    FilePartitionName: "RockSpawner_19"
   }
   InstanceHistory {
     SelfId: 10988677416128734945

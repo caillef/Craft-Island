@@ -1,4 +1,4 @@
-﻿local pos = script.parent:GetWorldPosition()
+local pos = script.parent:GetWorldPosition()
 local rotation = script.parent:GetWorldRotation()
 
 local objects = {}

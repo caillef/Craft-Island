@@ -30,6 +30,7 @@ local achievements = {
 	{ type = 15, name = "Buy ;; berry sprouts", qtys = { 1 } },
 	{ type = 16, name = "Craft ;; cooking table.", qtys = { 1 } },
 	{ type = 17, name = "Cook ;; fish.", qtys = { 1, 10, 25, 50, 100, 200, 500, 1000 } },
+	{ type = 18, name = "Buy ;; pumpkin seeds", qtys = { 1 } },
 }
 local NB_ACHIEVEMENTS = #achievements
 
@@ -63,7 +64,7 @@ Events.Connect("TrackAction", function(data)
 
 	local achievement = achievements[data.t]
 	local current_achievement = storage.track[data.t]
-	local target_qty = achievement.qtys[current_achievement.t]
+d	local target_qty = achievement.qtys[current_achievement.t]
 	while current_achievement.t <= #achievement.qtys and current_achievement.qty >= target_qty do
 		local name = achievement.name
 		if current_achievement.t == 1 then

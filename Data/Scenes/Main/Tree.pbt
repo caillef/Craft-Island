@@ -20,6 +20,7 @@ Objects {
   ChildIds: 12243267191862395269
   ChildIds: 11584135646992845074
   ChildIds: 11678237838342285850
+  ChildIds: 9740202837855139040
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -32,6 +33,32 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 9740202837855139040
+  Name: "Default Keys"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 15889732551133568655
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Default Keys"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16687078566427417755
+    }
   }
 }
 Objects {

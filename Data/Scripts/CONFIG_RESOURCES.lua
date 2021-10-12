@@ -27,6 +27,11 @@ growthConfig["C1A4AA9C6FE28B6E"] = { 40, 45, "CARROT_SEEDS_2" }
 growthConfig["958AB68F519C22B7"] = { 40, 45, "CARROT_SEEDS_3" }
 growthConfig["AE55DAF95CF23E0E"] = { 40, 45, "CARROT" }
 
+-- Pumpkins
+growthConfig["6AD9CDB1DFADEC24"] = { 50, 60, "PUMPKIN_SEEDS_2" }
+growthConfig["927247A49F1B691C"] = { 50, 60, "PUMPKIN_SEEDS_3" }
+growthConfig["09D9C9CDEE0B3F4B"] = { 50, 60, "PUMPKIN" }
+
 for key,value in pairs(growthConfig) do 
     devgrowthConfig[key] = { 1, 1, value[3] }
 end

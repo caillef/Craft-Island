@@ -1,4 +1,12 @@
 DebuggerSettings {
+  ScriptSettings {
+    Script {
+      Id: 8337493250449846936
+    }
+    Breakpoints {
+      LineNumber: 48
+    }
+  }
 }
 ObjectSettings {
   ObjectStates {
@@ -93,6 +101,11 @@ ObjectSettings {
   }
   ObjectStates {
     key: 784491806409040636
+    value {
+    }
+  }
+  ObjectStates {
+    key: 822933199409985856
     value {
     }
   }
@@ -394,6 +407,11 @@ ObjectSettings {
     }
   }
   ObjectStates {
+    key: 2639962436911151213
+    value {
+    }
+  }
+  ObjectStates {
     key: 2652372431215122065
     value {
       IsHidden: true
@@ -495,6 +513,11 @@ ObjectSettings {
     }
   }
   ObjectStates {
+    key: 3441620241160619034
+    value {
+    }
+  }
+  ObjectStates {
     key: 3462315775149979505
     value {
     }
@@ -571,6 +594,11 @@ ObjectSettings {
   }
   ObjectStates {
     key: 4063165219465489955
+    value {
+    }
+  }
+  ObjectStates {
+    key: 4190434562215018980
     value {
     }
   }
@@ -1485,7 +1513,17 @@ ObjectSettings {
     }
   }
   ObjectStates {
+    key: 12088188346197234304
+    value {
+    }
+  }
+  ObjectStates {
     key: 12205268991917983474
+    value {
+    }
+  }
+  ObjectStates {
+    key: 12252116466825664419
     value {
     }
   }

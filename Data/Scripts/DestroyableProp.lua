@@ -1,4 +1,4 @@
-local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
+﻿local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
 local FallSFX = script:GetCustomProperty("FallSFX") and script:GetCustomProperty("FallSFX"):WaitForObject() or nil
 local type = script:GetCustomProperty("Material") or 1
 local propItemId = script:GetCustomProperty("ItemId")
@@ -84,7 +84,7 @@ function OnHit(data)
                 return
             end
             Events.Broadcast("requestInventoryFullEvent", player, { id=propItemId, string=listenID })
-            if propItemId2 and (not data.harvest or propItemId2 == "WHEAT_SEEDS" or propItemId2 == "CARROT_SEEDS") then
+            if propItemId2 and (not data.harvest or propItemId2 == "WHEAT_SEEDS" or propItemId2 == "CARROT_SEEDS"or propItemId2 == "PUMPKIN_SEEDS") then
                 Events.Broadcast("requestInventoryFullEvent", player, { id=propItemId2, string=listenID2 })
             end
         end
@@ -173,7 +173,7 @@ function PickUp(id, bool)
             Events.BroadcastToPlayer(player, "inventoryFullEvent")
             return
         end
-        if propItemId2 == "WHEAT_SEEDS" or propItemId2 == "CARROT_SEEDS" then
+        if propItemId2 == "WHEAT_SEEDS" or propItemId2 == "CARROT_SEEDS" or propItemId2 == "PUMPKIN_SEEDS" then
             if math.random() < 0.1 then
                 Events.Broadcast("inventoryAddEvent", player, { idName=propItemId2, qty = 1 })
                 GetSoundManager().PlaySound("BonusItemSFX", script:GetWorldPosition())

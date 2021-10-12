@@ -35,7 +35,6 @@ buttons[28] = slots[1]
 buttons[29] = slots[2]
 
 local lastSelection
-local equippedTool
 local hoveredSlotIndex
 
 local notifications = {}
@@ -461,3 +460,20 @@ Task.Wait(1)
 while Events.BroadcastToServer("inventoryReady", Game.GetLocalPlayer()) ~= BroadcastEventResultCode.SUCCESS do
 	Task.Wait(1)
 end
+
+
+-- Total slots, just caching it here for use later.
+local totalSlots = 9
+
+-- Listens for when an action is pressed.
+Input.actionPressedEvent:Connect(function(player, action, value)
+    if action == "Zoom" then
+		local id
+        if value > 0 then
+			id = lastSelection == totalSlots and 1 or (lastSelection + 1)
+        elseif value < 0 then
+			id = lastSelection == 1 and totalSlots or (lastSelection - 1)
+        end
+		if id then Select(id) end
+    end
+end)

@@ -88,10 +88,15 @@ createObject(54, "COOKED_FISH", "Cooked Fish", nil, "80D099987281F9E9")
 
 createObject(55, "LANTERN", "Lantern", "81C0362A7379CE60", "C85154B189F4B8F4", CAN_BE_BUILT)
 createObject(56, "WALLTORCH", "Wall Torch", "C46A3D3062C5A0C9", "39472EF77277F5AE", CAN_BE_BUILT)
-
 createObject(57, "IRON_ROCK", "Iron Rock", "CA41BB1CFD9573AC")
 createObject(58, "IRON", "Iron", nil, "D759E42007B25621")
+createObject(59, "WOODEN_REVTRI_WALL", "Wood Reverse Triangle Wall", "6ADC103424B9D134", "02A043CEBA80ABFB", CAN_BE_BUILT)
+createObject(60, "STONEBRICKS_REVTRI_WALL", "Stone Bricks Reverse Triangle Wall", "D8750C1C96CCCBEB", "35CAD5A3332A3C31", CAN_BE_BUILT)
 
+createObject(61, "PUMPKIN_SEEDS", "Pumpkin Seeds", "6AD9CDB1DFADEC24", "F9F42D39C8BDE302", CAN_BE_BUILT, { mustBeBuiltOn=30 })
+createObject(62, "PUMPKIN_SEEDS_2", "Pumpkin Seeds (step 2)", "927247A49F1B691C")
+createObject(63, "PUMPKIN_SEEDS_3", "Pumpkin Seeds (step 3)", "09D9C9CDEE0B3F4B")
+createObject(64, "PUMPKIN", "Pumpkin", "C1EF362489B3A783", "11B5B4C2A94A0D6B")
 
 for _,item in pairs(objects) do
     for _,item2 in pairs(objects) do
@@ -177,12 +182,12 @@ _G["caillef.craftisland.crafts"] = {
 	},
 	{
 		{ "WOOD_LOG", 2 },
-        { "WOODEN_WALL", 3, "WOODEN_STAIRS", 3, "WOODEN_FLOOR", 3, "WOODEN_DOOR", 3, "SMALL_WOODEN_WINDOW", 3, "BIG_WOODEN_WINDOW", 3, "WOODEN_ROOF", 3, "WOODEN_HALF_WALL", 3, "WOODEN_TRI_WALL", 3 },
+        { "WOODEN_WALL", 3, "WOODEN_STAIRS", 3, "WOODEN_FLOOR", 3, "WOODEN_DOOR", 3, "SMALL_WOODEN_WINDOW", 3, "BIG_WOODEN_WINDOW", 3, "WOODEN_ROOF", 3, "WOODEN_HALF_WALL", 3, "WOODEN_TRI_WALL", 3, "WOODEN_REVTRI_WALL", 3 },
         CRAFTING_TABLE
     },
     {
 		{ "STONE", 2 },
-        { "STONEBRICKS_WALL", 3, "STONEBRICKS_STAIRS", 3, "STONEBRICKS_FLOOR", 3, "STONEBRICKS_WINDOW", 3, "STONEBRICKS_DOOR", 3, "STONEBRICKS_ROOF", 3, "STONEBRICKS_HALF_WALL", 3, "STONEBRICKS_TRI_WALL", 3 },
+        { "STONEBRICKS_WALL", 3, "STONEBRICKS_STAIRS", 3, "STONEBRICKS_FLOOR", 3, "STONEBRICKS_WINDOW", 3, "STONEBRICKS_DOOR", 3, "STONEBRICKS_ROOF", 3, "STONEBRICKS_HALF_WALL", 3, "STONEBRICKS_TRI_WALL", 3, "STONEBRICKS_REVTRI_WALL", 3 },
         CRAFTING_TABLE
 	},
     {
@@ -205,11 +210,13 @@ _G["caillef.craftisland.buysell"] = {
         { BUY, "SAPLING", 50 },
         { BUY, "WHEAT_SEEDS", 20 },
         { BUY, "CARROT_SEEDS", 50 },
+        { BUY, "PUMPKIN_SEEDS", 100 },
         { BUY, "BERRY_SPROUT", 200 },
     },
     { -- 3 for farmer
         { SELL, "WHEAT", 3 },
         { SELL, "CARROT", 10 },
+        { SELL, "PUMPKIN", 25 },
         { SELL, "BERRY", 20 },
     },
     { -- 4 for material

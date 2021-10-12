@@ -163,7 +163,7 @@ function OnBindingReleased(_, actionName)
         if zPos >= 0 then
             local obj = APIO.OBJECTS[objectIndex]
             if (obj.idName == "SOIL" or obj.idName == "SAPLING" or obj.idName == "BERRY_SPROUT") and zPos ~= islandPos.z then -- only on ground
-                return -- must be placed on ground
+                return
             end
             local data = APIBSerializer.Serialize(currentPrevisu:GetWorldPosition() - islandPos, currentPrevisu:GetRotation().z, obj.id)
             while Events.BroadcastToServer("BSPS", data) ~= BroadcastEventResultCode.SUCCESS do -- BuildingSystemPlaceStructure (BuildingSystemServer.lua)
@@ -230,6 +230,11 @@ Events.Connect("OnPlayerInitialized", OnPlayerInitialized)
 
 Events.Connect("BSLimit", function()
 	World.SpawnAsset("7CF45E787CD10A68:LimitBuildingNotif", { parent= propUIPanel })
+end)
+
+Events.Connect("NeedSoil", function()
+    local obj = World.SpawnAsset("7CF45E787CD10A68:LimitBuildingNotif", { parent= propUIPanel })
+    obj.text = "Use your Hoe before planting seeds."
 end)
 
 print("Building Mode Activated for players (need the same message for the server)")

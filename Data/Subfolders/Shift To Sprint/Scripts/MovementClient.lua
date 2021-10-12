@@ -5,8 +5,7 @@
 local player = Game.GetLocalPlayer();
 local debugConsole = script:GetCustomProperty("DebugConsoleClient"):WaitForObject().context
 
-local SHIFT_ABILITY = "ability_feet"
-local CROUCH_ABILITY = "ability_extra_41";
+local SHIFT_ABILITY = "ability_extra_12"
 local SLOW_WALK_ABILITY = "ability_extra_10";
 
 local currentStates = {

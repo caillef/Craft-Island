@@ -16,6 +16,9 @@ Events.ConnectForPlayer("Buy", function(player, data)
         if data.idName == "CARROT_SEEDS" then
             Events.Broadcast("TrackAction", { p=player, t=14, qty=data.qty })
         end
+        if data.idName == "PUMPKIN_SEEDS" then
+            Events.Broadcast("TrackAction", { p=player, t=19, qty=data.qty })
+        end
         if data.idName == "BERRY_SPROUT" then
             Events.Broadcast("TrackAction", { p=player, t=15, qty=data.qty })
         end

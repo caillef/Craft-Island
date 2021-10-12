@@ -184,10 +184,10 @@ function PlaceObject(player, position, angle, type, isLoadingIsland)
         local surfaceObjects = placedObjects[player][mandatorySurface] or {}
         local block = GetStructureOnCellFromList(surfaceObjects, position, player)
         if not block or block.player ~= player then
-            --TODO: send player message saying that he can't build on this type of block
+            Events.BroadcastToPlayer(player, "NeedSoil")
             return
         end
-        RemoveStructure(block.obj, player)        
+        RemoveStructure(block.obj, player)
     end
 
     local obj = World.SpawnAsset(APIO.OBJECTS[type].templateMuid, { position = position, rotation = Rotation.New(0, 0, angle), parent = playersSpawns[player].island:FindChildByName("Structures") })

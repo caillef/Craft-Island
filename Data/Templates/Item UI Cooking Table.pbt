@@ -102,7 +102,7 @@ Assets {
           }
           Image {
             Brush {
-              Id: 9663472599225308380
+              Id: 3032265025857683396
             }
             Color {
               A: 1
@@ -126,12 +126,12 @@ Assets {
       }
     }
     Assets {
-      Id: 9663472599225308380
-      Name: "Cauldron"
+      Id: 3032265025857683396
+      Name: "Fantasy Cauldron 001"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Icon_Cauldron"
+        AssetId: "UI_Fantasy_Equip_Cauldron_001"
       }
     }
     PrimaryAssetId {

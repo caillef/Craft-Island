@@ -196,6 +196,9 @@ function SpawnPrevisu(template)
     for _,vfx in ipairs(previsu:FindDescendantsByType("Vfx")) do
         vfx:Destroy()
     end
+    for _,trigger in ipairs(previsu:FindDescendantsByType("Trigger")) do
+        trigger:Destroy()
+    end
     return previsu
 end
 

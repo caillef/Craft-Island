@@ -102,11 +102,12 @@ Assets {
           }
           Image {
             Brush {
-              Id: 18379526620011583556
+              Id: 6855576968346865448
             }
             Color {
-              R: 0.309999943
-              G: 0.15397349
+              R: 1
+              G: 1
+              B: 1
               A: 1
             }
             TeamSettings {
@@ -128,12 +129,12 @@ Assets {
       }
     }
     Assets {
-      Id: 18379526620011583556
-      Name: "Crate"
+      Id: 6855576968346865448
+      Name: "Fantasy Crate 004"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Military_Icon_010"
+        AssetId: "UI_Fantasy_Equip_Crate_004"
       }
     }
     PrimaryAssetId {

@@ -236,8 +236,8 @@ Objects {
   }
 }
 Objects {
-  Id: 8892211675045939136
-  Name: "Sky Paradise Planet"
+  Id: 9838205582040489516
+  Name: "Day Night Sky"
   Transform {
     Scale {
       X: 1
@@ -246,26 +246,26 @@ Objects {
     }
   }
   ParentId: 6236082347439009122
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 13503567310865354052
+      key: 2687820722041061846
+      value {
+        Overrides {
+          Name: "cs:DegreesPerSecond"
+          Float: 0.3
+        }
+        Overrides {
+          Name: "cs:StartingDegrees"
+          Float: 60
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 15353451395209644350
       value {
         Overrides {
           Name: "Name"
-          String: "Sky Paradise Planet"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
+          String: "Day Night Sky"
         }
         Overrides {
           Name: "Scale"
@@ -278,20 +278,16 @@ Objects {
       }
     }
     ParameterOverrideMap {
-      key: 14209278985477281716
+      key: 15823941823731023788
       value {
         Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: -59.7883911
-            Yaw: -128.228424
-            Roll: 14.4112749
-          }
+          Name: "bp:Intensity"
+          Float: 1.61857724
         }
       }
     }
     TemplateAsset {
-      Id: 1738932191236990456
+      Id: 3978139205484011160
     }
   }
 }

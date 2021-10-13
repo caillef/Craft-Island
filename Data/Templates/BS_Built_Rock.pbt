@@ -16,6 +16,7 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
+        ChildIds: 3042707073966499642
         ChildIds: 3353948417995451109
         ChildIds: 15132059030894101674
         WantsNetworking: true
@@ -30,6 +31,39 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 3042707073966499642
+        Name: "ClientContext"
+        Transform {
+          Location {
+            X: 100
+            Y: -100
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13326456227818208202
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
         }
       }
       Objects {

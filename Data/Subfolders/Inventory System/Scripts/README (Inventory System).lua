@@ -102,7 +102,7 @@
 		
 		The Inventory System has a few Utility Events you can take advantage of in order to exchange data between your game and the system itself.
 
-		- "requestInventoryFullEvent" | (Player player, String id) | Server Event
+		- "reqInvFullEv" | (Player player, String id) | Server Event
 
 			This server-side event request allows you to check if a players inventory is full or not - useful in shops and such.
 			It takes in the player who's inventory it's supposed to check and a unique id for the request.

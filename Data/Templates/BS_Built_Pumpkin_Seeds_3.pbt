@@ -20,6 +20,7 @@ Assets {
         ChildIds: 13956409849734553213
         ChildIds: 6531304180121049947
         ChildIds: 11134827954150768792
+        ChildIds: 17783064471734564018
         UnregisteredParameters {
           Overrides {
             Name: "cs:CanGrow"
@@ -239,6 +240,64 @@ Assets {
           }
         }
       }
+      Objects {
+        Id: 17783064471734564018
+        Name: "Organic - Food - Pumpkin 03"
+        Transform {
+          Location {
+            X: 100
+            Y: -100
+            Z: -12.626936
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.396246493
+            Y: 0.396246493
+            Z: 0.396246493
+          }
+        }
+        ParentId: 9873502646288835886
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.809999943
+              G: 0.48278147
+              A: 1
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 543664767796887936
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
     }
     Assets {
       Id: 10888788159873929006
@@ -265,6 +324,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_foliage_gen_leafy_bush_002"
+      }
+    }
+    Assets {
+      Id: 543664767796887936
+      Name: "Organic - Food - Pumpkin 03"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_prop_org_food_pumpkin_003_ref"
       }
     }
     PrimaryAssetId {

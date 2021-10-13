@@ -265,40 +265,6 @@ Assets {
     }
     Bindings {
       BindingType {
-        Value: "mc:ebindingtype:axis"
-      }
-      AxisBindingData {
-        IncreaseInputs {
-          KeyboardPrimary {
-            Value: "mc:ebindingkeyboard:spacebar"
-          }
-          KeyboardSecondary {
-            Value: "mc:ebindingkeyboard:none"
-          }
-          Controller {
-            Value: "mc:ebindinggamepad:a"
-          }
-        }
-        DecreaseInputs {
-          KeyboardPrimary {
-            Value: "mc:ebindingkeyboard:leftcontrol"
-          }
-          KeyboardSecondary {
-            Value: "mc:ebindingkeyboard:none"
-          }
-          Controller {
-            Value: "mc:ebindinggamepad:b"
-          }
-        }
-      }
-      Action: "MoveVertically"
-      Description: "Swim/fly up and down"
-      CoreBehavior {
-        Value: "mc:ecorebehavior:movevertically"
-      }
-    }
-    Bindings {
-      BindingType {
         Value: "mc:ebindingtype:directional"
       }
       DirectionalBindingData {
@@ -692,6 +658,30 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
+    }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:leftclick"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:leftclick"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:none"
+          }
+        }
+      }
+      Action: "Action"
+      Description: "Break or place structure"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+      Networked: true
     }
   }
 }

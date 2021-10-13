@@ -152,6 +152,7 @@ end
 function ActionOnCloserProp()
     for _,prop in ipairs(weaponHitbox:GetOverlappingObjects()) do
         if not prop or not prop:IsValid() then return end
+
         if prop and prop:IsValid() and prop.parent and prop.parent.name == "Geo" then
             prop = prop.parent
         end
@@ -160,19 +161,21 @@ function ActionOnCloserProp()
             if not (prop and prop:IsValid() and prop.parent and prop.parent.parent) then return end
             -- Is on mining island
             if prop.parent.parent.name == "Rocks" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
-                Events.BroadcastToServer(eventObjectId, { p=PLAYER.id, t=0 })
+                World.SpawnAsset("2CE7D7A6241E47A2:VFX_Rocks", { parent=prop.parent })
+                --Events.BroadcastToServer(eventObjectId, { p=PLAYER.id, t=0 })
                 return
             end
 
             -- Is on player island with pickaxe
             if prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
-                Events.BroadcastToServer(eventObjectId, { p=PLAYER.id, t=0 })
+                --Events.BroadcastToServer(eventObjectId, { p=PLAYER.id, t=0 })
                 return
             end
 
             -- Is on player island with axe
             if prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "F27A87BB28DA0B17" then
-                Events.BroadcastToServer(eventObjectId, { p=PLAYER.id, t=1 })
+                World.SpawnAsset("C9C2FEF888D330C4:VFX_Wood", { parent=prop.parent })
+                --Events.BroadcastToServer(eventObjectId, { p=PLAYER.id, t=1 })
                 return
             end
         end
@@ -187,9 +190,7 @@ function OnExecute(ability)
         if abilityInfo.ability == ability then
             abilityInfo.canAttack = true
             abilityInfo.ignoreList = {}
-            if PLAYER == ability.owner then
-                ActionOnCloserProp()
-            end
+            ActionOnCloserProp()
             SpawnSwingEffect(abilityInfo)
             return
         end

@@ -19,9 +19,9 @@ propUI.visibility =  Visibility.FORCE_OFF
 Events.Connect("OpenUICraft", function(id)
 	if not id then return end
 	if tableType ~= 0 then
-		tableType = 0
 		isSetup = false
 	end
+	tableType = 0
 	_G["caillef.craftisland.craftopen"] = true
 	propUI.visibility = Visibility.FORCE_ON
 	triggerId = id
@@ -33,10 +33,23 @@ end)
 Events.Connect("OpenUICooking", function(id)
 	if not id then return end
 	if tableType ~= 1 then
-		tableType = 1
 		isSetup = false
 	end
 	tableType = 1
+	_G["caillef.craftisland.craftopen"] = true
+	propUI.visibility = Visibility.FORCE_ON
+	triggerId = id
+	UI.SetCursorVisible(true)
+	UI.SetCanCursorInteractWithUI(true)
+	SetupUI()
+end)
+
+Events.Connect("OpenUIAnvil", function(id)
+	if not id then return end
+	if tableType ~= 2 then
+		isSetup = false
+	end
+	tableType = 2
 	_G["caillef.craftisland.craftopen"] = true
 	propUI.visibility = Visibility.FORCE_ON
 	triggerId = id

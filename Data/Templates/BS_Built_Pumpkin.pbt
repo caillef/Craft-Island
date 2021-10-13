@@ -16,7 +16,7 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 11750069515974282327
+        ChildIds: 8275335504246554392
         ChildIds: 16494487310064799156
         ChildIds: 11207327510550510417
         ChildIds: 1462813845709492043
@@ -36,13 +36,13 @@ Assets {
         }
       }
       Objects {
-        Id: 11750069515974282327
+        Id: 8275335504246554392
         Name: "Bush Leafy Low 01"
         Transform {
           Location {
             X: 100
             Y: -100
-            Z: -17.8022366
+            Z: -5.1753006
           }
           Rotation {
           }

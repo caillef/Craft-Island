@@ -98,6 +98,11 @@ createObject(62, "PUMPKIN_SEEDS_2", "Pumpkin Seeds (step 2)", "927247A49F1B691C"
 createObject(63, "PUMPKIN_SEEDS_3", "Pumpkin Seeds (step 3)", "09D9C9CDEE0B3F4B")
 createObject(64, "PUMPKIN", "Pumpkin", "C1EF362489B3A783", "11B5B4C2A94A0D6B")
 
+-- createObject(65, "IRON_SWORD", "Iron Sword", "CEC311EF57E9F34F", "8794CFE9EB375C78")
+-- createObject(66, "ANVIL", "Anvil", "AB934149453725A9", "A472C0845BD4FF76", CAN_BE_BUILT)
+
+-- createObject(67, "WOOL", "Wool", nil, "AA5131329027ED3C")
+
 for _,item in pairs(objects) do
     for _,item2 in pairs(objects) do
         if item ~= item2 then
@@ -133,6 +138,7 @@ end
 
 local CRAFTING_TABLE = 0
 local COOKING_TABLE = 1
+local ANVIL = 2
 
 _G["caillef.craftisland.crafts"] = {
 	{
@@ -194,7 +200,17 @@ _G["caillef.craftisland.crafts"] = {
 		{ "IRON", 5, "COAL", 1 },
         { "LANTERN", 1, "WALLTORCH", 1 },
         CRAFTING_TABLE
-	}
+	},
+    -- {
+	-- 	{ "IRON", 20, "WOOD_LOG", 15 },
+    --     { "ANVIL", 1 },
+    --     CRAFTING_TABLE
+	-- },
+    -- {
+	-- 	{ "IRON", 30, "WOOD_LOG", 5 },
+    --     { "IRON_SWORD", 1 },
+    --     ANVIL
+	-- }
 }
 
 local SELL = 0

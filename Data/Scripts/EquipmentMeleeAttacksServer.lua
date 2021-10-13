@@ -92,6 +92,43 @@ function OnEquipped()
 	EQUIPMENT.collision = Collision.INHERIT
 end
 
+function ActionOnCloserProp(ability)
+    for _,prop in ipairs(ability:GetCustomProperty("Hitbox"):WaitForObject():GetOverlappingObjects()) do
+        if not prop or not prop:IsValid() then return end
+        if prop:IsA("DamageableObject") or prop.FindAncestorByType and prop:FindAncestorByType("DamageableObject") then
+            prop = prop:IsA("DamageableObject") and prop or prop:FindAncestorByType("DamageableObject")
+            prop:ApplyDamage(Damage.New(25))
+            return
+        end
+
+        if prop and prop:IsValid() and prop.parent and prop.parent.name == "Geo" then
+            prop = prop.parent
+        end
+        if prop.parent then
+            local id = CoreString.Split(prop.parent.id,{ delimiters={":"} })
+            local eventObjectId = "H"..id
+            if not (prop and prop:IsValid() and prop.parent and prop.parent.parent) then return end
+            -- Is on mining island
+            if prop.parent.parent.name == "Rocks" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
+                Events.Broadcast(eventObjectId, { p=ability.owner.id, t=0 })
+                return
+            end
+
+            -- Is on player island with pickaxe
+            if prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
+                Events.Broadcast(eventObjectId, { p=ability.owner.id, t=0 })
+                return
+            end
+
+            -- Is on player island with axe
+            if prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "F27A87BB28DA0B17" then
+                Events.Broadcast(eventObjectId, { p=ability.owner.id, t=1 })
+                return
+            end
+        end
+    end
+end
+
 -- nil OnExecute(Ability)
 -- Spawns a swing effect template on ability execute
 function OnExecute(ability)
@@ -99,6 +136,7 @@ function OnExecute(ability)
         if abilityInfo.ability == ability then
             abilityInfo.canAttack = true
             abilityInfo.ignoreList = {}
+            ActionOnCloserProp(ability)
         end
     end
 end
@@ -124,10 +162,12 @@ function ResetMelee(ability)
 end
 
 -- Initialize
+local a
 local abilityDescendants = EQUIPMENT:FindDescendantsByType("Ability")
 for _, ability in ipairs(abilityDescendants) do
     local hitBox = ability:GetCustomProperty("Hitbox")
 
+    a = ability
     if hitBox then
         hitBox = ability:GetCustomProperty("Hitbox"):WaitForObject()
         hitBox.beginOverlapEvent:Connect(OnBeginOverlap)
@@ -142,6 +182,27 @@ for _, ability in ipairs(abilityDescendants) do
             canAttack = false,
             ignoreList = {}
         })
+    end
+end
+
+local clickPressed = false
+local nextActionAt
+Input.actionPressedEvent:Connect(function(p, action)
+    if action == "Action" then
+        clickPressed = true
+        nextActionAt = time() + 1
+    end
+end)
+Input.actionReleasedEvent:Connect(function(p, action)
+    if action == "Action" then
+        clickPressed = false
+    end
+end)
+
+function Tick()
+    if clickPressed and time() >= nextActionAt then
+        a:Activate()
+        nextActionAt = time() + 1
     end
 end
 

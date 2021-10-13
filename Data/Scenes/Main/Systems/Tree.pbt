@@ -1,6 +1,50 @@
 Name: "Systems"
 RootId: 9416028156443735960
 Objects {
+  Id: 9740202837855139040
+  Name: "Default Keys"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9416028156443735960
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 15889732551133568655
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Default Keys"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16687078566427417755
+    }
+  }
+}
+Objects {
   Id: 876164519996257318
   Name: "Leaderboard"
   Transform {

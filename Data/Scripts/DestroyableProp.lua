@@ -67,10 +67,6 @@ function OnHit(data)
             HP = MAX_HP
         end
     end)
-    if prop.name == "BS_Built_Rock" or prop.name == "BS_Built_Rock_Coal" or prop.name == "BS_Built_Rock_Iron" then
-        prop:GetChildren()[1]:SetScale(prop:GetChildren()[1]:GetScale() * 0.9)
-        -- todo spawn rocks debris
-    end
 
     if data.t ~= 2 then
         GetSoundManager().PlaySound(type == 0 and "StoneImpactSFX" or "WoodImpactSFX", script:GetWorldPosition())
@@ -83,9 +79,9 @@ function OnHit(data)
                 print("Error: player not found")
                 return
             end
-            Events.Broadcast("requestInventoryFullEvent", player, { id=propItemId, string=listenID })
+            Events.Broadcast("reqInvFullEv", player, { id=propItemId, string=listenID })
             if propItemId2 and (not data.harvest or propItemId2 == "WHEAT_SEEDS" or propItemId2 == "CARROT_SEEDS"or propItemId2 == "PUMPKIN_SEEDS") then
-                Events.Broadcast("requestInventoryFullEvent", player, { id=propItemId2, string=listenID2 })
+                Events.Broadcast("reqInvFullEv", player, { id=propItemId2, string=listenID2 })
             end
         end
         if BreakSFX then

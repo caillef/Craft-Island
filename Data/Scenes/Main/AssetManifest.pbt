@@ -30,15 +30,6 @@ Assets {
   }
 }
 Assets {
-  Id: 16247792708902319748
-  Name: "Fantasy Book 012"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Equip_Book_012"
-  }
-}
-Assets {
   Id: 15314502537331977714
   Name: "VIP for the day (24h)"
   PlatformAssetType: 24
@@ -49,15 +40,6 @@ Assets {
         Value: "mc:enetreferencetype:creatorperk"
       }
     }
-  }
-}
-Assets {
-  Id: 15142787355029724893
-  Name: "Fantasy Pack 004"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Equip_Pack_004"
   }
 }
 Assets {
@@ -105,15 +87,6 @@ Assets {
   }
 }
 Assets {
-  Id: 12026943570949950239
-  Name: "Fantasy Trophy 003"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Equip_Trophy_003"
-  }
-}
-Assets {
   Id: 9724731050776351478
   Name: "PerksRelated"
   PlatformAssetType: 23
@@ -155,15 +128,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_fantasy_block_03"
-  }
-}
-Assets {
-  Id: 8025825663388997787
-  Name: "Fantasy Glasses 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Equip_Glasses_001"
   }
 }
 Assets {
@@ -209,15 +173,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_crate_narrow_lid_simple_160cm_001"
-  }
-}
-Assets {
-  Id: 5740798856157509716
-  Name: "Fantasy Banner 007"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Equip_Banner_007"
   }
 }
 Assets {
@@ -267,15 +222,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Scifi_Icon_017"
-  }
-}
-Assets {
-  Id: 2962346659987690980
-  Name: "Fantasy Package 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Equip_Package_001"
   }
 }
 Assets {

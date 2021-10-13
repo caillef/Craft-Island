@@ -85,9 +85,9 @@ Assets {
         Name: "Geo"
         Transform {
           Location {
-            X: 110
-            Y: -80
-            Z: 15
+            X: 100
+            Y: -100
+            Z: 23.4441986
           }
           Rotation {
             Yaw: -90
@@ -102,6 +102,7 @@ Assets {
         ChildIds: 11161738090438395169
         ChildIds: 17978086339962883210
         ChildIds: 2585129677121347666
+        ChildIds: 8399445281430973238
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -121,7 +122,6 @@ Assets {
         Name: "Urban Interior - Oil Lantern 02 - Base 01"
         Transform {
           Location {
-            X: 0.728530765
             Z: -17.9574127
           }
           Rotation {
@@ -274,7 +274,7 @@ Assets {
             UseTemperature: true
             Temperature: 1628.47278
             LocalLight {
-              AttenuationRadius: 793.63269
+              AttenuationRadius: 1614.70227
               PointLight {
                 SourceRadius: 2
                 SoftSourceRadius: 6
@@ -284,6 +284,55 @@ Assets {
             }
             MaxDrawDistance: 5000
             MaxDistanceFadeRange: 1000
+          }
+        }
+      }
+      Objects {
+        Id: 8399445281430973238
+        Name: "Urban Interior - Oil Lantern 02 - Base 01"
+        Transform {
+          Location {
+            Z: -14.4059334
+          }
+          Rotation {
+            Yaw: 90
+            Roll: 180
+          }
+          Scale {
+            X: 1.5
+            Y: 1.5
+            Z: 0.284534216
+          }
+        }
+        ParentId: 11055887794781098475
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 1227539998602669490
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
           }
         }
       }

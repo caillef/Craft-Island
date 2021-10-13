@@ -306,7 +306,7 @@ Events.Connect("inventoryAddEvent", Add)
 Events.Connect("inventoryDeleteEvent", Delete)
 Events.Connect("inventoryMoveEvent", Move)
 Events.Connect("inventoryEquipEvent", EquipItem)
-Events.Connect("requestInventoryFullEvent", FreeSlots)
+Events.Connect("reqInvFullEv", FreeSlots)
 Events.Connect("inventoryCraftEvent", Craft)
 
 Events.ConnectForPlayer("removeItem", PlayerRemoveItems)

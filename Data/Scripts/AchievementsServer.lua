@@ -64,7 +64,7 @@ Events.Connect("TrackAction", function(data)
 
 	local achievement = achievements[data.t]
 	local current_achievement = storage.track[data.t]
-d	local target_qty = achievement.qtys[current_achievement.t]
+	local target_qty = achievement.qtys[current_achievement.t]
 	while current_achievement.t <= #achievement.qtys and current_achievement.qty >= target_qty do
 		local name = achievement.name
 		if current_achievement.t == 1 then

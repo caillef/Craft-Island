@@ -20,10 +20,8 @@ Assets {
         ChildIds: 14565400131307557002
         UnregisteredParameters {
           Overrides {
-            Name: "cs:ItemUITemplate"
-            AssetReference {
-              Id: 4707371283039740838
-            }
+            Name: "cs:ItemName"
+            String: "WOOD_LOG"
           }
         }
         WantsNetworking: true
@@ -45,7 +43,7 @@ Assets {
         Name: "Client Model"
         Transform {
           Location {
-            Z: 50
+            Z: -3.45825195
           }
           Rotation {
           }
@@ -218,6 +216,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Trigger {
+          Interactable: true
           InteractionLabel: "Pick up"
           TeamSettings {
             IsTeamCollisionEnabled: true

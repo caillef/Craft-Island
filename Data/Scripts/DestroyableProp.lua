@@ -20,15 +20,7 @@ local listenID = "pickup" .. math.random()*30
 local listenID2 = "pickup" .. math.random()*30
 local player = nil
 
-local _SOUNDS
-function GetSoundManager()
-    _SOUNDS = _G["caillef.craftisland.sounds"]
-    while _SOUNDS == nil do
-        Task.Wait(0.1)
-        _SOUNDS = _G["caillef.craftisland.sounds"]
-    end
-    return _SOUNDS
-end
+local SOUNDS = require(script:GetCustomProperty("SOUNDS"))
 
 local trackIds = { "WHEAT", "BERRY", "CARROT", "STONE", "COAL" }
 function ManageTracking(player, name, qty)
@@ -69,7 +61,7 @@ function OnHit(data)
     end)
 
     if data.t ~= 2 then
-        GetSoundManager().PlaySound(type == 0 and "StoneImpactSFX" or "WoodImpactSFX", script:GetWorldPosition())
+        SOUNDS.PlaySound(type == 0 and "StoneImpactSFX" or "WoodImpactSFX", script:GetWorldPosition())
     end
 
     if HP <= 0 then
@@ -156,7 +148,7 @@ function PickUp(id, bool)
         if propItemId == "BERRY" then
             if math.random() < 0.05 then
                 Events.Broadcast("inventoryAddEvent", player, { idName="BERRY_SPROUT", qty = 1 })
-                GetSoundManager().PlaySound("BonusItemSFX", script:GetWorldPosition())
+                SOUNDS.PlaySound("BonusItemSFX", script:GetWorldPosition())
             end
         end
         local qty = math.floor(math.random(propItemUIQty.x, propItemUIQty.y))
@@ -172,7 +164,7 @@ function PickUp(id, bool)
         if propItemId2 == "WHEAT_SEEDS" or propItemId2 == "CARROT_SEEDS" or propItemId2 == "PUMPKIN_SEEDS" then
             if math.random() < 0.1 then
                 Events.Broadcast("inventoryAddEvent", player, { idName=propItemId2, qty = 1 })
-                GetSoundManager().PlaySound("BonusItemSFX", script:GetWorldPosition())
+                SOUNDS.PlaySound("BonusItemSFX", script:GetWorldPosition())
             end
         end
         local qty = math.floor(math.random(propItemUI2Qty.x, propItemUI2Qty.y))

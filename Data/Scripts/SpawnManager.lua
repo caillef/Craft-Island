@@ -8,13 +8,13 @@ local ISLANDS_TEMPLATE = {
 local propIslands = script:GetCustomProperty("Islands"):WaitForObject()
 
 local NB_MAX_PLAYERS = 4
-local SPACE_BETWEEN_ISLAND = 35000
+local SPACE_BETWEEN_ISLAND = 20000
 
 local playerSlots = {}
 
 local function GetSpawnWorldPosition(i)
     local pos = Vector3.New()
-    pos.x = (i - 1) % (NB_MAX_PLAYERS / 2) * SPACE_BETWEEN_ISLAND + 40000
+    pos.x = (i - 1) % (NB_MAX_PLAYERS / 2) * SPACE_BETWEEN_ISLAND + 20000
     pos.y = math.floor((i - 1) / (NB_MAX_PLAYERS / 2)) * SPACE_BETWEEN_ISLAND
     pos.z = 0
     return pos
@@ -54,6 +54,7 @@ end
 function OnPlayerJoined(player)
     local storage = Storage.GetPlayerData(player)
     player.serverUserData.islandType = storage.islandType or 1
+    player.serverUserData.islandType = 1
     TELEPORT_MANAGER.TeleportPlayerTo(player, "main_island")
     local slot = AssignNextSlot(player)
     if slot == nil then return end
@@ -80,13 +81,18 @@ end
 function UnlockNextIslandType(player, nextType)
     local currentType = player.serverUserData.islandType
     if currentType + 1 == nextType and player:GetResource("Gem") >= (nextType + 1) * 100 then
+        TELEPORT_MANAGER.TeleportPlayerTo(player, "main_island")
+        Task.Spawn(function()
+            player.movementControlMode = MovementControlMode.NONE
+            Task.Wait(3)
+            player.movementControlMode = MovementControlMode.VIEW_RELATIVE
+        end)
         player:RemoveResource("Gem", (nextType + 1) * 100)
         Events.BroadcastToPlayer(player, "UpdateNextIslandType", nextType + 1)
         local storage = Storage.GetPlayerData(player)
         storage.islandType = nextType
         player.serverUserData.islandType = storage.islandType
         Storage.SetPlayerData(player, storage)
-        TELEPORT_MANAGER.TeleportPlayerTo(player, "main_island")
         local slot = GetSpawnSlotForPlayer(player)
         if not slot then return end
         Events.Broadcast("BSULI", slot)

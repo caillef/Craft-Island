@@ -20,10 +20,4 @@ function PlaySound(soundName, pos)
 	World.SpawnAsset(SOUNDS[soundName], { position = pos })	
 end
 
-Events.ConnectForPlayer("PlaySFX", function(player, str)
-	PlaySound(str, player:GetWorldPosition())
-end)
-
-_G["caillef.craftisland.sounds"] = {
-	PlaySound=PlaySound
-}
+return { PlaySound=PlaySound }

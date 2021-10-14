@@ -5,6 +5,9 @@ Events.ConnectForPlayer("Sell", function(player, data)
         if data.idName == "BREAD" then
             Events.Broadcast("TrackAction", { p=player, t=13, qty=data.qty })
         end
+        if data.idName == "PUMPKIN" then
+            Events.Broadcast("TrackAction", { p=player, t=19, qty=data.qty })
+        end
         Events.Broadcast("SGoldAddForPlayer", player, data.price * data.qty)
     end
 end)

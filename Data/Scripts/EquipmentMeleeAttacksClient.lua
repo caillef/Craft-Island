@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 Copyright 2020 Manticore Games, Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
@@ -34,8 +34,6 @@ local SWING_SOUND = EQUIPMENT:GetCustomProperty("SwingSound")
 
 -- Constants
 local DEFAULT_LIFE_SPAN = 2
-
-local weaponHitbox = nil
 
 -- Internal variables
 local abilityList = {}
@@ -149,8 +147,8 @@ local function mysplit(inputstr, sep)
     return t
 end
 
-function ActionOnCloserProp()
-    for _,prop in ipairs(weaponHitbox:GetOverlappingObjects()) do
+function ActionOnCloserProp(hitBox)
+    for _,prop in ipairs(hitBox:GetOverlappingObjects()) do
         if not prop or not prop:IsValid() then return end
 
         if prop and prop:IsValid() and prop.parent and prop.parent.name == "Geo" then
@@ -190,7 +188,7 @@ function OnExecute(ability)
         if abilityInfo.ability == ability then
             abilityInfo.canAttack = true
             abilityInfo.ignoreList = {}
-            ActionOnCloserProp()
+            ActionOnCloserProp(abilityInfo.hitBox)
             SpawnSwingEffect(abilityInfo)
             return
         end
@@ -231,7 +229,6 @@ for _, ability in ipairs(abilityDescendants) do
     if hitBox then
         hitBox = ability:GetCustomProperty("Hitbox"):WaitForObject()
         hitBox.beginOverlapEvent:Connect(OnBeginOverlap)
-        weaponHitbox = hitBox
 
         ability.executeEvent:Connect(OnExecute)
         ability.cooldownEvent:Connect(ResetMelee)

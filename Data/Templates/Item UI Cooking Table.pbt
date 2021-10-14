@@ -105,6 +105,9 @@ Assets {
               Id: 3032265025857683396
             }
             Color {
+              R: 1
+              G: 1
+              B: 1
               A: 1
             }
             TeamSettings {

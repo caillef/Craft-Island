@@ -122,6 +122,7 @@ Objects {
   ChildIds: 15493299283785528625
   ChildIds: 5196531745169347142
   ChildIds: 17132296093532618721
+  ChildIds: 15043521938725136779
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -132,6 +133,50 @@ Objects {
     Value: "mc:ecollisionsetting:forceoff"
   }
   NetworkContext {
+  }
+}
+Objects {
+  Id: 15043521938725136779
+  Name: "Icons"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12243267191862395269
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 13075719840983417232
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Icons"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 7958968856973531824
+    }
   }
 }
 Objects {

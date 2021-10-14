@@ -278,7 +278,6 @@ Objects {
   ChildIds: 5901898898236306505
   ChildIds: 1672075436009529837
   ChildIds: 6775230222318185320
-  ChildIds: 1036165860390588772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -314,96 +313,6 @@ Objects {
       TargetAnchor {
         Anchor {
           Value: "mc:euianchor:middlecenter"
-        }
-      }
-    }
-  }
-}
-Objects {
-  Id: 1036165860390588772
-  Name: "Gems Shop (to remove)"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 6023687435319835215
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Control {
-    Width: 428
-    Height: 70
-    UIX: 426.517822
-    RenderTransformPivot {
-      Anchor {
-        Value: "mc:euianchor:middlecenter"
-      }
-    }
-    Button {
-      Label: "Gems Shop (coming soon)"
-      FontColor {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-      FontSize: 25
-      ButtonColor {
-        R: 0.62
-        G: 0.357218534
-        A: 1
-      }
-      HoveredColor {
-        R: 0.489000022
-        G: 0.281741738
-        A: 1
-      }
-      PressedColor {
-        R: 0.21800001
-        G: 0.125602648
-        A: 1
-      }
-      DisabledColor {
-        A: 1
-      }
-      Brush {
-        Id: 841534158063459245
-      }
-      ClickMode {
-        Value: "mc:ebuttonclickmode:default"
-      }
-      Font {
-        Id: 5125151642496914779
-      }
-      Justification {
-        Value: "mc:etextjustify:center"
-      }
-      VerticalJustification {
-        Value: "mc:everticaljustification:center"
-      }
-    }
-    AnchorLayout {
-      SelfAnchor {
-        Anchor {
-          Value: "mc:euianchor:topleft"
-        }
-      }
-      TargetAnchor {
-        Anchor {
-          Value: "mc:euianchor:topleft"
         }
       }
     }

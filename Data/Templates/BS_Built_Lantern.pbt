@@ -155,6 +155,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           InteractWithTriggers: true
           StaticMesh {
             Physics {
@@ -274,7 +275,7 @@ Assets {
             UseTemperature: true
             Temperature: 1628.47278
             LocalLight {
-              AttenuationRadius: 1614.70227
+              AttenuationRadius: 500
               PointLight {
                 SourceRadius: 2
                 SoftSourceRadius: 6
@@ -326,6 +327,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           InteractWithTriggers: true
           StaticMesh {
             Physics {

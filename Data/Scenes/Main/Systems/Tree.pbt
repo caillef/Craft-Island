@@ -1,6 +1,71 @@
 Name: "Systems"
 RootId: 9416028156443735960
 Objects {
+  Id: 8670522639391011672
+  Name: "Icon Generator"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9416028156443735960
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 648710861928535880
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -227.6875
+            Z: 606
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 180
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 3023396390788584615
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Icon Generator"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 100000
+            Y: 1e+06
+            Z: 1e+07
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 8566027680962883103
+    }
+  }
+}
+Objects {
   Id: 9740202837855139040
   Name: "Default Keys"
   Transform {
@@ -1054,7 +1119,7 @@ Objects {
       }
     }
     Text {
-      Label: "LAUNCH OFFER - FREE 24 HOURS VIP : Join the Discord discord.io/core-craftisland - channel #giftcodes"
+      Label: "FREE 24 HOURS VIP : Join the Discord discord.io/core-craftisland - channel #giftcodes"
       Color {
         R: 1
         G: 1
@@ -3071,7 +3136,7 @@ Objects {
     Width: 511
     Height: 60
     UIX: 400
-    UIY: 20
+    UIY: 14.1608887
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -5060,6 +5125,8 @@ Objects {
   ChildIds: 17870560818009600450
   ChildIds: 17075018193839059938
   ChildIds: 5646714945118598154
+  ChildIds: 8552525073283306591
+  ChildIds: 16721108795175235856
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -5110,6 +5177,459 @@ Objects {
     SubobjectId: 16632347532707306713
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+}
+Objects {
+  Id: 16721108795175235856
+  Name: "Icon Generator Example (Single Icon)"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2251405480098550947
+  ChildIds: 4724773956595456039
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:CameraId"
+      String: "default"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  InstanceHistory {
+    SelfId: 16721108795175235856
+    SubobjectId: 3640059498041102119
+    InstanceId: 13624160969848084744
+    TemplateId: 7008223730345257918
+    WasRoot: true
+  }
+}
+Objects {
+  Id: 4724773956595456039
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16721108795175235856
+  ChildIds: 16287368434622758963
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+  }
+  InstanceHistory {
+    SelfId: 4724773956595456039
+    SubobjectId: 11175856102928623120
+    InstanceId: 13624160969848084744
+    TemplateId: 7008223730345257918
+  }
+}
+Objects {
+  Id: 16287368434622758963
+  Name: "IconGeneratorSingleIconExample"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4724773956595456039
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Image"
+      ObjectReference {
+        SelfId: 6531490463913397975
+      }
+    }
+    Overrides {
+      Name: "cs:ComponentRoot"
+      ObjectReference {
+        SelfId: 16721108795175235856
+      }
+    }
+    Overrides {
+      Name: "cs:IconTemplate"
+      AssetReference {
+        Id: 2899307416851320846
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 15289641535941055882
+    }
+  }
+  InstanceHistory {
+    SelfId: 16287368434622758963
+    SubobjectId: 4071538032196140548
+    InstanceId: 13624160969848084744
+    TemplateId: 7008223730345257918
+  }
+}
+Objects {
+  Id: 8552525073283306591
+  Name: "Deadmau5Text"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2251405480098550947
+  ChildIds: 12074852547422655917
+  ChildIds: 6531490463913397975
+  ChildIds: 12742368186453830087
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 450
+    Height: 152
+    UIX: 27.0838013
+    UIY: 399.677551
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Image {
+      Brush {
+      }
+      Color {
+        A: 0.577
+      }
+      TeamSettings {
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      ScreenshotIndex: 1
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 6531490463913397975
+    SubobjectId: 9236279135242449120
+    InstanceId: 13624160969848084744
+    TemplateId: 7008223730345257918
+  }
+}
+Objects {
+  Id: 12742368186453830087
+  Name: "UI Text Box"
+  Transform {
+    Location {
+      X: 18.8765259
+      Y: 1004.7041
+      Z: 2771.54541
+    }
+    Rotation {
+      Yaw: 142.463669
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8552525073283306591
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 149
+    Height: 47
+    UIX: 1.57958984
+    UIY: 94.1575317
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "deadmau5"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 20
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 841534158063459245
+      }
+      VerticalJustification {
+        Value: "mc:everticaljustification:center"
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      ScaleToFit: true
+      OutlineColor {
+        A: 1
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 6531490463913397975
+  Name: "UI Image"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8552525073283306591
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 150
+    Height: 150
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Image {
+      Brush {
+      }
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      TeamSettings {
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      ScreenshotIndex: 1
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 6531490463913397975
+    SubobjectId: 9236279135242449120
+    InstanceId: 13624160969848084744
+    TemplateId: 7008223730345257918
+  }
+}
+Objects {
+  Id: 12074852547422655917
+  Name: "UI Text Box"
+  Transform {
+    Location {
+      X: 18.8765259
+      Y: 1004.7041
+      Z: 2771.54541
+    }
+    Rotation {
+      Yaw: 142.463669
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8552525073283306591
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 291
+    Height: 138
+    UIX: 155.429443
+    UIY: 6.57098389
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "Hey! I hope you enjoyed the concert. I am offering you 50 golds per pumpkin (I really like pumpkin cakes after concerts). Give me 25 pumpkins before the 31st of October and I will give you 500 RP."
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 20
+      Justification {
+        Value: "mc:etextjustify:left"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 841534158063459245
+      }
+      VerticalJustification {
+        Value: "mc:everticaljustification:top"
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      ScaleToFit: true
+      OutlineColor {
+        A: 1
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
   }
 }
 Objects {
@@ -6891,6 +7411,12 @@ Objects {
       Name: "cs:NbCoins"
       ObjectReference {
         SelfId: 11614745000949433560
+      }
+    }
+    Overrides {
+      Name: "cs:Deadmau5Text"
+      ObjectReference {
+        SelfId: 8552525073283306591
       }
     }
   }
@@ -10354,8 +10880,8 @@ Objects {
   }
 }
 Objects {
-  Id: 10632439622282673995
-  Name: "Third/First Person Camera Settings"
+  Id: 2751873984390401409
+  Name: "Third/First Person Camera Settings (caillef version)"
   Transform {
     Scale {
       X: 1
@@ -10364,41 +10890,18 @@ Objects {
     }
   }
   ParentId: 9416028156443735960
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
   TemplateInstance {
-    ParameterOverrideMap {
-      key: 5031795963634508887
-      value {
-        Overrides {
-          Name: "CameraPositionOffset"
-          Vector {
-            X: 25
-            Z: -10
-          }
-        }
-      }
-    }
     ParameterOverrideMap {
       key: 5143080259878556731
       value {
         Overrides {
           Name: "Name"
-          String: "Third/First Person Camera Settings"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
+          String: "Third/First Person Camera Settings (caillef version)"
         }
       }
     }
     TemplateAsset {
-      Id: 4369364387064631920
+      Id: 9269861221690284210
     }
   }
 }

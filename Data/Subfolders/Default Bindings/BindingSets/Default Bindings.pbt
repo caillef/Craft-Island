@@ -683,5 +683,93 @@ Assets {
       }
       Networked: true
     }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:e"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:i"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:none"
+          }
+        }
+      }
+      Action: "Inventory"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+    }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:k"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:k"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:none"
+          }
+        }
+      }
+      Action: "Menu"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+    }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:r"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:r"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:none"
+          }
+        }
+      }
+      Action: "VIP"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+    }
+    Bindings {
+      BindingType {
+        Value: "mc:ebindingtype:basic"
+      }
+      BasicBindingData {
+        BasicInputs {
+          KeyboardPrimary {
+            Value: "mc:ebindingkeyboard:l"
+          }
+          KeyboardSecondary {
+            Value: "mc:ebindingkeyboard:l"
+          }
+          Controller {
+            Value: "mc:ebindinggamepad:none"
+          }
+        }
+      }
+      Action: "Gifts"
+      CoreBehavior {
+        Value: "mc:ecorebehavior:none"
+      }
+    }
   }
 }

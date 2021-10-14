@@ -19,18 +19,18 @@ local CODES = {
             Events.Broadcast("ActivateVIP", player, 1)
             return "You are now a VIP member for 24 hours!"
         end
+    },
+    {
+        code={ BLUE, GREEN, RED, RED }, -- The 4 colors of the code
+        storageKey="PUMPKINS", -- The storage key to be able to use the code only once (you must activate player storage)
+        fct=function(player) -- The function that is going to be called if the code is entered
+            Events.Broadcast("inventoryAddEvent", player, { idName="PUMPKIN_SEEDS", qty = 2 })
+            return "You just received 2 pumpkin seeds!"
+        end
     }
 }
 
-local _SOUNDS
-function GetSoundManager()
-    _SOUNDS = _G["caillef.craftisland.sounds"]
-    while _SOUNDS == nil do
-        Task.Wait(0.1)
-        _SOUNDS = _G["caillef.craftisland.sounds"]
-    end
-    return _SOUNDS
-end
+local SOUNDS = require(script:GetCustomProperty("SOUNDS"))
 
 function codeIsValid(c1, c2)
     for i=1,4 do
@@ -44,7 +44,7 @@ end
 Events.ConnectForPlayer("GiftCode", function(player, input)
     if #input ~= 4 then
         print("Warning: received a code with less than 4 inputs")
-        GetSoundManager().PlaySound("GiftCodeErrorSFX", player:GetWorldPosition())
+        SOUNDS.PlaySound("GiftCodeErrorSFX", player:GetWorldPosition())
         Events.BroadcastToPlayer(player, "GiftCodeResp", false)
         return
     end
@@ -52,17 +52,17 @@ Events.ConnectForPlayer("GiftCode", function(player, input)
     for _,code in pairs(CODES) do
         if codeIsValid(code.code, input) then
             if storage[code.storageKey] then
-                GetSoundManager().PlaySound("GiftCodeErrorSFX", player:GetWorldPosition())
+                SOUNDS.PlaySound("GiftCodeErrorSFX", player:GetWorldPosition())
                 return Events.BroadcastToPlayer(player, "GiftCodeResp", false, {msg="Giftcode already used."})
             end
             local msg = code.fct(player)
             Events.BroadcastToPlayer(player, "GiftCodeResp", true, { msg=msg })
             storage[code.storageKey] = true
             Storage.SetPlayerData(player, storage)
-            GetSoundManager().PlaySound("GiftCodeSuccessSFX", player:GetWorldPosition())
+            SOUNDS.PlaySound("GiftCodeSuccessSFX", player:GetWorldPosition())
             return
         end
     end
-    GetSoundManager().PlaySound("GiftCodeErrorSFX", player:GetWorldPosition())
+    SOUNDS.PlaySound("GiftCodeErrorSFX", player:GetWorldPosition())
     Events.BroadcastToPlayer(player, "GiftCodeResp", false)
 end)

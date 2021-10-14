@@ -1,14 +1,5 @@
 local propAchievementsSharedKey = script:GetCustomProperty("AchievementsSharedKey")
-
-local _SOUNDS
-function GetSoundManager()
-    _SOUNDS = _G["caillef.craftisland.sounds"]
-    while _SOUNDS == nil do
-        Task.Wait(0.1)
-        _SOUNDS = _G["caillef.craftisland.sounds"]
-    end
-    return _SOUNDS
-end
+local SOUNDS = require(script:GetCustomProperty("SOUNDS"))
 
 local order = { 12, 1, 10, 16, 4, 11, 5, 6, 13, 14, 3, 15 }
 
@@ -31,6 +22,7 @@ local achievements = {
 	{ type = 16, name = "Craft ;; cooking table.", qtys = { 1 } },
 	{ type = 17, name = "Cook ;; fish.", qtys = { 1, 10, 25, 50, 100, 200, 500, 1000 } },
 	{ type = 18, name = "Buy ;; pumpkin seeds", qtys = { 1 } },
+	{ type = 19, name = "Sell ;; pumpkins.", qtys = { 25 } },
 }
 local NB_ACHIEVEMENTS = #achievements
 
@@ -72,7 +64,11 @@ Events.Connect("TrackAction", function(data)
 		end
 		local name = mysplit(name, ";;")[1]..tostring(target_qty)..mysplit(name, ";;")[2]
 		Events.BroadcastToPlayer(data.p, "AchGet", name)
-		data.p:GrantRewardPoints(current_achievement.t * 100, "Achievement")
+		if data.t == 19 then
+			data.p:GrantRewardPoints(500, "Deadmau5 event")
+		else
+			data.p:GrantRewardPoints(current_achievement.t * 100, "Achievement")
+		end
 		SetAchievementStatus(storage, data.t, current_achievement.t, "1")
 		current_achievement.t = current_achievement.t + 1
 	end
@@ -183,7 +179,7 @@ Events.ConnectForPlayer("Rew", function(player)
 	if goldAmount == 0 then return end
 	Events.Broadcast("SGoldAddForPlayer", player, goldAmount)
 	Events.Broadcast("SGemAddForPlayer", player, gemAmount)
-	GetSoundManager().PlaySound("RewardSFX", player:GetWorldPosition())
+	SOUNDS.PlaySound("RewardSFX", player:GetWorldPosition())
 end)
 
 Events.ConnectForPlayer("VIPRew", function(player)

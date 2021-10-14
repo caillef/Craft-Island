@@ -42,6 +42,8 @@ local achievements = {
 	{ type = 15, name = "Buy ;; berry sprouts", qtys = { 1 } },
 	{ type = 16, name = "Craft ;; cooking table.", qtys = { 1 } },
 	{ type = 17, name = "Cook ;; fish.", qtys = { 1, 10, 25, 50, 100, 200, 500, 1000 } },
+	{ type = 18, name = "Buy ;; pumpkin seeds", qtys = { 1 } },
+	{ type = 19, name = "Sell ;; pumpkins.", qtys = { 25 } },
 }
 
 function DeserializeAchievementList(data)
@@ -213,6 +215,9 @@ function SetGISlotsState(indexState)
 			v:FindChildByName("Unlock").isInteractable = PLAYER:GetResource("Gem") >= (indexState + 1) * 100
 			v:FindChildByName("Unlock").clickedEvent:Connect(function()
 				Events.BroadcastToServer("UnlockNextIsland", k)
+				propUIPanel.visibility = Visibility.FORCE_OFF
+				UI.SetCursorVisible(false)
+				UI.SetCanCursorInteractWithUI(false)
 			end)
 		end
 	end

@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 Copyright 2020 Manticore Games, Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
@@ -32,10 +32,6 @@ local PLAYER_SOCKET = OBJECT:GetCustomProperty("PlayerSocket")
 local LOCAL_POSITION = OBJECT:GetCustomProperty("LocalPosition")
 local LOCAL_ROTATION = OBJECT:GetCustomProperty("LocalRotation")
 
--- Constants
-local PARENT = OBJECT.parent
-local ORIGINAL_LOCAL_TRANSFORM = OBJECT:GetTransform()
-
 -- nil OnEquipped(Equipment, Player)
 -- Attach to equipment owner's socket and set a new local position
 function OnEquipped(equipment, player)
@@ -47,13 +43,9 @@ end
 -- nil OnUnequipped()
 -- Returns the object back to original parent
 function OnUnequipped()
-    if Object.IsValid(PARENT) then
-        OBJECT:Detach()
-        OBJECT.parent = PARENT
-        OBJECT:SetTransform(ORIGINAL_LOCAL_TRANSFORM)
-    else
-        OBJECT:Destroy()
-    end
+	if OBJECT:IsValid() then
+		OBJECT:Destroy()
+	end
 end
 
 -- Initialize

@@ -1,5 +1,5 @@
 ﻿local APIO = require(script:GetCustomProperty("APIObjects"))
-
+local SOUNDS = require(script:GetCustomProperty("SOUNDS"))
 local propUI = script:GetCustomProperty("UI"):WaitForObject()
 local propCoalSlot = script:GetCustomProperty("CoalSlot"):WaitForObject()
 local propSlots = script:GetCustomProperty("Slots"):WaitForObject():GetChildren()
@@ -181,7 +181,8 @@ end
 
 function RemoveOneCoal(f, updateUI)
 	f.nbCoals = f.nbCoals - 1
-	Events.BroadcastToServer("PlaySFX", "BurningFurnace")
+	SOUNDS.PlaySound("BurningFurnace", Game.GetLocalPlayer():GetWorldPosition())
+	-- Events.BroadcastToServer("PlaySFX", "BurningFurnace")
 	if not updateUI then return end
 	if f.nbCoals <= 0 then
 		propCoalSlot:GetChildren()[2]:Destroy()

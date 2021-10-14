@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 Copyright 2020 Manticore Games, Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
@@ -32,6 +32,13 @@ local abilityList = {}
 -- nil Tick()
 -- Checks the players within hitbox, and makes sure swipe effects stay at the player's location
 function Tick()
+    for _,p in ipairs(Game.GetPlayers()) do
+        if p.serverUserData.clickPressed and p.serverUserData.a and time() >= p.serverUserData.nextActionAt then
+            p.serverUserData.a:Activate()
+            p.serverUserData.nextActionAt = time() + 1
+        end
+    end
+
     -- Check for the existence of the equipment or owner before running Tick
     if not Object.IsValid(EQUIPMENT) then return end
     if not Object.IsValid(EQUIPMENT.owner) then return end
@@ -132,6 +139,7 @@ end
 -- nil OnExecute(Ability)
 -- Spawns a swing effect template on ability execute
 function OnExecute(ability)
+    ability.owner.serverUserData.a = ability
     for _, abilityInfo in ipairs(abilityList) do
         if abilityInfo.ability == ability then
             abilityInfo.canAttack = true
@@ -162,12 +170,10 @@ function ResetMelee(ability)
 end
 
 -- Initialize
-local a
 local abilityDescendants = EQUIPMENT:FindDescendantsByType("Ability")
 for _, ability in ipairs(abilityDescendants) do
     local hitBox = ability:GetCustomProperty("Hitbox")
 
-    a = ability
     if hitBox then
         hitBox = ability:GetCustomProperty("Hitbox"):WaitForObject()
         hitBox.beginOverlapEvent:Connect(OnBeginOverlap)
@@ -185,26 +191,17 @@ for _, ability in ipairs(abilityDescendants) do
     end
 end
 
-local clickPressed = false
-local nextActionAt
 Input.actionPressedEvent:Connect(function(p, action)
     if action == "Action" then
-        clickPressed = true
-        nextActionAt = time() + 1
+        p.serverUserData.clickPressed = true
+        p.serverUserData.nextActionAt = time() + 1
     end
 end)
 Input.actionReleasedEvent:Connect(function(p, action)
     if action == "Action" then
-        clickPressed = false
+        p.serverUserData.clickPressed = false
     end
 end)
-
-function Tick()
-    if clickPressed and time() >= nextActionAt then
-        a:Activate()
-        nextActionAt = time() + 1
-    end
-end
 
 EQUIPMENT.equippedEvent:Connect(OnEquipped)
 EQUIPMENT.unequippedEvent:Connect(ResetMelee)

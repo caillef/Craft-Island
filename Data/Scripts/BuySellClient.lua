@@ -3,6 +3,7 @@ local propCloseButton = script:GetCustomProperty("CloseButton"):WaitForObject()
 local propList = script:GetCustomProperty("List"):WaitForObject()
 local propCraftInfo = script:GetCustomProperty("Info"):WaitForObject()
 local propQuantityController = script:GetCustomProperty("QuantityController"):WaitForObject()
+local DEADMAU5_TEXT = script:GetCustomProperty("Deadmau5Text"):WaitForObject()
 
 local _inventorySerializer
 function GetInventorySerializer()
@@ -17,7 +18,7 @@ end
 local isSetup = false
 local firstButton
 open = false
-_G["caillef.craftisland.buysellopen"] = open
+_G["caillef.craftisland.buysellopen"] = false
 
 local sellingType
 
@@ -27,12 +28,14 @@ local triggerId
 propUI.visibility =  Visibility.FORCE_OFF
 
 function openUI(id, st)
+	Task.Wait(0.1)
 	_G["caillef.craftisland.buysellopen"] = true
 	propUI.visibility = Visibility.FORCE_ON
 	triggerId = id
 	UI.SetCursorVisible(true)
 	UI.SetCanCursorInteractWithUI(true)
 	sellingType = st
+	DEADMAU5_TEXT.visibility = st == 5 and Visibility.INHERIT or Visibility.FORCE_OFF
 	Events.BroadcastToServer("ReqInv")
 	SetupUI(id)	
 end
@@ -58,7 +61,8 @@ local buySellType = {
 	"BuySellBaker", -- 1
 	"BuySellSeeds", -- 2
 	"BuySellFarmer", -- 3
-	"BuySellMaterials" -- 4
+	"BuySellMaterials", -- 4
+	"BuySellDeadmau5" -- 5
 }
 
 for k,v in pairs(buySellType) do
@@ -66,7 +70,7 @@ for k,v in pairs(buySellType) do
 		if not id then return end
 		isSetup = false
 		openUI(id, k)
-	end)	
+	end)
 end
 
 local items = {}

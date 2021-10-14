@@ -313,13 +313,46 @@ Objects {
   }
 }
 Objects {
-  Id: 7559278900109086186
-  Name: "Small Half-Timbered House"
+  Id: 3288845349106219498
+  Name: "MergedModel"
   Transform {
     Location {
       X: -1160
       Y: 1085
       Z: 2165
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8853590466296554917
+  ChildIds: 7559278900109086186
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    Model {
+    }
+  }
+}
+Objects {
+  Id: 7559278900109086186
+  Name: "Small Half-Timbered House"
+  Transform {
+    Location {
     }
     Rotation {
       Yaw: 124.999992
@@ -330,7 +363,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8853590466296554917
+  ParentId: 3288845349106219498
   ChildIds: 17652785739568681359
   ChildIds: 719567208056662390
   ChildIds: 11695998103036757008
@@ -15481,8 +15514,8 @@ Objects {
   }
 }
 Objects {
-  Id: 2656236973162192526
-  Name: "Small Half-Timbered House"
+  Id: 16431835766596317906
+  Name: "MergedModel"
   Transform {
     Location {
       X: -2140
@@ -15490,7 +15523,6 @@ Objects {
       Z: 2164.99976
     }
     Rotation {
-      Yaw: -169.999969
     }
     Scale {
       X: 1
@@ -15499,6 +15531,41 @@ Objects {
     }
   }
   ParentId: 8853590466296554917
+  ChildIds: 2656236973162192526
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    Model {
+    }
+  }
+}
+Objects {
+  Id: 2656236973162192526
+  Name: "Small Half-Timbered House"
+  Transform {
+    Location {
+      Y: 6.10351562e-05
+    }
+    Rotation {
+      Yaw: -169.999954
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16431835766596317906
   ChildIds: 13312753155241296619
   ChildIds: 5028066672807803410
   ChildIds: 17180006766678300532
@@ -30605,8 +30672,8 @@ Objects {
   }
 }
 Objects {
-  Id: 6782822132237531953
-  Name: "Small Half-Timbered House"
+  Id: 8788301782887837324
+  Name: "MergedModel"
   Transform {
     Location {
       X: 125
@@ -30614,7 +30681,6 @@ Objects {
       Z: 2165
     }
     Rotation {
-      Yaw: -59.9999924
     }
     Scale {
       X: 1
@@ -30623,6 +30689,40 @@ Objects {
     }
   }
   ParentId: 8853590466296554917
+  ChildIds: 6782822132237531953
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    Model {
+    }
+  }
+}
+Objects {
+  Id: 6782822132237531953
+  Name: "Small Half-Timbered House"
+  Transform {
+    Location {
+    }
+    Rotation {
+      Yaw: -59.9999847
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8788301782887837324
   ChildIds: 13996576086014945108
   ChildIds: 4556220335058050989
   ChildIds: 10706763441497010891

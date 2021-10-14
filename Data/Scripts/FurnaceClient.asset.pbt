@@ -10,6 +10,12 @@ Assets {
           Id: 11526358357864682441
         }
       }
+      Overrides {
+        Name: "cs:SOUNDS"
+        AssetReference {
+          Id: 7087234599356691858
+        }
+      }
     }
   }
   SerializationVersion: 100

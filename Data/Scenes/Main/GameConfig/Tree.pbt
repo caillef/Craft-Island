@@ -256,7 +256,19 @@ Objects {
         }
         Overrides {
           Name: "cs:StartingDegrees"
-          Float: 60
+          Float: 30
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 10050366097919261465
+      value {
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: -90
+            Roll: 0.000222332572
+          }
         }
       }
     }
@@ -273,6 +285,12 @@ Objects {
             X: 1
             Y: 1
             Z: 1
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 45
           }
         }
       }

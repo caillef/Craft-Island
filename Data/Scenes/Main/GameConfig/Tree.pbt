@@ -236,7 +236,7 @@ Objects {
   }
 }
 Objects {
-  Id: 9838205582040489516
+  Id: 6359451876925841842
   Name: "Day Night Sky"
   Transform {
     Scale {
@@ -247,31 +247,6 @@ Objects {
   }
   ParentId: 6236082347439009122
   TemplateInstance {
-    ParameterOverrideMap {
-      key: 2687820722041061846
-      value {
-        Overrides {
-          Name: "cs:DegreesPerSecond"
-          Float: 0.3
-        }
-        Overrides {
-          Name: "cs:StartingDegrees"
-          Float: 30
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 10050366097919261465
-      value {
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: -90
-            Roll: 0.000222332572
-          }
-        }
-      }
-    }
     ParameterOverrideMap {
       key: 15353451395209644350
       value {
@@ -287,25 +262,10 @@ Objects {
             Z: 1
           }
         }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 45
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 15823941823731023788
-      value {
-        Overrides {
-          Name: "bp:Intensity"
-          Float: 1.61857724
-        }
       }
     }
     TemplateAsset {
-      Id: 3978139205484011160
+      Id: 2458915593037816757
     }
   }
 }

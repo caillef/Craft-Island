@@ -1,4 +1,4 @@
-﻿local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
+local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
 local FallSFX = script:GetCustomProperty("FallSFX") and script:GetCustomProperty("FallSFX"):WaitForObject() or nil
 local type = script:GetCustomProperty("Material") or 1
 local propItemId = script:GetCustomProperty("ItemId")
@@ -37,7 +37,7 @@ function ManageTracking(player, name, qty)
     end
 end
 
-function OnHit(data) 
+function OnHit(data)
     if not script:IsValid() then return end
     for _,p in pairs(Game.GetPlayers()) do
         if p.id == data.p then
@@ -52,6 +52,8 @@ function OnHit(data)
         end
     end
 
+	local pos = prop:GetWorldPosition()
+	local angle = prop:GetWorldRotation().z
     HP = HP - 1 * ((data.t==2 or type == data.t) and 1 or 0.5)
     Task.Spawn(function()
         Task.Wait(10)
@@ -72,7 +74,7 @@ function OnHit(data)
                 return
             end
             Events.Broadcast("reqInvFullEv", player, { id=propItemId, string=listenID })
-            if propItemId2 and (not data.harvest or propItemId2 == "WHEAT_SEEDS" or propItemId2 == "CARROT_SEEDS"or propItemId2 == "PUMPKIN_SEEDS") then
+            if propItemId2 and (not data.h or propItemId2 == "WHEAT_SEEDS" or propItemId2 == "CARROT_SEEDS"or propItemId2 == "PUMPKIN_SEEDS") then
                 Events.Broadcast("reqInvFullEv", player, { id=propItemId2, string=listenID2 })
             end
         end
@@ -109,16 +111,16 @@ function OnHit(data)
         BUILD_SYSTEM.RemoveStructure(prop, player)
 
         -- Check if not an harvest trigger
-        if not data.harvest then
-            return
+        if not data.h then
+			return
         end
 
         for _,p in pairs(Game.GetPlayers()) do
             if p.id == data.p then
                 if propItemId == "BERRY" then
-                    BUILD_SYSTEM.PlaceObject(player, data.pos, data.angle, 26) -- Place Bush
+                    BUILD_SYSTEM.PlaceObject(player, pos, angle, 26) -- Place Bush
                 else
-                    BUILD_SYSTEM.PlaceObject(player, data.pos, data.angle, 30)
+                    BUILD_SYSTEM.PlaceObject(player, pos, angle, 30)
                 end
             end
         end
@@ -136,6 +138,7 @@ local function mysplit(inputstr, sep)
     return t
 end
 
+if prop.sourceTemplateId == "C1EF362489B3A783" then print(prop.id) end
 eventListenerOnHit = Events.Connect("H"..mysplit(prop.id, ":")[1], OnHit)
 
 function PickUp(id, bool)

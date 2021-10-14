@@ -54,7 +54,6 @@ end
 function OnPlayerJoined(player)
     local storage = Storage.GetPlayerData(player)
     player.serverUserData.islandType = storage.islandType or 1
-    player.serverUserData.islandType = 1
     TELEPORT_MANAGER.TeleportPlayerTo(player, "main_island")
     local slot = AssignNextSlot(player)
     if slot == nil then return end
@@ -87,7 +86,7 @@ function UnlockNextIslandType(player, nextType)
             Task.Wait(3)
             player.movementControlMode = MovementControlMode.VIEW_RELATIVE
         end)
-        player:RemoveResource("Gem", (nextType + 1) * 100)
+        Events.Broadcast("SGemAddForPlayer", player, -(nextType + 1) * 100)
         Events.BroadcastToPlayer(player, "UpdateNextIslandType", nextType + 1)
         local storage = Storage.GetPlayerData(player)
         storage.islandType = nextType

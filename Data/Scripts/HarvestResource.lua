@@ -1,20 +1,10 @@
-﻿local propTrigger = script:GetCustomProperty("Trigger"):WaitForObject()
+local propTrigger = script:GetCustomProperty("Trigger"):WaitForObject()
 
-local function mysplit(inputstr, sep)
-    if sep == nil then
-            sep = "%s"
-    end
-    local t={}
-    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-            table.insert(t, str)
-    end
-    return t
-end
-
-local eventName = "H"..mysplit(propTrigger.parent.id, ":")[1]
+local id = CoreString.Split(propTrigger.parent.id, {delimiters={":"}})
+local eventName = "H"..id
 
 function OnHarvest(trigger, other)
-    Events.Broadcast(eventName, { p=other.id, harvest=true, pos = trigger.parent:GetWorldPosition(), angle = trigger.parent:GetRotation().z, t=2 })
+    Events.Broadcast(eventName, { p=other.id, h=true, t=2 })
 end
 
 propTrigger.interactedEvent:Connect(OnHarvest)

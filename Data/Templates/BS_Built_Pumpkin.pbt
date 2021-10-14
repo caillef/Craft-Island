@@ -19,8 +19,8 @@ Assets {
         ChildIds: 8275335504246554392
         ChildIds: 16494487310064799156
         ChildIds: 11207327510550510417
-        ChildIds: 1462813845709492043
         ChildIds: 15554975574754611649
+        ChildIds: 1462813845709492043
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -203,6 +203,54 @@ Assets {
         }
       }
       Objects {
+        Id: 15554975574754611649
+        Name: "Organic - Food - Pumpkin 03"
+        Transform {
+          Location {
+            X: 100
+            Y: -100
+            Z: -12.626936
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.850022793
+            Y: 0.850022793
+            Z: 0.850022793
+          }
+        }
+        ParentId: 7535778860095042915
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 543664767796887936
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
         Id: 1462813845709492043
         Name: "Trigger"
         Transform {
@@ -223,7 +271,7 @@ Assets {
         ChildIds: 15393264467622989650
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceon"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -282,54 +330,6 @@ Assets {
         Script {
           ScriptAsset {
             Id: 429492259122887083
-          }
-        }
-      }
-      Objects {
-        Id: 15554975574754611649
-        Name: "Organic - Food - Pumpkin 03"
-        Transform {
-          Location {
-            X: 100
-            Y: -100
-            Z: -12.626936
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.850022793
-            Y: 0.850022793
-            Z: 0.850022793
-          }
-        }
-        ParentId: 7535778860095042915
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 543664767796887936
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
           }
         }
       }

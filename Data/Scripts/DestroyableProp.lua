@@ -1,4 +1,4 @@
-local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
+﻿local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
 local FallSFX = script:GetCustomProperty("FallSFX") and script:GetCustomProperty("FallSFX"):WaitForObject() or nil
 local type = script:GetCustomProperty("Material") or 1
 local propItemId = script:GetCustomProperty("ItemId")
@@ -55,12 +55,6 @@ function OnHit(data)
 	local pos = prop:GetWorldPosition()
 	local angle = prop:GetWorldRotation().z
     HP = HP - 1 * ((data.t==2 or type == data.t) and 1 or 0.5)
-    Task.Spawn(function()
-        Task.Wait(10)
-        if prop:IsValid() then
-            HP = MAX_HP
-        end
-    end)
 
     if data.t ~= 2 then
         SOUNDS.PlaySound(type == 0 and "StoneImpactSFX" or "WoodImpactSFX", script:GetWorldPosition())

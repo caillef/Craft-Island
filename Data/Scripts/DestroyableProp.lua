@@ -1,4 +1,6 @@
-﻿local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
+﻿if Environment.IsClient() then return end
+
+local BreakSFX = script:GetCustomProperty("BreakSFX") and script:GetCustomProperty("BreakSFX"):WaitForObject() or nil
 local FallSFX = script:GetCustomProperty("FallSFX") and script:GetCustomProperty("FallSFX"):WaitForObject() or nil
 local type = script:GetCustomProperty("Material") or 1
 local propItemId = script:GetCustomProperty("ItemId")
@@ -6,14 +8,9 @@ local propItemId2 = script:GetCustomProperty("ItemId2")
 local propItemUIQty = script:GetCustomProperty("ItemUIQty") or Vector2.New(1, 1)
 local propItemUI2Qty = script:GetCustomProperty("ItemUI2Qty") or Vector2.New(1, 1)
 
-local BUILD_SYSTEM = World.GetRootObject():FindChildByName("ServerScripts"):FindDescendantByName("BuildingSystemServer").context
-local SPAWN_MANAGER = World.GetRootObject():FindChildByName("ServerScripts"):FindDescendantByName("SpawnManager").context
-
 local prop = script.parent
 local eventListenerOnHit
 local HP = script:GetCustomProperty("HP")
-local MAX_HP = HP
-local nextHeal
 
 local picked = false
 local listenID = "pickup" .. math.random()*30
@@ -45,11 +42,9 @@ function OnHit(data)
         end
     end
     if not player then return end
-    local structures = prop:FindAncestorByName("Structures")
-    if structures then
-        if structures.parent.serverUserData.owner ~= player then
-            return
-        end
+    local structures = prop:FindAncestorByName("StaticContext")
+    if not structures then
+	    return
     end
 
 	local pos = prop:GetWorldPosition()
@@ -61,6 +56,7 @@ function OnHit(data)
     end
 
     if HP <= 0 then
+
         if propItemId and not picked then
             picked = true
             if not player or not player:IsValid() then
@@ -76,64 +72,29 @@ function OnHit(data)
             BreakSFX:Play()
         end
         eventListenerOnHit:Disconnect()
-        Task.Spawn(function()
-            if FallSFX then
-                Events.Broadcast("TrackAction", {p=player, t=12, qty=1})
-                local tree = prop:FindChildByName("Built")
-                Task.Spawn(function()
-                    --TODO: Use debris physics
-                    tree:RotateContinuous(Rotation.New(20, 0, 0))
-                    Task.Wait(0.25)
-                    tree:RotateContinuous(Rotation.New(40, 0, 0))
-                    Task.Wait(0.25)
-                    if tree:IsValid() then
-                        tree:RotateContinuous(Rotation.New(80, 0, 0))
-                    end
-                    Task.Wait(0.25)
-                    FallSFX:Play()
-                    if tree:IsValid() then
-                        tree:RotateContinuous(Rotation.New(140, 0, 0))
-                    end
-                    Task.Wait(0.25)
-                    if tree:IsValid() then
-                        tree:StopRotate()
-                    end
-                    Task.Wait(1)
-                end)
-            end
-        end)
-        BUILD_SYSTEM.RemoveStructure(prop, player)
+        if FallSFX then
+            Events.Broadcast("TrackAction", {p=player, t=12, qty=1})
+        end
+        Events.Broadcast("RemoveStructure", prop, player)
 
         -- Check if not an harvest trigger
         if not data.h then
 			return
         end
 
-        for _,p in pairs(Game.GetPlayers()) do
-            if p.id == data.p then
-                if propItemId == "BERRY" then
-                    BUILD_SYSTEM.PlaceObject(player, pos, angle, 26) -- Place Bush
-                else
-                    BUILD_SYSTEM.PlaceObject(player, pos, angle, 30)
-                end
-            end
-        end
+        -- for _,p in pairs(Game.GetPlayers()) do
+        --     if p.id == data.p then
+        --         if propItemId == "BERRY" then -- TODO use custom property
+        --             Events.Broadcast("PlaceStructure", player, pos, angle, 26) -- Place Bush
+        --         else
+        --             Events.Broadcast("PlaceStructure", player, pos, angle, 30) -- Place Soil
+        --         end
+        --     end
+        -- end
     end
 end
 
-local function mysplit(inputstr, sep)
-    if sep == nil then
-            sep = "%s"
-    end
-    local t={}
-    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-            table.insert(t, str)
-    end
-    return t
-end
-
-if prop.sourceTemplateId == "C1EF362489B3A783" then print(prop.id) end
-eventListenerOnHit = Events.Connect("H"..mysplit(prop.id, ":")[1], OnHit)
+eventListenerOnHit = Events.Connect("H"..CoreString.Split(prop.id, {delimiters={":"}}), OnHit)
 
 function PickUp(id, bool)
     if propItemId and id == listenID then

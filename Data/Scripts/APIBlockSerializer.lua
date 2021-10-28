@@ -1,17 +1,10 @@
-local OBJECTS = require(script:GetCustomProperty("APIObjects")).OBJECTS
+local APIO = require(script:GetCustomProperty("APIObjects"))
 
 local WALL_SIZE = 200
 local WALL_HEIGHT = 150
 
 local function mysplit(inputstr, sep)
-    if sep == nil then
-            sep = "%s"
-    end
-    local t={}
-    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-            table.insert(t, str)
-    end
-    return t
+    return { CoreString.Split(inputstr, { delimiters = {sep} }) }
 end
 
 local function Block_DeserializePosition(value)
@@ -68,15 +61,6 @@ function Block_Deserialize_v3(str, islandPos)
     }
 end
 
-function GetTypeFromMuid(muid)
-    for key,obj in pairs(OBJECTS) do
-        if obj.templateMuid == muid then
-            return key
-        end
-    end
-    return nil
-end
-
 function getAlignedAngle(a)
     a = math.floor(a)
     while a < 0 do a = a + 360 end
@@ -88,12 +72,11 @@ function getAlignedAngle(a)
 end
 
 function Block_SerializeStructures(structures, slotPos)
-    local pBlocks = {}
     local stringBlocks = "v3*"
     for _,structure in pairs(structures) do
         local pos = structure:GetWorldPosition() - slotPos
         local angle = structure:GetRotation().z
-        local type = GetTypeFromMuid(structure.sourceTemplateId)
+        local type = APIO.GetTypeFromTemplate(structure.sourceTemplateId)
         stringBlocks = stringBlocks..Block_Serialize_v3(pos, angle, type)
     end
     return stringBlocks

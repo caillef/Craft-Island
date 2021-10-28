@@ -1,6 +1,39 @@
 Name: "ServerScripts"
 RootId: 11584135646992845074
 Objects {
+  Id: 14129066812945052936
+  Name: "InteractionServer"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11584135646992845074
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 63614235653257907
+    }
+  }
+}
+Objects {
   Id: 4888686829961194661
   Name: "RewardPointsDaily"
   Transform {
@@ -97,12 +130,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:StoryManager"
-      ObjectReference {
-        SelfId: 841534158063459245
-      }
-    }
-    Overrides {
       Name: "cs:SharedKeyIslands"
       NetReference {
         Key: "94aa09be828c4cb295ada6a9d891c2f8"
@@ -133,59 +160,6 @@ Objects {
   Script {
     ScriptAsset {
       Id: 8011119035382229952
-    }
-  }
-}
-Objects {
-  Id: 16375166676192963401
-  Name: "BuildingSystemServer"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 11584135646992845074
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:InventoryScriptServer"
-      ObjectReference {
-        SelfId: 8227678740540710611
-      }
-    }
-    Overrides {
-      Name: "cs:SharedKeyIslands"
-      NetReference {
-        Key: "94aa09be828c4cb295ada6a9d891c2f8"
-        Type {
-          Value: "mc:enetreferencetype:sharedpersistence"
-        }
-      }
-    }
-    Overrides {
-      Name: "cs:Constants"
-      AssetReference {
-        Id: 1824351816134648897
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 18313405971573075606
     }
   }
 }
@@ -354,36 +328,6 @@ Objects {
   Script {
     ScriptAsset {
       Id: 4316728097649207683
-    }
-  }
-}
-Objects {
-  Id: 1699577541822663217
-  Name: "BlockSerializer"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 11584135646992845074
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 7339519165257358670
     }
   }
 }

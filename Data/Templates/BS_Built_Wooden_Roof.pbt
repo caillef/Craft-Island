@@ -17,7 +17,16 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 6102395248213845511
-        ChildIds: 9716846228271239397
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:HP"
+            Int: 1
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "WOODEN_ROOF"
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -30,6 +39,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Built_Wooden_Roof"
         }
       }
       Objects {
@@ -139,50 +149,6 @@ Assets {
           }
         }
       }
-      Objects {
-        Id: 9716846228271239397
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 107.543755
-            Z: 67.3913116
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.25
-          }
-        }
-        ParentId: 10553884848350847057
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "WOODEN_ROOF"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
-        }
-      }
     }
     Assets {
       Id: 12734953040941445440
@@ -216,6 +182,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

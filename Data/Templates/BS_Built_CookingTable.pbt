@@ -16,9 +16,25 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 14309973534957375582
         ChildIds: 8647392713150939892
-        ChildIds: 11300734801808916334
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:ItemId"
+            String: "COOKING_TABLE"
+          }
+          Overrides {
+            Name: "cs:HP"
+            Int: 3
+          }
+          Overrides {
+            Name: "cs:Material"
+            Int: 1
+          }
+          Overrides {
+            Name: "cs:UIName"
+            String: "Cooking"
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -31,54 +47,6 @@ Assets {
         }
         Folder {
           IsFilePartition: true
-        }
-      }
-      Objects {
-        Id: 14309973534957375582
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 90.4710693
-            Y: -89.6642151
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
-          }
-        }
-        ParentId: 4340000938574330803
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 3
-          }
-          Overrides {
-            Name: "cs:Material"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "COOKING_TABLE"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
         }
       }
       Objects {
@@ -2024,120 +1992,6 @@ Assets {
           }
         }
       }
-      Objects {
-        Id: 11300734801808916334
-        Name: "ClientContext"
-        Transform {
-          Location {
-            X: 100
-            Y: -70
-            Z: 50
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 4340000938574330803
-        ChildIds: 12174378869110509450
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        NetworkContext {
-        }
-      }
-      Objects {
-        Id: 12174378869110509450
-        Name: "Trigger"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1.2
-            Z: 0.8
-          }
-        }
-        ParentId: 11300734801808916334
-        ChildIds: 8396086275653909245
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Trigger {
-          Interactable: true
-          InteractionLabel: "Open Cooking Table"
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
-          }
-        }
-      }
-      Objects {
-        Id: 8396086275653909245
-        Name: "UITriggerScript"
-        Transform {
-          Location {
-            X: -10100
-            Y: -9935
-            Z: -10045
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 12174378869110509450
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:UIName"
-            String: "Cooking"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 1347959603203994334
-          }
-        }
-      }
     }
     Assets {
       Id: 11055204346800432027
@@ -2270,6 +2124,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

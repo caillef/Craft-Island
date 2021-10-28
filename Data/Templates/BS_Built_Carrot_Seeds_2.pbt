@@ -18,12 +18,19 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 12693878107672030765
         ChildIds: 17976861795480808718
-        ChildIds: 11467975894621751486
         ChildIds: 13749341670659705643
         UnregisteredParameters {
           Overrides {
             Name: "cs:CanGrow"
             Bool: true
+          }
+          Overrides {
+            Name: "cs:HP"
+            Int: 1
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "CARROT_SEEDS"
           }
         }
         WantsNetworking: true
@@ -469,50 +476,6 @@ Assets {
         }
       }
       Objects {
-        Id: 11467975894621751486
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 100
-            Y: -100
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
-          }
-        }
-        ParentId: 6458147319892523239
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "CARROT_SEEDS"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
-        }
-      }
-      Objects {
         Id: 13749341670659705643
         Name: "BuiltFloor"
         Transform {
@@ -616,6 +579,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

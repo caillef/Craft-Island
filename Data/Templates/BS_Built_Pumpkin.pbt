@@ -17,10 +17,26 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 8275335504246554392
-        ChildIds: 16494487310064799156
         ChildIds: 11207327510550510417
         ChildIds: 15554975574754611649
-        ChildIds: 1462813845709492043
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:HP"
+            Int: 1
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "PUMPKIN"
+          }
+          Overrides {
+            Name: "cs:ItemId2"
+            String: "PUMPKIN_SEEDS"
+          }
+          Overrides {
+            Name: "cs:Harvestable"
+            Bool: true
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -33,6 +49,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Built_Pumpkin"
         }
       }
       Objects {
@@ -80,54 +97,6 @@ Assets {
               LinearDamping: 0.01
             }
             BoundsScale: 1
-          }
-        }
-      }
-      Objects {
-        Id: 16494487310064799156
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 100
-            Y: -100
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
-          }
-        }
-        ParentId: 7535778860095042915
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "PUMPKIN"
-          }
-          Overrides {
-            Name: "cs:ItemId2"
-            String: "PUMPKIN_SEEDS"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
           }
         }
       }
@@ -180,7 +149,7 @@ Assets {
         }
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -222,7 +191,7 @@ Assets {
         ParentId: 7535778860095042915
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -247,89 +216,6 @@ Assets {
               LinearDamping: 0.01
             }
             BoundsScale: 1
-          }
-        }
-      }
-      Objects {
-        Id: 1462813845709492043
-        Name: "Trigger"
-        Transform {
-          Location {
-            X: 100
-            Y: -100
-            Z: 66.5343
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.6
-            Y: 1.6
-            Z: 1.6
-          }
-        }
-        ParentId: 7535778860095042915
-        ChildIds: 15393264467622989650
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Trigger {
-          Interactable: true
-          InteractionLabel: "Harvest"
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
-          }
-        }
-      }
-      Objects {
-        Id: 15393264467622989650
-        Name: "HarvestResource"
-        Transform {
-          Location {
-            X: -62.5
-            Y: 62.5
-            Z: -41.5839386
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.625
-            Y: 0.625
-            Z: 0.625
-          }
-        }
-        ParentId: 1462813845709492043
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Trigger"
-            ObjectReference {
-              SubObjectId: 1462813845709492043
-            }
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 429492259122887083
           }
         }
       }
@@ -375,6 +261,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

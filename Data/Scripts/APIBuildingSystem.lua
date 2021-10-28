@@ -30,4 +30,14 @@ API.GetAlignedAngle = function(a)
     return 0
 end
 
+API.SerializeObjectToPlace = function(pos, angle, type, id)
+    return string.format("%d|%d|%d|%d|%d|%d",
+        math.floor(pos.x), math.floor(pos.y), math.floor(pos.z), angle, type, id)
+end
+
+API.DeserializeObjectToPlace = function(rawData)
+    local x,y,z,angle,type,id = CoreString.Split(rawData, { delimiters = { "|" } })
+    return { x=x, y=y, z=z, angle=tonumber(angle), type=tonumber(type), id=tonumber(id) }
+end
+
 return API

@@ -37,7 +37,7 @@ destinations = {
     end,
 }
 
-Events.ConnectForPlayer("TP", TeleportPlayerTo)
+Events.Connect("TP", TeleportPlayerTo)
 
 local teleportAllowLists = {}
 Events.ConnectForPlayer("AuthTP", function(player, other)

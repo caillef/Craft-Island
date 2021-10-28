@@ -1,4 +1,4 @@
-﻿local TELEPORT_MANAGER = script:GetCustomProperty("TeleportManager"):WaitForObject().context
+local TELEPORT_MANAGER = script:GetCustomProperty("TeleportManager"):WaitForObject().context
 local ISLANDS_TEMPLATE = {
     script:GetCustomProperty("PlayerIsland"),
     script:GetCustomProperty("PlayerIsland2"),
@@ -21,12 +21,16 @@ local function GetSpawnWorldPosition(i)
 end
 
 local function initPlayerSpots()
+	while World.FindObjectByName("Island4") == nil do
+		Task.Wait(0.1)
+	end
     for i=1,NB_MAX_PLAYERS do
         playerSlots[i] = {
             pos = GetSpawnWorldPosition(i),
+            staticFolderId = World.FindObjectByName("Island"..i):GetCustomProperty("Structures"):WaitForObject().id,
             player = nil,
             island = nil
-        } 
+        }
     end
 end
 initPlayerSpots()
@@ -34,7 +38,6 @@ initPlayerSpots()
 local function PrepareSlot(player, slot)
     slot.player = player
     slot.island = World.SpawnAsset(ISLANDS_TEMPLATE[player.serverUserData.islandType], { position = slot.pos, parent = propIslands })
-    slot.island.serverUserData.owner = player
     return slot
 end
 

@@ -16,40 +16,7 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 9042597484505671129
         ChildIds: 8023954099409840142
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsFilePartition: true
-        }
-      }
-      Objects {
-        Id: 9042597484505671129
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 90.4710693
-            Y: -89.6642151
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
-          }
-        }
-        ParentId: 10368336334757695574
         UnregisteredParameters {
           Overrides {
             Name: "cs:HP"
@@ -70,10 +37,9 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "BS_Built_Wood_Table"
         }
       }
       Objects {
@@ -137,6 +103,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

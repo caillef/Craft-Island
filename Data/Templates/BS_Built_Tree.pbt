@@ -17,7 +17,27 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 10108745275524321392
-        ChildIds: 10354695220758464185
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:ItemId"
+            String: "WOOD_LOG"
+          }
+          Overrides {
+            Name: "cs:ItemId2"
+            String: "SAPLING"
+          }
+          Overrides {
+            Name: "cs:ItemQty"
+            Vector2 {
+              X: 2
+              Y: 3
+            }
+          }
+          Overrides {
+            Name: "cs:HP"
+            Int: 3
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -93,196 +113,6 @@ Assets {
           }
         }
       }
-      Objects {
-        Id: 10354695220758464185
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 100
-            Y: -100
-            Z: 26.9046688
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.2
-            Y: 0.2
-            Z: 0.2
-          }
-        }
-        ParentId: 12357879788280165173
-        ChildIds: 15746785397933900535
-        ChildIds: 5585975310404605656
-        ChildIds: 6433574503561080262
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HitSFX"
-            ObjectReference {
-              SubObjectId: 15746785397933900535
-            }
-          }
-          Overrides {
-            Name: "cs:BreakSFX"
-            ObjectReference {
-              SubObjectId: 5585975310404605656
-            }
-          }
-          Overrides {
-            Name: "cs:HP"
-            Int: 3
-          }
-          Overrides {
-            Name: "cs:FallSFX"
-            ObjectReference {
-              SubObjectId: 6433574503561080262
-            }
-          }
-          Overrides {
-            Name: "cs:ItemUIQty"
-            Vector2 {
-              X: 2
-              Y: 3
-            }
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "WOOD_LOG"
-          }
-          Overrides {
-            Name: "cs:ItemId2"
-            String: "SAPLING"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
-        }
-      }
-      Objects {
-        Id: 15746785397933900535
-        Name: "Axe Tree Wood Chop Hit Impact 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 10354695220758464185
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 12536818827096695884
-          }
-          Volume: 2.11607981
-          Falloff: -1
-          Radius: -1
-          EnableOcclusion: true
-          IsSpatializationEnabled: true
-          IsAttenuationEnabled: true
-        }
-      }
-      Objects {
-        Id: 5585975310404605656
-        Name: "Object Wood Creak 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 10354695220758464185
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 12182257297979148996
-          }
-          Volume: 2.27027559
-          Falloff: -1
-          Radius: -1
-          EnableOcclusion: true
-          IsSpatializationEnabled: true
-          IsAttenuationEnabled: true
-        }
-      }
-      Objects {
-        Id: 6433574503561080262
-        Name: "Impact Nature Tree Branch Hard 01 SFX"
-        Transform {
-          Location {
-            X: -4298.87256
-            Y: -5874.09229
-            Z: -4691.94336
-          }
-          Rotation {
-          }
-          Scale {
-            X: 5
-            Y: 5
-            Z: 5
-          }
-        }
-        ParentId: 10354695220758464185
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 3129712122533022477
-          }
-          Volume: 1
-          Falloff: -1
-          Radius: -1
-          EnableOcclusion: true
-          IsSpatializationEnabled: true
-          IsAttenuationEnabled: true
-        }
-      }
     }
     Assets {
       Id: 9086663986850406737
@@ -302,38 +132,11 @@ Assets {
         AssetId: "mi_wood_raw_001_uv"
       }
     }
-    Assets {
-      Id: 12536818827096695884
-      Name: "Axe Tree Wood Chop Hit Impact 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_axe_tree_wood_chop_hit_impact_01a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 12182257297979148996
-      Name: "Object Wood Creak 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_object_wood_creak_01a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 3129712122533022477
-      Name: "Impact Nature Tree Branch Hard 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_impact_tree_hard_01_Cue_ref"
-      }
-    }
     PrimaryAssetId {
       AssetType: "None"
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

@@ -49,5 +49,5 @@ Assets {
     Version: "1.0.0"
     Description: "For inclusion in your gaming paradise!"
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
 }

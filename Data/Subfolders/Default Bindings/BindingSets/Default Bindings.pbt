@@ -2,7 +2,7 @@ Assets {
   Id: 15811936204232470899
   Name: "Default Bindings"
   PlatformAssetType: 29
-  SerializationVersion: 100
+  SerializationVersion: 101
   BindingSetAsset {
     Bindings {
       BindingType {
@@ -92,6 +92,7 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:interact"
       }
+      Networked: true
     }
     Bindings {
       BindingType {

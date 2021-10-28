@@ -17,9 +17,22 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 15956526971799783584
-        ChildIds: 14116180841256941302
         ChildIds: 3182898936776604357
         ChildIds: 868276080713924437
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:HP"
+            Int: 1
+          }
+          Overrides {
+            Name: "cs:Material"
+            Int: 0
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "STONEBRICKS_WINDOW"
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -73,54 +86,6 @@ Assets {
               LinearDamping: 0.01
             }
             BoundsScale: 1
-          }
-        }
-      }
-      Objects {
-        Id: 14116180841256941302
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 107.543755
-            Z: 134.782623
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
-          }
-        }
-        ParentId: 9022986329737783930
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "STONEBRICKS_WINDOW"
-          }
-          Overrides {
-            Name: "cs:Material"
-            Int: 0
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
           }
         }
       }
@@ -276,6 +241,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

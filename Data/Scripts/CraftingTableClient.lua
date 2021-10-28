@@ -10,49 +10,42 @@ open = false
 _G["caillef.craftisland.craftopen"] = open
 
 local player = Game.GetLocalPlayer()
-local triggerId
 
 local tableType = 0
 
 propUI.visibility =  Visibility.FORCE_OFF
 
-Events.Connect("OpenUICraft", function(id)
-	if not id then return end
+Events.Connect("OpenUICraft", function()
 	if tableType ~= 0 then
 		isSetup = false
 	end
 	tableType = 0
 	_G["caillef.craftisland.craftopen"] = true
 	propUI.visibility = Visibility.FORCE_ON
-	triggerId = id
 	UI.SetCursorVisible(true)
 	UI.SetCanCursorInteractWithUI(true)
 	SetupUI()
 end)
 
-Events.Connect("OpenUICooking", function(id)
-	if not id then return end
+Events.Connect("OpenUICooking", function()
 	if tableType ~= 1 then
 		isSetup = false
 	end
 	tableType = 1
 	_G["caillef.craftisland.craftopen"] = true
 	propUI.visibility = Visibility.FORCE_ON
-	triggerId = id
 	UI.SetCursorVisible(true)
 	UI.SetCanCursorInteractWithUI(true)
 	SetupUI()
 end)
 
-Events.Connect("OpenUIAnvil", function(id)
-	if not id then return end
+Events.Connect("OpenUIAnvil", function()
 	if tableType ~= 2 then
 		isSetup = false
 	end
 	tableType = 2
 	_G["caillef.craftisland.craftopen"] = true
 	propUI.visibility = Visibility.FORCE_ON
-	triggerId = id
 	UI.SetCursorVisible(true)
 	UI.SetCanCursorInteractWithUI(true)
 	SetupUI()
@@ -175,7 +168,6 @@ end
 function CloseUI()
 	_G["caillef.craftisland.craftopen"] = false
 	propUI.visibility = Visibility.FORCE_OFF
-	Events.Broadcast("EnableTrigger", triggerId)
 	UI.SetCursorVisible(false)
 	UI.SetCanCursorInteractWithUI(false)
 end

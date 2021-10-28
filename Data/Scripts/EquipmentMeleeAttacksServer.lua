@@ -99,40 +99,35 @@ function OnEquipped()
 	EQUIPMENT.collision = Collision.INHERIT
 end
 
+local PICKAXE = "9B0E9CDD3D19EB9E"
+local AXE = "2B7B3C64C0ED0918"
+
+function ActionOnProp(prop, playerId)
+    if not prop or not prop:IsValid() then return false end
+    -- if prop:IsA("DamageableObject") or prop.FindAncestorByType and prop:FindAncestorByType("DamageableObject") then
+    --     prop = prop:IsA("DamageableObject") and prop or prop:FindAncestorByType("DamageableObject")
+    --     prop:ApplyDamage(Damage.New(25))
+    --     return
+    -- end
+    while prop.parent and prop.parent.name ~= "Structures" do
+        prop = prop.parent
+    end
+    if not prop or not prop.parent or prop.parent.name ~= "Structures" then return false end
+    local id = prop.id
+    local tool = 0
+    if EQUIPMENT.sourceTemplateId == PICKAXE then tool = 0 end
+    if EQUIPMENT.sourceTemplateId == AXE then tool = 1 end
+    Events.Broadcast("H", { prop=id, p=playerId, t=tool })
+    return true
+end
+
 function ActionOnCloserProp(ability)
-    for _,prop in ipairs(ability:GetCustomProperty("Hitbox"):WaitForObject():GetOverlappingObjects()) do
-        if not prop or not prop:IsValid() then return end
-        if prop:IsA("DamageableObject") or prop.FindAncestorByType and prop:FindAncestorByType("DamageableObject") then
-            prop = prop:IsA("DamageableObject") and prop or prop:FindAncestorByType("DamageableObject")
-            prop:ApplyDamage(Damage.New(25))
-            return
-        end
-
-        if prop and prop:IsValid() and prop.parent and prop.parent.name == "Geo" then
-            prop = prop.parent
-        end
-        if prop.parent then
-            local id = CoreString.Split(prop.parent.id,{ delimiters={":"} })
-            local eventObjectId = "H"..id
-            if not (prop and prop:IsValid() and prop.parent and prop.parent.parent) then return end
-            -- Is on mining island
-            if prop.parent.parent.name == "Rocks" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
-                Events.Broadcast(eventObjectId, { p=ability.owner.id, t=0 })
-                return
-            end
-
-            -- Is on player island with pickaxe
-            if prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
-                Events.Broadcast(eventObjectId, { p=ability.owner.id, t=0 })
-                return
-            end
-
-            -- Is on player island with axe
-            if prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "F27A87BB28DA0B17" then
-                Events.Broadcast(eventObjectId, { p=ability.owner.id, t=1 })
-                return
-            end
-        end
+    local player = ability.owner
+    local rayStart = player:GetViewWorldPosition()
+    local lookVector = player:GetViewWorldRotation() * Vector3.FORWARD
+    local results = World.SpherecastAll(rayStart + (lookVector * 100), rayStart + (lookVector * 600), 50, {ignorePlayers=player, shouldDebugRender = true})
+    for _, hitResult in ipairs(results) do
+        if ActionOnProp(hitResult.other, ability.owner.id) then return end
     end
 end
 

@@ -273,5 +273,5 @@ Assets {
       AssetId: "Resource_Pickup"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
 }

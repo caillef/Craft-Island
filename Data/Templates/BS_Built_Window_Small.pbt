@@ -17,8 +17,17 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 5175172919376677594
-        ChildIds: 11535027093222630394
         ChildIds: 12297715193461086012
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:HP"
+            Int: 1
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "SMALL_WOODEN_WINDOW"
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -118,50 +127,6 @@ Assets {
         }
       }
       Objects {
-        Id: 11535027093222630394
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 107.543755
-            Z: 134.782623
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
-          }
-        }
-        ParentId: 2391212272018020454
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "SMALL_WOODEN_WINDOW"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
-        }
-      }
-      Objects {
         Id: 12297715193461086012
         Name: "Craftsman Part - Window 03"
         Transform {
@@ -240,6 +205,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

@@ -17,10 +17,8 @@ local furnaces = {}
 local currentFurnace
 
 Events.Connect("OpenUIFurnace", function(id)
-	if not id then return end
 	Events.Broadcast("openInventory")
 	propUI.visibility = Visibility.FORCE_ON
-	triggerId = id
 	currentFurnace = id
 	f = furnaces[currentFurnace] or {}
 	f.nbCoals = f.nbCoals or 0
@@ -35,7 +33,6 @@ Events.Connect("CloseUIFurnace", function()
 	if not currentFurnace then return end
 	propUI.visibility = Visibility.FORCE_OFF
 	currentFurnace = nil
-	Events.Broadcast("EnableTrigger", triggerId)
 end)
 
 function TransformItem(furnace, item, index, updateUI)

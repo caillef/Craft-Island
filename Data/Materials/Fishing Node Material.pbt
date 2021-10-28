@@ -2,7 +2,7 @@ Assets {
   Id: 1244999148900956141
   Name: "Fishing Node Material"
   PlatformAssetType: 13
-  SerializationVersion: 100
+  SerializationVersion: 101
   CustomMaterialAsset {
     BaseMaterialId: 15596870760343554385
     ParameterOverrides {

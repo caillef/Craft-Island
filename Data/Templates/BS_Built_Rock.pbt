@@ -19,6 +19,27 @@ Assets {
         ChildIds: 3042707073966499642
         ChildIds: 3353948417995451109
         ChildIds: 15132059030894101674
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:HP"
+            Int: 2
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "STONE"
+          }
+          Overrides {
+            Name: "cs:Material"
+            Int: 0
+          }
+          Overrides {
+            Name: "cs:ItemQty"
+            Vector2 {
+              X: 2
+              Y: 4
+            }
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -183,6 +204,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

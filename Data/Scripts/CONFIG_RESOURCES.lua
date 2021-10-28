@@ -1,7 +1,7 @@
 local growthConfig = {}
 local devgrowthConfig = {}
 
-local DEV_MODE_ACTIVATED = script:GetCustomProperty("GROW_FAST") or false
+local DEV_MODE_ACTIVATED = true
 
 if Environment.IsHostedGame() then
     DEV_MODE_ACTIVATED = false
@@ -33,10 +33,12 @@ growthConfig["927247A49F1B691C"] = { 50, 60, "PUMPKIN_SEEDS_3" }
 growthConfig["09D9C9CDEE0B3F4B"] = { 50, 60, "PUMPKIN" }
 
 for key,value in pairs(growthConfig) do 
-    devgrowthConfig[key] = { 1, 1, value[3] }
+    devgrowthConfig[key] = { 3, 3, value[3] }
 end
 
 function GetGrowthConfig(muid)
     if muid == nil then return nil end
     return DEV_MODE_ACTIVATED and devgrowthConfig[muid] or growthConfig[muid]
 end
+
+return { GetGrowthConfig = GetGrowthConfig }

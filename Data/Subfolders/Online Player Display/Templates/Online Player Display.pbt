@@ -51,5 +51,5 @@ Assets {
     Version: "1.2.0"
     Description: "Displays players currently online, as well as their health. The base version of this template supports up to 8 players. If you want more than that, you\'ll have to edit the script a bit.\r\nThis is a generalized version of the player list used in World of CoreCraft.\r\n\r\nFeatures:\r\n\r\n-A list of online players that can be toggled open and closed\r\n-A player info display with some blank fields that can be used for other stats\r\n-Framework for having multiple tabs in the display (though this will require some code setup)"
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
 }

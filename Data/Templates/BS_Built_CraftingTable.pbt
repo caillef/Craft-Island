@@ -16,9 +16,25 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 2904280495379188304
         ChildIds: 6562014707939133006
-        ChildIds: 934264331517203704
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:HP"
+            Int: 3
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "CRAFTING_TABLE"
+          }
+          Overrides {
+            Name: "cs:Material"
+            Int: 1
+          }
+          Overrides {
+            Name: "cs:UIName"
+            String: "Craft"
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -31,54 +47,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
-        }
-      }
-      Objects {
-        Id: 2904280495379188304
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 90.4710693
-            Y: -89.6642151
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
-          }
-        }
-        ParentId: 17098445726098863416
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 3
-          }
-          Overrides {
-            Name: "cs:Material"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "CRAFTING_TABLE"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
+          FilePartitionName: "BS_Built_CraftingTable"
         }
       }
       Objects {
@@ -910,117 +879,6 @@ Assets {
           }
         }
       }
-      Objects {
-        Id: 934264331517203704
-        Name: "ClientContext"
-        Transform {
-          Location {
-            X: 100
-            Y: -70
-            Z: 50
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 17098445726098863416
-        ChildIds: 7000991593123835632
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        NetworkContext {
-        }
-      }
-      Objects {
-        Id: 7000991593123835632
-        Name: "Trigger"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1.2
-            Z: 0.8
-          }
-        }
-        ParentId: 934264331517203704
-        ChildIds: 6288521840762041748
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Trigger {
-          Interactable: true
-          InteractionLabel: "Open Crafting Table"
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
-          }
-        }
-      }
-      Objects {
-        Id: 6288521840762041748
-        Name: "UITriggerScript"
-        Transform {
-          Location {
-            X: -10100
-            Y: -9935
-            Z: -10045
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 7000991593123835632
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:UIName"
-            String: "Craft"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 1347959603203994334
-          }
-        }
-      }
     }
     Assets {
       Id: 12095835209017042614
@@ -1108,6 +966,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

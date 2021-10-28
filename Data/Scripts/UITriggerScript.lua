@@ -2,8 +2,6 @@ local trigger = script.parent
 
 local eventName = "OpenUI"..script:GetCustomProperty("UIName")
 
-local PLAYER = Game.GetLocalPlayer()
-
 local events = {}
 
 function OnInteract(trigger, player)
@@ -13,7 +11,7 @@ function OnInteract(trigger, player)
 		end
 		return
 	end
-	if player ~= PLAYER then return end
+	if not player == Game.GetLocalPlayer() then return end
 	Events.Broadcast(eventName, trigger.id)
 	trigger.isInteractable = false
 end

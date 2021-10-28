@@ -16,42 +16,12 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 4556504054537610333
         ChildIds: 5483144257556703764
-        ChildIds: 11973581583566965122
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsFilePartition: true
-        }
-      }
-      Objects {
-        Id: 4556504054537610333
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 90.4710693
-            Y: -89.6642151
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
-          }
-        }
-        ParentId: 15114917028051313832
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:UIName"
+            String: "Furnace"
+          }
           Overrides {
             Name: "cs:HP"
             Int: 3
@@ -75,10 +45,8 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
+        Folder {
+          IsFilePartition: true
         }
       }
       Objects {
@@ -504,117 +472,6 @@ Assets {
           IsAttenuationEnabled: true
         }
       }
-      Objects {
-        Id: 11973581583566965122
-        Name: "ClientContext"
-        Transform {
-          Location {
-            X: 100
-            Y: -70
-            Z: 50
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 15114917028051313832
-        ChildIds: 13613409068178849242
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        NetworkContext {
-        }
-      }
-      Objects {
-        Id: 13613409068178849242
-        Name: "Trigger"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1.2
-            Z: 0.8
-          }
-        }
-        ParentId: 11973581583566965122
-        ChildIds: 2368978302117215730
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Trigger {
-          Interactable: true
-          InteractionLabel: "Open Furnace"
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
-          }
-        }
-      }
-      Objects {
-        Id: 2368978302117215730
-        Name: "FurnaceTriggerScript"
-        Transform {
-          Location {
-            X: -10100
-            Y: -9935
-            Z: -10045
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 13613409068178849242
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:UIName"
-            String: "Furnace"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 1347959603203994334
-          }
-        }
-      }
     }
     Assets {
       Id: 6534982425371244976
@@ -666,6 +523,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

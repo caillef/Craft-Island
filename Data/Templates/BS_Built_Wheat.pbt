@@ -16,42 +16,8 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 13725509826781225001
         ChildIds: 3144564158264522047
         ChildIds: 1967243743200991428
-        ChildIds: 3100184375124135163
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsFilePartition: true
-        }
-      }
-      Objects {
-        Id: 13725509826781225001
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 100
-            Y: -100
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
-          }
-        }
-        ParentId: 10060408153061459703
         UnregisteredParameters {
           Overrides {
             Name: "cs:HP"
@@ -76,10 +42,8 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
+        Folder {
+          IsFilePartition: true
         }
       }
       Objects {
@@ -241,89 +205,6 @@ Assets {
           }
         }
       }
-      Objects {
-        Id: 3100184375124135163
-        Name: "Trigger"
-        Transform {
-          Location {
-            X: 100
-            Y: -100
-            Z: 66.5343
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.6
-            Y: 1.6
-            Z: 1.6
-          }
-        }
-        ParentId: 10060408153061459703
-        ChildIds: 5198571217249990693
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Trigger {
-          Interactable: true
-          InteractionLabel: "Harvest"
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
-          }
-        }
-      }
-      Objects {
-        Id: 5198571217249990693
-        Name: "HarvestResource"
-        Transform {
-          Location {
-            X: -62.5
-            Y: 62.5
-            Z: -41.5839386
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.625
-            Y: 0.625
-            Z: 0.625
-          }
-        }
-        ParentId: 3100184375124135163
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Trigger"
-            ObjectReference {
-              SubObjectId: 3100184375124135163
-            }
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 429492259122887083
-          }
-        }
-      }
     }
     Assets {
       Id: 10888788159873929006
@@ -357,6 +238,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

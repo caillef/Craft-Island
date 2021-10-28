@@ -17,7 +17,16 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 12657505239204960898
-        ChildIds: 17248280778615194737
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:HP"
+            Int: 1
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "WOODEN_STAIRS"
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -30,6 +39,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Built_Wooden_Stairs"
         }
       }
       Objects {
@@ -95,50 +105,6 @@ Assets {
           }
         }
       }
-      Objects {
-        Id: 17248280778615194737
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 107.543755
-            Z: 67.3913116
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.25
-          }
-        }
-        ParentId: 13915550309939900241
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "WOODEN_STAIRS"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
-        }
-      }
     }
     Assets {
       Id: 3484535885344630159
@@ -163,6 +129,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

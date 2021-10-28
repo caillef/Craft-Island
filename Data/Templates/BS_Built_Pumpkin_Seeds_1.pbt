@@ -17,13 +17,20 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 1577541214184271558
-        ChildIds: 13956409849734553213
         ChildIds: 6531304180121049947
         ChildIds: 11134827954150768792
         UnregisteredParameters {
           Overrides {
             Name: "cs:CanGrow"
             Bool: true
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "PUMPKIN_SEEDS"
+          }
+          Overrides {
+            Name: "cs:HP"
+            Int: 1
           }
         }
         WantsNetworking: true
@@ -73,50 +80,6 @@ Assets {
         Script {
           ScriptAsset {
             Id: 3863084310947232921
-          }
-        }
-      }
-      Objects {
-        Id: 13956409849734553213
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 100
-            Y: -100
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
-          }
-        }
-        ParentId: 9873502646288835886
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "PUMPKIN_SEEDS"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
           }
         }
       }
@@ -271,6 +234,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

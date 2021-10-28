@@ -2,7 +2,7 @@ Assets {
   Id: 15253620613510313924
   Name: "Custom Wall - Outer from Craftsman Wall 02"
   PlatformAssetType: 13
-  SerializationVersion: 100
+  SerializationVersion: 101
   CustomMaterialAsset {
     BaseMaterialId: 13324102355294354034
     ParameterOverrides {

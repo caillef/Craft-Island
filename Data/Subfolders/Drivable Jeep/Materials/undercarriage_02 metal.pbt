@@ -2,7 +2,7 @@ Assets {
   Id: 9051022970414101756
   Name: "undercarriage_02 metal"
   PlatformAssetType: 13
-  SerializationVersion: 100
+  SerializationVersion: 101
   CustomMaterialAsset {
     BaseMaterialId: 5072964031878590765
     ParameterOverrides {

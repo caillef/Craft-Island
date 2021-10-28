@@ -16,127 +16,7 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 6051842807123592194
-        ChildIds: 6453606552057772443
-        ChildIds: 7341997360065536662
         ChildIds: 3075367924190534397
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsFilePartition: true
-        }
-      }
-      Objects {
-        Id: 6051842807123592194
-        Name: "HitBox"
-        Transform {
-          Location {
-            X: 95
-            Y: -75
-            Z: 93.2154388
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.2
-            Y: 1.5
-            Z: 1.7
-          }
-        }
-        ParentId: 16059720704279749843
-        UnregisteredParameters {
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Trigger {
-          Interactable: true
-          InteractionLabel: "Sit"
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
-          }
-        }
-      }
-      Objects {
-        Id: 6453606552057772443
-        Name: "SitInChairScript"
-        Transform {
-          Location {
-            X: 95
-            Y: -8.93359375
-            Z: 102.130112
-          }
-          Rotation {
-            Yaw: 90.0000153
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16059720704279749843
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HitBox"
-            ObjectReference {
-              SubObjectId: 6051842807123592194
-            }
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15444854414949713261
-          }
-        }
-      }
-      Objects {
-        Id: 7341997360065536662
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 90.4710693
-            Y: -89.6642151
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
-          }
-        }
-        ParentId: 16059720704279749843
         UnregisteredParameters {
           Overrides {
             Name: "cs:HP"
@@ -157,10 +37,9 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "BS_Built_Wood_Chair"
         }
       }
       Objects {
@@ -224,6 +103,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

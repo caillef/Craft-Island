@@ -18,11 +18,18 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 17536069553914126263
         ChildIds: 5852582928032125521
-        ChildIds: 17796205849101254988
         UnregisteredParameters {
           Overrides {
             Name: "cs:CanGrow"
             Bool: true
+          }
+          Overrides {
+            Name: "cs:HP"
+            Int: 1
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "BERRY_SPROUT"
           }
         }
         WantsNetworking: true
@@ -135,50 +142,6 @@ Assets {
           }
         }
       }
-      Objects {
-        Id: 17796205849101254988
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 100
-            Y: -100
-            Z: 26.9046688
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.2
-            Y: 0.2
-            Z: 0.2
-          }
-        }
-        ParentId: 13840434932360054847
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "BERRY_SPROUT"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
-        }
-      }
     }
     Assets {
       Id: 11402866400111903615
@@ -203,6 +166,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

@@ -18,9 +18,18 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 6763229215726680570
         ChildIds: 5765989884564401897
-        ChildIds: 3384862839112002286
         ChildIds: 13397863902677300910
         ChildIds: 3251666185328623212
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:HP"
+            Int: 1
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "WOODEN_DOOR"
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -33,6 +42,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "BS_Built_Wood_Door"
         }
       }
       Objects {
@@ -369,50 +379,6 @@ Assets {
         }
       }
       Objects {
-        Id: 3384862839112002286
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 107.543755
-            Z: 128.782623
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
-          }
-        }
-        ParentId: 1233247481309189512
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "WOODEN_DOOR"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
-        }
-      }
-      Objects {
         Id: 13397863902677300910
         Name: "Craftsman Wall 02 Corner"
         Transform {
@@ -548,6 +514,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

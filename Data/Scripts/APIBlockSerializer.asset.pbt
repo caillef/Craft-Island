@@ -12,6 +12,6 @@ Assets {
       }
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "Building"
 }

@@ -28,7 +28,7 @@ function createObject(id, idName, name, templateMuid, itemMuid, canbeBuilt, buil
     return objects[id]
 end
 
-createObject(1, "BASIC_AXE", "Basic Axe", "F27A87BB28DA0B17", "1214EEEF9701EE9A")
+createObject(1, "BASIC_AXE", "Basic Axe", "2B7B3C64C0ED0918", "1214EEEF9701EE9A")
 createObject(2, "BASIC_HOE", "Basic Hoe", "7EEB7CAAF782C5B8", "E2428B216BD2D34B")
 createObject(3, "BERRY", "Berry", nil, "7D3C73A40F261843")
 createObject(4, "BERRY_PIE", "Berry Pie", "20A307AEAC04355A", "6B0CB993E5EAEFF6")
@@ -254,6 +254,7 @@ API.QueryObject = function(data)
     return objectsId[data] and objects[objectsId[data]] or nil
 end
 API.FindStructure = function(itemMuid)
+    if not itemMuid then return end
     if itemMuid == objects[objectsId["BASIC_HOE"]].itemMuid then
         return objectsId["SOIL"]
     end
@@ -262,7 +263,14 @@ API.FindStructure = function(itemMuid)
             return k
         end
     end
-    return nil
+end
+API.GetTypeFromTemplate = function(muid)
+    if not muid then return end
+    for key,obj in pairs(objects) do
+        if obj.templateMuid == muid then
+            return key
+        end
+    end
 end
 API.CRAFTS = _G["caillef.craftisland.crafts"]
 API.BUYSELL_LIST = _G["caillef.craftisland.buysell"]

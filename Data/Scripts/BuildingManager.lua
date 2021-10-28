@@ -26,14 +26,14 @@ local TRANSFORM_TABLE = {
     Vector3.New(0, APIB.WALL_SIZE, 0)
 }
 
-local currentPrevisu
+local currentPreview
 local objectIndex
 local islandPos
 
 function BuildSystem_Open()
     if buildmodeActivated then return end
     buildmodeActivated = true
-    if objectIndex and not currentPrevisu then
+    if objectIndex and not currentPreview then
         SelectStructure(objectIndex)
     end
 end
@@ -41,9 +41,9 @@ end
 function BuildSystem_Close()
     if not buildmodeActivated then return end
     buildmodeActivated = false
-    if currentPrevisu then
-        if currentPrevisu:IsValid() then currentPrevisu:Destroy() end
-        currentPrevisu = nil
+    if currentPreview then
+        if currentPreview:IsValid() then currentPreview:Destroy() end
+        currentPreview = nil
     end
 end
 
@@ -103,6 +103,7 @@ function rotateObjectWithClick(pos, o)
 end
 
 function PlayerIsOnIsland()
+	while not PLAYER.clientUserData.islandType do Task.Wait() end
     local limits = CONSTANTS.ISLAND_SIZES[PLAYER.clientUserData.islandType]
     local pos = PLAYER:GetWorldPosition()
     local minLimit = islandPos + limits[1]
@@ -141,31 +142,32 @@ function Tick()
 
     local obj = APIO.OBJECTS[objectIndex]
     if obj.idName == "SOIL" or obj.idName == "SAPLING" or obj.idName == "WHEAT_SEEDS" or obj.idName == "BERRY_SPROUT" then -- only on ground
-        currentPrevisu.visibility = objPos.z ~= islandPos.z and Visibility.FORCE_OFF or Visibility.FORCE_ON 
+        currentPreview.visibility = objPos.z ~= islandPos.z and Visibility.FORCE_OFF or Visibility.FORCE_ON 
     end
 
     local angle = APIB.GetAlignedAngle(o * 90 + rotateAngle * 90)
-	if currentPrevisu then
+	if currentPreview then
         local islandLimit = CONSTANTS.ISLAND_SIZES[PLAYER.clientUserData.islandType]
         if not APIB.IsValidPlaceToBuild(objPos, angle, islandPos, islandLimit) then
-            currentPrevisu.visibility = Visibility.FORCE_OFF
+            currentPreview.visibility = Visibility.FORCE_OFF
             return
         end
-        currentPrevisu.visibility = Visibility.FORCE_ON
-    	currentPrevisu:SetPosition(objPos)
-    	currentPrevisu:SetRotation(Rotation.New(0, 0, angle))
+        currentPreview.visibility = Visibility.FORCE_ON
+    	currentPreview:SetPosition(objPos)
+    	currentPreview:SetRotation(Rotation.New(0, 0, angle))
     end
 end
 
 function OnBindingReleased(_, actionName)
     if buildmodeActivated and actionName == ACTION_PLACE then
-        local zPos = currentPrevisu:GetWorldPosition().z
+        local zPos = currentPreview:GetWorldPosition().z
         if zPos >= 0 then
             local obj = APIO.OBJECTS[objectIndex]
             if (obj.idName == "SOIL" or obj.idName == "SAPLING" or obj.idName == "BERRY_SPROUT") and zPos ~= islandPos.z then -- only on ground
                 return
             end
-            local data = APIBSerializer.Serialize(currentPrevisu:GetWorldPosition() - islandPos, currentPrevisu:GetRotation().z, obj.id)
+            local data = APIBSerializer.Serialize(currentPreview:GetWorldPosition() - islandPos, currentPreview:GetRotation().z, obj.id)
+            SpawnFakeObject(currentPreview.sourceTemplateId) -- fix to spawn object instantly
             while Events.BroadcastToServer("BSPS", data) ~= BroadcastEventResultCode.SUCCESS do -- BuildingSystemPlaceStructure (BuildingSystemServer.lua)
                 Task.Wait(1)
             end
@@ -181,7 +183,7 @@ function OnBindingReleased(_, actionName)
 end
 PLAYER.bindingReleasedEvent:Connect(OnBindingReleased)
 
-function SpawnPrevisu(template)
+function SpawnPreview(template)
     local previsu = World.SpawnAsset(template)
     previsu.collision = Collision.FORCE_OFF
     previsu.cameraCollision = Collision.FORCE_OFF
@@ -199,25 +201,50 @@ function SpawnPrevisu(template)
     for _,trigger in ipairs(previsu:FindDescendantsByType("Trigger")) do
         trigger:Destroy()
     end
+    for _,script in ipairs(previsu:FindDescendantsByType("Script")) do
+        script:Destroy()
+    end
     return previsu
+end
+
+function SpawnFakeObject(template)
+    local fakeObject = World.SpawnAsset(template)
+    fakeObject.lifeSpan = 0.25
+    fakeObject.collision = Collision.FORCE_OFF
+    fakeObject.cameraCollision = Collision.FORCE_OFF
+    for _,prop in ipairs(fakeObject:FindDescendantsByType("StaticMesh")) do
+        prop.collision = Collision.FORCE_ON
+        prop.cameraCollision = Collision.FORCE_OFF
+    end
+    for _,vfx in ipairs(fakeObject:FindDescendantsByType("Vfx")) do
+        vfx:Destroy()
+    end
+    for _,trigger in ipairs(fakeObject:FindDescendantsByType("Trigger")) do
+        trigger:Destroy()
+    end
+    for _,script in ipairs(fakeObject:FindDescendantsByType("Script")) do
+        script:Destroy()
+    end
+    fakeObject:SetPosition(currentPreview:GetWorldPosition())
+    fakeObject:SetRotation(currentPreview:GetWorldRotation())
 end
 
 local triggerOverlapEvent
 function SelectStructure(id)
-    if currentPrevisu and currentPrevisu:IsValid() then
-        currentPrevisu:Destroy()
+    if currentPreview and currentPreview:IsValid() then
+        currentPreview:Destroy()
     end
-    currentPrevisu = nil
+    currentPreview = nil
     if id == nil or not APIO.OBJECTS[id].canBeBuilt or not PlayerIsOnIsland() then
         objectIndex = nil
         return BuildSystem_Close()
     end
     objectIndex = id
-    currentPrevisu = SpawnPrevisu(APIO.OBJECTS[id].templateMuid)
+    currentPreview = SpawnPreview(APIO.OBJECTS[id].templateMuid)
     if triggerOverlapEvent then
         triggerOverlapEvent:Disconnect()
     end
-    currentPrevisu.collision = Collision.FORCE_OFF
+    currentPreview.collision = Collision.FORCE_OFF
     BuildSystem_Open()
 end
 Events.Connect("SelectStructure", function(id)

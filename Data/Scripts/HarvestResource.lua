@@ -1,10 +1,14 @@
 local propTrigger = script:GetCustomProperty("Trigger"):WaitForObject()
 
-local id = CoreString.Split(propTrigger.parent.id, {delimiters={":"}})
-local eventName = "H"..id
+local id = propTrigger.parent.id
 
 function OnHarvest(trigger, other)
-    Events.Broadcast(eventName, { p=other.id, h=true, t=2 })
+    Events.Broadcast("H", { prop=id, p=other.id, h=true, t=2 })
 end
 
-propTrigger.interactedEvent:Connect(OnHarvest)
+if not Environment.IsClient() then
+    print("trigger not in client")
+    propTrigger.interactedEvent:Connect(OnHarvest)
+end
+
+

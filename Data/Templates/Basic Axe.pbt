@@ -300,9 +300,9 @@ Assets {
           }
         }
         ParentId: 18349659105178778687
+        ChildIds: 14694697835344281690
         ChildIds: 14214172497579116547
         ChildIds: 9090704478224855346
-        ChildIds: 14694697835344281690
         ChildIds: 6115641352400668366
         WantsNetworking: true
         Collidable_v2 {
@@ -316,6 +316,38 @@ Assets {
         }
         NetworkContext {
           Type: Server
+        }
+      }
+      Objects {
+        Id: 14694697835344281690
+        Name: "EquipmentMeleeAttacksServer"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8443887735401201725
+        UnregisteredParameters {
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 5082628058110625875
+          }
         }
       }
       Objects {
@@ -383,38 +415,6 @@ Assets {
         Script {
           ScriptAsset {
             Id: 1427829216143793458
-          }
-        }
-      }
-      Objects {
-        Id: 14694697835344281690
-        Name: "EquipmentMeleeAttacksServer"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 8443887735401201725
-        UnregisteredParameters {
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 5082628058110625875
           }
         }
       }
@@ -703,6 +703,6 @@ Assets {
       AssetId: "Advanced_Axe"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "Tools"
 }

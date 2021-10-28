@@ -20,6 +20,7 @@ end
 
 function SpawnObject()
 	obj = World.SpawnAsset(Array_GetRandomValue(objects), { position=pos, rotation=rotation, parent=PARENT })
+	Events.Broadcast("SetObjMetadata", obj, id)
 	obj.destroyEvent:Connect(OnDestroyProp)
 end
 

@@ -43,5 +43,5 @@ Assets {
     Version: "1.0.0"
     Description: "Just a little oak tree planter for decoration. Could be considered a bonsai maybe? Enjoy!"
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
 }

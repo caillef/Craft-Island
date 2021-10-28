@@ -136,47 +136,32 @@ function OnBeginOverlap(trigger, other)
     end
 end
 
-local function mysplit(inputstr, sep)
-    if sep == nil then
-            sep = "%s"
-    end
-    local t={}
-    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-            table.insert(t, str)
-    end
-    return t
+local PICKAXE = "9B0E9CDD3D19EB9E"
+local AXE = "2B7B3C64C0ED0918"
+
+local TOOLS_VFX = {}
+TOOLS_VFX[PICKAXE] = "2CE7D7A6241E47A2:VFX_Rocks"
+TOOLS_VFX[AXE] = "C9C2FEF888D330C4:VFX_Wood"
+
+function ActionOnProp(prop, impactPos)
+    while Object.IsValid(prop) and prop.parent and prop.parent.name ~= "Structures" do prop = prop.parent end
+    if not prop or not prop.parent or prop.parent.name ~= "Structures" then return false end
+    local VFX = TOOLS_VFX[EQUIPMENT.sourceTemplateId]
+    if not VFX then return end
+    World.SpawnAsset(VFX, { position=impactPos })
+    return true
 end
 
-function ActionOnCloserProp(hitBox)
-    for _,prop in ipairs(hitBox:GetOverlappingObjects()) do
-        if not prop or not prop:IsValid() then return end
-
-        if prop and prop:IsValid() and prop.parent and prop.parent.name == "Geo" then
-            prop = prop.parent
-        end
-        if prop.parent then
-            local eventObjectId = "H"..mysplit(prop.parent.id, ":")[1]
-            if not (prop and prop:IsValid() and prop.parent and prop.parent.parent) then return end
-            -- Is on mining island
-            if prop.parent.parent.name == "Rocks" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
-                World.SpawnAsset("2CE7D7A6241E47A2:VFX_Rocks", { parent=prop.parent })
-                --Events.BroadcastToServer(eventObjectId, { p=PLAYER.id, t=0 })
-                return
-            end
-
-            -- Is on player island with pickaxe
-            if prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "9B0E9CDD3D19EB9E" then
-                --Events.BroadcastToServer(eventObjectId, { p=PLAYER.id, t=0 })
-                return
-            end
-
-            -- Is on player island with axe
-            if prop.parent.parent.name == "Structures" and EQUIPMENT.sourceTemplateId == "F27A87BB28DA0B17" then
-                World.SpawnAsset("C9C2FEF888D330C4:VFX_Wood", { parent=prop.parent })
-                --Events.BroadcastToServer(eventObjectId, { p=PLAYER.id, t=1 })
-                return
-            end
-        end
+local START_RAY = 100
+local END_RAY = 600
+local RADIUS = 50
+local DEBUG = false
+function ActionOnCloserProp(player)
+    local rayStart = player:GetViewWorldPosition()
+    local lookVector = player:GetViewWorldRotation() * Vector3.FORWARD
+    local results = World.SpherecastAll(rayStart + (lookVector * START_RAY), rayStart + (lookVector * END_RAY), RADIUS, {ignorePlayers=player, shouldDebugRender = DEBUG})
+    for _, hitResult in ipairs(results) do
+        if ActionOnProp(hitResult.other, hitResult:GetImpactPosition()) then return end
     end
 end
 
@@ -188,7 +173,7 @@ function OnExecute(ability)
         if abilityInfo.ability == ability then
             abilityInfo.canAttack = true
             abilityInfo.ignoreList = {}
-            ActionOnCloserProp(abilityInfo.hitBox)
+            ActionOnCloserProp(EQUIPMENT.owner)
             SpawnSwingEffect(abilityInfo)
             return
         end

@@ -18,7 +18,27 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 3330134495146776314
         ChildIds: 12467268041011401083
-        ChildIds: 15033775734756290392
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:HP"
+            Int: 4
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "COAL"
+          }
+          Overrides {
+            Name: "cs:Material"
+            Int: 0
+          }
+          Overrides {
+            Name: "cs:ItemQty"
+            Vector2 {
+              X: 2
+              Y: 3
+            }
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -704,61 +724,6 @@ Assets {
           }
         }
       }
-      Objects {
-        Id: 15033775734756290392
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 100
-            Y: -100
-            Z: 26.9047852
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.2
-            Y: 0.2
-            Z: 0.2
-          }
-        }
-        ParentId: 16107154141159862915
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 4
-          }
-          Overrides {
-            Name: "cs:ItemUIQty"
-            Vector2 {
-              X: 2
-              Y: 3
-            }
-          }
-          Overrides {
-            Name: "cs:Material"
-            Int: 0
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "COAL"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
-        }
-      }
     }
     Assets {
       Id: 15624145861512632379
@@ -783,6 +748,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

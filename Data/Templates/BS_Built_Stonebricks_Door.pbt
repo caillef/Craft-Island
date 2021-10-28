@@ -18,8 +18,21 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 2284067968660856587
         ChildIds: 18051067341678177728
-        ChildIds: 10635343289658922323
         ChildIds: 10215272691844556202
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:HP"
+            Int: 1
+          }
+          Overrides {
+            Name: "cs:Material"
+            Int: 0
+          }
+          Overrides {
+            Name: "cs:ItemId"
+            String: "STONEBRICKS_DOOR"
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -340,50 +353,6 @@ Assets {
         }
       }
       Objects {
-        Id: 10635343289658922323
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 107.543755
-            Z: 130.782623
-          }
-          Rotation {
-            Yaw: 87.2511749
-          }
-          Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.5
-          }
-        }
-        ParentId: 3592139336295586736
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "STONEBRICKS_DOOR"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
-          }
-        }
-      }
-      Objects {
         Id: 10215272691844556202
         Name: "Craftsman Wall 02 Corner"
         Transform {
@@ -479,6 +448,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "StructureTemplates"
 }

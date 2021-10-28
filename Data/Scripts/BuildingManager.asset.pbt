@@ -22,8 +22,14 @@ Assets {
           Id: 11526358357864682441
         }
       }
+      Overrides {
+        Name: "cs:Constants"
+        AssetReference {
+          Id: 1824351816134648897
+        }
+      }
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 101
   VirtualFolderPath: "Building"
 }

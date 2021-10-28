@@ -1,4 +1,4 @@
-﻿local netRefInventory = script:GetCustomProperty("Inventory")
+local netRefInventory = script:GetCustomProperty("Inventory")
 
 local data = {}
 
@@ -191,6 +191,7 @@ end
 local playersLatestSlot = {}
 
 function EquipItem(player, slot, toolMuid)
+	print(toolMuid)
 	playersLatestSlot[player] = slot
 	if toolMuid == nil then toolMuid = 0 end
 
@@ -235,9 +236,9 @@ function PlayerRemoveItems(player, d, qty)
 				qty = excess * -1
 			end
 			while player:IsValid() and Events.BroadcastToPlayer(player, "requestInventoryRemoveEvent", data[player][i], i) ~= BroadcastEventResultCode.SUCCESS do
-				Task.Wait(1)
+				Task.Wait(3)
 			end
-			if data[player][i].qty == 0 then data[player][i] = nil end
+			if data[player][i] and data[player][i].qty == 0 then data[player][i] = nil end
 			if qty == 0 then return true end
 		end
 	end

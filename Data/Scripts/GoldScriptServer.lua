@@ -1,24 +1,20 @@
-﻿local function AddGold(player, amount)
+﻿local function AddCurrency(player, name, amount)
   if amount == 0 then return end
-  if player:GetResource("Gold") == nil then
-    player:SetResource("Gold", 0)    
+  if player:GetResource(name) == nil then
+    player:SetResource(name, 0)
   end
-  player:AddResource("Gold", amount)
+  player:AddResource(name, amount)
   local storage = Storage.GetPlayerData(player) or {}
-  storage.gold = player:GetResource("Gold")
+  storage[name == "Gold" and "gold" or "gem"] = player:GetResource(name)
   Storage.SetPlayerData(player, storage)
 end
 
+local function AddGold(player, amount)
+  AddCurrency(player, "Gold", amount)
+end
 
 local function AddGem(player, amount)
-  if amount == 0 then return end
-  if player:GetResource("Gem") == nil then
-    player:SetResource("Gem", 0)
-  end
-  player:AddResource("Gem", amount)
-  local storage = Storage.GetPlayerData(player) or {}
-  storage.gem = player:GetResource("Gem")
-  Storage.SetPlayerData(player, storage)
+  AddCurrency(player, "Gem", amount)
 end
 
 Events.Connect("SGemAddForPlayer", AddGem)

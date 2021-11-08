@@ -3,13 +3,17 @@ local END_RAY = 600
 local RADIUS = 50
 local DEBUG = false
 
+local PANEL = script:GetCustomProperty("UIPanel"):WaitForObject()
+local TEXT_BOX = script:GetCustomProperty("UITextBox"):WaitForObject()
+
+local LOCAL_PLAYER = Game.GetLocalPlayer()
+
 function ActionOnProp(prop, player)
     if not prop or not prop:IsValid() then return false end
     while prop.parent and prop.parent.name ~= "Structures" do
         prop = prop.parent
     end
     if not prop or not prop.parent or prop.parent.name ~= "Structures" then return false end
-	if prop.parent.parent.name ~= "Rocks" and player and prop.parent.id ~= player.serverUserData.slot.staticFolderId then return false end
 	return prop
 end
 
@@ -38,23 +42,29 @@ function GetPlayerDownHit(player)
 end
 
 function InteractWithObject(player, obj)
-	if not Object.IsValid(obj) then return false end
-    if obj:GetCustomProperty("Harvestable") then
-    	local id = obj.id
-		Events.Broadcast("H", { prop=id, p=player.id, h=true, t=2 })
-		return true
+	if not Object.IsValid(obj) then 
+		PANEL.visibility = Visibility.FORCE_OFF
+		return false
 	end
 	if obj:GetCustomProperty("UIName") then
-		Events.BroadcastToPlayer(player, "OpenUI"..obj:GetCustomProperty("UIName"), obj.id)
+		TEXT_BOX.text = "Open"
+		PANEL.visibility = Visibility.INHERIT
+		return true
+	end
+    if obj:GetCustomProperty("Harvestable") then
+    	TEXT_BOX.text = "Harvest"
+		PANEL.visibility = Visibility.INHERIT
 		return true
 	end
 	return false
-end
+end 
 
-Input.actionPressedEvent:Connect(function(p, action, value)
-	if action == "Interact" then
-		if not InteractWithObject(p, GetPlayerLookHit(p)) then
-			InteractWithObject(p, GetPlayerDownHit(p))
-		end
+function Tick()
+    if _G["caillef.craftisland.inventoryopen"] or _G["caillef.craftisland.craftopen"] or _G["caillef.craftisland.buysellopen"] then
+		PANEL.visibility = Visibility.FORCE_OFF
+		return
 	end
-end)
+	if not InteractWithObject(LOCAL_PLAYER, GetPlayerLookHit(LOCAL_PLAYER)) then
+		InteractWithObject(LOCAL_PLAYER, GetPlayerDownHit(LOCAL_PLAYER))
+	end
+end

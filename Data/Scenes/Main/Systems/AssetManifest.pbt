@@ -125,6 +125,24 @@ Assets {
   }
 }
 Assets {
+  Id: 11238652274762542248
+  Name: "BG Flat 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundNoOutline_22"
+  }
+}
+Assets {
+  Id: 9898787411172498666
+  Name: "Baloo 2 Extra Bold"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "Baloo2ExtraBold_ref"
+  }
+}
+Assets {
   Id: 9360988145249281203
   Name: "Atomic"
   PlatformAssetType: 9
@@ -149,6 +167,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "Icon_Clock"
+  }
+}
+Assets {
+  Id: 7294594876349635027
+  Name: "Frame Ring 1x 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameRing1x_004"
   }
 }
 Assets {

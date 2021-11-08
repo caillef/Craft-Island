@@ -31,6 +31,10 @@ Assets {
             Name: "cs:ItemId2"
             String: "CARROT_SEEDS"
           }
+          Overrides {
+            Name: "cs:Harvestable"
+            Bool: true
+          }
         }
         WantsNetworking: true
         Collidable_v2 {

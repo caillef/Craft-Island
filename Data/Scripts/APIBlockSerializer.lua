@@ -73,11 +73,19 @@ end
 
 function Block_SerializeStructures(structures, slotPos)
     local stringBlocks = "v3*"
-    for _,structure in pairs(structures) do
-        local pos = structure:GetWorldPosition() - slotPos
-        local angle = structure:GetRotation().z
-        local type = APIO.GetTypeFromTemplate(structure.sourceTemplateId)
-        stringBlocks = stringBlocks..Block_Serialize_v3(pos, angle, type)
+    for k,structure in pairs(structures) do
+        local serializedStructure = structure.serverUserData.serialized
+        if not serializedStructure then
+            local pos = structure:GetWorldPosition() - slotPos
+            local angle = structure:GetRotation().z
+            local type = APIO.GetTypeFromTemplate(structure.sourceTemplateId)
+            serializedStructure = Block_Serialize_v3(pos, angle, type)
+            structure.serverUserData.serialized = serializedStructure
+        end
+        stringBlocks = stringBlocks..serializedStructure
+        if k >= 4000 then
+            break
+        end
     end
     return stringBlocks
 end

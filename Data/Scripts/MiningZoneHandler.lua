@@ -1,7 +1,9 @@
-local MINING_DATA = script:GetCustomProperty("MINING_DATA"):WaitForObject()
-local PARENT = script:GetCustomProperty("Parent"):WaitForObject()
-local BS = script:GetCustomProperty("BuildingSystemServer"):WaitForObject().context
 local APIO = require(script:GetCustomProperty("APIObjects"))
+local MINING_DATA = script:GetCustomProperty("MINING_DATA"):WaitForObject()
+local ROCK_STRUCTURES_GROUP = script:GetCustomProperty("RockStructures"):WaitForObject()
+local SPAWN_DELAY = MINING_DATA:GetCustomProperty("SpawnDelay")
+local SPAWNERS = script:GetCustomProperty("Spawners"):WaitForObject():GetChildren()
+local SPAWNERS_DATA = {}
 
 local objects = {}
 for i=1,100 do
@@ -10,10 +12,6 @@ for i=1,100 do
 	end
 	table.insert(objects, tostring(MINING_DATA:GetCustomProperty("Prop"..tostring(i))))
 end
-local SpawnDelay = MINING_DATA:GetCustomProperty("SpawnDelay")
-
-local SPAWNERS = script:GetCustomProperty("Spawners"):WaitForObject():GetChildren()
-local SPAWNERS_DATA = {}
 
 function Array_GetRandomValue(list)
 	return list[1 + math.floor(math.random() * #list)]
@@ -23,14 +21,16 @@ function SpawnObject(key)
 	local pos = SPAWNERS_DATA[key].pos
 	local rotation = SPAWNERS_DATA[key].rotation
 	local rndIdname = Array_GetRandomValue(objects)
-	Events.Broadcast("PlaceStructure", pos, rotation.z, APIO.QueryObject(rndIdname).id, "5210DF209EBD7C7B:Rocks")
+	Events.Broadcast("PlaceStructure", pos, rotation.z, APIO.QueryObject(rndIdname).id, ROCK_STRUCTURES_GROUP.id)
+end
+
+function SpawnObjectWithDelay(id, delay)
+	Task.Wait(delay)
+	SpawnObject(id)
 end
 
 function OnDestroyProp(prop)
-	local key = prop.serverUserData.key
-	local delay = SpawnDelay.x + math.random() * (SpawnDelay.y - SpawnDelay.x)
-	Task.Wait(delay)
-	SPAWNERS_DATA[key].obj = SpawnObject(key)
+	SpawnObjectWithDelay(prop.serverUserData.key, SPAWN_DELAY.x + math.random() * (SPAWN_DELAY.y - SPAWN_DELAY.x))
 end
 
 for key,spawner in ipairs(SPAWNERS) do
@@ -38,6 +38,6 @@ for key,spawner in ipairs(SPAWNERS) do
 		pos = spawner:GetWorldPosition(),
 		rotation = spawner:GetWorldRotation()
 	}
-	SPAWNERS_DATA[key].obj = SpawnObject(key)
+	SpawnObject(key)
 end
 

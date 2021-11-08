@@ -1,16 +1,48 @@
-local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
+﻿local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
 local propSharedKeyIslands = script:GetCustomProperty("SharedKeyIslands")
-local CONSTANTS = require(script:GetCustomProperty("Constants"))
 local APIB = require(script:GetCustomProperty("APIBuildingSystem"))
 local APIO = require(script:GetCustomProperty("APIObjects"))
 local APIBSerializer = require(script:GetCustomProperty("APIBlockSerializer"))
-local STATIC_CONTEXTS = script:GetCustomProperty("StaticContexts"):WaitForObject()
+local CONSTANTS = require(script:GetCustomProperty("Constants"))
 
 local placedObjects = {}
 local objs = {}
 
 local objectsToSend = {}
 local objectsToRemove = {}
+
+local ISLANDS_TEMPLATE = {
+    script:GetCustomProperty("PlayerIsland"),
+    script:GetCustomProperty("PlayerIsland2"),
+    script:GetCustomProperty("PlayerIsland3"),
+    script:GetCustomProperty("PlayerIsland4")
+}
+local ISLANDS = script:GetCustomProperty("Islands"):WaitForObject()
+
+local NB_MAX_PLAYERS = 4
+local SPACE_BETWEEN_ISLAND = 15000
+
+local playerSlots = {}
+
+local function GetSpawnWorldPosition(i)
+    local pos = Vector3.New()
+    pos.x = (i - 1) % (NB_MAX_PLAYERS / 2) * SPACE_BETWEEN_ISLAND + 20000
+    pos.y = math.floor((i - 1) / (NB_MAX_PLAYERS / 2)) * SPACE_BETWEEN_ISLAND
+    pos.z = 0
+    return pos
+end
+
+local function initPlayerSpots()
+    for i=1,NB_MAX_PLAYERS do
+        playerSlots[i] = {
+            pos = GetSpawnWorldPosition(i),
+            staticFolderId = script:GetCustomProperty("Island"..i):WaitForObject():GetCustomProperty("Structures"):WaitForObject().id,
+            player = nil,
+            island = nil
+        }
+    end
+end
+initPlayerSpots()
 
 local INCREMENT_OBJECT_ID = 0
 function GetNextId()
@@ -28,23 +60,19 @@ function SaveIsland(player)
     local slot = player.serverUserData.slot
     local list = World.FindObjectById(slot.staticFolderId):GetChildren()
     storage.pBlocks = APIBSerializer.SerializeList(list, slot.pos)
-    if Storage.SizeOfData(storage) <= 32000 then
-        Storage.SetSharedPlayerData(propSharedKeyIslands, player, storage)
-    end
+    Storage.SetSharedPlayerData(propSharedKeyIslands, player, storage)
 end
 
 function BuildingSystem_OnPlaceStructure(player, serializedBlock)
     local data = APIBSerializer.Deserialize(serializedBlock, player.serverUserData.slot.pos)
-    if not data then return end
-    if not INVENTORY.PlayerHasItems(player, { id=data.type }) then return end
+    if not data or not INVENTORY.PlayerHasItems(player, { id=data.type }) then return end
 
-    if player and player:IsValid() and CountNbStructures(player) >= 4000 then
-        while player and player:IsValid() and Events.BroadcastToPlayer(player, "BSLimit") ~= BroadcastEventResultCode.SUCCESS do
+    if Object.IsValid(player) and CountNbStructures(player) >= 4000 then
+        while Object.IsValid(player) and Events.BroadcastToPlayer(player, "BSLimit") ~= BroadcastEventResultCode.SUCCESS do
             Task.Wait(1)
         end
         return
     end
-
     if not PlaceObject(data.pos, data.angle, data.type, player.serverUserData.slot.staticFolderId) then return end
     INVENTORY.PlayerRemoveItems(player, { id=data.type } )
     SaveIsland(player)
@@ -59,16 +87,20 @@ function GetPlayerFromId(playerId)
 end
 
 function PlaceObject(pos, angle, type, parentId)
+    local objectData = APIO.OBJECTS[type]
     angle = APIB.GetAlignedAngle(angle)
     local parent = World.FindObjectById(parentId)
-    if type == 30 then
+    if objectData.idName == "SOIL" then
 		pos = OrientedToZeroPos(pos, angle)
 		angle = 0
 	end
-    --local islandLimit = CONSTANTS.ISLAND_SIZES[player.serverUserData.islandType]
-    --if not APIB.IsValidPlaceToBuild(position, angle, playersSpawns[player].island:FindChildByName("Structures"):GetWorldPosition(), islandLimit) then
-    --    return
-    --end
+
+    if parent.serverUserData.slot then
+        local islandLimit = CONSTANTS.ISLAND_SIZES[parent.serverUserData.islandType]
+        if islandLimit and not APIB.IsValidPlaceToBuild(pos, angle, parent.serverUserData.slot.pos, islandLimit) then
+           return
+        end
+    end
 
     --[[local placedTypedObjects = placedObjects[type] or {}
     if placedTypedObjects[position.z] ~= nil and
@@ -78,7 +110,7 @@ function PlaceObject(pos, angle, type, parentId)
         return false
     end]]--
 
-	local mandatorySurface = APIO.OBJECTS[type].buildConditions and APIO.OBJECTS[type].buildConditions.mustBeBuiltOn or nil
+	local mandatorySurface = objectData.buildConditions and objectData.buildConditions.mustBeBuiltOn or nil
     if not parent.serverUserData.isLoading and mandatorySurface then
         local list = parent:GetChildren()
         local block = GetStructureAtPos(list, pos, angle)
@@ -91,7 +123,8 @@ function PlaceObject(pos, angle, type, parentId)
 
 	local id = GetNextId()
     local rawData = APIB.SerializeObjectToPlace(pos, angle, type, id)
-    objs[id] = rawData
+    objs[parentId] = objs[parentId] or {}
+    objs[parentId][id] = rawData
     objectsToSend[parentId] = (objectsToSend[parentId] or "").." "..rawData
     return true
 end
@@ -139,7 +172,6 @@ function Grow(objReplaced, newIdName)
     local type = APIO.OBJECTS_ID[newIdName]
     RemoveStructure(objReplaced, player)
     PlaceObject(pos, angle, type, parentId)
-    return
 end
 Events.Connect("SGrow", Grow)
 
@@ -148,24 +180,37 @@ Events.Connect("SetObjMetadata", function(obj, id)
 end)
 
 function LoadPreviousBlocks(player)
-    player.serverUserData.slot.isLoading = true
-    local storage = Storage.GetSharedPlayerData(propSharedKeyIslands, player) or {}
-    storage.pBlocks = storage.pBlocks or "v2*25|0=-5,-3,0|270=-7,6,0|90=0,2,0_12|0=-2,-1,0;-2,0,0;-2,-2,0"
-    local blocks = APIBSerializer.DeserializeList(storage.pBlocks, player.serverUserData.slot.pos)
-    for _,data in pairs(blocks) do
-        PlaceObject(data.pos, data.angle, data.type, player.serverUserData.slot.staticFolderId)
+    local slot = player.serverUserData.slot
+    slot.isLoading = true
+    local structures = Storage.GetSharedPlayerData(propSharedKeyIslands, player).pBlocks or "v2*25|0=-5,-3,0|270=-7,6,0|90=0,2,0_12|0=-2,-1,0;-2,0,0;-2,-2,0"
+    local blocks = APIBSerializer.DeserializeList(structures, slot.pos)
+    for k,data in pairs(blocks) do
+        PlaceObject(data.pos, data.angle, data.type, slot.staticFolderId)
+        if k % 500 == 0 then Task.Wait() end
     end
-    player.serverUserData.slot.isLoading = false
+    slot.isLoading = false
 end
 
 Task.Spawn(function()
     while true do
         for key,data in pairs(objectsToSend) do
-            if data and #data > 0 then	
+            if data and #data > 0 then
 	            local group = World.FindObjectById(key)
 	            if group.name == "Structures" then group = group.parent end
-	            group:SetCustomProperty("SerializedObjects", objectsToSend[key])
-		        objectsToSend[key] = ""
+				local toSend = objectsToSend[key]
+				local chunked = false
+				if #objectsToSend[key] >= 4000 then
+					chunked = true
+	                local i = math.min(#objectsToSend[key], 4000)
+	                while objectsToSend[key]:sub(i,i) ~= " " do i = i + 1 end
+	                toSend = objectsToSend[key]:sub(1, i)
+	                objectsToSend[key] = objectsToSend[key]:sub(i + 1,#objectsToSend[key])
+				end
+				group:SetCustomProperty("SerializedObjects", toSend)
+				Task.Wait()
+				if not chunked then
+			        objectsToSend[key] = ""
+				end
             end
         end
         for key,data in pairs(objectsToRemove) do
@@ -182,39 +227,60 @@ end)
 
 function RemoveStructure(obj, player)
     if not obj or not obj:IsValid() then return end
-    if obj.parent.id ~= "64137475AEC64DC6:Rocks" and player and obj.parent.id ~= player.serverUserData.slot.staticFolderId then return end
-    objs[obj.serverUserData.id] = nil
+    if obj.parent.parent.name ~= "Rocks" and player and obj.parent.id ~= player.serverUserData.slot.staticFolderId then return end
+    objs[obj.parent.id][obj.serverUserData.id] = nil
     objectsToRemove[obj.parent.id] = (objectsToRemove[obj.parent.id] or "").." "..obj.serverUserData.id
     return true
 end
 Events.Connect("RemoveStructure", RemoveStructure)
 
 function LoadIsland(slot)
+    if not Object.IsValid(slot.player) then
+        error("LoadIsland: Player not valid")
+        return
+    end
     local player = slot.player
-    if not player or not player:IsValid() then return end
-    player.serverUserData.slot = slot
+    Task.Spawn(function()
+        player.movementControlMode = MovementControlMode.NONE
+        Task.Wait(2)
+        player.movementControlMode = MovementControlMode.VIEW_RELATIVE
+    end)
+    slot.island = World.SpawnAsset(ISLANDS_TEMPLATE[player.serverUserData.islandType], { position = slot.pos, parent = ISLANDS })
+    local parent = World.FindObjectById(slot.staticFolderId)
+    parent.serverUserData.islandType = player.serverUserData.islandType
+    parent.serverUserData.slot = slot
     LoadPreviousBlocks(player)
-    slot.isLoading = false
-    -- load other islands
+    -- Load other islands
+    for key, list in pairs(objs) do
+        if key ~= player.serverUserData.slot.staticFolderId then
+            for _, obj in pairs(list) do
+                objectsToSend[key] = (objectsToSend[key] or "").." "..obj
+            end
+        end
+    end
 end
-Events.Connect("BSLI", LoadIsland)
 
 function UnloadIsland(slot)
     local player = slot.player
+    if not Object.IsValid(player) then
+        error("Player is invalid while unloading island.")
+    end
     SaveIsland(player)
     slot.island:Destroy()
     slot.island = nil
     slot.player = nil
-    placedObjects[player] = nil
     player.serverUserData.slot = nil
+
+    placedObjects[player] = nil
 end
-Events.Connect("BSULI", UnloadIsland)
 
 function OnInventoryReady(player)
-    while player.serverUserData.slot == nil do
-        Task.Wait(0.1)
-    end
+	while player.serverUserData.slot == nil do
+		Task.Wait(0.1)
+	end
+    LoadIsland(player.serverUserData.slot)
     Task.Wait(1)
+    Events.Broadcast("TP", player, "own_island")
     while player and player:IsValid() and Events.BroadcastToPlayer(player, "OnPlayerInitialized", {islandPos = player.serverUserData.slot.pos, iType= player.serverUserData.islandType }) ~= BroadcastEventResultCode.SUCCESS do
         Task.Wait(1)
     end
@@ -224,6 +290,70 @@ end
 Events.Connect("SInventoryReady", OnInventoryReady)
 Events.ConnectForPlayer("BSPS", BuildingSystem_OnPlaceStructure)
 
-Events.Connect("SaveIsland", SaveIsland)
-
 print("Building Mode Activated for the server (need the same message for players)")
+
+function UnlockNextIslandType(player, nextType)
+    local currentType = player.serverUserData.islandType
+    if currentType + 1 == nextType and player:GetResource("Gem") >= (nextType + 1) * 100 then
+        Events.Broadcast("TP", player, "main_island")
+        Task.Spawn(function()
+            player.movementControlMode = MovementControlMode.NONE
+            Task.Wait(3)
+            player.movementControlMode = MovementControlMode.VIEW_RELATIVE
+        end)
+        Events.Broadcast("SGemAddForPlayer", player, -(nextType + 1) * 100)
+        Events.BroadcastToPlayer(player, "UpdateNextIslandType", nextType + 1)
+        local storage = Storage.GetPlayerData(player)
+        storage.islandType = nextType
+        player.serverUserData.islandType = storage.islandType
+        Storage.SetPlayerData(player, storage)
+        local slot = player.serverUserData.slot
+        if not slot then return end
+        UnloadIsland(slot)
+        Task.Wait(1)
+        player.serverUserData.slot = slot
+        if slot == nil then return end
+        LoadIsland(slot)
+        Task.Wait(1)
+        Events.Broadcast("TP", player, "own_island")
+    end
+end
+Events.ConnectForPlayer("UnlockNextIsland", UnlockNextIslandType)
+
+function OnPlayerLeft(player)
+    local slot = player.serverUserData.slot
+    if not slot then return end
+    UnloadIsland(slot)
+end
+Game.playerLeftEvent:Connect(OnPlayerLeft)
+
+local function AssignNextSlot(player)
+    for _,slot in pairs(playerSlots) do
+        if slot.player == nil or not slot.player:IsValid() then
+            if Object.IsValid(slot.island) then
+                slot.island:Destroy()
+                for _,structure in ipairs(World.FindObjectById(slot.staticFolderId):GetChildren()) do
+                    structure:Destroy()
+                end
+            end
+            slot.player = player
+            player.serverUserData.slot = slot
+            return slot
+        end
+    end
+end
+
+function OnPlayerJoined(player)
+    local storage = Storage.GetPlayerData(player)
+    player.serverUserData.islandType = storage.islandType or 1
+    Events.Broadcast("TP", player, "main_island")
+    AssignNextSlot(player)
+end
+Game.playerJoinedEvent:Connect(OnPlayerJoined)
+
+function Reset(player)
+    OnPlayerLeft(player)
+    Storage.SetSharedPlayerData(propSharedKeyIslands, player, {})
+    OnPlayerJoined(player)
+end
+Events.ConnectForPlayer("HARDRESET", Reset)

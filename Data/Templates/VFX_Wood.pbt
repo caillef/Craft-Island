@@ -37,9 +37,6 @@ Assets {
         Name: "Wood Impact VFX"
         Transform {
           Location {
-            X: 100
-            Y: -100
-            Z: 50
           }
           Rotation {
           }

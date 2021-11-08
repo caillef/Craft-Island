@@ -18,7 +18,6 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 -- Internal custom properties
 local COMPONENT_ROOT = script:GetCustomProperty("ComponentRoot"):WaitForObject()
 local TRIGGER = script:GetCustomProperty("Trigger"):WaitForObject()
-local TELEPORT_MANAGER = script:GetCustomProperty("TeleportManager"):WaitForObject()
 
 -- User exposed properties
 local DESTINATION = COMPONENT_ROOT:GetCustomProperty("Destination")
@@ -29,7 +28,7 @@ function OnBeginOverlap(trigger, player)
 	if not player:IsA("Player") then
 		return 
 	end
-	TELEPORT_MANAGER.context.TeleportPlayerTo(player, DESTINATION)
+	Events.Broadcast("TP", player, DESTINATION)
 end
 
 -- Initialize

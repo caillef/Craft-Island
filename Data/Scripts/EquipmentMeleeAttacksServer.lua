@@ -104,28 +104,24 @@ local AXE = "2B7B3C64C0ED0918"
 
 function ActionOnProp(prop, playerId)
     if not prop or not prop:IsValid() then return false end
-    -- if prop:IsA("DamageableObject") or prop.FindAncestorByType and prop:FindAncestorByType("DamageableObject") then
-    --     prop = prop:IsA("DamageableObject") and prop or prop:FindAncestorByType("DamageableObject")
-    --     prop:ApplyDamage(Damage.New(25))
-    --     return
-    -- end
-    while prop.parent and prop.parent.name ~= "Structures" do
-        prop = prop.parent
-    end
+    while prop.parent and prop.parent.name ~= "Structures" do prop = prop.parent end
     if not prop or not prop.parent or prop.parent.name ~= "Structures" then return false end
     local id = prop.id
-    local tool = 0
-    if EQUIPMENT.sourceTemplateId == PICKAXE then tool = 0 end
+    local tool = 0 -- PICKAXE
     if EQUIPMENT.sourceTemplateId == AXE then tool = 1 end
     Events.Broadcast("H", { prop=id, p=playerId, t=tool })
     return true
 end
 
+local START_RAY = 100
+local END_RAY = 600
+local RADIUS = 50
+local DEBUG = false
 function ActionOnCloserProp(ability)
     local player = ability.owner
     local rayStart = player:GetViewWorldPosition()
     local lookVector = player:GetViewWorldRotation() * Vector3.FORWARD
-    local results = World.SpherecastAll(rayStart + (lookVector * 100), rayStart + (lookVector * 600), 50, {ignorePlayers=player, shouldDebugRender = true})
+    local results = World.SpherecastAll(rayStart + (lookVector * START_RAY), rayStart + (lookVector * END_RAY), RADIUS, {ignorePlayers=player, shouldDebugRender = DEBUG})
     for _, hitResult in ipairs(results) do
         if ActionOnProp(hitResult.other, ability.owner.id) then return end
     end

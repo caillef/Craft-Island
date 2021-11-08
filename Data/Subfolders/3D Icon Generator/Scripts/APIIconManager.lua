@@ -131,7 +131,7 @@ function API.GetStatus(printToLog)
     end
 
     if printToLog then
-        print(string.format("Currently using %d icons using %d out of %d total pixels (%.2f%%)", usedIcons, usedPixels, MAX_PIXELS, ((usedPixels / MAX_PIXELS) * 100)))
+        --print(string.format("Currently using %d icons using %d out of %d total pixels (%.2f%%)", usedIcons, usedPixels, MAX_PIXELS, ((usedPixels / MAX_PIXELS) * 100)))
     end
 
     return usedPixels / MAX_PIXELS

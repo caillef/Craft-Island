@@ -1,12 +1,12 @@
 Assets {
-  Id: 17472426942251272983
+  Id: 3133164369197467928
   Name: "Basic Axe"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 18349659105178778687
+      RootId: 13564620534562980683
       Objects {
-        Id: 18349659105178778687
+        Id: 13564620534562980683
         Name: "Basic Axe"
         Transform {
           Scale {
@@ -16,11 +16,11 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 6173395327735089011
-        ChildIds: 4599214852635358214
-        ChildIds: 14979955620717351938
-        ChildIds: 8443887735401201725
-        ChildIds: 14062581388527037373
+        ChildIds: 5691384937060853251
+        ChildIds: 3905588022196338515
+        ChildIds: 15387175195078024257
+        ChildIds: 11087779532348031430
+        ChildIds: 7416771317857803755
         UnregisteredParameters {
           Overrides {
             Name: "cs:EquipmentStance"
@@ -64,12 +64,12 @@ Assets {
         Equipment {
           SocketName: "right_prop"
           PickupTrigger {
-            SubObjectId: 6173395327735089011
+            SubObjectId: 5691384937060853251
           }
         }
       }
       Objects {
-        Id: 6173395327735089011
+        Id: 5691384937060853251
         Name: "Pickup Trigger"
         Transform {
           Location {
@@ -83,7 +83,7 @@ Assets {
             Z: 0.900000036
           }
         }
-        ParentId: 18349659105178778687
+        ParentId: 13564620534562980683
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -107,7 +107,7 @@ Assets {
         }
       }
       Objects {
-        Id: 4599214852635358214
+        Id: 3905588022196338515
         Name: "Hitbox Trigger"
         Transform {
           Location {
@@ -120,7 +120,7 @@ Assets {
             Z: 1.8
           }
         }
-        ParentId: 18349659105178778687
+        ParentId: 13564620534562980683
         UnregisteredParameters {
           Overrides {
             Name: "cs:PlayerSocket"
@@ -171,7 +171,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14979955620717351938
+        Id: 15387175195078024257
         Name: "Attack"
         Transform {
           Location {
@@ -184,7 +184,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 18349659105178778687
+        ParentId: 13564620534562980683
         UnregisteredParameters {
           Overrides {
             Name: "cs:Damage"
@@ -193,7 +193,7 @@ Assets {
           Overrides {
             Name: "cs:Hitbox"
             ObjectReference {
-              SubObjectId: 4599214852635358214
+              SubObjectId: 3905588022196338515
             }
           }
           Overrides {
@@ -286,7 +286,7 @@ Assets {
         }
       }
       Objects {
-        Id: 8443887735401201725
+        Id: 11087779532348031430
         Name: "ServerContext"
         Transform {
           Location {
@@ -299,11 +299,11 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 18349659105178778687
-        ChildIds: 14694697835344281690
-        ChildIds: 14214172497579116547
-        ChildIds: 9090704478224855346
-        ChildIds: 6115641352400668366
+        ParentId: 13564620534562980683
+        ChildIds: 2766024007864247422
+        ChildIds: 3659154776209758433
+        ChildIds: 4798745499451890452
+        ChildIds: 16094957728218919096
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -319,7 +319,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14694697835344281690
+        Id: 2766024007864247422
         Name: "EquipmentMeleeAttacksServer"
         Transform {
           Location {
@@ -332,7 +332,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8443887735401201725
+        ParentId: 11087779532348031430
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -351,7 +351,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14214172497579116547
+        Id: 3659154776209758433
         Name: "EquipmentPickupServer"
         Transform {
           Location {
@@ -364,12 +364,12 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8443887735401201725
+        ParentId: 11087779532348031430
         UnregisteredParameters {
           Overrides {
             Name: "cs:Trigger"
             ObjectReference {
-              SubObjectId: 6173395327735089011
+              SubObjectId: 5691384937060853251
             }
           }
         }
@@ -389,7 +389,7 @@ Assets {
         }
       }
       Objects {
-        Id: 9090704478224855346
+        Id: 4798745499451890452
         Name: "EquipmentStanceServer"
         Transform {
           Location {
@@ -402,7 +402,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8443887735401201725
+        ParentId: 11087779532348031430
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -419,7 +419,7 @@ Assets {
         }
       }
       Objects {
-        Id: 6115641352400668366
+        Id: 16094957728218919096
         Name: "EquipmentAttachObjectToPlayer"
         Transform {
           Location {
@@ -432,12 +432,12 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8443887735401201725
+        ParentId: 11087779532348031430
         UnregisteredParameters {
           Overrides {
             Name: "cs:Object"
             ObjectReference {
-              SubObjectId: 4599214852635358214
+              SubObjectId: 3905588022196338515
             }
           }
           Overrides {
@@ -461,7 +461,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14062581388527037373
+        Id: 7416771317857803755
         Name: "ClientContext"
         Transform {
           Location {
@@ -474,10 +474,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 18349659105178778687
-        ChildIds: 957093103753963979
-        ChildIds: 9543367848906561035
-        ChildIds: 1595937608306147425
+        ParentId: 13564620534562980683
+        ChildIds: 4903415252745793696
+        ChildIds: 725938412163402787
+        ChildIds: 7104355255789864287
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -492,7 +492,7 @@ Assets {
         }
       }
       Objects {
-        Id: 957093103753963979
+        Id: 4903415252745793696
         Name: "EquipmentPickupClient"
         Transform {
           Location {
@@ -505,7 +505,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14062581388527037373
+        ParentId: 7416771317857803755
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -522,7 +522,7 @@ Assets {
         }
       }
       Objects {
-        Id: 9543367848906561035
+        Id: 725938412163402787
         Name: "EquipmentMeleeAttacksClient"
         Transform {
           Location {
@@ -535,7 +535,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14062581388527037373
+        ParentId: 7416771317857803755
         UnregisteredParameters {
           Overrides {
             Name: "cs:BuildingManager"
@@ -560,7 +560,7 @@ Assets {
         }
       }
       Objects {
-        Id: 1595937608306147425
+        Id: 7104355255789864287
         Name: "Geo"
         Transform {
           Location {
@@ -574,9 +574,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14062581388527037373
-        ChildIds: 8688939606747574628
-        ChildIds: 729781889713431375
+        ParentId: 7416771317857803755
+        ChildIds: 15127069439812404222
+        ChildIds: 13281952101589406592
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -593,7 +593,7 @@ Assets {
         }
       }
       Objects {
-        Id: 8688939606747574628
+        Id: 15127069439812404222
         Name: "Hatchet - Blade"
         Transform {
           Location {
@@ -609,7 +609,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1595937608306147425
+        ParentId: 7104355255789864287
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -638,7 +638,7 @@ Assets {
         }
       }
       Objects {
-        Id: 729781889713431375
+        Id: 13281952101589406592
         Name: "Hatchet - Handle"
         Transform {
           Location {
@@ -651,7 +651,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1595937608306147425
+        ParentId: 7104355255789864287
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -699,8 +699,8 @@ Assets {
       }
     }
     PrimaryAssetId {
-      AssetType: "TemplateAssetRef"
-      AssetId: "Advanced_Axe"
+      AssetType: "None"
+      AssetId: "None"
     }
   }
   SerializationVersion: 101

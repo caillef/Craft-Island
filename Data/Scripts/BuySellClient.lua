@@ -158,7 +158,7 @@ function SetupUI()
 				button.clickedEvent:Connect(SelectItem)
 				slotIndex = slotIndex + 1
 			else
-				print("Error with "..itemId)	
+				print("Error with "..itemId)
 			end
 		end
 	end

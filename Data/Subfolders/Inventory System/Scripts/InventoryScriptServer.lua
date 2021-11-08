@@ -22,18 +22,6 @@ function GetInventorySerializer()
 	return _inventorySerializer
 end
 
-local logs = {}
-function GetLogs()
-    return logs
-end
-
-local function AddLogEntry(entry)
-    table.insert(logs, entry)
-    while #logs > 100 do
-        table.remove(logs, 1)
-    end
-end
-
 function Update(player)
 	print(tostring(player) .. ":")
 	for i = 1, 27 do
@@ -113,28 +101,15 @@ function Add(player, d)
 end
 
 function OnInventoryReady(player)
-	AddLogEntry("OnInventoryReady", player.name)
 	local d = Storage.GetSharedPlayerData(netRefInventory, player)
 	local inventory = d.inventory or ""
 
-	-- check if it's old version with playerStorage
-	if d.inventory == nil then
-		local storage = Storage.GetPlayerData(player)
-		inventory = storage.inventory or ""
-		AddLogEntry("Found inventory in old system")
-	end
-
-	AddLogEntry(inventory)
 	data[player] = GetInventorySerializer().Deserialize(inventory)
 	inventory = GetInventorySerializer().Serialize(data[player])
 	data[player] = GetInventorySerializer().Deserialize(inventory)
-	AddLogEntry(inventory)
-	AddLogEntry("A")
 	while player:IsValid() and Events.BroadcastToPlayer(player, "Inv", inventory) ~= BroadcastEventResultCode.SUCCESS do
 		Task.Wait(1)
-		AddLogEntry("B")
 	end
-	AddLogEntry("C")
 	Events.Broadcast("SInventoryReady", player)
 	GiveMandatoryItems(player)
 end
@@ -191,7 +166,6 @@ end
 local playersLatestSlot = {}
 
 function EquipItem(player, slot, toolMuid)
-	print(toolMuid)
 	playersLatestSlot[player] = slot
 	if toolMuid == nil then toolMuid = 0 end
 

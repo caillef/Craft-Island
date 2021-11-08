@@ -461,18 +461,17 @@ while Events.BroadcastToServer("inventoryReady", Game.GetLocalPlayer()) ~= Broad
 	Task.Wait(1)
 end
 
-
 -- Total slots, just caching it here for use later.
-local totalSlots = 9
+local NB_SLOTS = 9
 
 -- Listens for when an action is pressed.
 Input.actionPressedEvent:Connect(function(player, action, value)
     if action == "Zoom" then
 		local id
         if value > 0 then
-			id = lastSelection == totalSlots and 1 or (lastSelection + 1)
+			id = lastSelection == NB_SLOTS and 1 or (lastSelection + 1)
         elseif value < 0 then
-			id = lastSelection == 1 and totalSlots or (lastSelection - 1)
+			id = lastSelection == 1 and NB_SLOTS or (lastSelection - 1)
         end
 		if id then Select(id) end
     end

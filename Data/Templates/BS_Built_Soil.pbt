@@ -17,6 +17,7 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 9078462774628426977
+        ChildIds: 16487303016208979420
         UnregisteredParameters {
           Overrides {
             Name: "cs:HP"
@@ -100,7 +101,77 @@ Assets {
           }
           Teams {
           }
-          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 16487303016208979420
+        Name: "BuiltFloor"
+        Transform {
+          Location {
+            Z: -11.3299561
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 14757139173859955053
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Building_Ceiling:id"
+            AssetReference {
+              Id: 18265638366922665013
+            }
+          }
+          Overrides {
+            Name: "ma:Building_Floor:id"
+            AssetReference {
+              Id: 18265638366922665013
+            }
+          }
+          Overrides {
+            Name: "ma:Building_Floor:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Building_Ceiling:smart"
+            Bool: true
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:id"
+            AssetReference {
+              Id: 18265638366922665013
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:smart"
+            Bool: true
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10888788159873929006
+          }
+          Teams {
+          }
           StaticMesh {
             Physics {
             }

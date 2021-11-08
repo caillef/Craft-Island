@@ -1,4 +1,4 @@
-﻿local CONSTANTS = require(script:GetCustomProperty("Constants"))
+local CONSTANTS = require(script:GetCustomProperty("Constants"))
 local APIB = require(script:GetCustomProperty("APIBuildingSystem"))
 local APIO = require(script:GetCustomProperty("APIObjects"))
 local APIBSerializer = require(script:GetCustomProperty("APIBlockSerializer"))
@@ -251,12 +251,11 @@ Events.Connect("SelectStructure", function(id)
     SelectStructure(id)
 end)
 
-function OnPlayerInitialized(data)
+
+Events.Connect("OnPlayerInitialized", function(data)
     islandPos = data.islandPos
     PLAYER.clientUserData.islandType = data.iType
-end
-
-Events.Connect("OnPlayerInitialized", OnPlayerInitialized)
+end)
 
 Events.Connect("BSLimit", function()
 	World.SpawnAsset("7CF45E787CD10A68:LimitBuildingNotif", { parent= propUIPanel })

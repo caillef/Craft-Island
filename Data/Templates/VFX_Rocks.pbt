@@ -37,9 +37,6 @@ Assets {
         Name: "Explosion Kit Rock Burst VFX"
         Transform {
           Location {
-            X: 100
-            Y: -100
-            Z: 130.874268
           }
           Rotation {
           }

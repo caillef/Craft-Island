@@ -31,6 +31,10 @@ Assets {
             Name: "cs:ItemId2"
             String: "WHEAT_SEEDS"
           }
+          Overrides {
+            Name: "cs:Harvestable"
+            Bool: true
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -109,7 +113,6 @@ Assets {
           }
           Teams {
           }
-          InteractWithTriggers: true
           StaticMesh {
             Physics {
             }
@@ -189,7 +192,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         CoreMesh {
           MeshAsset {
@@ -197,7 +200,6 @@ Assets {
           }
           Teams {
           }
-          InteractWithTriggers: true
           StaticMesh {
             Physics {
             }

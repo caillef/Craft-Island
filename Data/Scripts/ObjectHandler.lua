@@ -18,7 +18,7 @@ local function HandleAddObjects(value)
 	local blocks = { CoreString.Split(value, { delimiters={" "}, removeEmptyResults = true }) }
 	for _,b in ipairs(blocks) do
 		local data = APIB.DeserializeObjectToPlace(b)
-		if not objList[data.id] then
+		if not objList[data.id] then -- do nothing if already spawned
 			local pos = Vector3.New(data.x, data.y, data.z)
 			PlaceObject(pos, data.angle, data.type, data.id)
 		end
@@ -42,9 +42,17 @@ function HandleRemoveObjects(value)
 	end
 end
 
+function Clear()
+	print("Clear")
+	for id,_ in pairs(objList) do
+		RemoveObject(id)
+	end
+end
+
 local HANDLERS = {
 	SerializedObjects = HandleAddObjects,
-	ToRemoveObjectIds = HandleRemoveObjects
+	ToRemoveObjectIds = HandleRemoveObjects,
+	Clear = Clear
 }
 
 local function OnChangeProperty(obj, name)

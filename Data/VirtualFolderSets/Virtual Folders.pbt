@@ -36,5 +36,10 @@ Assets {
       VirtualFolderPath: "SFX"
       PlatformAssetType: 5
     }
+    Folders {
+      VirtualFolderPath: "StructureTemplates"
+      VirtualFolderPath: "NetworkedLinkedObjects"
+      PlatformAssetType: 5
+    }
   }
 }

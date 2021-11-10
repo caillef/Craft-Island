@@ -1,39 +1,6 @@
 Name: "ServerScripts"
 RootId: 11584135646992845074
 Objects {
-  Id: 4888686829961194661
-  Name: "RewardPointsDaily"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 11584135646992845074
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 9525272680058773397
-    }
-  }
-}
-Objects {
   Id: 7271539280238961795
   Name: "InventoryManager"
   Transform {

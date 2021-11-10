@@ -17,6 +17,7 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 1866327120945038241
+        Lifespan: 2
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }

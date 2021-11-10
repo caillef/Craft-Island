@@ -23,6 +23,7 @@ local NB_MAX_PLAYERS = 4
 local SPACE_BETWEEN_ISLAND = 15000
 
 local playerSlots = {}
+local nloList = {}
 
 local function GetSpawnWorldPosition(i)
     local pos = Vector3.New()
@@ -110,7 +111,7 @@ function PlaceObject(pos, angle, type, parentId)
         return false
     end]]--
 
-	local mandatorySurface = objectData.buildConditions and objectData.buildConditions.mustBeBuiltOn or nil
+	local mandatorySurface = objectData.buildConditions and objectData.buildConditions.mustBeBuiltOn
     if not parent.serverUserData.isLoading and mandatorySurface then
         local list = parent:GetChildren()
         local block = GetStructureAtPos(list, pos, angle)
@@ -121,7 +122,13 @@ function PlaceObject(pos, angle, type, parentId)
         RemoveStructure(block, player)
     end
 
-	local id = GetNextId()
+    local id = GetNextId()
+
+	local networkedLinkedObject = objectData.buildConditions and objectData.buildConditions.nlo
+    if networkedLinkedObject and not nloList[id] then
+        nloList[id] = World.SpawnAsset(networkedLinkedObject, { position=pos, rotation=Rotation.New(0,0,angle) })
+    end
+
     local rawData = APIB.SerializeObjectToPlace(pos, angle, type, id)
     objs[parentId] = objs[parentId] or {}
     objs[parentId][id] = rawData
@@ -177,6 +184,7 @@ Events.Connect("SGrow", Grow)
 
 Events.Connect("SetObjMetadata", function(obj, id)
 	obj.serverUserData.id = id
+    obj.serverUserData.nlo = nloList[id]
 end)
 
 function LoadPreviousBlocks(player)
@@ -228,8 +236,11 @@ end)
 function RemoveStructure(obj, player)
     if not obj or not obj:IsValid() then return end
     if obj.parent.parent.name ~= "Rocks" and player and obj.parent.id ~= player.serverUserData.slot.staticFolderId then return end
-    objs[obj.parent.id][obj.serverUserData.id] = nil
-    objectsToRemove[obj.parent.id] = (objectsToRemove[obj.parent.id] or "").." "..obj.serverUserData.id
+    local objId = obj.serverUserData.id
+    objs[obj.parent.id][objId] = nil
+    local nlo = obj.serverUserData.nlo
+    if Object.IsValid(nlo) then nlo:Destroy() end
+    objectsToRemove[obj.parent.id] = (objectsToRemove[obj.parent.id] or "").." "..objId
     return true
 end
 Events.Connect("RemoveStructure", RemoveStructure)
@@ -267,9 +278,13 @@ function UnloadIsland(slot)
     end
     SaveIsland(player)
     slot.island:Destroy()
+	local group = World.FindObjectById(slot.staticFolderId)
+    if group.name == "Structures" then group = group.parent end
+    group:SetCustomProperty("Clear", not group:GetCustomProperty("Clear"))
     slot.island = nil
     slot.player = nil
     player.serverUserData.slot = nil
+
 
     placedObjects[player] = nil
 end
@@ -311,8 +326,8 @@ function UnlockNextIslandType(player, nextType)
         if not slot then return end
         UnloadIsland(slot)
         Task.Wait(1)
-        player.serverUserData.slot = slot
-        if slot == nil then return end
+        slot.player = player
+	    player.serverUserData.slot = slot
         LoadIsland(slot)
         Task.Wait(1)
         Events.Broadcast("TP", player, "own_island")

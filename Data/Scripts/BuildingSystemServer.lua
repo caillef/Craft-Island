@@ -114,7 +114,7 @@ function PlaceObject(pos, angle, type, parentId)
 	local mandatorySurface = objectData.buildConditions and objectData.buildConditions.mustBeBuiltOn
     if not parent.serverUserData.isLoading and mandatorySurface then
         local list = parent:GetChildren()
-        local block = GetStructureAtPos(list, pos, angle)
+        local block = GetStructureAtPosOfType(list, pos, angle, objectData.buildConditions.mustBeBuiltOn)
         if not block then
             Events.BroadcastToPlayer(player, "NeedSoil")
             return
@@ -129,10 +129,14 @@ function PlaceObject(pos, angle, type, parentId)
         nloList[id] = World.SpawnAsset(networkedLinkedObject, { position=pos, rotation=Rotation.New(0,0,angle) })
     end
 
-    local rawData = APIB.SerializeObjectToPlace(pos, angle, type, id)
+    if parent.serverUserData.slot then
+        pos = pos - parent.serverUserData.slot.pos
+    end
+
+    local rawData = APIBSerializer.SerializeWithId(pos, angle, type, id)
     objs[parentId] = objs[parentId] or {}
     objs[parentId][id] = rawData
-    objectsToSend[parentId] = (objectsToSend[parentId] or "").." "..rawData
+    objectsToSend[parentId] = (objectsToSend[parentId] or "")..rawData
     return true
 end
 Events.Connect("PlaceStructure", PlaceObject)
@@ -159,13 +163,16 @@ function OrientedToZeroPos(pos, angle)
 	return pos
 end
 
-function GetStructureAtPos(list, pos, angle)
+function GetStructureAtPosOfType(list, pos, angle, type)
     pos = OrientedToZeroPos(pos, angle)
     local x,y,z = math.floor(pos.x), math.floor(pos.y), math.floor(pos.z)
     for _,obj in ipairs(list) do
     	local tx,ty,tz=obj:GetWorldPosition().x,obj:GetWorldPosition().y,obj:GetWorldPosition().z
 		if math.ceil(tx) == x and math.ceil(ty) == y and math.ceil(tz) == z then
-			return obj
+            print(type, APIO.GetTypeFromTemplate(obj.sourceTemplateId))
+            if type == APIO.GetTypeFromTemplate(obj.sourceTemplateId) then
+                return obj
+            end
 		end
     end
     return nil
@@ -207,12 +214,10 @@ Task.Spawn(function()
 	            if group.name == "Structures" then group = group.parent end
 				local toSend = objectsToSend[key]
 				local chunked = false
-				if #objectsToSend[key] >= 4000 then
+				if #objectsToSend[key] > 15*250 then
 					chunked = true
-	                local i = math.min(#objectsToSend[key], 4000)
-	                while objectsToSend[key]:sub(i,i) ~= " " do i = i + 1 end
-	                toSend = objectsToSend[key]:sub(1, i)
-	                objectsToSend[key] = objectsToSend[key]:sub(i + 1,#objectsToSend[key])
+	                toSend = objectsToSend[key]:sub(1, 15*250)
+	                objectsToSend[key] = objectsToSend[key]:sub(15*250 + 1,#objectsToSend[key])
 				end
 				group:SetCustomProperty("SerializedObjects", toSend)
 				Task.Wait()
@@ -258,17 +263,20 @@ function LoadIsland(slot)
     end)
     slot.island = World.SpawnAsset(ISLANDS_TEMPLATE[player.serverUserData.islandType], { position = slot.pos, parent = ISLANDS })
     local parent = World.FindObjectById(slot.staticFolderId)
+    parent.parent:SetCustomProperty("IslandPos", slot.pos)
     parent.serverUserData.islandType = player.serverUserData.islandType
     parent.serverUserData.slot = slot
     LoadPreviousBlocks(player)
     -- Load other islands
-    for key, list in pairs(objs) do
-        if key ~= player.serverUserData.slot.staticFolderId then
-            for _, obj in pairs(list) do
-                objectsToSend[key] = (objectsToSend[key] or "").." "..obj
+    Task.Spawn(function()
+        for key, list in pairs(objs) do
+            if key ~= player.serverUserData.slot.staticFolderId then
+                for _, obj in pairs(list) do
+                    objectsToSend[key] = (objectsToSend[key] or "")..""..obj
+                end
             end
         end
-    end
+    end)
 end
 
 function UnloadIsland(slot)
@@ -279,6 +287,11 @@ function UnloadIsland(slot)
     SaveIsland(player)
     slot.island:Destroy()
 	local group = World.FindObjectById(slot.staticFolderId)
+    for _,obj in ipairs(group:GetChildren()) do
+        if Object.IsValid(obj.serverUserData.nlo) then
+            obj.serverUserData.nlo:Destroy()
+        end
+    end
     if group.name == "Structures" then group = group.parent end
     group:SetCustomProperty("Clear", not group:GetCustomProperty("Clear"))
     slot.island = nil

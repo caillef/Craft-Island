@@ -20561,8 +20561,8 @@ Objects {
     }
   }
   ParentId: 455578304736145521
-  ChildIds: 3263363061351523751
   ChildIds: 16375166676192963401
+  ChildIds: 3263363061351523751
   ChildIds: 15306060750349952409
   ChildIds: 15131830005465474002
   Collidable_v2 {
@@ -21742,113 +21742,6 @@ Objects {
   }
 }
 Objects {
-  Id: 16375166676192963401
-  Name: "BuildingSystemServer"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 13418653422050367841
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:InventoryScriptServer"
-      ObjectReference {
-        SelfId: 8227678740540710611
-      }
-    }
-    Overrides {
-      Name: "cs:SharedKeyIslands"
-      NetReference {
-        Key: "94aa09be828c4cb295ada6a9d891c2f8"
-        Type {
-          Value: "mc:enetreferencetype:sharedpersistence"
-        }
-      }
-    }
-    Overrides {
-      Name: "cs:StaticContexts"
-      ObjectReference {
-        SelfId: 3263363061351523751
-      }
-    }
-    Overrides {
-      Name: "cs:Islands"
-      ObjectReference {
-        SelfId: 10357142915619545493
-      }
-    }
-    Overrides {
-      Name: "cs:PlayerIsland"
-      AssetReference {
-        Id: 3526051123066352755
-      }
-    }
-    Overrides {
-      Name: "cs:PlayerIsland2"
-      AssetReference {
-        Id: 4829224692537125149
-      }
-    }
-    Overrides {
-      Name: "cs:PlayerIsland3"
-      AssetReference {
-        Id: 4792945804198263382
-      }
-    }
-    Overrides {
-      Name: "cs:PlayerIsland4"
-      AssetReference {
-        Id: 8839826875352274532
-      }
-    }
-    Overrides {
-      Name: "cs:Island1"
-      ObjectReference {
-        SelfId: 11272496647499688159
-      }
-    }
-    Overrides {
-      Name: "cs:Island2"
-      ObjectReference {
-        SelfId: 3976984475402983678
-      }
-    }
-    Overrides {
-      Name: "cs:Island3"
-      ObjectReference {
-        SelfId: 12684538162264260787
-      }
-    }
-    Overrides {
-      Name: "cs:Island4"
-      ObjectReference {
-        SelfId: 8260779866142393417
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 18313405971573075606
-    }
-  }
-}
-Objects {
   Id: 3263363061351523751
   Name: "StaticContexts"
   Transform {
@@ -21921,6 +21814,11 @@ Objects {
       Bool: false
     }
     Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
       Name: "cs:SerializedObjects:isrep"
       Bool: true
     }
@@ -21930,6 +21828,10 @@ Objects {
     }
     Overrides {
       Name: "cs:Clear:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
       Bool: true
     }
   }
@@ -22081,6 +21983,11 @@ Objects {
       Bool: false
     }
     Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
       Name: "cs:SerializedObjects:isrep"
       Bool: true
     }
@@ -22094,6 +22001,10 @@ Objects {
     }
     Overrides {
       Name: "cs:Clear:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
       Bool: true
     }
   }
@@ -22245,6 +22156,11 @@ Objects {
       Bool: false
     }
     Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
       Name: "cs:SerializedObjects:isrep"
       Bool: true
     }
@@ -22258,6 +22174,10 @@ Objects {
     }
     Overrides {
       Name: "cs:Clear:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
       Bool: true
     }
   }
@@ -22409,6 +22329,11 @@ Objects {
       Bool: false
     }
     Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
       Name: "cs:SerializedObjects:isrep"
       Bool: true
     }
@@ -22422,6 +22347,10 @@ Objects {
     }
     Overrides {
       Name: "cs:Clear:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
       Bool: true
     }
   }
@@ -22573,6 +22502,11 @@ Objects {
       Bool: false
     }
     Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
       Name: "cs:SerializedObjects:isrep"
       Bool: true
     }
@@ -22586,6 +22520,10 @@ Objects {
     }
     Overrides {
       Name: "cs:Clear:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
       Bool: true
     }
   }
@@ -22666,12 +22604,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:APIBuildingSystem"
-      AssetReference {
-        Id: 6603989912877416370
-      }
-    }
-    Overrides {
       Name: "cs:Constants"
       AssetReference {
         Id: 1824351816134648897
@@ -22693,6 +22625,113 @@ Objects {
   Script {
     ScriptAsset {
       Id: 14065502745493776999
+    }
+  }
+}
+Objects {
+  Id: 16375166676192963401
+  Name: "BuildingSystemServer"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13418653422050367841
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:InventoryScriptServer"
+      ObjectReference {
+        SelfId: 8227678740540710611
+      }
+    }
+    Overrides {
+      Name: "cs:SharedKeyIslands"
+      NetReference {
+        Key: "94aa09be828c4cb295ada6a9d891c2f8"
+        Type {
+          Value: "mc:enetreferencetype:sharedpersistence"
+        }
+      }
+    }
+    Overrides {
+      Name: "cs:StaticContexts"
+      ObjectReference {
+        SelfId: 3263363061351523751
+      }
+    }
+    Overrides {
+      Name: "cs:Islands"
+      ObjectReference {
+        SelfId: 10357142915619545493
+      }
+    }
+    Overrides {
+      Name: "cs:PlayerIsland"
+      AssetReference {
+        Id: 3526051123066352755
+      }
+    }
+    Overrides {
+      Name: "cs:PlayerIsland2"
+      AssetReference {
+        Id: 4829224692537125149
+      }
+    }
+    Overrides {
+      Name: "cs:PlayerIsland3"
+      AssetReference {
+        Id: 4792945804198263382
+      }
+    }
+    Overrides {
+      Name: "cs:PlayerIsland4"
+      AssetReference {
+        Id: 8839826875352274532
+      }
+    }
+    Overrides {
+      Name: "cs:Island1"
+      ObjectReference {
+        SelfId: 11272496647499688159
+      }
+    }
+    Overrides {
+      Name: "cs:Island2"
+      ObjectReference {
+        SelfId: 3976984475402983678
+      }
+    }
+    Overrides {
+      Name: "cs:Island3"
+      ObjectReference {
+        SelfId: 12684538162264260787
+      }
+    }
+    Overrides {
+      Name: "cs:Island4"
+      ObjectReference {
+        SelfId: 8260779866142393417
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 18313405971573075606
     }
   }
 }

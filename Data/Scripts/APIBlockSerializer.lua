@@ -61,6 +61,19 @@ function Block_Deserialize_v3(str, islandPos)
     }
 end
 
+function Block_SerializeWithId(p, a, t, id)
+    local serializeId = "00000000"..id
+    serializeId = serializeId:sub(#serializeId - 7, #serializeId)
+    return Block_Serialize_v3(p,a,t)..serializeId
+end
+
+function Block_DeserializeWithId(str, islandPos)
+    local data = Block_Deserialize_v3(str, islandPos)
+    local id = tonumber(str:sub(8,15))
+    data.id = id
+    return data
+end
+
 function getAlignedAngle(a)
     a = math.floor(a)
     while a < 0 do a = a + 360 end
@@ -129,6 +142,8 @@ end
 local APIBS = {
     Serialize = Block_Serialize_v3,
     Deserialize = Block_Deserialize_v3,
+    SerializeWithId = Block_SerializeWithId,
+    DeserializeWithId = Block_DeserializeWithId,
     SerializeList = Block_SerializeStructures,
     DeserializeList = Block_DeserializeStructures
 }

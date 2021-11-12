@@ -1,25 +1,28 @@
 local STATIC_CONTEXT = script.parent
-local APIB = require(script:GetCustomProperty("APIBuildingSystem"))
 local APIO = require(script:GetCustomProperty("APIObjects"))
 local STRUCTURES = STATIC_CONTEXT:FindChildByName("Structures")
+local APIBSerializer = require(script:GetCustomProperty("APIBlockSerializer"))
 
 local objList = {}
+local islandPos
 
 local function PlaceObject(position, angle, type, id)
-	if objList[id] then return end
-    local parent = STRUCTURES
     local muid = APIO.OBJECTS[type].templateMuid
-    local obj = World.SpawnAsset(muid, { position = position, rotation = Rotation.New(0, 0, angle), parent = parent })
+    local obj = World.SpawnAsset(muid, { position = position, rotation = Rotation.New(0, 0, angle), parent = STRUCTURES })
 	Events.Broadcast("SetObjMetadata", obj, id)
     objList[id] = obj
 end
 
 local function HandleAddObjects(value)
-	local blocks = { CoreString.Split(value, { delimiters={" "}, removeEmptyResults = true }) }
-	for _,b in ipairs(blocks) do
-		local data = APIB.DeserializeObjectToPlace(b)
+	if STRUCTURES.parent:GetCustomProperty("Owner") and not islandPos then
+		Task.Wait(0.1)
+	end
+	islandPos = islandPos or Vector3.ZERO
+	for i=1,#value,15 do
+		local b = value:sub(i, i + 14)
+		local data = APIBSerializer.DeserializeWithId(b, islandPos)
 		if not objList[data.id] then -- do nothing if already spawned
-			local pos = Vector3.New(data.x, data.y, data.z)
+			local pos = Vector3.New(data.pos.x, data.pos.y, data.pos.z)
 			PlaceObject(pos, data.angle, data.type, data.id)
 		end
 	end
@@ -43,16 +46,20 @@ function HandleRemoveObjects(value)
 end
 
 function Clear()
-	print("Clear")
 	for id,_ in pairs(objList) do
 		RemoveObject(id)
 	end
 end
 
+function SetIslandPos(pos)
+	islandPos = pos
+end
+
 local HANDLERS = {
 	SerializedObjects = HandleAddObjects,
 	ToRemoveObjectIds = HandleRemoveObjects,
-	Clear = Clear
+	Clear = Clear,
+	IslandPos = SetIslandPos
 }
 
 local function OnChangeProperty(obj, name)
@@ -62,3 +69,5 @@ local function OnChangeProperty(obj, name)
 	func(value)
 end
 STATIC_CONTEXT.customPropertyChangedEvent:Connect(OnChangeProperty)
+
+islandPos = STATIC_CONTEXT:GetCustomProperty("IslandPos")

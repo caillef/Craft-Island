@@ -30,6 +30,10 @@ local currentPreview
 local objectIndex
 local islandPos
 
+local islandLimit
+local minLimit
+local maxLimit
+
 function BuildSystem_Open()
     if buildmodeActivated then return end
     buildmodeActivated = true
@@ -103,12 +107,8 @@ function rotateObjectWithClick(pos, o)
 end
 
 function PlayerIsOnIsland()
-	while not PLAYER.clientUserData.islandType do Task.Wait() end
-    local limits = CONSTANTS.ISLAND_SIZES[PLAYER.clientUserData.islandType]
+	while not limits do Task.Wait() end
     local pos = PLAYER:GetWorldPosition()
-    local minLimit = islandPos + limits[1]
-    local maxLimit = islandPos + limits[2] + Vector3.ONE * APIB.WALL_SIZE
-
     return not (pos.x < minLimit.x or pos.x > maxLimit.x or pos.y < minLimit.y or pos.y > maxLimit.y)
 end
 
@@ -142,13 +142,12 @@ function Tick()
 
     local obj = APIO.OBJECTS[objectIndex]
     if obj.idName == "SOIL" or obj.idName == "SAPLING" or obj.idName == "WHEAT_SEEDS" or obj.idName == "BERRY_SPROUT" then -- only on ground
-        currentPreview.visibility = objPos.z ~= islandPos.z and Visibility.FORCE_OFF or Visibility.FORCE_ON 
+        currentPreview.visibility = objPos.z ~= islandPos.z and Visibility.FORCE_OFF or Visibility.FORCE_ON
     end
 
     local angle = APIB.GetAlignedAngle(o * 90 + rotateAngle * 90)
 	if currentPreview then
-        local islandLimit = CONSTANTS.ISLAND_SIZES[PLAYER.clientUserData.islandType]
-        if not APIB.IsValidPlaceToBuild(objPos, angle, islandPos, islandLimit) then
+        if not islandLimit or not APIB.IsValidPlaceToBuild(objPos, angle, islandPos, islandLimit) then
             currentPreview.visibility = Visibility.FORCE_OFF
             return
         end
@@ -251,10 +250,13 @@ Events.Connect("SelectStructure", function(id)
     SelectStructure(id)
 end)
 
-
 Events.Connect("OnPlayerInitialized", function(data)
     islandPos = data.islandPos
-    PLAYER.clientUserData.islandType = data.iType
+    local islandType = data.iType
+    islandLimit = CONSTANTS.ISLAND_SIZES[islandType]
+    minLimit = islandPos + islandLimit[1]
+    maxLimit = islandPos + islandLimit[2] + Vector3.ONE * APIB.WALL_SIZE
+
 end)
 
 Events.Connect("BSLimit", function()

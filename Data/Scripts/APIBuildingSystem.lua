@@ -22,22 +22,12 @@ end
 API.GetAlignedAngle = function(a)
     a = math.floor(a)
     while a < 0 do a = a + 360 end
-    while a >= 360 do a = a - 360 end
+    if a >= 360 then a = a % 360 end
     if a % 90 == 0 then return a end
     if a > 80 and a < 100 then return 90 end
     if a > 170 and a < 190 then return 180 end
     if a > 260 and a < 280 then return 270 end
     return 0
-end
-
-API.SerializeObjectToPlace = function(pos, angle, type, id)
-    return string.format("%d|%d|%d|%d|%d|%d",
-        math.floor(pos.x), math.floor(pos.y), math.floor(pos.z), angle, type, id)
-end
-
-API.DeserializeObjectToPlace = function(rawData)
-    local x,y,z,angle,type,id = CoreString.Split(rawData, { delimiters = { "|" } })
-    return { x=x, y=y, z=z, angle=tonumber(angle), type=tonumber(type), id=tonumber(id) }
 end
 
 return API

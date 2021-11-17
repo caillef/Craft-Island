@@ -224,8 +224,13 @@ function SetGISlotsState(indexState)
 end
 SetGISlotsState(nextIslandType)
 
-Events.Connect("UpdateNextIslandType", function(type)
-	nextIslandType = type
-	SetGISlotsState(nextIslandType)
-end)
-
+function OnPrivateNetworkedDataChanged(player, key)
+    if key == "islandType" then
+		nextIslandType = player:GetPrivateNetworkedData(key) + 1
+		SetGISlotsState(nextIslandType)
+    end
+end
+PLAYER.privateNetworkedDataChangedEvent:Connect(OnPrivateNetworkedDataChanged)
+for _,key in ipairs(PLAYER:GetPrivateNetworkedDataKeys()) do
+    OnPrivateNetworkedDataChanged(PLAYER, key)
+end

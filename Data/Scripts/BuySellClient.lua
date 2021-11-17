@@ -53,9 +53,18 @@ function CountItems(id)
 end
 
 local currentButton
-Events.Connect("Inv", function(inv)
+
+function LoadInv()
+	local inv = player:GetPrivateNetworkedData("Inv")
 	inventory = GetInventorySerializer().Deserialize(inv)
+end
+player.privateNetworkedDataChangedEvent:Connect(function(player, key)
+	if key ~= "Inv" then return end
+	LoadInv()
 end)
+for _,key in ipairs(player:GetPrivateNetworkedDataKeys()) do
+	if key == "Inv" then LoadInv() end
+end
 
 local buySellType = {
 	"BuySellBaker", -- 1
@@ -65,7 +74,7 @@ local buySellType = {
 	"BuySellDeadmau5" -- 5
 }
 
-for k,v in pairs(buySellType) do
+for k,v in ipairs(buySellType) do
 	Events.Connect("OpenUI"..v, function(id)
 		if not id then return end
 		isSetup = false

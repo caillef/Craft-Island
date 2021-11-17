@@ -1,5 +1,6 @@
 local loading = true
 
+local player = Game.GetLocalPlayer()
 local propAddItemPanel = script:GetCustomProperty("AddItemPanel"):WaitForObject()
 local propAddItemNotif = script:GetCustomProperty("AddItemNotif")
 
@@ -425,8 +426,16 @@ function OnFull()
 	full.text = fullMessage
 end
 
-function OnPrepareLoad(data)
-	OnLoad(data)
+function LoadInv()
+	local inventory = player:GetPrivateNetworkedData("Inv")
+	OnLoad(inventory)
+end
+player.privateNetworkedDataChangedEvent:Connect(function(player, key)
+	if key ~= "Inv" then return end
+	LoadInv()
+end)
+for _,key in ipairs(player:GetPrivateNetworkedDataKeys()) do
+	if key == "Inv" then LoadInv() end
 end
 
 p.bindingPressedEvent:Connect(OnPress)
@@ -434,7 +443,6 @@ Events.Connect("openInventory", function()
 	if open then return end
 	OnPress(nil, ability)
 end)
-Events.Connect("Inv", OnPrepareLoad)
 Events.Connect("inventoryFullEvent", OnFull)
 Events.Connect("requestInventoryAddEvent", OnAdd)
 Events.Connect("requestInventoryRemoveEvent", OnRemove)

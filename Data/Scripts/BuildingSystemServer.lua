@@ -5,7 +5,6 @@ local APIO = require(script:GetCustomProperty("APIObjects"))
 local APIBSerializer = require(script:GetCustomProperty("APIBlockSerializer"))
 local CONSTANTS = require(script:GetCustomProperty("Constants"))
 
-local placedObjects = {}
 local objs = {}
 
 local objectsToSend = {}
@@ -92,29 +91,24 @@ function PlaceObject(pos, angle, type, parentId)
     angle = APIB.GetAlignedAngle(angle)
     local parent = World.FindObjectById(parentId)
     if objectData.idName == "SOIL" then
-		pos = OrientedToZeroPos(pos, angle)
+		pos = APIB.OrientedToZeroPos(pos, angle)
 		angle = 0
 	end
 
     if parent.serverUserData.slot then
         local islandLimit = CONSTANTS.ISLAND_SIZES[parent.serverUserData.islandType]
-        if islandLimit and not APIB.IsValidPlaceToBuild(pos, angle, parent.serverUserData.slot.pos, islandLimit) then
+        if not APIB.IsPositionOnIsland(pos, angle, parent.serverUserData.slot.pos, islandLimit) then
            return
+        end
+        if not parent.serverUserData.isLoading and not APIB.IsSpotEmpty(pos, angle, objectData.metadata.structureType) then
+            return
         end
     end
 
-    --[[local placedTypedObjects = placedObjects[type] or {}
-    if placedTypedObjects[position.z] ~= nil and
-       placedTypedObjects[position.z][position.y] ~= nil and
-       placedTypedObjects[position.z][position.y][position.x] ~= nil and
-       placedTypedObjects[position.z][position.y][position.x][angle] ~= nil then
-        return false
-    end]]--
-
-	local mandatorySurface = objectData.buildConditions and objectData.buildConditions.mustBeBuiltOn
+	local mandatorySurface = objectData.metadata.mustBeBuiltOn
     if not parent.serverUserData.isLoading and mandatorySurface then
         local list = parent:GetChildren()
-        local block = GetStructureAtPosOfType(list, pos, angle, objectData.buildConditions.mustBeBuiltOn)
+        local block = GetStructureAtPosOfType(list, pos, angle, objectData.metadata.mustBeBuiltOn)
         if not block then
             Events.BroadcastToPlayer(player, "NeedSoil")
             return
@@ -124,7 +118,7 @@ function PlaceObject(pos, angle, type, parentId)
 
     local id = GetNextId()
 
-	local networkedLinkedObject = objectData.buildConditions and objectData.buildConditions.nlo
+	local networkedLinkedObject = objectData.metadata.nlo
     if networkedLinkedObject and not nloList[id] then
         nloList[id] = World.SpawnAsset(networkedLinkedObject, { position=pos, rotation=Rotation.New(0,0,angle) })
     end
@@ -141,30 +135,8 @@ function PlaceObject(pos, angle, type, parentId)
 end
 Events.Connect("PlaceStructure", PlaceObject)
 
-local TRANSFORM_TABLE = {
-    Vector3.New(0, 0, 0),
-    Vector3.New(0, -APIB.WALL_SIZE, 0),
-    Vector3.New(APIB.WALL_SIZE, -APIB.WALL_SIZE, 0),
-    Vector3.New(APIB.WALL_SIZE, 0, 0)
-}
-
--- Used to align object without orientation
-function OrientedToZeroPos(pos, angle)
-    angle = APIB.GetAlignedAngle(angle)
-	if angle == 90 then
-		pos = pos - TRANSFORM_TABLE[2]
-	end
-	if angle == 180 then
-		pos = pos - TRANSFORM_TABLE[3]
-	end
-	if angle == 270 then
-		pos = pos - TRANSFORM_TABLE[4]
-	end
-	return pos
-end
-
 function GetStructureAtPosOfType(list, pos, angle, type)
-    pos = OrientedToZeroPos(pos, angle)
+    pos = APIB.OrientedToZeroPos(pos, angle)
     local x,y,z = math.floor(pos.x), math.floor(pos.y), math.floor(pos.z)
     for _,obj in ipairs(list) do
     	local tx,ty,tz=obj:GetWorldPosition().x,obj:GetWorldPosition().y,obj:GetWorldPosition().z
@@ -191,6 +163,11 @@ Events.Connect("SGrow", Grow)
 
 Events.Connect("SetObjMetadata", function(obj, id)
 	obj.serverUserData.id = id
+    obj.serverUserData.cellId = APIB.GetCellId(obj:GetWorldPosition(), obj:GetWorldRotation().z)
+    obj.serverUserData.structureType = APIO.OBJECTS[APIO.GetTypeFromTemplate(obj.sourceTemplateId)].metadata.structureType
+    -- if obj.serverUserData.structureType == "wall" then
+    --     obj.serverUserData.wallId = APIB.GetWallId(obj:GetWorldPosition(), obj:GetWorldRotation().z)
+    -- end
     obj.serverUserData.nlo = nloList[id]
 end)
 
@@ -250,24 +227,17 @@ function RemoveStructure(obj, player)
 end
 Events.Connect("RemoveStructure", RemoveStructure)
 
-function LoadIsland(slot)
-    if not Object.IsValid(slot.player) then
-        error("LoadIsland: Player not valid")
-        return
-    end
-    local player = slot.player
-    Task.Spawn(function()
-        player.movementControlMode = MovementControlMode.NONE
-        Task.Wait(2)
-        player.movementControlMode = MovementControlMode.VIEW_RELATIVE
-    end)
-    slot.island = World.SpawnAsset(ISLANDS_TEMPLATE[player.serverUserData.islandType], { position = slot.pos, parent = ISLANDS })
-    local parent = World.FindObjectById(slot.staticFolderId)
-    parent.parent:SetCustomProperty("IslandPos", slot.pos)
-    parent.serverUserData.islandType = player.serverUserData.islandType
-    parent.serverUserData.slot = slot
-    LoadPreviousBlocks(player)
-    -- Load other islands
+local function GetSlotForPlayer(player)
+    if not Object.IsValid(player) then error("LoadIsland: Player not valid") return end
+    return player.serverUserData.slot
+end
+
+local function LoadIslandType(player)
+    local storage = Storage.GetPlayerData(player)
+    player.serverUserData.islandType = storage.islandType or 1
+end
+
+local function AsyncLoadOtherIslands(player)
     Task.Spawn(function()
         for key, list in pairs(objs) do
             if key ~= player.serverUserData.slot.staticFolderId then
@@ -279,43 +249,52 @@ function LoadIsland(slot)
     end)
 end
 
-function UnloadIsland(slot)
-    local player = slot.player
-    if not Object.IsValid(player) then
-        error("Player is invalid while unloading island.")
-    end
-    SaveIsland(player)
-    slot.island:Destroy()
-	local group = World.FindObjectById(slot.staticFolderId)
-    for _,obj in ipairs(group:GetChildren()) do
+function LoadIsland(player)
+    local slot = GetSlotForPlayer(player)
+    if not slot then return end
+
+    LoadIslandType(player)
+
+    slot.island = World.SpawnAsset(ISLANDS_TEMPLATE[player.serverUserData.islandType], { position = slot.pos, parent = ISLANDS })
+    local parent = World.FindObjectById(slot.staticFolderId)
+    parent.parent:SetCustomProperty("IslandPos", slot.pos)
+    parent.serverUserData.islandType = player.serverUserData.islandType
+    player:SetPrivateNetworkedData("islandType", player.serverUserData.islandType)
+    parent.serverUserData.slot = slot
+    player:SetPrivateNetworkedData("islandPos", slot.pos)
+
+    LoadPreviousBlocks(player)
+
+    AsyncLoadOtherIslands(player)
+end
+
+function DestroyNetworkedObjects(list)
+    for _,obj in ipairs(list) do
         if Object.IsValid(obj.serverUserData.nlo) then
             obj.serverUserData.nlo:Destroy()
         end
     end
+end
+
+function UnloadIsland(player)
+    local slot = GetSlotForPlayer(player)
+    if not slot then return end
+
+    SaveIsland(player)
+    slot.island:Destroy()
+	local group = World.FindObjectById(slot.staticFolderId)
+    DestroyNetworkedObjects(group:GetChildren())
     if group.name == "Structures" then group = group.parent end
     group:SetCustomProperty("Clear", not group:GetCustomProperty("Clear"))
     slot.island = nil
     slot.player = nil
     player.serverUserData.slot = nil
-
-
-    placedObjects[player] = nil
 end
 
-function OnInventoryReady(player)
-	while player.serverUserData.slot == nil do
-		Task.Wait(0.1)
-	end
-    LoadIsland(player.serverUserData.slot)
-    Task.Wait(1)
-    Events.Broadcast("TP", player, "own_island")
-    while player and player:IsValid() and Events.BroadcastToPlayer(player, "OnPlayerInitialized", {islandPos = player.serverUserData.slot.pos, iType= player.serverUserData.islandType }) ~= BroadcastEventResultCode.SUCCESS do
-        Task.Wait(1)
-    end
-    Events.BroadcastToPlayer(player, "UpdateNextIslandType", player.serverUserData.islandType + 1)
+function TeleportTo(player, destination)
+    Events.Broadcast("TP", player, destination)
 end
 
-Events.Connect("SInventoryReady", OnInventoryReady)
 Events.ConnectForPlayer("BSPS", BuildingSystem_OnPlaceStructure)
 
 print("Building Mode Activated for the server (need the same message for players)")
@@ -323,27 +302,25 @@ print("Building Mode Activated for the server (need the same message for players
 function UnlockNextIslandType(player, nextType)
     local currentType = player.serverUserData.islandType
     if currentType + 1 == nextType and player:GetResource("Gem") >= (nextType + 1) * 100 then
-        Events.Broadcast("TP", player, "main_island")
-        Task.Spawn(function()
-            player.movementControlMode = MovementControlMode.NONE
-            Task.Wait(3)
-            player.movementControlMode = MovementControlMode.VIEW_RELATIVE
-        end)
+        TeleportTo(player, "main_island")
+        player.movementControlMode = MovementControlMode.NONE
         Events.Broadcast("SGemAddForPlayer", player, -(nextType + 1) * 100)
-        Events.BroadcastToPlayer(player, "UpdateNextIslandType", nextType + 1)
         local storage = Storage.GetPlayerData(player)
         storage.islandType = nextType
-        player.serverUserData.islandType = storage.islandType
         Storage.SetPlayerData(player, storage)
-        local slot = player.serverUserData.slot
+        player.serverUserData.islandType = nextType
+        player:SetPrivateNetworkedData("islandType", player.serverUserData.islandType)
+
+        local slot = GetSlotForPlayer(player)
         if not slot then return end
-        UnloadIsland(slot)
+        UnloadIsland(player)
         Task.Wait(1)
         slot.player = player
 	    player.serverUserData.slot = slot
-        LoadIsland(slot)
+        LoadIsland(player)
         Task.Wait(1)
-        Events.Broadcast("TP", player, "own_island")
+        TeleportTo(player, "own_island")
+        player.movementControlMode = MovementControlMode.VIEW_RELATIVE
     end
 end
 Events.ConnectForPlayer("UnlockNextIsland", UnlockNextIslandType)
@@ -351,19 +328,13 @@ Events.ConnectForPlayer("UnlockNextIsland", UnlockNextIslandType)
 function OnPlayerLeft(player)
     local slot = player.serverUserData.slot
     if not slot then return end
-    UnloadIsland(slot)
+    UnloadIsland(player)
 end
 Game.playerLeftEvent:Connect(OnPlayerLeft)
 
 local function AssignNextSlot(player)
     for _,slot in pairs(playerSlots) do
         if slot.player == nil or not slot.player:IsValid() then
-            if Object.IsValid(slot.island) then
-                slot.island:Destroy()
-                for _,structure in ipairs(World.FindObjectById(slot.staticFolderId):GetChildren()) do
-                    structure:Destroy()
-                end
-            end
             slot.player = player
             player.serverUserData.slot = slot
             return slot
@@ -372,10 +343,16 @@ local function AssignNextSlot(player)
 end
 
 function OnPlayerJoined(player)
-    local storage = Storage.GetPlayerData(player)
-    player.serverUserData.islandType = storage.islandType or 1
-    Events.Broadcast("TP", player, "main_island")
+    player.serverUserData.isLoading = true
+    TeleportTo(player, "main_island")
+    player.movementControlMode = MovementControlMode.NONE
+
     AssignNextSlot(player)
+    LoadIsland(player)
+
+    TeleportTo(player, "own_island")
+    player.movementControlMode = MovementControlMode.VIEW_RELATIVE
+    player.serverUserData.isLoading = false
 end
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 

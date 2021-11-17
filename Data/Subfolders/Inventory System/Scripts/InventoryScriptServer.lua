@@ -107,10 +107,7 @@ function OnInventoryReady(player)
 	data[player] = GetInventorySerializer().Deserialize(inventory)
 	inventory = GetInventorySerializer().Serialize(data[player])
 	data[player] = GetInventorySerializer().Deserialize(inventory)
-	while player:IsValid() and Events.BroadcastToPlayer(player, "Inv", inventory) ~= BroadcastEventResultCode.SUCCESS do
-		Task.Wait(1)
-	end
-	Events.Broadcast("SInventoryReady", player)
+	player:SetPrivateNetworkedData("Inv", inventory)
 	GiveMandatoryItems(player)
 end
 

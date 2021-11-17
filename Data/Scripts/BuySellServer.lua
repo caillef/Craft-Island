@@ -28,9 +28,8 @@ Events.ConnectForPlayer("Buy", function(player, data)
     else
         --TODO: feedback not enough gold
     end
-    return
 end)
 
 Events.ConnectForPlayer("ReqInv", function(player)
-    Events.BroadcastToPlayer(player, "Inv", INVENTORY.GetInventory(player))
+	player:SetPrivateNetworkedData("Inv", INVENTORY.GetInventory(player))
 end)

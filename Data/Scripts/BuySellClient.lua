@@ -3,7 +3,6 @@ local propCloseButton = script:GetCustomProperty("CloseButton"):WaitForObject()
 local propList = script:GetCustomProperty("List"):WaitForObject()
 local propCraftInfo = script:GetCustomProperty("Info"):WaitForObject()
 local propQuantityController = script:GetCustomProperty("QuantityController"):WaitForObject()
-local DEADMAU5_TEXT = script:GetCustomProperty("Deadmau5Text"):WaitForObject()
 
 local _inventorySerializer
 function GetInventorySerializer()
@@ -35,7 +34,6 @@ function openUI(id, st)
 	UI.SetCursorVisible(true)
 	UI.SetCanCursorInteractWithUI(true)
 	sellingType = st
-	DEADMAU5_TEXT.visibility = st == 5 and Visibility.INHERIT or Visibility.FORCE_OFF
 	Events.BroadcastToServer("ReqInv")
 	SetupUI(id)	
 end
@@ -70,8 +68,7 @@ local buySellType = {
 	"BuySellBaker", -- 1
 	"BuySellSeeds", -- 2
 	"BuySellFarmer", -- 3
-	"BuySellMaterials", -- 4
-	"BuySellDeadmau5" -- 5
+	"BuySellMaterials" -- 4
 }
 
 for k,v in ipairs(buySellType) do

@@ -238,9 +238,6 @@ _G["caillef.craftisland.buysell"] = {
     { -- 4 for material
         { SELL, "STONE", 2 },
         { SELL, "WOOD_LOG", 2 },
-    },
-    { -- 5 for deadmau5
-        { SELL, "PUMPKIN", 50 }
     }
 }
 

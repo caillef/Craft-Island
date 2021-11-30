@@ -35,7 +35,7 @@ local types = {script.parent.parent.parent:GetCustomProperty("Type1"), script.pa
 buttons[28] = slots[1]
 buttons[29] = slots[2]
 
-local lastSelection
+local lastSelection = -1
 local hoveredSlotIndex
 
 local notifications = {}
@@ -362,6 +362,7 @@ function Select(pickedIndex)
 	end
 
 	lastSelection = pickedIndex
+	if not buttons[pickedIndex] then return end
 	local it = GetItem(buttons[pickedIndex])
 	while Events.BroadcastToServer("inventoryEquipEvent", p, pickedIndex, it and it:GetCustomProperty("Equipment") or nil) ~= BroadcastEventResultCode.SUCCESS do
 		Task.Wait(1)
@@ -428,7 +429,9 @@ end
 
 function LoadInv()
 	local inventory = player:GetPrivateNetworkedData("Inv")
-	OnLoad(inventory)
+	if inventory then
+		OnLoad(inventory)
+	end
 end
 player.privateNetworkedDataChangedEvent:Connect(function(player, key)
 	if key ~= "Inv" then return end
@@ -444,7 +447,13 @@ Events.Connect("openInventory", function()
 	OnPress(nil, ability)
 end)
 Events.Connect("inventoryFullEvent", OnFull)
-Events.Connect("requestInventoryAddEvent", OnAdd)
+function OnPrivateNetworkedDataChanged(player, key)
+	local value = player:GetPrivateNetworkedData(key)
+	if key == "requestInventoryAddEvent" then
+		OnAdd(value[1], value[2])
+	end
+end
+player.privateNetworkedDataChangedEvent:Connect(OnPrivateNetworkedDataChanged)
 Events.Connect("requestInventoryRemoveEvent", OnRemove)
 for i = 1, #buttons do
 	iList[buttons[i]] = i

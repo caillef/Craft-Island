@@ -63,12 +63,8 @@ Events.Connect("TrackAction", function(data)
 			name = name:sub(1, #name - 1)
 		end
 		local name = mysplit(name, ";;")[1]..tostring(target_qty)..mysplit(name, ";;")[2]
-		Events.BroadcastToPlayer(data.p, "AchGet", name)
-		if data.t == 19 then
-			data.p:GrantRewardPoints(500, "Deadmau5 event")
-		else
-			data.p:GrantRewardPoints(current_achievement.t * 100, "Achievement")
-		end
+		data.p:SetPrivateNetworkedData("AchGet", name)
+		data.p:GrantRewardPoints(current_achievement.t * 100, "Achievement")
 		SetAchievementStatus(storage, data.t, current_achievement.t, "1")
 		current_achievement.t = current_achievement.t + 1
 	end

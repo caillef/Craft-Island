@@ -78,7 +78,6 @@ Objects {
   }
   ParentId: 4781671109827199097
   ChildIds: 4195776345147764360
-  ChildIds: 125907165119434047
   ChildIds: 8443632748911318124
   ChildIds: 5196531745169347142
   ChildIds: 17132296093532618721
@@ -1173,38 +1172,6 @@ Objects {
   }
 }
 Objects {
-  Id: 125907165119434047
-  Name: "InventoryManager"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 12243267191862395269
-  UnregisteredParameters {
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 5377384609381946468
-    }
-  }
-}
-Objects {
   Id: 4195776345147764360
   Name: "OBJECTS"
   Transform {
@@ -1300,12 +1267,12 @@ Objects {
   Name: "AnnounceBoard"
   Transform {
     Location {
-      X: -1015
-      Y: 310
-      Z: 2185
+      X: 1388.67993
+      Y: 814.981445
+      Z: 2192.83618
     }
     Rotation {
-      Yaw: -5.00000238
+      Yaw: -100.158752
     }
     Scale {
       X: 1

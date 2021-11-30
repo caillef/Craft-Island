@@ -129,7 +129,8 @@ end
 
 local function IsOverlappingWithObject(pos, angle, structureType, other)
 	local userData = Environment.IsServer() and "serverUserData" or "clientUserData"
-    while other[userData].structureType == nil do Task.Wait() end
+    while other:IsValid() and other[userData].structureType == nil do Task.Wait() end
+	if not other:IsValid() then return end
 
     local cellId = API.GetCellId(pos, angle)
     if structureType == "wall" then
@@ -147,6 +148,7 @@ local function IsOverlappingWithObject(pos, angle, structureType, other)
 end
 
 function API.IsSpotEmpty(pos, angle, structureType)
+	--[[
     local hitResults = World.SpherecastAll(pos, pos + Vector3.UP, 500)
     for _,hitResult in ipairs(hitResults) do
         if hitResult then
@@ -161,6 +163,7 @@ function API.IsSpotEmpty(pos, angle, structureType)
             end
         end
     end
+    ]]--
     return true
 end
 

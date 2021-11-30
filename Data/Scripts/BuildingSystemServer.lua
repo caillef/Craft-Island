@@ -8,7 +8,6 @@ local CONSTANTS = require(script:GetCustomProperty("Constants"))
 local objs = {}
 
 local objectsToSend = {}
-local objectsToRemove = {}
 
 local ISLANDS_TEMPLATE = {
     script:GetCustomProperty("PlayerIsland"),
@@ -16,6 +15,7 @@ local ISLANDS_TEMPLATE = {
     script:GetCustomProperty("PlayerIsland3"),
     script:GetCustomProperty("PlayerIsland4")
 }
+
 local ISLANDS = script:GetCustomProperty("Islands"):WaitForObject()
 
 local NB_MAX_PLAYERS = 4
@@ -130,7 +130,7 @@ function PlaceObject(pos, angle, type, parentId)
     local rawData = APIBSerializer.SerializeWithId(pos, angle, type, id)
     objs[parentId] = objs[parentId] or {}
     objs[parentId][id] = rawData
-    objectsToSend[parentId] = (objectsToSend[parentId] or "")..rawData
+    Events.Broadcast("PlaceObject", parentId, pos, angle, type, id, parent.serverUserData.slot and parent.serverUserData.slot.pos)
     return true
 end
 Events.Connect("PlaceStructure", PlaceObject)
@@ -178,42 +178,10 @@ function LoadPreviousBlocks(player)
     local blocks = APIBSerializer.DeserializeList(structures, slot.pos)
     for k,data in pairs(blocks) do
         PlaceObject(data.pos, data.angle, data.type, slot.staticFolderId)
-        if k % 500 == 0 then Task.Wait() end
+        if k % 250 == 0 then Task.Wait() end
     end
     slot.isLoading = false
 end
-
-Task.Spawn(function()
-    while true do
-        for key,data in pairs(objectsToSend) do
-            if data and #data > 0 then
-	            local group = World.FindObjectById(key)
-	            if group.name == "Structures" then group = group.parent end
-				local toSend = objectsToSend[key]
-				local chunked = false
-				if #objectsToSend[key] > 15*250 then
-					chunked = true
-	                toSend = objectsToSend[key]:sub(1, 15*250)
-	                objectsToSend[key] = objectsToSend[key]:sub(15*250 + 1,#objectsToSend[key])
-				end
-				group:SetCustomProperty("SerializedObjects", toSend)
-				Task.Wait()
-				if not chunked then
-			        objectsToSend[key] = ""
-				end
-            end
-        end
-        for key,data in pairs(objectsToRemove) do
-            if data and #data > 0 then
-                local group = World.FindObjectById(key)
-	            if group.name == "Structures" then group = group.parent end
-	            group:SetCustomProperty("ToRemoveObjectIds", objectsToRemove[key])
-		        objectsToRemove[key] = ""
-            end
-        end
-        Task.Wait(0.25)
-    end
-end)
 
 function RemoveStructure(obj, player)
     if not obj or not obj:IsValid() then return end
@@ -222,7 +190,7 @@ function RemoveStructure(obj, player)
     objs[obj.parent.id][objId] = nil
     local nlo = obj.serverUserData.nlo
     if Object.IsValid(nlo) then nlo:Destroy() end
-    objectsToRemove[obj.parent.id] = (objectsToRemove[obj.parent.id] or "").." "..objId
+    obj:Destroy()
     return true
 end
 Events.Connect("RemoveStructure", RemoveStructure)
@@ -235,18 +203,6 @@ end
 local function LoadIslandType(player)
     local storage = Storage.GetPlayerData(player)
     player.serverUserData.islandType = storage.islandType or 1
-end
-
-local function AsyncLoadOtherIslands(player)
-    Task.Spawn(function()
-        for key, list in pairs(objs) do
-            if key ~= player.serverUserData.slot.staticFolderId then
-                for _, obj in pairs(list) do
-                    objectsToSend[key] = (objectsToSend[key] or "")..""..obj
-                end
-            end
-        end
-    end)
 end
 
 function LoadIsland(player)
@@ -264,8 +220,6 @@ function LoadIsland(player)
     player:SetPrivateNetworkedData("islandPos", slot.pos)
 
     LoadPreviousBlocks(player)
-
-    AsyncLoadOtherIslands(player)
 end
 
 function DestroyNetworkedObjects(list)
@@ -285,7 +239,7 @@ function UnloadIsland(player)
 	local group = World.FindObjectById(slot.staticFolderId)
     DestroyNetworkedObjects(group:GetChildren())
     if group.name == "Structures" then group = group.parent end
-    group:SetCustomProperty("Clear", not group:GetCustomProperty("Clear"))
+    group:FindDescendantByType("Script").context.Clear()
     slot.island = nil
     slot.player = nil
     player.serverUserData.slot = nil

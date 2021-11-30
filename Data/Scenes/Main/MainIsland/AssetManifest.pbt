@@ -98,24 +98,6 @@ Assets {
   }
 }
 Assets {
-  Id: 11978884787975767643
-  Name: "Human Guy 1"
-  PlatformAssetType: 17
-  PrimaryAsset {
-    AssetType: "AnimatedMeshAssetRef"
-    AssetId: "npc_human_guy_basic_001_ref"
-  }
-}
-Assets {
-  Id: 10872539116021889379
-  Name: "Organic - Food - Pumpkin 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_org_food_pumpkin_001_ref"
-  }
-}
-Assets {
   Id: 10795596082366365410
   Name: "Decal Stains Round 01"
   PlatformAssetType: 14
@@ -260,15 +242,6 @@ Assets {
   }
 }
 Assets {
-  Id: 3920233356630256154
-  Name: "Organic - Food - Pumpkin 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_org_food_pumpkin_002_ref"
-  }
-}
-Assets {
   Id: 3902767697519824467
   Name: "Cube - Polished"
   PlatformAssetType: 1
@@ -356,15 +329,6 @@ Assets {
   PrimaryAsset {
     AssetType: "VfxBlueprintAssetRef"
     AssetId: "fxbp_torch_fire"
-  }
-}
-Assets {
-  Id: 543664767796887936
-  Name: "Organic - Food - Pumpkin 03"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_org_food_pumpkin_003_ref"
   }
 }
 Assets {

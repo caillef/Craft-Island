@@ -88,9 +88,7 @@ function Add(player, d)
 	end
 
 	data[player][ii] = { id=item.id, qty=qty }
-	while player:IsValid() and Events.BroadcastToPlayer(player, "requestInventoryAddEvent", data[player][ii], ii) ~= BroadcastEventResultCode.SUCCESS do
-		Task.Wait(1)
-	end
+	player:SetPrivateNetworkedData("requestInventoryAddEvent", { data[player][ii], ii })
 
 	if excess and excess > 0 then
 		d.qty = excess

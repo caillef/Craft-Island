@@ -2,9 +2,12 @@ local propUIPanel = script:GetCustomProperty("UIPanel"):WaitForObject()
 
 local notifs = {}
 
-Events.Connect("AchGet", function(description)
+local PLAYER = Game.GetLocalPlayer()
+
+PLAYER.privateNetworkedDataChangedEvent:Connect(function(p, key)
+	if key ~= "AchGet" then return end
 	local obj = World.SpawnAsset("2E17B41F19A41C4F:AchievementNotif", { parent = propUIPanel })
-	obj:FindChildByName("Description").text = description
+	obj:FindChildByName("Description").text = PLAYER:GetPrivateNetworkedData("AchGet")
 	table.insert(notifs, obj)
 end)
 

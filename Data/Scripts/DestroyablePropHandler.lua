@@ -45,6 +45,7 @@ function OnHit(data)
     end
 
     if prop.serverUserData.HP > 0 then return end
+    if prop.parent.parent.name ~= "Rocks" and player and prop.parent.id ~= player.serverUserData.slot.staticFolderId then return end
     if propItemId then
         if propItemId == "BERRY" then
             if math.random() < 0.05 then
@@ -70,13 +71,12 @@ function OnHit(data)
     if prop.sourceTemplateId == "2C9DA5AC47D87B71" then -- Tree
         Events.Broadcast("TrackAction", {p=player, t=12, qty=1})
     end
+    local pos = prop:GetWorldPosition()
+    local angle = prop:GetWorldRotation().z
     Events.Broadcast("RemoveStructure", prop, player)
 
     -- Check if not an harvest trigger
     if not data.h then return end
-
-    local pos = prop:GetWorldPosition()
-    local angle = prop:GetWorldRotation().z
     Events.Broadcast("PlaceStructure", pos, angle, propItemId == "BERRY" and 26 or 30, player.serverUserData.slot.staticFolderId)
 end
 Events.Connect("H", OnHit)

@@ -16,9 +16,8 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 8275335504246554392
         ChildIds: 11207327510550510417
-        ChildIds: 15554975574754611649
+        ChildIds: 18379834150371753307
         UnregisteredParameters {
           Overrides {
             Name: "cs:HP"
@@ -50,54 +49,6 @@ Assets {
         Folder {
           IsFilePartition: true
           FilePartitionName: "BS_Built_Pumpkin"
-        }
-      }
-      Objects {
-        Id: 8275335504246554392
-        Name: "Bush Leafy Low 01"
-        Transform {
-          Location {
-            X: 100
-            Y: -100
-            Z: -5.1753006
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.2267046
-            Y: 1.2267046
-            Z: 1.6645596
-          }
-        }
-        ParentId: 7535778860095042915
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 14367883082311123827
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
         }
       }
       Objects {
@@ -149,13 +100,13 @@ Assets {
         }
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
+          Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:inheritfromparent"
         }
         CoreMesh {
           MeshAsset {
@@ -172,8 +123,8 @@ Assets {
         }
       }
       Objects {
-        Id: 15554975574754611649
-        Name: "Organic - Food - Pumpkin 03"
+        Id: 18379834150371753307
+        Name: "Geo"
         Transform {
           Location {
             X: 100
@@ -183,12 +134,92 @@ Assets {
           Rotation {
           }
           Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7535778860095042915
+        ChildIds: 8275335504246554392
+        ChildIds: 15554975574754611649
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 8275335504246554392
+        Name: "Bush Leafy Low 01"
+        Transform {
+          Location {
+            Z: 7.45163536
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.2267046
+            Y: 1.2267046
+            Z: 1.6645596
+          }
+        }
+        ParentId: 18379834150371753307
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 14367883082311123827
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 15554975574754611649
+        Name: "Organic - Food - Pumpkin 03"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
             X: 0.850022793
             Y: 0.850022793
             Z: 0.850022793
           }
         }
-        ParentId: 7535778860095042915
+        ParentId: 18379834150371753307
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -221,15 +252,6 @@ Assets {
       }
     }
     Assets {
-      Id: 14367883082311123827
-      Name: "Bush Leafy Low 01"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_foliage_gen_leafy_bush_002"
-      }
-    }
-    Assets {
       Id: 10888788159873929006
       Name: "Craftsman Floor 01 4m x 4m"
       PlatformAssetType: 1
@@ -245,6 +267,15 @@ Assets {
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "dirt_001"
+      }
+    }
+    Assets {
+      Id: 14367883082311123827
+      Name: "Bush Leafy Low 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_foliage_gen_leafy_bush_002"
       }
     }
     Assets {

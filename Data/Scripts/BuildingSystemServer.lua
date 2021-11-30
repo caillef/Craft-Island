@@ -1,4 +1,4 @@
-﻿local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
+local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
 local propSharedKeyIslands = script:GetCustomProperty("SharedKeyIslands")
 local APIB = require(script:GetCustomProperty("APIBuildingSystem"))
 local APIO = require(script:GetCustomProperty("APIObjects"))
@@ -217,6 +217,7 @@ function LoadIsland(player)
     parent.serverUserData.islandType = player.serverUserData.islandType
     player:SetPrivateNetworkedData("islandType", player.serverUserData.islandType)
     parent.serverUserData.slot = slot
+    player.serverUserData.slot = slot
     player:SetPrivateNetworkedData("islandPos", slot.pos)
 
     LoadPreviousBlocks(player)
@@ -239,7 +240,7 @@ function UnloadIsland(player)
 	local group = World.FindObjectById(slot.staticFolderId)
     DestroyNetworkedObjects(group:GetChildren())
     if group.name == "Structures" then group = group.parent end
-    group:FindDescendantByType("Script").context.Clear()
+    group:FindDescendantByName("ObjectHandler").context.Clear()
     slot.island = nil
     slot.player = nil
     player.serverUserData.slot = nil

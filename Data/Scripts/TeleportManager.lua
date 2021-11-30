@@ -37,18 +37,24 @@ destinations = {
 }
 Events.Connect("TP", TeleportPlayerTo)
 
-local teleportAllowLists = {}
 Events.ConnectForPlayer("AuthTP", function(player, other)
     if not player:IsValid() then return end
     if other == player.name then return end
-    teleportAllowLists[player.name] = teleportAllowLists[player.name] or {}
-    table.insert(teleportAllowLists[player.name], other)
+    player.serverUserData.teleportAllowLists = player.serverUserData.teleportAllowLists or {}
+    table.insert(player.serverUserData.teleportAllowLists, other)
 end)
 
-Events.ConnectForPlayer("ReqTP", function(player, other)
+function GetPlayerByName(name)
+    for _,p in ipairs(Game.GetPlayers()) do
+        if name == p.name then return p end
+    end
+end
+
+Events.ConnectForPlayer("ReqTP", function(player, otherName)
     if not player:IsValid() then return end
-    if other == nil or teleportAllowLists[other] == nil then return end
-    for _,p in pairs(teleportAllowLists[other]) do
+    local other = GetPlayerByName(otherName)
+    if other == nil then return end
+    for _,p in pairs(other.serverUserData.teleportAllowLists) do
         if p == player.name then
             local slot = other.serverUserData.slot
             if slot then
@@ -58,19 +64,4 @@ Events.ConnectForPlayer("ReqTP", function(player, other)
         end
     end
     print("Not allowed")
-    -- Not allowed
-    return
-end)
-
-Game.playerLeftEvent:Connect(function(player)
-    if not player:IsValid() then return end
-    for n,list in pairs(teleportAllowLists) do
-        for _,pname in ipairs(list) do
-            if pname == player.name then
-                print("Removed player from allow list")
-                table.remove(teleportAllowLists[n], k)
-            end
-        end
-    end
-    teleportAllowLists[player] = nil
 end)

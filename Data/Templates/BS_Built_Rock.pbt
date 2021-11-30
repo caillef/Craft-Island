@@ -18,7 +18,6 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 3042707073966499642
         ChildIds: 3353948417995451109
-        ChildIds: 15132059030894101674
         UnregisteredParameters {
           Overrides {
             Name: "cs:HP"
@@ -131,61 +130,6 @@ Assets {
               LinearDamping: 0.01
             }
             BoundsScale: 1
-          }
-        }
-      }
-      Objects {
-        Id: 15132059030894101674
-        Name: "DestroyableProp"
-        Transform {
-          Location {
-            X: 100
-            Y: -100
-            Z: 26.9047852
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.2
-            Y: 0.2
-            Z: 0.2
-          }
-        }
-        ParentId: 13326456227818208202
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:HP"
-            Int: 2
-          }
-          Overrides {
-            Name: "cs:ItemUIQty"
-            Vector2 {
-              X: 2
-              Y: 4
-            }
-          }
-          Overrides {
-            Name: "cs:Material"
-            Int: 0
-          }
-          Overrides {
-            Name: "cs:ItemId"
-            String: "STONE"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15497607201579666542
           }
         }
       }

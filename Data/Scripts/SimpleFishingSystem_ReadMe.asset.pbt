@@ -3,6 +3,8 @@ Assets {
   Name: "SimpleFishingSystem_ReadMe"
   PlatformAssetType: 3
   TextAsset {
+    CustomParameters {
+    }
   }
   SerializationVersion: 101
 }

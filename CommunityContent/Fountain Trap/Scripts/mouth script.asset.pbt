@@ -3,6 +3,8 @@ Assets {
   Name: "mouth script"
   PlatformAssetType: 3
   TextAsset {
+    CustomParameters {
+    }
   }
   SerializationVersion: 101
 }

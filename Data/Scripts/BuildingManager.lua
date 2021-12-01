@@ -1,4 +1,4 @@
-local CONSTANTS = require(script:GetCustomProperty("Constants"))
+﻿local CONSTANTS = require(script:GetCustomProperty("Constants"))
 local APIB = require(script:GetCustomProperty("APIBuildingSystem"))
 local APIO = require(script:GetCustomProperty("APIObjects"))
 local APIBSerializer = require(script:GetCustomProperty("APIBlockSerializer"))
@@ -110,9 +110,7 @@ function OnBindingReleased(_, actionName)
             end
             local data = APIBSerializer.Serialize(currentPreview:GetWorldPosition() - islandPos, currentPreview:GetRotation().z, obj.id)
             SpawnFakeObject(currentPreview.sourceTemplateId) -- fix to spawn object instantly
-            while Events.BroadcastToServer("BSPS", data) ~= BroadcastEventResultCode.SUCCESS do -- BuildingSystemPlaceStructure (BuildingSystemServer.lua)
-                Task.Wait(1)
-            end
+            Events.BroadcastToServer("BSPS", data)
         end
     end
 end

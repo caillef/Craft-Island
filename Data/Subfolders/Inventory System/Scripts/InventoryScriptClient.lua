@@ -364,7 +364,7 @@ function Select(pickedIndex)
 	lastSelection = pickedIndex
 	if not buttons[pickedIndex] then return end
 	local it = GetItem(buttons[pickedIndex])
-	while Events.BroadcastToServer("inventoryEquipEvent", p, pickedIndex, it and it:GetCustomProperty("Equipment") or nil) ~= BroadcastEventResultCode.SUCCESS do
+	while Events.BroadcastToServer("inventoryEquipEvent", p, pickedIndex, it and it:GetCustomProperty("Equipment")) ~= BroadcastEventResultCode.SUCCESS do
 		Task.Wait(1)
 	end
 	if it then

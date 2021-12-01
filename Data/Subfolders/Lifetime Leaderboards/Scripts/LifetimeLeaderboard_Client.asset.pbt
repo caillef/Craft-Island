@@ -3,6 +3,8 @@ Assets {
   Name: "LifetimeLeaderboard_Client"
   PlatformAssetType: 3
   TextAsset {
+    CustomParameters {
+    }
   }
   SerializationVersion: 101
 }

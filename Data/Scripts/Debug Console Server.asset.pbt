@@ -3,6 +3,8 @@ Assets {
   Name: "Debug Console Server"
   PlatformAssetType: 3
   TextAsset {
+    CustomParameters {
+    }
   }
   SerializationVersion: 101
 }

@@ -3,6 +3,8 @@ Assets {
   Name: "VoxelMK1ReadMe"
   PlatformAssetType: 3
   TextAsset {
+    CustomParameters {
+    }
   }
   SerializationVersion: 101
 }

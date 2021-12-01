@@ -5,10 +5,6 @@ local APIO = require(script:GetCustomProperty("APIObjects"))
 local APIBSerializer = require(script:GetCustomProperty("APIBlockSerializer"))
 local CONSTANTS = require(script:GetCustomProperty("Constants"))
 
-local objs = {}
-
-local objectsToSend = {}
-
 local ISLANDS_TEMPLATE = {
     script:GetCustomProperty("PlayerIsland"),
     script:GetCustomProperty("PlayerIsland2"),
@@ -36,7 +32,7 @@ local function initPlayerSpots()
     for i=1,NB_MAX_PLAYERS do
         playerSlots[i] = {
             pos = GetSpawnWorldPosition(i),
-            staticFolderId = script:GetCustomProperty("Island"..i):WaitForObject():GetCustomProperty("Structures"):WaitForObject().id,
+            staticFolderId = script:GetCustomProperty("Island"..i):WaitForObject().id,
             player = nil,
             island = nil
         }
@@ -61,6 +57,36 @@ function SaveIsland(player)
     local list = World.FindObjectById(slot.staticFolderId):GetChildren()
     storage.pBlocks = APIBSerializer.SerializeList(list, slot.pos)
     Storage.SetSharedPlayerData(propSharedKeyIslands, player, storage)
+end
+
+local objList = {}
+
+local function PlaceObjectHandler(position, angle, type, id, islandPos, parent)
+    local muid = APIO.OBJECTS[type].templateMuid
+    islandPos = islandPos or Vector3.ZERO
+	position = position + islandPos
+
+    local obj = parent:SpawnSharedAsset(muid, { position = position, rotation = Rotation.New(0, 0, angle) })
+	SetObjMetadata(obj, id)
+	objList[parent.id] = objList[parent.id] or {}
+    objList[parent.id][id] = obj
+    objList[id] = obj
+end
+Events.Connect("PlaceObject", PlaceObjectHandler)
+
+local function RemoveObjectHandler(id)
+    local obj = objList[id]
+    if not Object.IsValid(obj) then return end
+    objList[obj.parent.id][id] = nil
+    objList[id] = nil
+    obj.parent:DestroySharedAsset(obj)
+end
+
+function Clear(parentId)
+	if not objList[parentId] then return end
+	for id,_ in pairs(objList[parentId]) do
+		RemoveObjectHandler(id)
+	end
 end
 
 function BuildingSystem_OnPlaceStructure(player, serializedBlock)
@@ -126,11 +152,7 @@ function PlaceObject(pos, angle, type, parentId)
     if parent.serverUserData.slot then
         pos = pos - parent.serverUserData.slot.pos
     end
-
-    local rawData = APIBSerializer.SerializeWithId(pos, angle, type, id)
-    objs[parentId] = objs[parentId] or {}
-    objs[parentId][id] = rawData
-    Events.Broadcast("PlaceObject", parentId, pos, angle, type, id, parent.serverUserData.slot and parent.serverUserData.slot.pos)
+    Events.Broadcast("PlaceObject", pos, angle, type, id, parent.serverUserData.slot and parent.serverUserData.slot.pos, parent)
     return true
 end
 Events.Connect("PlaceStructure", PlaceObject)
@@ -140,12 +162,10 @@ function GetStructureAtPosOfType(list, pos, angle, type)
     local x,y,z = math.floor(pos.x), math.floor(pos.y), math.floor(pos.z)
     for _,obj in ipairs(list) do
     	local tx,ty,tz=obj:GetWorldPosition().x,obj:GetWorldPosition().y,obj:GetWorldPosition().z
-		if math.ceil(tx) == x and math.ceil(ty) == y and math.ceil(tz) == z then
-            print(type, APIO.GetTypeFromTemplate(obj.sourceTemplateId))
-            if type == APIO.GetTypeFromTemplate(obj.sourceTemplateId) then
-                return obj
-            end
-		end
+		if math.ceil(tx) == x and math.ceil(ty) == y and math.ceil(tz) == z and
+            type == APIO.GetTypeFromTemplate(obj.sourceTemplateId) then
+            return obj
+        end
     end
     return nil
 end
@@ -161,7 +181,7 @@ function Grow(objReplaced, newIdName)
 end
 Events.Connect("SGrow", Grow)
 
-Events.Connect("SetObjMetadata", function(obj, id)
+function SetObjMetadata(obj, id)
 	obj.serverUserData.id = id
     obj.serverUserData.cellId = APIB.GetCellId(obj:GetWorldPosition(), obj:GetWorldRotation().z)
     obj.serverUserData.structureType = APIO.OBJECTS[APIO.GetTypeFromTemplate(obj.sourceTemplateId)].metadata.structureType
@@ -169,7 +189,7 @@ Events.Connect("SetObjMetadata", function(obj, id)
     --     obj.serverUserData.wallId = APIB.GetWallId(obj:GetWorldPosition(), obj:GetWorldRotation().z)
     -- end
     obj.serverUserData.nlo = nloList[id]
-end)
+end
 
 function LoadPreviousBlocks(player)
     local slot = player.serverUserData.slot
@@ -178,19 +198,17 @@ function LoadPreviousBlocks(player)
     local blocks = APIBSerializer.DeserializeList(structures, slot.pos)
     for k,data in pairs(blocks) do
         PlaceObject(data.pos, data.angle, data.type, slot.staticFolderId)
-        if k % 250 == 0 then Task.Wait() end
+        if k % 250 == 0 then Task.Wait(0.25) end
     end
     slot.isLoading = false
 end
 
 function RemoveStructure(obj, player)
     if not obj or not obj:IsValid() then return end
-    if obj.parent.parent.name ~= "Rocks" and player and obj.parent.id ~= player.serverUserData.slot.staticFolderId then return end
-    local objId = obj.serverUserData.id
-    objs[obj.parent.id][objId] = nil
+    if obj.parent.name ~= "Rocks" and player and obj.parent.id ~= player.serverUserData.slot.staticFolderId then return end
     local nlo = obj.serverUserData.nlo
     if Object.IsValid(nlo) then nlo:Destroy() end
-    obj:Destroy()
+    RemoveObjectHandler(obj.serverUserData.id)
     return true
 end
 Events.Connect("RemoveStructure", RemoveStructure)
@@ -213,7 +231,7 @@ function LoadIsland(player)
 
     slot.island = World.SpawnAsset(ISLANDS_TEMPLATE[player.serverUserData.islandType], { position = slot.pos, parent = ISLANDS })
     local parent = World.FindObjectById(slot.staticFolderId)
-    parent.parent:SetCustomProperty("IslandPos", slot.pos)
+    parent:SetCustomProperty("IslandPos", slot.pos)
     parent.serverUserData.islandType = player.serverUserData.islandType
     player:SetPrivateNetworkedData("islandType", player.serverUserData.islandType)
     parent.serverUserData.slot = slot
@@ -239,8 +257,7 @@ function UnloadIsland(player)
     slot.island:Destroy()
 	local group = World.FindObjectById(slot.staticFolderId)
     DestroyNetworkedObjects(group:GetChildren())
-    if group.name == "Structures" then group = group.parent end
-    group:FindDescendantByName("ObjectHandler").context.Clear()
+    Clear(group.id)
     slot.island = nil
     slot.player = nil
     player.serverUserData.slot = nil
@@ -249,10 +266,7 @@ end
 function TeleportTo(player, destination)
     Events.Broadcast("TP", player, destination)
 end
-
 Events.ConnectForPlayer("BSPS", BuildingSystem_OnPlaceStructure)
-
-print("Building Mode Activated for the server (need the same message for players)")
 
 function UnlockNextIslandType(player, nextType)
     local currentType = player.serverUserData.islandType
@@ -317,3 +331,5 @@ function Reset(player)
     OnPlayerJoined(player)
 end
 Events.ConnectForPlayer("HARDRESET", Reset)
+
+print("Building Mode Activated for the server (need the same message for players)")

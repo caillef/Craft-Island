@@ -163,10 +163,13 @@ local playersLatestSlot = {}
 function EquipItem(player, slot, toolMuid)
 	playersLatestSlot[player] = slot
 	if toolMuid == nil then toolMuid = 0 end
+	player.serverUserData.tools = player.serverUserData.tools or {}
 
 	local list = player:GetEquipment()
 	for _,obj in pairs(list) do
-		if obj:IsValid() then obj:Destroy() end
+		if obj:IsValid() and obj.socket == "right_prop" then
+			obj:Destroy()
+		end
 	end
 	if toolMuid ~= 0 then
 		local tool = World.SpawnAsset(toolMuid, { parent=World.GetRootObject() })

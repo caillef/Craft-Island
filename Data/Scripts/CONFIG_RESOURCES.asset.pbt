@@ -3,6 +3,8 @@ Assets {
   Name: "CONFIG_RESOURCES"
   PlatformAssetType: 3
   TextAsset {
+    CustomParameters {
+    }
   }
   SerializationVersion: 101
 }

@@ -1,13 +1,4 @@
 Assets {
-  Id: 18438392666897458162
-  Name: "Forest Floor 02"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "forest-floor_002"
-  }
-}
-Assets {
   Id: 18049175085252879244
   Name: "Decal Gold Coins 01"
   PlatformAssetType: 14
@@ -68,6 +59,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_urb_sub_craftsman_roof_001_peak"
+  }
+}
+Assets {
+  Id: 16625466785542172615
+  Name: "Snow 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_snow_001_uv"
   }
 }
 Assets {

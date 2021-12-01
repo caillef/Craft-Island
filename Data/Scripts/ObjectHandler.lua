@@ -1,33 +1,32 @@
-local STATIC_CONTEXT = script.parent
 local APIO = require(script:GetCustomProperty("APIObjects"))
-local STRUCTURES = STATIC_CONTEXT:FindChildByName("Structures")
 
 local objList = {}
 
-local ISLAND_ID = STRUCTURES.id
-
-local function PlaceObject(islandId, position, angle, type, id, islandPos)
-	if ISLAND_ID ~= islandId then return end
-	islandPos = islandPos or Vector3.ZERO
-	position = position + islandPos
+local function PlaceObject(position, angle, type, id, islandPos, parent)
     local muid = APIO.OBJECTS[type].templateMuid
-    local obj = World.SpawnAsset(muid, { position = position, rotation = Rotation.New(0, 0, angle), parent = STRUCTURES })
+    islandPos = islandPos or Vector3.ZERO
+	position = position + islandPos
+
+    local obj = parent:SpawnSharedAsset(muid, { position = position, rotation = Rotation.New(0, 0, angle) })
 	Events.Broadcast("SetObjMetadata", obj, id)
-    objList[id] = obj
+	objList[parent.id] = objList[parent.id] or {}
+    objList[parent.id][id] = obj
 end
 Events.Connect("PlaceObject", PlaceObject)
 
 local function RemoveObject(id)
     local obj = objList[id]
     if Object.IsValid(obj) then
-		obj:Destroy()
+		obj.parent:DestroySharedAsset(obj)
    	end
 	objList[id] = nil
 end
-Events.Broadcast("RemoveObject", RemoveObject)
+Events.Connect("RemoveObject", RemoveObject)
 
-function Clear()
-	for id,_ in pairs(objList) do
+function Clear(parentId)
+	if not objList[parentId] then return end
+	for id,_ in pairs(objList[parentId]) do
 		RemoveObject(id)
 	end
 end
+Events.Connect("ClearIsland", Clear)

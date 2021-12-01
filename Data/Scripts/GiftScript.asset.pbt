@@ -3,6 +3,8 @@ Assets {
   Name: "GiftScript"
   PlatformAssetType: 3
   TextAsset {
+    CustomParameters {
+    }
   }
   SerializationVersion: 101
 }

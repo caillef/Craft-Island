@@ -45,7 +45,7 @@ function OnHit(data)
     end
 
     if prop.serverUserData.HP > 0 then return end
-    if prop.parent.parent.name ~= "Rocks" and player and prop.parent.id ~= player.serverUserData.slot.staticFolderId then return end
+    if prop.parent.name ~= "Rocks" and player and prop.parent.id ~= player.serverUserData.slot.staticFolderId then return end
     if propItemId then
         if propItemId == "BERRY" then
             if math.random() < 0.05 then

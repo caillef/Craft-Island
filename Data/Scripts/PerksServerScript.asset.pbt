@@ -3,6 +3,8 @@ Assets {
   Name: "PerksServerScript"
   PlatformAssetType: 3
   TextAsset {
+    CustomParameters {
+    }
   }
   SerializationVersion: 101
 }

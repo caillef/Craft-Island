@@ -21265,7 +21265,7 @@ Objects {
     Overrides {
       Name: "cs:RockStructures"
       ObjectReference {
-        SelfId: 14196379722777566289
+        SelfId: 17505462622968818227
       }
     }
   }
@@ -21335,11 +21335,11 @@ Objects {
     }
   }
   ParentId: 13418653422050367841
-  ChildIds: 17907388829993595810
-  ChildIds: 12366535193921018570
-  ChildIds: 12185338252982055347
-  ChildIds: 8187247980976018082
-  ChildIds: 13257168616977544758
+  ChildIds: 272065083029559823
+  ChildIds: 9622489467739604756
+  ChildIds: 16368139136526401897
+  ChildIds: 17347916595265119882
+  ChildIds: 17505462622968818227
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -21357,7 +21357,7 @@ Objects {
   }
 }
 Objects {
-  Id: 13257168616977544758
+  Id: 17505462622968818227
   Name: "Rocks"
   Transform {
     Location {
@@ -21371,15 +21371,7 @@ Objects {
     }
   }
   ParentId: 3263363061351523751
-  ChildIds: 14196379722777566289
-  ChildIds: 15637371802960732760
   UnregisteredParameters {
-    Overrides {
-      Name: "cs:Structures"
-      ObjectReference {
-        SelfId: 14196379722777566289
-      }
-    }
     Overrides {
       Name: "cs:IslandPos"
       Vector {
@@ -21411,104 +21403,12 @@ Objects {
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
-  Folder {
-    IsGroup: true
+  NetworkContext {
+    Type: RuntimeStatic
   }
 }
 Objects {
-  Id: 15637371802960732760
-  Name: "ObjectHandler"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 13257168616977544758
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:APIObjects"
-      AssetReference {
-        Id: 11526358357864682441
-      }
-    }
-    Overrides {
-      Name: "cs:APIBlockSerializer"
-      AssetReference {
-        Id: 7339519165257358670
-      }
-    }
-    Overrides {
-      Name: "cs:APIBuildingSystem"
-      AssetReference {
-        Id: 6603989912877416370
-      }
-    }
-    Overrides {
-      Name: "cs:Constants"
-      AssetReference {
-        Id: 1824351816134648897
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 14065502745493776999
-    }
-  }
-}
-Objects {
-  Id: 14196379722777566289
-  Name: "Structures"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 13257168616977544758
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-}
-Objects {
-  Id: 8187247980976018082
+  Id: 17347916595265119882
   Name: "Island4"
   Transform {
     Location {
@@ -21522,15 +21422,7 @@ Objects {
     }
   }
   ParentId: 3263363061351523751
-  ChildIds: 2531505012067203182
-  ChildIds: 12375716707262494208
   UnregisteredParameters {
-    Overrides {
-      Name: "cs:Structures"
-      ObjectReference {
-        SelfId: 12375716707262494208
-      }
-    }
     Overrides {
       Name: "cs:IslandPos"
       Vector {
@@ -21562,104 +21454,12 @@ Objects {
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
-  Folder {
-    IsGroup: true
+  NetworkContext {
+    Type: RuntimeStatic
   }
 }
 Objects {
-  Id: 12375716707262494208
-  Name: "Structures"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 8187247980976018082
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-}
-Objects {
-  Id: 2531505012067203182
-  Name: "ObjectHandler"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 8187247980976018082
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:APIObjects"
-      AssetReference {
-        Id: 11526358357864682441
-      }
-    }
-    Overrides {
-      Name: "cs:APIBlockSerializer"
-      AssetReference {
-        Id: 7339519165257358670
-      }
-    }
-    Overrides {
-      Name: "cs:APIBuildingSystem"
-      AssetReference {
-        Id: 6603989912877416370
-      }
-    }
-    Overrides {
-      Name: "cs:Constants"
-      AssetReference {
-        Id: 1824351816134648897
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 14065502745493776999
-    }
-  }
-}
-Objects {
-  Id: 12185338252982055347
+  Id: 16368139136526401897
   Name: "Island3"
   Transform {
     Location {
@@ -21673,15 +21473,7 @@ Objects {
     }
   }
   ParentId: 3263363061351523751
-  ChildIds: 16041202951813045431
-  ChildIds: 707406896457206437
   UnregisteredParameters {
-    Overrides {
-      Name: "cs:Structures"
-      ObjectReference {
-        SelfId: 707406896457206437
-      }
-    }
     Overrides {
       Name: "cs:IslandPos"
       Vector {
@@ -21713,104 +21505,12 @@ Objects {
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
-  Folder {
-    IsGroup: true
+  NetworkContext {
+    Type: RuntimeStatic
   }
 }
 Objects {
-  Id: 707406896457206437
-  Name: "Structures"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 12185338252982055347
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-}
-Objects {
-  Id: 16041202951813045431
-  Name: "ObjectHandler"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 12185338252982055347
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:APIObjects"
-      AssetReference {
-        Id: 11526358357864682441
-      }
-    }
-    Overrides {
-      Name: "cs:APIBlockSerializer"
-      AssetReference {
-        Id: 7339519165257358670
-      }
-    }
-    Overrides {
-      Name: "cs:APIBuildingSystem"
-      AssetReference {
-        Id: 6603989912877416370
-      }
-    }
-    Overrides {
-      Name: "cs:Constants"
-      AssetReference {
-        Id: 1824351816134648897
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 14065502745493776999
-    }
-  }
-}
-Objects {
-  Id: 12366535193921018570
+  Id: 9622489467739604756
   Name: "Island2"
   Transform {
     Location {
@@ -21824,15 +21524,7 @@ Objects {
     }
   }
   ParentId: 3263363061351523751
-  ChildIds: 17146491513458623260
-  ChildIds: 15078530961085795924
   UnregisteredParameters {
-    Overrides {
-      Name: "cs:Structures"
-      ObjectReference {
-        SelfId: 15078530961085795924
-      }
-    }
     Overrides {
       Name: "cs:IslandPos"
       Vector {
@@ -21864,98 +21556,12 @@ Objects {
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
-  Folder {
-    IsGroup: true
+  NetworkContext {
+    Type: RuntimeStatic
   }
 }
 Objects {
-  Id: 15078530961085795924
-  Name: "Structures"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 12366535193921018570
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-}
-Objects {
-  Id: 17146491513458623260
-  Name: "ObjectHandler"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 12366535193921018570
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:APIObjects"
-      AssetReference {
-        Id: 11526358357864682441
-      }
-    }
-    Overrides {
-      Name: "cs:APIBlockSerializer"
-      AssetReference {
-        Id: 7339519165257358670
-      }
-    }
-    Overrides {
-      Name: "cs:Constants"
-      AssetReference {
-        Id: 1824351816134648897
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 14065502745493776999
-    }
-  }
-}
-Objects {
-  Id: 17907388829993595810
+  Id: 272065083029559823
   Name: "Island1"
   Transform {
     Location {
@@ -21969,15 +21575,7 @@ Objects {
     }
   }
   ParentId: 3263363061351523751
-  ChildIds: 16852917186163941455
-  ChildIds: 18288052835372996934
   UnregisteredParameters {
-    Overrides {
-      Name: "cs:Structures"
-      ObjectReference {
-        SelfId: 18288052835372996934
-      }
-    }
     Overrides {
       Name: "cs:IslandPos"
       Vector {
@@ -22009,100 +21607,8 @@ Objects {
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
-  Folder {
-    IsGroup: true
-  }
-}
-Objects {
-  Id: 18288052835372996934
-  Name: "Structures"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17907388829993595810
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-}
-Objects {
-  Id: 16852917186163941455
-  Name: "ObjectHandler"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17907388829993595810
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:APIObjects"
-      AssetReference {
-        Id: 11526358357864682441
-      }
-    }
-    Overrides {
-      Name: "cs:APIBlockSerializer"
-      AssetReference {
-        Id: 7339519165257358670
-      }
-    }
-    Overrides {
-      Name: "cs:APIBuildingSystem"
-      AssetReference {
-        Id: 6603989912877416370
-      }
-    }
-    Overrides {
-      Name: "cs:Constants"
-      AssetReference {
-        Id: 1824351816134648897
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 14065502745493776999
-    }
+  NetworkContext {
+    Type: RuntimeStatic
   }
 }
 Objects {
@@ -22175,25 +21681,25 @@ Objects {
     Overrides {
       Name: "cs:Island1"
       ObjectReference {
-        SelfId: 17907388829993595810
+        SelfId: 272065083029559823
       }
     }
     Overrides {
       Name: "cs:Island2"
       ObjectReference {
-        SelfId: 12366535193921018570
+        SelfId: 9622489467739604756
       }
     }
     Overrides {
       Name: "cs:Island3"
       ObjectReference {
-        SelfId: 12185338252982055347
+        SelfId: 16368139136526401897
       }
     }
     Overrides {
       Name: "cs:Island4"
       ObjectReference {
-        SelfId: 8187247980976018082
+        SelfId: 17347916595265119882
       }
     }
   }

@@ -72,7 +72,7 @@ Events.Connect("TrackAction", function(data)
 	local rewardGemVIP = 0
 	for i=1,#storage.ach do
 		local state = storage.ach:sub(i,i)
-		if storage.ach:sub(i,i) == "1" or storage.ach:sub(i,i) == "2" then
+		if state == "1" or state == "2" then
 			rewardGoldVIP = rewardGoldVIP + ((i - 1) % 10 + 1) * 10
 			rewardGemVIP = rewardGemVIP + ((i - 1) % 10 + 1) * 10
 		end

@@ -10,10 +10,9 @@ local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 function ActionOnProp(prop, player)
     if not prop or not prop:IsValid() then return false end
-    while prop.parent and prop.parent.name ~= "Structures" do
-        prop = prop.parent
-    end
-    if not prop or not prop.parent or prop.parent.name ~= "Structures" then return false end
+    while prop.parent and prop.parent:GetCustomProperty("HP") == nil do prop = prop.parent end
+    if not prop or not prop.parent or not prop.parent:GetCustomProperty("HP") then return false end
+    prop = prop.parent
 	return prop
 end
 

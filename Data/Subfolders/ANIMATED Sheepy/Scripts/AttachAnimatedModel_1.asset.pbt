@@ -3,6 +3,8 @@ Assets {
   Name: "AttachAnimatedModel_1"
   PlatformAssetType: 3
   TextAsset {
+    CustomParameters {
+    }
   }
   SerializationVersion: 101
 }

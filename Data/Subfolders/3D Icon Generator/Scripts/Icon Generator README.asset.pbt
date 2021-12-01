@@ -3,6 +3,8 @@ Assets {
   Name: "Icon Generator README"
   PlatformAssetType: 3
   TextAsset {
+    CustomParameters {
+    }
   }
   SerializationVersion: 101
   VirtualFolderPath: "Icon"

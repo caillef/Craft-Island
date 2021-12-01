@@ -144,8 +144,8 @@ TOOLS_VFX[PICKAXE] = "2CE7D7A6241E47A2:VFX_Rocks"
 TOOLS_VFX[AXE] = "C9C2FEF888D330C4:VFX_Wood"
 
 function ActionOnProp(prop, impactPos)
-    while Object.IsValid(prop) and prop.parent and prop.parent.name ~= "Structures" do prop = prop.parent end
-    if not prop or not prop.parent or prop.parent.name ~= "Structures" then return false end
+    while prop.parent and prop.parent:GetCustomProperty("HP") == nil do prop = prop.parent end
+    if not prop or not prop.parent or not prop.parent:GetCustomProperty("HP") then return false end
     local VFX = TOOLS_VFX[EQUIPMENT.sourceTemplateId]
     if not VFX then return end
     World.SpawnAsset(VFX, { position=impactPos })

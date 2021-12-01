@@ -104,8 +104,9 @@ local AXE = "2B7B3C64C0ED0918"
 
 function ActionOnProp(prop, playerId)
     if not prop or not prop:IsValid() then return false end
-    while prop.parent and prop.parent.name ~= "Structures" do prop = prop.parent end
-    if not prop or not prop.parent or prop.parent.name ~= "Structures" then return false end
+    while prop.parent and prop.parent:GetCustomProperty("HP") == nil do prop = prop.parent end
+    if not prop or not prop.parent or not prop.parent:GetCustomProperty("HP") then return false end
+    prop = prop.parent
     local id = prop.id
     local tool = 0 -- PICKAXE
     if EQUIPMENT.sourceTemplateId == AXE then tool = 1 end

@@ -3,6 +3,8 @@ Assets {
   Name: "ServerResetPlayer"
   PlatformAssetType: 3
   TextAsset {
+    CustomParameters {
+    }
   }
   SerializationVersion: 101
 }

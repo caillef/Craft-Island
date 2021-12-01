@@ -103,6 +103,8 @@ createObject(64, "PUMPKIN", "Pumpkin", "C1EF362489B3A783", "11B5B4C2A94A0D6B", n
 
 -- createObject(67, "WOOL", "Wool", nil, "AA5131329027ED3C")
 
+createObject(68, "PLANT", "Plant", "C9321A7FCAEF530B", "2ACA51B23F61C6ED", CAN_BE_BUILT)
+
 for _,item in pairs(objects) do
     for _,item2 in pairs(objects) do
         if item ~= item2 then

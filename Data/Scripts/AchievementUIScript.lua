@@ -5,6 +5,7 @@ local propNext = script:GetCustomProperty("Next"):WaitForObject()
 local propRewardButton = script:GetCustomProperty("RewardButton"):WaitForObject()
 local propNextAchivements = script:GetCustomProperty("NextAchivements"):WaitForObject()
 local propClickheretext = script:GetCustomProperty("Clickheretext"):WaitForObject()
+local PLAYER = Game.GetLocalPlayer()
 
 propUIPanel.visibility = Visibility.FORCE_OFF
 propVIP.visibility = Visibility.FORCE_OFF
@@ -229,6 +230,9 @@ function OnPrivateNetworkedDataChanged(player, key)
 		nextIslandType = player:GetPrivateNetworkedData(key) + 1
 		SetGISlotsState(nextIslandType)
     end
+	if key == "achievements" then
+		
+	end
 end
 PLAYER.privateNetworkedDataChangedEvent:Connect(OnPrivateNetworkedDataChanged)
 for _,key in ipairs(PLAYER:GetPrivateNetworkedDataKeys()) do

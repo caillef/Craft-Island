@@ -52,7 +52,7 @@ createObject(21, "BASIC_PICKAXE", "Basic Pickaxe", "9B0E9CDD3D19EB9E", "AECB1226
 createObject(22, "FURNACE", "Furnace", "58C8D2760D98333B", "0B66793FF08195AC", CAN_BE_BUILT, { structureType="block" })
 createObject(23, "STONE", "Stone", nil, "51D4970917797698")
 createObject(24, "COAL", "Coal", nil, "D1EC52C0B5D654EA")
-createObject(25, "TREE", "Tree", "2C9DA5AC47D87B71", not CAN_BE_BUILT, { structureType="block" })
+createObject(25, "TREE", "Tree", "2C9DA5AC47D87B71", nil, not CAN_BE_BUILT, { structureType="block" })
 createObject(26, "BERRY_BUSH_EMPTY", "Berry Bush (empty)", "E90DF6F7DCB80F51", not CAN_BE_BUILT, { structureType="block" })
 createObject(27, "BERRY_BUSH_FULL", "Berry Bush (full)", "37506694514741E4", not CAN_BE_BUILT, { structureType="block" })
 createObject(28, "ROCK", "Rock", "AEF89E3EB4EC6DA7")
@@ -98,12 +98,28 @@ createObject(62, "PUMPKIN_SEEDS_2", "Pumpkin Seeds (step 2)", "927247A49F1B691C"
 createObject(63, "PUMPKIN_SEEDS_3", "Pumpkin Seeds (step 3)", "09D9C9CDEE0B3F4B", not CAN_BE_BUILT, { structureType="block" })
 createObject(64, "PUMPKIN", "Pumpkin", "C1EF362489B3A783", "11B5B4C2A94A0D6B", not CAN_BE_BUILT, { structureType="block" })
 
--- createObject(65, "IRON_SWORD", "Iron Sword", "CEC311EF57E9F34F", "8794CFE9EB375C78")
+createObject(65, "IRON_SWORD", "Iron Sword", "CEC311EF57E9F34F", "8794CFE9EB375C78")
 -- createObject(66, "ANVIL", "Anvil", "AB934149453725A9", "A472C0845BD4FF76", CAN_BE_BUILT)
 
 -- createObject(67, "WOOL", "Wool", nil, "AA5131329027ED3C")
 
 createObject(68, "PLANT", "Plant", "C9321A7FCAEF530B", "2ACA51B23F61C6ED", CAN_BE_BUILT)
+
+createObject(69, "ARMCHAIR", "Armchair", "782A1074497CD267", "7CB4DA82D2B5409C", CAN_BE_BUILT, { structureType="block", nlo="40A8E4CCDBD73839" })
+createObject(70, "DRESSER", "Dresser", "3F349D26F69E656F", "AD724A553E6FF743", CAN_BE_BUILT, { structureType="block" })
+createObject(71, "WOODEN_FENCE", "Wooden Fence", "A3D4F93755CB8850", "655FC066F28F52D4", CAN_BE_BUILT, { structureType="small_wall" })
+
+createObject(72, "SPRUCE_SAPLING", "Spruce Sapling", "5DC7E74A2BCF0F3F", "A306883833CCACB7", CAN_BE_BUILT, { structureType="ground" })
+createObject(73, "SPRUCE_TREE", "Spruce Tree", "F41065F71794AB67",  nil, not CAN_BE_BUILT, { structureType="block" })
+createObject(74, "BIRCH_SAPLING", "Birch Sapling", "5D74906B65570FED", "13223FCABB717282", CAN_BE_BUILT, { structureType="ground" })
+createObject(75, "BIRCH_TREE", "Birch Tree", "DC45C7146E9FACC3", nil, not CAN_BE_BUILT, { structureType="block" })
+
+createObject(76, "WARDROBE", "Wardrobe", "7F93670E64FBF97B", "D8DDCE89D92FA970", CAN_BE_BUILT, { structureType="block" })
+createObject(77, "BOOKSHELF", "Bookshelf", "EF1A5C54D612BBD3",  "8CA33A68DB2988D1", CAN_BE_BUILT, { structureType="block" })
+createObject(78, "NIGHTSTAND", "Nightstand", "28C34EFC02AC0524", "6BDF7CE41E03AB03", CAN_BE_BUILT, { structureType="block" })
+createObject(79, "DINING_TABLE", "Dining Table", "F4A85DC684E7A362", "135BFE21EB3FA94B", CAN_BE_BUILT, { structureType="block" })
+createObject(80, "COFFEE_TABLE", "Coffee Table", "04A06C136AF897C3", "6F49191FD931F4E0", CAN_BE_BUILT, { structureType="block" })
+
 
 for _,item in pairs(objects) do
     for _,item2 in pairs(objects) do
@@ -118,31 +134,11 @@ for _,item in pairs(objects) do
     end
 end
 
-_G["caillef.craftisland.objects"] = objects
-_G["caillef.craftisland.objectsid"] = objectsId
-_G["caillef.craftisland.queryobject"] = function(data)
-    if objects[data] then
-        return objects[data]
-    end
-    return objectsId[data] and objects[objectsId[data]] or nil
-end
-_G["caillef.craftisland.findstructure"] = function(itemMuid)
-    if itemMuid == objects[objectsId["BASIC_HOE"]].itemMuid then
-        return objectsId["SOIL"]
-    end
-    for k,v in pairs(objects) do
-        if v.itemMuid == itemMuid then
-            return k
-        end
-    end
-    return nil
-end
-
 local CRAFTING_TABLE = 0
 local COOKING_TABLE = 1
 local ANVIL = 2
 
-_G["caillef.craftisland.crafts"] = {
+local CRAFTS_LIST = {
 	{
 		{ "WHEAT", 2 },
         { "DOUGH", 1 },
@@ -217,7 +213,7 @@ _G["caillef.craftisland.crafts"] = {
 
 local SELL = 0
 local BUY = 1
-_G["caillef.craftisland.buysell"] = {
+local BUYSELL_LIST = {
     { -- 1 is for baker
         { SELL, "BREAD", 10 },
         { SELL, "CARROT_CAKE", 30 },
@@ -271,7 +267,7 @@ API.GetTypeFromTemplate = function(muid)
         end
     end
 end
-API.CRAFTS = _G["caillef.craftisland.crafts"]
-API.BUYSELL_LIST = _G["caillef.craftisland.buysell"]
+API.BuySellList = function(id) return BUYSELL_LIST[id] end
+API.GetCrafts = function() return CRAFTS_LIST end
 
 return API

@@ -77,13 +77,6 @@ Objects {
     IsFilePartition: true
     FilePartitionName: "Bread_2"
   }
-  InstanceHistory {
-    SelfId: 14745550804876027768
-    SubobjectId: 7749770008946076796
-    InstanceId: 12981778777996398231
-    TemplateId: 11374977346855187947
-    WasRoot: true
-  }
 }
 Objects {
   Id: 5067156380200295724
@@ -127,12 +120,5 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Bread_3"
-  }
-  InstanceHistory {
-    SelfId: 14745550804876027768
-    SubobjectId: 7749770008946076796
-    InstanceId: 12981778777996398231
-    TemplateId: 11374977346855187947
-    WasRoot: true
   }
 }

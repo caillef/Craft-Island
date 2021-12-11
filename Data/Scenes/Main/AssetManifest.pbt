@@ -87,33 +87,6 @@ Assets {
   }
 }
 Assets {
-  Id: 12095835209017042614
-  Name: "Cube"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cube_002"
-  }
-}
-Assets {
-  Id: 10433349234450720322
-  Name: "Outline Object"
-  PlatformAssetType: 20
-  PrimaryAsset {
-    AssetType: "BlueprintAssetRef"
-    AssetId: "fxbp_local_outline"
-  }
-}
-Assets {
-  Id: 10184847056121543272
-  Name: "Basic Material"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_basic_pbr_material_001"
-  }
-}
-Assets {
   Id: 9724731050776351478
   Name: "PerksRelated"
   PlatformAssetType: 23
@@ -158,15 +131,6 @@ Assets {
   }
 }
 Assets {
-  Id: 7089212694516048134
-  Name: "Stack of Chips"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Scifi_Icon_036"
-  }
-}
-Assets {
   Id: 7039067125504711964
   Name: "Grass Short"
   PlatformAssetType: 1
@@ -191,15 +155,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Survival_Equip_Package_003"
-  }
-}
-Assets {
-  Id: 6296269731828733553
-  Name: "Chip"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Scifi_Icon_035"
   }
 }
 Assets {
@@ -234,15 +189,6 @@ Assets {
   }
 }
 Assets {
-  Id: 5399512678419755894
-  Name: "Decal Numbers and Symbols 01"
-  PlatformAssetType: 14
-  PrimaryAsset {
-    AssetType: "DecalBlueprintAssetRef"
-    AssetId: "bp_decal_numbers_002"
-  }
-}
-Assets {
   Id: 5322514084816173176
   Name: "Large Wood Beam 8m"
   PlatformAssetType: 1
@@ -258,24 +204,6 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_wood_planks_001_uv"
-  }
-}
-Assets {
-  Id: 3116992855856507135
-  Name: "Planet"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Scifi_Icon_017"
-  }
-}
-Assets {
-  Id: 2435831029392636325
-  Name: "Container - Square 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_container_square_ref"
   }
 }
 Assets {

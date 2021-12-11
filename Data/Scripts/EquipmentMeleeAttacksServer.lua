@@ -101,8 +101,10 @@ end
 
 local PICKAXE = "9B0E9CDD3D19EB9E"
 local AXE = "2B7B3C64C0ED0918"
+local SWORD = "CEC311EF57E9F34F"
 
 function ActionOnProp(prop, playerId)
+	if EQUIPMENT.sourceTemplateId == SWORD then return end
     if not prop or not prop:IsValid() then return false end
     while prop.parent and prop.parent:GetCustomProperty("HP") == nil do prop = prop.parent end
     if not prop or not prop.parent or not prop.parent:GetCustomProperty("HP") then return false end

@@ -3,6 +3,7 @@ local propCloseButton = script:GetCustomProperty("CloseButton"):WaitForObject()
 local propCraftList = script:GetCustomProperty("CraftList"):WaitForObject()
 local propCraftInfo = script:GetCustomProperty("CraftInfo"):WaitForObject()
 local propQuantityController = script:GetCustomProperty("QuantityController"):WaitForObject()
+local APIO = require(script:GetCustomProperty("APIObjects"))
 
 local isSetup = false
 local firstButton
@@ -87,7 +88,7 @@ function SelectCraftItem(button)
 		ig.text = ""
 		ig:GetChildren()[1].text = ""
 		if (i * 2) - 1 <= #rawIngredients then
-			local fullIngredient = _G["caillef.craftisland.queryobject"](rawIngredients[(i * 2) - 1])
+			local fullIngredient = APIO.QueryObject(rawIngredients[(i * 2) - 1])
 			table.insert(ingrIds, fullIngredient.id)
 		end
 	end
@@ -104,7 +105,7 @@ Events.Connect("RespCraft", function(ingrQty)
 			ig.text = ""
 			ig:GetChildren()[1].text = ""
 		else
-			local fullIngredient = _G["caillef.craftisland.queryobject"](rawIngredients[i])
+			local fullIngredient = APIO.QueryObject(rawIngredients[i])
 			ig.text = fullIngredient.name
 			currentAmount = ingrQty[fullIngredient.id] or 0
 			local qty = rawIngredients[i + 1]
@@ -145,13 +146,13 @@ function SetupUI()
 		end
 		craftItems = {}
 		local slotIndex = 0
-		for _,craft in pairs(_G["caillef.craftisland.crafts"]) do
+		for _,craft in pairs(APIO.GetCrafts()) do
 			local recipe = craft[2]
 			if craft[3] == tableType then
 				for i=1,#recipe,2 do
 					local button = World.SpawnAsset("2C17CAD37EA099F5:UI_CraftButton_Item", { parent = propCraftList })
 					if not firstButton then firstButton = button end
-					local item = _G["caillef.craftisland.queryobject"](recipe[i])
+					local item = APIO.QueryObject(recipe[i])
 					World.SpawnAsset(item.itemMuid, { parent = button })
 					table.insert(craftItems, { item=item, ingredients=craft[1], qty=recipe[i + 1] })
 					button.x = (slotIndex % 4) * 110

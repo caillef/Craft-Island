@@ -70,12 +70,6 @@ Objects {
       BoundsScale: 1
     }
   }
-  InstanceHistory {
-    SelfId: 9098742181248362678
-    SubobjectId: 15666676585002656690
-    InstanceId: 12981778777996398231
-    TemplateId: 11374977346855187947
-  }
 }
 Objects {
   Id: 7449324769092759344
@@ -127,12 +121,6 @@ Objects {
     }
     DecalBP {
     }
-  }
-  InstanceHistory {
-    SelfId: 15648046370077346604
-    SubobjectId: 9081237979508604968
-    InstanceId: 12981778777996398231
-    TemplateId: 11374977346855187947
   }
   Relevance {
     Value: "mc:eproxyrelevance:critical"
@@ -189,12 +177,6 @@ Objects {
     DecalBP {
     }
   }
-  InstanceHistory {
-    SelfId: 6608479896338942685
-    SubobjectId: 18201306571508498905
-    InstanceId: 12981778777996398231
-    TemplateId: 11374977346855187947
-  }
   Relevance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -250,12 +232,6 @@ Objects {
     DecalBP {
     }
   }
-  InstanceHistory {
-    SelfId: 6805283883583382439
-    SubobjectId: 17969141740757919907
-    InstanceId: 12981778777996398231
-    TemplateId: 11374977346855187947
-  }
   Relevance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -310,12 +286,6 @@ Objects {
     }
     DecalBP {
     }
-  }
-  InstanceHistory {
-    SelfId: 2294149696784891782
-    SubobjectId: 13328537689637942402
-    InstanceId: 12981778777996398231
-    TemplateId: 11374977346855187947
   }
   Relevance {
     Value: "mc:eproxyrelevance:critical"

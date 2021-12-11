@@ -24,14 +24,16 @@ function SpawnObject(key)
 	Events.Broadcast("PlaceStructure", pos, rotation.z, APIO.QueryObject(rndIdname).id, ROCK_STRUCTURES_GROUP.id)
 end
 
-function SpawnObjectWithDelay(id, delay)
+function SpawnObjectWithDelay(delay, pos, angle)
 	Task.Wait(delay)
-	SpawnObject(id)
+	local rndIdname = Array_GetRandomValue(objects)
+	Events.Broadcast("PlaceStructure", pos, angle, APIO.QueryObject(rndIdname).id, ROCK_STRUCTURES_GROUP.id)
 end
 
-function OnDestroyProp(prop)
-	SpawnObjectWithDelay(prop.serverUserData.key, SPAWN_DELAY.x + math.random() * (SPAWN_DELAY.y - SPAWN_DELAY.x))
-end
+Events.Connect("RespawnRockBehaviour", function(pos, angle)
+	local delay = SPAWN_DELAY.x + math.random() * (SPAWN_DELAY.y - SPAWN_DELAY.x)
+	SpawnObjectWithDelay(delay, pos, angle)
+end)
 
 for key,spawner in ipairs(SPAWNERS) do
 	SPAWNERS_DATA[key] = {

@@ -1,9 +1,10 @@
 local PLAYER = Game.GetLocalPlayer()
 local BOXES = script:GetCustomProperty("Boxes"):WaitForObject()
 local OUTLINE_OBJECT = script:GetCustomProperty("OutlineObject"):WaitForObject()
+local NOTIF_PANEL = script:GetCustomProperty("AddItemPanel"):WaitForObject()
 
 function GetCurrentDay()
-	local date = os.date("*t")
+	local date = os.date("!*t")
 	return date.day
 end
 
@@ -39,6 +40,11 @@ PLAYER.privateNetworkedDataChangedEvent:Connect(InitAdventCalendar)
 InitAdventCalendar(PLAYER, "AdventCalendar")
 
 Events.Connect("AdventCalendarAlreadyOpened", function()
-    local obj = World.SpawnAsset("7CF45E787CD10A68:LimitBuildingNotif", { parent= propUIPanel })
+    local obj = World.SpawnAsset("7CF45E787CD10A68:LimitBuildingNotif", { parent=NOTIF_PANEL })
     obj.text = "Come back tomorrow to open the next box."
+end)
+
+Events.Connect("GiftContent", function(text)
+    local obj = World.SpawnAsset("153041A61D964DB1:GiftContentNotif", { parent=NOTIF_PANEL })
+    obj.text = text
 end)

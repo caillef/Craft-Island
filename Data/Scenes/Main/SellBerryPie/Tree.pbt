@@ -76,13 +76,6 @@ Objects {
     IsFilePartition: true
     FilePartitionName: "Berry Pie"
   }
-  InstanceHistory {
-    SelfId: 10943210008604953948
-    SubobjectId: 3892096667864797693
-    InstanceId: 12030764566353647305
-    TemplateId: 2351731877209191770
-    WasRoot: true
-  }
 }
 Objects {
   Id: 10353423363495445987
@@ -121,12 +114,5 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Berry Pie_1"
-  }
-  InstanceHistory {
-    SelfId: 10353423363495445987
-    SubobjectId: 3892096667864797693
-    InstanceId: 16857065896188657405
-    TemplateId: 2351731877209191770
-    WasRoot: true
   }
 }

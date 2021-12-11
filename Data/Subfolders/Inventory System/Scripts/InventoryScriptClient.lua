@@ -1,3 +1,6 @@
+local APIInvSerializer = require(script:GetCustomProperty("APIInventorySerializer"))
+local APIO = require(script:GetCustomProperty("APIObjects"))
+
 local loading = true
 
 local player = Game.GetLocalPlayer()
@@ -40,26 +43,6 @@ local hoveredSlotIndex
 
 local notifications = {}
 local nextNotification = time()
-
-local _inventorySerializer
-function GetInventorySerializer()
-	_inventorySerializer = _G["caillef.craftisland.inventorySerializer"]
-	while _inventorySerializer == nil do
-		Task.Wait(0.1)
-		_inventorySerializer = _G["caillef.craftisland.inventorySerializer"]
-	end	
-	return _inventorySerializer
-end
-
-local _objectsList
-function GetObjectsList()
-    _objectsList = _G["caillef.craftisland.objects"]
-    while _objectsList == nil do
-        Task.Wait(0.1)
-        _objectsList = _G["caillef.craftisland.objects"]
-    end
-    return _objectsList    
-end
 
 scroll.visibility = Visibility.FORCE_OFF
 Events.Connect("LoadingEnded", function()
@@ -129,7 +112,7 @@ function Save()
 end
 
 function OnLoad(str)
-	local items = GetInventorySerializer().Deserialize(str)
+	local items = APIInvSerializer.Deserialize(str)
 	for i=1,27 do
 		for k,c in pairs(buttons[i]:GetChildren()) do
 			if k ~= 1 then -- Keep background
@@ -139,8 +122,8 @@ function OnLoad(str)
 	end
 
 	for key,item in pairs(items) do
-		if GetObjectsList()[item.id] and GetObjectsList()[item.id].itemMuid then
-			local prop = World.SpawnAsset(GetObjectsList()[item.id].itemMuid, {parent = buttons[key]})
+		if APIO.QueryObject(item.id) and APIO.QueryObject(item.id).itemMuid then
+			local prop = World.SpawnAsset(APIO.QueryObject(item.id).itemMuid, {parent = buttons[key]})
 			local qtyText = World.SpawnAsset("173D841514156696", {parent = prop})
 			qtyText.text = item.qty > 1 and tostring(item.qty) or ""
 		end
@@ -305,7 +288,7 @@ function OnAdd(data, ii)		-- ii - the button
 	local qtyText
 	local oldQuantity
 
-	local item = GetObjectsList()[data.id]
+	local item = APIO.QueryObject(data.id)
 	if #buttons[ii]:GetChildren() == 1 then
 		local prop = World.SpawnAsset(item.itemMuid, {parent = buttons[ii]})
 		qtyText = World.SpawnAsset("173D841514156696:InventoryQuantity", {parent = prop})
@@ -342,6 +325,7 @@ function OnRemove(data, ii)		-- ii - the button
 		qtyText = GetItem(buttons[ii]):FindChildByType("UIText")
 		if data.qty == 0 then
 			GetItem(buttons[ii]):Destroy()
+
 			Events.Broadcast("SelectStructure", nil)
 		else
 			qtyText.text = (data.qty == 1 and "" or tostring(data.qty))
@@ -368,10 +352,7 @@ function Select(pickedIndex)
 		Task.Wait(1)
 	end
 	if it then
-		while _G["caillef.craftisland.findstructure"] == nil do
-			Task.Wait(0.1)
-		end
-		Events.Broadcast("SelectStructure", _G["caillef.craftisland.findstructure"](it.sourceTemplateId))
+		Events.Broadcast("SelectStructure", APIO.FindStructure(it.sourceTemplateId))
 	end
 end
 

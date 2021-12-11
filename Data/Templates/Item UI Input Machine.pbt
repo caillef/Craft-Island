@@ -143,4 +143,5 @@ Assets {
     }
   }
   SerializationVersion: 101
+  VirtualFolderPath: "UI Icons"
 }

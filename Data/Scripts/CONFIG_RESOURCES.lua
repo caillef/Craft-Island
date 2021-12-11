@@ -17,6 +17,12 @@ growthConfig["E90DF6F7DCB80F51"] = { 200, 240, "BERRY_BUSH_FULL" }
 -- Sapling
 growthConfig["27313876BD39650C"] = { 30, 45, "TREE" }
 
+-- Spruce Sapling
+growthConfig["5DC7E74A2BCF0F3F"] = { 45, 60, "SPRUCE_TREE" }
+
+-- Birch Sapling
+growthConfig["5D74906B65570FED"] = { 35, 50, "BIRCH_TREE" }
+
 -- Wheat
 growthConfig["42793220AEB392CF"] = { 15, 20, "WHEAT_SEEDS_2" }
 growthConfig["7BA2BA8C590D39DF"] = { 15, 20, "WHEAT_SEEDS_3" }

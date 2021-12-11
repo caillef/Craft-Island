@@ -17,6 +17,16 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 15856599177139149175
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Duration"
+            Float: 1
+          }
+          Overrides {
+            Name: "cs:Duration:isrep"
+            Bool: true
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"

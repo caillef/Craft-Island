@@ -73,6 +73,9 @@ function OnHit(data)
     end
     local pos = prop:GetWorldPosition()
     local angle = prop:GetWorldRotation().z
+    if prop.parent.name == "Rocks" then
+        Events.Broadcast("RespawnRockBehaviour", pos, angle)
+    end
     Events.Broadcast("RemoveStructure", prop, player)
 
     -- Check if not an harvest trigger

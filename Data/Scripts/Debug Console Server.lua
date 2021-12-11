@@ -1,4 +1,4 @@
-﻿-- Script made by @caillef - 12/06/2020
+-- Script made by @caillef - 12/06/2020
 
 --[[ README
     WHY
@@ -32,12 +32,7 @@ commands["NameOfTheCommandWithoutSpacesInsideTheName"] = {
         If you found anything, just text me on Discord @Corentin caillef C.#4956
 ]]--
 
-local function mysplit(inputstr, sep)
-    if sep == nil then sep = "%s" end
-    local t={}
-    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do table.insert(t, str) end
-    return t
-end
+local APIO = require(script:GetCustomProperty("APIObjects"))
 
 local commands = {}
 
@@ -247,16 +242,15 @@ commands["i"] = {
         end
         for _,p in pairs(Game.GetPlayers()) do
             if p.name == args[1] then
-                local id = _G["caillef.craftisland.objectsid"][args[2]] or tonumber(args[2])
+                local id = APIO.QueryObject(args[2]) or tonumber(args[2])
                 if not id then
                     return "Error: can't find item "..args[2].."."
                 end
-                local item = _G["caillef.craftisland.objects"][id]
+                local item = APIO.QueryObject(id)
                 if not item then
                     return "Error: can't find item "..tostring(id).."."
                 end
                 local qty = args[3] and tonumber(args[3]) or 1
-                local muid = item.itemMuid
                 local name = item.name
                 Events.Broadcast("inventoryAddEvent", p, { qty = qty, id=item.id })
                 return (qty == 1 and "One" or tostring(qty)).." "..name.." given to "..p.name.."."
@@ -266,25 +260,11 @@ commands["i"] = {
     end
 }
 
-local propIslands = script:GetCustomProperty("Islands")
-
-commands["on"] = {
-    desc="Debug oncle (debugoncle <NAME>)",
-    func= function(admin, args)
-        for _,p in pairs(Game.GetPlayers()) do
-            if p.name == "Oncle_Toni" then
-                return tostring(Storage.SizeOfData(Storage.GetSharedPlayerData(propIslands, p))).." bytes vs "..tostring(Storage.SizeOfData(Storage.GetSharedPlayerData(propIslands, admin)))
-            end
-        end
-        return tostring(Storage.SizeOfData(Storage.GetSharedPlayerData(propIslands, admin)))
-    end    
-}
-
 commands["lo"] = {
     desc="List objects (lo <NAME>)",
     func= function(admin, args)
         local resp = ""
-        for i,item in ipairs(_G["caillef.craftisland.objects"]) do
+        for i,item in ipairs(APIO.OBJECTS) do
             if not args[1] then
                 resp = resp..item.tostring(item).."\n"
             elseif string.strfind(string.lower(item.name), string.lower(args[1])) then
@@ -296,7 +276,7 @@ commands["lo"] = {
 }
 
 function OnCommand(player, cmd)
-    local splitted = mysplit(cmd, " ")
+    local splitted = { CoreString.Split(cmd, { delimiters={" "} }) }
     if #splitted == 1 then
         splitted[2]= "help"
     end

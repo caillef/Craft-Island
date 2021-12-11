@@ -41,5 +41,9 @@ Assets {
       VirtualFolderPath: "NetworkedLinkedObjects"
       PlatformAssetType: 5
     }
+    Folders {
+      VirtualFolderPath: "Inventory"
+      PlatformAssetType: 3
+    }
   }
 }

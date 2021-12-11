@@ -1,26 +1,8 @@
-local netRefInventory = script:GetCustomProperty("Inventory")
+local APIO = require(script:GetCustomProperty("APIObjects"))
+local APIInvSerializer = require(script:GetCustomProperty("APIInventorySerializer"))
+local SHARED_KEY_INVENTORY = script:GetCustomProperty("Inventory")
 
 local data = {}
-
-local _queryObjectFunction
-function QueryObject(id)
-    _queryObjectFunction = _G["caillef.craftisland.queryobject"]
-    while _queryObjectFunction == nil do
-        Task.Wait(0.1)
-        _queryObjectFunction = _G["caillef.craftisland.queryobject"]
-    end
-    return _queryObjectFunction(id)
-end
-
-local _inventorySerializer
-function GetInventorySerializer()
-	_inventorySerializer = _G["caillef.craftisland.inventorySerializer"]
-	while _inventorySerializer == nil do
-		Task.Wait(0.1)
-		_inventorySerializer = _G["caillef.craftisland.inventorySerializer"]
-	end	
-	return _inventorySerializer
-end
 
 function Update(player)
 	print(tostring(player) .. ":")
@@ -50,9 +32,9 @@ function Add(player, d)
 	end
 	nextAddEvent[player] = time() + 0.2
 
-	local item = QueryObject(d.id)
+	local item =  APIO.QueryObject(d.id)
 	if item == nil and d.idName then
-		item = QueryObject(d.idName)
+		item = APIO.QueryObject(d.idName)
 	end
 	if not item then return end
 	local qty = d.qty or 1
@@ -99,23 +81,23 @@ function Add(player, d)
 end
 
 function OnInventoryReady(player)
-	local d = Storage.GetSharedPlayerData(netRefInventory, player)
+	local d = Storage.GetSharedPlayerData(SHARED_KEY_INVENTORY, player)
 	local inventory = d.inventory or ""
 
-	data[player] = GetInventorySerializer().Deserialize(inventory)
-	inventory = GetInventorySerializer().Serialize(data[player])
-	data[player] = GetInventorySerializer().Deserialize(inventory)
+	data[player] = APIInvSerializer.Deserialize(inventory)
+	inventory = APIInvSerializer.Serialize(data[player])
+	data[player] = APIInvSerializer.Deserialize(inventory)
 	player:SetPrivateNetworkedData("Inv", inventory)
 	GiveMandatoryItems(player)
 end
 
 function GetInventory(player)
 	if player == nil or not player:IsValid() then return end
-	return GetInventorySerializer().Serialize(data[player])
+	return APIInvSerializer.Serialize(data[player])
 end
 
 function GiveMandatoryItems(player)
-	local list = {QueryObject("BASIC_AXE").id, QueryObject("BASIC_HOE").id, QueryObject("BASIC_PICKAXE").id}
+	local list = {APIO.QueryObject("BASIC_AXE").id, APIO.QueryObject("BASIC_HOE").id, APIO.QueryObject("BASIC_PICKAXE").id}
 	for _,item in pairs(data[player]) do
 		for k,v in pairs(list) do
 			if item.id == v then
@@ -134,7 +116,11 @@ function GiveMandatoryItems(player)
 end
 
 function Save(player)
-	Events.Broadcast("inventorySaveEvent", player, data[player])
+	local d = data[player]
+    if not Object.IsValid(player) or not d then return end
+    local data = Storage.GetSharedPlayerData(SHARED_KEY_INVENTORY, player)
+    data.inventory = APIInvSerializer.Serialize(d)
+    Storage.SetSharedPlayerData(SHARED_KEY_INVENTORY, player, data)
 end
 
 function Delete(player, i)
@@ -178,9 +164,9 @@ function EquipItem(player, slot, toolMuid)
 end
 
 function PlayerHasItems(player, d, qty)
-	local id = d.id or QueryObject(d.idName).id
+	local id = d.id or APIO.QueryObject(d.idName).id
 	if not player or not player:IsValid() or not id then return false end
-	if id == QueryObject("SOIL").id then return true end
+	if id == APIO.QueryObject("SOIL").id then return true end
 	qty = qty or 1
 	local currentQty = 0
 	for i = 1,27 do
@@ -193,9 +179,9 @@ end
 
 function PlayerRemoveItems(player, d, qty)
 	if not PlayerHasItems(player, d, qty) then return false end
-	local id = d.id or QueryObject(d.idName).id
+	local id = d.id or APIO.QueryObject(d.idName).id
 	if not player or not player:IsValid() or not id then return false end
-	if id == QueryObject("SOIL").id then return true end
+	if id == APIO.QueryObject("SOIL").id then return true end
 	qty = qty or 1
 	for i = 1, 27 do
 		if data[player][i] and data[player][i].id == id then
@@ -241,7 +227,7 @@ end
 
 function Craft(player, craftIdName, qty)
 	qty = qty or 1
-	for craftkey,craft in pairs(_G["caillef.craftisland.crafts"]) do
+	for craftkey,craft in pairs(APIO.GetCrafts()) do
 		local recipe = craft[2]
 		for i=1,#recipe,2 do
 			if recipe[i] == craftIdName then

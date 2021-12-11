@@ -4,15 +4,8 @@ local propList = script:GetCustomProperty("List"):WaitForObject()
 local propCraftInfo = script:GetCustomProperty("Info"):WaitForObject()
 local propQuantityController = script:GetCustomProperty("QuantityController"):WaitForObject()
 
-local _inventorySerializer
-function GetInventorySerializer()
-	_inventorySerializer = _G["caillef.craftisland.inventorySerializer"]
-	while _inventorySerializer == nil do
-		Task.Wait(0.1)
-		_inventorySerializer = _G["caillef.craftisland.inventorySerializer"]
-	end	
-	return _inventorySerializer
-end
+local APIInvSerializer = require(script:GetCustomProperty("APIInventorySerializer"))
+local APIO = require(script:GetCustomProperty("APIObjects"))
 
 local isSetup = false
 local firstButton
@@ -54,7 +47,7 @@ local currentButton
 
 function LoadInv()
 	local inv = player:GetPrivateNetworkedData("Inv")
-	inventory = GetInventorySerializer().Deserialize(inv)
+	inventory = APIInvSerializer.Deserialize(inv)
 end
 player.privateNetworkedDataChangedEvent:Connect(function(player, key)
 	if key ~= "Inv" then return end
@@ -149,13 +142,13 @@ function SetupUI()
 		propNbCoins.text = tostring(player:GetResource("Gold"))
 		items = {}
 		local slotIndex = 0
-		for _,item in pairs(_G["caillef.craftisland.buysell"][sellingType]) do
+		for _,item in pairs(APIO.BuySellList(sellingType)) do
 			local isBuy = item[1] == 1
 			local itemId = item[2]
 			local price = item[3]
 			local button = World.SpawnAsset("2C17CAD37EA099F5:UI_CraftButton_Item", { parent = propList })			
 			if not firstButton then firstButton = button end
-			local currentItem = _G["caillef.craftisland.queryobject"](itemId)
+			local currentItem = APIO.QueryObject(itemId)
 			if currentItem then
 				World.SpawnAsset(currentItem.itemMuid, { parent = button })
 				table.insert(items, {item = currentItem, price=price, isBuy=isBuy})

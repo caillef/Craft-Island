@@ -1,4 +1,4 @@
-﻿local CONSTANTS = require(script:GetCustomProperty("Constants"))
+local CONSTANTS = require(script:GetCustomProperty("Constants"))
 local APIB = require(script:GetCustomProperty("APIBuildingSystem"))
 local APIO = require(script:GetCustomProperty("APIObjects"))
 local APIBSerializer = require(script:GetCustomProperty("APIBlockSerializer"))
@@ -166,7 +166,6 @@ function SelectStructure(id)
     currentPreview.collision = Collision.FORCE_OFF
     BuildSystem_Open()
 end
-
 Events.Connect("SelectStructure", SelectStructure)
 
 function OnPrivateNetworkedDataChanged(player, key)

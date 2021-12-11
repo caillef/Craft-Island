@@ -1,9 +1,10 @@
-﻿local function AddCurrency(player, name, amount)
+local function AddCurrency(player, name, amount)
   if amount == 0 then return end
   if player:GetResource(name) == nil then
     player:SetResource(name, 0)
   end
   player:AddResource(name, amount)
+  Task.Wait(0.1)
   local storage = Storage.GetPlayerData(player) or {}
   storage[name == "Gold" and "gold" or "gem"] = player:GetResource(name)
   Storage.SetPlayerData(player, storage)

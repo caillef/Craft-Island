@@ -563,20 +563,6 @@ Objects {
   }
   ParentId: 13644968004114680986
   UnregisteredParameters {
-    Overrides {
-      Name: "cs:ItemUIList"
-      ObjectReference {
-      }
-    }
-    Overrides {
-      Name: "cs:Islands"
-      NetReference {
-        Key: "94aa09be828c4cb295ada6a9d891c2f8"
-        Type {
-          Value: "mc:enetreferencetype:sharedpersistence"
-        }
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

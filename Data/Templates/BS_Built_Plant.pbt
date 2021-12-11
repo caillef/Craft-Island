@@ -347,4 +347,5 @@ Assets {
     }
   }
   SerializationVersion: 101
+  VirtualFolderPath: "StructureTemplates"
 }

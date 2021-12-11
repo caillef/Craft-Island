@@ -1,7 +1,6 @@
 local txt = script.parent
-local duration = script:GetCustomProperty("Duration") or 1
 
-Task.Wait(duration)
+Task.Wait(5)
 local i = 0
 function Tick()
 	if txt:IsA("UIText") then

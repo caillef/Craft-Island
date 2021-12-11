@@ -67,7 +67,15 @@ local function PlaceObjectHandler(position, angle, type, id, islandPos, parent)
 	position = position + islandPos
 
     local obj = parent:SpawnSharedAsset(muid, { position = position, rotation = Rotation.New(0, 0, angle) })
-	SetObjMetadata(obj, id)
+
+	obj.serverUserData.id = id
+    obj.serverUserData.cellId = APIB.GetCellId(obj:GetWorldPosition(), obj:GetWorldRotation().z)
+    obj.serverUserData.structureType = APIO.OBJECTS[APIO.GetTypeFromTemplate(obj.sourceTemplateId)].metadata.structureType
+    -- if obj.serverUserData.structureType == "wall" then
+    --     obj.serverUserData.wallId = APIB.GetWallId(obj:GetWorldPosition(), obj:GetWorldRotation().z)
+    -- end
+    obj.serverUserData.nlo = nloList[id]
+
 	objList[parent.id] = objList[parent.id] or {}
     objList[parent.id][id] = obj
     objList[id] = obj
@@ -180,16 +188,6 @@ function Grow(objReplaced, newIdName)
     PlaceObject(pos, angle, type, parentId)
 end
 Events.Connect("SGrow", Grow)
-
-function SetObjMetadata(obj, id)
-	obj.serverUserData.id = id
-    obj.serverUserData.cellId = APIB.GetCellId(obj:GetWorldPosition(), obj:GetWorldRotation().z)
-    obj.serverUserData.structureType = APIO.OBJECTS[APIO.GetTypeFromTemplate(obj.sourceTemplateId)].metadata.structureType
-    -- if obj.serverUserData.structureType == "wall" then
-    --     obj.serverUserData.wallId = APIB.GetWallId(obj:GetWorldPosition(), obj:GetWorldRotation().z)
-    -- end
-    obj.serverUserData.nlo = nloList[id]
-end
 
 function LoadPreviousBlocks(player)
     local slot = player.serverUserData.slot

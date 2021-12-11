@@ -107,6 +107,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12095835209017042614
+  Name: "Cube"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_002"
+  }
+}
+Assets {
   Id: 11714938519782535889
   Name: "BG Gradient 002"
   PlatformAssetType: 9
@@ -131,6 +140,24 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "BackgroundNoOutline_22"
+  }
+}
+Assets {
+  Id: 10433349234450720322
+  Name: "Outline Object"
+  PlatformAssetType: 20
+  PrimaryAsset {
+    AssetType: "BlueprintAssetRef"
+    AssetId: "fxbp_local_outline"
+  }
+}
+Assets {
+  Id: 10184847056121543272
+  Name: "Basic Material"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_basic_pbr_material_001"
   }
 }
 Assets {
@@ -188,12 +215,30 @@ Assets {
   }
 }
 Assets {
+  Id: 7089212694516048134
+  Name: "Stack of Chips"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Scifi_Icon_036"
+  }
+}
+Assets {
   Id: 6638248139959178187
   Name: "Fantasy Dessert 002"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Food_Dessert_002"
+  }
+}
+Assets {
+  Id: 6296269731828733553
+  Name: "Chip"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Scifi_Icon_035"
   }
 }
 Assets {
@@ -224,6 +269,15 @@ Assets {
   }
 }
 Assets {
+  Id: 5399512678419755894
+  Name: "Decal Numbers and Symbols 01"
+  PlatformAssetType: 14
+  PrimaryAsset {
+    AssetType: "DecalBlueprintAssetRef"
+    AssetId: "bp_decal_numbers_002"
+  }
+}
+Assets {
   Id: 5196377603841433560
   Name: "BG Gradient 001"
   PlatformAssetType: 9
@@ -251,12 +305,30 @@ Assets {
   }
 }
 Assets {
+  Id: 3116992855856507135
+  Name: "Planet"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Scifi_Icon_017"
+  }
+}
+Assets {
   Id: 3087083757150542610
   Name: "Icon Diamond"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "Icon_Diamond"
+  }
+}
+Assets {
+  Id: 2435831029392636325
+  Name: "Container - Square 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_container_square_ref"
   }
 }
 Assets {

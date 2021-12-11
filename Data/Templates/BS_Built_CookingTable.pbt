@@ -54,7 +54,7 @@ Assets {
         Name: "Geo"
         Transform {
           Location {
-            X: 110
+            X: 100
             Y: -80
             Z: 15
           }

@@ -29,6 +29,9 @@ Assets {
         Folder {
           IsGroup: true
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 8634059963342528975
@@ -71,6 +74,9 @@ Assets {
             Id: 5994405868787299201
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -81,6 +87,6 @@ Assets {
   Marketplace {
     Description: "This is a short example of how to use the powerful require script feature. Well documented, short, and to the point.\r\n\r\n@LuckofBuck on Twitter"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
   DirectlyPublished: true
 }

@@ -41,6 +41,9 @@ Assets {
             Id: 15287570918153542094
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -51,7 +54,7 @@ Assets {
   Marketplace {
     Description: "Automation Conveyor Belt"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
   DirectlyPublished: true
   VirtualFolderPath: "Automation"
 }

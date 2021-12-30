@@ -52,6 +52,9 @@ Assets {
         Folder {
           IsGroup: true
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 13379163615774432145
@@ -98,6 +101,9 @@ Assets {
           VerticalAlignment {
             Value: "mc:ecoretextverticalalign:center"
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -146,6 +152,9 @@ Assets {
             Value: "mc:ecoretextverticalalign:center"
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 7125300564905590409
@@ -192,6 +201,9 @@ Assets {
             Value: "mc:ecoretextverticalalign:center"
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -199,5 +211,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

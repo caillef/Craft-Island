@@ -35,6 +35,9 @@ Assets {
             }
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -49,5 +52,5 @@ Assets {
     Version: "1.0.0"
     Description: "For inclusion in your gaming paradise!"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

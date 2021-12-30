@@ -32,6 +32,9 @@ Assets {
         Folder {
           IsGroup: true
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 503681998163126313
@@ -112,6 +115,9 @@ Assets {
             PlayerMasterVolumeMultiplier: 1
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 10624734070703239090
@@ -141,6 +147,9 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         NetworkContext {
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -190,6 +199,9 @@ Assets {
           MaxPitch: 89
           UseAsAudioListener: true
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -197,5 +209,5 @@ Assets {
       AssetId: "First_Person_Camera_Settings"
     }
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

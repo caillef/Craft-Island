@@ -35,6 +35,9 @@ Assets {
             Id: 736360303936294653
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -42,5 +45,5 @@ Assets {
       AssetId: "Default_Bindings"
     }
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

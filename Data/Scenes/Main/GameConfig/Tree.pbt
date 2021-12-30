@@ -57,6 +57,9 @@ Objects {
     TemplateId: 1222384962725173322
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 2751873984390401409
@@ -101,6 +104,9 @@ Objects {
       Id: 9269861221690284210
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 16813558807825262224
@@ -132,6 +138,9 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -248,6 +257,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 6844298216390059011
@@ -336,6 +348,9 @@ Objects {
       Id: 5233805097785708431
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 6359451876925841842
@@ -369,6 +384,9 @@ Objects {
     TemplateAsset {
       Id: 2458915593037816757
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -413,5 +431,8 @@ Objects {
     TemplateAsset {
       Id: 16687078566427417755
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }

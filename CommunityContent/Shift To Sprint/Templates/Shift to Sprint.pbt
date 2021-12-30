@@ -53,6 +53,9 @@ Assets {
           IsFilePartition: true
           FilePartitionName: "ShiftToSprint"
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 16290897121996394153
@@ -82,6 +85,9 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         NetworkContext {
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -115,6 +121,9 @@ Assets {
             Id: 9038909326848735658
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 9250454070351984235
@@ -145,6 +154,9 @@ Assets {
         }
         NetworkContext {
           Type: Server
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -178,6 +190,9 @@ Assets {
             Id: 206661509791844446
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -188,6 +203,6 @@ Assets {
   Marketplace {
     Description: "Shift to sprint, ctrl to slow walk. Crouch variants available. Customizable speeds via properties."
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
   DirectlyPublished: true
 }

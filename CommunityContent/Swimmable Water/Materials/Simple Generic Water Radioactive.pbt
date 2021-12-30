@@ -2,7 +2,7 @@ Assets {
   Id: 5531067921605431573
   Name: "Simple Generic Water Radioactive"
   PlatformAssetType: 13
-  SerializationVersion: 101
+  SerializationVersion: 103
   CustomMaterialAsset {
     BaseMaterialId: 3627032956109716191
     ParameterOverrides {

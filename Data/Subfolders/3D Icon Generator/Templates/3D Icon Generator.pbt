@@ -32,6 +32,9 @@ Assets {
             }
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -46,5 +49,5 @@ Assets {
     Version: "1.2.0"
     Description: "The Icon Generator is a drop in component that will render 3D icons for use in UIImage objects.\r\n\r\nYou can have several Icon Generators in the scene to allow for rendering icons in different styles.\r\n\r\nThe Icon Generator will automatically clear unused icons to make sure only the relevant texture space is being used.\r\n\r\nNOTE: This does require a small amount of scripting to use, but examples are included!"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

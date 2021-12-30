@@ -35,6 +35,9 @@ Assets {
             }
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -49,5 +52,5 @@ Assets {
     Version: "1.0.0"
     Description: "An old western style door with open action and sound. \r\n\r\nThis is being built as part of a larger western themed set."
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

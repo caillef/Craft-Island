@@ -2,7 +2,7 @@ Assets {
   Id: 693266714481763774
   Name: "Carrot Orange"
   PlatformAssetType: 13
-  SerializationVersion: 101
+  SerializationVersion: 103
   CustomMaterialAsset {
     BaseMaterialId: 10184847056121543272
     ParameterOverrides {

@@ -250,6 +250,9 @@ Assets {
         Folder {
           IsGroup: true
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 15660413392940771180
@@ -279,6 +282,9 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         NetworkContext {
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -336,6 +342,9 @@ Assets {
             Id: 3353411852194215282
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -346,6 +355,6 @@ Assets {
   Marketplace {
     Description: "Nameplates, but with outlined text! Set the outline to any color you\'d like by modifying the NameOutlineColor field - use this when you can\'t seem to find a nameplate color that\'s visible over your game\'s backgrounds!"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
   DirectlyPublished: true
 }

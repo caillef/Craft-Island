@@ -2,7 +2,7 @@ Assets {
   Id: 803415596259585378
   Name: "Virtual Folders"
   PlatformAssetType: 30
-  SerializationVersion: 101
+  SerializationVersion: 103
   VirtualFolderSetAsset {
   }
 }

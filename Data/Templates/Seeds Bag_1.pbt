@@ -29,6 +29,9 @@ Assets {
             }
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -42,5 +45,5 @@ Assets {
     OwnerName: "caillef"
     Description: "A seed bag for your market !"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

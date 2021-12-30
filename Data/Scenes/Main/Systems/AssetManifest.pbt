@@ -107,15 +107,6 @@ Assets {
   }
 }
 Assets {
-  Id: 12095835209017042614
-  Name: "Cube"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cube_002"
-  }
-}
-Assets {
   Id: 11714938519782535889
   Name: "BG Gradient 002"
   PlatformAssetType: 9
@@ -140,24 +131,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "BackgroundNoOutline_22"
-  }
-}
-Assets {
-  Id: 10433349234450720322
-  Name: "Outline Object"
-  PlatformAssetType: 20
-  PrimaryAsset {
-    AssetType: "BlueprintAssetRef"
-    AssetId: "fxbp_local_outline"
-  }
-}
-Assets {
-  Id: 10184847056121543272
-  Name: "Basic Material"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_basic_pbr_material_001"
   }
 }
 Assets {
@@ -269,15 +242,6 @@ Assets {
   }
 }
 Assets {
-  Id: 5399512678419755894
-  Name: "Decal Numbers and Symbols 01"
-  PlatformAssetType: 14
-  PrimaryAsset {
-    AssetType: "DecalBlueprintAssetRef"
-    AssetId: "bp_decal_numbers_002"
-  }
-}
-Assets {
   Id: 5196377603841433560
   Name: "BG Gradient 001"
   PlatformAssetType: 9
@@ -320,15 +284,6 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "Icon_Diamond"
-  }
-}
-Assets {
-  Id: 2435831029392636325
-  Name: "Container - Square 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_container_square_ref"
   }
 }
 Assets {

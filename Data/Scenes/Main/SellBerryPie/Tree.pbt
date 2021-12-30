@@ -35,6 +35,9 @@ Objects {
     InstanceId: 15966456142674523695
     TemplateId: 7689519216032096316
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10943210008604953948
@@ -76,6 +79,9 @@ Objects {
     IsFilePartition: true
     FilePartitionName: "Berry Pie"
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10353423363495445987
@@ -114,5 +120,8 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Berry Pie_1"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }

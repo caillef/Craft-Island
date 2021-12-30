@@ -26,6 +26,9 @@ Assets {
             }
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -40,5 +43,5 @@ Assets {
     Version: "1.0.0"
     Description: "gift package 1 x 1 x 1"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

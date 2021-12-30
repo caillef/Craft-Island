@@ -149,15 +149,6 @@ Assets {
   }
 }
 Assets {
-  Id: 6461632182486659129
-  Name: "Survival Package 003"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Survival_Equip_Package_003"
-  }
-}
-Assets {
   Id: 6201988555087709525
   Name: "Small Crate Lid"
   PlatformAssetType: 1

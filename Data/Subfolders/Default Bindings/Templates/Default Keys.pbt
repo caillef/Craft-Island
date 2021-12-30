@@ -33,6 +33,9 @@ Assets {
             Id: 15811936204232470899
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -43,6 +46,6 @@ Assets {
   Marketplace {
     Description: "If you lost all the keys, this is some of the default"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
   DirectlyPublished: true
 }

@@ -29,6 +29,9 @@ Assets {
             }
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -43,5 +46,5 @@ Assets {
     Version: "1.0.0"
     Description: "Pots, pan, forks, spoons, spatula, apples and of course some delicious meats"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

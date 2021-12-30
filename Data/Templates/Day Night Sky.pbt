@@ -35,6 +35,9 @@ Assets {
         }
         NetworkContext {
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 2687820722041061846
@@ -98,6 +101,9 @@ Assets {
           ScriptAsset {
             Id: 8993569013363830368
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -232,6 +238,9 @@ Assets {
             Id: 7887238662729938253
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 15823941823731023788
@@ -290,6 +299,9 @@ Assets {
           BlueprintAsset {
             Id: 11515840070784317904
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -363,6 +375,9 @@ Assets {
             Id: 16910278292812118833
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 5850246755653294951
@@ -423,6 +438,9 @@ Assets {
             Id: 12344193518355455075
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 18275274607650207761
@@ -474,6 +492,9 @@ Assets {
           BlueprintAsset {
             Id: 2224571462023946700
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
     }
@@ -527,5 +548,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

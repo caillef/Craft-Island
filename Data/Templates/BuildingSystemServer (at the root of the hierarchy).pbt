@@ -46,6 +46,9 @@ Assets {
             Id: 18313405971573075606
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 16511946045933916749
@@ -75,6 +78,9 @@ Assets {
           ScriptAsset {
             Id: 7339519165257358670
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -107,6 +113,9 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -144,6 +153,9 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -199,6 +211,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 18347631918547459512
@@ -235,6 +250,9 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -290,6 +308,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 14104140512261208553
@@ -326,6 +347,9 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -399,6 +423,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     Assets {
@@ -454,6 +481,6 @@ Assets {
   Marketplace {
     Description: "Here is a simple building system you can add to your game.\r\n\r\nPlace the BuildingSystemServer at the root and the BuildingSystem in the Client Context of the Third person Camera Settings\r\n\r\nIf the Event Log shows this, then it should work ! :)\r\nBuilding Mode Activated for the server (need the same message for players)\r\nBuilding Mode Activated for players (need the same message for the server)\r\n\r\nToggle Building Mode : V\r\nRemove latest structure : X\r\nPlace structure : Left Click\r\nChange structure : Right Click"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
   DirectlyPublished: true
 }

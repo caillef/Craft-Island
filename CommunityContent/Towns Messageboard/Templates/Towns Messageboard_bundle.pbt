@@ -29,6 +29,9 @@ Assets {
             }
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -43,5 +46,5 @@ Assets {
     Version: "1.0.0"
     Description: "Hello everyone!,\r\n\r\nI hope you find this CC usefull to place into your RPG games :D"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

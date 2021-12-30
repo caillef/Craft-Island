@@ -26,6 +26,9 @@ Assets {
             }
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -40,5 +43,5 @@ Assets {
     Version: "1.0.0"
     Description: "If you lost all the keys, this is some of the default"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

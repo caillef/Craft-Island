@@ -29,6 +29,9 @@ Assets {
             }
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -43,5 +46,5 @@ Assets {
     Version: "1.0.0"
     Description: "a chef\'s hat for your various chef-ing needs"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

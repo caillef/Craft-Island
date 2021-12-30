@@ -36,6 +36,9 @@ Assets {
         Folder {
           IsGroup: true
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 39110604354521022
@@ -117,6 +120,9 @@ Assets {
             PlayerMasterVolumeMultiplier: 1
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 5470185729744539877
@@ -148,6 +154,9 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         NetworkContext {
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -195,6 +204,9 @@ Assets {
           MinPitch: -89
           MaxPitch: 89
           UseAsAudioListener: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -245,6 +257,9 @@ Assets {
           DoesPositionOffsetSpring: true
           UseAsAudioListener: true
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 7115550122524446183
@@ -289,6 +304,9 @@ Assets {
             Id: 17836949485841443238
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -299,6 +317,6 @@ Assets {
   Marketplace {
     Description: "First Person to Third Person camera changer\r\n\r\n== IMPORTANT ==\r\nHOW TO USE\r\n\r\nDelete your camera object that you\'re using, and drag and drop this template... thats it\r\n\r\n---------------\r\n\r\n-- Press V to change the camera\r\n-- Keybind can be changed by look at the custom properties of the main folder"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
   DirectlyPublished: true
 }

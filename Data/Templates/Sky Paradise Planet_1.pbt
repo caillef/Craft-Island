@@ -39,6 +39,9 @@ Assets {
           IsFilePartition: true
           FilePartitionName: "Sky"
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 15921615838975390776
@@ -140,6 +143,9 @@ Assets {
             Id: 10735508760752857422
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 18301559293690674958
@@ -192,6 +198,9 @@ Assets {
             Id: 16122861514950347918
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 15538726086765675883
@@ -239,6 +248,9 @@ Assets {
           BlueprintAsset {
             Id: 1353607577508895962
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -322,6 +334,9 @@ Assets {
             Id: 15770247924503271224
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 7297041859521900518
@@ -368,6 +383,9 @@ Assets {
             }
             BoundsScale: 1
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -505,6 +523,9 @@ Assets {
             Id: 10988486045141043269
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 10721762802723787820
@@ -572,6 +593,9 @@ Assets {
           BlueprintAsset {
             Id: 60625160722517446
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -672,6 +696,9 @@ Assets {
             Id: 8968224820687168785
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 3227245213902330811
@@ -703,6 +730,9 @@ Assets {
           }
           TeamSettings {
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -762,6 +792,9 @@ Assets {
           BlueprintAsset {
             Id: 8905125853479455570
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
     }
@@ -860,5 +893,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

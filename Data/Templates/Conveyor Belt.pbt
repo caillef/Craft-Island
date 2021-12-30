@@ -33,6 +33,9 @@ Assets {
         Folder {
           IsGroup: true
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 16384231543648092062
@@ -98,6 +101,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 17237315123937708716
@@ -152,6 +158,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     Assets {
@@ -180,7 +189,7 @@ Assets {
   Marketplace {
     Description: "Automation Conveyor Belt"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
   DirectlyPublished: true
   VirtualFolderPath: "Automation"
 }

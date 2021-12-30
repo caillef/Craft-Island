@@ -35,6 +35,9 @@ Objects {
     InstanceId: 15966456142674523695
     TemplateId: 7689519216032096316
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 14745550804876027768
@@ -76,6 +79,9 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Bread_2"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -120,5 +126,8 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Bread_3"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }

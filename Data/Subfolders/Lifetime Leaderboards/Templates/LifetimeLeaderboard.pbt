@@ -73,6 +73,9 @@ Assets {
         Folder {
           IsGroup: true
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 2364796592091945380
@@ -100,6 +103,9 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         NetworkContext {
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -157,6 +163,9 @@ Assets {
             }
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 2072540113947188838
@@ -209,6 +218,9 @@ Assets {
             }
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 4362868324275113064
@@ -259,6 +271,9 @@ Assets {
             Id: 9121246063400579216
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 12501067247465321149
@@ -297,6 +312,9 @@ Assets {
             Id: 5160954844379601589
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -307,6 +325,6 @@ Assets {
   Marketplace {
     Description: "Have you ever wanted to have a leaderboard that ranks all the players based on some resource?\r\n\r\nHow about if it took care of saving that resource automatically, and all you had to do was modify it!\r\n\r\nIf that sounds good, this is the template for you!\r\n\r\nDisplay player rankings, automatically update, and automatically handle saving and loading of data!  Easy!"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
   DirectlyPublished: true
 }

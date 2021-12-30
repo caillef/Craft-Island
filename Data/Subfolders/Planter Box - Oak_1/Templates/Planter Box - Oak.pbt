@@ -29,6 +29,9 @@ Assets {
             }
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -43,5 +46,5 @@ Assets {
     Version: "1.0.0"
     Description: "Just a little oak tree planter for decoration. Could be considered a bonsai maybe? Enjoy!"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

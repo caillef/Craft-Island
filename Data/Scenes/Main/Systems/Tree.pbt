@@ -1,4281 +1,6 @@
 Name: "Systems"
 RootId: 9416028156443735960
 Objects {
-  Id: 7547324023303040398
-  Name: "Advent Calendar"
-  Transform {
-    Location {
-      X: 1484.73303
-      Y: -546.580322
-      Z: 2257.82544
-    }
-    Rotation {
-      Yaw: 50.0370064
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9416028156443735960
-  ChildIds: 7206589842169563023
-  ChildIds: 13512227478730697230
-  ChildIds: 13521471251158018403
-  ChildIds: 47419090506142842
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-}
-Objects {
-  Id: 47419090506142842
-  Name: "Trigger"
-  Transform {
-    Location {
-      Y: 75.0874
-      Z: 180.702393
-    }
-    Rotation {
-    }
-    Scale {
-      X: 4.53687763
-      Y: 2.15744543
-      Z: 5.01347065
-    }
-  }
-  ParentId: 7547324023303040398
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Trigger {
-    Interactable: true
-    InteractionLabel: "Open Today\'s Box"
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 13521471251158018403
-  Name: "ClientContext"
-  Transform {
-    Location {
-      X: -1.48132324
-      Y: 9.79199219
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7547324023303040398
-  ChildIds: 9785268711395630859
-  ChildIds: 5083755927341672428
-  ChildIds: 10991887650902967636
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  NetworkContext {
-  }
-}
-Objects {
-  Id: 10991887650902967636
-  Name: "Boxes"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 13521471251158018403
-  ChildIds: 8221771480449494182
-  ChildIds: 9307402513287518962
-  ChildIds: 17171072680260535553
-  ChildIds: 8803745716611912204
-  ChildIds: 16519957548637280926
-  ChildIds: 5202782192604391962
-  ChildIds: 9775789174602013953
-  ChildIds: 7709893520465155175
-  ChildIds: 10533729802569588036
-  ChildIds: 10641145424765249869
-  ChildIds: 10267188435183311929
-  ChildIds: 9178532010425783926
-  ChildIds: 6907330522678395437
-  ChildIds: 7928289609777696775
-  ChildIds: 13201597561566670180
-  ChildIds: 1652962005996163423
-  ChildIds: 17558386288383545178
-  ChildIds: 15161809286345736864
-  ChildIds: 18181433714074153514
-  ChildIds: 7428627390046405179
-  ChildIds: 15570025096051960619
-  ChildIds: 10927010014897690645
-  ChildIds: 17309079501435859480
-  ChildIds: 12509208976738926713
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsGroup: true
-  }
-}
-Objects {
-  Id: 12509208976738926713
-  Name: "24"
-  Transform {
-    Location {
-      X: 167.320679
-      Z: -37.6584473
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.09693158
-      Y: 0.8
-      Z: 1.06170392
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 11722107581764553815
-  ChildIds: 15653550912194729876
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 15653550912194729876
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 34.0534
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000157094313
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.141289666
-      Y: 0.193730772
-      Z: 0.294501126
-    }
-  }
-  ParentId: 12509208976738926713
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 4
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 11722107581764553815
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 9.84023762
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000157094313
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.141289666
-      Y: 0.193730772
-      Z: 0.294501
-    }
-  }
-  ParentId: 12509208976738926713
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 2
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 17309079501435859480
-  Name: "23"
-  Transform {
-    Location {
-      X: 67.6254883
-      Z: -39.2380371
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.784546256
-      Y: 0.8
-      Z: 0.758368731
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 2636627992646743573
-  ChildIds: 13704065095440919465
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 0.0100004673
-        B: 0.00999999
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 13704065095440919465
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 32.1449966
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000157094313
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.148496881
-      Y: 0.145628333
-      Z: 0.153622776
-    }
-  }
-  ParentId: 17309079501435859480
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 3
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 2636627992646743573
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 3.3150754
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000157094313
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.148496881
-      Y: 0.145628333
-      Z: 0.153622776
-    }
-  }
-  ParentId: 17309079501435859480
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 2
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 10927010014897690645
-  Name: "22"
-  Transform {
-    Location {
-      X: -16.8770752
-      Z: -39.2380371
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.804326713
-      Y: 0.8
-      Z: 0.758368731
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 1845411807784982580
-  ChildIds: 8454268585622765268
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 8454268585622765268
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -10.5634441
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000157094328
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.141111463
-      Y: 0.141874641
-      Z: 0.149662882
-    }
-  }
-  ParentId: 10927010014897690645
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 2
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 1845411807784982580
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 16.4031372
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000157094328
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.141111463
-      Y: 0.141874641
-      Z: 0.149662882
-    }
-  }
-  ParentId: 10927010014897690645
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 2
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 15570025096051960619
-  Name: "21"
-  Transform {
-    Location {
-      X: -94.7788086
-      Z: -38.907959
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.595698953
-      Y: 0.8
-      Z: 1.24787629
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 3682927980929535866
-  ChildIds: 14826014133304027661
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 0.0100004673
-        B: 0.00999999
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 14826014133304027661
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 11.0633965
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000157094313
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.195573077
-      Y: 0.145628333
-      Z: 0.0933607891
-    }
-  }
-  ParentId: 15570025096051960619
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 3682927980929535866
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -16.8636417
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000157094313
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.195573077
-      Y: 0.145628333
-      Z: 0.0933607891
-    }
-  }
-  ParentId: 15570025096051960619
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 2
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 7428627390046405179
-  Name: "20"
-  Transform {
-    Location {
-      X: -171.616821
-      Z: -36.9790039
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.858018339
-      Y: 0.8
-      Z: 0.853369176
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 13700498747735652515
-  ChildIds: 6564443060441959330
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 6564443060441959330
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 4.80502844
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000157094342
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.132281244
-      Y: 0.141874641
-      Z: 0.133001834
-    }
-  }
-  ParentId: 7428627390046405179
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 2
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 13700498747735652515
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 24.4148197
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000157094342
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.132281229
-      Y: 0.141874641
-      Z: 0.133001834
-    }
-  }
-  ParentId: 7428627390046405179
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 0
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 18181433714074153514
-  Name: "19"
-  Transform {
-    Location {
-      X: 167.320679
-      Z: 82.8007812
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.09693158
-      Y: 0.8
-      Z: 0.51959455
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 10005338284535841718
-  ChildIds: 15056468423600388362
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 0.0100004673
-        B: 0.00999999
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 15056468423600388362
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 8.53677464
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.10620781
-      Y: 0.145628333
-      Z: 0.224218518
-    }
-  }
-  ParentId: 18181433714074153514
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 9
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 10005338284535841718
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -9.26156425
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.10620781
-      Y: 0.145628333
-      Z: 0.224218518
-    }
-  }
-  ParentId: 18181433714074153514
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 15161809286345736864
-  Name: "18"
-  Transform {
-    Location {
-      X: 81.473877
-      Z: 49.8342285
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.433345199
-      Y: 0.8
-      Z: 0.894252479
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 6038537934891314446
-  ChildIds: 1998561121060174258
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 1998561121060174258
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -17.1641178
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.163059771
-      Y: 0.0883264467
-      Z: 0.079017
-    }
-  }
-  ParentId: 15161809286345736864
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 6038537934891314446
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 12.5499868
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.163059771
-      Y: 0.0883264467
-      Z: 0.079017
-    }
-  }
-  ParentId: 15161809286345736864
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 8
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 17558386288383545178
-  Name: "17"
-  Transform {
-    Location {
-      X: -3.73620605
-      Z: 42.1005859
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.11314261
-      Y: 0.8
-      Z: 0.85148406
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 15958393465667901233
-  ChildIds: 11369344676364832148
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 0.0100004673
-        B: 0.00999999
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 11369344676364832148
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 13.7361403
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.104661047
-      Y: 0.145628333
-      Z: 0.136823133
-    }
-  }
-  ParentId: 17558386288383545178
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 7
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 15958393465667901233
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -3.80299544
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.104661047
-      Y: 0.145628333
-      Z: 0.136823133
-    }
-  }
-  ParentId: 17558386288383545178
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 1652962005996163423
-  Name: "16"
-  Transform {
-    Location {
-      X: -105.930542
-      Z: 91.5869141
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.753977418
-      Y: 0.8
-      Z: 0.428891808
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 9287018156420489887
-  ChildIds: 16965220685136096764
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 16965220685136096764
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -27.4527187
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.0801858231
-      Y: 0.0755728632
-      Z: 0.140963987
-    }
-  }
-  ParentId: 1652962005996163423
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 9287018156420489887
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -10.3746681
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.0801858231
-      Y: 0.0755728632
-      Z: 0.140963987
-    }
-  }
-  ParentId: 1652962005996163423
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 6
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 13201597561566670180
-  Name: "15"
-  Transform {
-    Location {
-      X: -182.305664
-      Z: 54.6640625
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.650058687
-      Y: 0.8
-      Z: 0.909004092
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 11675735041954616055
-  ChildIds: 15152212688068850965
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 0.0100004673
-        B: 0.00999999
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 15152212688068850965
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 13.5998468
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.224019334
-      Y: 0.182032
-      Z: 0.160203606
-    }
-  }
-  ParentId: 13201597561566670180
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 5
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 11675735041954616055
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -25.6885986
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.224019334
-      Y: 0.182032
-      Z: 0.160203606
-    }
-  }
-  ParentId: 13201597561566670180
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 7928289609777696775
-  Name: "14"
-  Transform {
-    Location {
-      X: 174.618286
-      Z: 144.406494
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.780825675
-      Y: 0.8
-      Z: 0.426215589
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 4718050058961219642
-  ChildIds: 17091550720436286209
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 17091550720436286209
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -16.7916222
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.0774286836
-      Y: 0.0755728632
-      Z: 0.141849101
-    }
-  }
-  ParentId: 7928289609777696775
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 4718050058961219642
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -0.300788403
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.0774286836
-      Y: 0.0755728632
-      Z: 0.141849101
-    }
-  }
-  ParentId: 7928289609777696775
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 4
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 6907330522678395437
-  Name: "13"
-  Transform {
-    Location {
-      X: 93.3881836
-      Z: 149.032227
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.696294427
-      Y: 0.8
-      Z: 0.919169903
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 6751561095320970804
-  ChildIds: 13581747092618592818
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 0.0100004673
-        B: 0.00999999
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 13581747092618592818
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 22.9644089
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.209143862
-      Y: 0.182032
-      Z: 0.158431798
-    }
-  }
-  ParentId: 6907330522678395437
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 3
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 6751561095320970804
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -17.7621346
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.209143862
-      Y: 0.182032
-      Z: 0.158431798
-    }
-  }
-  ParentId: 6907330522678395437
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 9178532010425783926
-  Name: "12"
-  Transform {
-    Location {
-      X: -3.73620605
-      Z: 131.90625
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.11314261
-      Y: 0.8
-      Z: 1.07003891
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 4973441150970885867
-  ChildIds: 7398742090613899341
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 7398742090613899341
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 4.83119345
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.126864135
-      Y: 0.176522359
-      Z: 0.131974548
-    }
-  }
-  ParentId: 9178532010425783926
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 2
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 4973441150970885867
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -22.1714
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.126864135
-      Y: 0.176522359
-      Z: 0.131974548
-    }
-  }
-  ParentId: 9178532010425783926
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 10267188435183311929
-  Name: "11"
-  Transform {
-    Location {
-      X: -143.241211
-      Z: 152.949951
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.44310868
-      Y: 0.8
-      Z: 0.624423862
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 1709005509361509981
-  ChildIds: 10039337696302059133
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 10039337696302059133
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 7.91426325
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.0978567302
-      Y: 0.176522359
-      Z: 0.226157203
-    }
-  }
-  ParentId: 10267188435183311929
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 1709005509361509981
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -7.07709122
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.0978567302
-      Y: 0.176522359
-      Z: 0.226157203
-    }
-  }
-  ParentId: 10267188435183311929
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 0.88
-        G: 4.19616697e-07
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 10641145424765249869
-  Name: "10"
-  Transform {
-    Location {
-      X: 174.216064
-      Z: 192.101562
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.8
-      Y: 0.8
-      Z: 1.17243171
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 14854261339089801572
-  ChildIds: 4637165950754866485
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 0.0100004673
-        B: 0.00999999
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 4637165950754866485
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 20.6990051
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000156964306
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.176522374
-      Y: 0.176522359
-      Z: 0.120448761
-    }
-  }
-  ParentId: 10641145424765249869
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 0
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 14854261339089801572
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -6.34368896
-      Y: 56.1302948
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.00015696435
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.176522374
-      Y: 0.176522359
-      Z: 0.120448761
-    }
-  }
-  ParentId: 10641145424765249869
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 10533729802569588036
-  Name: "9"
-  Transform {
-    Location {
-      X: 62.6899414
-      Z: 244.063232
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.27446282
-      Y: 0.8
-      Z: 0.321777642
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 2674012887564925949
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 2674012887564925949
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 17.7414665
-      Y: 57.8001404
-      Z: 50
-    }
-    Rotation {
-      Yaw: 6.27857517e-05
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.0530197099
-      Y: 0.0844645798
-      Z: 0.209994972
-    }
-  }
-  ParentId: 10533729802569588036
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 9
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 0.100000024
-        B: 0.100000024
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 7709893520465155175
-  Name: "8"
-  Transform {
-    Location {
-      X: -35.7866211
-      Z: 249.524658
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.438398451
-      Y: 0.8
-      Z: 0.642319322
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 13588457595753542088
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 0.0100004673
-        B: 0.00999999
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 13588457595753542088
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 8.25286198
-      Y: 56.1302185
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000135230832
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.228103027
-      Y: 0.125
-      Z: 0.155685842
-    }
-  }
-  ParentId: 7709893520465155175
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 8
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 9775789174602013953
-  Name: "7"
-  Transform {
-    Location {
-      X: -110.496216
-      Z: 224.030273
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.728396118
-      Y: 0.8
-      Z: 0.909004092
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 10738357738149464788
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 10738357738149464788
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -13.9084482
-      Y: 57.8001404
-      Z: 50
-    }
-    Rotation {
-      Yaw: 6.27857517e-05
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.109542616
-      Y: 0.0997380167
-      Z: 0.0877778754
-    }
-  }
-  ParentId: 9775789174602013953
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 7
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 0.100000024
-        B: 0.100000024
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 5202782192604391962
-  Name: "6"
-  Transform {
-    Location {
-      X: -184.55835
-      Z: 224.030273
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.514924407
-      Y: 0.8
-      Z: 0.909004092
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 5015620947815798033
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 0.0100004673
-        B: 0.00999999
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 5015620947815798033
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 7.05646276
-      Y: 48.0938721
-      Z: 50
-    }
-    Rotation {
-      Yaw: 0.000111082467
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.194203302
-      Y: 0.125
-      Z: 0.110010535
-    }
-  }
-  ParentId: 5202782192604391962
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 6
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 16519957548637280926
-  Name: "5"
-  Transform {
-    Location {
-      X: 174.216064
-      Z: 318.812
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.8
-      Y: 0.8
-      Z: 0.8
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 14295344595028861001
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 14295344595028861001
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 11.3864136
-      Y: 57.8001404
-      Z: 50
-    }
-    Rotation {
-      Yaw: 6.27857517e-05
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.163671732
-      Y: 0.163671732
-      Z: 0.163671821
-    }
-  }
-  ParentId: 16519957548637280926
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 5
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 0.100000024
-        B: 0.100000024
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 8803745716611912204
-  Name: "4"
-  Transform {
-    Location {
-      X: 102.280884
-      Z: 280.972412
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.489277363
-      Y: 0.8
-      Z: 1.14250517
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 16342039324331815246
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 0.0100004673
-        B: 0.00999999
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 16342039324331815246
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -6.10155249
-      Y: 38.9495087
-      Z: 50
-    }
-    Rotation {
-      Yaw: 9.41786202e-05
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.185215965
-      Y: 0.113277495
-      Z: 0.0793186948
-    }
-  }
-  ParentId: 8803745716611912204
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 4
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 17171072680260535553
-  Name: "3"
-  Transform {
-    Location {
-      X: 32.9771729
-      Z: 280.972412
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.716953158
-      Y: 0.8
-      Z: 1.14250517
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 6824261530029801119
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 6824261530029801119
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: -2.73305535
-      Y: 57.8001404
-      Z: 50
-    }
-    Rotation {
-      Yaw: 6.27857517e-05
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.182630315
-      Y: 0.163671717
-      Z: 0.114605576
-    }
-  }
-  ParentId: 17171072680260535553
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 3
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 0.100000024
-        B: 0.100000024
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 9307402513287518962
-  Name: "2"
-  Transform {
-    Location {
-      X: -69.0701904
-      Z: 318.812
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.11057377
-      Y: 0.8
-      Z: 0.8
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 12910990930529610025
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 0.0100004673
-        B: 0.00999999
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 12910990930529610025
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 0.606958628
-      Y: 56.1302185
-      Z: 50
-    }
-    Rotation {
-      Pitch: 6.83018879e-06
-      Yaw: 7.96896e-05
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.090043582
-      Y: 0.125
-      Z: 0.125000015
-    }
-  }
-  ParentId: 9307402513287518962
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 2
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 8221771480449494182
-  Name: "1"
-  Transform {
-    Location {
-      X: -174.021484
-      Z: 318.812
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.8
-      Y: 0.8
-      Z: 0.8
-    }
-  }
-  ParentId: 10991887650902967636
-  ChildIds: 7015685668861693061
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 2435831029392636325
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 7015685668861693061
-  Name: "Decal Numbers and Symbols 01"
-  Transform {
-    Location {
-      X: 7.04895
-      Y: 57.8001404
-      Z: 50
-    }
-    Rotation {
-      Yaw: 6.27857517e-05
-      Roll: 90.0000076
-    }
-    Scale {
-      X: 0.125
-      Y: 0.125
-      Z: 0.125
-    }
-  }
-  ParentId: 8221771480449494182
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Shape Index"
-      Int: 1
-    }
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 0.100000024
-        B: 0.100000024
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 5399512678419755894
-    }
-    TeamSettings {
-    }
-    DecalBP {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 5083755927341672428
-  Name: "Outline Object"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 13521471251158018403
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Object To Outline"
-      ObjectReference {
-        SelfId: 8221771480449494182
-      }
-    }
-    Overrides {
-      Name: "bp:Color A"
-      Color {
-        R: 0.940000057
-        G: 0.690993428
-        A: 0.8
-      }
-    }
-    Overrides {
-      Name: "bp:Thickness"
-      Float: 4
-    }
-    Overrides {
-      Name: "bp:Is Animated"
-      Bool: false
-    }
-    Overrides {
-      Name: "bp:Show Behind Objects"
-      Bool: false
-    }
-    Overrides {
-      Name: "bp:Solid Behind Objects"
-      Bool: false
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 10433349234450720322
-    }
-    TeamSettings {
-    }
-  }
-}
-Objects {
-  Id: 9785268711395630859
-  Name: "AdventCalendarClient"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 13521471251158018403
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:Boxes"
-      ObjectReference {
-        SelfId: 10991887650902967636
-      }
-    }
-    Overrides {
-      Name: "cs:OutlineObject"
-      ObjectReference {
-        SelfId: 5083755927341672428
-      }
-    }
-    Overrides {
-      Name: "cs:AddItemPanel"
-      ObjectReference {
-        SelfId: 2091521470493461049
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 5261452855651840559
-    }
-  }
-}
-Objects {
-  Id: 13512227478730697230
-  Name: "Cube"
-  Transform {
-    Location {
-      X: 1.48132324
-      Y: -9.79199219
-      Z: 183.890137
-    }
-    Rotation {
-    }
-    Scale {
-      X: 4.65133953
-      Y: 1
-      Z: 5.32272577
-    }
-  }
-  ParentId: 7547324023303040398
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 10184847056121543272
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 0.577
-        G: 0.577
-        B: 0.577
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12095835209017042614
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 7206589842169563023
-  Name: "AdventCalenderServer"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7547324023303040398
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:Trigger"
-      ObjectReference {
-        SelfId: 47419090506142842
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 5614542301585925599
-    }
-  }
-}
-Objects {
   Id: 3228209193712407022
   Name: "UIs"
   Transform {
@@ -4313,6 +38,9 @@ Objects {
   Folder {
     IsGroup: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 3159947606477061124
@@ -4345,6 +73,9 @@ Objects {
   Folder {
     IsGroup: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 7372486428801025499
@@ -4375,6 +106,9 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -4420,6 +154,9 @@ Objects {
       Id: 7958968856973531824
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12285848181049060482
@@ -4450,6 +187,9 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -4519,6 +259,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 16377102229023156604
@@ -4583,6 +326,9 @@ Objects {
     SubobjectId: 12442237018773528
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -4658,6 +404,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1016654346066858163
@@ -4727,6 +476,9 @@ Objects {
     SubobjectId: 399909766291857781
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -4798,6 +550,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10999599977659742072
@@ -4862,6 +617,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 9224908948772786851
@@ -4925,6 +683,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -5023,6 +784,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 3286211363713023351
@@ -5090,6 +854,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11692712276723941757
@@ -5143,6 +910,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -5241,6 +1011,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11903831338324034798
@@ -5307,6 +1080,9 @@ Objects {
     SubobjectId: 10236666476992935936
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -5405,6 +1181,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13459749219922760565
@@ -5471,6 +1250,9 @@ Objects {
     SubobjectId: 9021037962916681739
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -5568,6 +1350,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 7760187186416330607
@@ -5634,6 +1419,9 @@ Objects {
     SubobjectId: 15876032396460974340
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -5705,6 +1493,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15754305667519144343
@@ -5764,6 +1555,9 @@ Objects {
       Id: 14552901745663612420
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17305648224939207781
@@ -5801,6 +1595,9 @@ Objects {
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
     WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -5862,6 +1659,9 @@ Objects {
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10396936587444189053
@@ -5913,6 +1713,9 @@ Objects {
     SubobjectId: 16663764924908431771
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -5976,6 +1779,9 @@ Objects {
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17873740688879271813
@@ -6036,6 +1842,9 @@ Objects {
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 2879199785804506218
@@ -6072,6 +1881,9 @@ Objects {
     SubobjectId: 5835604809123281548
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -6140,6 +1952,9 @@ Objects {
     SubobjectId: 8367370782974952216
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -6224,6 +2039,9 @@ Objects {
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11882127925583714773
@@ -6286,6 +2104,9 @@ Objects {
     SubobjectId: 15270878611980289843
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -6381,6 +2202,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 8442614369731428319
@@ -6475,6 +2299,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 14551505374825208604
@@ -6541,6 +2368,9 @@ Objects {
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 2112680520092013978
@@ -6603,6 +2433,9 @@ Objects {
     SubobjectId: 7663293584688302972
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -6670,6 +2503,9 @@ Objects {
     SubobjectId: 12035918377288366932
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -6742,6 +2578,9 @@ Objects {
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 14881733769956238959
@@ -6809,6 +2648,9 @@ Objects {
     SubobjectId: 13370704955400632457
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -6878,6 +2720,9 @@ Objects {
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11101563982073701365
@@ -6943,6 +2788,9 @@ Objects {
     SubobjectId: 17084527004685876499
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -7010,6 +2858,9 @@ Objects {
     InstanceId: 9734705307238056788
     TemplateId: 5168900885698840412
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 9393515407580305483
@@ -7040,6 +2891,9 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -7109,6 +2963,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13229139076815855056
@@ -7174,6 +3031,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11535624744841435893
@@ -7236,6 +3096,9 @@ Objects {
     SubobjectId: 12442237018773528
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -7308,6 +3171,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 14082294072328980898
@@ -7367,6 +3233,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -7462,6 +3331,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 32007406582411789
@@ -7524,6 +3396,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -7618,6 +3493,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11761513909438735690
@@ -7679,6 +3557,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -7773,6 +3654,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15198897260445357102
@@ -7835,6 +3719,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -7899,6 +3786,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -7993,6 +3883,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 9023011527734355546
@@ -8056,6 +3949,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 3185190151265086596
@@ -8116,6 +4012,9 @@ Objects {
       Id: 16918208887620101772
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13061467906209388623
@@ -8168,6 +4067,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -8233,6 +4135,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10943681810988013887
@@ -8295,6 +4200,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -8360,6 +4268,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12927872753808762265
@@ -8422,6 +4333,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -8486,6 +4400,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 8298907662622884818
@@ -8548,6 +4465,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -8613,6 +4533,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11308472161220654485
@@ -8672,6 +4595,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -8743,6 +4669,9 @@ Objects {
     TemplateId: 7713744306647527414
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 5654504247166177219
@@ -8808,6 +4737,9 @@ Objects {
     InstanceId: 5553098609537691380
     TemplateId: 7713744306647527414
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 16902011527701622480
@@ -8869,6 +4801,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1314332698963676728
@@ -8911,6 +4846,7 @@ Objects {
       Orientation {
         Value: "mc:eorientation:orient_vertical"
       }
+      IsInteractable: true
     }
     AnchorLayout {
       SelfAnchor {
@@ -8924,6 +4860,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -9019,6 +4958,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1588126160361354386
@@ -9089,6 +5031,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 14398417919268644489
@@ -9154,6 +5099,9 @@ Objects {
       Id: 4025141808008165746
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10542069450984205778
@@ -9190,6 +5138,9 @@ Objects {
   Folder {
     IsGroup: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 5590571996768615592
@@ -9217,6 +5168,9 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -9286,6 +5240,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 178126851220198116
@@ -9351,6 +5308,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13621141712083962466
@@ -9413,6 +5373,9 @@ Objects {
     SubobjectId: 12442237018773528
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -9485,6 +5448,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 5646714945118598154
@@ -9550,6 +5516,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17590588689573601388
@@ -9613,6 +5582,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -9678,6 +5650,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1097277233617113006
@@ -9739,6 +5714,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 14431661988257874007
@@ -9796,6 +5774,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -9857,6 +5838,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -9921,6 +5905,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -10016,6 +6003,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 18168299805015835732
@@ -10078,6 +6068,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -10172,6 +6165,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 2171276605481471346
@@ -10233,6 +6229,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -10327,6 +6326,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 2049733205523658179
@@ -10389,6 +6391,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -10453,6 +6458,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -10547,6 +6555,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 8862613964066039498
@@ -10610,6 +6621,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17685104952704519718
@@ -10669,6 +6683,9 @@ Objects {
     ScriptAsset {
       Id: 16918208887620101772
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -10734,6 +6751,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12533599925731348211
@@ -10793,6 +6813,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -10864,6 +6887,9 @@ Objects {
     TemplateId: 7713744306647527414
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 16503587470319409784
@@ -10929,6 +6955,9 @@ Objects {
     InstanceId: 5553098609537691380
     TemplateId: 7713744306647527414
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 9954988108135191404
@@ -10990,6 +7019,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17075018193839059938
@@ -11032,6 +7064,7 @@ Objects {
       Orientation {
         Value: "mc:eorientation:orient_vertical"
       }
+      IsInteractable: true
     }
     AnchorLayout {
       SelfAnchor {
@@ -11045,6 +7078,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -11140,6 +7176,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 14827457328090676941
@@ -11210,6 +7249,9 @@ Objects {
     SubobjectId: 399909766291857781
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -11288,6 +7330,9 @@ Objects {
       Id: 6869989734168853047
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1614039822031357260
@@ -11319,6 +7364,9 @@ Objects {
   }
   NetworkContext {
     Type: Server
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -11358,6 +7406,9 @@ Objects {
       Id: 6497723591349818000
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11678033291204818239
@@ -11395,6 +7446,9 @@ Objects {
     TemplateId: 17875157770584550394
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11581391905908436340
@@ -11429,6 +7483,9 @@ Objects {
     SubobjectId: 2941278514911413833
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -11492,6 +7549,9 @@ Objects {
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17289425850043353923
@@ -11554,6 +7614,9 @@ Objects {
     SubobjectId: 7464921574509076606
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -11627,6 +7690,9 @@ Objects {
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 14977101671869292149
@@ -11698,6 +7764,9 @@ Objects {
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 16272259649276817676
@@ -11765,6 +7834,9 @@ Objects {
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17785956064285099465
@@ -11802,6 +7874,9 @@ Objects {
     SubobjectId: 9132371388171169524
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -11870,6 +7945,9 @@ Objects {
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 16282213626596972614
@@ -11936,6 +8014,9 @@ Objects {
     SubobjectId: 7610749861161300859
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -12004,6 +8085,9 @@ Objects {
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12825246525867346570
@@ -12071,6 +8155,9 @@ Objects {
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1577120089914684162
@@ -12108,6 +8195,9 @@ Objects {
     SubobjectId: 11352402545536800831
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -12204,6 +8294,9 @@ Objects {
     SubobjectId: 18275133587118816918
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -12302,6 +8395,9 @@ Objects {
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 139920226788115386
@@ -12399,6 +8495,9 @@ Objects {
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15739575159205803388
@@ -12494,6 +8593,9 @@ Objects {
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 7578561772999720996
@@ -12566,6 +8668,9 @@ Objects {
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15501731618544305747
@@ -12637,6 +8742,9 @@ Objects {
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17795648569394230681
@@ -12699,6 +8807,9 @@ Objects {
     SubobjectId: 9123734004055891620
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -12774,6 +8885,9 @@ Objects {
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15448232101718559173
@@ -12810,6 +8924,9 @@ Objects {
     InstanceId: 1623876683925347242
     TemplateId: 17875157770584550394
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 16798217953882117096
@@ -12838,6 +8955,9 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Achievements"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -12869,6 +8989,9 @@ Objects {
   Folder {
     IsGroup: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 16061617716940156775
@@ -12896,6 +9019,9 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -12955,6 +9081,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -13065,6 +9194,9 @@ Objects {
       Id: 10602080401797973264
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 6037523131496435426
@@ -13117,6 +9249,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -13185,6 +9320,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13091323395147484258
@@ -13244,6 +9382,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -13325,6 +9466,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13005072959824216156
@@ -13394,6 +9538,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15872956617304608252
@@ -13459,6 +9606,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -13529,6 +9679,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17946326562124724378
@@ -13596,6 +9749,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12171003354687688687
@@ -13653,6 +9809,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -13722,6 +9881,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 9760655717296491390
@@ -13789,6 +9951,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -13858,6 +10023,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11298876892675557761
@@ -13919,6 +10087,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 8728375929527760032
@@ -13979,6 +10150,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -14048,6 +10222,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1272042821634734103
@@ -14115,6 +10292,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -14186,6 +10366,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 4403263272531951427
@@ -14247,6 +10430,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11468069771945989370
@@ -14307,6 +10493,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -14377,6 +10566,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13149021620940937449
@@ -14437,6 +10629,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -14505,6 +10700,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -14577,6 +10775,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 3597932496540839037
@@ -14645,6 +10846,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10896966799121021782
@@ -14706,6 +10910,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 186999018370167461
@@ -14761,6 +10968,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -14833,6 +11043,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15086130840212273410
@@ -14901,6 +11114,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11368061885397298926
@@ -14962,6 +11178,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 2187546288527339071
@@ -15017,6 +11236,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -15089,6 +11311,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -15180,6 +11405,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 8551239903987796680
@@ -15248,6 +11476,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 3031518186317638625
@@ -15308,6 +11539,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -15377,6 +11611,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 7313855229674180679
@@ -15438,6 +11675,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 16888785308336009609
@@ -15494,6 +11734,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -15556,6 +11799,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13063334363574771284
@@ -15617,6 +11863,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 14559099017696014657
@@ -15677,6 +11926,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -15746,6 +11998,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 8162235546965191575
@@ -15805,6 +12060,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -15900,6 +12158,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 14474251912894029288
@@ -15968,6 +12229,9 @@ Objects {
       Id: 11451653289251984445
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 7102000930703235490
@@ -16007,6 +12271,9 @@ Objects {
   Folder {
     IsGroup: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 7842837004472249043
@@ -16039,6 +12306,9 @@ Objects {
   Folder {
     IsGroup: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13821590979660412601
@@ -16069,6 +12339,9 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -16130,6 +12403,9 @@ Objects {
       Id: 10536869899516647465
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 3317340584152194039
@@ -16186,6 +12462,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13196471439626731437
@@ -16239,6 +12518,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -16302,6 +12584,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -16397,6 +12682,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17971116858730172329
@@ -16491,6 +12779,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13189886262256188527
@@ -16553,6 +12844,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15490686258175173075
@@ -16611,6 +12905,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13698404543684522031
@@ -16643,6 +12940,9 @@ Objects {
   Folder {
     IsGroup: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 5846481285960814986
@@ -16673,6 +12973,9 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -16712,6 +13015,9 @@ Objects {
     ScriptAsset {
       Id: 9157060831955870926
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -16768,6 +13074,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -16830,6 +13139,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1584687894851664248
@@ -16883,6 +13195,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -16944,6 +13259,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15040529882743934254
@@ -17003,6 +13321,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -17067,6 +13388,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 14742564276745133393
@@ -17127,6 +13451,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1658032344195301403
@@ -17158,6 +13485,9 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -17206,6 +13536,9 @@ Objects {
       Id: 10935553613204209229
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 876164519996257318
@@ -17241,6 +13574,9 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -17319,6 +13655,9 @@ Objects {
       Id: 17904920954195291565
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 4368197648581438958
@@ -17366,6 +13705,9 @@ Objects {
       Id: 9773378506251057671
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13644968004114680986
@@ -17401,6 +13743,9 @@ Objects {
     InstanceId: 13527164212975628923
     TemplateId: 11400331072192085439
     WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -17467,6 +13812,9 @@ Objects {
       Id: 8566027680962883103
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 8801969810363480071
@@ -17531,6 +13879,9 @@ Objects {
       Id: 9047219446347774920
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17277830748248829304
@@ -17562,6 +13913,9 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -17595,6 +13949,9 @@ Objects {
     ScriptAsset {
       Id: 9525272680058773397
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -17631,6 +13988,9 @@ Objects {
   Folder {
     IsGroup: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10457520934331886866
@@ -17659,6 +14019,9 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Gold System"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -17750,6 +14113,9 @@ Objects {
     TemplateId: 12474514012364516574
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15394154542568400997
@@ -17809,6 +14175,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 9849534251865595013
@@ -17867,6 +14236,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 8227678740540710611
@@ -17914,6 +14286,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12416723983507292273
@@ -17949,6 +14324,9 @@ Objects {
     SubobjectId: 5858787978921550728
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -17987,6 +14365,9 @@ Objects {
     SubobjectId: 7272948055746808580
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -18027,6 +14408,9 @@ Objects {
     SubobjectId: 16495241559732538096
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -18096,6 +14480,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 2091521470493461049
@@ -18145,6 +14532,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -18210,6 +14600,9 @@ Objects {
     SubobjectId: 12442237018773528
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -18282,6 +14675,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11221310588044724504
@@ -18342,6 +14738,9 @@ Objects {
     SubobjectId: 7396479092285532897
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -18411,6 +14810,9 @@ Objects {
     SubobjectId: 7056924084482495122
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -18482,6 +14884,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13873675612919023517
@@ -18550,6 +14955,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 7312068734335741362
@@ -18613,6 +15021,9 @@ Objects {
     SubobjectId: 10981508484920921675
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -18688,6 +15099,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15637940933097196395
@@ -18740,6 +15154,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -18845,6 +15262,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 7650911396958018319
@@ -18874,6 +15294,9 @@ Objects {
     ScriptAsset {
       Id: 8512827917099319038
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -18943,6 +15366,9 @@ Objects {
     TemplateId: 5794177702744428266
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12648755876016362712
@@ -19006,6 +15432,9 @@ Objects {
     SubobjectId: 1152962502594670013
     InstanceId: 11391636891624885565
     TemplateId: 5794177702744428266
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -19073,6 +15502,9 @@ Objects {
     SubobjectId: 15876032396460974340
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -19144,6 +15576,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1048008720244992790
@@ -19214,6 +15649,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11833100820097482798
@@ -19282,6 +15720,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 8689580361384161653
@@ -19349,6 +15790,9 @@ Objects {
     SubobjectId: 9621974970350916236
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -19447,6 +15891,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 4531221691926390666
@@ -19514,6 +15961,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 16340245166577367117
@@ -19573,6 +16023,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -19654,6 +16107,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 8946951758315378760
@@ -19733,6 +16189,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -19814,6 +16273,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15139872022856811841
@@ -19893,6 +16355,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -19974,6 +16439,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 706903250320128539
@@ -20053,6 +16521,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -20134,6 +16605,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11143223126236727305
@@ -20213,6 +16687,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -20294,6 +16771,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17717004353667155508
@@ -20371,6 +16851,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -20469,6 +16952,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 6851882757974783665
@@ -20535,6 +17021,9 @@ Objects {
     SubobjectId: 8595270419211388440
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -20633,6 +17122,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 2931486642749429779
@@ -20699,6 +17191,9 @@ Objects {
     SubobjectId: 13145649705166872087
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -20797,6 +17292,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13951585090690334525
@@ -20863,6 +17361,9 @@ Objects {
     SubobjectId: 17487808264820410134
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -20961,6 +17462,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 9154967594276434141
@@ -21027,6 +17531,9 @@ Objects {
     SubobjectId: 16596747172947149977
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -21125,6 +17632,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15251189923266426174
@@ -21191,6 +17701,9 @@ Objects {
     SubobjectId: 5548059229739620077
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -21289,6 +17802,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 7833722403680574851
@@ -21355,6 +17871,9 @@ Objects {
     SubobjectId: 5496435517885675465
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -21453,6 +17972,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 4628794822874908947
@@ -21519,6 +18041,9 @@ Objects {
     SubobjectId: 10236666476992935936
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -21617,6 +18142,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 2368818947757108816
@@ -21683,6 +18211,9 @@ Objects {
     SubobjectId: 9021037962916681739
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -21780,6 +18311,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11848606965709301480
@@ -21846,6 +18380,9 @@ Objects {
     SubobjectId: 15876032396460974340
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -21944,6 +18481,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 7699292219189300166
@@ -22010,6 +18550,9 @@ Objects {
     SubobjectId: 8595270419211388440
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -22108,6 +18651,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1870227569826862062
@@ -22174,6 +18720,9 @@ Objects {
     SubobjectId: 13145649705166872087
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -22272,6 +18821,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 8623466424100209228
@@ -22338,6 +18890,9 @@ Objects {
     SubobjectId: 17487808264820410134
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -22436,6 +18991,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1856565604141549757
@@ -22502,6 +19060,9 @@ Objects {
     SubobjectId: 16596747172947149977
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -22600,6 +19161,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1897303188291510111
@@ -22666,6 +19230,9 @@ Objects {
     SubobjectId: 5548059229739620077
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -22764,6 +19331,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 784491806409040636
@@ -22830,6 +19400,9 @@ Objects {
     SubobjectId: 5496435517885675465
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -22928,6 +19501,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 3509823482272261686
@@ -22994,6 +19570,9 @@ Objects {
     SubobjectId: 10236666476992935936
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -23092,6 +19671,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1683150494945713129
@@ -23158,6 +19740,9 @@ Objects {
     SubobjectId: 9021037962916681739
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -23255,6 +19840,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11696787886998798684
@@ -23321,6 +19909,9 @@ Objects {
     SubobjectId: 15876032396460974340
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -23418,6 +20009,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 9968437284215760353
@@ -23484,6 +20078,9 @@ Objects {
     SubobjectId: 8595270419211388440
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -23581,6 +20178,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 5436182090200956398
@@ -23647,6 +20247,9 @@ Objects {
     SubobjectId: 13145649705166872087
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -23744,6 +20347,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1130021956242302191
@@ -23810,6 +20416,9 @@ Objects {
     SubobjectId: 17487808264820410134
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -23907,6 +20516,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1967217152596371296
@@ -23973,6 +20585,9 @@ Objects {
     SubobjectId: 16596747172947149977
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -24070,6 +20685,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12817563898022540564
@@ -24136,6 +20754,9 @@ Objects {
     SubobjectId: 5548059229739620077
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -24233,6 +20854,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12779187102195536944
@@ -24299,6 +20923,9 @@ Objects {
     SubobjectId: 5496435517885675465
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -24396,6 +21023,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 8291260924411780089
@@ -24462,6 +21092,9 @@ Objects {
     SubobjectId: 10236666476992935936
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -24559,6 +21192,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 9236498240105511922
@@ -24625,6 +21261,9 @@ Objects {
     SubobjectId: 9021037962916681739
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -24721,6 +21360,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 2399705381389615869
@@ -24788,6 +21430,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 11227302548207234232
@@ -24852,6 +21497,9 @@ Objects {
     SubobjectId: 7408681025402752833
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -24924,6 +21572,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17445948271852153811
@@ -24994,6 +21645,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 3024356184405848483
@@ -25063,6 +21717,9 @@ Objects {
     SubobjectId: 15341270100694012506
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -25161,6 +21818,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 7503137033078224554
@@ -25227,6 +21887,9 @@ Objects {
     SubobjectId: 10754586486385972563
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -25325,6 +21988,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1440319304769308057
@@ -25391,6 +22057,9 @@ Objects {
     SubobjectId: 17213464537460483680
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -25462,6 +22131,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10355342539032295300
@@ -25531,6 +22203,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15538898515459529892
@@ -25592,6 +22267,9 @@ Objects {
     SubobjectId: 3078995199179587421
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -25670,6 +22348,9 @@ Objects {
     InstanceId: 1077525767448922125
     TemplateId: 12474514012364516574
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13418653422050367841
@@ -25705,6 +22386,9 @@ Objects {
   Folder {
     IsGroup: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15131830005465474002
@@ -25735,6 +22419,9 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -25789,6 +22476,9 @@ Objects {
       Id: 18383686534434694165
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1400440669061504928
@@ -25816,6 +22506,9 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -25877,6 +22570,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 14440130256340139604
@@ -25929,6 +22625,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15306060750349952409
@@ -25962,6 +22661,9 @@ Objects {
   }
   NetworkContext {
     Type: Server
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -26038,6 +22740,9 @@ Objects {
   Folder {
     IsGroup: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 9977030348083875115
@@ -26076,6 +22781,9 @@ Objects {
     InstanceId: 10831329912381409974
     TemplateId: 12608001148984257959
     WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -26116,6 +22824,9 @@ Objects {
     TemplateId: 12608001148984257959
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10484951829511383435
@@ -26154,6 +22865,9 @@ Objects {
     InstanceId: 10831329912381409974
     TemplateId: 12608001148984257959
     WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -26194,6 +22908,9 @@ Objects {
     TemplateId: 12608001148984257959
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 9763611932664067105
@@ -26232,6 +22949,9 @@ Objects {
     InstanceId: 10831329912381409974
     TemplateId: 12608001148984257959
     WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -26272,6 +22992,9 @@ Objects {
     TemplateId: 12608001148984257959
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 3381486486213754462
@@ -26310,6 +23033,9 @@ Objects {
     InstanceId: 10831329912381409974
     TemplateId: 12608001148984257959
     WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -26350,6 +23076,9 @@ Objects {
     TemplateId: 12608001148984257959
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1757193540074646629
@@ -26388,6 +23117,9 @@ Objects {
     InstanceId: 10831329912381409974
     TemplateId: 12608001148984257959
     WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -26428,6 +23160,9 @@ Objects {
     TemplateId: 12608001148984257959
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13301908535484331978
@@ -26466,6 +23201,9 @@ Objects {
     InstanceId: 10831329912381409974
     TemplateId: 12608001148984257959
     WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -26506,6 +23244,9 @@ Objects {
     TemplateId: 12608001148984257959
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 18249027325653875517
@@ -26544,6 +23285,9 @@ Objects {
     InstanceId: 10831329912381409974
     TemplateId: 12608001148984257959
     WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -26584,6 +23328,9 @@ Objects {
     TemplateId: 12608001148984257959
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 5590119620715013270
@@ -26622,6 +23369,9 @@ Objects {
     InstanceId: 10831329912381409974
     TemplateId: 12608001148984257959
     WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -26662,6 +23412,9 @@ Objects {
     TemplateId: 12608001148984257959
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 18394359866049173248
@@ -26700,6 +23453,9 @@ Objects {
     InstanceId: 10831329912381409974
     TemplateId: 12608001148984257959
     WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -26740,6 +23496,9 @@ Objects {
     TemplateId: 12608001148984257959
     WasRoot: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10988677416128734945
@@ -26778,6 +23537,9 @@ Objects {
     InstanceId: 10831329912381409974
     TemplateId: 12608001148984257959
     WasRoot: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -26832,6 +23594,9 @@ Objects {
       Id: 1911613551476752597
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12699519101860169983
@@ -26864,6 +23629,9 @@ Objects {
     ScriptAsset {
       Id: 15325384490936792627
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -26900,6 +23668,9 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -26952,6 +23723,9 @@ Objects {
   NetworkContext {
     Type: RuntimeStatic
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17347916595265119882
@@ -27002,6 +23776,9 @@ Objects {
   }
   NetworkContext {
     Type: RuntimeStatic
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -27054,6 +23831,9 @@ Objects {
   NetworkContext {
     Type: RuntimeStatic
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 9622489467739604756
@@ -27105,6 +23885,9 @@ Objects {
   NetworkContext {
     Type: RuntimeStatic
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 272065083029559823
@@ -27155,6 +23938,9 @@ Objects {
   }
   NetworkContext {
     Type: RuntimeStatic
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -27263,6 +24049,9 @@ Objects {
       Id: 18313405971573075606
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1772584167308286756
@@ -27296,6 +24085,9 @@ Objects {
   Folder {
     IsGroup: true
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10130923446135125066
@@ -27327,6 +24119,9 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -27388,6 +24183,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 15837034773351195854
@@ -27444,6 +24242,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -27515,6 +24316,9 @@ Objects {
         }
       }
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -27594,6 +24398,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12210304888786497813
@@ -27672,6 +24479,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 2865141055998914334
@@ -27739,6 +24549,9 @@ Objects {
       }
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 6696881644790113752
@@ -27786,6 +24599,9 @@ Objects {
       Id: 4680483883882850470
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 2865632613006224572
@@ -27817,6 +24633,9 @@ Objects {
   }
   NetworkContext {
     Type: Server
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -27850,5 +24669,8 @@ Objects {
     ScriptAsset {
       Id: 63614235653257907
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }

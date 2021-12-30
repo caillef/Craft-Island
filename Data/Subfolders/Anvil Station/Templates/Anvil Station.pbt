@@ -29,6 +29,9 @@ Assets {
             }
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -43,5 +46,5 @@ Assets {
     Version: "1.0.0"
     Description: "Just a simple object with no scripts separated into three groups. The Anvil, the Hammer, and the Log can be separated"
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }

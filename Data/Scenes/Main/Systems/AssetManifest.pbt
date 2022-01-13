@@ -89,6 +89,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12880008587541310771
+  Name: "Pipe Thin 01 - Large"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_pipe_thin_lg_001_ref"
+  }
+}
+Assets {
   Id: 12354617131837361692
   Name: "Fantasy Coins 004"
   PlatformAssetType: 9
@@ -116,6 +125,15 @@ Assets {
   }
 }
 Assets {
+  Id: 11426593771462376019
+  Name: "Cube - Bottom-Aligned"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_001"
+  }
+}
+Assets {
   Id: 11264250809069548060
   Name: "Fantasy Craft Gem 016"
   PlatformAssetType: 9
@@ -131,6 +149,24 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "BackgroundNoOutline_22"
+  }
+}
+Assets {
+  Id: 10184847056121543272
+  Name: "Basic Material"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_basic_pbr_material_001"
+  }
+}
+Assets {
+  Id: 10019154602989081436
+  Name: "Sphere - Inverted"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_sphere_inverted_001"
   }
 }
 Assets {
@@ -167,6 +203,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "Icon_Clock"
+  }
+}
+Assets {
+  Id: 8106349034423016716
+  Name: "Advanced Material"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "universal_material_001"
   }
 }
 Assets {
@@ -284,6 +329,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "Icon_Diamond"
+  }
+}
+Assets {
+  Id: 2264333900455360924
+  Name: "Emissive Glow Opaque"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "fxma_opaque_emissive"
   }
 }
 Assets {

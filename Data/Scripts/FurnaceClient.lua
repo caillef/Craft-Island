@@ -39,7 +39,10 @@ function TransformItem(furnace, item, index, updateUI)
 	if furnace.slots[index] then
 		if updateUI then
 			propSlots[index]:GetChildren()[2]:Destroy()
-			World.SpawnAsset(item.itemMuid, { parent = propSlots[index] })
+			local prop = World.SpawnAsset("3B81D9EBD0B175C3:Item UI", { parent = propSlots[index] })
+			local img = prop:FindChildByType("UIImage")
+			_G.ThumbnailGenerator.SetupImage(img, item.idName)
+			prop:SetCustomProperty("Name", item.name)
 		end
 		furnace.slots[index] = item
 		return true
@@ -51,7 +54,10 @@ function SetItemEmptySlot(item)
 	local f = furnaces[currentFurnace]
 	for i=1,3 do
 		if not f.slots[i] then
-			World.SpawnAsset(item.itemMuid, { parent = propSlots[i] })
+			local prop = World.SpawnAsset("3B81D9EBD0B175C3:Item UI", { parent = propSlots[i] })
+			local img = prop:FindChildByType("UIImage")
+			_G.ThumbnailGenerator.SetupImage(img, item.idName)
+			prop:SetCustomProperty("Name", item.name)
 			f.slots[i] = item
 			f.slotsTimer[i] = 7
 			furnaces[currentFurnace] = f
@@ -130,19 +136,17 @@ Events.Connect("InventoryFastMove", function(buttonIndex, icon)
 	if propUI.visibility == Visibility.FORCE_OFF then return end
 	if nextFastMove and nextFastMove >= time() then return end
 
-	local item
-	for _,obj in ipairs(APIO.OBJECTS) do
-		if obj.itemMuid == icon.sourceTemplateId then
-			item = obj
-		end
-	end
+	local item = APIO.QueryObjectByName(icon:GetCustomProperty("Name"))
 	if not item then return end
 
 	nextFastMove = time() + 0.5
 	if item.idName == "COAL" then
 		local qtyText
 		if #propCoalSlot:GetChildren() == 1 then
-			local prop = World.SpawnAsset(item.itemMuid, { parent = propCoalSlot })
+			local prop = World.SpawnAsset("3B81D9EBD0B175C3:Item UI", { parent = propCoalSlot })
+			local img = prop:FindChildByType("UIImage")
+			_G.ThumbnailGenerator.SetupImage(img, item.idName)
+			prop:SetCustomProperty("Name", item.name)
 			qtyText = World.SpawnAsset("173D841514156696:InventoryQuantity", { parent = prop })
 		else
 			qtyText = propCoalSlot:GetChildren()[2]:FindChildByType("UIText")
@@ -247,7 +251,10 @@ function SetupUI(f)
 			propSlots[i]:GetChildren()[2]:Destroy()
 		end
 		if f.slots[i] then
-			World.SpawnAsset(f.slots[i].itemMuid, { parent = propSlots[i] })
+			local prop = World.SpawnAsset("3B81D9EBD0B175C3:Item UI", { parent = propSlots[i] })
+			local img = prop:FindChildByType("UIImage")
+			_G.ThumbnailGenerator.SetupImage(img, f.slots[i].idName)
+			prop:SetCustomProperty("Name", f.slots[i].name)
 		end
 	end
 end

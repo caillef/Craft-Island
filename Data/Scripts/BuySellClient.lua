@@ -87,7 +87,10 @@ function SelectItem(button)
 	for _,c in pairs(iconbg:GetChildren()) do
 		c:Destroy()
 	end
-	World.SpawnAsset(currentItem.item.itemMuid, { parent = iconbg })
+	local prop = World.SpawnAsset("3B81D9EBD0B175C3:Item UI", { parent = iconbg })
+	local img = prop:FindChildByType("UIImage")
+	_G.ThumbnailGenerator.SetupImage(img, currentItem.item.idName)
+	prop:SetCustomProperty("Name", currentItem.item.name)
 	propCraftInfo:FindChildByName("Name").text = currentItem.item.name
 	propCraftInfo:FindChildByName("Price").text = tostring(currentItem.price)	
 	propCraftInfo:FindChildByName("BuySellButton").text = currentItem.isBuy and "Buy" or "Sell"	
@@ -146,11 +149,14 @@ function SetupUI()
 			local isBuy = item[1] == 1
 			local itemId = item[2]
 			local price = item[3]
-			local button = World.SpawnAsset("2C17CAD37EA099F5:UI_CraftButton_Item", { parent = propList })			
+			local button = World.SpawnAsset("2C17CAD37EA099F5:UI_CraftButton_Item", { parent = propList })
 			if not firstButton then firstButton = button end
 			local currentItem = APIO.QueryObject(itemId)
 			if currentItem then
-				World.SpawnAsset(currentItem.itemMuid, { parent = button })
+				local prop = World.SpawnAsset("3B81D9EBD0B175C3:Item UI", { parent = button })
+				local img = prop:FindChildByType("UIImage")
+				_G.ThumbnailGenerator.SetupImage(img, currentItem.item.idName)
+				prop:SetCustomProperty("Name", currentItem.item.name)
 				table.insert(items, {item = currentItem, price=price, isBuy=isBuy})
 				button.x = math.floor(slotIndex % 4) * 110
 				button.y = math.floor(slotIndex / 4) * 110

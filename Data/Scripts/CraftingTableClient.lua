@@ -78,7 +78,11 @@ function SelectCraftItem(button)
 	for _,c in pairs(iconbg:GetChildren()) do
 		c:Destroy()
 	end
-	World.SpawnAsset(craft.item.itemMuid, { parent = iconbg })
+	local prop = World.SpawnAsset("3B81D9EBD0B175C3:Item UI", { parent = iconbg })
+	local img = prop:FindChildByType("UIImage")
+	_G.ThumbnailGenerator.SetupImage(img, craft.item.idName)
+	prop:SetCustomProperty("Name", craft.item.name)
+
 	propCraftInfo:FindChildByName("Name").text = craft.item.name..(craft.qty > 1 and " x"..tostring(craft.qty) or "")
 	local ingredients = propCraftInfo:FindChildByName("Ingredients"):GetChildren()
 	local rawIngredients = craft.ingredients
@@ -153,7 +157,10 @@ function SetupUI()
 					local button = World.SpawnAsset("2C17CAD37EA099F5:UI_CraftButton_Item", { parent = propCraftList })
 					if not firstButton then firstButton = button end
 					local item = APIO.QueryObject(recipe[i])
-					World.SpawnAsset(item.itemMuid, { parent = button })
+					local prop = World.SpawnAsset("3B81D9EBD0B175C3:Item UI", { parent = button })
+					local img = prop:FindChildByType("UIImage")
+					_G.ThumbnailGenerator.SetupImage(img, item.idName)
+					prop:SetCustomProperty("Name", item.name)
 					table.insert(craftItems, { item=item, ingredients=craft[1], qty=recipe[i + 1] })
 					button.x = (slotIndex % 4) * 110
 					button.y = math.floor(slotIndex / 4) * 110

@@ -1,4 +1,4 @@
-local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
+﻿local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
 local propSharedKeyIslands = script:GetCustomProperty("SharedKeyIslands")
 local APIB = require(script:GetCustomProperty("APIBuildingSystem"))
 local APIO = require(script:GetCustomProperty("APIObjects"))
@@ -70,7 +70,7 @@ local function PlaceObjectHandler(position, angle, type, id, islandPos, parent)
 
 	obj.serverUserData.id = id
     obj.serverUserData.cellId = APIB.GetCellId(obj:GetWorldPosition(), obj:GetWorldRotation().z)
-    obj.serverUserData.structureType = APIO.OBJECTS[APIO.GetTypeFromTemplate(obj.sourceTemplateId)].metadata.structureType
+    obj.serverUserData.structureType = APIO.OBJECTS[APIO.GetTypeFromTemplate(obj.sourceTemplateId)].type
     -- if obj.serverUserData.structureType == "wall" then
     --     obj.serverUserData.wallId = APIB.GetWallId(obj:GetWorldPosition(), obj:GetWorldRotation().z)
     -- end
@@ -134,7 +134,7 @@ function PlaceObject(pos, angle, type, parentId)
         if not APIB.IsPositionOnIsland(pos, angle, parent.serverUserData.slot.pos, islandLimit) then
            return
         end
-        if not parent.serverUserData.isLoading and not APIB.IsSpotEmpty(pos, angle, objectData.metadata.structureType) then
+        if not parent.serverUserData.isLoading and not APIB.IsSpotEmpty(pos, angle, objectData.type) then
             return
         end
     end
@@ -296,6 +296,13 @@ function OnPlayerLeft(player)
     local slot = player.serverUserData.slot
     if not slot then return end
     UnloadIsland(player)
+    if player.serverUserData.tools then
+        for _,t in pairs(player.serverUserData.tools) do
+            if t:IsValid() then
+                t:Destroy()
+            end
+        end
+    end
 end
 Game.playerLeftEvent:Connect(OnPlayerLeft)
 

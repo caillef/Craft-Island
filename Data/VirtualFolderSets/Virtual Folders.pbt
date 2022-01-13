@@ -45,5 +45,9 @@ Assets {
       VirtualFolderPath: "Inventory"
       PlatformAssetType: 3
     }
+    Folders {
+      VirtualFolderPath: "Items"
+      PlatformAssetType: 5
+    }
   }
 }

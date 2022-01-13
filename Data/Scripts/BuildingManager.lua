@@ -82,7 +82,7 @@ function Tick()
     local obj = APIO.OBJECTS[objectIndex]
     local angle = APIB.GetAlignedAngle(o * 90)
     if not islandLimit or not APIB.IsPositionOnIsland(objPos, angle, islandPos, islandLimit)
-        or (objPos.z ~= islandPos.z and obj.metadata.structureType == "ground") then
+        or (objPos.z ~= islandPos.z and obj.type == "ground") then
         currentPreview.visibility = Visibility.FORCE_OFF
         return
     end
@@ -101,7 +101,7 @@ function OnBindingReleased(_, actionName)
         local zPos = currentPreview:GetWorldPosition().z
         if zPos >= 0 then
             local obj = APIO.OBJECTS[objectIndex]
-            if obj.metadata.structureType == "ground" and zPos ~= islandPos.z then -- only on ground
+            if obj.type == "ground" and zPos ~= islandPos.z then -- only on ground
                 return
             end
             currentPreview.clientUserData.cellId = APIB.GetCellId(currentPreview:GetWorldPosition(), currentPreview:GetWorldRotation().z)
@@ -134,7 +134,7 @@ function SpawnPreview(template)
             obj:Destroy()
         end
     end
-    preview.clientUserData.structureType = APIO.OBJECTS[APIO.GetTypeFromTemplate(template)].metadata.structureType
+    preview.clientUserData.structureType = APIO.OBJECTS[APIO.GetTypeFromTemplate(template)].type
     return preview
 end
 
@@ -158,7 +158,7 @@ end
 
 function SelectStructure(id)
     DestroyCurrentPreview()
-    if id == nil or not APIO.OBJECTS[id].canBeBuilt or not PlayerIsOnIsland() then
+    if not APIO.OBJECTS[id] or id == nil or not APIO.OBJECTS[id].canBeBuilt or not PlayerIsOnIsland() then
         return BuildSystem_Close()
     end
     objectIndex = id
@@ -199,7 +199,7 @@ end)
 Events.Connect("SetObjMetadata", function(obj, id)
 	obj.clientUserData.id = id
     obj.clientUserData.cellId = APIB.GetCellId(obj:GetWorldPosition(), obj:GetWorldRotation().z)
-    obj.clientUserData.structureType = APIO.OBJECTS[APIO.GetTypeFromTemplate(obj.sourceTemplateId)].metadata.structureType
+    obj.clientUserData.structureType = APIO.OBJECTS[APIO.GetTypeFromTemplate(obj.sourceTemplateId)].type
 end)
 
 print("Building Mode Activated for players (need the same message for the server)")

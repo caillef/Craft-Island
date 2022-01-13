@@ -50,6 +50,10 @@ Assets {
             AutoWrapText: true
             Font {
             }
+            OutlineColor {
+              A: 1
+            }
+            OutlineSize: 1
           }
           AnchorLayout {
             SelfAnchor {

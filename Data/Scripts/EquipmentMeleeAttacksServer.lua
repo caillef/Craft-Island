@@ -20,6 +20,8 @@ This script uses the specified hitbox trigger on ability to damage enemy players
 Each ability can have its own trigger (e.g. small attacks - front trigger, big attacks - wider trigger).
 ]]
 
+if Environment.IsClient() then return end
+
 -- Internal custom properties
 local EQUIPMENT = script:FindAncestorByType('Equipment')
 if not EQUIPMENT:IsA('Equipment') then
@@ -64,7 +66,7 @@ function MeleeAttack(player, abilityInfo)
     local ability = abilityInfo.ability
 
     -- Ignore if the hitbox is overlapping with the owner
-    if not player or not player:IsValid() or not ability or not ability:IsValid() or player == ability.owner then return end
+    if not player or not player:IsValid() or not ability or not ability:IsValid() or not ability.owner or player == ability.owner then return end
     -- Ignore friendly attack
     if Teams.AreTeamsFriendly(player.team, ability.owner.team) then return end
 

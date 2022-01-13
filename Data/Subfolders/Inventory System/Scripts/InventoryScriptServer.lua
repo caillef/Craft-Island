@@ -146,20 +146,24 @@ end
 
 local playersLatestSlot = {}
 
-function EquipItem(player, slot, toolMuid)
+function EquipItem(player, slot, idName)
 	playersLatestSlot[player] = slot
+	local toolMuid = APIO.FindTool(idName)
 	if toolMuid == nil then toolMuid = 0 end
 	player.serverUserData.tools = player.serverUserData.tools or {}
 
 	local list = player:GetEquipment()
 	for _,obj in pairs(list) do
 		if obj:IsValid() and obj.socket == "right_prop" then
-			obj:Destroy()
+			obj.visibility = Visibility.FORCE_OFF
+			obj:Unequip()
 		end
 	end
 	if toolMuid ~= 0 then
-		local tool = World.SpawnAsset(toolMuid, { parent=World.GetRootObject() })
-		tool:Equip(player)
+		player.serverUserData.tools[toolMuid] = player.serverUserData.tools[toolMuid] or World.SpawnAsset(toolMuid, { parent=World.GetRootObject() })
+		local item = player.serverUserData.tools[toolMuid]
+		item:Equip(player)
+		item.visibility = Visibility.INHERIT
 	end
 end
 

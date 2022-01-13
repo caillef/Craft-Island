@@ -40,14 +40,5 @@ function OnEquipped(equipment, player)
     OBJECT:SetRotation(LOCAL_ROTATION)
 end
 
--- nil OnUnequipped()
--- Returns the object back to original parent
-function OnUnequipped()
-	if OBJECT:IsValid() then
-		OBJECT:Destroy()
-	end
-end
-
 -- Initialize
 EQUIPMENT.equippedEvent:Connect(OnEquipped)
-EQUIPMENT.unequippedEvent:Connect(OnUnequipped)

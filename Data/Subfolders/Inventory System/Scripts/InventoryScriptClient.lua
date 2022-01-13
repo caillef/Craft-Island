@@ -122,8 +122,13 @@ function OnLoad(str)
 	end
 
 	for key,item in pairs(items) do
-		if APIO.QueryObject(item.id) and APIO.QueryObject(item.id).itemMuid then
-			local prop = World.SpawnAsset(APIO.QueryObject(item.id).itemMuid, {parent = buttons[key]})
+		local itemData = APIO.QueryObject(item.id)
+		if itemData then
+			local prop = World.SpawnAsset("3B81D9EBD0B175C3:Item UI", {parent = buttons[key]})
+			prop.clientUserData.idName = itemData.idName
+			local img = prop:FindChildByType("UIImage")
+			_G.ThumbnailGenerator.SetupImage(img, itemData.idName)
+			prop:SetCustomProperty("Name", itemData.name)
 			local qtyText = World.SpawnAsset("173D841514156696", {parent = prop})
 			qtyText.text = item.qty > 1 and tostring(item.qty) or ""
 		end
@@ -290,7 +295,11 @@ function OnAdd(data, ii)		-- ii - the button
 
 	local item = APIO.QueryObject(data.id)
 	if #buttons[ii]:GetChildren() == 1 then
-		local prop = World.SpawnAsset(item.itemMuid, {parent = buttons[ii]})
+		local prop = World.SpawnAsset("3B81D9EBD0B175C3:Item UI", { parent = buttons[ii] })
+		prop.clientUserData.idName = item.idName
+		local img = prop:FindChildByType("UIImage")
+		_G.ThumbnailGenerator.SetupImage(img, item.idName)
+		prop:SetCustomProperty("Name", item.name)
 		qtyText = World.SpawnAsset("173D841514156696:InventoryQuantity", {parent = prop})
 		oldQuantity = 0
 	else
@@ -325,7 +334,6 @@ function OnRemove(data, ii)		-- ii - the button
 		qtyText = GetItem(buttons[ii]):FindChildByType("UIText")
 		if data.qty == 0 then
 			GetItem(buttons[ii]):Destroy()
-
 			Events.Broadcast("SelectStructure", nil)
 		else
 			qtyText.text = (data.qty == 1 and "" or tostring(data.qty))
@@ -348,12 +356,10 @@ function Select(pickedIndex)
 	lastSelection = pickedIndex
 	if not buttons[pickedIndex] then return end
 	local it = GetItem(buttons[pickedIndex])
-	while Events.BroadcastToServer("inventoryEquipEvent", p, pickedIndex, it and it:GetCustomProperty("Equipment")) ~= BroadcastEventResultCode.SUCCESS do
-		Task.Wait(1)
-	end
-	if it then
-		Events.Broadcast("SelectStructure", APIO.FindStructure(it.sourceTemplateId))
-	end
+	if not it then return end
+	local idName = it.clientUserData.idName
+	Events.BroadcastToServer("inventoryEquipEvent", p, pickedIndex, idName)
+	Events.Broadcast("SelectStructure", APIO.FindStructure(idName))
 end
 
 function OnMove(id, dest)

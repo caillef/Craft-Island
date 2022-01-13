@@ -1,6 +1,6 @@
 Assets {
-  Id: 9814818740487277828
-  Name: "Furnace"
+  Id: 14743940346835518716
+  Name: "ThumbnailUsageExample"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

@@ -1,0 +1,95 @@
+MetaVersion: 1
+MarketplaceDetails {
+  Id: "d1af1a76ae2a4a15884c4127acaccdf4"
+  OwnerAccountId: "21c0b4284eff4bb091ce80a75c984fd4"
+  OwnerName: "varglbargl"
+  Version: "1.2.0"
+}
+AssetIdsOriginalToNew {
+  key: 112884100749184658
+  value: 9899598963887146426
+}
+AssetIdsOriginalToNew {
+  key: 2121419325614912781
+  value: 17125308496810555345
+}
+AssetIdsOriginalToNew {
+  key: 3468754805913016947
+  value: 3459168345191215317
+}
+AssetIdsOriginalToNew {
+  key: 4161797079334226240
+  value: 17508010381459092143
+}
+AssetIdsOriginalToNew {
+  key: 4965528516948031496
+  value: 13221221369491158382
+}
+AssetIdsOriginalToNew {
+  key: 5834546584827403767
+  value: 7275659750164920205
+}
+AssetIdsOriginalToNew {
+  key: 6686482387995405075
+  value: 6846605051253784364
+}
+AssetIdsOriginalToNew {
+  key: 7329075046451025809
+  value: 13153844522265689939
+}
+AssetIdsOriginalToNew {
+  key: 7819600019591878414
+  value: 9616922919914816882
+}
+AssetIdsOriginalToNew {
+  key: 8473984258924351555
+  value: 13995754728179723702
+}
+AssetIdsOriginalToNew {
+  key: 9636406107902119141
+  value: 6485808675622479782
+}
+AssetIdsOriginalToNew {
+  key: 9773134734731417065
+  value: 15370749502201409835
+}
+AssetIdsOriginalToNew {
+  key: 10134330918167137267
+  value: 6411981976188349944
+}
+AssetIdsOriginalToNew {
+  key: 11255625601179539044
+  value: 8882234416475455739
+}
+AssetIdsOriginalToNew {
+  key: 11275876718634477291
+  value: 16217278578638217040
+}
+AssetIdsOriginalToNew {
+  key: 12702375048344860613
+  value: 10637934579477823922
+}
+AssetIdsOriginalToNew {
+  key: 12829206983758675477
+  value: 7094446989891355727
+}
+AssetIdsOriginalToNew {
+  key: 15537906433424898142
+  value: 9485197248823448799
+}
+AssetIdsOriginalToNew {
+  key: 15699210453782238668
+  value: 10071366330489170305
+}
+AssetIdsOriginalToNew {
+  key: 16145689705838531810
+  value: 12798221945540711665
+}
+AssetIdsOriginalToNew {
+  key: 16545408747491212899
+  value: 3107906966062237266
+}
+AssetIdsOriginalToNew {
+  key: 18073135543727526583
+  value: 14922977804976429593
+}

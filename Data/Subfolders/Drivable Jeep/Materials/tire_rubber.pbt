@@ -2,7 +2,7 @@ Assets {
   Id: 11522390231817830490
   Name: "tire_rubber"
   PlatformAssetType: 13
-  SerializationVersion: 103
+  SerializationVersion: 105
   CustomMaterialAsset {
     BaseMaterialId: 2673981038204145116
     ParameterOverrides {

@@ -605,9 +605,7 @@ Assets {
           }
         }
         ParentId: 14062581388527037373
-        ChildIds: 8688939606747574628
-        ChildIds: 729781889713431375
-        ChildIds: 5363710699154714584
+        ChildIds: 15754750289126411054
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -627,28 +625,21 @@ Assets {
         }
       }
       Objects {
-        Id: 8688939606747574628
-        Name: "Hatchet - Blade"
+        Id: 15754750289126411054
+        Name: "Urban Stone Axe 01 Template"
         Transform {
           Location {
-            X: 8.06339
-            Y: 6.81506395
-            Z: 47.3876724
-          }
-          Rotation {
-            Pitch: -13.8774719
-            Yaw: -8
-            Roll: -85.0093079
+            Z: 19.1711502
           }
           Scale {
-            X: 2.37076783
-            Y: 0.99999994
-            Z: 0.296631545
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 1595937608306147425
-        UnregisteredParameters {
-        }
+        ChildIds: 14721797556679742366
+        ChildIds: 14032274630244146521
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -656,30 +647,21 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceoff"
+          Value: "mc:ecollisionsetting:inheritfromparent"
         }
-        CoreMesh {
-          MeshAsset {
-            Id: 8961643113406757531
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          InteractWithTriggers: true
-          StaticMesh {
-            Physics {
-            }
-            BoundsScale: 1
-          }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsGroup: true
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
-        Id: 729781889713431375
-        Name: "Hatchet - Handle"
+        Id: 14721797556679742366
+        Name: "Urban - Stone Axe 01 - Handle 01"
         Transform {
           Location {
           }
@@ -691,9 +673,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1595937608306147425
-        UnregisteredParameters {
-        }
+        ParentId: 15754750289126411054
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -701,19 +681,23 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceoff"
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         CoreMesh {
           MeshAsset {
-            Id: 11597592556193149105
+            Id: 13829076692580139798
           }
           Teams {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
-          InteractWithTriggers: true
           StaticMesh {
             Physics {
+              Mass: 100
+              LinearDamping: 0.01
             }
             BoundsScale: 1
           }
@@ -723,28 +707,24 @@ Assets {
         }
       }
       Objects {
-        Id: 5363710699154714584
-        Name: "Hatchet - Blade"
+        Id: 14032274630244146521
+        Name: "Urban - Stone Axe 01 - Head 01"
         Transform {
           Location {
-            X: 8.49725056
-            Y: -7.82708549
-            Z: 47.0347977
+            X: -0.337402344
+            Y: -0.166748047
+            Z: 26.1929626
           }
           Rotation {
-            Pitch: -13
-            Yaw: 7.91365242
-            Roll: 82.8817368
+            Roll: 87.4292374
           }
           Scale {
-            X: 2.37076783
-            Y: 0.99999994
-            Z: 0.296631545
+            X: 0.807984471
+            Y: 0.380119503
+            Z: 1
           }
         }
-        ParentId: 1595937608306147425
-        UnregisteredParameters {
-        }
+        ParentId: 15754750289126411054
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -752,19 +732,23 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceoff"
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         CoreMesh {
           MeshAsset {
-            Id: 8961643113406757531
+            Id: 14431101580180381470
           }
           Teams {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
-          InteractWithTriggers: true
           StaticMesh {
             Physics {
+              Mass: 100
+              LinearDamping: 0.01
             }
             BoundsScale: 1
           }
@@ -775,21 +759,21 @@ Assets {
       }
     }
     Assets {
-      Id: 8961643113406757531
-      Name: "Knife - Blade"
+      Id: 13829076692580139798
+      Name: "Urban - Stone Axe 01 - Handle 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_weap_modern_knife_001"
+        AssetId: "sm_prop_urb_axe_stone_001_handle_001_ref"
       }
     }
     Assets {
-      Id: 11597592556193149105
-      Name: "Hatchet - Handle"
+      Id: 14431101580180381470
+      Name: "Urban - Stone Axe 01 - Head 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_weap_modern_axe_handle_001"
+        AssetId: "sm_prop_urb_axe_stone_001_head_001_ref"
       }
     }
     PrimaryAssetId {
@@ -797,6 +781,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 103
+  SerializationVersion: 105
   VirtualFolderPath: "Tools"
 }

@@ -33,12 +33,6 @@ Objects {
   Folder {
     IsGroup: true
   }
-  InstanceHistory {
-    SelfId: 9615740226136691553
-    SubobjectId: 1478885907885714469
-    InstanceId: 15966456142674523695
-    TemplateId: 7689519216032096316
-  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -231,12 +225,6 @@ Objects {
     DecalBP {
     }
   }
-  InstanceHistory {
-    SelfId: 7647339723252279197
-    SubobjectId: 18147035731875043545
-    InstanceId: 15966456142674523695
-    TemplateId: 7689519216032096316
-  }
   Relevance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -362,12 +350,6 @@ Objects {
       }
       BoundsScale: 1
     }
-  }
-  InstanceHistory {
-    SelfId: 6452765238615239286
-    SubobjectId: 14446181891024508210
-    InstanceId: 15966456142674523695
-    TemplateId: 7689519216032096316
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

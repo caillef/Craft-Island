@@ -6,6 +6,7 @@ local loading = true
 local player = Game.GetLocalPlayer()
 local propAddItemPanel = script:GetCustomProperty("AddItemPanel"):WaitForObject()
 local propAddItemNotif = script:GetCustomProperty("AddItemNotif")
+local SELECTED = script:GetCustomProperty("Selected"):WaitForObject()
 
 open = false
 local p = Game.GetLocalPlayer()
@@ -163,6 +164,8 @@ function Tick(_)
 			full:SetColor(c)
 		end
 	end
+	
+	SELECTED:SetAbsolutePosition(buttons[lastSelection]:GetAbsolutePosition())
 
 	-- drag
 	screen = UI.GetScreenSize()
@@ -346,12 +349,19 @@ function Select(pickedIndex)
 	if lastSelection == pickedIndex then
 		return
 	end
+	--[[
 	local c
 	for i=1, 9 do
 		c = buttons[i]:GetButtonColor()
 		c.a = i == pickedIndex and 0.8 or 0.4
 		buttons[i]:SetButtonColor(c)
+		
+		if i == pickedIndex then
+			print(buttons[i]:GetAbsolutePosition())
+			SELECTED:SetAbsolutePosition(buttons[i]:GetAbsolutePosition())
+		end
 	end
+	--]]
 
 	lastSelection = pickedIndex
 	if not buttons[pickedIndex] then return end

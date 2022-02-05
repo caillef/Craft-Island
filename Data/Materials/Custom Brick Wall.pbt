@@ -2,7 +2,7 @@ Assets {
   Id: 17805378747911087859
   Name: "Custom Brick Wall"
   PlatformAssetType: 13
-  SerializationVersion: 103
+  SerializationVersion: 105
   CustomMaterialAsset {
     BaseMaterialId: 15420583642790583592
     ParameterOverrides {

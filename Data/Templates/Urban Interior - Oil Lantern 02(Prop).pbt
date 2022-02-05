@@ -159,5 +159,5 @@ Assets {
       AssetId: "Urban_Interior_-_Oil_Lantern_02_Prop_"
     }
   }
-  SerializationVersion: 103
+  SerializationVersion: 105
 }

@@ -611,8 +611,7 @@ Assets {
           }
         }
         ParentId: 7416771317857803755
-        ChildIds: 15127069439812404222
-        ChildIds: 13281952101589406592
+        ChildIds: 1996116138620138396
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -632,15 +631,12 @@ Assets {
         }
       }
       Objects {
-        Id: 15127069439812404222
-        Name: "Hatchet - Blade"
+        Id: 1996116138620138396
+        Name: "Urban Stone Axe 01 Template"
         Transform {
           Location {
-            X: 1.63818359
-            Z: 46.7093048
-          }
-          Rotation {
-            Pitch: -19.8819275
+            X: 1.20949745
+            Z: 27.4668541
           }
           Scale {
             X: 1
@@ -649,8 +645,8 @@ Assets {
           }
         }
         ParentId: 7104355255789864287
-        UnregisteredParameters {
-        }
+        ChildIds: 5539449764292064373
+        ChildIds: 1936070223211105224
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -658,19 +654,57 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceoff"
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsGroup: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 5539449764292064373
+        Name: "Urban - Stone Axe 01 - Handle 01"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1996116138620138396
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         CoreMesh {
           MeshAsset {
-            Id: 4281380979366999084
+            Id: 13829076692580139798
           }
           Teams {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
-          InteractWithTriggers: true
           StaticMesh {
             Physics {
+              Mass: 100
+              LinearDamping: 0.01
             }
             BoundsScale: 1
           }
@@ -680,10 +714,13 @@ Assets {
         }
       }
       Objects {
-        Id: 13281952101589406592
-        Name: "Hatchet - Handle"
+        Id: 1936070223211105224
+        Name: "Urban - Stone Axe 01 - Head 01"
         Transform {
           Location {
+            X: -0.337402344
+            Y: -0.166748047
+            Z: 26.1929626
           }
           Rotation {
           }
@@ -693,9 +730,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 7104355255789864287
-        UnregisteredParameters {
-        }
+        ParentId: 1996116138620138396
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -703,19 +738,23 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceoff"
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         CoreMesh {
           MeshAsset {
-            Id: 11597592556193149105
+            Id: 14431101580180381470
           }
           Teams {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
-          InteractWithTriggers: true
           StaticMesh {
             Physics {
+              Mass: 100
+              LinearDamping: 0.01
             }
             BoundsScale: 1
           }
@@ -726,21 +765,21 @@ Assets {
       }
     }
     Assets {
-      Id: 4281380979366999084
-      Name: "Hatchet - Blade"
+      Id: 13829076692580139798
+      Name: "Urban - Stone Axe 01 - Handle 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_weap_modern_axe_001"
+        AssetId: "sm_prop_urb_axe_stone_001_handle_001_ref"
       }
     }
     Assets {
-      Id: 11597592556193149105
-      Name: "Hatchet - Handle"
+      Id: 14431101580180381470
+      Name: "Urban - Stone Axe 01 - Head 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_weap_modern_axe_handle_001"
+        AssetId: "sm_prop_urb_axe_stone_001_head_001_ref"
       }
     }
     PrimaryAssetId {
@@ -748,6 +787,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 103
+  SerializationVersion: 105
   VirtualFolderPath: "Tools"
 }

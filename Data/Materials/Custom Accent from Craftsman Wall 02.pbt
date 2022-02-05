@@ -2,7 +2,7 @@ Assets {
   Id: 13662376650907449765
   Name: "Custom Accent from Craftsman Wall 02"
   PlatformAssetType: 13
-  SerializationVersion: 103
+  SerializationVersion: 105
   CustomMaterialAsset {
     BaseMaterialId: 11561019068451499091
     ParameterOverrides {

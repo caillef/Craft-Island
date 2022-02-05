@@ -44,6 +44,15 @@ Assets {
   }
 }
 Assets {
+  Id: 17531558471621551693
+  Name: "Frame Outlined Thick 012"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameFlat_029"
+  }
+}
+Assets {
   Id: 16891117802326504645
   Name: "Icon Health"
   PlatformAssetType: 9

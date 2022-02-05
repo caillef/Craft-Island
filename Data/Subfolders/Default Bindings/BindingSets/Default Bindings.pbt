@@ -2,7 +2,7 @@ Assets {
   Id: 15811936204232470899
   Name: "Default Bindings"
   PlatformAssetType: 29
-  SerializationVersion: 103
+  SerializationVersion: 105
   BindingSetAsset {
     Bindings {
       BindingType {

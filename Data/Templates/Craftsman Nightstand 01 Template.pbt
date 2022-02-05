@@ -207,5 +207,5 @@ Assets {
       AssetId: "Craftsman_Nightstand_01_Template"
     }
   }
-  SerializationVersion: 103
+  SerializationVersion: 105
 }

@@ -2,7 +2,7 @@ Assets {
   Id: 6697709264679883135
   Name: "Custom  Neon Sign "
   PlatformAssetType: 13
-  SerializationVersion: 103
+  SerializationVersion: 105
   CustomMaterialAsset {
     BaseMaterialId: 13674719708830618715
     ParameterOverrides {

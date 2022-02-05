@@ -2,7 +2,7 @@ Assets {
   Id: 17046136395689563640
   Name: "Snow Grass"
   PlatformAssetType: 13
-  SerializationVersion: 103
+  SerializationVersion: 105
   CustomMaterialAsset {
     BaseMaterialId: 18038322182071613674
     ParameterOverrides {

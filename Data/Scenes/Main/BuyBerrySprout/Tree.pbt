@@ -63,12 +63,6 @@ Objects {
       BoundsScale: 1
     }
   }
-  InstanceHistory {
-    SelfId: 1176658626015912605
-    SubobjectId: 10108745275524321392
-    InstanceId: 5267789816503545484
-    TemplateId: 3214907868370729841
-  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -100,12 +94,6 @@ Objects {
   }
   Folder {
     IsGroup: true
-  }
-  InstanceHistory {
-    SelfId: 9615740226136691553
-    SubobjectId: 1478885907885714469
-    InstanceId: 15966456142674523695
-    TemplateId: 7689519216032096316
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

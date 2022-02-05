@@ -523,5 +523,5 @@ Assets {
       AssetId: "Urban_Craftsman_Bed__Prop_"
     }
   }
-  SerializationVersion: 103
+  SerializationVersion: 105
 }

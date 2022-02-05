@@ -637,7 +637,7 @@ Assets {
   Marketplace {
     Description: "Welcome to Libby\'s Loafery! We specialize in magically enhanced baked goods! What can we bake for you today? ~ <3"
   }
-  SerializationVersion: 103
+  SerializationVersion: 105
   DirectlyPublished: true
   VirtualFolderPath: "Props"
 }

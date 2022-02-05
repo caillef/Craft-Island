@@ -1638,6 +1638,6 @@ Assets {
   Marketplace {
     Description: "Just a simple object with no scripts separated into three groups. The Anvil, the Hammer, and the Log can be separated"
   }
-  SerializationVersion: 103
+  SerializationVersion: 105
   DirectlyPublished: true
 }

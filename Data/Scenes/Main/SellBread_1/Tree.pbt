@@ -29,12 +29,6 @@ Objects {
   Folder {
     IsGroup: true
   }
-  InstanceHistory {
-    SelfId: 9615740226136691553
-    SubobjectId: 1478885907885714469
-    InstanceId: 15966456142674523695
-    TemplateId: 7689519216032096316
-  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }

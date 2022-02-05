@@ -91,5 +91,5 @@ Assets {
     Version: "1.2.0"
     Description: "Welcome to Libby\'s Loafery! We specialize in magically enhanced baked goods! What can we bake for you today? ~ <3"
   }
-  SerializationVersion: 103
+  SerializationVersion: 105
 }

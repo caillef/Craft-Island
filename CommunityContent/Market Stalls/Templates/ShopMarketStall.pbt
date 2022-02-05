@@ -4194,6 +4194,6 @@ Assets {
   Marketplace {
     Description: "Three market stalls for selling things at the market!"
   }
-  SerializationVersion: 103
+  SerializationVersion: 105
   DirectlyPublished: true
 }

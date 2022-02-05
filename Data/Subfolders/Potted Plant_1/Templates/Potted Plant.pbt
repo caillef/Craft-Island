@@ -52,5 +52,5 @@ Assets {
     Version: "1.0.0"
     Description: "A small potted plant. Will reupload when I learn how to turn off plant animations so it suits an indoor environment more. Enjoy ^^"
   }
-  SerializationVersion: 103
+  SerializationVersion: 105
 }

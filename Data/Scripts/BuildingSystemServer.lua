@@ -1,4 +1,4 @@
-﻿local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
+local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
 local propSharedKeyIslands = script:GetCustomProperty("SharedKeyIslands")
 local APIB = require(script:GetCustomProperty("APIBuildingSystem"))
 local APIO = require(script:GetCustomProperty("APIObjects"))

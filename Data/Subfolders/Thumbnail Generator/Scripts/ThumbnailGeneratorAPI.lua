@@ -18,10 +18,11 @@ local API = {}
 _G.ThumbnailGenerator = API
 
 local allCaptures = {}
+local bigCaptures = {}
 local allGenerators = {}
 
-function API.SetupImage(image, id)
-	local capture = API.GetCapture(id)
+function API.SetupImage(image, id, isBig)
+	local capture = API.GetCapture(id, isBig)
 	if capture and capture:IsValid() then
 		image:SetCameraCapture(capture)
 	else
@@ -36,13 +37,17 @@ function API.Release(id)
 	end
 end
 
-function API.GetCapture(id)
-	local capture = allCaptures[id]
+function API.GetCapture(id, isBig)
+	local capture = isBig and bigCaptures[id] or allCaptures[id]
 	if not (capture and capture:IsValid()) then
 		for _,generator in ipairs(allGenerators) do
-			capture = generator.GetCapture(id)
+			capture = generator.GetCapture(id, isBig)
 			if capture then
-				allCaptures[id] = capture
+				if isBig then
+					bigCaptures[id] = capture
+				else
+					allCaptures[id] = capture
+				end
 				break
 			end
 		end

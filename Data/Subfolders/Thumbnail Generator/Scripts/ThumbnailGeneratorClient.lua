@@ -12,18 +12,19 @@ API.RegisterGenerator(script.context)
 
 local CAMERA = script:GetCustomProperty("Camera"):WaitForObject()
 local ITEMS = script:GetCustomProperty("Items"):WaitForObject()
-local RESOLUTION = CameraCaptureResolution.SMALL
+local RESOLUTION = CameraCaptureResolution.MEDIUM
+local BIG_RESOLUTION = CameraCaptureResolution.LARGE
 
 local items = {}
 
 script.visibility = Visibility.FORCE_OFF
 
-function GetCapture(id)
+function GetCapture(id, isBig)
 	if items[id] then
 		items[id].visibility = Visibility.INHERIT
 		script.visibility = Visibility.FORCE_ON
 		
-		local capture = CAMERA:Capture(RESOLUTION)
+		local capture = CAMERA:Capture(isBig and BIG_RESOLUTION or RESOLUTION)
 		
 		items[id].visibility = Visibility.FORCE_OFF
 		script.visibility = Visibility.FORCE_OFF

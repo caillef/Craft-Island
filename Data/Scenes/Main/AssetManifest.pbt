@@ -56,6 +56,19 @@ Assets {
   }
 }
 Assets {
+  Id: 14621787718120047130
+  Name: "Two Random Reseller\'s Items"
+  PlatformAssetType: 24
+  NetReferenceAsset {
+    NetReference {
+      Key: "106ec0d040a740279f429d217cda31c2"
+      Type {
+        Value: "mc:enetreferencetype:creatorperk"
+      }
+    }
+  }
+}
+Assets {
   Id: 13893962085518320018
   Name: "Stone Block Small"
   PlatformAssetType: 1

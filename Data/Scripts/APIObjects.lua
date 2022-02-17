@@ -232,6 +232,18 @@ local BUYSELL_LIST = {
     { -- 4 for material
         { SELL, "STONE", 2 },
         { SELL, "WOOD_LOG", 2 },
+    },
+    { -- 5 for reseller
+        { BUY, "BIRCH_SAPLING", 200 },
+        { BUY, "SPRUCE_SAPLING", 500 },
+        { BUY, "PLANT", 150 },
+        { BUY, "ARMCHAIR", 500 },
+        { BUY, "NIGHTSTAND", 500 },
+        { BUY, "DRESSER", 750 },
+        { BUY, "DINING_TABLE", 750 },
+        { BUY, "WARDROBE", 750 },
+        { BUY, "BOOKSHELF", 1000 },
+        { BUY, "COFFEE_TABLE", 1500 }
     }
 }
 

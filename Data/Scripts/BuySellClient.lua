@@ -3,6 +3,7 @@ local propCloseButton = script:GetCustomProperty("CloseButton"):WaitForObject()
 local propList = script:GetCustomProperty("List"):WaitForObject()
 local propCraftInfo = script:GetCustomProperty("Info"):WaitForObject()
 local propQuantityController = script:GetCustomProperty("QuantityController"):WaitForObject()
+local RESELLER_INFO = script:GetCustomProperty("ResellerInfo"):WaitForObject()
 
 local APIInvSerializer = require(script:GetCustomProperty("APIInventorySerializer"))
 local APIO = require(script:GetCustomProperty("APIObjects"))
@@ -61,7 +62,8 @@ local buySellType = {
 	"BuySellBaker", -- 1
 	"BuySellSeeds", -- 2
 	"BuySellFarmer", -- 3
-	"BuySellMaterials" -- 4
+	"BuySellMaterials", -- 4
+	"BuySellReseller" -- 5
 }
 
 for k,v in ipairs(buySellType) do
@@ -88,8 +90,10 @@ function SelectItem(button)
 		c:Destroy()
 	end
 	local prop = World.SpawnAsset("3B81D9EBD0B175C3:Item UI", { parent = iconbg })
+	prop.width = 160
+	prop.height = 160
 	local img = prop:FindChildByType("UIImage")
-	_G.ThumbnailGenerator.SetupImage(img, currentItem.item.idName)
+	_G.ThumbnailGenerator.SetupImage(img, currentItem.item.idName, true)
 	prop:SetCustomProperty("Name", currentItem.item.name)
 	propCraftInfo:FindChildByName("Name").text = currentItem.item.name
 	propCraftInfo:FindChildByName("Price").text = tostring(currentItem.price)	
@@ -154,12 +158,16 @@ function SetupUI()
 			local currentItem = APIO.QueryObject(itemId)
 			if currentItem then
 				local prop = World.SpawnAsset("3B81D9EBD0B175C3:Item UI", { parent = button })
+				button.width = (408/3)
+				button.height = (408/3)
+				prop.width = (408/3)
+				prop.height = (408/3)
 				local img = prop:FindChildByType("UIImage")
-				_G.ThumbnailGenerator.SetupImage(img, currentItem.item.idName)
-				prop:SetCustomProperty("Name", currentItem.item.name)
+				_G.ThumbnailGenerator.SetupImage(img, currentItem.idName, true)
+				prop:SetCustomProperty("Name", currentItem.name)
 				table.insert(items, {item = currentItem, price=price, isBuy=isBuy})
-				button.x = math.floor(slotIndex % 4) * 110
-				button.y = math.floor(slotIndex / 4) * 110
+				button.x = math.floor(slotIndex % 3) * ((408/3) + 7)
+				button.y = math.floor(slotIndex / 3) * ((408/3) + 7)
 				button.clickedEvent:Connect(SelectItem)
 				slotIndex = slotIndex + 1
 			else
@@ -168,6 +176,8 @@ function SetupUI()
 		end
 	end
 	SelectItem(firstButton)
+	propList.height = sellingType == 5 and 400 or 500
+	RESELLER_INFO.visibility = sellingType == 5 and Visibility.INHERIT or Visibility.FORCE_OFF
 end
 
 function CloseUI()

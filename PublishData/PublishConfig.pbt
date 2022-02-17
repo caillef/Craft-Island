@@ -12,7 +12,7 @@ ScreenshotPaths: "C:\\Users\\hiind\\Desktop\\Craft (1).png"
 ScreenshotPaths: "C:\\Users\\hiind\\Desktop\\Core\\craftisland2.png"
 ScreenshotPaths: "C:\\Users\\hiind\\Desktop\\Core\\craftisland.png"
 OwnerId: "be87c969b2e5444dac5c09d330a142ab"
-SerializationVersion: 2
+SerializationVersion: 3
 PublishedState: Public
 CubemapPath: "C:/Users/hiind/Documents/My Games/CORE/Saved/Maps/Craft Island/Screenshots/Cubemaps/Cubemap0001.png"
 ContainsRewardPointEvents: true
@@ -21,3 +21,5 @@ SceneNameToSceneIdMap {
   value: "9188b5854f4aee7f5b5f1aa24037e4bf"
 }
 MaxPlayersForMainScene: 4
+EnableForPC: true
+EnableForMobile: true

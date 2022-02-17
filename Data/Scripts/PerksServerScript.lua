@@ -2,6 +2,7 @@ local propPerksRelated = script:GetCustomProperty("PerksRelated")
 local propVIPInfinity = script:GetCustomProperty("VIPInfinity")
 local propVIPSeason3Months = script:GetCustomProperty("VIPSeason3Months")
 local propVIPForTheDay24h = script:GetCustomProperty("VIPForTheDay24h")
+local TWO_RANDOM_HOUSE_FURNITURES = script:GetCustomProperty("TwoRandomHouseFurnitures")
 
 function IsVIP(player)
     if not player:IsValid() then return false end

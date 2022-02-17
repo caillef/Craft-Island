@@ -323,6 +323,15 @@ Assets {
   }
 }
 Assets {
+  Id: 4120722552778934876
+  Name: "Abstract Background 02"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Core_UI_AbstractPack_Background_003"
+  }
+}
+Assets {
   Id: 3116992855856507135
   Name: "Planet"
   PlatformAssetType: 9

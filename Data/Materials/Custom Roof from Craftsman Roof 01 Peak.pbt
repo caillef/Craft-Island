@@ -2,7 +2,7 @@ Assets {
   Id: 8815245220077711525
   Name: "Custom Roof from Craftsman Roof 01 Peak"
   PlatformAssetType: 13
-  SerializationVersion: 105
+  SerializationVersion: 107
   CustomMaterialAsset {
     BaseMaterialId: 7605408063325328317
     ParameterOverrides {

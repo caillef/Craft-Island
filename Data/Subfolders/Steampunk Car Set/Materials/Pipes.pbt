@@ -2,7 +2,7 @@ Assets {
   Id: 8965609622990320946
   Name: "Pipes"
   PlatformAssetType: 13
-  SerializationVersion: 105
+  SerializationVersion: 107
   CustomMaterialAsset {
     BaseMaterialId: 9289699825875079133
     ParameterOverrides {

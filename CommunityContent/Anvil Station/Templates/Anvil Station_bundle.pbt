@@ -46,5 +46,5 @@ Assets {
     Version: "1.0.0"
     Description: "Just a simple object with no scripts separated into three groups. The Anvil, the Hammer, and the Log can be separated"
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
 }

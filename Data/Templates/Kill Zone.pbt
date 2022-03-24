@@ -123,5 +123,5 @@ Assets {
       AssetId: "Kill_Zone"
     }
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
 }

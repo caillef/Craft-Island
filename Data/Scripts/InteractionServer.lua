@@ -3,12 +3,21 @@ local END_RAY = 600
 local RADIUS = 50
 local DEBUG = false
 
+function IsIslandChunkId(id, staticFolders)
+	for _,staticFolder in ipairs(staticFolders) do
+		if staticFolder.id == id then
+			return true
+		end
+	end
+	return false
+end
+
 function ActionOnProp(prop, player)
     if not prop or not prop:IsValid() then return false end
 	while prop.parent and prop.parent:GetCustomProperty("HP") == nil do prop = prop.parent end
     if not prop or not prop.parent or not prop.parent:GetCustomProperty("HP") then return false end
     prop = prop.parent
-	if prop.parent.name ~= "Rocks" and player and prop.parent.id ~= player.serverUserData.slot.staticFolderId then return false end
+	if prop.parent.name ~= "Rocks" and player and not IsIslandChunkId(prop.parent.id, player.serverUserData.slot.staticFolders) then return false end
 	return prop
 end
 

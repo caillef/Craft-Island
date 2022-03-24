@@ -2,7 +2,7 @@ Assets {
   Id: 6384239941299099900
   Name: "Terrain Material_2"
   PlatformAssetType: 13
-  SerializationVersion: 105
+  SerializationVersion: 107
   CustomMaterialAsset {
     BaseMaterialId: 12542962902722244080
     ParameterOverrides {
@@ -16,12 +16,6 @@ Assets {
         Name: "cmp:Material2_Sides"
         AssetReference {
           Id: 6827774581160948083
-        }
-      }
-      Overrides {
-        Name: "cmp:Material1"
-        AssetReference {
-          Id: 16625466785542172615
         }
       }
     }
@@ -50,15 +44,6 @@ Assets {
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "mi_cliff_desert_eroded_001_uv_ref"
-      }
-    }
-    Assets {
-      Id: 16625466785542172615
-      Name: "Snow 01"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_snow_001_uv"
       }
     }
   }

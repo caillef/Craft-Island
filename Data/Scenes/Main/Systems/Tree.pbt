@@ -12399,9 +12399,8 @@ Objects {
   Name: "Thumbnail Generator "
   Transform {
     Location {
-      X: 100000
-      Y: 100000
-      Z: -10000
+      X: 1e+06
+      Y: 10000
     }
     Rotation {
     }
@@ -24324,9 +24323,21 @@ Objects {
   }
   ParentId: 13418653422050367841
   ChildIds: 272065083029559823
+  ChildIds: 1105672426683269256
+  ChildIds: 16838045356569401371
+  ChildIds: 1685821118738220389
   ChildIds: 9622489467739604756
+  ChildIds: 442603540740444805
+  ChildIds: 6641635422991914348
+  ChildIds: 8933483840350754170
   ChildIds: 16368139136526401897
+  ChildIds: 1440057867085182748
+  ChildIds: 2924778342609812126
+  ChildIds: 3127353479029300502
   ChildIds: 17347916595265119882
+  ChildIds: 325886747607937860
+  ChildIds: 14045166772624702044
+  ChildIds: 14048966530453623065
   ChildIds: 17505462622968818227
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -24402,8 +24413,332 @@ Objects {
   }
 }
 Objects {
+  Id: 14048966530453623065
+  Name: "Island4-4"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3263363061351523751
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:OwnerId"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:OwnerId:isrep"
+      Bool: true
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: RuntimeStatic
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 14045166772624702044
+  Name: "Island4-3"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3263363061351523751
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:OwnerId"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:OwnerId:isrep"
+      Bool: true
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: RuntimeStatic
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 325886747607937860
+  Name: "Island4-2"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3263363061351523751
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:OwnerId"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:OwnerId:isrep"
+      Bool: true
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: RuntimeStatic
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
   Id: 17347916595265119882
-  Name: "Island4"
+  Name: "Island4-1"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3263363061351523751
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:OwnerId"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:OwnerId:isrep"
+      Bool: true
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: RuntimeStatic
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 3127353479029300502
+  Name: "Island3-4"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3263363061351523751
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:OwnerId"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:OwnerId:isrep"
+      Bool: true
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: RuntimeStatic
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 2924778342609812126
+  Name: "Island3-3"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3263363061351523751
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:OwnerId"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:OwnerId:isrep"
+      Bool: true
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: RuntimeStatic
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 1440057867085182748
+  Name: "Island3-2"
   Transform {
     Location {
     }
@@ -24457,7 +24792,169 @@ Objects {
 }
 Objects {
   Id: 16368139136526401897
-  Name: "Island3"
+  Name: "Island3-1"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3263363061351523751
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:OwnerId"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:OwnerId:isrep"
+      Bool: true
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: RuntimeStatic
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 8933483840350754170
+  Name: "Island2-4"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3263363061351523751
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:OwnerId"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:OwnerId:isrep"
+      Bool: true
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: RuntimeStatic
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 6641635422991914348
+  Name: "Island2-3"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3263363061351523751
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:OwnerId"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:OwnerId:isrep"
+      Bool: true
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: RuntimeStatic
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 442603540740444805
+  Name: "Island2-2"
   Transform {
     Location {
     }
@@ -24511,7 +25008,169 @@ Objects {
 }
 Objects {
   Id: 9622489467739604756
-  Name: "Island2"
+  Name: "Island2-1"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3263363061351523751
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:OwnerId"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:OwnerId:isrep"
+      Bool: true
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: RuntimeStatic
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 1685821118738220389
+  Name: "Island1-4"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3263363061351523751
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:OwnerId"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:OwnerId:isrep"
+      Bool: true
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: RuntimeStatic
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 16838045356569401371
+  Name: "Island1-3"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3263363061351523751
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:IslandPos"
+      Vector {
+      }
+    }
+    Overrides {
+      Name: "cs:OwnerId"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:IslandPos:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:OwnerId:isrep"
+      Bool: true
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: RuntimeStatic
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 1105672426683269256
+  Name: "Island1-2"
   Transform {
     Location {
     }
@@ -24565,7 +25224,7 @@ Objects {
 }
 Objects {
   Id: 272065083029559823
-  Name: "Island1"
+  Name: "Island1-1"
   Transform {
     Location {
     }
@@ -24640,15 +25299,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:SharedKeyIslands"
-      NetReference {
-        Key: "94aa09be828c4cb295ada6a9d891c2f8"
-        Type {
-          Value: "mc:enetreferencetype:sharedpersistence"
-        }
-      }
-    }
-    Overrides {
       Name: "cs:StaticContexts"
       ObjectReference {
         SelfId: 3263363061351523751
@@ -24685,27 +25335,21 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:Island1"
-      ObjectReference {
-        SelfId: 272065083029559823
+      Name: "cs:SharedKeyIslands1"
+      NetReference {
+        Key: "94aa09be828c4cb295ada6a9d891c2f8"
+        Type {
+          Value: "mc:enetreferencetype:sharedpersistence"
+        }
       }
     }
     Overrides {
-      Name: "cs:Island2"
-      ObjectReference {
-        SelfId: 9622489467739604756
-      }
-    }
-    Overrides {
-      Name: "cs:Island3"
-      ObjectReference {
-        SelfId: 16368139136526401897
-      }
-    }
-    Overrides {
-      Name: "cs:Island4"
-      ObjectReference {
-        SelfId: 17347916595265119882
+      Name: "cs:SharedKeyIslands2"
+      NetReference {
+        Key: "2c0855e790334bffb6765b13cacdc101"
+        Type {
+          Value: "mc:enetreferencetype:sharedpersistence"
+        }
       }
     }
   }

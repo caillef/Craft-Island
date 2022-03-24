@@ -2,7 +2,7 @@ Assets {
   Id: 11344764477592644628
   Name: "Microwave Time"
   PlatformAssetType: 13
-  SerializationVersion: 105
+  SerializationVersion: 107
   CustomMaterialAsset {
     BaseMaterialId: 10846451580392138186
     ParameterOverrides {

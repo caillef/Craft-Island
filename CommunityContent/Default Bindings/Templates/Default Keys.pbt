@@ -46,6 +46,6 @@ Assets {
   Marketplace {
     Description: "If you lost all the keys, this is some of the default"
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
   DirectlyPublished: true
 }

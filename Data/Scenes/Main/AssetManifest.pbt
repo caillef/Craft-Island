@@ -18,7 +18,7 @@ Assets {
 }
 Assets {
   Id: 17036791774642401963
-  Name: "Islands"
+  Name: "Islands1"
   PlatformAssetType: 23
   NetReferenceAsset {
     NetReference {
@@ -208,6 +208,19 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_wood_planks_001_uv"
+  }
+}
+Assets {
+  Id: 2897759672660630521
+  Name: "Islands2"
+  PlatformAssetType: 23
+  NetReferenceAsset {
+    NetReference {
+      Key: "2c0855e790334bffb6765b13cacdc101"
+      Type {
+        Value: "mc:enetreferencetype:sharedpersistence"
+      }
+    }
   }
 }
 Assets {

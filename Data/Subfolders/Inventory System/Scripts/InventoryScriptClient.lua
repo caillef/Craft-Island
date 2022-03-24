@@ -164,8 +164,10 @@ function Tick(_)
 			full:SetColor(c)
 		end
 	end
-	
-	SELECTED:SetAbsolutePosition(buttons[lastSelection]:GetAbsolutePosition())
+
+	if SELECTED and lastSelection then
+		SELECTED:SetAbsolutePosition(buttons[lastSelection]:GetAbsolutePosition())
+	end
 
 	-- drag
 	screen = UI.GetScreenSize()

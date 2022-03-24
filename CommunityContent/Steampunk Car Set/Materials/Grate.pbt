@@ -2,7 +2,7 @@ Assets {
   Id: 15967257013288603144
   Name: "Grate"
   PlatformAssetType: 13
-  SerializationVersion: 105
+  SerializationVersion: 107
   CustomMaterialAsset {
     BaseMaterialId: 9289699825875079133
     ParameterOverrides {

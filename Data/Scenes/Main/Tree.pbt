@@ -17,6 +17,7 @@ Objects {
   ChildIds: 12292613699356748057
   ChildIds: 2933062870931889915
   ChildIds: 9416028156443735960
+  ChildIds: 15451375326959273680
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -32,6 +33,37 @@ Objects {
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 15451375326959273680
+  Name: "LimitBuildingNotif"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 6690828246848967605
+      value {
+        Overrides {
+          Name: "Name"
+          String: "LimitBuildingNotif"
+        }
+        Overrides {
+          Name: "Label"
+          String: "You have reached the building limit (6400)"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 9003925426603625064
+    }
   }
 }
 Objects {
@@ -3363,7 +3395,7 @@ Objects {
       Materials {
         key: "Nature_Grass"
         value {
-          Id: 17046136395689563640
+          Id: 841534158063459245
         }
       }
       LocalPositionOffset {
@@ -3389,7 +3421,7 @@ Objects {
       }
       ReceivesDecals: true
       GroundSlopeAngle {
-        Min: 80
+        Min: 45
         Max: 90
       }
       Scaling {
@@ -3411,7 +3443,7 @@ Objects {
       Materials {
         key: "Nature_Grass"
         value {
-          Id: 17046136395689563640
+          Id: 841534158063459245
         }
       }
       LocalPositionOffset {

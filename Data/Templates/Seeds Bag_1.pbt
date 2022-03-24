@@ -45,5 +45,5 @@ Assets {
     OwnerName: "caillef"
     Description: "A seed bag for your market !"
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
 }

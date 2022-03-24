@@ -2,7 +2,7 @@ Assets {
   Id: 236997020205566010
   Name: "Simple Generic Beach"
   PlatformAssetType: 13
-  SerializationVersion: 105
+  SerializationVersion: 107
   CustomMaterialAsset {
     BaseMaterialId: 3627032956109716191
     ParameterOverrides {

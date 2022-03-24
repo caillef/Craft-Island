@@ -2172,6 +2172,6 @@ Assets {
   Marketplace {
     Description: "Stardew Valley fishing"
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
   DirectlyPublished: true
 }

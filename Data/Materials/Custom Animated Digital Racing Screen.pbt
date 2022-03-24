@@ -2,7 +2,7 @@ Assets {
   Id: 16987639806827379312
   Name: "Custom Animated Digital Racing Screen"
   PlatformAssetType: 13
-  SerializationVersion: 105
+  SerializationVersion: 107
   CustomMaterialAsset {
     BaseMaterialId: 7039975224712062519
     ParameterOverrides {

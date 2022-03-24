@@ -157,5 +157,5 @@ Assets {
       AssetId: "Urban_Stone_Pickaxe_01_Template"
     }
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
 }

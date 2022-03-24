@@ -52,5 +52,5 @@ Assets {
     Version: "1.0.0"
     Description: "Automation Conveyor Belt"
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
 }

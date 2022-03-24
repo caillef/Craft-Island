@@ -2,7 +2,7 @@ Assets {
   Id: 3228053866786551797
   Name: "Virtual Folders"
   PlatformAssetType: 30
-  SerializationVersion: 105
+  SerializationVersion: 107
   VirtualFolderSetAsset {
     Folders {
       VirtualFolderPath: "Automation"

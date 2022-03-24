@@ -950,6 +950,6 @@ Assets {
   Marketplace {
     Description: "Doing my best to capture the look on the Deadmau5 helmet\r\nMade for Team Bazoo\r\nNetwork Update."
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
   DirectlyPublished: true
 }

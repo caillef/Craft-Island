@@ -2,7 +2,7 @@ Assets {
   Id: 7051972429393958750
   Name: "Housing Bindings"
   PlatformAssetType: 29
-  SerializationVersion: 105
+  SerializationVersion: 107
   BindingSetAsset {
     Bindings {
       BindingType {

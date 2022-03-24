@@ -43,5 +43,5 @@ Assets {
     Version: "1.0.0"
     Description: "Set of 5 drivable land vehicles"
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
 }

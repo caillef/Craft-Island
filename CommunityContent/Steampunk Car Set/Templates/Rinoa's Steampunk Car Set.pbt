@@ -105,6 +105,7 @@ Assets {
             DestroyOnDeathNetworkedTemplateId {
             }
           }
+          CanExit: true
           FourWheeledVehicle {
             FrontLeftWheel {
               SubObjectId: 16474372372420652920
@@ -11043,6 +11044,7 @@ Assets {
             DestroyOnDeathNetworkedTemplateId {
             }
           }
+          CanExit: true
           FourWheeledVehicle {
             FrontLeftWheel {
               SubObjectId: 3326005202756341279
@@ -22597,6 +22599,7 @@ Assets {
             DestroyOnDeathNetworkedTemplateId {
             }
           }
+          CanExit: true
           FourWheeledVehicle {
             FrontLeftWheel {
               SubObjectId: 7617334580761492684
@@ -33165,6 +33168,7 @@ Assets {
             DestroyOnDeathNetworkedTemplateId {
             }
           }
+          CanExit: true
           FourWheeledVehicle {
             FrontLeftWheel {
               SubObjectId: 4264755303209732584
@@ -43057,6 +43061,7 @@ Assets {
             DestroyOnDeathNetworkedTemplateId {
             }
           }
+          CanExit: true
           FourWheeledVehicle {
             FrontLeftWheel {
               SubObjectId: 12379889733887539850
@@ -54820,6 +54825,6 @@ Assets {
   Marketplace {
     Description: "Set of 5 drivable land vehicles"
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
   DirectlyPublished: true
 }

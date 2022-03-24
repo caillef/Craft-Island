@@ -62,15 +62,6 @@ Assets {
   }
 }
 Assets {
-  Id: 16625466785542172615
-  Name: "Snow 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_snow_001_uv"
-  }
-}
-Assets {
   Id: 16572361283348950017
   Name: "Wood Siding White"
   PlatformAssetType: 2
@@ -179,15 +170,6 @@ Assets {
   }
 }
 Assets {
-  Id: 12737623182736289621
-  Name: "Bone Human Skull 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_bones_human_skull_01_ref"
-  }
-}
-Assets {
   Id: 12512181098299885838
   Name: "Cylinder - Chamfered"
   PlatformAssetType: 1
@@ -275,15 +257,6 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_wood_planks_white_001_uv"
-  }
-}
-Assets {
-  Id: 10381661360019204038
-  Name: "Hill 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_hill_001"
   }
 }
 Assets {

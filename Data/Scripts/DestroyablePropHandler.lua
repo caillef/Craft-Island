@@ -15,6 +15,15 @@ function ManageTracking(player, name, qty)
     end
 end
 
+function IsIslandChunkId(id, staticFolders)
+	for _,staticFolder in ipairs(staticFolders) do
+		if staticFolder.id == id then
+			return true
+		end
+	end
+	return false
+end
+
 function OnHit(data)
     if not script:IsValid() then return end
 
@@ -45,7 +54,7 @@ function OnHit(data)
     end
 
     if prop.serverUserData.HP > 0 then return end
-    if prop.parent.name ~= "Rocks" and player and prop.parent.id ~= player.serverUserData.slot.staticFolderId then return end
+    if prop.parent.name ~= "Rocks" and player and not IsIslandChunkId(prop.parent.id, player.serverUserData.slot.staticFolders) then return end
     if propItemId then
         if propItemId == "BERRY" then
             if math.random() < 0.05 then
@@ -76,10 +85,11 @@ function OnHit(data)
     if prop.parent.name == "Rocks" then
         Events.Broadcast("RespawnRockBehaviour", pos, angle)
     end
+    local staticFolderId = prop.parent.id
     Events.Broadcast("RemoveStructure", prop, player)
 
     -- Check if not an harvest trigger
     if not data.h then return end
-    Events.Broadcast("PlaceStructure", pos, angle, propItemId == "BERRY" and 26 or 30, player.serverUserData.slot.staticFolderId)
+    Events.Broadcast("PlaceStructure", pos, angle, propItemId == "BERRY" and 26 or 30, staticFolderId)
 end
 Events.Connect("H", OnHit)

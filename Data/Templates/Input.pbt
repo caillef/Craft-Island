@@ -759,7 +759,7 @@ Assets {
   Marketplace {
     Description: "Automation Conveyor Belt"
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
   DirectlyPublished: true
   VirtualFolderPath: "Automation"
 }

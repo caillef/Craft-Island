@@ -495,5 +495,5 @@ Assets {
       AssetId: "Basic_Grenade"
     }
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
 }

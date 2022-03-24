@@ -158,5 +158,5 @@ Assets {
       AssetId: "Urban_Stone_Axe_01_Template"
     }
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
 }

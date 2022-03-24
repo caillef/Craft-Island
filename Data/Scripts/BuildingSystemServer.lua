@@ -1,9 +1,14 @@
 local INVENTORY = script:GetCustomProperty("InventoryScriptServer"):WaitForObject().context
-local propSharedKeyIslands = script:GetCustomProperty("SharedKeyIslands")
+local SHARED_KEY_ISLAND_1 = script:GetCustomProperty("SharedKeyIslands1")
+local SHARED_KEY_ISLAND_2 = script:GetCustomProperty("SharedKeyIslands2")
 local APIB = require(script:GetCustomProperty("APIBuildingSystem"))
 local APIO = require(script:GetCustomProperty("APIObjects"))
 local APIBSerializer = require(script:GetCustomProperty("APIBlockSerializer"))
 local CONSTANTS = require(script:GetCustomProperty("Constants"))
+local STATIC_CONTEXTS = script:GetCustomProperty("StaticContexts"):WaitForObject()
+
+local BUILD_LIMIT = 6400
+local NB_STRUCTURES_PER_CHUNK = 1600
 
 local ISLANDS_TEMPLATE = {
     script:GetCustomProperty("PlayerIsland"),
@@ -32,7 +37,12 @@ local function initPlayerSpots()
     for i=1,NB_MAX_PLAYERS do
         playerSlots[i] = {
             pos = GetSpawnWorldPosition(i),
-            staticFolderId = script:GetCustomProperty("Island"..i):WaitForObject().id,
+            staticFolders = {
+	            STATIC_CONTEXTS:FindChildByName("Island"..i.."-1"),
+	            STATIC_CONTEXTS:FindChildByName("Island"..i.."-2"),
+	            STATIC_CONTEXTS:FindChildByName("Island"..i.."-3"),
+	            STATIC_CONTEXTS:FindChildByName("Island"..i.."-4"),
+            },
             player = nil,
             island = nil
         }
@@ -47,16 +57,31 @@ function GetNextId()
 end
 
 function CountNbStructures(player)
-    return #World.FindObjectById(player.serverUserData.slot.staticFolderId):GetChildren()
+	local sum = 0
+	for _,staticFolder in ipairs(player.serverUserData.slot.staticFolders) do
+		sum = sum + #staticFolder:GetChildren()
+   	end
+   	return sum
 end
 
 function SaveIsland(player)
     if not player or not player:IsValid() then print("Warning: tried to save island of not valid player") return end
-    local storage = Storage.GetSharedPlayerData(propSharedKeyIslands, player)
+    local storage = Storage.GetSharedPlayerData(SHARED_KEY_ISLAND_1, player)
+    local storage2 = Storage.GetSharedPlayerData(SHARED_KEY_ISLAND_2, player)
     local slot = player.serverUserData.slot
-    local list = World.FindObjectById(slot.staticFolderId):GetChildren()
-    storage.pBlocks = APIBSerializer.SerializeList(list, slot.pos)
-    Storage.SetSharedPlayerData(propSharedKeyIslands, player, storage)
+    local list = {}
+    for _,staticFolder in ipairs(slot.staticFolders) do
+    	for _,obj in ipairs(staticFolder:GetChildren()) do
+    		table.insert(list, obj)
+    	end
+        Task.Wait()
+    end
+    local serialized = APIBSerializer.SerializeList(list, slot.pos)
+    local half_size = math.floor(#serialized / 2)
+    storage.pBlocks = serialized:sub(1, half_size)
+    storage2.pBlocks = serialized:sub(half_size + 1, #serialized)
+    Storage.SetSharedPlayerData(SHARED_KEY_ISLAND_1, player, storage)
+    Storage.SetSharedPlayerData(SHARED_KEY_ISLAND_2, player, storage2)
 end
 
 local objList = {}
@@ -101,13 +126,13 @@ function BuildingSystem_OnPlaceStructure(player, serializedBlock)
     local data = APIBSerializer.Deserialize(serializedBlock, player.serverUserData.slot.pos)
     if not data or not INVENTORY.PlayerHasItems(player, { id=data.type }) then return end
 
-    if Object.IsValid(player) and CountNbStructures(player) >= 4000 then
+    if Object.IsValid(player) and CountNbStructures(player) >= BUILD_LIMIT then
         while Object.IsValid(player) and Events.BroadcastToPlayer(player, "BSLimit") ~= BroadcastEventResultCode.SUCCESS do
             Task.Wait(1)
         end
         return
     end
-    if not PlaceObject(data.pos, data.angle, data.type, player.serverUserData.slot.staticFolderId) then return end
+    if not PlaceObject(data.pos, data.angle, data.type, player.serverUserData.slot.staticFolders[math.ceil(CountNbStructures(player) / NB_STRUCTURES_PER_CHUNK)].id) then return end
     INVENTORY.PlayerRemoveItems(player, { id=data.type } )
     SaveIsland(player)
 end
@@ -134,13 +159,13 @@ function PlaceObject(pos, angle, type, parentId)
         if not APIB.IsPositionOnIsland(pos, angle, parent.serverUserData.slot.pos, islandLimit) then
            return
         end
-        if not parent.serverUserData.isLoading and not APIB.IsSpotEmpty(pos, angle, objectData.type) then
+        if not parent.serverUserData.slot.isLoading and not APIB.IsSpotEmpty(pos, angle, objectData.type) then
             return
         end
     end
 
 	local mandatorySurface = objectData.metadata.mustBeBuiltOn
-    if not parent.serverUserData.isLoading and mandatorySurface then
+    if (parent.serverUserData.slot and not parent.serverUserData.isLoading) and mandatorySurface then
         local list = parent:GetChildren()
         local block = GetStructureAtPosOfType(list, pos, angle, objectData.metadata.mustBeBuiltOn)
         if not block then
@@ -192,18 +217,32 @@ Events.Connect("SGrow", Grow)
 function LoadPreviousBlocks(player)
     local slot = player.serverUserData.slot
     slot.isLoading = true
-    local structures = Storage.GetSharedPlayerData(propSharedKeyIslands, player).pBlocks or "v2*25|0=-5,-3,0|270=-7,6,0|90=0,2,0_12|0=-2,-1,0;-2,0,0;-2,-2,0"
+    local part_one = Storage.GetSharedPlayerData(SHARED_KEY_ISLAND_1, player).pBlocks
+    local part_two = Storage.GetSharedPlayerData(SHARED_KEY_ISLAND_2, player).pBlocks
+    local structures = "v2*25|0=-5,-3,0|270=-7,6,0|90=0,2,0_12|0=-2,-1,0;-2,0,0;-2,-2,0"
+    if part_one then
+        structures = part_one..(part_two or "") -- Some old players might have everything in part one
+    end
     local blocks = APIBSerializer.DeserializeList(structures, slot.pos)
     for k,data in pairs(blocks) do
-        PlaceObject(data.pos, data.angle, data.type, slot.staticFolderId)
-        if k % 250 == 0 then Task.Wait(0.25) end
+        PlaceObject(data.pos, data.angle, data.type, slot.staticFolders[math.ceil(k / NB_STRUCTURES_PER_CHUNK)].id)
+        if k % 250 == 0 then Task.Wait() end
     end
     slot.isLoading = false
 end
 
+function IsIslandChunkId(id, staticFolders)
+	for _,staticFolder in ipairs(staticFolders) do
+		if staticFolder.id == id then
+			return true
+		end
+	end
+	return false
+end
+
 function RemoveStructure(obj, player)
     if not obj or not obj:IsValid() then return end
-    if obj.parent.name ~= "Rocks" and player and obj.parent.id ~= player.serverUserData.slot.staticFolderId then return end
+    if obj.parent.name ~= "Rocks" and player and not IsIslandChunkId(obj.parent.id, player.serverUserData.slot.staticFolders) then return end
     local nlo = obj.serverUserData.nlo
     if Object.IsValid(nlo) then nlo:Destroy() end
     RemoveObjectHandler(obj.serverUserData.id)
@@ -228,11 +267,12 @@ function LoadIsland(player)
     LoadIslandType(player)
 
     slot.island = World.SpawnAsset(ISLANDS_TEMPLATE[player.serverUserData.islandType], { position = slot.pos, parent = ISLANDS })
-    local parent = World.FindObjectById(slot.staticFolderId)
-    parent:SetCustomProperty("IslandPos", slot.pos)
-    parent.serverUserData.islandType = player.serverUserData.islandType
+    for _,parent in ipairs(slot.staticFolders) do
+	    parent:SetCustomProperty("IslandPos", slot.pos)
+	    parent.serverUserData.islandType = player.serverUserData.islandType
+	    parent.serverUserData.slot = slot
+    end
     player:SetPrivateNetworkedData("islandType", player.serverUserData.islandType)
-    parent.serverUserData.slot = slot
     player.serverUserData.slot = slot
     player:SetPrivateNetworkedData("islandPos", slot.pos)
 
@@ -253,9 +293,11 @@ function UnloadIsland(player)
 
     SaveIsland(player)
     slot.island:Destroy()
-	local group = World.FindObjectById(slot.staticFolderId)
-    DestroyNetworkedObjects(group:GetChildren())
-    Clear(group.id)
+	for _,group in ipairs(slot.staticFolders) do
+	    DestroyNetworkedObjects(group:GetChildren())
+	    Clear(group.id)
+	    Task.Wait()
+	end
     slot.island = nil
     slot.player = nil
     player.serverUserData.slot = nil
@@ -317,7 +359,6 @@ local function AssignNextSlot(player)
 end
 
 function OnPlayerJoined(player)
-    player.serverUserData.isLoading = true
     TeleportTo(player, "main_island")
     player.movementControlMode = MovementControlMode.NONE
 
@@ -326,13 +367,13 @@ function OnPlayerJoined(player)
 
     TeleportTo(player, "own_island")
     player.movementControlMode = MovementControlMode.VIEW_RELATIVE
-    player.serverUserData.isLoading = false
 end
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 
 function Reset(player)
     OnPlayerLeft(player)
-    Storage.SetSharedPlayerData(propSharedKeyIslands, player, {})
+    Storage.SetSharedPlayerData(SHARED_KEY_ISLAND_1, player, {})
+    Storage.SetSharedPlayerData(SHARED_KEY_ISLAND_2, player, {})
     OnPlayerJoined(player)
 end
 Events.ConnectForPlayer("HARDRESET", Reset)

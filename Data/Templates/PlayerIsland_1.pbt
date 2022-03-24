@@ -70,19 +70,19 @@ Assets {
           Overrides {
             Name: "ma:Building_Ceiling:id"
             AssetReference {
-              Id: 13339415615670056905
+              Id: 14963180027045567585
             }
           }
           Overrides {
             Name: "ma:Shared_Trim:id"
             AssetReference {
-              Id: 13339415615670056905
+              Id: 14963180027045567585
             }
           }
           Overrides {
             Name: "ma:Building_Floor:id"
             AssetReference {
-              Id: 13339415615670056905
+              Id: 14963180027045567585
             }
           }
           Overrides {
@@ -548,12 +548,12 @@ Assets {
       }
     }
     Assets {
-      Id: 13339415615670056905
-      Name: "Terrain - Snow"
+      Id: 14963180027045567585
+      Name: "Terrain - Grass"
       PlatformAssetType: 2
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
-        AssetId: "mi_terrain_rock-snow_001_wa"
+        AssetId: "mi_terrain_rock-grass-001_wa"
       }
     }
     Assets {
@@ -588,5 +588,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
 }

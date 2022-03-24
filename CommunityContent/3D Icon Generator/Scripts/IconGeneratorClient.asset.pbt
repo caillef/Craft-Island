@@ -17,6 +17,6 @@ Assets {
       }
     }
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
   VirtualFolderPath: "Icon"
 }

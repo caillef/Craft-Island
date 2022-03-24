@@ -6359,15 +6359,6 @@ Objects {
   ParentId: 1472815218309327409
   UnregisteredParameters {
     Overrides {
-      Name: "ma:Building_Ceiling:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-    Overrides {
       Name: "ma:Shared_Trim:color"
       Color {
         R: 0.149999976
@@ -6381,12 +6372,6 @@ Objects {
         R: 0.149999976
         G: 0.0447019935
         A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:Building_Roof:id"
-      AssetReference {
-        Id: 16625466785542172615
       }
     }
   }
@@ -22260,15 +22245,6 @@ Objects {
   ParentId: 6362267738723924309
   UnregisteredParameters {
     Overrides {
-      Name: "ma:Building_Ceiling:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-    Overrides {
       Name: "ma:Shared_Trim:color"
       Color {
         R: 0.149999976
@@ -22282,12 +22258,6 @@ Objects {
         R: 0.149999976
         G: 0.0447019935
         A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:Building_Roof:id"
-      AssetReference {
-        Id: 16625466785542172615
       }
     }
   }
@@ -38151,15 +38121,6 @@ Objects {
   ParentId: 2501438922092616938
   UnregisteredParameters {
     Overrides {
-      Name: "ma:Building_Ceiling:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-    Overrides {
       Name: "ma:Shared_Trim:color"
       Color {
         R: 0.149999976
@@ -38173,12 +38134,6 @@ Objects {
         R: 0.149999976
         G: 0.0447019935
         A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:Building_Roof:id"
-      AssetReference {
-        Id: 16625466785542172615
       }
     }
   }
@@ -48145,21 +48100,6 @@ Objects {
   }
   ParentId: 12770056801352948475
   UnregisteredParameters {
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 1222396576314161533
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -48257,12 +48197,9 @@ Objects {
   ChildIds: 16020880939220032961
   ChildIds: 14502105628284888598
   ChildIds: 12018446158015698799
-  ChildIds: 11915848643295436306
   ChildIds: 8094430447219254140
   ChildIds: 3384435793082901926
   ChildIds: 15789806467891719381
-  ChildIds: 16891468350021864972
-  ChildIds: 11394253018216858333
   ChildIds: 14504463593747627396
   ChildIds: 11969630623208487191
   UnregisteredParameters {
@@ -48307,21 +48244,6 @@ Objects {
   }
   ParentId: 16297917158114919425
   UnregisteredParameters {
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 1222396576314161533
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -48376,21 +48298,6 @@ Objects {
   }
   ParentId: 16297917158114919425
   UnregisteredParameters {
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 1222396576314161533
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -48419,113 +48326,6 @@ Objects {
   InstanceHistory {
     SelfId: 14504463593747627396
     SubobjectId: 7923582675597713258
-    InstanceId: 403462418731895996
-    TemplateId: 11023526859225839640
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-}
-Objects {
-  Id: 11394253018216858333
-  Name: "Bone Human Skull 01"
-  Transform {
-    Location {
-      X: 32.6259079
-      Y: 107.844299
-      Z: 21.9343739
-    }
-    Rotation {
-      Roll: -65.0002136
-    }
-    Scale {
-      X: 0.616253138
-      Y: 0.616253138
-      Z: 0.616253138
-    }
-  }
-  ParentId: 16297917158114919425
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12737623182736289621
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    InteractWithTriggers: true
-    StaticMesh {
-      Physics {
-      }
-      BoundsScale: 1
-    }
-  }
-  InstanceHistory {
-    SelfId: 11394253018216858333
-    SubobjectId: 4223400617431031859
-    InstanceId: 403462418731895996
-    TemplateId: 11023526859225839640
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-}
-Objects {
-  Id: 16891468350021864972
-  Name: "Bone Human Skull 01"
-  Transform {
-    Location {
-      X: 56.8810959
-      Y: -3.19274354
-      Z: 19.0152359
-    }
-    Rotation {
-      Yaw: -89.9996948
-      Roll: -65.0007629
-    }
-    Scale {
-      X: 0.616253138
-      Y: 0.616253138
-      Z: 0.616253138
-    }
-  }
-  ParentId: 16297917158114919425
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12737623182736289621
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    InteractWithTriggers: true
-    StaticMesh {
-      Physics {
-      }
-      BoundsScale: 1
-    }
-  }
-  InstanceHistory {
-    SelfId: 16891468350021864972
-    SubobjectId: 5680869010398768354
     InstanceId: 403462418731895996
     TemplateId: 11023526859225839640
   }
@@ -48725,66 +48525,6 @@ Objects {
   }
 }
 Objects {
-  Id: 11915848643295436306
-  Name: "Hills 01"
-  Transform {
-    Location {
-      X: 33.2925415
-      Y: -44.0546875
-    }
-    Rotation {
-      Yaw: 39.6320152
-    }
-    Scale {
-      X: 0.602902591
-      Y: 0.602902591
-      Z: 0.241634652
-    }
-  }
-  ParentId: 16297917158114919425
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 16625466785542172615
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 10381661360019204038
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    InteractWithTriggers: true
-    StaticMesh {
-      Physics {
-      }
-      BoundsScale: 1
-    }
-  }
-  InstanceHistory {
-    SelfId: 11915848643295436306
-    SubobjectId: 135553880672484604
-    InstanceId: 403462418731895996
-    TemplateId: 11023526859225839640
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-}
-Objects {
   Id: 12018446158015698799
   Name: "Fern 04"
   Transform {
@@ -48803,12 +48543,6 @@ Objects {
   }
   ParentId: 16297917158114919425
   UnregisteredParameters {
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 16363462466652531633
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -49367,21 +49101,6 @@ Objects {
   }
   ParentId: 12770056801352948475
   UnregisteredParameters {
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 1222396576314161533
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -49446,21 +49165,6 @@ Objects {
       Name: "ma:Nature_Trunk:id"
       AssetReference {
         Id: 14307244558911102288
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 16994493497150923105
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
       }
     }
   }
@@ -49529,21 +49233,6 @@ Objects {
         Id: 14307244558911102288
       }
     }
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 16994493497150923105
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -49608,21 +49297,6 @@ Objects {
       Name: "ma:Nature_Trunk:id"
       AssetReference {
         Id: 14307244558911102288
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 16994493497150923105
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
       }
     }
   }
@@ -49693,21 +49367,6 @@ Objects {
         Id: 14307244558911102288
       }
     }
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 16994493497150923105
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -49774,21 +49433,6 @@ Objects {
       Name: "ma:Nature_Trunk:id"
       AssetReference {
         Id: 14307244558911102288
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 16994493497150923105
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
       }
     }
   }
@@ -49859,21 +49503,6 @@ Objects {
         Id: 14307244558911102288
       }
     }
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 16994493497150923105
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -49942,21 +49571,6 @@ Objects {
         Id: 14307244558911102288
       }
     }
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 16994493497150923105
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -50014,21 +49628,6 @@ Objects {
             X: 1617.38623
             Y: 703.854126
             Z: 2245
-          }
-        }
-        Overrides {
-          Name: "ma:Nature_Leaves:id"
-          AssetReference {
-            Id: 16994493497150923105
-          }
-        }
-        Overrides {
-          Name: "ma:Nature_Leaves:color"
-          Color {
-            R: 1
-            G: 1
-            B: 1
-            A: 1
           }
         }
       }
@@ -50355,21 +49954,6 @@ Objects {
   }
   ParentId: 12770056801352948475
   UnregisteredParameters {
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 1222396576314161533
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -50419,21 +50003,6 @@ Objects {
   }
   ParentId: 12770056801352948475
   UnregisteredParameters {
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 1222396576314161533
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -50483,21 +50052,6 @@ Objects {
   }
   ParentId: 12770056801352948475
   UnregisteredParameters {
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 1222396576314161533
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -50547,21 +50101,6 @@ Objects {
   }
   ParentId: 12770056801352948475
   UnregisteredParameters {
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 1222396576314161533
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -50611,21 +50150,6 @@ Objects {
   }
   ParentId: 12770056801352948475
   UnregisteredParameters {
-    Overrides {
-      Name: "ma:Nature_Leaves:id"
-      AssetReference {
-        Id: 1222396576314161533
-      }
-    }
-    Overrides {
-      Name: "ma:Nature_Leaves:color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"

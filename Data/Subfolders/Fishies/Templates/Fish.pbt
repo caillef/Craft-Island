@@ -2253,6 +2253,6 @@ Assets {
   Marketplace {
     Description: "Hot Dog Tycoon-Underwater Level"
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
   DirectlyPublished: true
 }

@@ -15551,6 +15551,6 @@ Assets {
   Marketplace {
     Description: "gift package 1 x 1 x 1"
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
   DirectlyPublished: true
 }

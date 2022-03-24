@@ -43,5 +43,5 @@ Assets {
     Version: "1.0.0"
     Description: "If you lost all the keys, this is some of the default"
   }
-  SerializationVersion: 105
+  SerializationVersion: 107
 }

@@ -223,6 +223,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 107
+  SerializationVersion: 110
   VirtualFolderPath: "UI Icons"
 }

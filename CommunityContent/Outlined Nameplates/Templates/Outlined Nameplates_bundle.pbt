@@ -52,5 +52,5 @@ Assets {
     Version: "1.0.0"
     Description: "Nameplates, but with outlined text! Set the outline to any color you\'d like by modifying the NameOutlineColor field - use this when you can\'t seem to find a nameplate color that\'s visible over your game\'s backgrounds!"
   }
-  SerializationVersion: 107
+  SerializationVersion: 110
 }

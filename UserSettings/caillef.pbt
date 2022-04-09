@@ -4170,7 +4170,7 @@ DebugPerks {
     PerkId: "f0177c3020c74520bb9738394fe5119f"
     PerkCounts {
       key: 0
-      value: 0
+      value: 1
     }
     PerkCounts {
       key: 1

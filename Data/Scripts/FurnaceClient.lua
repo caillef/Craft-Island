@@ -1,4 +1,4 @@
-﻿local APIO = require(script:GetCustomProperty("APIObjects"))
+local APIO = require(script:GetCustomProperty("APIObjects"))
 local SOUNDS = require(script:GetCustomProperty("SOUNDS"))
 local propUI = script:GetCustomProperty("UI"):WaitForObject()
 local propCoalSlot = script:GetCustomProperty("CoalSlot"):WaitForObject()
@@ -84,7 +84,7 @@ function HasRawItemInside(f)
 end
 
 function Tick()
-	if UI.GetCursorPosition().x < UI.GetScreenSize().x/2 + 400  then hoveredSlotIndex = nil end
+	if Input.GetCursorPosition().x < UI.GetScreenSize().x/2 + 400  then hoveredSlotIndex = nil end
 
 	local updateUI
 	for k,f in pairs(furnaces) do

@@ -71,6 +71,9 @@ Objects {
     InstanceId: 15375966638213243613
     TemplateId: 9250676598671173809
   }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -146,6 +149,9 @@ Objects {
     InstanceId: 15375966638213243613
     TemplateId: 9250676598671173809
   }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -218,6 +224,9 @@ Objects {
     SubobjectId: 6700894169542276038
     InstanceId: 15375966638213243613
     TemplateId: 9250676598671173809
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -292,6 +301,9 @@ Objects {
     InstanceId: 15375966638213243613
     TemplateId: 9250676598671173809
   }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -363,6 +375,9 @@ Objects {
     SubobjectId: 13399096202775179198
     InstanceId: 15375966638213243613
     TemplateId: 9250676598671173809
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -437,6 +452,9 @@ Objects {
     InstanceId: 15375966638213243613
     TemplateId: 9250676598671173809
   }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -510,6 +528,9 @@ Objects {
     InstanceId: 15375966638213243613
     TemplateId: 9250676598671173809
   }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -582,6 +603,9 @@ Objects {
     SubobjectId: 13939259755744501146
     InstanceId: 15375966638213243613
     TemplateId: 9250676598671173809
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

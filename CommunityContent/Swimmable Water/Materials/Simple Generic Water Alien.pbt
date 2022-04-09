@@ -2,7 +2,7 @@ Assets {
   Id: 1235228958167769008
   Name: "Simple Generic Water Alien"
   PlatformAssetType: 13
-  SerializationVersion: 107
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 3627032956109716191
     ParameterOverrides {

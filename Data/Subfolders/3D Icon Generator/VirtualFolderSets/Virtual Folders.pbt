@@ -2,7 +2,7 @@ Assets {
   Id: 16550720252238403781
   Name: "Virtual Folders"
   PlatformAssetType: 30
-  SerializationVersion: 107
+  SerializationVersion: 110
   VirtualFolderSetAsset {
     Folders {
       VirtualFolderPath: "Icon"

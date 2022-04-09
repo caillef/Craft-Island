@@ -2,7 +2,7 @@ Assets {
   Id: 154063156769993551
   Name: "Custom Base Material from Small Crate Lid"
   PlatformAssetType: 13
-  SerializationVersion: 107
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 8729273428952851961
     ParameterOverrides {

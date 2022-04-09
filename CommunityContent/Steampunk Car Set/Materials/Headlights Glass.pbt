@@ -2,7 +2,7 @@ Assets {
   Id: 15861829850582294514
   Name: "Headlights Glass"
   PlatformAssetType: 13
-  SerializationVersion: 107
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 17107020709417526976
     ParameterOverrides {

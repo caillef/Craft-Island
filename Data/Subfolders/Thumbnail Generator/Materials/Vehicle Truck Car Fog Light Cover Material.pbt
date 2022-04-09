@@ -2,7 +2,7 @@ Assets {
   Id: 12753583636347581698
   Name: "Vehicle Truck Car Fog Light Cover Material"
   PlatformAssetType: 13
-  SerializationVersion: 107
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 2112804179467698174
     ParameterOverrides {

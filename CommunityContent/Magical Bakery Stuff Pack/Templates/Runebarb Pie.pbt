@@ -700,6 +700,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -761,6 +764,9 @@ Assets {
             }
             BoundsScale: 1
           }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -825,6 +831,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -883,7 +892,7 @@ Assets {
   Marketplace {
     Description: "Welcome to Libby\'s Loafery! We specialize in magically enhanced baked goods! What can we bake for you today? ~ <3"
   }
-  SerializationVersion: 107
+  SerializationVersion: 110
   DirectlyPublished: true
   VirtualFolderPath: "Props"
 }

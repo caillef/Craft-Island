@@ -87,6 +87,6 @@ Assets {
   Marketplace {
     Description: "This is a short example of how to use the powerful require script feature. Well documented, short, and to the point.\r\n\r\n@LuckofBuck on Twitter"
   }
-  SerializationVersion: 107
+  SerializationVersion: 110
   DirectlyPublished: true
 }

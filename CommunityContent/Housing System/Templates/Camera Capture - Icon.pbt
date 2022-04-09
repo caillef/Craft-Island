@@ -79,7 +79,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 107
+  SerializationVersion: 110
   VirtualFolderPath: "Housing"
   VirtualFolderPath: "Camera Capture"
 }

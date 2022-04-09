@@ -140,7 +140,7 @@ end
 
 function Tick(_)
 	if loading then return end	
-	if UI.GetCursorPosition().x > UI.GetScreenSize().x/2 + 400 then
+	if Input.GetCursorPosition().x > UI.GetScreenSize().x/2 + 400 then
 		hoveredSlotIndex = nil
 	end
 
@@ -171,7 +171,7 @@ function Tick(_)
 
 	-- drag
 	screen = UI.GetScreenSize()
-	m = UI.GetCursorPosition() - screen/2
+	m = Input.GetCursorPosition() - screen/2
 	if drag then
 		if open then
 			hover = nil
@@ -226,7 +226,7 @@ function OnHover(button)
 		hoveredSlotIndex = nil
 	end
 	local it = GetItem(button)
-	if it and UI.GetCursorPosition().x < UI.GetScreenSize().x/2 + 400 then
+	if it and Input.GetCursorPosition().x < UI.GetScreenSize().x/2 + 400 then
 		hover = it
 		name.text = hover:GetCustomProperty("Name")
 		local prop = hover:GetCustomProperties()

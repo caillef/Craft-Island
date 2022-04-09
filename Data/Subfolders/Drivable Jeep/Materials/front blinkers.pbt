@@ -2,7 +2,7 @@ Assets {
   Id: 1900554724504964113
   Name: "front blinkers"
   PlatformAssetType: 13
-  SerializationVersion: 107
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 8509450066696757602
     ParameterOverrides {

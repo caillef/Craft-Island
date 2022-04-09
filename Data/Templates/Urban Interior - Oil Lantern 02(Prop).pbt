@@ -82,6 +82,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -131,6 +134,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -159,5 +165,5 @@ Assets {
       AssetId: "Urban_Interior_-_Oil_Lantern_02_Prop_"
     }
   }
-  SerializationVersion: 107
+  SerializationVersion: 110
 }

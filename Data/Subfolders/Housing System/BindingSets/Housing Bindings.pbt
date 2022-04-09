@@ -2,7 +2,7 @@ Assets {
   Id: 12839992526979622873
   Name: "Housing Bindings"
   PlatformAssetType: 29
-  SerializationVersion: 107
+  SerializationVersion: 110
   BindingSetAsset {
     Bindings {
       BindingType {
@@ -26,6 +26,7 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
+      IsEnabledOnStart: true
     }
     Bindings {
       BindingType {
@@ -49,6 +50,7 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
+      IsEnabledOnStart: true
     }
     Bindings {
       BindingType {
@@ -72,6 +74,7 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
+      IsEnabledOnStart: true
     }
     Bindings {
       BindingType {
@@ -95,6 +98,7 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:none"
       }
+      IsEnabledOnStart: true
     }
     Bindings {
       BindingType {
@@ -151,6 +155,7 @@ Assets {
       CoreBehavior {
         Value: "mc:ecorebehavior:move"
       }
+      IsEnabledOnStart: true
     }
   }
 }

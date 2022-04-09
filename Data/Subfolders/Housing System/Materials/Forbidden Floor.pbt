@@ -2,7 +2,7 @@ Assets {
   Id: 12006215264584201294
   Name: "Forbidden Floor"
   PlatformAssetType: 13
-  SerializationVersion: 107
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 4288097901081149887
     ParameterOverrides {

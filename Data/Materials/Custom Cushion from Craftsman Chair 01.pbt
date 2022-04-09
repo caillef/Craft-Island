@@ -2,7 +2,7 @@ Assets {
   Id: 8607207913822945905
   Name: "Custom Cushion from Craftsman Chair 01"
   PlatformAssetType: 13
-  SerializationVersion: 107
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 1524288819610547610
     ParameterOverrides {

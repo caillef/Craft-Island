@@ -34,17 +34,18 @@ local abilityList = {}
 -- nil Tick()
 -- Checks the players within hitbox, and makes sure swipe effects stay at the player's location
 function Tick()
-    for _,p in ipairs(Game.GetPlayers()) do
-        if p.serverUserData.clickPressed and p.serverUserData.a and time() >= p.serverUserData.nextActionAt then
-            p.serverUserData.a:Activate()
-            p.serverUserData.nextActionAt = time() + 1
-        end
-    end
-
     -- Check for the existence of the equipment or owner before running Tick
     if not Object.IsValid(EQUIPMENT) then return end
     if not Object.IsValid(EQUIPMENT.owner) then return end
     if EQUIPMENT.owner.isDead then return end
+
+	local p = EQUIPMENT.owner
+    if p.serverUserData.clickPressed and p.serverUserData.a and time() >= p.serverUserData.nextActionAt then
+    	if p.serverUserData.a:GetCurrentPhase() == AbilityPhase.READY then
+            p.serverUserData.a:Activate()
+            p.serverUserData.nextActionAt = time() + 1
+        end
+    end
 
     for _, abilityInfo in ipairs(abilityList) do
         if abilityInfo.canAttack then

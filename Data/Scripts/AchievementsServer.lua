@@ -109,23 +109,24 @@ Events.ConnectForPlayer("GetAchi", function(player)
 		Storage.SetSharedPlayerData(propAchievementsSharedKey, player, storage)
 	end
 
-	-- Add lever one of achievement by specific order
-	for _,v in pairs(order) do
-		if (not storage.track or not storage.track[v]) and #list <= 12 then
+	-- Add level one of achievement by specific order
+	for k,v in pairs(order) do
+		print(k, v, storage.track[v])
+		if (not storage.track or not storage.track[v]) and #list < 6 then
 			table.insert(list, SerializeAchievement(v, 0, 1))
 		end
 	end
 
 	-- Add closest achievements
 	local threshold = 0.9
-	while #list <= 12 and threshold > 0 do
-		for id,v in pairs(storage.track) do 
+	while #list < 6 and threshold >= 0 do
+		for id,v in pairs(storage.track) do
 			local a = achievements[id]
 			if v.t <= #a.qtys then
 				local qty = v.qty
 				local target = a.qtys[v.t]
-				local percent = v.qty / target
-				if percent > threshold then
+				local percent = qty / target
+				if percent >= threshold then
 					table.insert(list, SerializeAchievement(id, percent, v.t))
 					storage.track[id] = nil
 				end
@@ -145,6 +146,7 @@ Events.ConnectForPlayer("GetAchi", function(player)
 	for i=1,#storage.ach do
 		if storage.ach:sub(i,i) == "1" or (storage.ach:sub(i,i) == "2" and player:GetResource("VIP") == 1) then
 			rewardAvailable = 1
+			break
 		end
 	end
 	Events.BroadcastToPlayer(player, "GetAchiR", rewardAvailable, msg)

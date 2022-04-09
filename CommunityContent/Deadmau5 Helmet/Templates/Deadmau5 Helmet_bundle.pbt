@@ -43,5 +43,5 @@ Assets {
     Version: "1.0.0"
     Description: "Doing my best to capture the look on the Deadmau5 helmet\r\nMade for Team Bazoo\r\nNetwork Update."
   }
-  SerializationVersion: 107
+  SerializationVersion: 110
 }

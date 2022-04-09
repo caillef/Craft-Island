@@ -2,7 +2,7 @@ Assets {
   Id: 18161745805969734008
   Name: "Simple Generic Water Toon"
   PlatformAssetType: 13
-  SerializationVersion: 107
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 3627032956109716191
     ParameterOverrides {

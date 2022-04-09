@@ -46,5 +46,5 @@ Assets {
     Version: "1.0.0"
     Description: "a chef\'s hat for your various chef-ing needs"
   }
-  SerializationVersion: 107
+  SerializationVersion: 110
 }

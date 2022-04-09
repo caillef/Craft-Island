@@ -46,5 +46,5 @@ Assets {
     Version: "1.0.0"
     Description: "a fountain filled with gold that traps and kills anyones that dares try to take the gold "
   }
-  SerializationVersion: 107
+  SerializationVersion: 110
 }
